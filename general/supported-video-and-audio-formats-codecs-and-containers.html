@@ -1,0 +1,78 @@
+---
+title: Supported Video and Audio Formats, Codecs, and Containers
+description: 'This document lists the supported containers and codecs you can use when you upload videos to Video Cloud.'
+parent: General Information
+layout: staging
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="terms">Understanding codecs, containers, and file extensions</h2>
+    <p>Codecs, containers and file extensions are not equivalent but are often confused with one another. For example, H.264 video does not just mean a file with the extension <code translate="No">.mp4</code>. Video files contain both metadata (duration, dimensions, etc.) as well as the encoded and often compressed audio and video data.</p>
+    <ul>
+      <li>The <em>container</em> format defines how the metadata is stored along with the audio and video data. It does not define the coding or compression of the data.</li>
+      <li><em>Codecs</em> are responsible for encoding and decoding the video and audio streams in a video file. They can be lossy or lossless and are usually optimized for certain types of transmission. Note that there are some cases where the codec and container share a single definition, but these are uncommon.</li>
+    </ul>
+    <p>Other terms that are often confused are encoding/decoding and muxing/demuxing.</p>
+    <ul>
+      <li><em>Encoding </em>and <em>decoding </em>refer to converting the encoded video and audio data to and from streams that can be played.</li>
+      <li><em>Muxing </em>and <em>demuxing </em>refers to the writing and reading of audio and video streams into and from various container formats.</li>
+    </ul>
+    <p>For more information see:</p>
+    <ul>
+      <li>Containers are described in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Comparison_of_container_formats">article</a>.</li>
+      <li>More details on codecs can be found in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Video_codec">article</a>.</li>
+      <li>Additional references for codec IDs and codes can be found <a class="external-link" rel="nofollow" href="http://www.fourcc.org/codecs.php">here</a> and <a class="external-link" rel="nofollow" href="http://mp4ra.org/#/codecs">here</a>.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="supported_source_formats">Supported source video types</h2>
+    <p>Since <span translate="No">Brightcove</span> generally handles the complexity of creating renditions with codecs and formats appropriate to different platforms, browsers, and device apps, what concerns you most is what kinds of source videos we can transcode for you.</p>
+    <p>Since <span translate="No">Brightcove</span> supports so many video input types, it is actually more helpful to talk about the formats we do not support. At the moment, there are only a few. The list below shows the formats <strong><em>not</em></strong> supported for <a href="https://zencoder.support.brightcove.com"><span translate="No">Zencoder</span> </a>, the <span translate="No">Video Cloud</span> <a href="/media/uploading-videos-using-upload-module.html">Upload module</a> and <a href="https://apis.support.brightcove.com/dynamic-ingest/"><span translate="No">Dynamic Ingest API</span></a>. Note that if a format is <strong>not</strong> in included in the list below, you can assume it <strong>is supported</strong>.</p>
+    <ul>
+      <li><code translate="No">Apple Intermediate</code></li>
+      <li><code translate="No">HDV 720p60</code></li>
+      <li><code translate="No">Go2Meeting3 (G2M3)</code></li>
+      <li><code translate="No">Avid Meridien Uncompressed</code></li>
+      <li><code translate="No">Windows Media Audio Lossless</code></li>
+      <li><code translate="No">CineForm</code> - partly supported; there are variants that can come from the software used to encode the source, or from OS, that make the source unusable by Zencoder. We are still trying to identify the exact factors that cause problems.</li>
+      <li><code translate="No">SWF</code> - partly supported by <span translate="No">Zencoder</span>; if the <code translate="No">SWF</code> contains a video or audio track, those can be processed, but many <code translate="No">SWFs</code> do not.</li>
+      <li><code translate="No">Animated .gif</code> - Officially not supported but they may work</li>
+    </ul>
+    <h3>Special cases</h3>
+    <ul>
+      <li>
+        <aside class="bcls-aside bcls-aside--information">Note: <code translate="No">AVdh (DNxHQ)</code> also does not work for <strong>422 10-bit and 444 12-bit sources (only)</strong> - this is a bug, and this note will be removed when it is fixed.</aside>
+      </li>
+      <li>Content encrypted with KMS is supported but requires that you pre-sign your object URLs, ala what is outlined here: <a href="https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/">https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/</a>.
+        <p>Steps to implement:</p>
+        <ol>
+          <li>Create a KMS managed encrypted bucket</li>
+          <li>Add the Video Cloud/Zencoder Ingest Policy</li>
+          <li>Create a pre-signed URL using the KMS key</li>
+          <li>Use this URL when ingesting the video</li>
+        </ol>
+      </li>
+    </ul>
+    <p>Aside from those listed above, we believe we support pretty much all known video formats. If you have problems with another video format, please <a href="https://supportportal.brightcove.com/s/login/?language=en_US">Contact <span translate="No">Brightcove</span> Support</a> and also let <a href="mailto:docs@brightcove.com"><span translate="No">Brightcove</span> Learning Services</a> know.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="audio_concerns">Audio formats</h2>
+    <h3>Ingestion</h3>
+    <p>On the ingestion side, most formats are supported, except when they get over 8 channels of audio. (And the audio must either be configured as a single multichannel track, or multiple mono tracks.)</p>
+    <aside class="bcls-aside bcls-aside--information">Note: For Video Cloud ingestion, if your sources have multi-channel audio, you need to have support create custom audio renditions to correctly map the channels.</aside>
+    <h3>Encoding and transcoding</h3>
+    <p>For Dolby, both AC3 and EAC3 are supported, up to 5.1 channels. Many other non-Dolby formats are supported as well, including AAC.</p>
+    <h3>Playback (in the Brightcove Player)</h3>
+    <p>AAC, in mono or stereo. 5.1 channel audio support depends on browser capability - currently only Safari and Edge support it.</p>
+    <h3>Playback (in the SDK Native Players)</h3>
+    <p>AAC, in mono or stereo. 5.1 channel audio is supported by iOS, and believed to be supported by Andriod, but that has not been tested.</p>
+    <h3>Notes</h3>
+    <ul>
+      <li>
+        <p><strong>Windows:</strong> Content with audio above 48kHz for AAC is not supported on Windows and it will cause the player to fail. See <a href="https://docs.microsoft.com/en-gb/windows/desktop/medfound/aac-decoder#format-constraints">this Microsoft document</a> for more information.</p>
+      </li>
+    </ul>
+  </section>
+</article>

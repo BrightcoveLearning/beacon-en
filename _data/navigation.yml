@@ -1,74 +1,174 @@
-- section: 
-  name: 'Home'
-  url: '/'
-- section: 
-  name: 'Getting Started'
-  url: '/getting-started/'
+- section:
+  name: Home
+  url: /index.html
+- section:
+  name: Getting Started
+  url: /getting-started/index.html
   icon: '<i class="far fa-location-arrow"></i>'
   docs:
-    - name: 'SSAI Overview'
-      url: '/getting-started/video-cloud-ssai-overview.html'
-    - name: 'Configuring Server-Side Ad Settings'
-      url: 'https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html'
-- section: 
-  name: 'Video-On-Demand Guides'
-  url: '/vod/guides/'
-  icon: '<i class="fas fa-play"></i>'
+    - name: Learning Guide
+      url: /getting-started/learning-guide-bc-beacon.html
+    - name: Implementation Phases
+      url: /getting-started/implementation-phases.html
+    - name: Application Design Considerations
+      url: /getting-started/app-design-considerations.html
+    - name: App Design - Info Architecture
+      url: /getting-started/creating-your-app-design-info-architecture.html
+    - name: App Design - Layout Options
+      url: /getting-started/creating-your-app-design-layout-options.html
+    - name: Design Best Practices
+      url: /getting-started/design-best-practices.html
+- section:
+  name: Syncing with Video Cloud
+  icon: '<i class="far fa-sync"></i>'
+  url: /syncing-with-video-cloud/index.html
   docs:
-    - name: 'Implementing SSAI with the Brightcove Player'
-      url: 'https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html'
-    - name: 'Implementing SSAI with the Native SDKs'
-      url: 'https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html'
-    - name: 'SSAI: Ad Block Detection and Auto-Failover'
-      url: '/vod/guides/ssai-ad-block-detection-and-auto-failover.html'
-    - name: 'Video Cloud SSAI Ad Config API'
-      url: '/vod/guides/video-cloud-ssai-ad-config-api.html'
-    - name: 'Ad Error Beacons with SSAI'
-      url: '/vod/guides/ad-error-beacons-ssai.html'
-- section: 
-  name: 'Video-On-Demand References'
-  url: '/vod/references/'
-  icon: '<i class="fas fa-play"></i>'
+    - name: Creating Video Cloud Custom Fields
+      url: /syncing-with-video-cloud/vc-custom-fields.html
+    - name: Forcing a Sync
+      url: /syncing-with-video-cloud/forcing-a-sync.html
+- section:
+  name: Using Brightcove Beacon
+  url: /using-brightcove-beacon/index.html
+  icon: '<img src="https://support.brightcove.com/site-assets/images/site/product-logos/beacon-nut.svg">'
   docs:
-    - name: 'SSAI API Reference'
-      url: '/vod/references/reference.html'
-    - name: 'SSAI API Error Reference'
-      url: '/vod/references/ssai-api-error-reference.html'
-    - name: 'Server-Side Ads Plugin Changelog'
-      url: 'https://player.support.brightcove.com/plugins/changelog/server-side-ads-plugin-changelog.html'
-- section: 
-  name: 'Live Guides'
-  url: '/live/guides/'
-  icon: '<i class="fas fa-satellite-dish"></i>'
+    - name: Adding a Carousel to a Page
+      url: /using-brightcove-beacon/adding-to-page.html
+    - name: Creating a Channel
+      url: /using-brightcove-beacon/creating-a-channel.html
+    - name: Creating an Electronic Program Guide (EPG)
+      url: /using-brightcove-beacon/electronic-program-guides.html
+    - name: Creating a New Page
+      url: /using-brightcove-beacon/creating-a-page.html
+    - name: Creating a Playlist
+      url: /using-brightcove-beacon/creating-a-playlist.html
+    - name: Creating a Subscription Package
+      url: /using-brightcove-beacon/creating-subscription-package.html
+    - name: 'Creating Series/Seasons/Episodes'
+      url: /using-brightcove-beacon/series-seasons-episodes.html
+    - name: Configuring Server-Side Ad Settings
+      url: /using-brightcove-beacon/configuring-server-side-ad-settings.html
+    - name: Implementing AuthVOD
+      url: /using-brightcove-beacon/implementing-authvod.html
+    - name: Implementing Live SSAI
+      url: /using-brightcove-beacon/live-ssai.html
+    - name: Implementing VOD SSAI
+      url: /using-brightcove-beacon/vod-ssai.html
+    - name: Including Non-Configurable Pages
+      url: /using-brightcove-beacon/including-non-configurable-pages.html
+    - name: Introducing Pages
+      url: /using-brightcove-beacon/introducing-pages.html
+    - name: Streaming a Live Event
+      url: /using-brightcove-beacon/streaming-live-event.html
+    - name: Streaming VODs to a Channel
+      url: /using-brightcove-beacon/streaming-vods-to-a-channel.html
+    - name: Understanding Monetization Options
+      url: /using-brightcove-beacon/monetization-options.html
+    - name: Using a Subscription Package
+      url: /using-brightcove-beacon/using-subscription-package.html
+    - name: Using the Tools
+      url: /using-brightcove-beacon/tools.html
+    - name: Viewing Analytics Data
+      url: /using-brightcove-beacon/viewing-analytics-data.html
+- section:
+  name: 'Creating Your Apps'
+  icon: '<i class="fal fa-rocket-launch"></i>'
+  url: '/creating-your-apps/index.html'
   docs:
-    - name: 'Implementing SSAI in the Live Module'
-      url: 'https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html'
-    - name: 'Brightcove Live API: Server-Side Ad Insertion (SSAI)'
-      url: 'https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html'
-    - name: 'Live API: Cue Points and Ad Beacons with SSAI'
-      url: 'https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html'
-    - name: 'Overview: Player Enhancements for Live SSAI'
-      url: 'https://live.support.brightcove.com/live-api/ssai/overview-player-enhancements-live-ssai.html'
-    - name: 'Implementing Player Enhancements for Live SSAI'
-      url: '/live/guides/implementing-player-enhancements-live-ssai.html'
-- section: 
-  name: 'Live References'
-  url: '/live/references/'
-  icon: '<i class="fas fa-satellite-dish"></i>'
+    - name: 'Android'
+      url: '/creating-your-apps/android/index.html'
+      docs:
+        - name: 'Submitting New Apps to the Android Store'
+          url: '/creating-your-apps/android/submitting-to-android.html'
+        - name: 'Updating Android Apps to Brightcove Beacon'
+          url: '/creating-your-apps/android/updating-android-apps-to-bcb.html'
+        - name: 'Adding Subscriptions to Android'
+          url: '/creating-your-apps/android/adding-subscriptions-in-android.html'
+        - name: 'Improving Search Relevance in the Android Play Store'
+          url: '/creating-your-apps/android/improving-relevance-android.html'
+        - name: 'Installing an Android Test Build'
+          url: '/creating-your-apps/android/installing-android-test-build.html'
+    - name: 'Fire TV'
+      url: '/creating-your-apps/fire-tv/index.html'
+      docs:
+        - name: 'Installing a Fire TV Test Build'
+          url: '/creating-your-apps/fire-tv/installing-fire-tv-test-build.html'
+        - name: 'Submitting to the Amazon Store'
+          url: '/creating-your-apps/fire-tv/submitting-to-amazon.html'
+    - name: 'iOS/tvOS'
+      url: '/creating-your-apps/ios-tvos/index.html'
+      docs:
+        - name: 'Installing an iOS/tvOS Test Build'
+          url: '/creating-your-apps/ios-tvos/installing-ios-test-build.html'
+        - name: 'Submitting to the Apple Store'
+          url: '/creating-your-apps/ios-tvos/submitting-to-apple.html'
+    #    - name: 'LG'
+    #      url: '/creating-your-apps/lg/index.html'
+    #      docs:
+    #        - name: 'Submitting to the LG (webOS) Store'
+    #          url: '/creating-your-apps/lg/submitting-to-lg.html'
+    - name: 'Panasonic'
+      url: '/creating-your-apps/panasonic/index.html'
+      docs:
+        - name: 'Submitting to the Panasonic Store'
+          url: '/creating-your-apps/panasonic/submitting-to-panasonic.html'
+    - name: 'Roku'
+      url: '/creating-your-apps/roku/index.html'
+      docs:
+        - name: 'Configuring In-Channel Products in Roku'
+          url: '/creating-your-apps/roku/configuring-inchannel-products.html'
+        - name: 'Installing a Roku Test Build'
+          url: '/creating-your-apps/roku/installing-roku-test-build.html'
+        - name: 'Submitting to the Roku Store'
+          url: '/creating-your-apps/roku/submitting-to-roku.html'
+    - name: 'Samsung'
+      url: '/creating-your-apps/samsung/index.html'
+      docs:
+        - name: 'Becoming a Samsung Partner'
+          url: '/creating-your-apps/samsung/samsung-partner.html'
+        - name: 'Submitting to the Samsung Store'
+          url: '/creating-your-apps/samsung/submitting-to-samsung.html'
+    - name: 'Common Required Information'
+      url: '/creating-your-apps/common-required-info.html'
+    - name: 'Device Apps Validation Guide'
+      url: '/creating-your-apps/device-apps-validation-guide.html'
+- section:
+  name: References
+  url: /references/index.html
+  icon: '<i class="fal fa-books"></i>'
   docs:
-    - name: 'Live API Reference'
-      url: '/live/references/reference.html'
-    - name: 'Live API: Error Messages'
-      url: 'https://live.support.brightcove.com/live-api/references/live-api-error-messages.html'
-    - name: 'Live API Release Notes'
-      url: 'https://live.support.brightcove.com/release-notes/live-api-release-notes.html'
-- section: 
+    - name: Common Configuration Settings
+      url: /references/common-configuration-settings.html
+    - name: Creating a Stripe Account
+      url: /references/creating-stripe-account.html
+    - name: 'Glossary'
+      url: '/references/glossary.html'
+    - name: 'Images and Their Specifications'
+      url: '/references/image-requirements.html'
+    - name: 'Known Issues'
+      url: '/references/known-issues.html'
+    - name: 'Product Updates'
+      url: '/references/product-updates.html'
+- section:
+  name: Training
+  url: /training/index.html
+  docs:
+    - name: Using Video Cloud Videos/Custom Fields
+      url: /training/training-demand-custom-fields.html
+    - name: Designing the Application Layout
+      url: /training/training-demand-design-layout.html
+    - name: Publishing the Android App on the Play Store
+      url: /training/training-demand-publish-android-app.html
+    - name: Creating and Using Playlists
+      url: /training/training-demand-playlists.html
+    - name: Creating Series, Seasons and Episodes
+      url: /training/training-demand-series-seasons-episodes.html
+
+- section:
   name: 'Support'
-  url: '/support/'
+  url: '/support/index.html'
   icon: '<i class="far fa-question-circle"></i>'
   docs:
-    - name: 'Known Issues'
-      url: '/support/known-issues.html'
     - name: 'Brightcove Answers'
       url: '/support/brightcove-answer.html'
     - name: 'Viewing the Brightcove System Status Page'

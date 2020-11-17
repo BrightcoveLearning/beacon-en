@@ -1,9 +1,17 @@
 ---
-title: Search
+title: Search Results
 parent: Home
+layout: search
 ---
 
-<script type="text/javascript" 
-    id="bcs_js_snippet"
-    src="https://ui.customsearch.ai/api/ux/rendering-js?customConfig={{ site.bing_custom_config_id }}&market=en-US&version=latest&q=">
-</script>
+<style>
+  a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+    background-color: lightblue;
+  }
+</style>
+
+<h1>{{ page.title }}</h1>
+<!-- This div is used to host the search box -->
+<div id="results-search-box"></div>
+<!-- This div is used to host the search response -->
+<div id="results-search-response"></div>

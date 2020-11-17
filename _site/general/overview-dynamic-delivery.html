@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="This topic provides an overview of Dynamic Delivery, Brightcove’s next-generation media delivery platform.">
+  
+  <title>Overview of Dynamic Delivery</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Other Brightcove Docs</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentation Home</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Brightcove Campaign</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Brightcove Player Development</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">Video Cloud Platform APIs</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">Video Cloud Device SDKs</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integrations and CMS Connectors</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Video Cloud General Information</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
+    <br>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/general/">General Information</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Overview of Dynamic Delivery</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 left-side-bar">
+      <nav class="sidenav" id="side_nav">
+        
+        
+        <h5><a href="/index.html">Home</a></h5>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/getting-started/index.html">Getting Started <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/getting-started/learning-guide-bc-beacon.html">Learning Guide</a></li>
+          
+          
+          
+          <li><a href="/getting-started/implementation-phases.html">Implementation Phases</a></li>
+          
+          
+          
+          <li><a href="/getting-started/app-design-considerations.html">Application Design Considerations</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-info-architecture.html">App Design - Info Architecture</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-layout-options.html">App Design - Layout Options</a></li>
+          
+          
+          
+          <li><a href="/getting-started/design-best-practices.html">Design Best Practices</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/syncing-with-video-cloud/index.html">Syncing with Video Cloud <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/syncing-with-video-cloud/vc-custom-fields.html">Creating Video Cloud Custom Fields</a></li>
+          
+          
+          
+          <li><a href="/syncing-with-video-cloud/forcing-a-sync.html">Forcing a Sync</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/using-brightcove-beacon/index.html">Using Brightcove Beacon <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/using-brightcove-beacon/adding-to-page.html">Adding a Carousel to a Page</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-channel.html">Creating a Channel</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/electronic-program-guides.html">Creating an Electronic Program Guide (EPG)</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-page.html">Creating a New Page</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-playlist.html">Creating a Playlist</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-subscription-package.html">Creating a Subscription Package</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/series-seasons-episodes.html">Creating Series/Seasons/Episodes</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/implementing-authvod.html">Implementing AuthVOD</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/live-ssai.html">Implementing Live SSAI</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementing VOD SSAI</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/including-non-configurable-pages.html">Including Non-Configurable Pages</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/introducing-pages.html">Introducing Pages</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/streaming-live-event.html">Streaming a Live Event</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/streaming-vods-to-a-channel.html">Streaming VODs to a Channel</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/monetization-options.html">Understanding Monetization Options</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/using-subscription-package.html">Using a Subscription Package</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/tools.html">Using the Tools</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/viewing-analytics-data.html">Viewing Analytics Data</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/creating-your-apps/index.html">Creating Your Apps <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/android/index.html">Android <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/android/submitting-to-android.html">Submitting New Apps to the Android Store</a></li>
+              
+              <li><a href="/creating-your-apps/android/updating-android-apps-to-bcb.html">Updating Android Apps to Brightcove Beacon</a></li>
+              
+              <li><a href="/creating-your-apps/android/adding-subscriptions-in-android.html">Adding Subscriptions to Android</a></li>
+              
+              <li><a href="/creating-your-apps/android/improving-relevance-android.html">Improving Search Relevance in the Android Play Store</a></li>
+              
+              <li><a href="/creating-your-apps/android/installing-android-test-build.html">Installing an Android Test Build</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/fire-tv/index.html">Fire TV <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Installing a Fire TV Test Build</a></li>
+              
+              <li><a href="/creating-your-apps/fire-tv/submitting-to-amazon.html">Submitting to the Amazon Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/ios-tvos/index.html">iOS/tvOS <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Installing an iOS/tvOS Test Build</a></li>
+              
+              <li><a href="/creating-your-apps/ios-tvos/submitting-to-apple.html">Submitting to the Apple Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/panasonic/index.html">Panasonic <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/panasonic/submitting-to-panasonic.html">Submitting to the Panasonic Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/roku/index.html">Roku <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/roku/configuring-inchannel-products.html">Configuring In-Channel Products in Roku</a></li>
+              
+              <li><a href="/creating-your-apps/roku/installing-roku-test-build.html">Installing a Roku Test Build</a></li>
+              
+              <li><a href="/creating-your-apps/roku/submitting-to-roku.html">Submitting to the Roku Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/samsung/index.html">Samsung <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/samsung/samsung-partner.html">Becoming a Samsung Partner</a></li>
+              
+              <li><a href="/creating-your-apps/samsung/submitting-to-samsung.html">Submitting to the Samsung Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li><a href="/creating-your-apps/common-required-info.html">Common Required Information</a></li>
+          
+          
+          
+          <li><a href="/creating-your-apps/device-apps-validation-guide.html">Device Apps Validation Guide</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/references/index.html">References <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/references/common-configuration-settings.html">Common Configuration Settings</a></li>
+          
+          
+          
+          <li><a href="/references/creating-stripe-account.html">Creating a Stripe Account</a></li>
+          
+          
+          
+          <li><a href="/references/glossary.html">Glossary</a></li>
+          
+          
+          
+          <li><a href="/references/image-requirements.html">Images and Their Specifications</a></li>
+          
+          
+          
+          <li><a href="/references/known-issues.html">Known Issues</a></li>
+          
+          
+          
+          <li><a href="/references/product-updates.html">Product Updates</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/training/index.html">Training <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/training/training-demand-custom-fields.html">Using Video Cloud Videos/Custom Fields</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-design-layout.html">Designing the Application Layout</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-publish-android-app.html">Publishing the Android App on the Play Store</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-playlists.html">Creating and Using Playlists</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-series-seasons-episodes.html">Creating Series, Seasons and Episodes</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/support/index.html">Support <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/support/brightcove-answer.html">Brightcove Answers</a></li>
+          
+          
+          
+          <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+          
+          
+          
+          <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+          
+          
+          
+          <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+          
+          
+        </ul>
+        
+        
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+      <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
+
+
+<!-- 
+  This content appears on:
+  
+  https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-delivery.html
+
+  https://studio.support.brightcove.com/general/overview-dynamic-delivery.html
+
+  If you update in one place, you MUST update it in all!
+ -->
+
+ <h1>Overview of Dynamic Delivery</h1>
+ <article class="bcls-article">
+  <summary>This topic provides an overview of Dynamic Delivery, Brightcove’s next-generation media delivery platform.</summary>
+  <section class="bcls-section">
+    <p>Delivering media to different devices — on desktop, mobile, and connected TVs — requires a mix of ever-changing technologies:</p>
+    
+    <ul>
+      <li>Audio and video codecs</li>
+      <li>Various types of packaging for streaming video</li>
+      <li>Various content protection schemes to protect content from being copied</li>
+    </ul>
+    
+    <p>Without the use of Dynamic Delivery, cross-platform streaming often requires storing the same content multiple times to support delivery to all your target platforms. Dynamic Delivery allows Brightcove customers to deliver media to a range of devices without the cost and operational overhead of re-packaging and storing content multiple times for every supported device and use-case. Dynamic Delivery creates the optimal content package just-in-time for delivery and streaming to all supported devices and use-cases. This also helps future-proof your delivery architecture as technology and your audience evolves.</p>
+    
+    <p>With Dynamic Delivery, customers provide a single high-quality (mezzanine) video file. During the ingest process, we create several quality levels of this file suited to a range of different screen sizes and network conditions. When a viewer presses play, Video Cloud uses information about the requesting device to determine the type of streaming technology expected — for example, the type of stream packaging (HLS vs. DASH) (or MP4 if the device does not support any kind of HTTP streaming), the DRM required (e.g. Widevine, Fairplay, Playready), and ancillary content such as closed captions or alternate audio tracks. Dynamic Delivery then uses this information to deliver the appropriate content package (i.e. type of stream) for the requesting device in real-time.</p>
+    </section>
+    
+    <section class="bcls-section">
+    <h2 id="architecture_overview">Architecture overview</h2>
+    
+    <figure class="bcls-figure"><img class="bcls-image" alt="Dynamic Delivery Architecture" src="https://general.support.brightcove.com/assets/images/shared-content/general/dynamic-delivery-architecture.png" />
+    <figcaption class="bcls-caption--image">Dynamic Delivery Architecture</figcaption>
+    </figure>
+    
+    <ol>
+      <li>When a source file is uploaded, the transcoding process will use the selected ingest profile to determine the set of renditions to create.</li>
+      <li>Renditions are stored as a set of contiguous, fragmented MP4 files of various bit rates and resolutions that are agnostic of any specific delivery format.</li>
+      <li>When a request is made for a video, the Dynamic Delivery process does Just-in-Time or JIT packaging, which means it will dynamically package content into the appropriate format based specified requirements. This packaging will take into consideration the specific delivery format needed, audio and caption tracks needed, as well as any encryption/DRM needed.</li>
+      <li>When the playback device uses the manifest returned by the Playback API to request media to play, we perform just-in-time packaging on the fragmented MP4 files to provide the appropriate segment format, duration and encryption. These fragments are cached on a CDN so that video delivery is still highly performant.</li>
+    </ol>
+    
+    <p>The Dynamic Delivery process was designed to be a fully managed, cloud-based service. All the components run on cloud infrastructure in multiple regions to insure high availability, redundancy and scalability.</p>
+    </section>
+    
+    <section class="bcls-section">
+    <h2 id="output_formats">What video formats does Dynamic Delivery produce?</h2>
+    
+    <p>Dynamic Delivery produces the following sources as needed:</p>
+    
+    <ul>
+      <li>HLS (versions 3, 4, and 5)</li>
+      <li>Smooth</li>
+      <li>DASH</li>
+      <li>MP4 (if progressive renditions are specified in the ingest profile)</li>
+    </ul>
+    
+    <p>The following DRM-packagedrenditions are created (depending on what content protection your account is enabled for):</p>
+    
+    <ul>
+      <li>HLS + Fairplay</li>
+      <li>DASH + Widevine</li>
+      <li>DASH + Playready</li>
+      <li>Smooth + Playready</li>
+    </ul>
+    </section>
+    
+    <section class="bcls-section">
+    <h2 id="migration_process">Migration process</h2>
+    
+    <p>As of Tuesday, October 17, 2017, all new Video Cloud accounts that are created are configured to use Dynamic Delivery by default. This includes trial accounts, accounts for new publishers, and new sub-accounts for existing publishers. With this change, all new publishers and trial customers will automatically benefit from all the features of Dynamic Delivery.</p>
+    
+    <p>For existing customers, the migration is a two step process. First, new uploads are transitioned to utilize Dynamic Delivery (day forward migration) and second, existing content is migrated from the legacy delivery platform to Dynamic Delivery (back catalog migration.)</p>
+    
+    <h3>Day forward migration</h3>
+    
+    <p>The first step to moving to Dynamic Delivery is transitioning new uploads to utilize Dynamic Delivery. Enabling your account for Dynamic Delivery is a simple task that can be completed by Customer Support. There is no danger in enabling an existing Video Cloud account for Dynamic Delivery as it does not modify any existing content. Only content explicitly ingested to Dynamic Delivery will utilize the new system.</p>
+    
+    <p>From a workflow perspective, a couple of things will appear differently inside Video Cloud Studio. First, when uploading videos using the Upload module, you will now see Dynamic Delivery ingestion profiles in your account.</p>
+    
+    <figure class="bcls-figure"><img class="bcls-image" alt="Dynamic Delivey Profiles" src="https://general.support.brightcove.com/assets/images/shared-content/general/dd-ingest-profiles.png" />
+    <figcaption class="bcls-caption--image">Dynamic Delivery Profiles</figcaption>
+    </figure>
+    
+    <p>The Media module will also display a green cloud icon (<img alt="green cloud icon" src="https://general.support.brightcove.com/assets/images/shared-content/general/green-cloud-icon.png" />) next to video titles ingested using a Dynamic Delivery profile. Videos ingested using a legacy ingest profile will display a gray icon (<img alt="gray cloud icon" src="https://general.support.brightcove.com/assets/images/shared-content/general/gray-cloud-icon.png" />).</p>
+    
+    <figure class="bcls-figure"><img class="bcls-image" alt="Media Module Video List" src="https://general.support.brightcove.com/assets/images/shared-content/general/media-module-list-with-icons.png" />
+    <figcaption class="bcls-caption--image">Media Module Video List</figcaption>
+    </figure>
+    
+    <p>Additionally, the Video Sources panel in the media module will appear slightly different due to renditions being stored in a format agnostic state.</p>
+    
+    <p>Functionally, everything else remains the same. You can upload via all the standard mechanisms (Video Cloud Studio, Dynamic Ingest API, CMS Connectors, etc.) and playback remains unchanged on all your standard playback devices.</p>
+    
+    <p>Once a video has been ingested using Dynamic Delivery, if the video is re-transcoded, a Dynamic Delivery profile must be selected. If you want to use a legacy ingest profile, the video must be re-uploaded.</p>
+    
+    <aside class="bcls-aside bcls-aside--information">Note: Dynamic Delivery introduces the concept of regionalized ingest and delivery. Under previous delivery systems, all ingestion processing and delivery origin resided in the United States. With Dynamic Delivery, Brightcove can configure an account where the ingestion takes place and where the origin resides on a publisher-by-publisher basis for better performance. All Video Cloud accounts will be defaulted to US-East but can be re-configured to your local region. Note there are cost implications when moving to another region. Please contact your Brightcove account manager for further information.</aside>
+    
+    <h3>Back catalog migration</h3>
+    
+    <p>Once you have new ingests utilizing Dynamic Delivery, we can then migrate your back catalog. This can be done in one of two ways:</p>
+    
+    <h4>Transmux migration tool</h4>
+    
+    <p>The transmux migration tool moves Video Cloud content from legacy delivery to Dynamic Delivery without re-transcoding. This allows for you to migrate your content much faster and easier than re-transcoding content. As such, it should be the preferred method of migration for most customers. The transmux tool will transform the existing renditions in your account to be compatible with Dynamic Delivery. To migrate your content via the transmux tool, please contact your account manager.</p>
+    
+    <h4>Re-transcode</h4>
+    
+    <p>There are a few criteria that make a title ineligible to migrate via the transmux tool and as such will require that titles be re-encoded to migrate them. Titles will need to be re-encoded if:</p>
+    
+    <ul>
+      <li>You wish to utilize Context Aware Encoding</li>
+      <li>You wish to do mid-roll Server-side Ad Insertion (SSAI)</li>
+      <li>Your title does not have HLS renditions</li>
+      <li>Your title currently has DRM (HLSe is acceptable)</li>
+    </ul>
+    
+    <p>If you need to re-transcode titles, you will either need to manage that process on your own (following our best practices) or engage with your account team for paid migration services. Note: It is possible to transmux some titles within an account and re-transcode others.</p>
+    </section>
+    
+    <section class="bcls-section">
+    <h2 id="faq">Frequently asked questions</h2>
+    
+    <p><strong>What is Dynamic Delivery?</strong></p>
+    
+    <p>Dynamic Delivery is a set of technologies that make Brightcove's next-generation media delivery platform. Dynamic Delivery is designed to address publisher's current and future requirements and will become the foundation for how all Brightcove products deliver media.</p>
+    
+    <p><strong>What are the benefits of Dynamic Delivery?</strong></p>
+    
+    <ul>
+      <li>Greater flexibility and agility for delivery - Content is dynamically packaged for delivery to a number of endpoints (web browsers, smartphones, tablets, connected TVs and streaming boxes). Dynamic Delivery is designed to be capable of using multiple CDNs to deliver content, increasing customer choice.</li>
+      <li>Future proofing - Since content is dynamically packaged, Brightcove can add new formats on the fly. As a new version of HLS, DASH, etc., or even a new format comes out, we simply add support at the platform level and publishers can start using it without re-transcoding existing content.</li>
+      <li>Reduced storage footprint - Content assets are stored once and renditions are created downstream for delivery when needed instead of storing the content multiple times.</li>
+      <li>Enhanced performance through geographic distribution - Dynamic Delivery is designed for a regionally distributed, highly available architecture. Publishers benefit from improved playback performance and increased resiliency.</li>
+      <li>Integrated support for Server Side Ad Insertion (SSAI) - Dynamic Delivery will enable ads or other content to be inserted from the server. This provides a seamless playback experience for viewers and gives publishers increased resiliency against ad blockers, all from within Video Cloud.</li>
+    </ul>
+    
+    <p><strong>After ingesting or transcoding a video using a Dynamic Delivery profile, can I retranscode it using a legacy ingest profile?</strong></p>
+    
+    <p>No, Dynamic Delivery videos cannot be retranscoded using legacy ingest profiles.</p>
+    
+    <p><strong>Are there any pricing considerations with Dynamic Delivery?</strong></p>
+    
+    <p>No, access to Dynamic Delivery is included in every base platform license. Certain features of Dynamic Delivery including Server Side Ad Insertion (SSAI) and Context-Aware Encoding (CAE) are add-ons with costs associated. Check with your Account Manager for details on pricing.</p>
+    
+    <p><strong>Does Dynamic Delivery support BYO CDN publishers?</strong></p>
+    
+    <p>Dynamic Delivery allows publishers to take advantage of their own CDN relationships; however, all video assets must be managed by the Brightcove Origin. Please contact your account manager for more information.</p>
+    
+    <p><strong>What regions does Dynamic Delivery support for ingest and origin?</strong></p>
+    
+    <p>Dynamic Delivery supports ingestion and origin in the following AWS Regions:</p>
+    
+    <ul>
+      <li>us-east-1 (Virginia) - default for all accounts</li>
+      <li>eu-west-1 (Dublin)</li>
+      <li>ap-northeast-1 (Tokyo)</li>
+      <li>ap-southeast-1 (Singapore)</li>
+      <li>ap-southeast-2 (Sydney)</li>
+    </ul>
+    
+    <p>Note that there are cost implications when moving ingestion and origin to another region. Please contact your Brightcove account manager for further information.</p>
+    
+    <p><strong>Will Brightcove be moving all publishers to Dynamic Delivery?</strong></p>
+    
+    <p>Yes, all new publishers (both Video Cloud and Once) will be configured with Dynamic Delivery. Over the coming year, Brightcove will be working to move all publishers to Dynamic Delivery and will eventually be sunsetting legacy delivery technologies. There is no date associated with this migration, but we will share them as they become available. Additionally, all new features will only be added to Dynamic Delivery.</p>
+    </section>
+    
+    <section class="bcls-section">
+    <h2 id="do_you_have_dynamic_delivery">Do you have Dynamic Delivery?</h2>
+    
+    <p>How can I tell if my account is already enabled for Dynamic Delivery?</p>
+    
+    <p>The easiest way to tell if your account is enabled for Dynamic Delivery is to navigate to the Upload Module and open the “Ingest Profile” dropdown. If you see the “Dynamic Delivery” subheading that means your account is enabled for Dynamic Delivery.</p>
+    </section>
+  </article>  
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Page last updated on 16 Nov 2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">Have a question? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Searching Videos and Playlists</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Other Brightcove Docs</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentation Home</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Brightcove Campaign</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Brightcove Player Development</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">Video Cloud Platform APIs</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">Video Cloud Device SDKs</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integrations and CMS Connectors</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Video Cloud General Information</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
+    <br>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/media/">Managing Videos</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Searching Videos and Playlists</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 left-side-bar">
+      <nav class="sidenav" id="side_nav">
+        
+        
+        <h5><a href="/index.html">Home</a></h5>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/getting-started/index.html">Getting Started <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/getting-started/learning-guide-bc-beacon.html">Learning Guide</a></li>
+          
+          
+          
+          <li><a href="/getting-started/implementation-phases.html">Implementation Phases</a></li>
+          
+          
+          
+          <li><a href="/getting-started/app-design-considerations.html">Application Design Considerations</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-info-architecture.html">App Design - Info Architecture</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-layout-options.html">App Design - Layout Options</a></li>
+          
+          
+          
+          <li><a href="/getting-started/design-best-practices.html">Design Best Practices</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/syncing-with-video-cloud/index.html">Syncing with Video Cloud <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/syncing-with-video-cloud/vc-custom-fields.html">Creating Video Cloud Custom Fields</a></li>
+          
+          
+          
+          <li><a href="/syncing-with-video-cloud/forcing-a-sync.html">Forcing a Sync</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/using-brightcove-beacon/index.html">Using Brightcove Beacon <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/using-brightcove-beacon/adding-to-page.html">Adding a Carousel to a Page</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-channel.html">Creating a Channel</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/electronic-program-guides.html">Creating an Electronic Program Guide (EPG)</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-page.html">Creating a New Page</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-playlist.html">Creating a Playlist</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-subscription-package.html">Creating a Subscription Package</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/series-seasons-episodes.html">Creating Series/Seasons/Episodes</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/implementing-authvod.html">Implementing AuthVOD</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/live-ssai.html">Implementing Live SSAI</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementing VOD SSAI</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/including-non-configurable-pages.html">Including Non-Configurable Pages</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/introducing-pages.html">Introducing Pages</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/streaming-live-event.html">Streaming a Live Event</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/streaming-vods-to-a-channel.html">Streaming VODs to a Channel</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/monetization-options.html">Understanding Monetization Options</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/using-subscription-package.html">Using a Subscription Package</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/tools.html">Using the Tools</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/viewing-analytics-data.html">Viewing Analytics Data</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/creating-your-apps/index.html">Creating Your Apps <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/android/index.html">Android <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/android/submitting-to-android.html">Submitting New Apps to the Android Store</a></li>
+              
+              <li><a href="/creating-your-apps/android/updating-android-apps-to-bcb.html">Updating Android Apps to Brightcove Beacon</a></li>
+              
+              <li><a href="/creating-your-apps/android/adding-subscriptions-in-android.html">Adding Subscriptions to Android</a></li>
+              
+              <li><a href="/creating-your-apps/android/improving-relevance-android.html">Improving Search Relevance in the Android Play Store</a></li>
+              
+              <li><a href="/creating-your-apps/android/installing-android-test-build.html">Installing an Android Test Build</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/fire-tv/index.html">Fire TV <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Installing a Fire TV Test Build</a></li>
+              
+              <li><a href="/creating-your-apps/fire-tv/submitting-to-amazon.html">Submitting to the Amazon Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/ios-tvos/index.html">iOS/tvOS <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Installing an iOS/tvOS Test Build</a></li>
+              
+              <li><a href="/creating-your-apps/ios-tvos/submitting-to-apple.html">Submitting to the Apple Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/panasonic/index.html">Panasonic <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/panasonic/submitting-to-panasonic.html">Submitting to the Panasonic Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/roku/index.html">Roku <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/roku/configuring-inchannel-products.html">Configuring In-Channel Products in Roku</a></li>
+              
+              <li><a href="/creating-your-apps/roku/installing-roku-test-build.html">Installing a Roku Test Build</a></li>
+              
+              <li><a href="/creating-your-apps/roku/submitting-to-roku.html">Submitting to the Roku Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/samsung/index.html">Samsung <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/samsung/samsung-partner.html">Becoming a Samsung Partner</a></li>
+              
+              <li><a href="/creating-your-apps/samsung/submitting-to-samsung.html">Submitting to the Samsung Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li><a href="/creating-your-apps/common-required-info.html">Common Required Information</a></li>
+          
+          
+          
+          <li><a href="/creating-your-apps/device-apps-validation-guide.html">Device Apps Validation Guide</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/references/index.html">References <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/references/common-configuration-settings.html">Common Configuration Settings</a></li>
+          
+          
+          
+          <li><a href="/references/creating-stripe-account.html">Creating a Stripe Account</a></li>
+          
+          
+          
+          <li><a href="/references/glossary.html">Glossary</a></li>
+          
+          
+          
+          <li><a href="/references/image-requirements.html">Images and Their Specifications</a></li>
+          
+          
+          
+          <li><a href="/references/known-issues.html">Known Issues</a></li>
+          
+          
+          
+          <li><a href="/references/product-updates.html">Product Updates</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/training/index.html">Training <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/training/training-demand-custom-fields.html">Using Video Cloud Videos/Custom Fields</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-design-layout.html">Designing the Application Layout</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-publish-android-app.html">Publishing the Android App on the Play Store</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-playlists.html">Creating and Using Playlists</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-series-seasons-episodes.html">Creating Series, Seasons and Episodes</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/support/index.html">Support <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/support/brightcove-answer.html">Brightcove Answers</a></li>
+          
+          
+          
+          <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+          
+          
+          
+          <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+          
+          
+          
+          <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+          
+          
+        </ul>
+        
+        
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+      <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
+
+
+<article class="bcls-article">
+  <h1>Searching Videos and Playlists</h1>
+  <summary>In this topic you will learn how to search for videos and playlists.</summary>
+  <section class="bcls-section">
+    <p>The Media page provides a <strong>Search...</strong> field that can be used to search videos in a Video Cloud account.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-videos.png" /></figure>
+    <p>The following types of searches can be performed:</p>
+    <ul>
+      <li><a href="#videosearch">Video search</a></li>
+      <li><a href="#playlistsearch">Playlist search</a></li>
+      <li><a href="#advsearch">Advanced search</a></li>
+      <li><a href="#savedsearch">Saved search</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="videosearch">Video search</h2>
+    <h3>Terminology</h3>
+    <p>In this section, the term <strong>exact</strong> means that the search string is enclosed in quotation marks. For example:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Exact Search</th>
+          <th>Non-Exact Search</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>"great blue"</td>
+          <td>great blue</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">name</code>:"great blue"</td>
+          <td><code class="notranslate">name</code>:great blue</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note that "exact" means that all terms inside the quotation marks must be matched, but they may not match exactly. For example, a search on <code class="notranslate">"running water"</code> could return a video that has the phrase <code class="notranslate">water runs downhill</code> in the title or description.</p>
+    <p>To search the videos in your account, enter a search term in the <strong>Search...</strong> field. By default, the search will be performed on videos.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-options.png" /></figure>
+    <p>To search for multiple video IDs, use the following syntax: <strong>id:xxx id:xxx id:xxx</strong>. For example, <code>id:5985323381001 id:5715142164001</code>.</p>
+    <p>It is also possible to search <a href="#playlistsearch">playlists</a> or enter <a href="#advsearch">advanced search terms</a>.</p>
+    <p>The following video fields will be searched:</p>
+    <ul>
+      <li>Video id (<code class="notranslate">id</code>)</li>
+      <li>Name (<code class="notranslate">name</code>)</li>
+      <li>Short description (<code class="notranslate">description</code>)</li>
+      <li>Long description (<code class="notranslate">long_description)</code>)</li>
+      <li>Tags (<code class="notranslate">tags</code>)</li>
+      <li>Reference id (<code class="notranslate">reference_id</code>)</li>
+      <li>Custom fields (<code class="notranslate">custom_fields</code> or <code class="notranslate">{field_name}</code>)</li>
+    </ul>
+    <p>Query support for video fields differ. Some fields support partial-word searches and <a href="#stemming">stemming searches</a>, and some do not.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Search field&nbsp;</th>
+          <th>Supports</th>
+          <th><strong>Does Not Support</strong></th>
+          <th>Examples</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Name and descriptions</td>
+          <td><strong>exact</strong> matches for one or more whole words; <a href="#stemming">stemming</a> support</td>
+          <td>no partial-word support</td>
+          <td><ul>
+              <li><code class="notranslate">name:"great blue"</code> will match <code class="notranslate">"Great Blue Heron"</code></li>
+              <li><code class="notranslate">name:"great blu"</code> will <strong>not</strong> match <code class="notranslate">"Great Blue Heron"</code></li>
+              <li><code class="notranslate">name:great blu</code> will match <code class="notranslate">"Great Blue Heron"</code></li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td>Video ID</td>
+          <td>exact matches only</td>
+          <td>no partial-word or <a href="#stemming">stemming</a> support</td>
+          <td><strong>5591838791001</strong> will match video with id 5591838791001 <strong>5591838791</strong> will <strong>not</strong> match that video</td>
+        </tr>
+        <tr>
+          <td>Tags</td>
+          <td>matches only for whole words</td>
+          <td>no partial-word or <a href="#stemming">stemming</a> support</td>
+          <td><code class="notranslate">tags:publ</code> will <strong>not</strong> match videos with tag <code class="notranslate">"public"</code></td>
+        </tr>
+        <tr>
+          <td>Reference ID</td>
+          <td>partial string matches that start with the Ref ID (first 3 chars.) and whole string matches</td>
+          <td>no partial-strings that do not start with the Ref ID</td>
+          <td><ul>
+              <li><code class="notranslate">reference_id:myv</code> matches video with reference id "myvid1"</li>
+              <li><code class="notranslate">reference_id:"myv"</code> does <strong>not</strong> match video with reference id <code class="notranslate">"myvid1"</code></li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td>Date fields</td>
+          <td>&nbsp;</td>
+          <td>not searchable using the text box, searchable using advanced search</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Individual text custom fields</td>
+          <td>matches for one or more whole words and <a href="#stemming">stemming</a> support; for <strong>exact</strong> search strings, whole word matches only</td>
+          <td>no partial-word support</td>
+          <td><ul>
+              <li><code class="notranslate">custom_fields:place</code> will match video with a custom field value of <code class="notranslate">"places"</code></li>
+              <li><code class="notranslate">custom_fields:plac</code> will <strong>not</strong> match video with a custom field value of <code class="notranslate">"places"</code></li>
+              <li><code class="notranslate">custom_fields:"place"</code> will <strong>not</strong> match video with a custom field value of <code class="notranslate">"places"</code></li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td>Individual list custom fields</td>
+          <td>matches for one or more whole words and <a href="#stemming">stemming</a> support; <strong>exact</strong> search stings, whole word matches only</td>
+          <td>no partial-word support</td>
+          <td><ul>
+              <li><code class="notranslate">topic:place</code> will match video with a topic list-type custom field value of "places"</li>
+              <li><code class="notranslate">topic:plac</code> will <strong>not</strong> match video with a topic list-type custom field value of <code class="notranslate">"places"</code></li>
+              <li><code class="notranslate">topic:"place"</code> will <strong>not</strong> match video with a topic list-type custom field value of <code class="notranslate">"places"</code></li>
+            </ul></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="BCL-subsection">
+      <h3 id="stemming">What is stemming?</h3>
+      <p>Video fields that support stemming return words that have the stem of the search word in common. In addition, stemming supports entering whole words only, not partial words:</p>
+      <ul>
+        <li>Example 1: Searching on <code class="notranslate">running</code> will return results containing: <code class="notranslate">running</code>, <code class="notranslate">run</code>, <code class="notranslate">runs</code></li>
+        <li>Example 2: Searching on <code class="notranslate">vid</code> will not return results containing: <code class="notranslate">video</code></li>
+      </ul>
+    </div>
+    <div class="BCL-subsection">
+      <h3>General rules</h3>
+      <ul>
+        <li>For an exact match, enclose strings in quotes</li>
+        <li>By default, Video Cloud assumes an OR logical operator between words</li>
+        <li>Search is case-insensitive</li>
+      </ul>
+    </div>
+    <div class="BCL-subsection">
+      <h3>Examples</h3>
+      <table class="bcls-table">
+        <thead class="bcls-table__head">
+          <tr>
+            <th width="236">Search Term</th>
+            <th width="388">Returns</th>
+          </tr>
+        </thead>
+        <tbody class="bcls-table__body">
+          <tr>
+            <td><code class="notranslate">financial planning</code></td>
+            <td>all videos that contain <code class="notranslate">financial</code> OR <code class="notranslate">planning</code></td>
+          </tr>
+          <tr>
+            <td><code class="notranslate">"financial planning"</code></td>
+            <td>all videos that contain <code class="notranslate">financial</code> AND <code class="notranslate">planning</code>. Note that the quotation marks ensure that matching videos will have all the terms, but possible not the exact terms - for example, the search terms here might also return videos with <code class="notranslate">finance</code> and <code class="notranslate">plan</code> in the title or description</td>
+          </tr>
+          <tr>
+            <td>walk</td>
+            <td>all videos that contain <strong>walk</strong>, <strong>walks</strong>, or <strong>walking</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="playlistsearch">Playlist search</h2>
+    <p>To search the playlists in your account, enter a search term in the <strong>Search...</strong> field and then click on the <strong>playlists</strong> option.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-playlist-search.png" /></figure>
+    <p>A list of playlists will appear in the body of the page.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="advsearch">Advanced search</h2>
+    <p>Advanced search allows you to search for values in specific fields using search qualifiers. For example, you can specify that only the video name or tag fields should be searched. You can also exclude videos with certain terms. For example, you can search for videos that contain <strong>sports</strong> but exclude the videos that include <strong>baseball</strong>. To open the Advanced Search dialog, click the <strong>More Search Options</strong> link.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Advanced Search" src="/assets/images/media/search-advanced-search.png" /></figure>
+    <p>The following criteria can be used to customize the search:</p>
+    <ul>
+      <li><a href="#tags">Tags</a></li>
+      <li><a href="#daterange">Date Range</a></li>
+      <li><a href="#includetext">Text to Include</a></li>
+      <li><a href="#excludetext">Text to Exclude</a></li>
+      <li><a href="#playable">Playable</a></li>
+    </ul>
+    <div id="tags" class="BCL-subsection">
+      <h3>Tags</h3>
+      <p>Advanced search can be used to return videos based upon video tag. There are three options when searching using tags:</p>
+      <ul>
+        <li><strong>Any</strong> - Return videos with any of the tags (OR)</li>
+        <li><strong>All</strong> - Return videos will all of the tags (AND)</li>
+        <li><strong>None</strong> - Return videos that do not have any of these tags</li>
+      </ul>
+      <p>This example would return all videos that are tagged with either <code class="notranslate">birds</code> or <code class="notranslate">animals</code>.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-tag-example.png" /></figure>
+      <p>Additional tags criteria can be entered by using the delete/add buttons (<img alt="" src="/assets/images/media/search-delete-add.png" />).</p>
+    </div>
+    <div id="daterange" class="BCL-subsection">
+      <h3>Date Range</h3>
+      <p>Advanced search can be used to return videos based upon date range. The following dates can be searched:</p>
+      <ul>
+        <li>Created At (<code class="notranslate">created_at</code>)</li>
+        <li>Updated At (<code class="notranslate">updated_at</code>)</li>
+        <li>Scheduled Starts At (<code class="notranslate">schedule.starts_at</code>)</li>
+        <li>Scheduled Ends At (<code class="notranslate">schedule.ends_at</code>)</li>
+      </ul>
+      <p>This example would return all videos created between September 1, 2020 and September 30, 2020.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-date-range-example.png" /></figure>
+      <p>Additional date ranges can be entered by using the delete/add buttons (<img alt="" src="/assets/images/media/search-delete-add.png" />).</p>
+    </div>
+    <div id="includetext" class="BCL-subsection">
+      <h3>Text to Include</h3>
+      <p>Advanced search can be used to return videos based upon text in video metadata. The following fields can be searched:</p>
+      <ul>
+        <li>All</li>
+        <li>Name</li>
+        <li>Name and Description</li>
+        <li>Reference ID</li>
+        <li>Custom Fields</li>
+        <li>A specific custom field</li>
+      </ul>
+      <p>Assume the account has two custom fields, <strong>Year</strong> and <strong>Subject</strong>. This would return all videos with the <strong>Year</strong> custom field equal to <strong>2020</strong> and the <strong>Subject</strong> custom field equal to <strong>birds</strong>.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-text-example.png" /></figure>
+      <p>Additional criteria can be entered by using the delete/add buttons (<img alt="" src="/assets/images/media/search-delete-add.png" />).</p>
+    </div>
+    <div id="excludetext" class="BCL-subsection">
+      <h3>Text to Exclude</h3>
+      <p>Advanced search can be used to exclude videos based upon text in video metadata. The following fields can be searched:</p>
+      <ul>
+        <li>Name</li>
+        <li>Name and Description</li>
+        <li>Reference ID</li>
+        <li>Custom Fields</li>
+        <li>A specific custom field</li>
+      </ul>
+      <p>This example will not return videos that have <strong>private</strong> in the name or description fields.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-exclude-text-example.png" /></figure>
+      <p>Additional criteria can be entered by using the delete/add buttons (<img alt="" src="/assets/images/media/search-delete-add.png" />).</p>
+    </div>
+    <div id="playable" class="BCL-subsection">
+      <h3>Playable</h3>
+      <p>Advanced search can be used to return videos based upon their status:</p>
+      <ul>
+        <li>All</li>
+        <li>Playable</li>
+        <li>Not Playable</li>
+      </ul>
+    </div>
+    <p>After entering the search criteria, the advanced search syntax will appear in the search box.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-advanced-search-syntax.png" /></figure>
+    <p>See the <a href="#advsearchsyntax">Advanced search syntax</a> section for more information.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="advsearchsyntax">Advanced search syntax</h2>
+    <p>When the Advanced Search dialog is used to search for videos, the advanced search syntax will appear in the search box after entering the search criteria. This section outlines the search syntax. The search syntax can also be entered into the search box without using the Advanced Search dialog. To open the Advanced Search dialog, click the <strong>More Search Options</strong> link.</p>
+    <p>To mark a search term as required (returned videos <strong>must</strong> match) or excluded (returned videos <strong>must not</strong> match), add a <strong>+</strong> or <strong>-</strong> sign immediately preceding the term.</p>
+    <p>The following search qualifiers and values are supported.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="299">Qualifier</th>
+          <th width="442">Valid Values</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><code class="notranslate">name</code></td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td>text</td>
+          <td>strings or quoted strings (<code class="notranslate">name</code>)</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">tags</code></td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">reference_id</code></td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">custom_fields</code> - searches all custom fields</td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td>&lt;<code class="notranslate">custom_field_name</code>&gt; - searches specified custom field name</td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">state</code><sup>[1]</sup></td>
+          <td><code class="notranslate">ACTIVE</code>, <code class="notranslate">INACTIVE</code>, <code class="notranslate">PENDING</code></td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">updated_at</code></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">created_at</code></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">schedule.starts_at</code></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">schedule.ends_at</code></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">published_at</code><sup>[2]</sup></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">complete</code><sup>[3]</sup></td>
+          <td><code class="notranslate">true</code> or <code class="notranslate">false</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="BCL-subsection">
+      <h3>Notes</h3>
+      <p><sup>[1]</sup> A video would be in a PENDING state when it has been shared to an account but it has not been accepted.</p>
+      <p><sup>[2]</sup> The date the video was last activated.</p>
+      <p><sup>[3]</sup> A video has a complete state of true when the video has at least one playable rendition. It does not necessarily mean that all transcoding is complete.</p>
+    </div>
+    <div class="BCL-subsection">
+      <h3>Working with date fields</h3>
+      <p>When working with date fields, the dates can be in UTC (2012-08-01T00:00:00Z) format or use a relative format:</p>
+      <ul>
+        <li><code class="notranslate">-1day</code></li>
+        <li><code class="notranslate">-2days</code></li>
+        <li><code class="notranslate">+4hours</code></li>
+        <li><code class="notranslate">-60minutes</code></li>
+        <li><code class="notranslate">-1d</code></li>
+        <li><code class="notranslate">-2d</code></li>
+        <li><code class="notranslate">+4h</code></li>
+        <li><code class="notranslate">-60m</code></li>
+      </ul>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h3>Examples</h3>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="385">Search Term</th>
+          <th width="239">Returns</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><code class="notranslate">+name:florida</code></td>
+          <td>all videos with <code class="notranslate">Florida</code> in the video name</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+text:meeting</code></td>
+          <td>all videos with the word <code class="notranslate">meeting</code> in the video name or short or long description</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+tags:birds</code></td>
+          <td>all videos that are tagged <code class="notranslate">birds</code></td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+tags:birds +state:inactive</code></td>
+          <td>all videos that are tagged <code class="notranslate">birds</code> and have a status of <code class="notranslate">inactive</code></td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+tags:live,"now playing" +state:ACTIVE</code></td>
+          <td>all videos that are tagged <code class="notranslate">live</code> and <code class="notranslate">now playing</code> and have a status of <code class="notranslate">active</code></td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+custom_fields:"2015"</code></td>
+          <td>all videos that have a value of <code class="notranslate">2015</code> in <strong>any</strong> custom field</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+subject:birds</code></td>
+          <td>all videos that a value of <code class="notranslate">birds</code> in the <code class="notranslate">subject</code> custom field</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+producer:"Bob Bailey"</code></td>
+          <td>all videos that a value of <code class="notranslate">Bob Bailey</code> in the <code class="notranslate">producer</code> custom field</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+created_at:-3d</code></td>
+          <td>all videos created in the last 3 days</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+updated_at:-1d</code></td>
+          <td>all videos updated in the past day</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+updated_at:-2d +state:INACTIVE</code></td>
+          <td>all videos that have been updated in the last two days and are <code class="notranslate">inactive</code></td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+schedule.starts_at:2015-06-01..2015-06-07</code></td>
+          <td>all videos that are scheduled to start between June 1, 2015 and June 6, 2015</td>
+        </tr>
+        <tr>
+          <td><code class="notranslate">+updated_at:2015-06-01T13:00:00Z..2015-06-01T15:00:00Z</code></td>
+          <td>all videos that were updated on June 1, 2015 between 1pm and 3pm</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="savedsearch">Saving searches</h2>
+    <p>Searches that you run frequently can be saved so they can be re-run quickly without having to re-enter the search syntax. After you have entered the search syntax that returns the videos you want to see, click <strong>Save Search</strong>. Enter a name for the saved search and then click <strong>Save</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-saved-search.png" /></figure>
+    <p>To re-run the saved search, click the <strong>Saved Searches</strong> link under the search box and click on the saved search to run.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/search-saved-search-run.png" /></figure>
+    <p>To delete any of the saved searches, click the delete icon (<img alt="" src="/assets/images/media/search-delete-icon.png" />) next to the search.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Ignored_words">Ignored words</h2>
+    <p>Certain words are ignored in search strings because they are so common that they are likely to return many results unrelated to what you are actually searching for. Below is a list of words that are ignored by search:</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td width="135">a</td>
+          <td width="135">an</td>
+          <td width="135">and</td>
+        </tr>
+        <tr>
+          <td>are</td>
+          <td>as</td>
+          <td>at</td>
+        </tr>
+        <tr>
+          <td>be</td>
+          <td>but</td>
+          <td>by</td>
+        </tr>
+        <tr>
+          <td>for</td>
+          <td>if</td>
+          <td>in</td>
+        </tr>
+        <tr>
+          <td>into</td>
+          <td>is</td>
+          <td>it</td>
+        </tr>
+        <tr>
+          <td>no</td>
+          <td>not</td>
+          <td>of</td>
+        </tr>
+        <tr>
+          <td>on</td>
+          <td>or</td>
+          <td>such</td>
+        </tr>
+        <tr>
+          <td>that</td>
+          <td>the</td>
+          <td>their</td>
+        </tr>
+        <tr>
+          <td>then</td>
+          <td>there</td>
+          <td>these</td>
+        </tr>
+        <tr>
+          <td>they</td>
+          <td>this</td>
+          <td>to</td>
+        </tr>
+        <tr>
+          <td>was</td>
+          <td>will</td>
+          <td>with</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Page last updated on 16 Nov 2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">Have a question? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>

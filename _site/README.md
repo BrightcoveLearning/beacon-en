@@ -1,1 +1,1 @@
-# studio
+# jekyll-template

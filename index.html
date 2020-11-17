@@ -1,32 +1,27 @@
 ---
-title: Video Cloud Studio Documentation
-parent: null
+title: Brightcove Beacon Home (Limited Availability Edition )
 ---
-
 <article class="landing-page-wrapper">
+  <h1>{{ site.product }} Home</h1>
   <section class="landing-page-header" id="landing_page_header">
-    <h1>{{ site.title }}</h1>
-
     <p>{{ site.description }}</p>
   </section>
+  <br>
   <section class="card-wrapper">
-    {% for section in site.data.navigation offset:1 %}
-    <section class="bcls-card-small" onclick="window.location.href='{{ section.url }}'">
-
-      <div class="card-icon">
-        {{ section.icon }}
-      </div>
-
+    {% for item in site.data.navigation %}
+    {% if item.docs != nil %}
+    <section class="bcls-card" onclick="window.location.pathname={{item.url}}">
+      <div class="card-icon">{{item.icon}}</div>
       <div class="card-content">
-        <h2>{{ section.name }}</h2>
-        <ul>
-          {% for doc in section.docs limit:4 %}
-          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+        <h2 class="landing-page-item-header">{{ item.name }}</h2>
+        <ul class="landing-page-item list-none">
+          {% for entry in item.docs %}
+          <li><a href="{{ entry.url }}">{{ entry.name }}</a></li>
           {% endfor %}
         </ul>
-        <p style="font-size:small;"><a href="{{ section.url }}">View all...</a></p>
       </div>
     </section>
+    {% endif %}
     {% endfor %}
   </section>
 </article>
