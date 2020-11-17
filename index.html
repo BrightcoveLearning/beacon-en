@@ -1,27 +1,17 @@
 ---
-title: Brightcove Beacon Home (In-App Help Edition )
+title: Administering Accounts
+parent: Home
+layout: staging
 ---
-<article class="landing-page-wrapper">
-  <h1>{{ site.product }} Home</h1>
-  <section class="landing-page-header" id="landing_page_header">
-    <p>{{ site.description }}</p>
-  </section>
-  <br>
-  <section class="card-wrapper">
-    {% for item in site.data.navigation %}
-    {% if item.docs != nil %}
-    <section class="bcls-card" onclick="window.location.pathname={{item.url}}">
-      <div class="card-icon">{{item.icon}}</div>
-      <div class="card-content">
-        <h2 class="landing-page-item-header">{{ item.name }}</h2>
-        <ul class="landing-page-item list-none">
-          {% for entry in item.docs %}
-          <li><a href="{{ entry.url }}">{{ entry.name }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
+<article class="bcls-article">
+  <h1><i class="far fa-shapes"></i> Beacon In-App Help</h1>
+  Get help with the following:
+  <section class="bcls-section">
+    <ul>
+      <li><a href="/media/index.html">Media</a></li>
+      <li><a href="/pages/index.html">Pages</a></li>
+      <li><a href="/upload/index.html">Upload</a></li>
+      <li><a href="/admin/index.html">Admin</a></li>
+    </ul>
     </section>
-    {% endif %}
-    {% endfor %}
-  </section>
 </article>
