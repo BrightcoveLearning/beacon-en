@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+ # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
@@ -23,8 +23,8 @@ email: training@brightcove.com
 description: >- # this means to ignore newlines until "baseurl:"
   Brightcove Beacon provides video providers the environment for their customers to view videos without having a cable provider subscription. These documents are for the <em>Limited Availability</em> edition of the next version of Beacon. If you are using the current release of Beacon, please go to the <a href="https://beacon.support.com">current Beacon docs</a> instead.
 # baseurl: "" # the subpath of your site, e.g. /blog
-site_url: "https://beacon-la.support.brightcove.com"
-site_domain: "beacon-la.support.brightcove.com"
+site_url: "https://beacon-help.support.brightcove.com"
+site_domain: "beacon-help.support.brightcove.com"
 
 # local server (for "jekyll serve") will be localhost:{PORT number below}
 port: 4001
