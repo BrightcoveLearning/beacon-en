@@ -15,6 +15,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/pages/archiving-pages.html",
+      "oldURL": "/archiving-pages"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/media/capturing-video-poster-thumbnail-images.html",
       "oldURL": "/capturing-video-poster-thumbnail-images"
   },
@@ -60,17 +65,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/admin/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/upload/",
       "oldURL": "/index"
   },
 
@@ -80,12 +75,22 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/upload/",
       "oldURL": "/index"
   },
 
   {
       "newURL": "https://beacon-help.support.brightcove.com/media/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/",
       "oldURL": "/index"
   },
 
