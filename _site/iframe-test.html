@@ -499,14 +499,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
 
 
-<h1>iFrame Test</h1>
-
+<br>
+<img src="/pages/pages-home.png" alt="">
 <p>Paste any full URL in the field below to load that page into the frame.</p>
-<p><input type="text" id="src_address" size="60" value="https://beacon-help.support.brightcove.com/index.html"></p>
+<p><input type="text" id="src_address" size="60" value="/pages/index.html"></p>
 <p><button id="add_src">Put this page in the frame</button></p>
 
 <div style="position: relative;">
-    <iframe id="doc_frame" src="/media/creating-smart-playlist.html" style="position: fixed;right: 30px; top: 150px;height: 80%; width: 30%;"></iframe>
+    <iframe id="doc_frame" src="/pages/index.html" style="position: fixed;right: 30px; top: 150px;height: 80%; width: 30%;"></iframe>
 </div>
 <script>
     var src_address = document.getElementById('src_address'),
