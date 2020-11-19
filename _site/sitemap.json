@@ -60,22 +60,17 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/upload/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/pages/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/",
+      "newURL": "https://beacon-help.support.brightcove.com/upload/",
       "oldURL": "/index"
   },
 
@@ -85,7 +80,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/",
+      "newURL": "https://beacon-help.support.brightcove.com/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/",
       "oldURL": "/index"
   },
 
@@ -107,6 +107,11 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/search.html",
       "oldURL": "/search"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/pages/tv-series-demo.html",
+      "oldURL": "/tv-series-demo"
   },
 
   {
