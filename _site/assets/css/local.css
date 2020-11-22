@@ -13,3 +13,20 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   color: rgb(28, 185, 213);
 }
 
+#back_button {
+  float: left;
+  margin-left: .5rem;
+  cursor: pointer;
+}
+
+#forward_button {
+  float: right;
+  margin-right: .5rem;
+  cursor: pointer;
+}
+#breadcrumbs {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+

@@ -24,18 +24,20 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <br>
     
   </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      {% if page.parent %}
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      {% endif %}
-      {% if page.grandparent_name %}
-      <li class="breadcrumb-item"><a href="{{ page.grandparent_path }}">{{ page.grandparent_name }}</a></li>
-      {% endif %}
-      {% if page.parent and page.parent != "Home" %}
-      <li class="breadcrumb-item"><a href="{{ page.dir }}">{{ page.parent }}</a></li>
-      {% endif %}
-      <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
-    </ol>
-  </nav>
 </header>
+<img id="back_button" src="/assets/images/feather/chevron-left.svg" alt="Back"><img id="forward_button" src="/assets/images/feather/chevron-right.svg" alt="Forward">
+<br style="clear: both;">
+<nav id="breadcrumbs" aria-label="breadcrumb">
+  <ol class="breadcrumb arr-right">
+    {% if page.parent %}
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    {% endif %}
+    {% if page.grandparent_name %}
+    <li class="breadcrumb-item"><a href="{{ page.grandparent_path }}">{{ page.grandparent_name }}</a></li>
+    {% endif %}
+    {% if page.parent and page.parent != "Home" %}
+    <li class="breadcrumb-item"><a href="{{ page.dir }}">{{ page.parent }}</a></li>
+    {% endif %}
+    <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+  </ol>
+</nav>

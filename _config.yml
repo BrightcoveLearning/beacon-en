@@ -21,20 +21,20 @@
 title: Brightcove Beacon Documentation
 email: training@brightcove.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Brightcove Beacon provides video providers the environment for their customers to view videos without having a cable provider subscription. These documents are for the <em>In-App Help</em> edition of the next version of Beacon. If you are using the current release of Beacon, please go to the <a href="https://beacon.support.com">current Beacon docs</a> instead.
+  Brightcove Beacon provides video providers the environment for their customers to view videos without having a cable provider subscription. These documents are for the <em>In-App Help</em> edition of the next version of Beacon. If you are using the current release of Beacon, please go to the <a href="https://beacon-la.support.com">current Beacon docs</a> instead.
 # baseurl: "" # the subpath of your site, e.g. /blog
 site_url: "https://beacon-help.support.brightcove.com"
 site_domain: "beacon-help.support.brightcove.com"
 
 # local server (for "jekyll serve") will be localhost:{PORT number below}
-port: 4001
+port: 4002
 
 product: Brightcove Beacon
 color: rgb(51, 51, 51)
 product_color: rgb(28, 185, 213)
 product_icon: "Beacon_Logo.svg"
 search_id: "017969773216783359937:9ybe0wftqs0"
-feedbackify_id: "15592"
+feedbackify_id: "15610"
 talla_appID: "00c26be3-4421-41e6-bb00-1dee68740f67"
 talla_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODI4MDQzNDF9.RYf2x65FXvdDURzM h00i76KfUrYlsDLsw6mVuEv6zmE'
 talla_knowledgegroup: 'd4105468-75a8-4bbb-89ac-33df9e3b5173'
