@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="In this topic, you will learn about the properties of the standard ingest profiles that are provided when using legacy transcoding.">
   
-  <title>Beacon Help</title>
+  <title>Standard Ingest Profiles for Legacy Transcoding</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -123,7 +123,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item active" aria-current="page">Beacon Help</li>
+    <li class="breadcrumb-item"><a href="/admin/">Administering Accounts</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Standard Ingest Profiles for Legacy Transcoding</li>
   </ol>
 </nav>
 
@@ -463,39 +465,45 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
 
 
-<article class="bcls-article">
-  <h1><i class="far fa-shapes"></i> Beacon Help</h1>
-  <section class="bcls-section">
-    <h3>Getting Started</h3>
-    <ul>
-      <li>Welcome to Brightcove Beacon</li>
-      <li>Building Your First Page</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h3>What do you need help with?</h3>
-    <ul>
-      <li><a href="/pages/howto/index.html">Pages</a></li>
-      <li><a href="/upload/howto/index.html">Upload</a></li>
-      <li><a href="/media/howto/index.html">Media</a></li>
-      <li>Analytics</li>
-      <li>Live</li>
-      <li>Monetization</li>
-      <li>Viewer Management</li>
-      <li><a href="/admin/howto/index.html">Admin</a></li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h3>More Resources</h3>
-    <p> <a href="https://beacon-la.support.brightcove.com/index.html"><i class="fas fa-search"></i> Search Beacon Documentation</a></p>
-    <p><a href="https://supportportal.brightcove.com/"><i class="far fa-question-circle"></i> Get Support</a></p>
-    <p><i class="far fa-file-alt"></i> View Release Notes</p>
-  </section>
-</article>
+<!-- 
+  This content appears on:
+  
+  https://apis.support.brightcove.com/ingest-profiles-legacy/references/standard-ingest-profiles-legacy-transcoding.html
 
+  https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html
+
+  If you update in one place, you MUST update it in all!
+ -->
+
+ <h1>Standard Ingest Profiles for Legacy Transcoding</h1>
+ <article class="bcls-article">
+  <summary>In this topic, you will learn about the properties of the standard ingest profiles that are provided when using legacy transcoding.</summary>
+  <section class="bcls-section">
+    <p>When uploading videos using the Upload page, you must supply an ingest profile which determines the number and type of renditions created by the Video Cloud ingestion process. This topic provides detailed information on each of the legacy ingest profiles. For information on the Dynamic Delivery profiles, see <a href="standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles for Dynamic Delivery</a>.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: When lower quality (lower bitrate) source content is uploaded and one of the standard profiles is selected, Video Cloud will only produce renditions that are equal to or lower in quality than the source.</aside>
+    <p>It is also possible to create your own custom ingest profiles. For information, see <a href="managing-ingest-profiles.html">Managing Ingest Profiles</a>.</p>
+  </section>
+  <section class="bcls-section" id="Document_data">
+    <h2>Document data</h2>
+    <aside class="bcls-aside bcls-aside--information">Notes:
+      <ul>
+        <li>This page is built using live data from the API; it may take a minute to fully load.</li>
+        <li>Standard profiles may <strong>not</strong> be edited - if you want a modified version, you will need to create a custom profile.</li>
+      </ul>
+    </aside>
+  </section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script src="//learning-services-media.brightcove.com/doc-assets/video-cloud-apis/ingest-profiles-api/assets/BCLSprofilesArray.js"></script>
+<script src="//learning-services-media.brightcove.com/doc-assets/video-cloud-apis/ingest-profiles-api/guides/standard-profiles/standard-profiles-drupal.js"></script>
+</article>
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
       
     </div>
   </div>
@@ -503,7 +511,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Nov 2020
+  Page last updated on 17 Nov 2020
 </div>
 
 

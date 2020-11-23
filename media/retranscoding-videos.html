@@ -1,0 +1,30 @@
+---
+title: Retranscoding Videos
+parent: Managing Videos
+layout: staging
+---
+<article class="bcls-article">
+  <h1>Retranscoding Videos</h1>
+  <summary>This topic shows you how to retranscode an existing video in your account to produce a new set of renditions.</summary>
+  <section class="bcls-section">
+    <p>Brightcove reserves the right to update the default ingest profiles associated with Video Cloud accounts. You may also have the need to update your own, custom ingest profiles. When ingest profiles change, you may wish to have existing videos in your account retranscoded so that they have renditions that correspond to the new ingest profile settings.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: You cannot retranscode videos that have been shared to your account.</aside>
+      <aside class="bcls-aside bcls-aside--information">Note: videos can only be retranscoded if the video master was archived when the video was added to the account. All <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">Standard Ingest Profiles</a> will archive the master.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="steps">Steps to retranscode a video</h2>
+    <p>Follow these steps to replace the existing renditions for a video.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the Media page.</li>
+      <li>Click on the video you want to retranscode.</li>
+      <li>In the <strong>Video Files</strong> section, click <strong>Retranscode</strong>.</li>
+      <li>Select an ingest profile to use.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/retranscode-settings.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Note: Videos that were initially transcoded using a Dynamic Delivery or Context Aware ingest profile can only be retranscoded using one of those ingest profile types. Videos transcoded using a Legacy ingest profile can be retranscoded with any type of profile.</aside>
+      </li>
+      <li>Check <strong>Keep existing thumbnail and poster images</strong> to keep the existing images. If you uncheck this box, new images will be generated based upon the image settings in the selected ingest profile.</li>
+      <li>Click <strong>Retranscode</strong>.</li>
+    </ol>
+    <p>While the new renditions are being created, the video will remain playable using the existing renditions.</p>
+  </section>
+</article>

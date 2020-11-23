@@ -1,31 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Beacon Help</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
+    <title>Creating Legacy Ingest Profiles</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+      <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/site/prism.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/site/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/site/landing-page.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/site/tabs.css"
+    />
+    <link rel="stylesheet" href="/assets/css/local.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/381443caa8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/site/google-analytics.js"></script>
+    <script src="/assets/js/sajari-head.js"></script>
+  </head>
 
-<body class="body">
+  <body class="body"></body>
+</html>
 
 <header>
   <div class="div-header">
@@ -123,7 +162,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item active" aria-current="page">Beacon Help</li>
+    <li class="breadcrumb-item"><a href="/admin/">Administering Accounts</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Creating Legacy Ingest Profiles</li>
   </ol>
 </nav>
 
@@ -464,32 +505,72 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1><i class="far fa-shapes"></i> Beacon Help</h1>
+  <h1>Creating Legacy Ingest Profiles</h1>
+  <summary>This topic provides an overview of how to create custom ingest profiles for use with Legacy transcoding.</summary>
   <section class="bcls-section">
-    <h3>Getting Started</h3>
-    <ul>
-      <li>Welcome to Brightcove Beacon</li>
-      <li>Building Your First Page</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h3>What do you need help with?</h3>
-    <ul>
-      <li><a href="/pages/howto/index.html">Pages</a></li>
-      <li><a href="/upload/howto/index.html">Upload</a></li>
-      <li><a href="/media/howto/index.html">Media</a></li>
-      <li>Analytics</li>
-      <li>Live</li>
-      <li>Monetization</li>
-      <li>Viewer Management</li>
-      <li><a href="/admin/howto/index.html">Admin</a></li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h3>More Resources</h3>
-    <p> <a href="https://beacon-la.support.brightcove.com/index.html"><i class="fas fa-search"></i> Search Beacon Documentation</a></p>
-    <p><a href="https://supportportal.brightcove.com/"><i class="far fa-question-circle"></i> Get Support</a></p>
-    <p><i class="far fa-file-alt"></i> View Release Notes</p>
+    <p>The Ingest Profiles administration page can be used to create new legacy ingest profiles. Ingest profiles are defined using JSON. When creating a new legacy profile, it is helpful to review the <a href="standard-ingest-profiles-legacy-transcoding.html">Standard Ingest Profiles for Legacy Transcoding</a> document and locate a profile similar to what you need. Then, in Studio, you can easily duplicate the profile and then edit it with your changes.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: For information on creating ingest profiles that use DRM, see the <a href="https://general.support.brightcove.com/general/mpeg-dash-video.html">MPEG-DASH Video</a> developer document.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: Each profile can create a maximum of 25 renditions. &nbsp;Poster and thumbnail images do count towards the maximum of 25.&nbsp;</aside>
+    <p>To create a new legacy ingest profile:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the left navigation, click <strong>Admin</strong>. Note that you must be an account administrator to access to the Administration page.</li>
+      <li>Click<strong> Ingest Profiles</strong>. </li>
+      <li>Locate a legacy profile to duplicate. Click the profile name to open the profile editor.</li>
+      <li>Click <strong>Duplicate</strong>. The profile editor will open with the new profile.</li>
+      <li>Scroll to the top of the profile. Edit the <code translate="No"><strong>name</strong></code> element to give the profile a meaningful name. This name will be displayed inside Video Cloud Studio.</li>
+      <li>Edit the <code translate="No"><strong>description</strong></code> element to give the profile a meaningful description.
+        <figure class="bcls-figure"><img alt="" src="/assets/images/admin/ingest-legacy-edit-profile-name.png" /></figure>
+      </li>
+      <li>Edit the rendition information as needed. The default size for the poster and thumbnail images is located at the end of the profile.</li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+    <div class="BCL-subsection">
+      <h3>Adding a watermark to a profile</h3>
+      <p>A watermark can be added to each rendition by adding the <code translate="No">watermarks</code> element to each <code translate="No">rendition</code>:</p>
+      <pre>
+       watermarks": [{ "y": -20, "x": -10, "width": "20%", "url": "http://www.mysite.com/companylogo.png" }]
+       </pre>
+      <p>The <code translate="No">watermarks</code> element has the following parameters.</p>
+      <table class="bcls-table">
+        <thead class="bcls-table__head">
+          <tr>
+            <th width="13%">Parameter</th>
+            <th width="14%">Type</th>
+            <th width="73%">Description</th>
+          </tr>
+        </thead>
+        <tbody class="bcls-table__body">
+          <tr>
+            <td ><code translate="No">url</code></td>
+            <td >string</td>
+            <td >URL for the watermark image</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">width</code></td>
+            <td >string</td>
+            <td >width in pixels or percent of frame width; e.g. 20 or 10%</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">height</code></td>
+            <td >string</td>
+            <td >height in pixels or percent of frame width; e.g. 20 or 10%</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">x</code></td>
+            <td >string</td>
+            <td >distance from left edge to center of image as pixels or percent of frame width; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the right edge)</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">y</code></td>
+            <td >string</td>
+            <td >distance from top edge to center if image as pixels or percent of frame height; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the bottom edge)</td>
+          </tr>
+        </tbody>
+      </table>
+      &nbsp;
+      <p>A sample profile with a watermark is shown below:</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/ingest-legacy-watermark.png" /></figure>
+    </div>
   </section>
 </article>
 
@@ -497,13 +578,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <div class="col-sm-2 right-side-bar">
       
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
     </div>
   </div>
 </div>
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Nov 2020
+  Page last updated on 17 Nov 2020
 </div>
 
 

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Beacon Help</title>
+  <title>Editing Video Details using Quick Edit</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -123,7 +123,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item active" aria-current="page">Beacon Help</li>
+    <li class="breadcrumb-item"><a href="/media/">Managing Videos</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Editing Video Details using Quick Edit</li>
   </ol>
 </nav>
 
@@ -464,32 +466,42 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1><i class="far fa-shapes"></i> Beacon Help</h1>
+  <h1>Editing Video Details using Quick Edit</h1>
+  <summary>In this topic you will learn how to use the Quick Edit feature inside of the Media page to edit video details for multiple videos.</summary>
   <section class="bcls-section">
-    <h3>Getting Started</h3>
-    <ul>
-      <li>Welcome to Brightcove Beacon</li>
-      <li>Building Your First Page</li>
-    </ul>
+    <p>The Quick Edit feature provides a convenient way to edit videos details for multiple videos. Multiple videos can be selected by clicking on a checkbox and then shift-clicking on another checkbox (hold down the Shift key while clicking the second video, and the two videos and all those between will be selected). Clicking <strong>Quick Edit</strong> will open the Quick Edit panel on the right side of the Media page.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/quick-edit.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h3>What do you need help with?</h3>
+    <p>The Quick Edit panel will display a subset of the video properties:</p>
     <ul>
-      <li><a href="/pages/howto/index.html">Pages</a></li>
-      <li><a href="/upload/howto/index.html">Upload</a></li>
-      <li><a href="/media/howto/index.html">Media</a></li>
-      <li>Analytics</li>
-      <li>Live</li>
-      <li>Monetization</li>
-      <li>Viewer Management</li>
-      <li><a href="/admin/howto/index.html">Admin</a></li>
+      <li>Name</li>
+      <li>Short Description</li>
+      <li>Long Description</li>
+      <li>Tags to Add</li>
+      <li>Tags to Remove</li>
+      <li>Related Link URL</li>
+      <li>Related Link Text</li>
+      <li>Advertising</li>
+      <li>Ad Keys</li>
+      <li>Scheduling Start/End Dates</li>
+      <li>Geofiltering</li>
+      <li>Custom Fields</li>
     </ul>
+    <aside class="bcls-aside bcls-aside--information">Note: For a description of all of these properties, see the <a href="/media/editing-video-details.html">Editing Video Properties using the Media Module</a> document.</aside>
+    <p>Use the Quick Edit panel to assign values. When done, click <strong>Save</strong> to save the changes or <strong>Cancel</strong> to exit.</p>
   </section>
   <section class="bcls-section">
-    <h3>More Resources</h3>
-    <p> <a href="https://beacon-la.support.brightcove.com/index.html"><i class="fas fa-search"></i> Search Beacon Documentation</a></p>
-    <p><a href="https://supportportal.brightcove.com/"><i class="far fa-question-circle"></i> Get Support</a></p>
-    <p><i class="far fa-file-alt"></i> View Release Notes</p>
+    <h2 id="notes">Notes on using Quick Edit</h2>
+    <ul>
+      <li>When at least one video has values assigned to a property, <strong>Edit Mixed Value</strong> will be displayed
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/quick-edit-mixed-values.png" /></figure>
+      </li>
+      <li>An asterisk (*) following the property name indicates a required property</li>
+      <li>To cancel changes made to a property, click <strong>Restore</strong>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/quick-edit-restore.png" /></figure>
+      </li>
+    </ul>
   </section>
 </article>
 
@@ -497,13 +509,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <div class="col-sm-2 right-side-bar">
       
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
     </div>
   </div>
 </div>
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Nov 2020
+  Page last updated on 17 Nov 2020
 </div>
 
 

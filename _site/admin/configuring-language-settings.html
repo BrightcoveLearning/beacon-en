@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Beacon Help</title>
+  <title>Configuring Language Settings</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -123,7 +123,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item active" aria-current="page">Beacon Help</li>
+    <li class="breadcrumb-item"><a href="/admin/">Administering Accounts</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Configuring Language Settings</li>
   </ol>
 </nav>
 
@@ -464,32 +466,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1><i class="far fa-shapes"></i> Beacon Help</h1>
+  <h1>Configuring Language Settings</h1>
+  <summary>In this topic you will learn how to define a primary metadata language and add additional metadata languages that are supported.</summary>
   <section class="bcls-section">
-    <h3>Getting Started</h3>
-    <ul>
-      <li>Welcome to Brightcove Beacon</li>
-      <li>Building Your First Page</li>
-    </ul>
+    <p>The Language Settings is where you define a Primary Language and then add and manage additional metadata languages. The Primary Language is the language your account is currently using for video metadata. Before adding additional languages to your account, your existing metadata will be associated with the language you define as the Primary Language. The Primary Language is what is initially displayed when you edit video properties on the Media page. </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/language-define.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h3>What do you need help with?</h3>
-    <ul>
-      <li><a href="/pages/howto/index.html">Pages</a></li>
-      <li><a href="/upload/howto/index.html">Upload</a></li>
-      <li><a href="/media/howto/index.html">Media</a></li>
-      <li>Analytics</li>
-      <li>Live</li>
-      <li>Monetization</li>
-      <li>Viewer Management</li>
-      <li><a href="/admin/howto/index.html">Admin</a></li>
-    </ul>
-  </section>
+    <h2 id="primary">Setting a Primary Language</h2>
+    <p>To set the Primary Language:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the left navigation, click <strong>Admin</strong>. Note that you must be an account administrator to access to the Administration page.</li>
+      <li>Click<strong> Language Settings</strong>.</li>
+      <li>Enter your primary language. As you type, a list of matching languages will appear.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/language-primary-list.png" /></figure>
+      </li>
+      <li>Click on a language to select it.</li>
+      <li>Click <strong>Save Language</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/language-primary-saved.png" /></figure>
+      </li>
+    </ol>
+    To change the Primary Language, click on the language, select a new language and then click <strong>Save</strong>.</section>
   <section class="bcls-section">
-    <h3>More Resources</h3>
-    <p> <a href="https://beacon-la.support.brightcove.com/index.html"><i class="fas fa-search"></i> Search Beacon Documentation</a></p>
-    <p><a href="https://supportportal.brightcove.com/"><i class="far fa-question-circle"></i> Get Support</a></p>
-    <p><i class="far fa-file-alt"></i> View Release Notes</p>
+    <h2 id="add_languages">Adding additional languages</h2>
+    <p>After a Primary Language is saved, additional metadata languages can be added. By adding additional languages, you will be able to enter additional, multi-lingual metadata on the Media page. To add additional languages, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>Add Language</strong>.</li>
+      <li>Enter your  language. As you type, a list of matching languages will appear.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/language-add-additional.png" /></figure>
+      </li>
+      <li>Click on a language to select it.</li>
+      <li>Click <strong>Save Language</strong>. The language will be added to the Additional Languages  table.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/language-additional-table.png" /></figure>
+      </li>
+      <li>Click <strong>Add Language</strong> to add additional languages as needed.</li>
+    </ol>
+    <p>To edit the language name (as it will appear on the Media page), click on it, make any changes and then click <strong>Save</strong>. To delete a language, click the delete icon (<img class="bcls-image--no-border" alt="" src="/assets/images/admin/icon-delete.png" />).</p>
+    <aside class="bcls-aside bcls-aside--information">Note: If you delete a language that is in use, all metadata associated with the language will be hidden. To restore the associated metadata, add the language again.</aside>
   </section>
 </article>
 
@@ -497,13 +510,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <div class="col-sm-2 right-side-bar">
       
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
     </div>
   </div>
 </div>
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Nov 2020
+  Page last updated on 17 Nov 2020
 </div>
 
 

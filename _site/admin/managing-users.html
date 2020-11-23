@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Beacon Help</title>
+  <title>Managing Users</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -123,7 +123,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item active" aria-current="page">Beacon Help</li>
+    <li class="breadcrumb-item"><a href="/admin/">Administering Accounts</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Managing Users</li>
   </ol>
 </nav>
 
@@ -464,38 +466,95 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1><i class="far fa-shapes"></i> Beacon Help</h1>
-  <section class="bcls-section">
-    <h3>Getting Started</h3>
-    <ul>
-      <li>Welcome to Brightcove Beacon</li>
-      <li>Building Your First Page</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h3>What do you need help with?</h3>
-    <ul>
-      <li><a href="/pages/howto/index.html">Pages</a></li>
-      <li><a href="/upload/howto/index.html">Upload</a></li>
-      <li><a href="/media/howto/index.html">Media</a></li>
-      <li>Analytics</li>
-      <li>Live</li>
-      <li>Monetization</li>
-      <li>Viewer Management</li>
-      <li><a href="/admin/howto/index.html">Admin</a></li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h3>More Resources</h3>
-    <p> <a href="https://beacon-la.support.brightcove.com/index.html"><i class="fas fa-search"></i> Search Beacon Documentation</a></p>
-    <p><a href="https://supportportal.brightcove.com/"><i class="far fa-question-circle"></i> Get Support</a></p>
-    <p><i class="far fa-file-alt"></i> View Release Notes</p>
-  </section>
-</article>
+<h1>Managing Users</h1>
+<summary>In this topic you will learn how to manage the users that have access to Studio.</summary>
+<section class="bcls-section">
+  <p>The User Management page manages the users who are authorized to use the Studio. To access the User Management page:</p>
+  <ol class="bcls-tasklist-restart">
+    <li>In the left navigation, click <strong>Admin</strong>. Note that you must be an account administrator to access to the Administration page.</li>
+    <li>Click<strong> User Management</strong>.</li>
+  </ol>
+  <p>The User Management page will display:</p>
+  <ul>
+    <li>Last Name, First Name</li>
+    <li>Email address</li>
+    <li>Role - Standard or Administrator</li>
+    <li>Module Access - Each page the user has access to will display a  check mark</li>
+    <li>Last Login - The last date and time the user logged in to Beacon Studio. This is the last login for all Beacon Studio accounts, not just the current account</li>
+  </ul>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/users-manage-users.png" /></figure>
+  <p>The User Management page can be used to:</p>
+  <ul>
+    <li><a href="#create">Create new users</a></li>
+    <li><a href="#edit">Edit existing users</a></li>
+    <li><a href="#delete">Delete a user</a></li>
+    <li><a href="#primary">Change the primary user</a></li>
+  </ul>
+</section>
+<section class="bcls-section">
+  <h2>How many users can I have?</h2>
+  <p>The number of users you can create depends on what kind of account you have. If you need to add more users, you can upgrade your plan to one that offers more users. The limit applies only to the total number of users in existence at any time; if you create 10 users, delete 5 of them, and create 3 more users, you are considered to have 8 users. The Users page displays how many users you are entitled to and how many additional users you can create.</p>
+</section>
+<section class="bcls-section">
+  <h2 id="purchase">Purchasing additional users</h2>
+  <p>If you need to add more users, you can upgrade your plan to one that offers more users. Pro and Enterprise level accounts should contact their account manager for information on adding additional users.</p>
+</section>
+<section class="bcls-section">
+  <h2 id="create">Creating new users</h2>
+  <p>To create a new user:</p>
+  <ol class="bcls-tasklist-restart">
+    <li>Enter the <strong>Email</strong>, <strong>First Name</strong> and <strong>Last Name</strong> of the user.</li>
+    <li>Assign a Role to the user:
+      <ul>
+        <li><strong>Administrator</strong> - User has access to the <strong>ADMIN</strong> menu (i.e. can create user accounts, custom ingest profiles, custom fields, configure media sharing)</li>
+        <li><strong>Standard</strong> - User does not have access to the <strong>ADMIN</strong> menu</li>
+      </ul>
+    </li>
+    <li>Select the application pages the user has access to.</li>
+    <li>Click <strong>Add User</strong>.</li>
+  </ol>
+  <p>The user will receive an email message stating that they have been added to the account.</p>
+</section>
+<section class="bcls-section">
+  <h2 id="edit">Editing existing users</h2>
+  <p>To edit an existing user:</p>
+  <ol class="bcls-tasklist-restart">
+    <li>Click on the user to edit. The user details will appear at the top of the page.
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/users-edit.png" /></figure>
+    </li>
+    <li>Edit the user details.
+      <aside class="bcls-aside bcls-aside--information">Note: The user that you logged in as cannot be edited.</aside>
+    </li>
+    <li>Click <strong>Save</strong> to save the changes.</li>
+  </ol>
+</section>
+<section class="bcls-section">
+  <h2 id="delete">Deleting a user</h2>
+  <p>To delete a user:</p>
+  <ol class="bcls-tasklist-restart">
+    <li>Click the delete icon (<img alt="" src="/assets/images/admin/icon-delete-blue.png" />) associated with the user.</li>
+    <li>Click <strong>OK</strong> to confirm the deletion.</li>
+  </ol>
+</section>
+<section class="bcls-section">
+  <h2 id="primary">Changing the primary user</h2>
+  <p>One user in each account is designated the primary user. The primary user will always have the <strong>Administrator</strong> role and can only be deleted by Brightcove Support.</p>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/users-primary-user.png" /></figure>
+  <p>If you need to change the primary user at some point, select the new primary user and then click <strong>Make this user the primary administrator for this account</strong>.</p>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/users-new-primary-user.png" /></figure>
+  <p>You will be prompted to confirm the primary user change.</p>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/users-confirm-new-primary-user.png" /></figure>
+  <p>If the new primary user has a role of <strong>Standard</strong>, they will be assigned the <strong>Administrator</strong> role when they are made the primary user.</p>
+</section>
 
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
       
     </div>
   </div>
@@ -503,7 +562,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Nov 2020
+  Page last updated on 17 Nov 2020
 </div>
 
 

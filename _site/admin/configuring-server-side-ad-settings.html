@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="In this topic you will learn how to manage and create server-side ad configurations.">
   
-  <title>Beacon Help</title>
+  <title>Configuring Server-Side Ad Settings</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -123,7 +123,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item active" aria-current="page">Beacon Help</li>
+    <li class="breadcrumb-item"><a href="/admin/">Administering Accounts</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Configuring Server-Side Ad Settings</li>
   </ol>
 </nav>
 
@@ -463,39 +465,73 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
 
 
-<article class="bcls-article">
-  <h1><i class="far fa-shapes"></i> Beacon Help</h1>
+<!-- 
+  This content appears on:
+  
+  https://beacon.support.brightcove.com/using-brightcove-beacon/configuring-server-side-ad-settings.html
+
+  https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html
+
+  If you update in one place, you MUST update it in all!
+ -->
+
+ <h1>Configuring Server-Side Ad Settings</h1>
+ <article class="bcls-article">
+  <summary>In this topic you will learn how to manage and create server-side ad configurations.</summary>
   <section class="bcls-section">
-    <h3>Getting Started</h3>
+    <p>Ad configurations define various aspects of ad playback, including ad calls, timing, beacons and other ad configuration options. The Server-Side Ad Settings define the ads that can be requested during live events. Server-side ads take advantage of Brightcove's Server-Side Ad Insertion (SSAI) technology and provide these main features:</p>
     <ul>
-      <li>Welcome to Brightcove Beacon</li>
-      <li>Building Your First Page</li>
+      <li>Since ads are stitched into the live video stream on the server side, they are not affected by ad blockers</li>
+      <li>Ads are inserted at cue points sent from your encoder or you can create an instant cue point using the <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html#ad">Live page Control Room</a></li>
+      <li>You can configure fill slates to fill any unused ad time</li>
     </ul>
+    <p>To learn more about server-side advertising, see <a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing Server-Side Ads with the Brightcove Player</a>.</p>
+    <aside class="bcls-aside bcls-aside--information">Note:
+      <ul>
+        <li>Before you can use SSAI, your Brightcove Beacon account needs to be configured for Dynamic Delivery and enabled for SSAI. Contact your account manager for details.</li>
+        <li>VMAP for Brightcove Live SSAI is not currently supported.</li>
+        <li>Although there is no prefetch functionality for SSAI ads, we delegate the ad position logic to the ad provider. Dynamic Delivery makes all the add calls up front. If we get an ad from the ad provider and it is transcoded in our system we will insert it into the stream.</li> 
+      </ul>
+    </aside>
+    <p>The Server-Side Ad Settings page is used to manage the  ad configurations. Note that to access the Server-Side Ad Settings page, you must be a user with the Administrator role.</p>
+    <p>To access the Server-Side Ad Settings page:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the left navigation, click <strong>Admin</strong>. Note that you must be an account administrator to access to the Administration page.</li>
+      <li>Click<strong> Server-Side Ad Settings</strong>. A list of all ad configurations will be displayed.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/ssai-list-of-ad-configs.png" /></figure>
+      </li>
+    </ol>
   </section>
   <section class="bcls-section">
-    <h3>What do you need help with?</h3>
-    <ul>
-      <li><a href="/pages/howto/index.html">Pages</a></li>
-      <li><a href="/upload/howto/index.html">Upload</a></li>
-      <li><a href="/media/howto/index.html">Media</a></li>
-      <li>Analytics</li>
-      <li>Live</li>
-      <li>Monetization</li>
-      <li>Viewer Management</li>
-      <li><a href="/admin/howto/index.html">Admin</a></li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h3>More Resources</h3>
-    <p> <a href="https://beacon-la.support.brightcove.com/index.html"><i class="fas fa-search"></i> Search Beacon Documentation</a></p>
-    <p><a href="https://supportportal.brightcove.com/"><i class="far fa-question-circle"></i> Get Support</a></p>
-    <p><i class="far fa-file-alt"></i> View Release Notes</p>
+    <h2 id="create">Creating an ad configuration</h2>
+    <p>To create an ad configuration, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>On the Server-Side Ad Settings page, click <strong>Create Ad Configuration</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/ssai-create-live-ad.png" /></figure>
+      </li>
+      <li>Enter a <strong>Name</strong>.</li>
+      <li>Select the <strong>Ad Server Response</strong>:
+        <ul>
+          <li>VAST</li>
+          <li>DFP (Ad Rules)</li>
+          <li>Smart XML</li>
+        </ul>
+      </li>
+      <li>Enter the<strong> Ad Tag</strong>.</li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+    <p>To edit an ad configuration, click the ad name, make the changes and then click <strong>Save</strong>. To delete an ad config, check the box next to the ad and then click <strong>Delete</strong>. To duplicate an ad config, check the box next to the ad and then click <strong>Duplicate</strong>.</p>
+    <p>Once Live ad configurations have been created, when an event is created with the <strong>Enable Server-Side Ad Insertion (SSAI)</strong> property enabled, an ad configuration can be selected in the Control Room. For information on creating live events, see <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Creating and Managing Live Events using the Live Module</a>.</p>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
       
     </div>
   </div>
@@ -503,7 +539,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Nov 2020
+  Page last updated on 17 Nov 2020
 </div>
 
 

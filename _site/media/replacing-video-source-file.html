@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Beacon Help</title>
+  <title>Replacing a Video Source File</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -123,7 +123,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item active" aria-current="page">Beacon Help</li>
+    <li class="breadcrumb-item"><a href="/media/">Managing Videos</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Replacing a Video Source File</li>
   </ol>
 </nav>
 
@@ -464,32 +466,34 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1><i class="far fa-shapes"></i> Beacon Help</h1>
+  <h1>Replacing a Video Source File</h1>
+  <summary>This topic covers how to replace a video source file.</summary>
   <section class="bcls-section">
-    <h3>Getting Started</h3>
-    <ul>
-      <li>Welcome to Brightcove Beacon</li>
-      <li>Building Your First Page</li>
-    </ul>
+    <p>There may be times when you want to replace the source file for a video. One common case is when you need to edit a video that was already published. If you delete the video and re-upload, you will have to re-enter all of the video metadata and you will lose any video analytics associated with the video.</p>
+    <p>While the new renditions are being created, the video will remain playable using the existing renditions.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: You cannot replace the source file for videos that have been shared to your account.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: Video file names (including the extension) must not exceed 120 single-byte (60 double-byte) characters. If it does, the video will be ingested successfully, but you will not be able to retranscode it later.</aside>
   </section>
   <section class="bcls-section">
-    <h3>What do you need help with?</h3>
-    <ul>
-      <li><a href="/pages/howto/index.html">Pages</a></li>
-      <li><a href="/upload/howto/index.html">Upload</a></li>
-      <li><a href="/media/howto/index.html">Media</a></li>
-      <li>Analytics</li>
-      <li>Live</li>
-      <li>Monetization</li>
-      <li>Viewer Management</li>
-      <li><a href="/admin/howto/index.html">Admin</a></li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h3>More Resources</h3>
-    <p> <a href="https://beacon-la.support.brightcove.com/index.html"><i class="fas fa-search"></i> Search Beacon Documentation</a></p>
-    <p><a href="https://supportportal.brightcove.com/"><i class="far fa-question-circle"></i> Get Support</a></p>
-    <p><i class="far fa-file-alt"></i> View Release Notes</p>
+    <h2 id="steps">Steps to replace a video source file</h2>
+    <p>To replace a video source file, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the Media page.</li>
+      <li>Click the link for the video you want to replace the source file for.</li>
+      <li>Locate the <strong>Video Files</strong> section and click<strong> Replace Source File</strong>.</li>
+      <li>The <strong>Upload</strong> page will open in another tab. Confirm that the Upload page indicates that you are replacing a source file.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/replace-source-upload.png" /></figure>
+      </li>
+      <li>Select an ingest profile to use.
+        <aside class="bcls-aside bcls-aside--information">Note: Videos that were initially transcoded using a Dynamic Delivery or Context Aware ingest profile can only be retranscoded using one of those ingest profile types. Videos transcoded using a Legacy ingest profile can be retranscoded with any type of profile.</aside>
+      </li>
+      <li>Use the Upload page to upload a new source file.</li>
+      <li>Check <strong>Keep existing thumbnail and video still images</strong> to keep the existing thumbnail and poster images. Uncheck the option to have new images generated from the new source file.</li>
+      <li>Check <strong>Keep existing audio tracks</strong> to keep the existing audio tracks. Uncheck the option to have new audio tracks generated from the new source file.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/replace-source-keep-images.png" /></figure>
+      </li>
+      <li>Click <strong>Process</strong> to begin the transcoding. A <strong>Processing Complete</strong> message will display. Note that there will be a delay before the updated renditions are available. Check the <strong>Upload Date</strong> values in the <strong>Video Files</strong> section of the Media page to verify that the new renditions are available.</li>
+    </ol>
   </section>
 </article>
 
@@ -497,13 +501,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <div class="col-sm-2 right-side-bar">
       
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
     </div>
   </div>
 </div>
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Nov 2020
+  Page last updated on 17 Nov 2020
 </div>
 
 
