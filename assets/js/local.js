@@ -31,6 +31,10 @@ var BCLS_local = ( function (window, document) {
     enableElement(forward_button);
   }
 
+  function addExternalLink() {
+    
+  }
+
   /**
    * hide element not needed for the context; logs an error if the element does not exist
    * @param {object} el - the element to hide 
@@ -48,7 +52,7 @@ var BCLS_local = ( function (window, document) {
    * @param {object} el the nav button element 
    */
   function disableElement(el) {
-    el.setAttribute('style', 'opacity:.6;cursor:not-allowed;')
+    el.setAttribute('style', 'opacity:.2;cursor:not-allowed;')
   }
 
   /**

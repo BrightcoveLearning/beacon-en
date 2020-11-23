@@ -19,13 +19,13 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
 
 #back_button {
   float: left;
-  margin-left: .5rem;
+  margin-left: 1rem;
   cursor: pointer;
 }
 
 #forward_button {
   float: right;
-  margin-right: .5rem;
+  margin-right: 1rem;
   cursor: pointer;
 }
 #breadcrumbs {
