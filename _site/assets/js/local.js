@@ -18,9 +18,13 @@ var BCLS_local = ( function (window, document) {
 
   if (!back_page) {
     disableElement(back_button);
+  } else {
+    enableElement(back_button);
   }
   if (!forward_page) {
     disableElement(forward_button);
+  } else {
+    enableElement(forward_button);
   }
 
   /**
@@ -40,7 +44,7 @@ var BCLS_local = ( function (window, document) {
    * @param {object} el the nav button element 
    */
   function disableElement(el) {
-    el.setAttribute('style', 'opactity:.6;cursor:not-allowed;')
+    el.setAttribute('style', 'opacity:.6;cursor:not-allowed;')
   }
 
   /**
@@ -48,7 +52,7 @@ var BCLS_local = ( function (window, document) {
    * @param {object} el the nav button element 
    */
   function enableElement(el) {
-    el.setAttribute('style', 'opactity:1;cursor:pointer;')
+    el.setAttribute('style', 'opacity:1;cursor:pointer;')
   }
 
   /**
@@ -68,8 +72,10 @@ var BCLS_local = ( function (window, document) {
   function createFrameNav() {
     forward_button.addEventListener('click', function() {
 
-    })
-    back_button = document.getElementById('back_button');
+    });
+    back_button.addEventListener('click', function() {
+
+    });
   }
   
   // if inside iframe, hide appropriate elements
