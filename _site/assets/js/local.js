@@ -1,18 +1,21 @@
 var BCLS_local = ( function (window, document) {
 
   var header                 = document.querySelector('header'),
-  side_nav                 = document.getElementById('side_nav'),
-  footer                   = document.querySelector('footer'),
-  talla_wrapper            = document.getElementById('talla_wrapper'),
-  open_new_tab             = document.getElementById('open_new_tab'),
-  bc_veggie_burger_wrapper = document.getElementById('bc_veggie_burger_wrapper'),
-  in_prod_nav              = document.getElementById('in_prod_nav'),
-  forward_button           = document.getElementById('forward_button'),
-  back_button              = document.getElementById('back_button'),
-  all_links                = document.querySelectorAll('a'),
-  this_page                = window.location.pathname,
-  back_page                = getURLparam('back_page'),
-  forward_page             = getURLparam('forward_page');
+    side_nav                 = document.getElementById('side_nav'),
+    footer                   = document.querySelector('footer'),
+    talla_wrapper            = document.getElementById('talla_wrapper'),
+    open_new_tab             = document.getElementById('open_new_tab'),
+    bc_veggie_burger_wrapper = document.getElementById('bc_veggie_burger_wrapper'),
+    in_prod_nav              = document.getElementById('in_prod_nav'),
+    nav_search_box           = document.getElementById('nav-search-box'),
+    last_updated             = document.getElementById('last_updated'),
+    more_resources           = document.getElementById('more_resources'),
+    forward_button           = document.getElementById('forward_button'),
+    back_button              = document.getElementById('back_button'),
+    all_links                = document.querySelectorAll('a'),
+    this_page                = window.location.pathname,
+    back_page                = getURLparam('back_page'),
+    forward_page             = getURLparam('forward_page');
 
   // disable nav if no back/forward pages
 
@@ -28,7 +31,7 @@ var BCLS_local = ( function (window, document) {
   }
 
   function addExternalLink() {
-    
+
   }
 
   /**
@@ -96,6 +99,22 @@ var BCLS_local = ( function (window, document) {
         enableElement(back_button);
       }
     }
+
+    var fby = fby || [];
+    fby.push(['showTab', {id: '15610', position: 'right', color: 'rgb(4, 13, 40)'}]);
+    (function () {
+        var f = document.createElement('script'); f.type = 'text/javascript'; f.async = true;
+        f.src = '//cdn.feedbackify.com/f.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(f, s);
+    })();
+    hideElement(header);
+    hideElement(footer);
+    hideElement(side_nav);
+    hideElement(talla_wrapper);
+    hideElement(bc_veggie_burger_wrapper);
+    hideElement(nav_search_box);
+    hideElement(last_updated);
+    more_resources.setAttribute('style', 'display:block')
   } else {
     hideElement(forward_button);
     hideElement(back_button);

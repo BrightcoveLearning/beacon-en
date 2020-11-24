@@ -8,6 +8,10 @@ layout: null
   border-left: 3px {{ site.product_color }} solid;
 }
 
+h1 {
+  margin-top: 1rem;
+}
+
 h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   font-size: 3rem;
   color:{{site.product_color}};
@@ -31,6 +35,17 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
 #breadcrumbs {
   margin-left: 0;
   margin-right: 0;
+  margin-bottom: 0;
   width: 100%;
+}
+
+#more_resources {
+  display: none;
+}
+#more_resources img {
+  height: 1rem;
+}
+#more_resources h3 {
+  margin: 2.75rem 0 1.05rem;
 }
 
