@@ -20,17 +20,17 @@ var BCLS_local = ( function (window, document) {
     this_page                = window.location.pathname,
     back_page                = getURLparam('back_page'),
     forward_page             = getURLparam('forward_page');
-    // console.log('back_page', back_page);
-    // console.log('forward_page', forward_page);
+    if (back_page) {
+      console.log('back_page', back_page);
+    } else {
+      console.log('no back_page');
+    }
+    console.log('forward_page', forward_page);
     
-    if (back_page === null) {
-      disableElement(back_button);
-    } else {
+    if (back_page) {
       enableElement(back_button);
-    }  
-    if (forward_page === null) {
-      disableElement(forward_button);
-    } else {
+    }   
+    if (forward_page) {
       enableElement(forward_button);
     }  
     
@@ -55,7 +55,6 @@ var BCLS_local = ( function (window, document) {
      * @param {object} el the nav button element 
      */ 
     function disableElement(el) {
-      console.log('disabling');
       el.setAttribute('style', 'opacity:.2;cursor:not-allowed;')
     }  
     
@@ -108,7 +107,6 @@ var BCLS_local = ( function (window, document) {
         href = all_links[i].getAttribute('href');
         if (href.charAt(0) !== '#') {
           link.setAttribute('href', href + '?back_page=' + this_page);
-          enableElement(back_button);
         }
       }
       
@@ -123,9 +121,9 @@ var BCLS_local = ( function (window, document) {
       hideElement(footer);
       hideElement(side_nav);
       hideElement(talla_wrapper);
-      hideElement(bc_veggie_burger_wrapper);
       hideElement(nav_search_box);
       hideElement(last_updated);
+      hideElement(bc_veggie_burger_wrapper);
       more_resources.setAttribute('style', 'display:block')
       forward_button.addEventListener('click', function() {
         if (forward_page !== null) {
