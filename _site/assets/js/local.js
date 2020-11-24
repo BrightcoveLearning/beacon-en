@@ -16,11 +16,10 @@ var BCLS_local = ( function (window, document) {
     this_page                = window.location.pathname,
     back_page                = getURLparam('back_page'),
     forward_page             = getURLparam('forward_page');
-    console.log('back_page', back_page);
-    console.log('forward_page', forward_page);
+    // console.log('back_page', back_page);
+    // console.log('forward_page', forward_page);
     
     if (back_page === null) {
-      console.log('disable back');
       disableElement(back_button);
     } else {
       enableElement(back_button);
