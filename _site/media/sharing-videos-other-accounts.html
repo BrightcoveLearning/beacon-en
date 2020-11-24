@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Sharing Videos to Other Accounts</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Other Brightcove Docs</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentation Home</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Brightcove Campaign</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Brightcove Player Development</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">Video Cloud Platform APIs</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">Video Cloud Device SDKs</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integrations and CMS Connectors</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Video Cloud General Information</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
+    <br>
+    
+  </div>
+</header>
+<img id="back_button" src="/assets/images/feather/chevron-left.svg" alt="Back"><img id="forward_button" src="/assets/images/feather/chevron-right.svg" alt="Forward">
+<br style="clear: both;">
+<nav id="breadcrumbs" aria-label="breadcrumb">
+  <ol class="breadcrumb arr-right">
+    
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    
+    
+    
+    <li class="breadcrumb-item"><a href="/media/">Managing Videos</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Sharing Videos to Other Accounts</li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 left-side-bar">
+      <nav class="sidenav" id="side_nav">
+        
+        
+        <h5><a href="/index.html">Home</a></h5>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/getting-started/index.html">Getting Started <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/getting-started/learning-guide-bc-beacon.html">Learning Guide</a></li>
+          
+          
+          
+          <li><a href="/getting-started/implementation-phases.html">Implementation Phases</a></li>
+          
+          
+          
+          <li><a href="/getting-started/app-design-considerations.html">Application Design Considerations</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-info-architecture.html">App Design - Info Architecture</a></li>
+          
+          
+          
+          <li><a href="/getting-started/creating-your-app-design-layout-options.html">App Design - Layout Options</a></li>
+          
+          
+          
+          <li><a href="/getting-started/design-best-practices.html">Design Best Practices</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/syncing-with-video-cloud/index.html">Syncing with Video Cloud <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/syncing-with-video-cloud/vc-custom-fields.html">Creating Video Cloud Custom Fields</a></li>
+          
+          
+          
+          <li><a href="/syncing-with-video-cloud/forcing-a-sync.html">Forcing a Sync</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/using-brightcove-beacon/index.html">Using Brightcove Beacon <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/using-brightcove-beacon/adding-to-page.html">Adding a Carousel to a Page</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-channel.html">Creating a Channel</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/electronic-program-guides.html">Creating an Electronic Program Guide (EPG)</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-page.html">Creating a New Page</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-a-playlist.html">Creating a Playlist</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/creating-subscription-package.html">Creating a Subscription Package</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/series-seasons-episodes.html">Creating Series/Seasons/Episodes</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/implementing-authvod.html">Implementing AuthVOD</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/live-ssai.html">Implementing Live SSAI</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementing VOD SSAI</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/including-non-configurable-pages.html">Including Non-Configurable Pages</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/introducing-pages.html">Introducing Pages</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/streaming-live-event.html">Streaming a Live Event</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/streaming-vods-to-a-channel.html">Streaming VODs to a Channel</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/monetization-options.html">Understanding Monetization Options</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/using-subscription-package.html">Using a Subscription Package</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/tools.html">Using the Tools</a></li>
+          
+          
+          
+          <li><a href="/using-brightcove-beacon/viewing-analytics-data.html">Viewing Analytics Data</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/creating-your-apps/index.html">Creating Your Apps <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/android/index.html">Android <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/android/submitting-to-android.html">Submitting New Apps to the Android Store</a></li>
+              
+              <li><a href="/creating-your-apps/android/updating-android-apps-to-bcb.html">Updating Android Apps to Brightcove Beacon</a></li>
+              
+              <li><a href="/creating-your-apps/android/adding-subscriptions-in-android.html">Adding Subscriptions to Android</a></li>
+              
+              <li><a href="/creating-your-apps/android/improving-relevance-android.html">Improving Search Relevance in the Android Play Store</a></li>
+              
+              <li><a href="/creating-your-apps/android/installing-android-test-build.html">Installing an Android Test Build</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/fire-tv/index.html">Fire TV <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Installing a Fire TV Test Build</a></li>
+              
+              <li><a href="/creating-your-apps/fire-tv/submitting-to-amazon.html">Submitting to the Amazon Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/ios-tvos/index.html">iOS/tvOS <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Installing an iOS/tvOS Test Build</a></li>
+              
+              <li><a href="/creating-your-apps/ios-tvos/submitting-to-apple.html">Submitting to the Apple Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/panasonic/index.html">Panasonic <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/panasonic/submitting-to-panasonic.html">Submitting to the Panasonic Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/roku/index.html">Roku <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/roku/configuring-inchannel-products.html">Configuring In-Channel Products in Roku</a></li>
+              
+              <li><a href="/creating-your-apps/roku/installing-roku-test-build.html">Installing a Roku Test Build</a></li>
+              
+              <li><a href="/creating-your-apps/roku/submitting-to-roku.html">Submitting to the Roku Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/creating-your-apps/samsung/index.html">Samsung <strong>+</strong></a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/creating-your-apps/samsung/samsung-partner.html">Becoming a Samsung Partner</a></li>
+              
+              <li><a href="/creating-your-apps/samsung/submitting-to-samsung.html">Submitting to the Samsung Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li><a href="/creating-your-apps/common-required-info.html">Common Required Information</a></li>
+          
+          
+          
+          <li><a href="/creating-your-apps/device-apps-validation-guide.html">Device Apps Validation Guide</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/references/index.html">References <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/references/common-configuration-settings.html">Common Configuration Settings</a></li>
+          
+          
+          
+          <li><a href="/references/creating-stripe-account.html">Creating a Stripe Account</a></li>
+          
+          
+          
+          <li><a href="/references/glossary.html">Glossary</a></li>
+          
+          
+          
+          <li><a href="/references/image-requirements.html">Images and Their Specifications</a></li>
+          
+          
+          
+          <li><a href="/references/known-issues.html">Known Issues</a></li>
+          
+          
+          
+          <li><a href="/references/product-updates.html">Product Updates</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/training/index.html">Training <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/training/training-demand-custom-fields.html">Using Video Cloud Videos/Custom Fields</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-design-layout.html">Designing the Application Layout</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-publish-android-app.html">Publishing the Android App on the Play Store</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-playlists.html">Creating and Using Playlists</a></li>
+          
+          
+          
+          <li><a href="/training/training-demand-series-seasons-episodes.html">Creating Series, Seasons and Episodes</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/support/index.html">Support <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/support/brightcove-answer.html">Brightcove Answers</a></li>
+          
+          
+          
+          <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+          
+          
+          
+          <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+          
+          
+          
+          <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+          
+          
+        </ul>
+        
+        
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+      <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
+
+
+<article class="bcls-article">
+  <h1>Sharing Videos to Other Accounts</h1>
+  <summary>In this topic you will learn to share videos to other accounts.</summary>
+  <section class="bcls-section">
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="4703864538001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>Media sharing allows publishers to upload videos once and then share the videos to other accounts. The accounts can be your own, corporate accounts or accounts of other publishers. The shared videos can then be used independently in the other Video Cloud accounts. Media sharing is typically used when publishers want to keep a master account of video content and then share videos out to other divisions or subsidiaries of the organization.  </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="terminology">Media sharing terminology</h2>
+    <p>This topic will use the following terminology:</p>
+    <ul>
+      <li><strong>Master</strong> - The account that created the original video. The Master owns the content and is responsible for setting up, managing and providing content to affiliates.</li>
+      <li><strong>Affiliate</strong> - The account that is receiving the video. The affiliate can accept content shared to it from a master.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="limitations">Media sharing limitations</h2>
+    <ul>
+      <li>
+        <p>Sharing videos that have been secured using DRM is <strong>not</strong> supported. Sharing videos from an account that is not DRM-enabled to an account that is DRM-enabled is supported, but the shared videos will <strong>not</strong> be packaged for DRM.</p>
+      </li>
+      <li>
+        <p>Sharing will fail for videos created using the "Convert live stream to VOD" option. It will work for videos made by clipping live streams.</p>
+      </li>
+      <li>
+        <p>Shared videos can be downloaded for offline viewing only if the original video can be. The property is inherited from the original video and cannot be changed for shared video only.</p>
+      </li>
+      <li>
+        When playing a shared video with SSAI, SSAI Macro replacement will use the metadata from the parent video instead of the child Video.  SSAI will also skip the ad lookup if the parent video is marked as <code>Advertising='Free'</code>, even if the child video is labeled as <code>Ad Supported</code>.
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="manage">Managing media sharing relationships</h2>
+    <p>Before videos can be shared between accounts, media sharing settings must be configured as part of the <strong>ADMIN &gt; Media Sharing</strong> settings. Note that only account administrators have access to the Admin menu. If you wish to share videos to other accounts, affiliates must be added and the affiliate accounts must accept the relationship. Master and affiliate accounts can terminate the relationship at any time. Terminating a media sharing relationship <strong>does not</strong> remove any shared videos from affiliate accounts. If you want to remove shared videos from an affiliate's account, you need either delete them from your own (master) account or open the video properties, go to the <strong>Media Sharing</strong> section, and click the <strong>Remove Video</strong> icon for the affiliate account.</p>
+    <figure><img class="bcls-image--no-border" alt="" src="/assets/images/media/node18465-remove-video.png" /></figure>
+    <p>For information on configuring the Media Sharing settings, see <a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sharing">Sharing videos</h2>
+    <p>By default, the ability to share videos is available to all users in your account with access to the Media page. To share videos, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the Media page, select one or more videos and then click <strong>More &gt; Share</strong>.
+        <aside class="bcls-aside bcls-aside--information">Note: When sharing large numbers of videos, Brightcove recommends sharing at most 50 videos at a time. Sharing a large number of videos at once may cause a time out error in Studio. If you need to share a large number of videos, the CMS API should be used.</aside>
+      </li>
+      <li>Select the affiliate account(s) to share the video(s) to and then click <strong>Share</strong>. The search field can be used to search for an account ID. The search field supports fuzzy searches so entering part of an ID will return matches.
+        <figure><img alt="" src="/assets/images/media/node18465-select-accounts.png" /></figure>
+      </li>
+    </ol>
+    <p>It is possible to reshare videos (share previously shared videos to the same account). Doing so will replace any video metadata changes made by the affiliate account with the values from the master (sharing) account. Use caution when resharing videos.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="review">Reviewing shared videos</h2>
+    <p>Affiliate accounts have the ability to configure an <strong>Acceptance Mode</strong> for each master account. When the <strong>Acceptance Mode</strong> is <strong>Auto</strong>, shared videos will appear in the affiliate account's list of videos on the Media page. When the <strong>Acceptance Mode</strong> is <strong>Manual</strong>, a <strong>Shares Pending</strong> link displaying the number of shared videos will appear on the Media page.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: For information on configuring the Acceptance Mode, see <a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a>.</aside>
+    <figure><img alt="" src="/assets/images/media/node18465-shares-pending.png" /></figure>
+    <p>Clicking the <strong>Shares Pending</strong> link will display the list of shared videos.</p>
+    <figure><img alt="" src="/assets/images/media/node18465-shares-pending-list.png" /></figure>
+    <p>From the shares pending list, you can:</p>
+    <ul>
+      <li><strong>Reject</strong> - To reject the shared video and not include it in your account. Rejecting a shared video does not prevent the master from sharing it to your account again in the future.</li>
+      <li><strong>Accept</strong> - To accept the shared video into your account.</li>
+    </ul>
+    <p><strong>Quick View</strong> can be used to open a panel to view video properties. Once you accept a shared video, it no longer appears in the Shares Pending list on the Media page, and it appears in the All Videos view.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="view">Shared videos on the Media page</h2>
+    <p>Shared videos will display a sharing icon in the upper corner of the video thumbnail to indicate that the video has been shared into or out of an account.</p>
+    <div class="BCL-subsection">
+      <h3>Video shared into an account</h3>
+      <p>Hovering over the sharing icon (<img alt="" src="/assets/images/media/node15924-shared-in-icon.png" />) will display sharing details.</p>
+      <figure><img alt="" src="/assets/images/media/node18465-shared-in.png" /></figure>
+    </div>
+    <section class="bcls-subsection">
+      <h3>Video shared to another account</h3>
+      <p>Hovering over the sharing icon (<img alt="" src="/assets/images/media/node15924-shared-out-icon.png" />) will display sharing details.</p>
+      <figure><img alt="" src="/assets/images/media/node18465-shared-out.png" /></figure>
+    </section>
+    <p>Master accounts can see the status of videos shared to affiliate accounts using the <strong>Media Sharing</strong> section of the video properties page.</p>
+    <figure><img alt="" src="/assets/images/media/node18465-media-sharing-status.png" /></figure>
+    <p>Errors may also appear here. For example, if <strong>Enforce custom field matching</strong> is checked, the affiliate account must have the same custom fields as the master account or any shares will fail.</p>
+    <figure><img alt="" src="/assets/images/media/node18465-media-sharing-error.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete">Deleting shared videos</h2>
+    <p>When a shared video is deleted from a master account, a message is displayed reminding you that deleting the shared video will delete it from all the affiliate accounts you've shared it with.</p>
+    <figure><img alt="" src="/assets/images/media/node18465-delete-shared-video.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="properties">Shared video properties</h2>
+    <p>When a video is shared to an affiliate account, the following video properties are copied with the shared video:</p>
+    <ul>
+      <li>Name</li>
+      <li>Short and long description</li>
+      <li>Reference ID (If any of the affiliate accounts that you are sharing with already have a video with the same reference ID, the sharing operation fails with an error message. You can avoid this by setting up reference ID naming conventions that prevent affiliates from using the same reference IDs.)</li>
+      <li>Related Link (link text and link URL)</li>
+      <li>Tags</li>
+      <li>Video projection</li>
+      <li>Thumbnail and poster images - By default, poster and thumbnail images for the master videos will be used in the affiliate accounts. If changes are made to the poster and/or thumbnail in the master account, those changes will be reflected in the affiliate accounts <strong>unless</strong> the affiliate account has previously generated new poster or thumbnail images. Once the affiliate account makes a change to the poster or thumbnail images, any changes to the poster/thumbnail made in the master account <strong>will not </strong>propagate to the affiliate account.</li>
+      <li>Text Tracks - Affiliates do not have the ability to delete or edit the text track properties for shared videos.</li>
+      <li>Advertising (Free / Ad Supported)</li>
+      <li>Ad keys</li>
+      <li>Scheduling start date and end date</li>
+      <li>Geo-restriction - Publishers should ensure that master and affiliate accounts are configured the same way with respect to geo-restrictions.</li>
+      <li>Cue points with their associated metadata</li>
+      <li>Custom fields - If the master account is configured to <strong>Enforce custom field matching</strong>, the affiliate account(s) must have the same custom fields as the master account or any shares will fail.</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Note: If the custom field is a list type, the custom field must have the same options in both accounts.</aside>
+    <p>The shared video has all the values for these video metadata fields that the master video had at the moment it was shared. However, from that point on, the master copy and the affiliate copy become independent entities:</p>
+    <ul>
+      <li>Video files are not copied when you use Media Sharing, only the video metadata is copied. The shared video points to the original video files in your account.</li>
+      <li>If the video is deleted from the master account, the video is deleted from all affiliate accounts.</li>
+      <li>Any changes an affiliate makes to a video will not affect the original or any other shared copies. If an affiliate deletes a shared video, it is removed from the affiliate's account but remains in the master account and in all other affiliate accounts.</li>
+      <li>Affiliates can't remove or update text tracks using the Media Module.</li>
+      <li>When affiliates receive a video by sharing, it is in the active state. This is true even if the video was not active in the master account.</li>
+      <li>If an affiliate accepts a video and required fields are missing, the video will be inactive.</li>
+      <li>An affiliate account that receives a shared video cannot share that video to another account. Only the master account can share the video.</li>
+      <li>Each account is billed separately for playback (video plays and bandwidth usage) of a shared video from that account.</li>
+      <li>Reporting about a shared video is specific to each account and does not aggregate information about each copy of the video in each account.</li>
+    </ul>
+    <p>It is possible to reshare videos (share previously shared videos to the same account). Doing so will replace any video metadata changes made by the affiliate account with the values from the master (sharing) account. Use caution when resharing videos.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="renditions">Shared video renditions</h2>
+    <p>Videos can be shared to affiliate accounts <strong>before</strong> transcoding has completed. Affiliate accounts that receive the shared video will have access to the renditions that were created in the master account. If the video in the source account is retranscoded, or if the source file is changed, those changes will occur in the affiliate accounts that receive the shared video.</p>
+    <p>Affiliate accounts are unable to retranscode or replace the source file for a shared video.</p>
+  </section>
+  <!--<div class="bcls-section">
+  <h2 id="drm">Media sharing & DRM</h2>
+  <p>If a master account shares a DRM-enabled video to an affiliate account that does not have DRM enabled, the shared video will be DRM-enabled in the affiliate account. If a master account without DRM shares a  video to an affiliate account that has  DRM enabled, the shared video will not be DRM-enabled in the affiliate account. Affiliate accounts have no control over the renditions so DRM can't be added to the shared video.</p>
+</div>-->
+  
+  <section class="bcls-section">
+    <h2 id="billing">Shared media and billing</h2>
+    <p>We often get questions on how media that is shared between accounts affects billing. Below are a few scenarios that explain how billing is handled for content that is shared between publishers.</p>
+    <h3>Scenario 1</h3>
+    <ul>
+      <li>Pub A and Pub B with content on Brightcove CDN</li>
+      <li>Pub A shares to Pub B</li>
+      <li>Pub B pays Brightcove for streams and bandwidth</li>
+    </ul>
+    <h3>Scenario 2</h3>
+    <ul>
+      <li>Pub A using BYO CDN</li>
+      <li>Pub B on Brightcove CDN OR BYO CDN (doesn't matter)</li>
+      <li>Pub A shares to Pub B</li>
+      <li>Pub B pays Brightcove for streams; Pub A pays their own CDN for bandwidth</li>
+    </ul>
+    <h3>Scenario 3</h3>
+    <ul>
+      <li>Pub A with content on Brightcove CDN</li>
+      <li>Pub B using BYO CDN</li>
+      <li>Pub A shares to Pub B</li>
+      <li>Pub B pays Brightcove for streams and bandwidth assuming that the billing parameters are being passed. We have seen edge cases where the billing parameters are not being passed due to the creation of custom video players that are not properly passing the billing parameters.</li>
+    </ul>
+    <h3>Scenario 4 - Content must be fetched from Origin</h3>
+    <p>We pass along the account ID&nbsp;in every request&nbsp;so that each account is billed for its own origin access. So if the <strong>Sharer</strong> account frequently misses its CDN cache and has to go back to origin for content, then the <strong>Sharer</strong> will be billed for that. If the <strong>Sharee</strong> account frequently misses its CDN cache and has to go back to origin for content, then the <strong>Sharee</strong> account is billed for that. Charges for Origin access stay separate regardless of the CDN config scenario.</p>
+    <h3>Scenario 5 - Images</h3>
+    <p>By default with Dynamic Delivery, the master account (creator of the images) is billed for all image traffic associated with a shared asset. If the affiliate account uploads or captures new images for the shared content, then the image traffic will be associated and billed to the affiliate account.</p>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div id="last_updated" class="last-updated">
+  Page last updated on 23 Nov 2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">Have a question? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/assets/js/site/https-fix.js"></script>
+  <script src="/assets/js/site/setDate.js"></script>
+  
+  <script src="/assets/js/site/prism.js"></script>
+  
+  <script src="/assets/js/site/site.js"></script>
+  <script src="/assets/js/site/tabs.js"></script>
+  <script src="/assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="/assets/js/site/bcls-utils.js"></script>
+  <script src="/assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  <script src="/assets/js/local.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
