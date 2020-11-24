@@ -86,8 +86,24 @@ var BCLS_local = ( function (window, document) {
     if (window.location !== window.parent.location) {
       var i,
       iMax = all_links.length,
+      h1 = document.querySelector('h1'),
       link,
-      href;
+      href,
+      a,
+      img;
+
+      // add open in new tab link
+
+      a = document.createElement('a')
+      a.setAttribute('href', window.location.href);
+      a.setAttribute('target', '_blank');
+      img = document.createElement('img');
+      img.setAttribute('src', '/assets/images/feather/external-link.svg');
+      img.setAttribute('alt', 'Open in New Tab');
+      img.setAttribute('style', 'margin-left:1rem;width:1.5rem;');
+      a.appendChild(img);
+      h1.appendChild(a);
+
       for (i = 0; i < iMax; i++) {
         link = all_links[i];
         href = all_links[i].getAttribute('href');
