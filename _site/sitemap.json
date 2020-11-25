@@ -205,7 +205,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
+      "newURL": "https://beacon-help.support.brightcove.com/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/support/",
       "oldURL": "/index"
   },
 
@@ -220,17 +225,12 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/admin/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/media/howto/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/support/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/",
       "oldURL": "/index"
   },
 
@@ -240,7 +240,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
       "oldURL": "/index"
   },
 
@@ -287,6 +287,11 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/admin/managing-users.html",
       "oldURL": "/managing-users"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/monetization/monetization-options.html",
+      "oldURL": "/monetization-options"
   },
 
   {
