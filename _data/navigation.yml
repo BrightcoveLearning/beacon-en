@@ -6,7 +6,9 @@
   url: /getting-started/index.html
   icon: '<i class="far fa-location-arrow"></i>'
   docs:
-    - name: Application Design Considerations
+    - name: App Design Best Practices
+      url: /getting-started/design-best-practices.html
+    - name: App Design Considerations
       url: /getting-started/app-design-considerations.html 
     - name: Brightcove Beacon Learning Guide
       url: /getting-started/learning-guide-bc-beacon.html
