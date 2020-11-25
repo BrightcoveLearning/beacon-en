@@ -1,31 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="In this topic, you will examine the phases of a Brightcove Beacon implementation." />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to create a page in Brightcove Beacon Studio.">
-  
-  <title>How To: Create a Page</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
+    <title>Implementation Phases</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+    <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+    <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+      <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/site/prism.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/site/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/site/landing-page.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/site/tabs.css"
+    />
+    <link rel="stylesheet" href="/assets/css/local.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/381443caa8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/site/google-analytics.js"></script>
+    <script src="/assets/js/sajari-head.js"></script>
+  </head>
 
-<body class="body">
+  <body class="body"></body>
+</html>
 
 <header>
   <div class="div-header">
@@ -123,9 +162,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/pages/">Managing Pages</a></li>
+    <li class="breadcrumb-item"><a href="/getting-started/">Getting Started</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+    <li class="breadcrumb-item active" aria-current="page">Implementation Phases</li>
   </ol>
 </nav>
 
@@ -440,52 +479,340 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<!-- test-->
-<h1>How To: Create a Page</h1>
+<h1>Implementation Phases</h1>
 <article class="bcls-article">
-    <section class="bcls-section">
-        <div style="position: relative; display: block; max-width: 960px;">
-            <div style="padding-top: 56.25%;">
-                <iframe src="https://players.brightcove.net/3676484086001/default_default/index.html?videoId=6210917933001" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
-            </div>
-        </div>
-        <h3>Steps</h3>
-        <ol class="bcls-tasklist-restart">
-            <li>Open the <strong>Pages</strong> page.</li>
-            <li>In the side navigation panel, click <strong>Create Page</strong>.</li>
-            <li>The next dialog has you choose the general page group. In this case, choose <strong>Customize with your content</strong>.</li>
-            <li>Enter a <strong>Page Name</strong> using the following guidelines.
-                <ul>
-                    <li> Name is limited to 100 characters</li>
-                    <li>Illegal character: /</li>
-                </ul>
-            </li>
-            <li>Select a <strong>Page Type</strong> by clicking on it. The <strong>Page Type</strong> controls the layout of the page and how the content is displayed on the page. In this case, choose <strong>Tabs</strong>.
-            </li>
-            <li>Click <strong>Create</strong>.</li>
-            <li>Click <strong>Add Playlist</strong>. A list of playlists that have been created will display.</figure>
-            </li>
-            <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <strong>Add</strong>. The number of playlists that can be added is based upon the Page Type that was selected. Some Page Types only allow one playlist to be added. As playlists are added, they will appear on the page preview.
-            </li>
-            <li>Click <strong>X</strong> to close the list of playlists.</li>
-        </ol>
-        <p>You have now created a page and added your video content to it.</p>
-    </section>
-    <section class="bcls-section">
-        <h3>Related</h3>
-        <ul>
-            <li><a href="/pages/tv-series-demo.html">How To: Add a Playlist to a Page</a></li>
-            <li><a href="/pages/tv-series-demo.html">How To: Change Page Availability</a></li>
-            <li><a href="/pages/tv-series-demo.html">Creating and Managing Pages <i class="fad fa-external-link-alt"></i></a></li>
-        </ul>
-    </section>
-    <section class="bcls-section">
-        <h3>More Resources</h3>
-        <i class="fal fa-search"></i> <a href="https://beacon-la.support.brightcove.com/pages/index.html" target="_blank">Search Brightcove Beacon Documentation <i class="fad fa-external-link-alt"></i></a>
-        <br>
-        <i class="far fa-hat-wizard"></i> <a href="https://beacon-la.support.brightcove.com/pages/index.html" target="_blank">Contact Support <i class="fad fa-external-link-alt"></i></a>
-    </section>
+  <summary>In this topic, you will examine the phases of a Brightcove Beacon implementation.</summary>
+
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>
+      In this document, a high-level look at the entire process of implementing
+      Brightcove Beacon is provided. It will emphasize that you as a customer
+      have a number of tasks to perform before meeting with a Brightcove
+      representative to build your device apps.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Overview">Overview</h2>
+    <ol class="bcls-tasklist">
+      <p>
+        In this section, the phases are introduced, briefly defined and the
+        result of the phase is stated. Later in the document, checklists, where
+        appropriate, are provided to help you prepare for each phase.
+      </p>
+      <li>
+        <h3>Phase 1: Prepare for Brightcove Beacon Experience Creation</h3>
+        <p>
+          Later in the Brightcove Beacon implementation process (Phase 4), you
+          will build the Brightcove Beacon Experience. You will do this while
+          working with a Brightcove representative. At this time you will need
+          to have some design artifacts ready, as well as decisions made on
+          platforms to which you wish to deploy, monetization strategy,
+          advertising strategy, etc.
+        </p>
+        <p>
+          <strong>END RESULT</strong>
+          : A collection of resources and strategies defined for use when
+          meeting with a Brightcove representative to build the Brightcove
+          Beacon Experience.
+        </p>
+      </li>
+      <li>
+        <h3>Phase 2: Establish Relationships with 3rd Party Vendors</h3>
+        <p>
+          There are numerous relationships with 3rd party vendors you need to
+          establish before meeting with a Brightcove representative to build the
+          Brightcove Beacon Experience. This would include contacting the
+          vendors for the platforms to which you choose to deploy an app, an
+          advertising server provider, Stripe for online payments if launching
+          web and/or Smart TV apps, etc.
+          <em>
+            It is VERY IMPORTANT that this process starts as early as possible
+            as to not cause delays at time of device app submission.
+          </em>
+        </p>
+        <p>
+          <strong>END RESULT</strong>
+          : Accounts created with all desired 3rd party vendors for use when
+          meeting with a Brightcove representative to build the Brightcove
+          Beacon Experience.
+        </p>
+      </li>
+      <li>
+        <h3>
+          Phase 3: Create Your Application Design
+        </h3>
+        <p>
+          Two parts of your application design are done here. The first is
+          planning what videos will be available to customers and how to group
+          and order them. In essence, your information architecture. The second
+          part consists of choosing how specific screens of your app should
+          look, given a number of choices.
+        </p>
+        <p>
+          <strong>END RESULT</strong>
+          : Two spreadsheets, created when working through the appropriate docs,
+          are filled in and ready for submission to Brightcove personnel when
+          the Brightcove Beacon Experience is ready to be created..
+        </p>
+      </li>
+      <li>
+        <h3>
+          Phase 4: Ingest or Add Content and Configure Your Brightcove Beacon
+          Experience
+        </h3>
+        <p>
+          Here you will use the Brightcove Beacon Administrative Console to
+          configure your experience. Here you will import media assets from
+          Video Cloud, and add other content. Configuration of monetization and
+          layout are also done. At this point not ALL content needs be added,
+          but at least representative content for thorough testing is needed.
+        </p>
+        <p>
+          <strong>END RESULT</strong>
+          : Content is added, and configuration is performed, via Brightcove
+          Beacon.
+        </p>
+      </li>
+      <li>
+        <h3>
+          Phase 5: Create Device Application(s) from Your Brightcove Beacon
+          Experience
+        </h3>
+        <p>
+          You will work with a Brightcove representative to build the Brightcove
+          Beacon Experience. The work done in Phases 1-4 is utilized to create
+          the experience. From the Brightcove Beacon Experience, the device apps
+          are built. At this point user acceptance testing is also done to be
+          sure apps function as desired.
+        </p>
+        <p>
+          <strong>END RESULT</strong>
+          : The device app files are created, tested and available for
+          submission to desired vendors/stores.
+        </p>
+      </li>
+      <li>
+        <h3>
+          Phase 6: Submit Your Device Application(s) to Corresponding Store(s)
+        </h3>
+        <p>
+          At this point you have the applications for your desired platforms in
+          hand, as well as configuration performed, so you can now submit the
+          applications.
+        </p>
+        <p>
+          END RESULT: Device apps appropriately submitted and viewers begin to
+          use the apps on vendor approval.
+        </p>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Phases_timing">Phases timing</h2>
+    <p>Note that Phases 1 and 2 can and should be executed simultaneously.</p>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image"
+        src="/assets/images/getting-started/learning-guide/phases-timing.png"
+        alt="phases timing"
+      />
+    </figure>
+
+    <p>
+      Of course, once the device applications are launched, you can continue to
+      configure and add content to Brightcove Beacon without having to resubmit
+      your device applications to their respective stores.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Details_Phase_1">
+      Details - Phase 1: Prepare for Brightcove Beacon Experience Creation
+    </h2>
+    <p>Following are tasks to complete for Phase 1:</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>
+            Determine device app platforms required and any priority platforms
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>Determine monetization strategy</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>
+            Determine if any custom user authentication services are needed
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>
+            Obtain your branded color(s) and logos for building the experience
+            and for device specifications
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>Attend Video Cloud training - Webinar or Training on Demand</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>
+            Ingest media assets into Video Cloud; you will need a
+            <strong>minimum of 40 videos</strong>, and create
+            <strong>3 to 5 playlists</strong> that use those videos
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>
+            Create the required custom fields in Video Cloud; see the
+            <a href="/syncing-with-video-cloud/vc-custom-fields.html">
+              Video Cloud Custom Fields
+            </a>
+            document for further details
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>Determine analytics requirements</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>Determine restricted geo-locations, if any</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Details_Phase_2">
+      Details - Phase 2: Establish Relationships with 3rd Party Vendors
+    </h2>
+    <p>Following are tasks to complete for Phase 2:</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>
+            Determine ad strategy and establish relationship with appropriate
+            vendor
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>
+            Establish relationship with Stripe for online payments, if launching
+            web or Smart TV device apps. Other platforms have a payment process
+            built in.
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>
+            Set up store accounts and confirm credentials. Vendors could include
+            but are not limited to:
+            <ul>
+              <li>Apple Developer Platform</li>
+              <li>Google Developer Platform</li>
+              <li>Amazon Developer Platform</li>
+              <li>Roku Developer Platform</li>
+              <li>Other Developer Platforms (e.g. Samsung, Panasonic)</li>
+            </ul>
+            See the
+            <a href="/creating-your-apps/index.html">
+              Submitting Device Apps to Stores
+            </a>
+            for information and corresponding URLs for starting this process.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Details_Phase_3">
+      Details - Phase 3: Create Your Application Design
+    </h2>
+    <p>
+      You need to think through how you want your device applications to appear
+      to your customers. In this phase you should work though the two documents:
+    </p>
+    <ul>
+      <li>
+        <a
+          href="/getting-started/creating-your-app-design-info-architecture.html"
+        >
+          Creating Your Application Design - Information Architecture
+        </a>
+      </li>
+      <li>
+        <a href="/getting-started/creating-your-app-design-layout-options.html">
+          Creating Your Application Design - Layout Options
+        </a>
+      </li>
+    </ul>
+    <p>
+      After working through these two documents you will have two spreadsheets,
+      one created in each document, that you will give to Brightcove personnel
+      when it is time to create the Brightcove Beacon Experience (Phase 4). The
+      information in the two spreadsheets details the videos presented to users,
+      including how they are grouped and ordered. Also specific screen layouts
+      are selected.
+    </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Details_Phase_4">
+      Details - Phase 4: Ingest or Add Content and Configure Your Brightcove
+      Beacon Experience
+    </h2>
+    <p>
+      You may have done other testing and configuration, but in this phase you
+      want to complete configuration. You don't have to have ALL content added,
+      but for testing purposes be sure you have representative content for all
+      types of media you will be using. You will use the Brightcove Beacon
+      Experience Administrative Console to perform further configuration.
+    </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Details_Phase_5">
+      Details - Phase 5: Create Device Application(s) from Your Brightcove
+      Beacon Experience
+    </h2>
+    <p>
+      This phase takes place with the assistance of Brightcove personnel. The
+      assets, vendor relationships, defined strategies, etc. from the first
+      three phases are used by the Brightcove representative to build and do
+      initial configuration of the Brightcove Beacon Experience. From this
+      collaboration, the actual device app files are generated from Brightcove
+      Beacon. Also in this phase, you can do acceptance testing on the device
+      apps.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Details_Phase_6">
+      Details - Phase 6: Submit Your Device Application(s) to Corresponding
+      Store(s)
+    </h2>
+    <p>
+      For each vendor for which you have a device app, you must submit the app
+      to the corresponding store. In Phase 2 you previously established a
+      relationship with the vendor’s platform, so in this phase you submit the
+      app to begin the approval process. In the
+      <a href="/creating-your-apps/index.html">
+        Submitting Device Apps to Stores
+      </a>
+      document you will find specific steps and links to appropriate vendor
+      documentation for help in the submission process.
+    </p>
+  </section>
 </article>
+
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -501,7 +828,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 24 Nov 2020
+  Page last updated on 25 Nov 2020
 </div>
 
 <nav id="more_resources">
