@@ -2,6 +2,7 @@ var BCLS_local = ( function (window, document) {
 
   var header                 = document.querySelector('header'),
     side_nav                 = document.getElementById('side_nav'),
+    centered_inpage_nav      = document.getElementById('centered_inpage_nav')
     footer                   = document.querySelector('footer'),
     talla_wrapper            = document.getElementById('talla_wrapper'),
     open_new_tab             = document.getElementById('open_new_tab'),
@@ -120,6 +121,7 @@ var BCLS_local = ( function (window, document) {
       hideElement(nav_search_box);
       hideElement(last_updated);
       hideElement(bc_veggie_burger_wrapper);
+      hideElement(centered_inpage_nav);
       more_resources.setAttribute('style', 'display:block')
       forward_button.addEventListener('click', function() {
         if (forward_page !== null) {

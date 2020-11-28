@@ -5,7 +5,7 @@
 }
 
 h1 {
-  margin-top: 1rem;
+  margin-top: .5rem;
 }
 
 h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
@@ -17,8 +17,34 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   color: rgb(28, 185, 213);
 }
 
+/* for phones and embedded pages */
+@media screen and (max-width: 1000px) {
+  h1 {
+    font-size: 2.2em !important;
+  }
+  h2 {
+    font-size: 1.9em !important;
+  }
+  h3 {
+    font-size: 1.5em !important;
+  }
+  h4 {
+    font-size: 1.3em !important;
+  }
+  h5 {
+    font-size: 1.1em !important;
+  }
+
+.bcls-section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0;
+}
+
 #back_button {
-  float: left;
+  position: absolute;
+  top: 5px;
+  left: -1rem;
   margin-left: 1rem;
   cursor: pointer;
 }
@@ -29,19 +55,37 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   cursor: pointer;
 }
 #breadcrumbs {
+  /* position: fixed;
+  top: 3rem; */
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
-  width: 100%;
+  width: 80%;
+}
+
+#breadcrumbs > ol {
+  background-color: white;
+  color: #333;
+  z-index: 9999;
 }
 
 #more_resources {
   display: none;
+  font-size: smaller;
 }
 #more_resources img {
   height: 1rem;
 }
-#more_resources h3 {
-  margin: 2.75rem 0 1.05rem;
+#more_resources h2 {
+  font-size: small;
+  margin: 0;
 }
 
+a, a::visited, a::hover {
+  color:rgb(7, 33, 144)!important;
+}
+.bcls-section a, .bcls-section a::visited, .bcls-section a::hover {
+  color:rgb(7, 33, 144)!important;
+}
+
+}

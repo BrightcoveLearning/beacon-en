@@ -1,4 +1,13 @@
 <!-- complete bootstrap layout -->
+<nav id="more_resources">
+  <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
+  <ul style="list-style: none;">
+    <li><a href="https://beacon-help.support.brightcove.com" target="_blank"><img src="/assets/images/feather/search.svg" alt="Search"> Search Brightcove Beacon Documentation <img src="/assets/images/feather/external-link.svg" alt="External Link"></a></li>
+    <li><a href="/#" target="_blank"><img src="/assets/images/feather/file-text.svg" alt="Release Notes"> View Release Notes <img src="/assets/images/feather/external-link.svg" alt="External Link"></a></li>
+    <li><a href="https://status.brightcove.com" target="_blank"><img src="/assets/images/feather/info.svg" alt="System Status"> System Status <img src="/assets/images/feather/external-link.svg" alt="External Link"></a></li>
+    <li><a href="https://supportportal.brightcove.com/s/login/" target="_blank"><img src="/assets/images/feather/message-circle.svg" alt="Contact Support"> Contact Support <img src="/assets/images/feather/external-link.svg" alt="External Link"></a></li>
+  </ul>
+</nav>
     </div>
     <div class="col-sm-2 right-side-bar">
       {% if page.name != 'index.html' %}
@@ -7,6 +16,7 @@
         <ul id="in_page_nav" class="list-none"></ul>
       </nav>
       {% endif %}
+      
     </div>
   </div>
 </div>
@@ -16,14 +26,5 @@
   Page last updated on {{ page.last_modified_at | date_to_string }}
 </div>
 
-<nav id="more_resources">
-  <h3 style="margin-left: 2rem !important;">More Resources</h3>
-  <ul style="list-style: none;">
-    <li><a href="https://beacon-help.support.brightcove.com" target="_blank"><img src="/assets/images/feather/search.svg" alt="Search"> Search Brightcove Beacon Documentation <img src="/assets/images/feather/external-link.svg" alt="External Link"></a></li>
-    <li><a href="/#" target="_blank"><img src="/assets/images/feather/file-text.svg" alt="Release Notes"> View Release Notes <img src="/assets/images/feather/external-link.svg" alt="External Link"></a></li>
-    <li><a href="https://status.brightcove.com" target="_blank"><img src="/assets/images/feather/info.svg" alt="System Status"> System Status <img src="/assets/images/feather/external-link.svg" alt="External Link"></a></li>
-    <li><a href="https://supportportal.brightcove.com/s/login/" target="_blank"><img src="/assets/images/feather/message-circle.svg" alt="Contact Support"> Contact Support <img src="/assets/images/feather/external-link.svg" alt="External Link"></a></li>
-  </ul>
-</nav>
 
 
