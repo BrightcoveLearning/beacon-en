@@ -45,6 +45,12 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   padding-top: 0;
 }
 
+.external-link-icon {
+  margin-left:.5rem;
+  width:1.3rem;
+  vertical-align:text-top
+}
+
 #back_button {
   position: absolute;
   top: 5px;
@@ -84,6 +90,13 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   font-size: small;
   margin: 0;
 }
+
+a {
+  color: rgb(7, 33, 144);
+  text-decoration: none;
+  background-color: transparent
+}
+
 
 a, a::visited, a::hover {
   color:rgb(7, 33, 144)!important;

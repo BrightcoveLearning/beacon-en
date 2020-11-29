@@ -99,7 +99,8 @@ var BCLS_local = ( function (window, document) {
       img = document.createElement('img');
       img.setAttribute('src', '/assets/images/feather/external-link.svg');
       img.setAttribute('alt', 'Open in New Tab');
-      img.setAttribute('style', 'margin-left:1rem;width:1.5rem;');
+      img.setAttribute('class', 'external-link-icon');
+      img.setAttribute('style', 'margin-left:1rem;width:1.3rem;vertical-align:text-top');
       a.appendChild(img);
       h1.appendChild(a);
 
