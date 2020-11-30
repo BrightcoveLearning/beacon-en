@@ -6,7 +6,7 @@ var BCLS_local = ( function (window, document) {
     footer                   = document.querySelector('footer'),
     talla_wrapper            = document.getElementById('talla_wrapper'),
     open_new_tab             = document.getElementById('open_new_tab'),
-    bc_veggie_burger_wrapper = document.getElementById('bc_veggie_burger_wrapper'),
+    bc_veggie_burger = document.getElementById('bc_veggie_burger'),
     in_prod_nav              = document.getElementById('in_prod_nav'),
     nav_search_box           = document.getElementById('nav-search-box'),
     last_updated             = document.getElementById('last_updated'),
@@ -115,7 +115,7 @@ var BCLS_local = ( function (window, document) {
       hideElement(talla_wrapper);
       hideElement(nav_search_box);
       hideElement(last_updated);
-      hideElement(bc_veggie_burger_wrapper);
+      hideElement(bc_veggie_burger);
       hideElement(centered_inpage_nav);
       more_resources.setAttribute('style', 'display:block')
       back_button.addEventListener('click', function() {
