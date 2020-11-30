@@ -15,25 +15,19 @@ var BCLS_local = ( function (window, document) {
     nav_search_box           = document.getElementById('nav-search-box'),
     last_updated             = document.getElementById('last_updated'),
     more_resources           = document.getElementById('more_resources'),
-    forward_button           = document.getElementById('forward_button'),
     back_button              = document.getElementById('back_button'),
     all_links                = document.querySelectorAll('a'),
     this_page                = window.location.pathname,
-    back_page                = getURLparam('back_page'),
-    forward_page             = getURLparam('forward_page');
+    back_page                = getURLparam('back_page');
     if (back_page) {
       console.log('back_page', back_page);
     } else {
       console.log('no back_page');
     }
-    console.log('forward_page', forward_page);
     
     if (back_page) {
       enableElement(back_button);
     }   
-    if (forward_page) {
-      enableElement(forward_button);
-    }  
     
     function addExternalLink() {
       
@@ -128,25 +122,14 @@ var BCLS_local = ( function (window, document) {
       hideElement(bc_veggie_burger_wrapper);
       hideElement(centered_inpage_nav);
       more_resources.setAttribute('style', 'display:block')
-      forward_button.addEventListener('click', function() {
-        if (forward_page !== null) {
-          window.location.replace(forward_page + '?back_page=' + this_page);
-        }
-      });
       back_button.addEventListener('click', function() {
         if (back_page !== null) {
-          enableElement(forward_button);
-          if (back_page.indexOf('q') > 0) {
-            window.location.replace(back_page + '&forward_page=' + this_page);
-          } else {
-            window.location.replace(back_page + '?back_page=' + this_page + '&forward_page=' + this_page);
+            window.location.replace(back_page + '?back_page=' + this_page );
           }
-        }
       });
   
     // disable nav if no back/forward pages  
     } else {
-      hideElement(forward_button);
       hideElement(back_button);
   }
 })(window, document);

@@ -35,138 +35,66 @@
 </head>
 
 <body class="body">
-<header>
-  <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-      <option value="">Other Brightcove Docs</option>
-      
-        
-          <option value="https://support.brightcove.com">Documentation Home</option>
-        
-      
-        
-          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-        
-      
-        
-          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
-        
-      
-        
-          <option value="https://campaign.support.brightcove.com">Brightcove Campaign</option>
-        
-      
-        
-          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-        
-      
-        
-          <option value="https://live.support.brightcove.com">Brightcove Live</option>
-        
-      
-        
-          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-        
-      
-        
-          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-        
-      
-        
-          <option value="https://social.support.brightcove.com">Brightcove Social</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-        
-      
-        
-          <option value="https://player.support.brightcove.com">Brightcove Player Development</option>
-        
-      
-        
-          <option value="https://apis.support.brightcove.com">Video Cloud Platform APIs</option>
-        
-      
-        
-          <option value="https://sdks.support.brightcove.com">Video Cloud Device SDKs</option>
-        
-      
-        
-          <option value="https://integrations.support.brightcove.com">Integrations and CMS Connectors</option>
-        
-      
-        
-          <option value="https://general.support.brightcove.com">Video Cloud General Information</option>
-        
-      
-        
-          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-        
-      
-    </select>
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
-    <br>
-    
-  </div>
-</header>
-<img id="back_button" src="/assets/images/feather/chevron-left.svg" alt="Back" style="opacity: .2;cursor: not-allowed;"><img id="forward_button" src="/assets/images/feather/chevron-right.svg" alt="Forward" style="opacity: .2;cursor: not-allowed;">
-<br style="clear: both;">
-<nav id="breadcrumbs" aria-label="breadcrumb">
-  <ol class="breadcrumb arr-right">
-    
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    
-    
-    
-    <li class="breadcrumb-item active" aria-current="page">iFrame Test</li>
-  </ol>
-</nav>
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Page Contents</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-
-
 <style>
+#modal_wrapper {
+  position: relative;
+}
+#iframe_modal {
+  position: fixed;
+  top:0;
+  left: 840px;
+  min-width: 600px;
+  min-height: 800px;
+  display: none;
+}
+#modal_header {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  background-color: rgb(8, 8, 139);
+  color: white;
+  text-align: right;
+}
+#doc_frame {
+  min-height: 760px; 
+  min-width: 100%;
+}
+#close_modal {
+  cursor: pointer;
+}
 
 </style>
+<img src="/assets/images/iframe-background.png" alt="">
+
+<div id="modal_wrapper" >
+  <div id="iframe_modal">
+    <p id="modal_header"><img id="close_modal" src="/assets/images/x.svg" alt=""></p>
+    <iframe id="doc_frame" src="/index-howto.html" ></iframe>
+  </div>
+</div>
+<img id="button_cover" src="/assets/images/transparent.png" alt="" style="position: fixed;left: 0;top: 670px;cursor: pointer;">
 <br>
-<img src="/pages/howto/pages-home.png" alt="" style="margin-left: 6em;">
 <p style="margin-left: 6em;">Paste any full URL in the field below to load that page into the frame.</p>
 <p style="margin-left: 6em;"><input type="text" id="src_address" size="60" value="/index.html"></p>
 <p style="margin-left: 6em;"><button id="add_src">Put this page in the frame</button></p>
 
-<div style="position: relative;">
-    <iframe id="doc_frame" src="/index-howto.html" style="position: fixed;right: 30px; top: 172px;height: 58%; width: 30%;"></iframe>
-</div>
 <script>
     var src_address = document.getElementById('src_address'),
         add_src = document.getElementById('add_src'),
         doc_frame = document.getElementById('doc_frame'),
-        side_nav = document.getElementById('side_nav');
+        side_nav = document.getElementById('side_nav'),
+        iframe_modal = document.querySelector('#iframe_modal')
+        close_modal = document.querySelector('#close_modal'),
+        button_cover = document.getElementById('button_cover');
 
     add_src.addEventListener('click', function() {
         doc_frame.setAttribute('src', src_address.value);
+    });
+    button_cover.addEventListener('click', function() {
+      iframe_modal.setAttribute('style', 'display:block');
+    });
+    close_modal.addEventListener('click', function() {
+      iframe_modal.setAttribute('style', 'display:none');
     });
 
     side_nav.setAttribute('style', 'display:none');
