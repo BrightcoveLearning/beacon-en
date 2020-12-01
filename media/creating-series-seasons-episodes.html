@@ -8,320 +8,346 @@ layout: howto-page
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
   <section class="bcls-section">
-    <p>A <strong>series</strong> is a collection of related videos shown in a particular order, that usually share a common theme. When creating a series, you must define the relationships between the
-      series, its seasons, and the associated episodes.</p>
-    <p>A <strong>season</strong> is a group of videos that cover a set period of time. Each series can have one or more seasons.</p>
-    <p>An <strong>episode</strong> is an individual video. You can think of this as a specific movie.</p>
-    <p> The following diagram shows the relationship between a series and its
-      seasons and episodes. </p>
-    <figure class="bcls-figure"> <img
-        class="bcls-image"
-        src="/assets/images/media/series-season-episode-relation.png"
-        alt=""
-      /> </figure>
-    <p>Once you have defined your series and seasons and associated videos with seasons, they can be used in a Brightcove Beacon app.</p>
+    <h2 id="introduction">Introduction</h2>
+    <div class="section_contents" id="intro">
+      <p>A <strong>series</strong> is a collection of related videos shown in a particular order, that usually share a common theme. When creating a series, you must define the relationships between the
+        series, its seasons, and the associated episodes.</p>
+      <p>A <strong>season</strong> is a group of videos that cover a set period of time. Each series can have one or more seasons.</p>
+      <p>An <strong>episode</strong> is an individual video. You can think of this as a specific movie.</p>
+      <p> The following diagram shows the relationship between a series and its
+        seasons and episodes. </p>
+      <figure class="bcls-figure"> <img
+          class="bcls-image"
+          src="/assets/images/media/series-season-episode-relation.png"
+          alt=""
+        /> </figure>
+      <p>Once you have defined your series and seasons and associated videos with seasons, they can be used in a Brightcove Beacon app.</p>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="relationship">Reviewing series</h2>
-    <p>To view the list of series that have been created, click <strong>Media</strong> in the left navigation and then click <strong>All Series</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-home.png" /></figure>
-    <p>The body of the page will display the following:</p>
-    <ul>
-      <li>Series  image (this is the landscape image)</li>
-      <li> Series name</li>
-      <li>Series ID - System assigned series ID (unique across all Brightcove Beacon accounts)</li>
-      <li>Status
-        <ul>
-          <li><img alt="" src="/assets/images/media/media-green-check.png" /> - Published - Series can be used in a Brightcove Beacon app</li>
-          <li><img alt="" src="/assets/images/media/media-red-x.png" /> - Unpublished - Series cannot be used in a Brightcove Beacon app</li>
-        </ul>
-      </li>
-      <li>Created date and time</li>
-    </ul>
+    <div class="section_contents" id="reviewing">
+      <p>To view the list of series that have been created, click <strong>Media</strong> in the left navigation and then click <strong>All Series</strong>.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-home.png" /></figure>
+      <p>The body of the page will display the following:</p>
+      <ul>
+        <li>Series  image (this is the landscape image)</li>
+        <li> Series name</li>
+        <li>Series ID - System assigned series ID (unique across all Brightcove Beacon accounts)</li>
+        <li>Status
+          <ul>
+            <li><img alt="" src="/assets/images/media/media-green-check.png" /> - Published - Series can be used in a Brightcove Beacon app</li>
+            <li><img alt="" src="/assets/images/media/media-red-x.png" /> - Unpublished - Series cannot be used in a Brightcove Beacon app</li>
+          </ul>
+        </li>
+        <li>Created date and time</li>
+      </ul>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="creating_series">Creating a series</h2>
-    <p>To create a series, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Log in to Brightcove Beacon.</li>
-      <li>In the left navigation, click <strong>Media</strong>.</li>
-      <li>Click <strong>Create Series</strong>.</li>
-      <li>Enter a <strong>Name</strong> for the series and click <strong>Save</strong>.
-        <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-new-series.png"
-        alt=""
-      /> </figure>
-      </li>
-      <li>The  Overview page will display.  Note, as you tab out of a field or press enter, any changes will be saved. The following details can be entered:
-        <ul>
-          <li><strong>Name</strong> - The identifier of the series; this is not a customer facing name</li>
-          <li><strong>Landscape, Portrait and Ultra Wide </strong>Images - Click the <strong>Upload new image</strong> link to upload an image to use based upon the following specifications:
-            <ul>
-              <li><strong>Landscape</strong> - 16x9 aspect ration, minimum 2000px wide</li>
-              <li><strong>Portrait</strong> - 2x3 aspect ration, minimum 500px wide</li>
-              <li><strong>Ultra Wide</strong> - 21x9 aspect ration, minimum 2000px wide</li>
-            </ul>
-          </li>
-          <li><strong>Title</strong> - Viewer facing name for the series (displayed in Beacon app)</li>
-          <li><strong>Synopsis</strong> - Series synopsis (displayed in Beacon app)</li>
-          <li><strong>Description</strong> - Series description (displayed in Beacon app)</li>
-          <li><strong>Production Year</strong> - The year the series was produced; this information will appear
-            in the the <strong>More Info</strong> screen </li>
-          <li><strong>Production Country</strong> - The country where the series was produced; this information will
-            appear in the the <strong>More Info</strong> screen </li>
-        </ul>
-      </li>
-      <li>Enter the <strong>Cast</strong> details (this information will
-        appear in the the <strong>More Info</strong> screen):
-        <ul>
-          <li>Actors</li>
-          <li>Directors</li>
-          <li>Singers</li>
-          <li>Music Composers</li>
-          <li>Song Writers</li>
-          <li>Writers</li>
-        </ul>
-        <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-overview-details.png"
-        alt=""
-      /> </figure>
-      </li>
-      <li>Click <strong>Discovery</strong> in the left sidebar to open the Discovery details page.</li>
-      <li>Enter <strong>Tags</strong> for the series.</li>
-      <li>Enter <strong>Genres</strong> for the series.
-        <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-discovery-details.png"
-        alt=""
-      /> </figure>
-      </li>
-    </ol>
-    <p>The right side of the Overview page provides the ability to <a href="#creating_seasons">add seasons</a> and a <a href="#series_trailer">series trailer</a>.</p>
-    <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-seasons-trailer-section.png"
-        alt=""
-      /> </figure>
+    <div class="section_contents" id="create_series">
+      <p>To create a series, follow these steps:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Log in to Brightcove Beacon.</li>
+        <li>In the left navigation, click <strong>Media</strong>.</li>
+        <li>Click <strong>Create Series</strong>.</li>
+        <li>Enter a <strong>Name</strong> for the series and click <strong>Save</strong>.
+          <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-new-series.png"
+          alt=""
+        /> </figure>
+        </li>
+        <li>The  Overview page will display.  Note, as you tab out of a field or press enter, any changes will be saved. The following details can be entered:
+          <ul>
+            <li><strong>Name</strong> - The identifier of the series; this is not a customer facing name</li>
+            <li><strong>Landscape, Portrait and Ultra Wide </strong>Images - Click the <strong>Upload new image</strong> link to upload an image to use based upon the following specifications:
+              <ul>
+                <li><strong>Landscape</strong> - 16x9 aspect ration, minimum 2000px wide</li>
+                <li><strong>Portrait</strong> - 2x3 aspect ration, minimum 500px wide</li>
+                <li><strong>Ultra Wide</strong> - 21x9 aspect ration, minimum 2000px wide</li>
+              </ul>
+            </li>
+            <li><strong>Title</strong> - Viewer facing name for the series (displayed in Beacon app)</li>
+            <li><strong>Synopsis</strong> - Series synopsis (displayed in Beacon app)</li>
+            <li><strong>Description</strong> - Series description (displayed in Beacon app)</li>
+            <li><strong>Production Year</strong> - The year the series was produced; this information will appear
+              in the the <strong>More Info</strong> screen </li>
+            <li><strong>Production Country</strong> - The country where the series was produced; this information will
+              appear in the the <strong>More Info</strong> screen </li>
+          </ul>
+        </li>
+        <li>Enter the <strong>Cast</strong> details (this information will
+          appear in the the <strong>More Info</strong> screen):
+          <ul>
+            <li>Actors</li>
+            <li>Directors</li>
+            <li>Singers</li>
+            <li>Music Composers</li>
+            <li>Song Writers</li>
+            <li>Writers</li>
+          </ul>
+          <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-overview-details.png"
+          alt=""
+        /> </figure>
+        </li>
+        <li>Click <strong>Discovery</strong> in the left sidebar to open the Discovery details page.</li>
+        <li>Enter <strong>Tags</strong> for the series.</li>
+        <li>Enter <strong>Genres</strong> for the series.
+          <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-discovery-details.png"
+          alt=""
+        /> </figure>
+        </li>
+      </ol>
+      <p>The right side of the Overview page provides the ability to <a href="#creating_seasons">add seasons</a> and a <a href="#series_trailer">series trailer</a>.</p>
+      <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-seasons-trailer-section.png"
+          alt=""
+        /> </figure>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="edit_series">Editing  a series</h2>
-    <p>To edit a series, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Media</strong>.</li>
-      <li>Click <strong>All Series</strong>.</li>
-      <li>Locate the series to edit. Click the series title to open the series details.</li>
-      <li>Make changes as needed. As you tab out of a field or press enter, any changes will be saved.</li>
-    </ol>
+    <div class="section_contents" id="editing_series">
+      <p>To edit a series, follow these steps:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>In the left navigation, click <strong>Media</strong>.</li>
+        <li>Click <strong>All Series</strong>.</li>
+        <li>Locate the series to edit. Click the series title to open the series details.</li>
+        <li>Make changes as needed. As you tab out of a field or press enter, any changes will be saved.</li>
+      </ol>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="delete_series">Deleting a series</h2>
-    <p>To delete a series, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Media</strong>.</li>
-      <li>Click <strong>All Series</strong>.</li>
-      <li>Locate the series to delete and do one of the following:
-        <ul>
-          <li>Check the checkbox next to the series name and then click the delete icon (<img
-        class="bcls-image"
-        src="/assets/images/media/series-delete-icon.png"
-        alt=""
-      />) <strong>OR</strong></li>
-          <li>Click the series Title to open the series details and then click <strong>Delete</strong>.</li>
-        </ul>
-      </li>
-    </ol>
+    <div class="section_contents" id="deleting_series">
+      <p>To delete a series, follow these steps:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>In the left navigation, click <strong>Media</strong>.</li>
+        <li>Click <strong>All Series</strong>.</li>
+        <li>Locate the series to delete and do one of the following:
+          <ul>
+            <li>Check the checkbox next to the series name and then click the delete icon (<img
+          class="bcls-image"
+          src="/assets/images/media/series-delete-icon.png"
+          alt=""
+        />) <strong>OR</strong></li>
+            <li>Click the series Title to open the series details and then click <strong>Delete</strong>.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="series_trailer">Adding a series trailer</h2>
-    <p>To add a series trailer, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Media</strong>.</li>
-      <li>Click <strong>All Series</strong>.</li>
-      <li>Locate the series to add a trailer to. Click the series title to open the series details.</li>
-      <li>On the right side of the page click <strong>Add Trailer</strong>.</li>
-      <li>Click on  a video to use for the trailer. The Search field at the top of the dialog can be used to search for a specific video.
+    <div class="section_contents" id="add_series_trailer">
+      <p>To add a series trailer, follow these steps:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>In the left navigation, click <strong>Media</strong>.</li>
+        <li>Click <strong>All Series</strong>.</li>
+        <li>Locate the series to add a trailer to. Click the series title to open the series details.</li>
+        <li>On the right side of the page click <strong>Add Trailer</strong>.</li>
+        <li>Click on  a video to use for the trailer. The Search field at the top of the dialog can be used to search for a specific video.
+          <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-trailer.png"
+          alt=""
+        /> </figure>
+        </li>
+        <li>Click <strong>Select Video</strong>.</li>
+      </ol>
+      <p>The selected video will appear in the Series Trailer section.</p>
+      <p>
         <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-trailer.png"
-        alt=""
-      /> </figure>
-      </li>
-      <li>Click <strong>Select Video</strong>.</li>
-    </ol>
-    <p>The selected video will appear in the Series Trailer section.</p>
-    <p>
-      <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-trailer-selected.png"
-        alt=""
-      /> </figure>
-    </p>
-    <p>To select a different trailer, click <strong>Replace Trailer</strong>.</p>
+          class="bcls-image"
+          src="/assets/images/media/series-trailer-selected.png"
+          alt=""
+        /> </figure>
+      </p>
+      <p>To select a different trailer, click <strong>Replace Trailer</strong>.</p>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="publish_series">Publishing/Unpublishing a series</h2>
-    <p>Series must be published before they will display in a Brightcove Beacon app. Series that have been published will display a green check mark (<img alt="" src="/assets/images/media/media-green-check.png" />) in the <strong>Status</strong> column. To publish a series, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Media</strong>.</li>
-      <li>Click <strong>All Series</strong>.</li>
-      <li>Locate the series to publish and do one of the following:
-        <ul>
-          <li>Check the checkbox next to the series name and then click <strong>Publish</strong> <strong>OR</strong></li>
-          <li>Click the series Title to open the series details and then click <strong>Publish</strong>.</li>
-        </ul>
-      </li>
-    </ol>
-    <p>To unpublish a series, select a series that has been published and click <strong>Unpublish</strong>.</p>
+    <div class="section_contents" id="publishing_series">
+      <p>Series must be published before they will display in a Brightcove Beacon app. Series that have been published will display a green check mark (<img alt="" src="/assets/images/media/media-green-check.png" />) in the <strong>Status</strong> column. To publish a series, follow these steps:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>In the left navigation, click <strong>Media</strong>.</li>
+        <li>Click <strong>All Series</strong>.</li>
+        <li>Locate the series to publish and do one of the following:
+          <ul>
+            <li>Check the checkbox next to the series name and then click <strong>Publish</strong> <strong>OR</strong></li>
+            <li>Click the series Title to open the series details and then click <strong>Publish</strong>.</li>
+          </ul>
+        </li>
+      </ol>
+      <p>To unpublish a series, select a series that has been published and click <strong>Unpublish</strong>.</p>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="creating_seasons">Creating seasons</h2>
-    <p>To create a season, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Media</strong>.</li>
-      <li>Click <strong>All Series</strong>.</li>
-      <li>Locate the series to which the season will be added. Click the series title to open the series details.</li>
-      <li>On the series Overview page, click <strong>Create Season</strong>.
-        <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-create-season.png"
-        alt=""
-      /> </figure>
-      </li>
-      <li>Enter a <strong>Name</strong> for the season and click <strong>Save</strong>.
-        <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-new-season.png"
-        alt=""
-      /> </figure>
-      <li>The  Overview page will display.  Note, as you tab out of a field or press enter, any changes will be saved. The following details can be entered:
-        <ul>
-          <li><strong>Name</strong> - The identifier of the season; this is not a customer facing name</li>
-          <li><strong>Season Number</strong> - An integer number representing the season sequence
-            in the series.</li>
-          <li><strong>Landscape, Portrait and Ultra Wide </strong>Images - Click the <strong>Upload new image</strong> link to upload an image to use based upon the following specifications:
-            <ul>
-              <li><strong>Landscape</strong> - 16x9 aspect ration, minimum 2000px wide</li>
-              <li><strong>Portrait</strong> - 2x3 aspect ration, minimum 500px wide</li>
-              <li><strong>Ultra Wide</strong> - 21x9 aspect ration, minimum 2000px wide</li>
-            </ul>
-          </li>
-          <li><strong>Title</strong> - Viewer facing name for the season (displayed in Beacon app)
-            <aside class="bcls-aside bcls-aside--tip language-editable">Note: For the season <em>Title</em>, you can enter a name like <em>Season 1</em>, but if a series has topics for distinct seasons
-              that may be a better choice. For example, a series on the continents
-              where each season focuses on a continent, good names for the seasons
-              would be <em>Europe</em>, <em>Africa</em>, <em>Asia</em>, etc. </aside>
-          </li>
-          <li><strong>Synopsis</strong> - Season synopsis (displayed in Beacon app)</li>
-          <li><strong>Description</strong> - Season description (displayed in Beacon app)</li>
-          <li><strong>Production Year</strong> - The year the season was produced; this information will appear
-            in the the <strong>More Info</strong> screen </li>
-          <li><strong>Production Country</strong> - The country where the season was produced; this information will
-            appear in the the <strong>More Info</strong> screen </li>
+    <div class="section_contents" id="create_seasons">
+      <p>To create a season, follow these steps:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>In the left navigation, click <strong>Media</strong>.</li>
+        <li>Click <strong>All Series</strong>.</li>
+        <li>Locate the series to which the season will be added. Click the series title to open the series details.</li>
+        <li>On the series Overview page, click <strong>Create Season</strong>.
           <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/season-overview-details.png"
-        alt=""
-      /> </figure>
-        </ul>
-      </li>
-      <li>Click <strong>Discovery</strong> in the left sidebar to open the Discovery details page.</li>
-      <li>Enter <strong>Tags</strong> for the season.
+          class="bcls-image"
+          src="/assets/images/media/series-create-season.png"
+          alt=""
+        /> </figure>
+        </li>
+        <li>Enter a <strong>Name</strong> for the season and click <strong>Save</strong>.
+          <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-new-season.png"
+          alt=""
+        /> </figure>
+        <li>The  Overview page will display.  Note, as you tab out of a field or press enter, any changes will be saved. The following details can be entered:
+          <ul>
+            <li><strong>Name</strong> - The identifier of the season; this is not a customer facing name</li>
+            <li><strong>Season Number</strong> - An integer number representing the season sequence
+              in the series.</li>
+            <li><strong>Landscape, Portrait and Ultra Wide </strong>Images - Click the <strong>Upload new image</strong> link to upload an image to use based upon the following specifications:
+              <ul>
+                <li><strong>Landscape</strong> - 16x9 aspect ration, minimum 2000px wide</li>
+                <li><strong>Portrait</strong> - 2x3 aspect ration, minimum 500px wide</li>
+                <li><strong>Ultra Wide</strong> - 21x9 aspect ration, minimum 2000px wide</li>
+              </ul>
+            </li>
+            <li><strong>Title</strong> - Viewer facing name for the season (displayed in Beacon app)
+              <aside class="bcls-aside bcls-aside--tip language-editable">Note: For the season <em>Title</em>, you can enter a name like <em>Season 1</em>, but if a series has topics for distinct seasons
+                that may be a better choice. For example, a series on the continents
+                where each season focuses on a continent, good names for the seasons
+                would be <em>Europe</em>, <em>Africa</em>, <em>Asia</em>, etc. </aside>
+            </li>
+            <li><strong>Synopsis</strong> - Season synopsis (displayed in Beacon app)</li>
+            <li><strong>Description</strong> - Season description (displayed in Beacon app)</li>
+            <li><strong>Production Year</strong> - The year the season was produced; this information will appear
+              in the the <strong>More Info</strong> screen </li>
+            <li><strong>Production Country</strong> - The country where the season was produced; this information will
+              appear in the the <strong>More Info</strong> screen </li>
+            <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/season-overview-details.png"
+          alt=""
+        /> </figure>
+          </ul>
+        </li>
+        <li>Click <strong>Discovery</strong> in the left sidebar to open the Discovery details page.</li>
+        <li>Enter <strong>Tags</strong> for the season.
+          <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/season-discovery-details.png"
+          alt=""
+        /> </figure>
+        </li>
+      </ol>
+      <p> To return to the seasons page, click the season breadcrumb at the top of the page.</p>
+      <p>
         <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/season-discovery-details.png"
-        alt=""
-      /> </figure>
-      </li>
-    </ol>
-    <p> To return to the seasons page, click the season breadcrumb at the top of the page.</p>
-    <p>
+          class="bcls-image"
+          src="/assets/images/media/series-breadcrumb.png"
+          alt=""
+        /> </figure>
+      </p>
+      <p>Seasons that have been added to a series will appear on right side of the season Overview page.</p>
       <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-breadcrumb.png"
-        alt=""
-      /> </figure>
-    </p>
-    <p>Seasons that have been added to a series will appear on right side of the season Overview page.</p>
-    <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-seasons-list.png"
-        alt=""
-      /> </figure>
+          class="bcls-image"
+          src="/assets/images/media/series-seasons-list.png"
+          alt=""
+        /> </figure>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="edit_season">Editing and deleting a  season</h2>
-    <p>To edit or delete a season, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Media</strong>.</li>
-      <li>Click <strong>All Series</strong>.</li>
-      <li>Locate the series with the season to edit/delete. Click the series title to open the series details.</li>
-      <li>Click the season to edit in the <strong>Seasons</strong> section.
-        <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-edit-season.png"
-        alt=""
-      /> </figure>
-      </li>
-      <li>Make changes as needed. As you tab out of a field or press enter, any changes will be saved.</li>
-    </ol>
-    <p>To delete the season, click <strong>Delete</strong> at the top of the page.</p>
+    <div class="section_contents" id="editing_season">
+      <p>To edit or delete a season, follow these steps:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>In the left navigation, click <strong>Media</strong>.</li>
+        <li>Click <strong>All Series</strong>.</li>
+        <li>Locate the series with the season to edit/delete. Click the series title to open the series details.</li>
+        <li>Click the season to edit in the <strong>Seasons</strong> section.
+          <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-edit-season.png"
+          alt=""
+        /> </figure>
+        </li>
+        <li>Make changes as needed. As you tab out of a field or press enter, any changes will be saved.</li>
+      </ol>
+      <p>To delete the season, click <strong>Delete</strong> at the top of the page.</p>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="season_trailer">Adding a season trailer</h2>
-    <p>To add a season trailer, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Media</strong>.</li>
-      <li>Click <strong>All Series</strong>.</li>
-      <li>Locate the series and click the title to open the series details.</li>
-      <li>In the <strong>Seasons</strong> section, click the season title to open the series details.</li>
-      <li>On the right side of the page click <strong>Add Trailer</strong>.</li>
-      <li>Click on  a video to use for the trailer. The Search field at the top of the dialog can be used to search for a specific video. </li>
-      <li>Click <strong>Select Video</strong>.</li>
-    </ol>
-    <p>The selected video will appear in the Series Trailer section.</p>
-    <p>
-      <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/season-trailer-selected.png"
-        alt=""
-      /> </figure>
-    </p>
-    <p>To select a different trailer, click <strong>Replace Trailer</strong>.</p>
+    <div class="section_contents" id="add_season_trailer">
+      <p>To add a season trailer, follow these steps:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>In the left navigation, click <strong>Media</strong>.</li>
+        <li>Click <strong>All Series</strong>.</li>
+        <li>Locate the series and click the title to open the series details.</li>
+        <li>In the <strong>Seasons</strong> section, click the season title to open the series details.</li>
+        <li>On the right side of the page click <strong>Add Trailer</strong>.</li>
+        <li>Click on  a video to use for the trailer. The Search field at the top of the dialog can be used to search for a specific video. </li>
+        <li>Click <strong>Select Video</strong>.</li>
+      </ol>
+      <p>The selected video will appear in the Series Trailer section.</p>
+      <p>
+        <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/season-trailer-selected.png"
+          alt=""
+        /> </figure>
+      </p>
+      <p>To select a different trailer, click <strong>Replace Trailer</strong>.</p>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="adding_episodes">Adding episodes to seasons</h2>
-    <p> Before adding episodes (videos) to seasons, the videos should be uploaded to your Brightcove Beacon account using the <strong>Upload</strong> page. For information on how to upload videos to your account, see <a href="/media/uploading-videos.html">Uploading Videos</a>.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Media</strong>.</li>
-      <li>Click <strong>All Series</strong>.</li>
-      <li>Click on a series title to open the series details.</li>
-      <li>On the series Overview page, click on the season to add episodes to.</li>
-      <li>Click <strong>Add Episode</strong>.
-        <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-add-episode.png"
-        alt=""
-      /> </figure>
-      </li>
-      <li>Click on a video to select it add and click <strong>Select Video</strong>.</li>
-    </ol>
-    <p>All videos added to a season will be displayed on the right side of the series Overview page.</p>
-    <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-episode-list.png"
-        alt=""
-      /> </figure>
+    <div class="section_contents" id="add_episodes">
+      <p> Before adding episodes (videos) to seasons, the videos should be uploaded to your Brightcove Beacon account using the <strong>Upload</strong> page. For information on how to upload videos to your account, see <a href="/media/uploading-videos.html">Uploading Videos</a>.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>In the left navigation, click <strong>Media</strong>.</li>
+        <li>Click <strong>All Series</strong>.</li>
+        <li>Click on a series title to open the series details.</li>
+        <li>On the series Overview page, click on the season to add episodes to.</li>
+        <li>Click <strong>Add Episode</strong>.
+          <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-add-episode.png"
+          alt=""
+        /> </figure>
+        </li>
+        <li>Click on a video to select it add and click <strong>Select Video</strong>.</li>
+      </ol>
+      <p>All videos added to a season will be displayed on the right side of the series Overview page.</p>
+      <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-episode-list.png"
+          alt=""
+        /> </figure>
+    </div>
   </section>
   <section class="bcls-section">
     <h2 id="language">Working with Multi-Lingual Metadata</h2>
-    <p> Brightcove Beacon supports the ability to associate multi-lingual metadata with videos. Before this can be done, you can associate multi-lingual metadata with videos, you must configure a primary language and one or more additional languages as part of the <a href="/admin/configuring-language-settings.html">Language Settings</a>. Once additional languages have been configured, a <strong>Language View</strong> selector will appear on  series, season and episode detail pages allowing a language to be selected.</p>
-    <figure class="bcls-figure"><img
-        class="bcls-image"
-        src="/assets/images/media/series-language-selector.png"
-        alt=""
-      /> </figure>
-    <p>For more information, see <a href="/media/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a>.</p>
+    <div class="section_contents" id="multi_language">
+      <p> Brightcove Beacon supports the ability to associate multi-lingual metadata with videos. Before this can be done, you can associate multi-lingual metadata with videos, you must configure a primary language and one or more additional languages as part of the <a href="/admin/configuring-language-settings.html">Language Settings</a>. Once additional languages have been configured, a <strong>Language View</strong> selector will appear on  series, season and episode detail pages allowing a language to be selected.</p>
+      <figure class="bcls-figure"><img
+          class="bcls-image"
+          src="/assets/images/media/series-language-selector.png"
+          alt=""
+        /> </figure>
+      <p>For more information, see <a href="/media/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a>.</p>
+    </div>
   </section>
 </article>
+<script src="/assets/js/collapsed-content.js"></script>

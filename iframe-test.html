@@ -31,6 +31,12 @@ layout: iframe
   cursor: pointer;
 }
 
+.link {
+  color: rgb(8, 8, 139);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 </style>
 <img src="/assets/images/iframe-background.png" alt="">
 
@@ -46,6 +52,22 @@ layout: iframe
 <p style="margin-left: 6em;"><input type="text" id="src_address" size="60" value="/index.html"></p>
 <p style="margin-left: 6em;"><button id="add_src">Put this page in the frame</button></p>
 
+<p style="margin-left: 2em;">Copy and paste any of the following into the text field above to open that section of the doc in the iframe:</p>
+<ul id="link_list" style="list-style: none;">
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#intro">/media/creating-series-seasons-episodes.html#intro</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#reviewing">/media/creating-series-seasons-episodes.html#reviewing</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#create_series">/media/creating-series-seasons-episodes.html#create_series</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#editing_series">/media/creating-series-seasons-episodes.html#editing_series</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#deleting_series">/media/creating-series-seasons-episodes.html#deleting_series</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#add_series_trailer">/media/creating-series-seasons-episodes.html#add_series_trailer</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#publishing_series">/media/creating-series-seasons-episodes.html#publishing_series</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#create_seasons">/media/creating-series-seasons-episodes.html#create_seasons</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#editing_season">/media/creating-series-seasons-episodes.html#editing_season</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#add_season_trailer">/media/creating-series-seasons-episodes.html#add_season_trailer</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#add_episodes">/media/creating-series-seasons-episodes.html#add_episodes</li>
+  <li class="link" data_link="/media/creating-series-seasons-episodes.html#multi_language">/media/creating-series-seasons-episodes.html#multi_language</li>
+</ul>
+
 <script>
     var src_address = document.getElementById('src_address'),
         add_src = document.getElementById('add_src'),
@@ -53,7 +75,15 @@ layout: iframe
         side_nav = document.getElementById('side_nav'),
         iframe_modal = document.querySelector('#iframe_modal')
         close_modal = document.querySelector('#close_modal'),
-        button_cover = document.getElementById('button_cover');
+        button_cover = document.getElementById('button_cover'),
+        link_list = document.getElementById('link_list'),
+        links = link_list.children;
+
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', function() {
+        src_address.value = this.getAttribute('data_link');
+      })
+    }
 
     add_src.addEventListener('click', function() {
         doc_frame.setAttribute('src', src_address.value);
