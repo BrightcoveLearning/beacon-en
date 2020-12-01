@@ -124,7 +124,7 @@ var BCLS_local = ( function (window, document) {
           }
       });
   
-    // disable nav if no back/forward pages  
+    // disable nav if no back page 
     } else {
       hideElement(back_button);
   }
