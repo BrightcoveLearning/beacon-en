@@ -101,49 +101,49 @@
 </ul>
 
 <script>
-    var src_address = document.getElementById('src_address'),
-        add_src = document.getElementById('add_src'),
-        doc_frame = document.getElementById('doc_frame'),
-        side_nav = document.getElementById('side_nav'),
-        iframe_modal = document.querySelector('#iframe_modal')
-        close_modal = document.querySelector('#close_modal'),
-        button_cover = document.getElementById('button_cover'),
-        link_list = document.getElementById('link_list'),
-        links = link_list.children;
+  var src_address = document.getElementById('src_address'),
+      add_src = document.getElementById('add_src'),
+      doc_frame = document.getElementById('doc_frame'),
+      side_nav = document.getElementById('side_nav'),
+      iframe_modal = document.querySelector('#iframe_modal')
+      close_modal = document.querySelector('#close_modal'),
+      button_cover = document.getElementById('button_cover'),
+      link_list = document.getElementById('link_list'),
+      links = link_list.children;
 
-    for (var i = 0; i < links.length; i++) {
-      links[i].addEventListener('click', function() {
-        src_address.value = this.getAttribute('data_link');
-      })
-    }
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function() {
+      src_address.value = this.getAttribute('data_link');
+    })
+  }
 
-    add_src.addEventListener('click', function() {
-        doc_frame.setAttribute('src', src_address.value);
-    });
-    button_cover.addEventListener('click', function() {
-      iframe_modal.setAttribute('style', 'display:block');
-    });
-    close_modal.addEventListener('click', function() {
-      iframe_modal.setAttribute('style', 'display:none');
-    });
+  add_src.addEventListener('click', function() {
+      doc_frame.setAttribute('src', src_address.value);
+  });
+  button_cover.addEventListener('click', function() {
+    iframe_modal.setAttribute('style', 'display:block');
+  });
+  close_modal.addEventListener('click', function() {
+    iframe_modal.setAttribute('style', 'display:none');
+  });
 
-    side_nav.setAttribute('style', 'display:none');
+  side_nav.setAttribute('style', 'display:none');
 
-    function removeFeedbackify() {
-        var t,
-            feedbackify = document.getElementById('feedbackify');
-        console.log('feedbackify', feedbackify);
-        if (feedbackify) {
-            var feedbackify_parent = feedbackify.parentNode;
-            console.log('feedbackify_parent', feedbackify_parent);
-            feedbackify_parent.removeChild(feedbackify);
-        } else {
-            console.log('retry');
-            t = window.setTimeout(removeFeedbackify, 2000);
-        }
-    }
+  function removeFeedbackify() {
+      var t,
+          feedbackify = document.getElementById('feedbackify');
+      console.log('feedbackify', feedbackify);
+      if (feedbackify) {
+          var feedbackify_parent = feedbackify.parentNode;
+          console.log('feedbackify_parent', feedbackify_parent);
+          feedbackify_parent.removeChild(feedbackify);
+      } else {
+          console.log('retry');
+          t = window.setTimeout(removeFeedbackify, 2000);
+      }
+  }
 
-    removeFeedbackify();
+  removeFeedbackify();
 </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
