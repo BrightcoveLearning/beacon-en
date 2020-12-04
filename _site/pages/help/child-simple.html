@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+    <a id="page-link" href="">here</a>
+
+    <script>
+        document.getElementById('page-link').addEventListener('click', handleButtonClick, false);
+
+        function handleButtonClick(e) {
+            //window.alert('sent');
+            window.parent.postMessage('page-type', '*')
+        }
+    </script>
+
+</body>
+
+</html>

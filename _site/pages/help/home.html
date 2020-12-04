@@ -448,29 +448,38 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h1>Pages Home</h1>
 <article class="bcls-article">
-  <section class="bcls-section">
-    <p><strong>Pages</strong> is where you will create and manage the pages that make up your Beacon application. A list of pages that have been created will be listed in the left margin.    </p>
-    <p>The first page in the list is considered the &quot;home&quot; page and will be displayed when the app opens. It does not have to be called &quot;Home&quot;. Pages that are unpublished will display the unpublished icon (<img class="bcls-image--no-border" alt="" src="icon-unpublished.png" />).</p>
-    <p>Some of the common tasks performed are:</p>
-    <ul>
-      <li><strong>Create a New Page</strong> - Click <strong>Create Page</strong></li>
-      <li><strong>Duplicate a Page</strong> - Click duplicate icon (<img class="bcls-image--no-border" alt="" src="icon-duplicate.png" />) next to page name</li>
-      <li><strong>Edit a Page</strong> - Click gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) next to page name</li>
-      <li><strong>Archive Pages</strong> - Click <strong>Archive Page</strong></li>
-      <li><strong>Change the order of pages</strong> - To change the order of pages, click on a page and drag it to a new position</li>
-      <li><strong>Configure the page layout and app settings</strong> - Click gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) next to Pages</li>
-      <li><strong>Preview the App layout</strong> - Click a device icon at the top of the page</li>
-    </ul>
-  <a href="/pages/help/create-page.html">&gt;</a></section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="../howto/creating-page.html" target="_blank">How To: Create a Page <i class="fad fa-external-link-alt"></i></a></li>
-      <li><a href="/pages/howto/archiving-pages.html">How To: Archive Pages <i class="fad fa-external-link-alt"></i></a></li>
-    </ul>
-  </section>
-</article>
+    <section class="bcls-section">
+        <p><strong>Pages</strong> is where you will create and manage the pages that make up your Beacon application. A list of pages that have been created will be listed in the left margin. </p>
+        <p>The first page in the list is considered the &quot;home&quot; page and will be displayed when the app opens. It does not have to be called &quot;Home&quot;. Pages that are unpublished will display the unpublished icon (<img class="bcls-image--no-border" alt="" src="icon-unpublished.png" />).</p>
+        <p>Some of the common tasks performed are:</p>
+        <ul>
+            <li><strong>Create a New Page</strong> - Click <strong>Create Page</strong></li>
+            <li><strong>Duplicate a Page</strong> - Click duplicate icon (<img class="bcls-image--no-border" alt="" src="icon-duplicate.png" />) next to page name</li>
+            <li><strong>Edit a Page</strong> - Click gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) next to page name</li>
+            <li><strong>Archive Pages</strong> - Click <strong>Archive Page</strong></li>
+            <li><strong>Change the order of pages</strong> - To change the order of pages, click on a page and drag it to a new position</li>
+            <li><strong>Configure the page layout and app settings</strong> - Click gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) next to Pages</li>
+            <li><strong>Preview the App layout</strong> - Click a device icon at the top of the page</li>
+        </ul>
+        <a id="help-link" href="/pages/help/create-page.html">&gt;</a>
+    </section>
+    <section class="bcls-section">
+        <h3>Related</h3>
+        <ul>
+            <li><a href="../howto/creating-page.html" target="_blank">How To: Create a Page <i class="fad fa-external-link-alt"></i></a></li>
+            <li><a href="/pages/howto/archiving-pages.html">How To: Archive Pages <i class="fad fa-external-link-alt"></i></a></li>
+        </ul>
+    </section>
 
+    <script>
+        document.getElementById('help-link').addEventListener('click', handleButtonClick, false);
+
+        function handleButtonClick(e) {
+            window.parent.postMessage('page-type', '*')
+        }
+    </script>
+
+</article>
 <!-- complete bootstrap layout -->
 <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>

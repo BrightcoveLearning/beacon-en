@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+    <!--     <img id="background-screenshot" src="/assets/images/for-demo/iframe-background.png" alt="">
+ --> <iframe id="doc_frame" src="/pages/help/home.html"></iframe>
+
+
+    <script>
+        /**
+         * find index of an object in array of objects
+         * based on some property value
+         * 
+         * @param {array} targetArray array to search
+         * @param {string} objProperty object property to search
+         * @param {string} value of the property to search for
+         * @return {integer} index of first instance if found, otherwise returns -1
+         */
+        function findObjectInArray(targetArray, objProperty, value) {
+            var i, totalItems = targetArray.length,
+                objFound = false;
+            for (i = 0; i < totalItems; i++) {
+                if (targetArray[i][objProperty] === value) {
+                    objFound = true;
+                    return i;
+                }
+            }
+            if (objFound === false) {
+                return -1;
+            }
+        }
+
+        var screenshotsAra = [{
+                    name: 'page-type',
+                    imagePath: 'page-type.png'
+                },
+                {
+                    name: 'page-title',
+                    imagePath: 'page-title.png'
+                },
+                {
+                    name: 'page-layout',
+                    imagePath: 'page-layout.png'
+                },
+                {
+                    name: 'page-details',
+                    imagePath: 'page-details.png'
+                }
+            ],
+            imagePath;
+
+        window.addEventListener('message', function(e) {
+            window.alert(e.data);
+            console.log('e.data: ', e.data)
+            //imagePath = findObjectInArray(screenshotsAra, )
+        }, false);
+    </script>
+
+</body>
+
+</html>
