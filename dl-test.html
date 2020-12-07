@@ -1,0 +1,108 @@
+---
+title: Collapsible Sections Test
+---
+<style>
+  body {
+    /* max-width: 40rem;
+    margin: 0 auto;
+    padding: 1em; */
+  }
+  
+  main {
+    border-width: 2px 0;
+    border-style: solid;
+  }
+  
+  main h2 {
+    margin: 0;
+  }
+  
+  main > div + h2 {
+    border-top: 2px solid;
+  }
+  
+  h2 button {
+    all: inherit;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5em 0;
+  }
+  
+  h2 button:focus svg {
+    outline: 2px solid;
+  }
+  
+  button svg {
+    height: 1em;
+    margin-left: 0.5em;
+  }
+  
+  [aria-expanded="true"] .vert {
+    display: none;
+  }
+  
+  [aria-expanded] rect {
+    fill: currentColor;
+  }
+  
+  /* page styles */
+  
+  /* html {
+    font-family: Arial, sans-serif;
+  } */
+  
+  * {
+    box-sizing: border-box;
+  }
+
+</style> 
+<article class="landing-page-wrapper">
+  <h1>{{ page.title }}</h1>
+  <h2>
+    <button aria-expanded="false">
+      Create a Page
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+        <rect class="vert" height="8" width="2" y="1" x="4"/>
+        <rect height="2" width="8" y="4" x="1"/>
+      </svg> 
+    </button> 
+  </h2>
+  <div hidden>
+    <div style="position: relative; display: block; max-width: 480px;"><div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/20318290001/default_default/index.html?videoId=6037662519001" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div></div>  </div>
+  <h2>
+    <button aria-expanded="false">
+      Section 2
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+        <rect class="vert" height="8" width="2" y="1" x="4"/>
+        <rect height="2" width="8" y="4" x="1"/>
+      </svg>   
+    </button>
+  </h2>
+  <div hidden>
+    <p>Nullam tortor metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum risus facilisis imperdiet quis sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget aliquet scelerisque.</p>
+  </div></article>
+
+  <script>
+    (function() {
+  const headings = document.querySelectorAll('h2'),
+        targets = document.querySelectorAll('div[hidden]');
+
+  function hideSection() {
+    this.hidden = false;
+  }
+  
+  Array.prototype.forEach.call(headings, h => {
+    let btn = h.querySelector('button');
+    let target = h.nextElementSibling;
+    
+    btn.onclick = () => {
+      let expanded = btn.getAttribute('aria-expanded') === 'true';
+      targets.forEach(hideSection);
+      btn.setAttribute('aria-expanded', !expanded);
+      target.hidden = expanded;  
+    }
+  });
+})()
+  </script>

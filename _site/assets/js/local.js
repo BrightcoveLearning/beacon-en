@@ -117,7 +117,7 @@ var BCLS_local = ( function (window, document) {
       hideElement(last_updated);
       hideElement(bc_veggie_burger);
       hideElement(centered_inpage_nav);
-      more_resources.setAttribute('style', 'display:block')
+      more_resources.setAttribute('style', 'display:none')
       back_button.addEventListener('click', function() {
         if (back_page !== null) {
             window.location.replace(back_page + '?back_page=' + this_page );
