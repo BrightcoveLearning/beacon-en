@@ -11,6 +11,9 @@ layout: staging
   dd {
     display: none;
   }
+  h2 {
+    font-size: 1.4rem;
+  }
 </style>
 
 <h1>Pages Home</h1>
@@ -97,17 +100,18 @@ layout: staging
         console.log(dts);
         for (i = 0; i < iMax; i++) {
           dts[i].addEventListener('click', function(e) {
-            if (this.getAttribute('data-expanded')) {
-              this.nextElementSibling.setAttribute('style', 'display:none;');
-              this.setAttribute('data-expanded', false);
-            } else {
+            // console.log(this.getAttribute('data-expanded'));
+            // if (this.getAttribute('data-expanded')) {
+            //   this.nextElementSibling.setAttribute('style', 'display:none;');
+            //   this.setAttribute('data-expanded', false);
+            // } else {
               for (j = 0; j < iMax; j++) {
                 dts[j].nextElementSibling.setAttribute('style', 'display:none;');
                 dts[j].setAttribute('data-expanded', false);
               }
               this.nextElementSibling.setAttribute('style', 'display:block;');
               this.setAttribute('data-expanded', true);
-            }
+            // }
           });
         }
       })(window, document);
