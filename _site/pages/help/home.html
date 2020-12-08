@@ -446,52 +446,74 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
+<style>
+  dt {
+    cursor: pointer;
+  }
+  dd {
+    display: none;
+  }
+</style>
+
 <h1>Pages Home</h1>
 <article class="bcls-article">
   <section class="bcls-section">
     <p>Some of the common tasks are:</p>
-    <ul>
-      <li><a href="#create">Create a New Page</a></li>
-      <li><a href="#duplicate">Duplicate a Page</a></li>
-      <li><a href="#edit">Edit a Page</a></li>
-      <li><a href="#archive">Archive a Page</a></li>
-      <li><a href="#order">Change Page Order</a></li>
-      <li><a href="#layout">Configure the page layout</a></li>
-      <li><a href="#preview">Preview the App layout</a></li>
-    </ul>
+    <dl>
+      <dt>Create a New Page</dt>
+      <dd>
+        <section class="bcls-section">
+          <h2 id="create">Create a Page</h2>
+          <p>Click <strong>Create Page</strong>.</p>
+          <p><a href="../howto/creating-page.html" target="_blank">How To: Create a Page <i class="fad fa-external-link-alt"></i></a></p>
+        </section>
+      </dd>
+      <dt>Duplicate a Page</dt>
+      <dd>
+        <section class="bcls-section">
+          <h2 id="duplicate">Duplicate a Page</h2>
+          <p>Click duplicate icon (<img class="bcls-image--no-border" alt="" src="icon-duplicate.png" />) next to page name</p>
+        </section>
+      </dd>
+      <dt>Edit a Page</dt>
+      <dd>
+        <section class="bcls-section">
+          <h2 id="edit">Edit a Page</h2>
+          <p>Click gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) next to page name</p>
+        </section>
+      </dd>
+      <dt>Archive a Page</dt>
+     <dd>
+        <section class="bcls-section">
+          <h2 id="archive">Archive a Page</h2>
+          <p>Click <strong>Archive Page</strong>.</p>
+          <p><a href="/pages/howto/archiving-pages.html">How To: Archive Pages <i class="fad fa-external-link-alt"></i></a></p>
+        </section>
+     </dd>
+      <dt>Change Page Order</dt>
+      <dd>
+        <section class="bcls-section">
+          <h2 id="order">Change Page Order</h2>
+          <p>To change the order of pages, click on a page and drag it to a new position.</p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="reorder_pages.gif" /></figure>
+        </section>
+      </dd>
+      <dt>Configure the page layout</dt>
+      <dd>
+        <section class="bcls-section">
+          <h2 id="layout">Configure Page Layout</h2>
+          <p>Click gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) next to Pages</p>
+        </section>
+      </dd>
+      <dt>Preview the App layout</dt>
+      <dd>
+        <section class="bcls-section">
+          <h2 id="preview">Preview the App Layout</h2>
+          <p>Click a device icon at the top of the page</p>
+        </section>
+      </dd>
+    </dl>
     <a id="help-link" href="/pages/help/create-page.html">&gt;</a> </section>
-  <section class="bcls-section">
-    <h2 id="create">Create a Page</h2>
-    <p>Click <strong>Create Page</strong>.</p>
-    <p><a href="../howto/creating-page.html" target="_blank">How To: Create a Page <i class="fad fa-external-link-alt"></i></a></p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="duplicate">Duplicate a Page</h2>
-    <p>Click duplicate icon (<img class="bcls-image--no-border" alt="" src="icon-duplicate.png" />) next to page name</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="edit">Edit a Page</h2>
-    <p>Click gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) next to page name</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="archive">Archive a Page</h2>
-    <p>Click <strong>Archive Page</strong>.</p>
-    <p><a href="/pages/howto/archiving-pages.html">How To: Archive Pages <i class="fad fa-external-link-alt"></i></a></p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="order">Change Page Order</h2>
-    <p>To change the order of pages, click on a page and drag it to a new position.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="reorder_pages.gif" /></figure>
-
-  </section>
-  <section class="bcls-section">
-    <h2 id="layout">Configure Page Layout</h2>
-    <p>Click gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) next to Pages</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="preview">Preview the App Layout</h2>
-    <p>Click a device icon at the top of the page</p>
-  </section>
   <!--     <section class="bcls-section">
         <h3>Related</h3>
         <ul>
@@ -507,10 +529,33 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             window.parent.postMessage('page-type', '*')
         }
     </script> 
+
+    <script>
+      var BCLS_expand_collapse = ( function (window, document) {
+        var dts = document.querySelectorAll('dt'),
+          i,
+          j,
+          iMax = dts.length;
+        console.log(dts);
+        for (i = 0; i < iMax; i++) {
+          dts[i].addEventListener('click', function(e) {
+            if (this.getAttribute('data-expanded')) {
+              this.nextElementSibling.setAttribute('style', 'display:none;');
+            } else {
+              for (j = 0; j < iMax; j++) {
+                dts[j].nextElementSibling.setAttribute('style', 'display:none;');
+              }
+              this.nextElementSibling.setAttribute('style', 'display:block;');
+              this.setAttribute('data-expanded', true);
+            }
+          });
+        }
+      })(window, document);
+    </script>
 </article>
 
 <!-- complete bootstrap layout -->
-<nav id="more_resources">
+<!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
   <ul style="list-style: none;">
     <li><a href="https://beacon-help.support.brightcove.com" target="_blank"><img src="/assets/images/feather/search.svg" alt="Search" >Search Brightcove Beacon Documentation <img src="/assets/images/feather/external-link.svg" alt="External Link" class="external-link-icon"></a></li>
@@ -518,7 +563,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <li><a href="https://status.brightcove.com" target="_blank"><img src="/assets/images/feather/info.svg" alt="System Status"> System Status <img src="/assets/images/feather/external-link.svg" alt="External Link"class="external-link-icon"></a></li>
     <li><a href="https://supportportal.brightcove.com/s/login/" target="_blank"><img src="/assets/images/feather/message-circle.svg" alt="Contact Support"> Contact Support <img src="/assets/images/feather/external-link.svg" alt="External Link"class="external-link-icon"></a></li>
   </ul>
-</nav>
+</nav> -->
     </div>
     <div class="col-sm-2 right-side-bar">
       
