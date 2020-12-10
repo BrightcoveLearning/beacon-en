@@ -1,6 +1,6 @@
-<header>
-<img id="back_button" src="/assets/images/feather/arrow-left.svg" alt="Back" style="opacity: .2;cursor: not-allowed;float: left;margin-right: 1rem;">
-<nav id="breadcrumbs" aria-label="breadcrumb">
+<header style="font-size: .8rem;">
+<img id="back_button" src="/assets/images/feather/arrow-left.svg" alt="Back" style="opacity: .2;cursor: not-allowed;float: left;margin-right: 1rem;margin-left: 1rem;">
+<nav id="breadcrumbs" aria-label="breadcrumb" style="display: inline-block;margin-left: 1rem;">
   <ol class="breadcrumb arr-right">
     {% if page.parent %}
     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -14,3 +14,4 @@
     <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
   </ol>
 </nav>
+</header>
