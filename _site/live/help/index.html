@@ -12,10 +12,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">   -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <!-- <link rel="stylesheet" href="assets/css/site/styles.css"> -->
   <!-- <link rel="stylesheet" href="assets/css/site/landing-page.css">
   <link rel="stylesheet" href="assets/css/site/tabs.css"> -->
   <link rel="stylesheet" href="/assets/css/help.css">
+  <!-- <link rel="stylesheet" href="/assets/css/details.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <!-- <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script> -->
@@ -25,9 +27,9 @@
 
 <body class="body">
 
-<header>
-<img id="back_button" src="/assets/images/feather/arrow-left.svg" alt="Back" style="opacity: .2;cursor: not-allowed;float: left;margin-right: 1rem;">
-<nav id="breadcrumbs" aria-label="breadcrumb">
+<header style="font-size: .8rem;">
+<img id="back_button" src="/assets/images/feather/arrow-left.svg" alt="Back" style="opacity: .2;cursor: not-allowed;float: left;margin-right: 1rem;margin-left: 1rem;">
+<nav id="breadcrumbs" aria-label="breadcrumb" style="display: inline-block;margin-left: 1rem;">
   <ol class="breadcrumb arr-right">
     
     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -37,6 +39,7 @@
     <li class="breadcrumb-item active" aria-current="page">Live Home</li>
   </ol>
 </nav>
+</header>
 
 <style>
     @import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
@@ -143,8 +146,8 @@
             </details>
     </section>
 </article>
-<footer class="help-footer" role="contentinfo">
-<a href="mailto:docs@brightcove.com?subject=In-app%20help%20feedback">Comments?</a>  | <a href="/index.html" target="_blank">Full Documentation <img src="/assets/images/feather/external-link.svg" alt="External Link"></a>
+<footer class="help-footer" role="contentinfo" style="background-color: rgb(9, 7, 140);">
+<a href="mailto:docs@brightcove.com?subject=In-app%20help%20feedback" style="margin-right: 1rem;">Comments?</a>| <a href="/index.html" target="_blank" style="margin-right: 1rem;margin-left:1rem;">Full Documentation <img src="/assets/images/feather/external-link-white.svg" alt="External Link" style="height: .8rem;vertical-align: text-top;"></a>
 </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
