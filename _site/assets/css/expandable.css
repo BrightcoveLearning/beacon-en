@@ -1,14 +1,18 @@
-html, body {
-  /* min-height: 100%; */
+/* html, body {
+  min-height: 100%;
 }
 html {
   overflow-y: scroll;
   font-size: 18px;
+} */
+
+details .bcls-section {
+  margin-top: 0;
 }
 body {
   font-size: 1rem;
   font-weight: 300;
-  font-family: Roboto, sans-serif;
+  font-family: 'Public Sans', sans-serif;
   line-height: 1.4;
   color: #546E7A;
   background-color: #ECEFF1;
@@ -34,6 +38,7 @@ code {
 }
 .details {
   overflow: hidden;
+  height: 5em;
   border-bottom: 1px solid #CFD8DC;
   transition: height 200ms ease-in-out;
 }
@@ -56,6 +61,10 @@ code {
   font-size: 1.3rem;
   /* text-transform: uppercase; */
   transition: color 200ms ease-in-out;
+}
+
+[open] {
+  height: auto;
 }
 [open] > .details__summary {
   color: #00ACC1;
