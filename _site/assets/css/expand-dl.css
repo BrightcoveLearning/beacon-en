@@ -15,11 +15,6 @@ a {
 code {
   background: #ECEFF1;
 }
-dl.expandable {
-  border: 1px solid #CFD8DC;
-  border-radius: 5px;
-  background-color: white;
-}
 .dd {
   transition: display 200ms ease-in-out;
 }
@@ -32,6 +27,7 @@ dt.expander, dd {
 
 dd {
   overflow: scroll;
+  border-bottom: 2px #09078c solid;
 }
 dt.expander {
   position: relative;
@@ -43,14 +39,19 @@ dt.expander {
   /* text-transform: uppercase; */
   transition: color 200ms ease-in-out;
 }
+.expand-toggle {
+  width: 1rem;
+  margin-right: .7rem;
+  vertical-align: baseline;
+}
 
-dt.expander::-webkit-details-marker {
+/* dt.expander::-webkit-details-marker {
   display: none;
 }
 dt.expander:before, dt.expander:after {
-  content: "";
+  content: '';
   position: absolute;
-}
+} */
 dt.expander:before {
   left: 20px;
   top: 50%;
