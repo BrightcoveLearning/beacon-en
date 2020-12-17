@@ -5,6 +5,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/account-information.html",
+      "oldURL": "/account-information"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/admin/help/account-settings.html",
       "oldURL": "/account-settings"
   },
@@ -240,11 +245,6 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/account-information/edit.html",
-      "oldURL": "/edit"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/media/howto/editing-basic-video-details.html",
       "oldURL": "/editing-basic-video-details"
   },
@@ -295,12 +295,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/help/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/help/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
@@ -320,8 +320,8 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/index-test.html",
-      "oldURL": "/index-test"
+      "newURL": "https://beacon-help.support.brightcove.com/media/help/index-series.html",
+      "oldURL": "/index-series"
   },
 
   {
@@ -330,27 +330,17 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/general/",
-      "oldURL": "/index"
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/index-test.html",
+      "oldURL": "/index-test"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/help/",
-      "oldURL": "/index"
+      "newURL": "https://beacon-help.support.brightcove.com/media/help/index-videos.html",
+      "oldURL": "/index-videos"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/",
+      "newURL": "https://beacon-help.support.brightcove.com/media/",
       "oldURL": "/index"
   },
 
@@ -360,37 +350,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/howto/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/support/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/admin/help/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/live/help/",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/",
       "oldURL": "/index"
   },
 
@@ -400,8 +365,53 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/support/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/live/help/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/pages/howto/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/pages/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/general/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/admin/ingest-profiles-best-practices.html",
       "oldURL": "/ingest-profiles-best-practices"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/ingest-profiles/ingest-profiles-list.html",
+      "oldURL": "/ingest-profiles-list"
   },
 
   {
@@ -460,12 +470,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/organizing-videos-using-folders.html",
       "oldURL": "/organizing-videos-using-folders"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/organizing-videos-using-folders.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html",
       "oldURL": "/organizing-videos-using-folders"
   },
 
@@ -622,11 +632,6 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/media/help/video-details.html",
       "oldURL": "/video-details"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/account-information/view.html",
-      "oldURL": "/view"
   },
 
   {
