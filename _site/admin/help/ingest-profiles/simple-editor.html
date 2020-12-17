@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Account Information</title>
+  <title>Ingest Profile Simple Editor</title>
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -35,42 +35,41 @@
     
     <li class="breadcrumb-item"><a href="/admin/help/">Admin Home</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Account Information</li>
+    <li class="breadcrumb-item active" aria-current="page">Ingest Profile Simple Editor</li>
   </ol>
 </nav>
 </header>
 
-<h1>Account information</h1>
+<h1>Ingest Profile Simple Editor</h1>
 <article class="bcls-article">
     <section class="bcls-section">
-      <h2>View</h2>
-      <p>View your account information, including:</p>
+        <p>The ingest profile defines the number and type of renditions created for each video upload.</p>
+
+        <p><strong>Show Display Name</strong> / <strong>Show API Name</strong> - Toggle between profile names</p>
+        <p><strong>Profile Version</strong> - Type of transcoding used, based on your account configuration</p>
         <ul>
-          <li>Account name</li>
-          <li>Account id</li>
-          <li>Mailing address</li>
-          <li>Phone number</li>
-          <li>Maximum number of users allowed</li>
+          <li><strong>Legacy</strong> - Legacy transcoding</li>
+          <li><strong>Dynamic Delivery</strong> - Stores a small set of renditions and performs real-time packaging.</li>
+          <li><strong>Context-Aware</strong> - Uses machine learning to optimize the number and quality of renditions needed.</li>
+        </ul>
+        <p><strong>Type</strong> - Type of ingest profile</p>
+        <ul>
+          <li><strong>Standard VOD</strong> - Default profile provided by Brightcove. This cannot be edited or deleted.</li>
+          <li><strong>Custom VOD</strong> - Custom profile that you have created.</li>
+          <li><strong>Standard Live</strong> - Default profile provided by Brightcove. This cannot be edited or deleted.</li>
+          <li><strong>Custom Live</strong> - Custom profile that you have created.</li>
+        </ul>
+        <p><strong>Renditions</strong> - Number of renditions that may be created</p>
+        <p><strong>Display</strong> - Toggle to hide/display the profile from the Upload page</p>
+        <p><strong>New Profile</strong></p>
+        <ul>
+          <><strong>Dynamic Delivery</strong> - Create a new Dynamic Delivery profile</>
+          <li><strong>Live</strong> - Create a new Live profile</li>
         </ul>
       
-    <h3>Edit</h3>
-    <p>Edit fields associated with your account.</p>
-        <p>Notes:</p>
-        <ul>
-          <li>The <strong>Account ID</strong> cannot be changed.</li>
-          <li><strong>Max Users</strong> is based on your account type.</li>
-        </ul>
-    <ol class="bcls-tasklist">
-      <li>Click <strong>Edit Account Information</strong>.</li>
-      <li>Update field values.</li>
-      <li>Click <strong>Save</strong>.</li>
-    </ol>
   </section>
     <section class="bcls-section">
-      <h3>Related</h3>
-        <ul>
-            <li><a href="https://beacon-la.support.brightcove.com/admin/managing-account-information.html" target="_blank">Managing Account Information</a></li>
-        </ul>
+      <p><a href="https://beacon-la.support.brightcove.com/admin/managing-ingest-profiles.html">Details</a></p>
     </section>
 </article>
 <footer class="help-footer" role="contentinfo">
