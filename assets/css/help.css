@@ -6,7 +6,7 @@ layout: null
 @import url(https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap);
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot);
   font-weight: 900;
   font-style: normal;
@@ -14,7 +14,7 @@ layout: null
 }
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff) format("woff");
   font-weight: 900;
   font-style: normal;
@@ -22,7 +22,7 @@ layout: null
 }
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-super.eot);
   font-weight: 800;
   font-style: normal;
@@ -30,7 +30,7 @@ layout: null
 }
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-super.woff) format("woff");
   font-weight: 800;
   font-style: normal;
@@ -38,7 +38,7 @@ layout: null
 }
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-black.eot);
   font-weight: 700;
   font-style: normal;
@@ -46,7 +46,7 @@ layout: null
 }
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-black.woff) format("woff");
   font-weight: 700;
   font-style: normal;
@@ -54,7 +54,7 @@ layout: null
 }
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-bold.eot);
   font-weight: 600;
   font-style: normal;
@@ -62,7 +62,7 @@ layout: null
 }
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-bold.woff) format("woff");
   font-weight: 600;
   font-style: normal;
@@ -70,7 +70,7 @@ layout: null
 }
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-medium.eot);
   font-weight: 500;
   font-style: normal;
@@ -78,7 +78,7 @@ layout: null
 }
 
 @font-face {
-  font-family: Balto Web;
+  font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-medium.woff) format("woff");
   font-weight: 500;
   font-style: normal;
@@ -93,6 +93,7 @@ body, .body {
   counter-reset: figure 0 table 0 step 0;
   background-color: white;
   color: rgb(68, 68, 68);
+  margin: 1rem;
 }
 
 body {
@@ -163,19 +164,6 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   vertical-align:text-top
 }
 
-#back_button {
-  position: absolute;
-  top: 5px;
-  left: -1rem;
-  margin-left: 1rem;
-  cursor: pointer;
-}
-
-#forward_button {
-  float: right;
-  margin-right: 1rem;
-  cursor: pointer;
-}
 #breadcrumbs {
   /* position: fixed;
   top: 3rem; */
@@ -191,7 +179,7 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   z-index: 9999;
 }
 
-#more_resources {
+/* #more_resources {
   display: none;
   font-size: smaller;
 }
@@ -201,7 +189,7 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
 #more_resources h2 {
   font-size: small;
   margin: 0;
-}
+} */
 
 a {
   color: rgb(7, 33, 144);
@@ -222,6 +210,14 @@ footer, footer a {
   padding: .5rem;
   color: whitesmoke;
   font-size: smaller;
+}
+
+.help-footer {
+  background-color: rgb(9, 7, 140);
+  margin-top:1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  min-width: 100%;
 }
 
 

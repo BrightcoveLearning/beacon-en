@@ -28,6 +28,16 @@ dt.expander, dd {
 dd {
   overflow: scroll;
   border-bottom: 2px #09078c solid;
+  margin-left: 1rem;
+}
+dd * {
+  margin-left: 1rem;
+}
+
+dd ul {
+  padding: 0;
+  margin-left: 1rem;">
+
 }
 dt.expander {
   position: relative;

@@ -1,15 +1,9 @@
 <header style="font-size: .8rem;">
-<img id="back_button" src="/assets/images/feather/arrow-left.svg" alt="Back" style="opacity: .2;cursor: not-allowed;float: left;margin-right: 1rem;margin-left: 1rem;">
-<nav id="breadcrumbs" aria-label="breadcrumb" style="display: inline-block;margin-left: 1rem;">
+<!-- <img id="back_button" src="/assets/images/feather/arrow-left.svg" alt="Back" style="opacity: .2;cursor: not-allowed;float: left;margin-right: 1rem;margin-left: 1rem;"> -->
+<nav id="breadcrumbs" aria-label="breadcrumb" style="display: inline-block;">
   <ol class="breadcrumb arr-right">
-    {% if page.parent %}
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    {% endif %}
-    {% if page.grandparent_name %}
-    <li class="breadcrumb-item"><a href="{{ page.grandparent_path }}">{{ page.grandparent_name }}</a></li>
-    {% endif %}
-    {% if page.parent and page.parent != "Home" %}
-    <li class="breadcrumb-item"><a href="{{ page.dir }}">{{ page.parent }}</a></li>
+    {% if page.parent and page.name != "index.html" %}
+    <li class="breadcrumb-item"><a href="/{{ page.parent | downcase }}/help/">{{ page.parent | capitalize }} Home</a></li>
     {% endif %}
     <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
   </ol>
