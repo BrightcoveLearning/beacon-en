@@ -466,55 +466,29 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Editing Series Details</h1>
   <summary>In this topic you will learn how to edit series details using the Media page.</summary>
   <section class="bcls-section">
-    <p>To view and edit the details for a video, open the Media page and click the video title link. The video details page will open.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: To edit video details for multiple videos at the same time, use the <a href="/media/editing-video-details-using-quick-edit.html">Quick Edit</a> feature.</aside>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-home.png" /></figure>
-    <p>Buttons at the top of the video details page provide the ability to:</p>
+    <p>To view and edit the details for a series, open the Media page and click on a series name link. The series overview page will open.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-details-overview.png" /></figure>
+    <p>Buttons at the top of the series details page provide the ability to:</p>
     <ul>
-      <li><a href="/media/capturing-poster-and-thumbnail-images.html">Capture new poster and thumbnail images</a></li>
-      <li><a href="/media/organizing-videos-using-folders.html">Add the video to a folder</a> or <a href="/media/creating-and-managing-playlists.html">add it to a playlist</a></li>
-      <li><a href="/publishing-videos-and-playlists.html">Publish a video</a></li>
-      <li>Deactivate/activate videos</li>
-      <li>Delete the video</li>
+      <li>Publish the series</li>
+      <li>Delete the series</li>
     </ul>
-    <p>If the video is activated, the <strong>Deactivate</strong> button can be used to deactivate the video. If the video is deactivated, the <strong>Activate</strong> button can be used to activate the video. Videos that are deactivated cannot be played in a Brightcove Player.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-deactivate-publish.png" /></figure>
-    <p>The preview player at the top of the page can be used to view the video.</p>
-    <p>The video details are organized into the following sections:</p>
+    <p>The series details are organized into the following tabs:</p>
     <ul>
-      <li><a href="#videoinfo">Video Information</a></li>
-      <li><a href="#images">Images</a></li>
-      <li><a href="#cast">Cast</a></li>
-      <li><a href="#customfields">Custom Fields</a></li>
-      <li><a href="#texttracks">Text Tracks</a></li>
-      <li><a href="#audiotracks">Audio Tracks</a></li>
-      <li><a href="#videotype">Video Type Information</a></li>
-      <li><a href="#categorization">Categorization</a></li>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#discovery">Discovery</a></li>
       <li><a href="#availability">Availability</a></li>
-      <li><a href="#videofiles">Video Files</a></li>
     </ul>
-    <p>To edit the video details, click the <strong>Edit</strong> button in the section or double-click in the section.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="required">Required fields</h2>
-    <p>Your Video Cloud account may be configured with required metadata fields. If a video is inactive, you can freely edit and save its metadata without supplying all required metadata. Also, videos can't be activated until all required metadata has been entered. If a video is already active, you cannot save any edits in the section you are editing unless you supply all required metadata in that section or deactivate the video. For more information on working with required fields, see <a href="/media/setting-required-fields-videos.html">Setting Required Fields for Videos</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="videoinfo">Video Information</h2>
-    <p>The Video Information section can be used to view and edit basic video details.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-video-information.png" /></figure>
-    <p>To edit the details, click the <strong>Edit</strong> button or double-click in the section. The following details can be edited:</p>
+    <h2 id="overview">Overview</h2>
+    <p>The Overview tab can be used to view and edit basic series details. The following details are displayed:</p>
     <ul>
+      <li><strong>Language View</strong> - </li>
       <li><strong>Name</strong> - No more than 255 characters.</li>
-      <li><strong>ID</strong> - System assigned video ID (unique across all Brightcove accounts).</li>
-      <li><strong>Short description</strong> - No more than 250 characters.</li>
-      <li><strong>Reference ID</strong> - A unique ID assigned by a publisher to a video or playlist. Limited to no more than 150 characters. The reference ID is distinct from the video ID or playlist ID which are unique IDs generated by Video Cloud. The reference ID enables coordination between Video Cloud and other services such as a publisher's content management system. Note that you can't batch edit the reference ID as two videos can't have the same reference ID. Reference IDs must always be unique. Deleting a video will allow a previously assigned reference ID to be reused.</li>
-      <li><strong>Video Projection</strong> - Indicates how the video was recorded.
-        <ul>
-          <li><strong>Standard</strong> - Default. Regular video recording.</li>
-          <li><strong>360 Degree</strong> - Check to indicate the video is a 360 degree video. A 360 badge will appear in the video thumbnail on the Media page. For more information on working with 360 degree videos, see <a href="/general/working-360deg-videos.html">Working with 360° Videos</a>.</li>
-        </ul>
-      </li>
+      <li><strong>Images</strong></li>
+      <li><strong>Title</strong> - </li>
+      <li><strong>Synopsis</strong> - </li>
       <li><strong>Enable offline playback</strong> - When checked, enables the video to be saved locally and viewed offline when using applications created using the device SDKs. This option will only appear if the account is enabled for offline playback.</li>
       <li><strong>Related Link URL</strong> - A standard web URL beginning with http:// or https:// limited to 255 characters.</li>
       <li><strong>Related Link Text</strong> - Related link text limited to 255 characters.</li>
@@ -534,84 +508,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Click <strong>Save</strong> to save changes.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="images">Images</h2>
+    <h2 id="discovery">Discovery</h2>
     <p>The Images section displays the images for the video. Poster and thumbnail images are created automatically by taking a snapshot from the source video at the midway point. If you don't like the default images that were captured, you can <a href="/media/capturing-poster-and-thumbnail-images.html">capture new images</a> or <a href="/media/uploading-video-images.html">upload other images</a> to use as the poster and thumbnail. Wide, Portrait and Ultra Wide images must be <a href="/media/uploading-video-images.html">manually uploaded</a>. Hover over any image  and click the view icon (<img alt="" src="/assets/images/media/icon-eye.png" />) to open the image in a new browser tab.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-images.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h2 id="cast">Cast</h2>
+    <h2 id="availability">Availability</h2>
     <p>The Cast section can be used to add cast information for a video. All of the fields in the Cast panel support type-ahead search. As you type, previous matching entries will appear and can be clicked on to add them to the selection.</p>
     <figure class="bcls-figure"></figure>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-cast.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="customfields">Custom Fields</h2>
-    <p>The Custom Fields section can be used to view and edit the custom field for the video. To edit custom field values, click the <strong>Edit</strong> button or double-click in the section. An asterisk (*) next to the field name indicates that the field is required.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For information on adding custom fields to an account, see <a href="/admin/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a>.</aside>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-custom-fields.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="texttracks">Text Tracks</h2>
-    <p>The Text Tracks section can be used to add text tracks to the video. For more information on configuring text tracks, see <a href="/media/adding-captions-videos.html">Adding Captions to Videos</a>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-text-tracks.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="audiotracks">Audio Tracks</h2>
-    <p>If the video was uploaded and transcoded using a Dynamic Delivery or Context Aware Encoding ingest profile, the Audio Tracks section will be displayed and contain information on the audio renditions that are available. For information on adding additional audio tracks to a video, see <a href="/media/adding-audio-tracks-videos.html">Adding Audio Tracks to Videos</a>.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: The Audio Tracks section will not be displayed if the video was transcoded using a Legacy ingest profile.</aside>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-audio-tracks.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="videotype">Video Type Information</h2>
-    <p>The Video Type Information section is where the Video Type is selected. The Video Type associated with a video will determine additional video details that are available to be configured. The following <strong>Video Types</strong> are available:</p>
-    <ul>
-      <li><strong>Movie</strong> - Indicates the video is a movie. When a new video is uploaded, the <strong>Video Type</strong> will be set to <strong>Movie</strong>.</li>
-      <li><strong>Episode</strong> - Indicates the video is an episode as part of a season. The Video Information panel will display the episode number and the season the video is assigned to.</li>
-      <li><strong>Trailer</strong> - Indicates the video is used as a trailer. Videos that are added as a trailer for a movie or episode will automatically have their Video Type changed to Trailer.</li>
-    </ul>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-video-type-info.png" /></figure>
-    <p>If the <strong>Video Type</strong> is <strong>Movie</strong> or <strong>Episode</strong>, additonal video fields may be configured:</p>
-    <ul>
-      <li><strong>Trailer</strong> - Click <strong>+ Add Trailer</strong> to select a trailer for the movie or episode</li>
-      <li><strong>Age Ratings</strong> - Select  age rating(s) for the listed countries</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="categorization">Categorization</h2>
-    <p>The Categorization section can be used to configure the following details:</p>
-    <ul>
-      <li><strong>Tags</strong> - One or more tags, separated by commas. You can use tags to add videos to smart playlists.
-        <ul>
-          <li>Tags can be up to 128 characters. If any tags have more than 128 characters, an error will be displayed when you attempt to save changes.</li>
-          <li>Tags can't contain commas. For example, a tag of "roof, attic + front yard" is not supported.</li>
-          <li>A video can have no more than a total of 1200 tags.</li>
-          <li>A tag differing only in case (lowercase, uppercase) is handled as an identical tag and the case will automatically match those of the original tag.</li>
-          <li>Issues with case sensitivity need to be handled externally to Brightcove Beacon, for example, using JavaScript methods to modify the strings.</li>
-          <li>After entering a tag, press the <strong>comma</strong> key or <strong>enter</strong>. Tags that have been added will display in a colored box.
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-tags-added.png" /></figure>
-          </li>
-        </ul>
-      </li>
-      <li><strong>Manual Playlists</strong> - Playlists that this video belongs to. For more information, see <a href="/media/creating-and-managing-playlists.html">Creating and Managing Playlists</a>.</li>
-      <li><strong>Folder</strong> - Folder the video is assigned to. See <a href="/media/organizing-videos-using-folders.html">Organizing Videos Using Folders</a> for more information.</li>
-    </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-categorization.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="availability">Availability</h2>
-    <p>The Availability section displays the video availability settings. For more information on configuring the availability settings, see <a href="/media/configuring-video-availability.html">Configuring Video Availability</a>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-availability.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="videofiles">Video Files</h2>
-    <p>The Video Files section displays the source file name, the transcoding technology that was used and details on the video renditions that were created. It also provides the ability to:</p>
-    <ul>
-      <li><a href="/media/replacing-video-source-file.html">Replace the Video Source File</a></li>
-      <li><a href="/media/retranscoding-videos.html">Retranscode the Video</a></li>
-    </ul>
-    <p>To download a rendition, right-click on the format link for the rendition. Note that only MP4 renditions can be downloaded.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-video-files.png" /></figure>
-    <aside class="bcls-aside bcls-aside--information">Note:  A DRM toggle switch may also appear in the section if the account has been enabled for DRM. For more information on DRM, see <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-content-drm.html">Ingesting content with DRM</a>.</aside>
   </section>
 </article>
 
