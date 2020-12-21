@@ -9,15 +9,58 @@ layout: staging
   <section class="bcls-section">
     <p>Series availability details can be used to restrict access to a series based upon date, locations and devices. To view and edit the availability details for a series, open the Media page and click on a series name link. The series overview page will open. Click the <strong>Availability</strong> tab.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-availability-tab.png" /></figure>
-    <p>Buttons at the top of the series details page provide the ability to:</p>
+    <p>The availability settings are controlled using rule sets. Rule sets are created to control access to a series based upon:</p>
     <ul>
-      <li><a href="/media/creating-series-seasons-episodes.html#publish_series">Publish/Unpublish the series</a></li>
-      <li>Delete the series</li>
+      <li>Start/end dates</li>
+      <li>Location</li>
+      <li>Device</li>
     </ul>
-    <p>The availability settings are controlled using rule sets. A rule set is a collection of start/end dates, location restrictions and device restrictions that can be used to restrict access to a series.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="rule-sets">Using Rule Sets</h2>
-    <p>The <strong>Overview</strong> tab can be used to view and edit basic series details. The following </p>
+    <h2 id="schedule">Configuring schedule availability</h2>
+    <p>Configure <strong>Schedule</strong> availability to configure the start and optional end date that a series will be available. By default, series are always available.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong> page.</li>
+      <li>Click on a series name link.</li>
+      <li>Click the <strong>Availability</strong> tab.</li>
+      <li>Click <strong>Add New Rule Set</strong> to create a new rule set or hover over an existing rule set and click the edit icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-edit.png" />).</li>
+      <li>Click on <strong>Schedule</strong> to expand the schedule settings.</li>
+      <li>Click the calendar icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-calendar.png" />) and pick a <strong>Start Date</strong>.</li>
+      <li>Click the clock icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-clock.png" />) and pick a start time.</li>
+      <li>(Optional) Check the <strong>End Date</strong> checkbox and select an <strong>End Date</strong> and time.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-schedule-availability.png" /></figure>
+      </li>
+      <li>Click <strong>Done</strong> when finished.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="devices">Configuring device availability</h2>
+    <p>Configure <strong>Device</strong> availability to configure the devices that a series can be viewed on. By default, series are  available on all devices.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong> page.</li>
+      <li>Click on a series name link.</li>
+      <li>Click the <strong>Availability</strong> tab.</li>
+      <li>Click <strong>Add New Rule Set</strong> to create a new rule set or hover over an existing rule set and click the edit icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/help/icon-edit.png" />).</li>
+      <li>Click on <strong>Devices</strong> to expand the device settings.</li>
+      <li>Select the devices the series can be viewed on.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-device-availability.png" /></figure>
+      </li>
+      <li>Click <strong>Done</strong> when finished.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="location">Configuring location availability</h2>
+    <p>Configure <strong>Location</strong> availability to configure the locations that a series can be viewed from. By default, series are  available in all locations.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong> page.</li>
+      <li>Click on a series name link.</li>
+      <li>Click the <strong>Availability</strong> tab.</li>
+      <li>Click <strong>Add New Rule Set</strong> to create a new rule set or hover over an existing rule set and click the edit icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/help/icon-edit.png" />).</li>
+      <li>Click on <strong>Location</strong> to expand the location settings.</li>
+      <li>Enter the <strong>Permitted Locations</strong> and <strong>Denied Locations</strong> for the series. Note that the countries that appear are based upon your account settings.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-location-availability.png" /></figure>
+      </li>
+      <li>Click <strong>Done</strong> when finished.</li>
+    </ol>
   </section>
 </article>
