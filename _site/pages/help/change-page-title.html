@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Page Layout</title>
+  <title>Page Title</title>
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -33,33 +33,27 @@
 <nav id="breadcrumbs" aria-label="breadcrumb" style="display: inline-block;">
   <ol class="breadcrumb arr-right">
     
-    <li class="breadcrumb-item active" aria-current="page">Page Layout</li>
+    <li class="breadcrumb-item"><a href="/pages/help/">Pages Home</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Page Title</li>
   </ol>
 </nav>
 </header>
 
-<h1>Page Layout</h1>
+<h1>Page Title</h1>
 <article class="bcls-article">
     <section class="bcls-section">
-        <p>Select a page layout. The layout will control the look and feel of the page and determines the number of playlists that can be added to a page.</p>
-        <ul>
-            <li>Tabs</li>
-            <li>Grid</li>
-            <li>Hero (Autoplay Channel)</li>
-            <li>Hero (Image)</li>
-        </ul>
-        <p>When a page layout is selected, the page preview will update to reflect the current selection.</p>
-        <p>After making your selection, click the <strong>Next</strong> button that is positioned under the container types.</p>
+        <p>Change the title of the page, which is visible in the Brightcove Beacon apps. If your app is in multiple languages you can also add/alter the title for those languages here.</p>
+        <p>If you click the <strong>Availability</strong> link you will see options for change page access permissions based on date, device and location.</p>
     </section>
 
     <script>
         document.getElementById('help-link').addEventListener('click', handleButtonClick, false);
 
         function handleButtonClick(e) {
-            window.parent.postMessage('page-details', '*')
+            window.parent.postMessage('page-layout', '*')
         }
     </script>
-
 </article>
 <footer class="help-footer" role="contentinfo">
 <a href="mailto:docs@brightcove.com?subject=In-app%20help%20feedback" style="margin-right: 1rem;">Comments?</a> | <a href="/index.html" target="_blank" style="margin-right: 1rem;margin-left:1rem;">Full Documentation <img src="/assets/images/feather/external-link-white.svg" alt="External Link" style="height: .8rem;vertical-align: text-top;"></a>
