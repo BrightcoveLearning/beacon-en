@@ -1,0 +1,295 @@
+---
+title: Using Cloud Playout to Stream Videos
+description: In this topic you will learn how a collection of VOD videos and live events can be streamed as a live linear channel.
+parent: Cloud Playout
+layout: staging
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>The  Cloud Playout module enables broadcasters and media publishers to use a collection of VOD videos and live streams and then stream them as a linear channel. The channel can be streamed to Brightcove Live, Amazon S3 or a specified RTMP URL.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: This feature is currently in Limited Availability. Contact your Brightcove Account Manager for more information.</aside>
+    <p>To access the Cloud Playout module, click <strong>Cloud Playout</strong> in the navigation menu. A list of all Cloud Playout channels that have been created will be displayed (if any).</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-channel-list.png" /></figure>
+    <p>The page will display the following information:</p>
+    <ul>
+      <li><strong>Channel Name</strong> - Name of the channel</li>
+      <li><strong>Start Time</strong> - Start time for the channel</li>
+      <li><strong>End Time</strong> - End time for the channel</li>
+      <li><strong>Looping</strong> - Indicates whether the program will loop</li>
+      <li><strong>Destination</strong> - Target destination for the channel</li>
+      <li><strong>Date Created</strong> - Date the channel was created</li>
+      <li><strong>Last Updated</strong> - Date the channel was last updated</li>
+      <li><strong>Status</strong> - Channel status
+        <ul>
+          <li><strong>DRAFT</strong> - Channel has been created but not activated</li>
+          <li><strong>CREATING</strong> - Channel is in the process of being activated</li>
+          <li><strong>SCHEDULED</strong> - Channel is active and ready to stream</li>
+          <li><strong>STARTING</strong> - Channel starting process to begin streaming</li>
+          <li><strong>RUNNING</strong> - Channel is actively streaming</li>
+          <li><strong>STOPPING</strong> - Channel streaming is stopping</li>
+          <li><strong>IDLE</strong> - Channel successfully ran and has been stopped</li>
+          <li><strong>DELETING</strong> - Channel is being deleted</li>
+          <li><strong>ERROR</strong> - An error occurred while creating or streaming the channel</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="channel">Creating a  channel</h2>
+    <p>To create a new Cloud Playout channel, follow these steps. </p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Click <strong>Cloud Playout</strong> in the navigation header.</li>
+      <li>
+        Click <strong>Add New</strong>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/cloudplayout-new-channel-dialog.png" alt="New Channel">
+          <figcaption class="bcls-caption--image">New Channel</figcaption>
+        </figure>
+      </li>
+      <li>Enter the channel <strong>Identification</strong> details:
+        <ul>
+          <li><strong>Name</strong> - Name for the channel. The name must have English characters and the following special characters are allowed:   _ . : / = + - </li>
+          <li><strong>Description</strong> - Channel description</li>
+          <li><strong>Image URL</strong> - URL to an image file for the channel; meant to be a channel image that could be retrieved as part of the channel's metadata</li>
+        </ul>
+      </li>
+      <li>Enter the channel <strong>Schedule</strong> details.
+        <ul>
+          <li><strong>Loop Playout Content</strong> - If <strong>On</strong>, the program will be played in a loop and the <strong>End Date/Time</strong> will be enabled. The program can still be modified at any time and the changes will be reflected in the current program and the loops to follow. See the <a href="#looping">Creating a looping program</a> section below.</li>
+          <li><strong>Ad Insertion</strong> - If on, allows ads to be displayed during channel playback. If this option is selected, Live inputs are not allowed, and you can only output to a <strong>Brightcove Live Event or</strong> <strong>Amazon S3 Bucket</strong>. See the <a href="#ads">Enabling Server-Side Ads</a> section below.</li>
+          <li><strong>Start Date/Time</strong> - Time when the channel will start playing out. The start time for all assets will be calculated by adding their duration to this start time. This time can be updated only when the channel is not in running state.</li>
+          <li><strong>End Date/Time</strong> - If no value is entered and <strong>Loop Playout Content</strong> is not selected, the stream will end once the playout is complete. If <strong>Loop Playout Content</strong> is selected and there is no <strong>End Date/Time</strong>, the playout will be streamed until the channel is stopped. This time can be updated at any time.</li>
+        </ul>
+      </li>
+      <li>If you will be using Live inputs, set <strong>Live Input</strong> to On, and enter a Slate URL, unless you are going to use the default Brightcove MP4 for you slate. The slate MP4 will play whenever Live input is stopped because the encoder is stopped or some technical issue blocks the live stream. <strong>Note that <strong>the Slate URL must be a static URL that is always available</strong> (short-lived CDN URLs are not allowed).</strong></li>
+      <li>Enter the channel <strong>Destination</strong> details. Cloud Playout  supports 2 outputs at the same time. For example, you can output HLS into an S3 Bucket and an RTMP feed to  a Brightcove Live Channel or a 3rd party ingestion point. Note that <strong>Brightcove Live Event</strong> and <strong>RTMP</strong> is not supported.
+        <ul>
+          <li><strong>Optimize Display for</strong> - Controls the bitrate and dimensions for the output
+            <ul>
+              <li><strong>Mobile &amp; Web</strong> - If checked, HD Output (RTMP or HLS single bitrate)</li>
+              <li><strong>Smart TV</strong> - If checked, full HD Output (RTMP or HLS single bitrate)</li>
+            </ul>
+          </li>
+          <li><strong>Output Region</strong> - The region where the channel will be created. Brightcove recommends selecting a region geographically closest to where the majority of your audience is expected.</li>
+          <li><strong>Output to</strong> - Select an output method for the channel
+            <ul>
+              <li><strong>Brightcove Live Event</strong> - Create or use a previously created Brightcove Live  Channel. When creating a new channel, the region of the channel will be optimized based upon the <strong>Output Region</strong> that was selected.</li>
+              <li><strong>RTMP</strong> - Select to output the stream to an RTMP or RTP ingestion point. RTP is not available for third party ingestion points, only when <strong>Ad Insertion</strong> and <strong>Brightcove Live Event</strong> is enabled. When selected, an <strong>RTMP URL</strong> field will appear - enter the RTMP input URL for your live streaming service.</li>
+              <li><strong>Amazon S3 Bucket </strong>- Select to push an HLS output to an Amazon S3 bucket. You will be required to enter Bucket Name, Region, Access Key and Secret Key. The bucket should be public and writeable.</li>
+            </ul>
+            <aside class="bcls-aside bcls-aside--information language-editable">Note that outputting to <strong>Brightcove Live Event</strong> will automatically generate live hours for your account, which are billable. Outputting to RTMP or Amazon S3 do not generate billable live hours:
+              <figure class="bcls-figure">
+                <img class="bcls-image" src="/assets/images/general/cloud-playout-live-hours.png" alt="Billable/Non-Billable Outputs">
+                <figcaption class="bcls-caption--image">Billable/Non-Billable Outputs</figcaption>
+              </figure>
+            </aside>
+          </li>
+        </ul>
+      </li>
+      <li>Click <strong>Create Channel</strong>. The new channel will be created with a status of <strong>DRAFT</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="add_videos">Adding videos and live events to a channel</h2>
+    <p>After you create your channel, the screen will show the channel settings:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/general/cloudplayout-channel-details.png" alt="Channel Settings">
+      <figcaption class="bcls-caption--image">Channel Settings</figcaption>
+    </figure>
+    <p>You can edit details, but the main next step is to add videos and/or live events (if you enabled live inputs) to the channel.</p>
+    <h3>Add videos (VOD)</h3>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Click <strong>+ Add Videos</strong>. (If you are on the channel list page, click the  channel name to open the channel settings page and then click <strong>+ Add Videos</strong>).
+      </li>
+      <li>Click the checkbox next to the videos you want to add to the channel.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-select-videos.png" /></figure>
+      </li>
+      <li>Click <strong>Add Videos</strong>.</li>
+      <li>Click <strong>Save</strong>.</li>
+      <li>
+        The program list for the channel will appear:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/cloudplayout-vod-program-list.png" alt="Program List">
+          <figcaption class="bcls-caption--image">Program List</figcaption>
+        </figure>
+        <p>Note that start and end times are automatically calculated from the video durations. You can drag and drop videos in the list to reorder them, and the start/end times will be automatically adjusted.</p>
+      </li>
+    </ol>
+    <h3>Add Live events</h3>
+    <ol class="bcls-tasklist">
+        <li>Click the <strong>+ Add Live Event</strong> button.</li>
+        <li>
+          In the Add Live Event dialog, enter the <strong>Name</strong>, <strong>Duration</strong>, and <strong>Description</strong> for the live event:
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/general/cloudplayout-add-live-event.png" alt="Add Live Event">
+            <figcaption class="bcls-caption--image">Add Live Event</figcaption>
+          </figure>
+          <p>Note that the minimum duration for a live event is 5 minutes, and the duration can be incremented or decremented in 5 minute intervals only - If needed the duration can be edited in-line on the textbox to adjust the granularity of time. The duration of a live event can be modified at any time, even while it is currently playing.</p>
+        </li>
+        <li>
+          After you add live events, they will appear in the program list along with VOD items:
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/general/cloudplayout-live-event-program-list.png" alt="Program List">
+            <figcaption class="bcls-caption--image">Program List</figcaption>
+          </figure>
+        </li>
+        <li>You can drag live events to reorder the list just as you can videos. You can also use the <strong>Quick Edit</strong> button to modify the duration of a live event.</li>
+    </ol>
+    <p>After videos and live events have been added to a channel, click <strong>Activate</strong> to activate the channel. A channel must be activated before streaming can begin. See the <a href="#actions">Using channel actions</a> section below for more information.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: To change the order of the videos in a program, click on a video and drag it to a new position.</aside>
+    <p>When videos are added to a channel, a system-generated playlist will be created and visible in the Media module.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-playlist-created.png" /></figure>
+    <p>We strongly recommend that you make any changes to the channel in the Cloud Playout module, and <strong>do not edit the generated playlist in any way</strong>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="getting_the_rtmp_ingest_point">Getting the RTMP ingest point</h2>
+    <p>For your live encoder, you will need the RTMP ingest point for your channel. You can find it in the <strong>:Channel Settings</strong>:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/general/cloudplayout-rtmp-ingest-point.png" alt="Ingest Point">
+      <figcaption class="bcls-caption--image">Ingest Point</figcaption>
+    </figure>
+    <p>Depending on the encoder you are using, you may need to enter both the RTMP ingest point and the stream name. The stream name for the channel is the <strong>Channel ID</strong>, which is also the last part of the Ingest Point address.</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note that if you are using the OBS software encoder, you will need to specify a <strong>Custom...</strong> service, and will need to input a <strong>Server</strong> and <strong>Stream Key</strong>. The <strong>Server</strong> will be the first part of the <strong>Ingest Point</strong>, and the <strong>Steam Key</strong> will be the remaining part, as shown in the example below:
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/general/cloud-playout-key-for-obs.png" alt="Cloud Playout Ingest Point">
+        <figcaption class="bcls-caption--image">Cloud Playout Ingest Point</figcaption>
+      </figure>
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/general/cloudplayout-obs-setup.png" alt="OBS Setup">
+        <figcaption class="bcls-caption--image">OBS Setup</figcaption>
+      </figure>
+    </aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit_delete">Editing and deleting a  channel</h2>
+    <p>To edit a  Cloud Playout channel, click the  channel name and then click <strong>Edit</strong>. Make the appropriate edits and then click <strong>Update Channel</strong>. Note that the Destination properties cannot be edited once a channel has been created.</p>
+    <p>To delete a  Cloud Playout channel, click the checkbox next to the channel name and then click <strong>Delete</strong>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="looping">Creating a looping program</h2>
+    <p>To create a program that loops, when creating the channel, set the <strong>Loop Playout Content</strong> setting  to <strong>On</strong>. As videos are added to the program, the program listing will update to display the series of videos with associated start/end times to fill the entire channel scheduled time. When you change the duration of a live event, the duration of events that have already passed will remain unchanged, but any future plays of the event will use the new duration.</p>
+    <p>In the example below, the channel includes VOD and live events in a loop.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/cloudplayout-looping-channel.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="actions">Using channel actions</h2>
+    <p>Depending on the status of the channel, various channel action buttons will be available on the channel settings page. Access the channel action buttons by clicking on the channel name to view the channel settings. The following channel action buttons are available:</p>
+    <ul>
+      <li><strong>Activate</strong> - Activating a channel makes it available for streaming. Channels must have videos before they can be activated.</li>
+      <li><strong>Play Now</strong> - Click <strong>Play Now</strong> to start  streaming the channel. This option is only available for channels that have an upcoming start time.</li>
+      <li><strong>Stop Now</strong> - Click <strong>Stop Now</strong> to stop a streaming channel. This will stop the channel and end the  live stream.</li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-channel-actions.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="ads">Enabling Server-Side Ads</h2>
+    <p>It is possible to configure a channel so that server-side ads are displayed using Brightcove's Server-Side Ad Insertion technology. </p>
+    <aside class="bcls-aside bcls-aside--information">Notes: 
+      <ul>
+        <li>When using ad insertion, the channel can only be output to a Brightcove Live Event.</li>
+        <li>If you enable ad insertion, Live Inputs may not be used in the channel.</li>
+      </ul>
+      </aside>
+    <h3>Configuring Ad tags and fill slates</h3>
+    <p>Ensure that you have ad tags and fill slates configured as part of your account administration. For information on configuring ad tags, see <a href="/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a>. Fill slates are content that can be served when there are gaps in a live stream ad break. For information on creating fill slates, see <a href="https://live.support.brightcove.com/admin/managing-live-settings.html">Managing Live Settings</a>.</p>
+    <p>
+      <aside class="bcls-aside bcls-aside--information">Note: Cloud Playout will use the default ad slate configured as part of the <a href="https://live.support.brightcove.com/admin/managing-live-settings.html">Live Settings</a>.</aside>
+    </p>
+    <h3>Creating placeholder ad break videos</h3>
+    <p>You need to indicate which video(s) should be used as "placeholder" videos. "Placeholder" videos will be inserted into the program listing to indicate that an ad should be served and the length of the ad. This needs to be done because when using Server-Side Ad Insertion with Brightcove Live, the "placeholder" video will be replaced with ad content. If you do not insert an ad "placeholder" video, parts of the actual video will be replaced with ad content. If the ad duration is shorter than the ad returned, SSAI will show the ad slate. If the ad duration is longer than the ads returned, the ads will be displayed followed by the ad slate. </p>
+    <p>You may need to create/upload video source files that have video lengths equal to the ad break durations you want to have (i.e. 2 mins, 4 mins, etc.). The content of these videos doesn't matter as they will not actually be played as part of a program. </p>
+    <p>To mark a video as a "placeholder" video, use the Media module to edit the video properties for these videos and tag them with <code translate="No">cp-ad-holder</code>.
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-ad-tag-video.png" /></figure>
+    </p>
+    <h3>Enabling Server-Side Ads for a channel</h3>
+    <p>When creating a channel, set the <strong>Ad Insertion</strong> option to <strong>On</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-ad-insertion-option.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Note: For existing channels, the Ad Insertion setting cannot be changed.</aside>
+    <h3>Inserting ad placeholders into a program</h3>
+    <p>You need to insert ad placeholders into the program listing where ads should be displayed. Follow these steps to insert ad placeholders.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Click a channel name to edit it.</li>
+      <li>In the program listing, click the checkbox next to the video <strong>after</strong> which you want an ad to play.</li>
+      <li>Click <strong>Insert Ads</strong> and select an <strong>ad duration</strong>. The list of ad durations is generated based upon the lengths of all the ad break "placeholder" videos (tagged <code translate="No">cp-ad-holder</code>).
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-insert-ads-button.png" /></figure>
+      </li>
+      <li>Click <strong>Ok</strong>. The "placeholder" video with the selected length will be inserted into the program after the selected video.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-ad-break-inserted.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Note: The video that is inserted as a "placeholder" <strong>will not</strong> be played as part of the program. This video is only used to indicate where an ad request will be made and the ad length.</aside>
+      </li>
+      <li>Click <strong>Save</strong> to save the changes to the program.</li>
+    </ol>
+    <h3>Selecting the ad configuration</h3>
+    <p>Once the program begins playing, click <strong>View in Brightcove Live</strong> to view the channel in the Live module. The dropdown below the player can be used to select the ad configuration that will be used.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-live-select-ad-config.png" /></figure>
+    <figure class="bcls-figure"></figure>
+    <p>For complete information on Server-Side Ad Insertion, see the <a href="https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html">Video Cloud SSAI Overview</a> topic.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="publish">Generating the embed code for a Cloud Playout channel</h2>
+    <p>To generate the embed code for a Cloud Playout channel, you will use the Live module. For full details on using the Live module, see <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Creating and Managing Live Events using the Live Module</a>.</p>
+    <p>Two types of embed code are available:</p>
+    <ul>
+      <li><strong>Standard</strong> - iframe embed code. Recommended for most cases. This type places the player inside an &lt;iframe&gt; tag.</li>
+      <li><strong>Advanced</strong> - In-page embed code. Allows the player to exist in the HTML page directly, not in an iframe. This offers developers the benefits of ease of accessing the player and associated properties and events.</li>
+    </ul>
+    <p>You also have the ability to get the URL to the published player. This is useful for viewing the event in a browser.</p>
+    <p>To generate the embed code for a live event, follow these steps:</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Open the Live module.</li>
+      <li>Locate the live event the channel will be streaming to. Typically, the event will be located in the <strong>Standby</strong> tab and have a name of <strong>Channel</strong> unless you selected a specific event to stream to when the channel was created.</li>
+      <li>Click on the event name to open the <strong>Control Room</strong> page.</li>
+      <li>Click <strong>Publish and Embed &gt; Player Configuration</strong> in the left navigation.
+        <aside class="bcls-aside bcls-aside--information">Note: If the channel is configured to enable server-side ads (SSAI),  Brightcove Player version 6.18.3 and above must be used. Only version 6.18.3 and above players will appear in the dropdown list.</aside>
+      </li>
+      <li>Click the <strong>Player URL</strong> to preview the event in a browser or copy the appropriate embed code to use.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/general/playout-embed-code.png" /></figure>
+      </li>
+    </ol>
+    <p>If the program was create with <strong>Ad Insertion</strong> option set to <strong>On</strong>, the publishing options will include a <strong>Select Ad Configuration</strong> dropdown where the ad configuration to use can be selected.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-embed-code-ads.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="analytics">Viewing channel output and analytics</h2>
+    <p>While the channel is in a <strong>RUNNING</strong> state, it is possible to view channel output and analytics. Click on the channel on the <strong>Channels</strong> page to open the channel details.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/general/cloudplayout-program-analytics.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Note: The preview image is updated every three seconds.</aside>
+    <p>Click <strong>View in Brightcove Live</strong> to open the Live module Control Room page with the currently running program. The currently playing video in the program will be highlighted with a <strong>Playing Now</strong> banner. Also notice the <strong>Status</strong> notification in the upper right, and the <img src="/assets/images/general/cloudplayout-video-icon.png" alt="Live icon"> that will be green if there is a live feed available. Otherwise it will be red if a live event is currently playing, or gray if VOD content is playing.</p>
+    <p>The following analytics values will be displayed:</p>
+    <ul>
+      <li><strong>Network In</strong> - Average bytes per second in the last minute</li>
+      <li><strong>Network Out</strong> - Average bytes per second in the last minute</li>
+      <li><strong>Frames Dropped</strong> - Percent of frames dropped in the last minute</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="epg">Working with an electronic program guide</h2>
+    <p>An API is available to generate an electronic program guide for the Cloud Playout channel. For more information see the <a href="https://apis.support.brightcove.com/epg/getting-started/overview-epg-api.html">Overview: EPG API</a> topic.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="limitations">Limitations</h2>
+    <p>The following assumptions and limitations apply.</p>
+    <ul>
+      <li> Your videos must be ingested using a Dynamic Delivery profile and  must have an MP4 rendition</li>
+      <li>The maximum input bitrate and resolution supported for Cloud Playout is 20MBPS/1080p. This applies both to VOD content and live inputs.</li>
+      <li>Brightcove recommends using videos with at least a 2 minute duration to ensure a correct transition between videos and electronic program guide accuracy</li>
+      <li>The minimum length for Live events is 5 minutes.</li>
+      <li>Every Live Event in Cloud Playout shares an 1:1 relation with a Video Cloud remote asset. This remote asset cannot be re-used in other channels. If the live event is removed from the channel, the associated remote asset will be automatically deleted. When a channel is deleted, any associated remote assets will also be deleted automatically.</li>
+      <li>When a live event is currently playing, but no active feed is available, the slate content will be played in a loop until the live feed resumes or the event ends. There will be a delay of approximately 30 seconds before the slate MP4 starts playing.</li>
+      <!--<li><strong>Input Looper : if the asset URL is duplicated, then input looper rely on order for switching; if the order is changes during the course of the switching , then subsequent N+1 switch it attempt to create would rely on the order. </strong></li>-->
+      <li>If the Video Cloud account is configured for geo-restriction, then the channel <strong>Output Region</strong> should be created in a  region compatible with the Video Cloud geo-restriction policy.</li>
+      <li>For the best experience, Brightcove recommends using the Google Chrome browser.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Related topics</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+      <li><a href="https://apis.support.brightcove.com/epg/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/epg/references/reference-epg.html">EPG API Reference</a></li>
+      <li><a href="https://apis.support.brightcove.com/epg/references/reference-channels.html">Channel API Reference</a></li>
+    </ul>
+  </section>
+</article>
