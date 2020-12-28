@@ -110,6 +110,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/help/channel-details.html",
+      "oldURL": "/channel-details"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/pages/help/choose-playlist.html",
       "oldURL": "/choose-playlist"
   },
@@ -155,7 +160,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/help/create-channel.html",
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/howto/create-channel.html",
       "oldURL": "/create-channel"
   },
 
@@ -320,17 +325,22 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/iframe-test.html",
-      "oldURL": "/iframe-test"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
   {
       "newURL": "https://beacon-help.support.brightcove.com/media/help/temp-assets/iframe-test.html",
+      "oldURL": "/iframe-test"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/iframe-test.html",
+      "oldURL": "/iframe-test"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
@@ -400,7 +410,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/",
+      "newURL": "https://beacon-help.support.brightcove.com/live/help/",
       "oldURL": "/index"
   },
 
@@ -410,17 +420,17 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/help/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/live/help/",
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/howto/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/",
       "oldURL": "/index"
   },
 
@@ -436,6 +446,11 @@
 
   {
       "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/pages/",
       "oldURL": "/index"
   },
 
