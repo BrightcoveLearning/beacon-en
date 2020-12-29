@@ -11,7 +11,7 @@ layout: staging
     <p>The  Cloud Playout module enables broadcasters and media publishers to use a collection of VOD videos and live streams and then stream them as a linear channel. The channel can be streamed to Brightcove Live, Amazon S3 or a specified RTMP URL.</p>
     <aside class="bcls-aside bcls-aside--information">Note: This feature is currently in Limited Availability. Contact your Brightcove Account Manager for more information.</aside>
     <p>To access the Cloud Playout module, click <strong>Cloud Playout</strong> in the navigation menu. A list of all Cloud Playout channels that have been created will be displayed (if any).</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-channel-list.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-channel-list.png" /></figure>
     <p>The page will display the following information:</p>
     <ul>
       <li><strong>Channel Name</strong> - Name of the channel</li>
@@ -44,7 +44,7 @@ layout: staging
       <li>
         Click <strong>Add New</strong>:
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/cloudplayout-new-channel-dialog.png" alt="New Channel">
+          <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-new-channel-dialog.png" alt="New Channel">
           <figcaption class="bcls-caption--image">New Channel</figcaption>
         </figure>
       </li>
@@ -81,7 +81,7 @@ layout: staging
             </ul>
             <aside class="bcls-aside bcls-aside--information language-editable">Note that outputting to <strong>Brightcove Live Event</strong> will automatically generate live hours for your account, which are billable. Outputting to RTMP or Amazon S3 do not generate billable live hours:
               <figure class="bcls-figure">
-                <img class="bcls-image" src="/assets/images/general/cloud-playout-live-hours.png" alt="Billable/Non-Billable Outputs">
+                <img class="bcls-image" src="/assets/images/cloud-playout/cloud-playout-live-hours.png" alt="Billable/Non-Billable Outputs">
                 <figcaption class="bcls-caption--image">Billable/Non-Billable Outputs</figcaption>
               </figure>
             </aside>
@@ -95,7 +95,7 @@ layout: staging
     <h2 id="add_videos">Adding videos and live events to a channel</h2>
     <p>After you create your channel, the screen will show the channel settings:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/cloudplayout-channel-details.png" alt="Channel Settings">
+      <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-channel-details.png" alt="Channel Settings">
       <figcaption class="bcls-caption--image">Channel Settings</figcaption>
     </figure>
     <p>You can edit details, but the main next step is to add videos and/or live events (if you enabled live inputs) to the channel.</p>
@@ -104,14 +104,14 @@ layout: staging
       <li>Click <strong>+ Add Videos</strong>. (If you are on the channel list page, click the  channel name to open the channel settings page and then click <strong>+ Add Videos</strong>).
       </li>
       <li>Click the checkbox next to the videos you want to add to the channel.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-select-videos.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-select-videos.png" /></figure>
       </li>
       <li>Click <strong>Add Videos</strong>.</li>
       <li>Click <strong>Save</strong>.</li>
       <li>
         The program list for the channel will appear:
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/cloudplayout-vod-program-list.png" alt="Program List">
+          <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-vod-program-list.png" alt="Program List">
           <figcaption class="bcls-caption--image">Program List</figcaption>
         </figure>
         <p>Note that start and end times are automatically calculated from the video durations. You can drag and drop videos in the list to reorder them, and the start/end times will be automatically adjusted.</p>
@@ -123,7 +123,7 @@ layout: staging
         <li>
           In the Add Live Event dialog, enter the <strong>Name</strong>, <strong>Duration</strong>, and <strong>Description</strong> for the live event:
           <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/general/cloudplayout-add-live-event.png" alt="Add Live Event">
+            <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-add-live-event.png" alt="Add Live Event">
             <figcaption class="bcls-caption--image">Add Live Event</figcaption>
           </figure>
           <p>Note that the minimum duration for a live event is 5 minutes, and the duration can be incremented or decremented in 5 minute intervals only - If needed the duration can be edited in-line on the textbox to adjust the granularity of time. The duration of a live event can be modified at any time, even while it is currently playing.</p>
@@ -131,7 +131,7 @@ layout: staging
         <li>
           After you add live events, they will appear in the program list along with VOD items:
           <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/general/cloudplayout-live-event-program-list.png" alt="Program List">
+            <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-live-event-program-list.png" alt="Program List">
             <figcaption class="bcls-caption--image">Program List</figcaption>
           </figure>
         </li>
@@ -140,24 +140,24 @@ layout: staging
     <p>After videos and live events have been added to a channel, click <strong>Activate</strong> to activate the channel. A channel must be activated before streaming can begin. See the <a href="#actions">Using channel actions</a> section below for more information.</p>
     <aside class="bcls-aside bcls-aside--information">Note: To change the order of the videos in a program, click on a video and drag it to a new position.</aside>
     <p>When videos are added to a channel, a system-generated playlist will be created and visible in the Media module.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-playlist-created.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-playlist-created.png" /></figure>
     <p>We strongly recommend that you make any changes to the channel in the Cloud Playout module, and <strong>do not edit the generated playlist in any way</strong>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="getting_the_rtmp_ingest_point">Getting the RTMP ingest point</h2>
     <p>For your live encoder, you will need the RTMP ingest point for your channel. You can find it in the <strong>:Channel Settings</strong>:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/cloudplayout-rtmp-ingest-point.png" alt="Ingest Point">
+      <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-rtmp-ingest-point.png" alt="Ingest Point">
       <figcaption class="bcls-caption--image">Ingest Point</figcaption>
     </figure>
     <p>Depending on the encoder you are using, you may need to enter both the RTMP ingest point and the stream name. The stream name for the channel is the <strong>Channel ID</strong>, which is also the last part of the Ingest Point address.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">Note that if you are using the OBS software encoder, you will need to specify a <strong>Custom...</strong> service, and will need to input a <strong>Server</strong> and <strong>Stream Key</strong>. The <strong>Server</strong> will be the first part of the <strong>Ingest Point</strong>, and the <strong>Steam Key</strong> will be the remaining part, as shown in the example below:
       <figure class="bcls-figure">
-        <img class="bcls-image" src="/assets/images/general/cloud-playout-key-for-obs.png" alt="Cloud Playout Ingest Point">
+        <img class="bcls-image" src="/assets/images/cloud-playout/cloud-playout-key-for-obs.png" alt="Cloud Playout Ingest Point">
         <figcaption class="bcls-caption--image">Cloud Playout Ingest Point</figcaption>
       </figure>
       <figure class="bcls-figure">
-        <img class="bcls-image" src="/assets/images/general/cloudplayout-obs-setup.png" alt="OBS Setup">
+        <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-obs-setup.png" alt="OBS Setup">
         <figcaption class="bcls-caption--image">OBS Setup</figcaption>
       </figure>
     </aside>
@@ -171,7 +171,7 @@ layout: staging
     <h2 id="looping">Creating a looping program</h2>
     <p>To create a program that loops, when creating the channel, set the <strong>Loop Playout Content</strong> setting  to <strong>On</strong>. As videos are added to the program, the program listing will update to display the series of videos with associated start/end times to fill the entire channel scheduled time. When you change the duration of a live event, the duration of events that have already passed will remain unchanged, but any future plays of the event will use the new duration.</p>
     <p>In the example below, the channel includes VOD and live events in a loop.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/cloudplayout-looping-channel.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/cloudplayout-looping-channel.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="actions">Using channel actions</h2>
@@ -181,7 +181,7 @@ layout: staging
       <li><strong>Play Now</strong> - Click <strong>Play Now</strong> to start  streaming the channel. This option is only available for channels that have an upcoming start time.</li>
       <li><strong>Stop Now</strong> - Click <strong>Stop Now</strong> to stop a streaming channel. This will stop the channel and end the  live stream.</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-channel-actions.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-channel-actions.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="ads">Enabling Server-Side Ads</h2>
@@ -201,11 +201,11 @@ layout: staging
     <p>You need to indicate which video(s) should be used as "placeholder" videos. "Placeholder" videos will be inserted into the program listing to indicate that an ad should be served and the length of the ad. This needs to be done because when using Server-Side Ad Insertion with Brightcove Live, the "placeholder" video will be replaced with ad content. If you do not insert an ad "placeholder" video, parts of the actual video will be replaced with ad content. If the ad duration is shorter than the ad returned, SSAI will show the ad slate. If the ad duration is longer than the ads returned, the ads will be displayed followed by the ad slate. </p>
     <p>You may need to create/upload video source files that have video lengths equal to the ad break durations you want to have (i.e. 2 mins, 4 mins, etc.). The content of these videos doesn't matter as they will not actually be played as part of a program. </p>
     <p>To mark a video as a "placeholder" video, use the Media module to edit the video properties for these videos and tag them with <code translate="No">cp-ad-holder</code>.
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-ad-tag-video.png" /></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-ad-tag-video.png" /></figure>
     </p>
     <h3>Enabling Server-Side Ads for a channel</h3>
     <p>When creating a channel, set the <strong>Ad Insertion</strong> option to <strong>On</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-ad-insertion-option.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-ad-insertion-option.png" /></figure>
     <aside class="bcls-aside bcls-aside--information">Note: For existing channels, the Ad Insertion setting cannot be changed.</aside>
     <h3>Inserting ad placeholders into a program</h3>
     <p>You need to insert ad placeholders into the program listing where ads should be displayed. Follow these steps to insert ad placeholders.</p>
@@ -213,17 +213,17 @@ layout: staging
       <li>Click a channel name to edit it.</li>
       <li>In the program listing, click the checkbox next to the video <strong>after</strong> which you want an ad to play.</li>
       <li>Click <strong>Insert Ads</strong> and select an <strong>ad duration</strong>. The list of ad durations is generated based upon the lengths of all the ad break "placeholder" videos (tagged <code translate="No">cp-ad-holder</code>).
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-insert-ads-button.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-insert-ads-button.png" /></figure>
       </li>
       <li>Click <strong>Ok</strong>. The "placeholder" video with the selected length will be inserted into the program after the selected video.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-ad-break-inserted.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-ad-break-inserted.png" /></figure>
         <aside class="bcls-aside bcls-aside--information">Note: The video that is inserted as a "placeholder" <strong>will not</strong> be played as part of the program. This video is only used to indicate where an ad request will be made and the ad length.</aside>
       </li>
       <li>Click <strong>Save</strong> to save the changes to the program.</li>
     </ol>
     <h3>Selecting the ad configuration</h3>
     <p>Once the program begins playing, click <strong>View in Brightcove Live</strong> to view the channel in the Live module. The dropdown below the player can be used to select the ad configuration that will be used.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-live-select-ad-config.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-live-select-ad-config.png" /></figure>
     <figure class="bcls-figure"></figure>
     <p>For complete information on Server-Side Ad Insertion, see the <a href="https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html">Video Cloud SSAI Overview</a> topic.</p>
   </section>
@@ -245,18 +245,18 @@ layout: staging
         <aside class="bcls-aside bcls-aside--information">Note: If the channel is configured to enable server-side ads (SSAI),  Brightcove Player version 6.18.3 and above must be used. Only version 6.18.3 and above players will appear in the dropdown list.</aside>
       </li>
       <li>Click the <strong>Player URL</strong> to preview the event in a browser or copy the appropriate embed code to use.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/general/playout-embed-code.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/cloud-playout/playout-embed-code.png" /></figure>
       </li>
     </ol>
     <p>If the program was create with <strong>Ad Insertion</strong> option set to <strong>On</strong>, the publishing options will include a <strong>Select Ad Configuration</strong> dropdown where the ad configuration to use can be selected.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/general/playout-embed-code-ads.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-embed-code-ads.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="analytics">Viewing channel output and analytics</h2>
     <p>While the channel is in a <strong>RUNNING</strong> state, it is possible to view channel output and analytics. Click on the channel on the <strong>Channels</strong> page to open the channel details.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/general/cloudplayout-program-analytics.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/cloud-playout/cloudplayout-program-analytics.png" /></figure>
     <aside class="bcls-aside bcls-aside--information">Note: The preview image is updated every three seconds.</aside>
-    <p>Click <strong>View in Brightcove Live</strong> to open the Live module Control Room page with the currently running program. The currently playing video in the program will be highlighted with a <strong>Playing Now</strong> banner. Also notice the <strong>Status</strong> notification in the upper right, and the <img src="/assets/images/general/cloudplayout-video-icon.png" alt="Live icon"> that will be green if there is a live feed available. Otherwise it will be red if a live event is currently playing, or gray if VOD content is playing.</p>
+    <p>Click <strong>View in Brightcove Live</strong> to open the Live module Control Room page with the currently running program. The currently playing video in the program will be highlighted with a <strong>Playing Now</strong> banner. Also notice the <strong>Status</strong> notification in the upper right, and the <img src="/assets/images/cloud-playout/cloudplayout-video-icon.png" alt="Live icon"> that will be green if there is a live feed available. Otherwise it will be red if a live event is currently playing, or gray if VOD content is playing.</p>
     <p>The following analytics values will be displayed:</p>
     <ul>
       <li><strong>Network In</strong> - Average bytes per second in the last minute</li>

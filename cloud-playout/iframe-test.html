@@ -11,10 +11,10 @@ layout: iframe
     #iframe_modal {
         position: fixed;
         top: 0;
-        left: 840px;
+        right: 50px;
         min-width: 600px;
         min-height: 800px;
-        display: none;
+        /* display: none; */
     }
 
     #modal_header {
@@ -47,30 +47,15 @@ layout: iframe
 <div id="modal_wrapper">
     <div id="iframe_modal">
         <p id="modal_header"><img id="close_modal" src="/assets/images/x.svg" alt=""></p>
-        <iframe id="doc_frame" src="/pages/help/index.html"></iframe>
+        <iframe id="doc_frame" src="/cloud-playout/help/index.html"></iframe>
     </div>
 </div>
-<img id="button_cover" src="/assets/images/transparent.png" alt="" style="position: fixed;left: 0;top: 670px;cursor: pointer;">
+<img id="button_cover" src="/assets/images/feather/help-circle-white.svg" alt="" style="position: fixed;left: 4em;top: 670px;cursor: pointer;">
 <br>
 <p style="margin-left: 6em;">Paste any full URL in the field below to load that page into the frame.</p>
 <p style="margin-left: 6em;"><input type="text" id="src_address" size="60" value="/index.html"></p>
 <p style="margin-left: 6em;"><button id="add_src">Put this page in the frame</button></p>
 
-<p style="margin-left: 2em;">Copy and paste any of the following into the text field above to open that section of the doc in the iframe:</p>
-<ul id="link_list" style="list-style: none;">
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#intro">/media/creating-series-seasons-episodes.html#intro</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#reviewing">/media/creating-series-seasons-episodes.html#reviewing</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#create_series">/media/creating-series-seasons-episodes.html#create_series</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#editing_series">/media/creating-series-seasons-episodes.html#editing_series</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#deleting_series">/media/creating-series-seasons-episodes.html#deleting_series</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#add_series_trailer">/media/creating-series-seasons-episodes.html#add_series_trailer</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#publishing_series">/media/creating-series-seasons-episodes.html#publishing_series</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#create_seasons">/media/creating-series-seasons-episodes.html#create_seasons</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#editing_season">/media/creating-series-seasons-episodes.html#editing_season</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#add_season_trailer">/media/creating-series-seasons-episodes.html#add_season_trailer</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#add_episodes">/media/creating-series-seasons-episodes.html#add_episodes</li>
-    <li class="link" data_link="/media/creating-series-seasons-episodes.html#multi_language">/media/creating-series-seasons-episodes.html#multi_language</li>
-</ul>
 
 <script>
     /**
@@ -98,7 +83,7 @@ layout: iframe
 
     var screenshotsAra = [{
                 name: 'page-type',
-                imagePath: '/assets/images/for-demo/page-type.png'
+                imagePath: '/assets/images/for-demo/cloud-playout-new-channel-modal.png'
             },
             {
                 name: 'page-title',
