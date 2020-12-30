@@ -70,6 +70,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/api-auth.html",
+      "oldURL": "/api-auth"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/getting-started/app-design-considerations.html",
       "oldURL": "/app-design-considerations"
   },
@@ -77,11 +82,6 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/pages/howto/archiving-pages.html",
       "oldURL": "/archiving-pages"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/api-auth/auth-list.html",
-      "oldURL": "/auth-list"
   },
 
   {
@@ -335,22 +335,22 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/iframe-test.html",
-      "oldURL": "/iframe-test"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/pages/help/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/help/temp-assets/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/iframe-test.html",
+      "oldURL": "/iframe-test"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/help/temp-assets/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
