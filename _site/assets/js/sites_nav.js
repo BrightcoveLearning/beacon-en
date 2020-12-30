@@ -14,12 +14,14 @@ function getSelectedValue(e) {
   return val;
 }
 
-site_select.addEventListener('change', function() {
-  var v = getSelectedValue(site_select);
-  if (v !== '') {
-    window.location.href = v;
-  }
-});
+if (site_select) {
+  site_select.addEventListener('change', function() {
+    var v = getSelectedValue(site_select);
+    if (v !== '') {
+      window.location.href = v;
+    }
+  });
+}
 
 
 })(window, document);

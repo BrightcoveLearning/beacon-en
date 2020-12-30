@@ -14,7 +14,7 @@ layout: iframe
         right: 50px;
         min-width: 600px;
         min-height: 800px;
-        /* display: none; */
+        display: none;
     }
 
     #modal_header {
@@ -46,7 +46,7 @@ layout: iframe
 
 <div id="modal_wrapper">
     <div id="iframe_modal">
-        <p id="modal_header"><img id="close_modal" src="/assets/images/x.svg" alt=""></p>
+        <p id="modal_header"><span style="float: left;color: white;font-weight: bold;" id="add_src">-&gt;</span><img id="close_modal" src="/assets/images/x.svg" alt=""></p>
         <iframe id="doc_frame" src="/cloud-playout/help/index.html"></iframe>
     </div>
 </div>
@@ -125,15 +125,8 @@ layout: iframe
         side_nav = document.getElementById('side_nav'),
         iframe_modal = document.querySelector('#iframe_modal'),
         close_modal = document.querySelector('#close_modal'),
-        button_cover = document.getElementById('button_cover'),
-        link_list = document.getElementById('link_list'),
-        links = link_list.children;
+        button_cover = document.getElementById('button_cover');
 
-    for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener('click', function() {
-            src_address.value = this.getAttribute('data_link');
-        })
-    }
 
     add_src.addEventListener('click', function() {
         doc_frame.setAttribute('src', src_address.value);
@@ -145,7 +138,7 @@ layout: iframe
         iframe_modal.setAttribute('style', 'display:none');
     });
 
-    side_nav.setAttribute('style', 'display:none');
+    // side_nav.setAttribute('style', 'display:none');
 
     function removeFeedbackify() {
         var t,
