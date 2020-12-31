@@ -42,11 +42,11 @@ layout: iframe
     }
 </style>
 
-<img id="background-screenshot" src="/assets/images/for-demo/cloud-playout-no-channels.png" alt="">
+<img id="background_screenshot" src="/assets/images/for-demo/cloud-playout-no-channels.png" alt="">
 
 <div id="modal_wrapper">
     <div id="iframe_modal">
-        <p id="modal_header"><span style="float: left;color: white;font-weight: bold;" id="add_src">-&gt;</span><img id="close_modal" src="/assets/images/x.svg" alt=""></p>
+        <p id="modal_header"><span style="float: left;color: white;font-weight: bold;cursor: pointer;" id="next_src">&gt;</span><img id="close_modal" src="/assets/images/x.svg" alt=""></p>
         <iframe id="doc_frame" src="/cloud-playout/help/index.html"></iframe>
     </div>
 </div>
@@ -58,78 +58,38 @@ layout: iframe
 
 
 <script>
-    /**
-     * find index of an object in array of objects
-     * based on some property value
-     * 
-     * @param {array} targetArray array to search
-     * @param {string} objProperty object property to search
-     * @param {string} value of the property to search for
-     * @return {integer} index of first instance if found, otherwise returns -1
-     */
-    function findObjectInArray(targetArray, objProperty, value) {
-        var i, totalItems = targetArray.length,
-            objFound = false;
-        for (i = 0; i < totalItems; i++) {
-            if (targetArray[i][objProperty] === value) {
-                objFound = true;
-                return i;
-            }
-        }
-        if (objFound === false) {
-            return -1;
-        }
-    }
-
-    var screenshotsAra = [{
-                name: 'page-type',
-                imagePath: '/assets/images/for-demo/cloud-playout-new-channel-modal.png'
+    var dataArray = [{
+                name: 'new-channel',
+                imagePath: '/assets/images/for-demo/cloud-playout-new-channel-modal.png',
+                newPage: null
             },
             {
-                name: 'page-title',
-                imagePath: '/assets/images/for-demo/page-title.png'
-            },
-            {
-                name: 'page-layout',
-                imagePath: '/assets/images/for-demo/page-layout.png'
-            },
-            {
-                name: 'page-details',
-                imagePath: '/assets/images/for-demo/page-details.png'
-            },
-            {
-                name: 'choose-playlist',
-                imagePath: '/assets/images/for-demo/choose-playlist.png'
+                name: 'new-channel-details',
+                imagePath: '/assets/images/for-demo/cloud-playout-new-channel-details.png',
+                newPage: '/cloud-playout/help/channel-details.html'
             }
         ],
-        imagePathIndex,
-        imagePath,
-        imageElement;
-    console.log(screenshotsAra);
-    window.addEventListener('message', function(e) {
-        console.log('e.data: ', e.data)
-        imagePathIndex = findObjectInArray(screenshotsAra, 'name', e.data);
-        console.log('imagePathIndex: ', imagePathIndex)
-        imagePath = screenshotsAra[imagePathIndex].imagePath;
-        console.log('imagePath: ', imagePath);
-        imageElement = document.getElementById('background-screenshot');
-        console.log('imageElement: ', imageElement);
-        imageElement.src = imagePath;
-    }, false);
-</script>
-
-<script>
-    var src_address = document.getElementById('src_address'),
+        src_address = document.getElementById('src_address'),
         add_src = document.getElementById('add_src'),
+        next_src = document.getElementById('next_src'),
+        background_screenshot = document.getElementById('background_screenshot'),
         doc_frame = document.getElementById('doc_frame'),
         side_nav = document.getElementById('side_nav'),
         iframe_modal = document.querySelector('#iframe_modal'),
         close_modal = document.querySelector('#close_modal'),
-        button_cover = document.getElementById('button_cover');
+        button_cover = document.getElementById('button_cover'),
+        count = 0;
 
 
     add_src.addEventListener('click', function() {
         doc_frame.setAttribute('src', src_address.value);
+    });
+    next_src.addEventListener('click', function() {
+      background_screenshot.setAttribute('src', dataArray[count].imagePath);
+        if (dataArray[count].newPage) {
+          doc_frame.setAttribute('src', dataArray[count].newPage);
+        }
+        count++;
     });
     button_cover.addEventListener('click', function() {
         iframe_modal.setAttribute('style', 'display:block');
