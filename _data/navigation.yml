@@ -4,7 +4,7 @@
 - section:
   name: Getting Started
   url: /getting-started/index.html
-  icon: '<i class="far fa-location-arrow"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/play.svg">'
   docs:
     - name: App Design Best Practices
       url: /getting-started/design-best-practices.html
@@ -17,7 +17,7 @@
 - section:
   name: Managing Media
   url: /media/index.html
-  icon: '<i class="fas fa-film"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/film.svg">'
   docs:
     - name: Adding Audio Tracks to Videos
       url: /media/adding-audio-tracks-videos.html
@@ -83,7 +83,7 @@
       url: /media/working-remote-asset-videos.html
 - section:
   name: Managing Pages
-  icon: '<i class="fal fa-rocket-launch"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/send.svg">'
   url: '/pages/index.html'
   docs:
     - name: Adding Videos to Pages
@@ -99,7 +99,7 @@
 - section:
   name: Administering Accounts
   url: /admin/index.html
-  icon: '<i class="fal fa-tools"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/tool.svg">'
   docs:
     - name: Configuring Language Settings
       url: /admin/configuring-language-settings.html
@@ -140,7 +140,7 @@
 - section:
   name: General Information
   url: /general/index.html
-  icon: '<i class="far fa-info-circle"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/info.svg">'
   docs:
     - name: Overview of Context Aware Encoding
       url: /general/overview-context-aware-encoding.html
@@ -157,7 +157,7 @@
 - section:
   name: 'Support'
   url: '/support/index.html'
-  icon: '<i class="far fa-question-circle"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/help-circle.svg">'
   docs:
     - name: 'Brightcove Answers'
       url: '/support/brightcove-answer.html'
