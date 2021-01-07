@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Page System Name</title>
+  <title>Registered Profiles</title>
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -33,34 +33,45 @@
 <nav id="breadcrumbs" aria-label="breadcrumb" style="display: inline-block;">
   <ol class="breadcrumb arr-right">
     
-    <li class="breadcrumb-item"><a href="/pages/help/">Pages Home</a></li>
+    <li class="breadcrumb-item"><a href="/registered users/help/">Registered users Home</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Page System Name</li>
+    <li class="breadcrumb-item active" aria-current="page">Registered Profiles</li>
   </ol>
 </nav>
 </header>
 
-<h1>Page System Name</h1>
+<h1>Registered User Profiles</h1>
 <article class="bcls-article">
     <section class="bcls-section">
-        Enter the system name for the page.
-        <br><br>
+        <p>Here are the profiles associated with a registered user.</p>
+      
+    <h3>Top navigation</h3>
+    <ul>
+      <li><strong>Quick actions</strong>
         <ul>
-            <li>The system name is the internal name for the page, and not necessarily what viewers will see in the Brightcove Beacon app..</li>
-            <li>This is also the default language's page title.</li>
-            <li>The page title can be changed later.</li>
-            <li>The maximum number of characters is 25, including spaces.</li>
+          <li><strong>Delete and forget</strong>
+            <ol class="bcls-tasklist">
+              <li>Select the transactions that you want to delete.</li>
+              <li>Click <strong>Delete and forget</strong> to remove the selected transactions from the user log.</li>
+            </ol>
+          </li>
         </ul>
-        <p><a id="help-link" href="/pages/help/page-layout.html">&gt;</a></p>
+      </li>
+    </ul>
+    <h3>Profile details</h3>
+    <ul>
+      <li><strong>Profile</strong> - The display name for the profile.</li>
+      <li><strong>Created</strong> - The creation date for the profile.</li>
+      <li><strong>Remove Profile</strong> - Click the delete icon associated with a profile to delete it.</li>
+    </ul>
+   
+  </section>
+    <section class="bcls-section">
+      <h3>Related</h3>
+        <ul>
+            <li><a href="https://beacon-la.support.brightcove.com/admin/managing-users.html" target="_blank">Coming soon...</a></li>
+        </ul>
     </section>
-
-    <script>
-        document.getElementById('help-link').addEventListener('click', handleButtonClick, false);
-
-        function handleButtonClick(e) {
-            window.parent.postMessage('page-layout', '*')
-        }
-    </script>
 </article>
 <footer class="help-footer" role="contentinfo">
 <a href="mailto:docs@brightcove.com?subject=In-app%20help%20feedback" style="margin-right: 1rem;">Comments?</a> | <a href="/index.html" target="_blank" style="margin-right: 1rem;margin-left:1rem;">Full Documentation <img src="/assets/images/feather/external-link-white.svg" alt="External Link" style="height: .8rem;vertical-align: text-top;"></a>
