@@ -6,33 +6,48 @@ layout: help
 <h1>Ingest Profiles List</h1>
 <article class="bcls-article">
     <section class="bcls-section">
-        <p>The ingest profile defines the number and type of renditions created for each video upload.</p>
+        <p>Ingest profiles define the number and type of renditions created for each video upload.</p>
 
+        <h3>Top navigation</h3>
         <p><strong>Show Display Name</strong> / <strong>Show API Name</strong> - Toggle between profile names</p>
-        <p><strong>Profile Version</strong> - Type of transcoding used, based on your account configuration</p>
+
+        <h3>List fields</h3>
+        <p><strong>Profile Name and Description</strong> - Click the name link to edit the profile.</p>
+        <p><strong>Profile Version</strong> - Select one of the following, based on your account configuration:</p>
         <ul>
           <li><strong>Legacy</strong> - Legacy transcoding</li>
           <li><strong>Dynamic Delivery</strong> - Stores a small set of renditions and performs real-time packaging.</li>
           <li><strong>Context-Aware</strong> - Uses machine learning to optimize the number and quality of renditions needed.</li>
         </ul>
-        <p><strong>Type</strong> - Type of ingest profile</p>
+        <p><strong>Type</strong> - Select one of the following:</p>
         <ul>
-          <li><strong>Standard VOD</strong> - Default profile provided by Brightcove. This cannot be edited or deleted.</li>
-          <li><strong>Custom VOD</strong> - Custom profile that you have created.</li>
-          <li><strong>Standard Live</strong> - Default profile provided by Brightcove. This cannot be edited or deleted.</li>
-          <li><strong>Custom Live</strong> - Custom profile that you have created.</li>
+          <li><strong>Standard VOD</strong> - Default VOD profile provided by Brightcove. This cannot be edited or deleted.</li>
+          <li><strong>Custom VOD</strong> - Custom VOD profile that you have created.</li>
+          <li><strong>Standard Live</strong> - Default Live profile provided by Brightcove. This cannot be edited or deleted.</li>
+          <li><strong>Custom Live</strong> - Custom Live profile that you have created.</li>
         </ul>
         <p><strong>Renditions</strong> - Number of renditions that may be created</p>
         <p><strong>Display</strong> - Toggle to hide/display the profile from the Upload page</p>
-        <p><strong>Delete</strong> - Click the delete icon (trash can) next to the ingest profile, and then click <strong>Delete Profile</strong>.</p>
-        <p><strong>New Profile</strong></p>
-        <ul>
-          <li><strong>Dynamic Delivery</strong> - Create a new Dynamic Delivery profile</li>
-          <li><strong>Live</strong> - Create a new Live profile</li>
-        </ul>
+        
+        <h3>Add a new profile</h3>
+        <ol class="bcls-tasklist-restart">
+          <li>Expand <img style="height: 1.75rem;" class="imageWithText" src="/assets/images/admin/help/new-profile-button.png" alt="New profile button"></li>
+          <li>Select one of the following:
+          <ul>
+            <li><strong>Dynamic Delivery</strong> - Create a new Dynamic Delivery profile</li>
+            <li><strong>Live</strong> - Create a new Live profile</li>
+          </ul>
+          </li>
+        </ol>
+
+        <h3>Delete a profile</h3>
+        <ol class="bcls-tasklist">
+          <li>Click the delete icon (<img class="bcls-image--no-border" style="height: 1.75rem;" alt="" src="/assets/images/admin/help/delete-icon.png" />) to delete the associated ingest profile.</li>
+          <li>To confirm, click <img style="height: 1.75rem;" class="imageWithText" src="/assets/images/admin/help/delete-profile-button.png" alt="Delete profile button"></li>
+        </ol>
       
   </section>
     <section class="bcls-section">
-      <p><a href="https://beacon-la.support.brightcove.com/admin/managing-ingest-profiles.html" target="_blank">Details</a></p>
+      <h3><a href="https://beacon-la.support.brightcove.com/admin/managing-ingest-profiles.html" target="_blank">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></h3>
     </section>
 </article>
