@@ -130,15 +130,19 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   }
   h2 {
     font-size: 1.9em;
+    margin-left: 1rem;
   }
   h3 {
     font-size: 1.5em;
+    margin-left: 1rem;
   }
   h4 {
     font-size: 1.3em;
+    margin-left: 1rem;
   }
   h5 {
     font-size: 1.1em;
+    margin-left: 1rem;
   }
   p, a {
     margin-left: 1.1rem;
