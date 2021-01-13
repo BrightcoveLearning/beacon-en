@@ -414,3 +414,15 @@ code {
   border: 1px rgb(255, 204, 52) solid;
   padding: 1px;
 }
+
+.ui-image {
+  cursor: not-allowed;
+  width: auto;
+  vertical-align: text-bottom;
+  height: 1.5em;
+}
+.imageWithText {
+  width: auto;
+  vertical-align: text-bottom;
+  height: 1.5em;
+}
