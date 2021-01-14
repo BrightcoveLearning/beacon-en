@@ -7,9 +7,9 @@ layout: staging
   <h1>Editing Video Details</h1>
   <summary>In this topic you will learn how to edit video details using the Media module.</summary>
   <section class="bcls-section">
-    <p>To view and edit the details for a video, open the Media module and click the video title link. The video details page will open.</p>
+    <p>To view and edit the details for a video, open the Media module and click a video title link. The video details page will open.</p>
     <aside class="bcls-aside bcls-aside--information">Note: To edit video details for multiple videos at the same time, use the <a href="/media/editing-video-details-using-quick-edit.html">Quick Edit</a> feature.</aside>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-home.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="video details page" src="/assets/images/media/video-details-home.png" /></figure>
     <p>Buttons at the top of the video details page provide the ability to:</p>
     <ul>
       <li><a href="/media/capturing-poster-and-thumbnail-images.html">Capture new poster and thumbnail images</a></li>
@@ -29,6 +29,7 @@ layout: staging
       <li><a href="#customfields">Custom Fields</a></li>
       <li><a href="#texttracks">Text Tracks</a></li>
       <li><a href="#audiotracks">Audio Tracks</a></li>
+      <li><a href="#mediasharing">Media Sharing</a></li>
       <li><a href="#videotype">Video Type Information</a></li>
       <li><a href="#categorization">Categorization</a></li>
       <li><a href="#availability">Availability</a></li>
@@ -38,7 +39,7 @@ layout: staging
   </section>
   <section class="bcls-section">
     <h2 id="required">Required fields</h2>
-    <p>Your Video Cloud account may be configured with required metadata fields. If a video is inactive, you can freely edit and save its metadata without supplying all required metadata. Also, videos can't be activated until all required metadata has been entered. If a video is already active, you cannot save any edits in the section you are editing unless you supply all required metadata in that section or deactivate the video. For more information on working with required fields, see <a href="/media/setting-required-fields-videos.html">Setting Required Fields for Videos</a>.</p>
+    <p>Your Brightcove Beacon account may be configured with required metadata fields. If a video is inactive, you can freely edit and save its metadata without supplying all required metadata. Also, videos can't be activated until all required metadata has been entered. If a video is already active, you cannot save any edits in the section you are editing unless you supply all required metadata in that section or deactivate the video. For more information on working with required fields, see <a href="/media/setting-required-fields-videos.html">Setting Required Fields for Videos</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="videoinfo">Video Information</h2>
@@ -102,6 +103,11 @@ layout: staging
     <aside class="bcls-aside bcls-aside--information">Note: The Audio Tracks section will not be displayed if the video was transcoded using a Legacy ingest profile.</aside>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-audio-tracks.png" /></figure>
   </section>
+    <section class="bcls-section">
+    <h2 id="mediasharing">Media Sharing</h2>
+    <p>If the video has been shared to an affiliate account, the Media Sharing section will be displayed and list the affiliates the video has been shared to. For more information on media sharing, see <a href="/media/sharing-videos-other-accounts.html">Sharing Videos to Other Accounts</a>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-media-sharing.png" /></figure>
+  </section>
   <section class="bcls-section">
     <h2 id="videotype">Video Type Information</h2>
     <p>The Video Type Information section is where the Video Type is selected. The Video Type associated with a video will determine additional video details that are available to be configured. The following <strong>Video Types</strong> are available:</p>
@@ -110,7 +116,7 @@ layout: staging
       <li><strong>Episode</strong> - Indicates the video is an episode as part of a season. The Video Information panel will display the episode number and the season the video is assigned to.</li>
       <li><strong>Trailer</strong> - Indicates the video is used as a trailer. Videos that are added as a trailer for a movie or episode will automatically have their Video Type changed to Trailer.</li>
     </ul>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-video-type-info.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-details-video-type-info.png" /></figure>
     <p>If the <strong>Video Type</strong> is <strong>Movie</strong> or <strong>Episode</strong>, additonal video fields may be configured:</p>
     <ul>
       <li><strong>Trailer</strong> - Click <strong>+ Add Trailer</strong> to select a trailer for the movie or episode</li>
