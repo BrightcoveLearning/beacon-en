@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Ingest Profiles List</title>
+  <title>Ingest Profiles List Help</title>
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -35,41 +35,44 @@
     
     <li class="breadcrumb-item"><a href="/admin/help/">Admin Home</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Ingest Profiles List</li>
+    <li class="breadcrumb-item active" aria-current="page">Ingest Profiles List Help</li>
   </ol>
 </nav>
 </header>
 
-<h1>Ingest Profiles List</h1>
+<h1>Ingest Profiles List Help</h1>
 <article class="bcls-article">
     <section class="bcls-section">
         <p>Ingest profiles define the number and type of renditions created for each video upload.</p>
 
-        <h3>Top navigation</h3>
         <p><strong>Show Display Name</strong> / <strong>Show API Name</strong> - Toggle between profile names</p>
 
         <h3>List fields</h3>
-        <p><strong>Profile Name and Description</strong> - Click the name link to edit the profile.</p>
-        <p><strong>Profile Version</strong> - Select one of the following, based on your account configuration:</p>
         <ul>
-          <li><strong>Legacy</strong> - Legacy transcoding</li>
-          <li><strong>Dynamic Delivery</strong> - Stores a small set of renditions and performs real-time packaging.</li>
-          <li><strong>Context-Aware</strong> - Uses machine learning to optimize the number and quality of renditions needed.</li>
+          <li><strong>Profile Name and Description</strong> - Click the name link to edit the profile</li>
+          <li><strong>Profile Version</strong> (Based on your account configuration):
+            <ul>
+              <!-- <li><strong>Legacy</strong> - Legacy transcoding</li> -->
+              <li><strong>Dynamic Delivery</strong> - Stores a small set of renditions and performs real-time packaging</li>
+              <li><strong>Context-Aware</strong> - Uses machine learning to optimize the number and quality of renditions needed</li>
+            </ul>
+          </li>
+          <li><strong>Type</strong>:
+            <ul>
+              <li><strong>Standard VOD</strong> - Default VOD profile provided by Brightcove. This cannot be edited or deleted</li>
+              <li><strong>Custom VOD</strong> - Custom VOD profile that you have created</li>
+              <li><strong>Standard Live</strong> - Default Live profile provided by Brightcove. This cannot be edited or deleted</li>
+              <li><strong>Custom Live</strong> - Custom Live profile that you have created</li>
+            </ul>
+          </li>
+          <li><strong>Renditions</strong> - Number of renditions that may be created</li>
+          <li><strong>Display</strong> - Toggle to hide/display the profile from the Upload page</li>
         </ul>
-        <p><strong>Type</strong> - Select one of the following:</p>
-        <ul>
-          <li><strong>Standard VOD</strong> - Default VOD profile provided by Brightcove. This cannot be edited or deleted.</li>
-          <li><strong>Custom VOD</strong> - Custom VOD profile that you have created.</li>
-          <li><strong>Standard Live</strong> - Default Live profile provided by Brightcove. This cannot be edited or deleted.</li>
-          <li><strong>Custom Live</strong> - Custom Live profile that you have created.</li>
-        </ul>
-        <p><strong>Renditions</strong> - Number of renditions that may be created</p>
-        <p><strong>Display</strong> - Toggle to hide/display the profile from the Upload page</p>
         
         <h3>Add a new profile</h3>
         <ol class="bcls-tasklist-restart">
-          <li>Expand <img style="height: 1.75rem;" class="imageWithText" src="/assets/images/admin/help/new-profile-button.png" alt="New profile button"></li>
-          <li>Select one of the following:
+          <li>Expand <img class="ui-image" src="/assets/images/admin/help/new-profile-button.png" alt="New profile button">.</li>
+          <li>Select one:
           <ul>
             <li><strong>Dynamic Delivery</strong> - Create a new Dynamic Delivery profile</li>
             <li><strong>Live</strong> - Create a new Live profile</li>
@@ -79,8 +82,8 @@
 
         <h3>Delete a profile</h3>
         <ol class="bcls-tasklist">
-          <li>Click the delete icon (<img class="bcls-image--no-border" style="height: 1.75rem;" alt="" src="/assets/images/admin/help/delete-icon.png" />) to delete the associated ingest profile.</li>
-          <li>To confirm, click <img style="height: 1.75rem;" class="imageWithText" src="/assets/images/admin/help/delete-profile-button.png" alt="Delete profile button"></li>
+          <li>Click <img class="ui-image" alt="Delete icon" src="/assets/images/admin/help/delete-icon.png" /> to delete the associated ingest profile.</li>
+          <li>To confirm, click <img class="ui-image" src="/assets/images/admin/help/delete-profile-button.png" alt="Delete profile button">.</li>
         </ol>
       
   </section>
