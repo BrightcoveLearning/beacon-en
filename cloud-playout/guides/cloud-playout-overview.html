@@ -34,12 +34,27 @@ layout: staging
     </ul>
   </section>
   <section class="bcls-section">
+    <h2 id="limitations">Limitations</h2>
+    <p>The following assumptions and limitations apply.</p>
+    <ul>
+      <li> Your videos must be ingested using a Dynamic Delivery profile and  must have an MP4 rendition</li>
+      <li>The maximum input bitrate and resolution supported for Cloud Playout is 20MBPS/1080p. This applies both to VOD content and live inputs.</li>
+      <li>Brightcove recommends using videos with at least a 2 minute duration to ensure a correct transition between videos and electronic program guide accuracy</li>
+      <li>The minimum length for Live events is 5 minutes.</li>
+      <li>Every Live Event in Cloud Playout shares an 1:1 relation with a Video Cloud remote asset. This remote asset cannot be re-used in other channels. If the live event is removed from the channel, the associated remote asset will be automatically deleted. When a channel is deleted, any associated remote assets will also be deleted automatically.</li>
+      <li>When a live event is currently playing, but no active feed is available, the slate content will be played in a loop until the live feed resumes or the event ends. There will be a delay of approximately 30 seconds before the slate MP4 starts playing.</li>
+      <!--<li><strong>Input Looper : if the asset URL is duplicated, then input looper rely on order for switching; if the order is changes during the course of the switching , then subsequent N+1 switch it attempt to create would rely on the order. </strong></li>-->
+      <li>If the Video Cloud account is configured for geo-restriction, then the channel <strong>Output Region</strong> should be created in a  region compatible with the Video Cloud geo-restriction policy.</li>
+      <li>For the best experience, Brightcove recommends using the Google Chrome browser.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
     <h2 id="Related_topics">Related topics</h2>
     <ul>
       <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Using Cloud Playout to Stream Videos</a></li>
-      <li><a href="https://apis.support.brightcove.com/epg/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
-      <li><a href="https://apis.support.brightcove.com/epg/references/reference-epg.html">EPG API Reference</a></li>
-      <li><a href="https://apis.support.brightcove.com/epg/references/reference-channels.html">Channel API Reference</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API Reference</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Channel API Reference</a></li>
     </ul>
   </section>
 </article>
