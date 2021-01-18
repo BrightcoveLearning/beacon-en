@@ -152,6 +152,29 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
     color:rgb(7, 33, 144)!important;
   }
 
+  footer, footer a {
+    text-align: center;
+    padding: .5rem;
+    color: whitesmoke;
+    font-size: smaller;
+  }
+  
+
+  footer.help-footer {
+    position: fixed;
+    bottom: 0;
+    min-width: 100%;
+    width: 100%;
+    background-color: rgb(9, 7, 140);
+    /* margin-top:1rem; */
+    margin-left: -1rem;
+    margin-right: -1rem;
+    }
+
+  .bcls-article {
+    margin-bottom: 40px;
+  }
+
   .bcls-section {
     margin-top: 1.5em;
     padding-top: .5em;
@@ -208,20 +231,7 @@ a, a::visited, a::hover {
   color:rgb(7, 33, 144)!important;
 }
 
-footer, footer a {
-  text-align: center;
-  padding: .5rem;
-  color: whitesmoke;
-  font-size: smaller;
-}
 
-.help-footer {
-  background-color: rgb(9, 7, 140);
-  margin-top:1rem;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  min-width: 100%;
-}
 
 
 
@@ -245,34 +255,32 @@ details {
   background-color: #fff;
   /* color: #263238; */
   transition: background-color .15s;
-  
-  > :last-child {
-    margin-bottom: 1rem;
-  }
-  
-  &::before {
-    width: 100%;
-    height: 100%;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: inherit;
-    opacity: .15;
-    box-shadow: 0 .25em .5em #263238;
-    pointer-events: none;
-    transition: opacity .2s;
-    z-index: -1;
-  }
-  
-  &[open] {
-    background-color: whitesmoke;
-    
-    &::before {
-      opacity: .6;
-    }
-  }
 }
+details :last-child {
+  margin-bottom: 1rem;
+}
+  
+details::before {
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  opacity: .15;
+  box-shadow: 0 .25em .5em #263238;
+  pointer-events: none;
+  transition: opacity .2s;
+  z-index: -1;
+}
+  
+  details[open] {
+    background-color: whitesmoke;
+  }
+  details[open]::before {
+    opacity: .6;
+  }
 
 details>summary {
   /* border: none;
@@ -280,33 +288,32 @@ details>summary {
   padding: .5rem .5em .5rem 0;
   display: block;
   position: relative;
-  font-size: 1.33em;
+  font-size: 1em;
   font-weight: bold;
   cursor: pointer;
-  
-  &::before,
-  &::after {
-    width: .75em;
+  outline: none;
+}
+details[open]>summary {
+  border: none;
+  outline: none;
+}
+  details>summary::before,
+  details>summary::after {
+    /* width: .75em;
     height: 2px;
     position: absolute;
     top: 50%;
     right: 0;
     content: '';
     background-color: currentColor;
-    text-align: right;
+    text-align: right; */
     transform: translateY(-50%);
     transition: transform .2s ease-in-out;
   }
 
-  details h2 {
-    margin-top: 0;
-    padding-top: 0;
-    font-size: 1.1rem;
-  }
 
   details section.bcls-section {
     border: none;
-    margin-top: -1rem;
     padding-top: 0;
   }
   

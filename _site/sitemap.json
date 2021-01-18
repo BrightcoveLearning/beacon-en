@@ -360,17 +360,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/help/temp-assets/iframe-test.html",
-      "oldURL": "/iframe-test"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/registered-users/help/iframe-test.html",
-      "oldURL": "/iframe-test"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/help/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
@@ -380,7 +370,17 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/help/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/iframe-test.html",
+      "oldURL": "/iframe-test"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/help/temp-assets/iframe-test.html",
+      "oldURL": "/iframe-test"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/registered-users/help/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
@@ -431,6 +431,11 @@
 
   {
       "newURL": "https://beacon-help.support.brightcove.com/pages/help/index-test.html",
+      "oldURL": "/index-test"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/help/index-test.html",
       "oldURL": "/index-test"
   },
 
