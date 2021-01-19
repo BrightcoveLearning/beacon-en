@@ -185,9 +185,9 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
 
 
 .external-link-icon {
-  margin-left:.5rem;
-  width:1.3rem;
-  vertical-align:text-top
+  height: .8rem;
+  margin-left:.2rem;
+  vertical-align: text-top;
 }
 
 #breadcrumbs {
@@ -355,6 +355,7 @@ code {
     margin: 0;
   }
 } */
+
 
 /* task list for steps */
 .bcls-tasklist {
