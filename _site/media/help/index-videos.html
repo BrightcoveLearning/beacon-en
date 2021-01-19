@@ -40,387 +40,160 @@
 </nav>
 </header>
 
-<style>
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
-html {
-  box-sizing: border-box;
-  font-size: 18px;
-  font-family: "Roboto", sans-serif;
-}
-
-body {
-  background: #edf2f7;
-  color: #4a5568;
-  height: 100%;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-details {
-  font-size: 1rem;
-  margin: 1em auto;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  width: 100%;
-  background: #ffffff;
-  border-radius: 8px;
-  position: relative;
-  width: 500px;
-}
-details .summary-title {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-details:hover {
-  cursor: pointer;
-}
-details .summary-content {
-  border-top: 1px solid #e2e8f0;
-  cursor: default;
-  padding: 1em;
-  font-weight: 300;
-  line-height: 1.5;
-}
-details summary {
-  padding: 1em;
-}
-details summary:focus {
-  outline: none;
-}
-details summary:hover .summary-chevron-up svg {
-  opacity: 1;
-}
-details .summary-chevron-up svg {
-  opacity: 0.5;
-}
-details .summary-chevron-up,
-details .summary-chevron-down {
-  pointer-events: none;
-  position: absolute;
-  top: 0.75em;
-  right: 1em;
-  background: #ffffff;
-}
-details .summary-chevron-up svg,
-details .summary-chevron-down svg {
-  display: block;
-}
-details summary::-webkit-details-marker {
-  display: none;
-}
-</style>
 <h1>Videos</h1>
-<article class="bcls-article">
-  <p>The Videos page is used to upload and manage videos and to create series and seasons. The body of the page will list all videos in the account.</p>
-  <details>
-    <summary> <span class="summary-title">Upload videos</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-upload.png" />. </li>
-        <li>Browse and select videos to upload.</li>
-      </ol>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/uploading-videos.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/uploading-videos.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">View video details</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>Click on a video name to open the Video Details page. </li>
-      </ol>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">Search videos</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>Enter search terms and press <strong>enter</strong>.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/help/search.png" /></figure>
-        </li>
-      </ol>
-      <p>The following video fields will be searched:</p>
-      <ul>
-        <li>Video ID</li>
-        <li>Name</li>
-        <li>Short description</li>
-        <li>Long description</li>
-        <li>Tags</li>
-        <li>Reference ID</li>
-        <li>Custom fields</li>
-      </ul>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/searching-videos-and-playlist.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">View all series</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>In the left navigation click the <strong>All Series</strong> link.</li>
-      </ol>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/creating-series-seasons-episodes.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">Create series</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
+<p>The Videos page is used to upload and manage videos and to create series and seasons. The body of the page will list all videos in the account.</p>
+<details>
+  <summary>Upload videos</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-upload.png" />. </li>
+      <li>Browse and select videos to upload.</li>
+    </ol>
+    <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/uploading-videos.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a> <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/uploading-videos.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a> </section>
+</details>
+<details>
+  <summary>View video details</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>Click on a video name to open the Video Details page. </li>
+    </ol>
+  </section>
+</details>
+<details>
+  <summary>Search videos</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>Enter search terms and press <strong>enter</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/help/search.png" /></figure>
+      </li>
+    </ol>
+    <p>The following video fields will be searched:</p>
+    <ul>
+      <li>Video ID</li>
+      <li>Name</li>
+      <li>Short description</li>
+      <li>Long description</li>
+      <li>Tags</li>
+      <li>Reference ID</li>
+      <li>Custom fields</li>
+    </ul>
+    <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/searching-videos-and-playlist.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a> </section>
+</details>
+<details>
+  <summary>View all series</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>In the left navigation click the <strong>All Series</strong> link.</li>
+    </ol>
+    <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/creating-series-seasons-episodes.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a>
+    </p>
+  </section>
+</details>
+<details>
+  <summary>Create series</summary>
+  <section class="bcls-section">
     <ol class="bcls-tasklist-restart">
       <li>In the left navigation, click the <strong>Create Series</strong> link.</li>
       <li>Enter a <strong>Name</strong> for the Series.</li>
       <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-save.png" />.</li>
     </ol>
-    <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/creating-series-seasons-episodes.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">Create folder</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>In the left navigation, click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/link-create-folder.png" />.</li>
-        <li>Enter a name for the folder.</li>
-        <li>Press <strong>enter</strong>.</li>
-      </ol>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">View video details panel</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>Select a video and then click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-quick-view.png" /></li>
-      </ol>
-      <p>Click the button again to close the panel.</p>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">Edit video details for multiple videos</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>Select one or more videos and then click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-quick-edit.png" />.</li>
-        <li>Make the appropriate changes.</li>
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-save.png" />.</li>
-      </ol>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/editing-video-properties-multiple-videos.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/editing-video-details-using-quick-edit.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">Add a video to a folder</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>Select one or more videos.</li>
-        <li>Click <strong>More &gt;</strong> <strong>Move to Folder</strong>.</li>
-        <li>Select a folder.</li>
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-move.png" /></li>
-      </ol>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
+    <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/creating-series-seasons-episodes.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a> </section>
+</details>
+<details>
+  <summary>Create folder</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>In the left navigation, click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/link-create-folder.png" />.</li>
+      <li>Enter a name for the folder.</li>
+      <li>Press <strong>enter</strong>.</li>
+    </ol>
+  </section>
+</details>
+<details>
+  <summary>View video details panel</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>Select a video and then click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-quick-view.png" /></li>
+    </ol>
+    <p>Click the button again to close the panel.</p>
+  </section>
+</details>
+<details>
+  <summary>Edit video details for multiple videos</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>Select one or more videos and then click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-quick-edit.png" />.</li>
+      <li>Make the appropriate changes.</li>
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-save.png" />.</li>
+    </ol>
+    <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/editing-video-properties-multiple-videos.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a> <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/editing-video-details-using-quick-edit.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a> </section>
+</details>
+<details>
+  <summary>Add a video to a folder</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>Select one or more videos.</li>
+      <li>Click <strong>More &gt;</strong> <strong>Move to Folder</strong>.</li>
+      <li>Select a folder.</li>
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-move.png" /></li>
+    </ol>
+    <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a>
     <figure class="bcls-figure"><img width="450" class="bcls-image--no-border" alt="" src="/assets/images/media/help/move-to-folder.gif" /></figure>
-  </details>
-  <details>
-    <summary> <span class="summary-title">Create playlist</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <p><strong>Manual Playlists</strong> can be created to group   of videos where you control the order of playback.</p>
-      <ol class="bcls-tasklist-restart">
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/link-create-playlist.png" /> in the left navigation.</li>
-        <li>Select a <strong>Playlist type</strong> of <strong>Manual</strong>.</li>
-        <li>Enter a <strong>Playlist Name</strong>.</li>
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-save.png" /></li>
-      </ol>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/creating-manual-playlist.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/creating-and-managing-playlists.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-      <hr/>
-      <p><strong>Smart Playlists</strong> can be created to automatically group videos based upon tag(s).</p>
-      <ol class="bcls-tasklist-restart">
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/link-create-playlist.png" /> in the left navigation.</li>
-        <li>Select a <strong>Playlist type</strong> of <strong>Smart</strong>.</li>
-        <li>Enter a <strong>Playlist Name</strong>.</li>
-        <li>In the <strong>Smart Playlist Settings</strong>, select a <strong>Tags</strong> option and then enter the tag(s).&nbsp;&nbsp;</li>
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-save.png" /></li>
-      </ol>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/creating-smart-playlist.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/creating-and-managing-playlists.html">Details</a> <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></p>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">Add videos to a manual playlist</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>Select one or more videos.</li>
-        <li>Click <strong>More &gt; Add to Playlist</strong>. </li>
-        <li>Click on a playlist name.</li>
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-add.png" />.</li>
-      </ol>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">Export video metadata</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-export.png" />. </li>
-        <li>Select the video data to export.</li>
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-export-data.png" />.</li>
-      </ol>
-      <p>&gt; <a target="_blank" href="https://beacon-help.support.brightcove.com/media/exporting-video-data.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></p>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-  <details>
-    <summary> <span class="summary-title">Select columns to display</span>
-      <div class="summary-chevron-up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
-    </summary>
-    <div class="summary-content">
-      <ol class="bcls-tasklist-restart">
-        <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-column-selector.png" />. </li>
-        <li>Select the columns to display.</li>
-        <li>Click outside the column list to close it.</li>
-      </ol>
-    </div>
-    <div class="summary-chevron-down">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
-        <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-    </div>
-  </details>
-</article>
+  </section>
+</details>
+<details>
+  <summary>Create playlist</summary>
+  <section class="bcls-section">
+    <p><strong>Manual Playlists</strong> can be created to group   of videos where you control the order of playback.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/link-create-playlist.png" /> in the left navigation.</li>
+      <li>Select a <strong>Playlist type</strong> of <strong>Manual</strong>.</li>
+      <li>Enter a <strong>Playlist Name</strong>.</li>
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-save.png" /></li>
+    </ol>
+    <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/creating-manual-playlist.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a> <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/creating-and-managing-playlists.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a>
+    <hr/>
+    <p><strong>Smart Playlists</strong> can be created to automatically group videos based upon tag(s).</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/link-create-playlist.png" /> in the left navigation.</li>
+      <li>Select a <strong>Playlist type</strong> of <strong>Smart</strong>.</li>
+      <li>Enter a <strong>Playlist Name</strong>.</li>
+      <li>In the <strong>Smart Playlist Settings</strong>, select a <strong>Tags</strong> option and then enter the tag(s).&nbsp;&nbsp;</li>
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-save.png" /></li>
+    </ol>
+    <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/howto/creating-smart-playlist.html">Show me how <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a> <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/creating-and-managing-playlists.html">Details</a> <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"> </section>
+</details>
+<details>
+  <summary>Add videos to a manual playlist</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>Select one or more videos.</li>
+      <li>Click <strong>More &gt; Add to Playlist</strong>. </li>
+      <li>Click on a playlist name.</li>
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-add.png" />.</li>
+    </ol>
+  </section>
+</details>
+<details>
+  <summary>Export video metadata</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-export.png" />. </li>
+      <li>Select the video data to export.</li>
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-export-data.png" />.</li>
+    </ol>
+    <img src="/assets/images/feather/chevron-right.svg" alt="chevron right" style="width: .8rem;"> <a target="_blank" href="https://beacon-help.support.brightcove.com/media/exporting-video-data.html">Details <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a> </section>
+</details>
+<details>
+  <summary>Select columns to display</summary>
+  <section class="bcls-section">
+    <ol class="bcls-tasklist-restart">
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/media/help/button-column-selector.png" />. </li>
+      <li>Select the columns to display.</li>
+      <li>Click outside the column list to close it.</li>
+    </ol>
+  </section>
+</details>
 
 <footer class="help-footer" role="contentinfo">
 <a href="mailto:docs@brightcove.com?subject=In-app%20help%20feedback" style="margin-right: 1rem;">Comments?</a> | <a href="/index.html" target="_blank" style="margin-right: 1rem;margin-left:1rem;">Full Documentation <img src="/assets/images/feather/external-link-white.svg" alt="External Link" style="height: .8rem;vertical-align: text-top;"></a>
