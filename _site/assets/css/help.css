@@ -434,6 +434,6 @@ code {
 }
 .imageWithText {
   width: auto;
-  vertical-align: text-top;
+  vertical-align: -webkit-baseline-middle;
   height: 1.5em;
 /* } */
