@@ -232,7 +232,11 @@ a, a::visited, a::hover {
 }
 
 
-
+ul.doc-links {
+  list-style: none;
+  padding: 0;
+  margin-left: 1rem;
+}
 
 
 /* details */
