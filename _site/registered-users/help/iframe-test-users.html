@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
 
-  <title>Registered Users iFrame Test</title>
+  <title>iFrame Test</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -72,17 +72,25 @@
         text-decoration: underline;
         cursor: pointer;
     }
+    .over {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 1425px;
+    }
 </style>
 
-<img id="background-screenshot" src="/assets/images/for-demo/admin/admin-background.png" alt="">
+<img id="background-screenshot" src="/assets/images/for-demo/iframe-background.png" alt="">
+<img class="over" src="/assets/images/registered-users/users-background.png" alt="">
 
 <div id="modal_wrapper">
     <div id="iframe_modal">
-        <p id="modal_header"><img id="close_modal" src="/assets/images/x.svg" alt=""></p>
-        <iframe id="doc_frame" src="/registered-users/help/index.html"></iframe>
+        <p id="modal_header"><img id="close_modal" src="/assets/images/x.svg" alt=""></p> 
+        <!-- <iframe id="doc_frame" src="/admin/help/index.html"></iframe> -->
+        <iframe id="doc_frame" src="/registered-users/help/profiles.html"></iframe>
     </div>
 </div>
-<img id="button_cover" src="/assets/images/transparent.png" alt="" style="position: fixed;left: 0;top: 670px;cursor: pointer;">
+<img id="button_cover" src="/assets/images/transparent.png" alt="" style="position: fixed;left: 0;top: 740px;cursor: pointer;">
 <br>
 <p style="margin-left: 6em;">Paste any full URL in the field below to load that page into the frame.</p>
 <p style="margin-left: 6em;"><input type="text" id="src_address" size="60" value="/index.html"></p>
@@ -90,7 +98,7 @@
 
 <p style="margin-left: 2em;">Copy and paste any of the following into the text field above to open that section of the doc in the iframe:</p>
 <ul id="link_list" style="list-style: none;">
-    <li class="link" data_link="/registered-users/help/users-list.html">/registered-users/help/users-list.html</li>
+    <li class="link" data_link="/registered-users/help/users-list.html">/registered-users/help/index.html</li>
     <li class="link" data_link="/registered-users/help/overview.html">/registered-users/help/overview.html</li>
     <li class="link" data_link="/registered-users/help/history.html">/registered-users/help/history.html</li>
     <li class="link" data_link="/registered-users/help/transactions.html">/registered-users/help/transactions.html</li>
