@@ -187,7 +187,7 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
 .external-link-icon {
   height: .8rem;
   margin-left:.2rem;
-  vertical-align: text-top;
+  vertical-align: middle;
 }
 
 #breadcrumbs {
@@ -234,8 +234,7 @@ a, a::visited, a::hover {
 
 ul.doc-links {
   list-style: none;
-  padding: 0;
-  margin-left: 1rem;
+  margin-left: -2em;
 }
 
 
@@ -440,4 +439,4 @@ code {
   width: auto;
   vertical-align: -webkit-baseline-middle;
   height: 1.5em;
-/* } */
+}
