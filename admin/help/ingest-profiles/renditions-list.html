@@ -8,30 +8,39 @@ layout: help
     <section class="bcls-section">
         <p>The ingest profile defines the number and type of renditions created for each video upload.</p>
 
-        <h3>Video renditions</h3>
-        <ul>
-          <li><strong>Name</strong> - Rendition name</li>
-          <li><strong>Type</strong> - Rendition type; values: <strong>default</strong>, <strong>custom</strong></li>
-           <li><strong>Codec</strong> - Video compression standard</li>
-          <li><strong>Bitrate</strong> - Amount of video data bits transferred within second, measured in kilobits per second (kbps)</li>
-          <li><strong>Height</strong> - Video height, measured in pixels</li>
-           <li><strong>Aspect Mode</strong>
+        <details>
+          <summary>Video renditions</summary>
+          <section class="bcls-section">
             <ul>
-               <li><strong>Preserve</strong> - Preserve the aspect ratio of the video</li>
-               <li><strong>Custom</strong> - Select the aspect ratio for the video</li>
+              <li><strong>Name</strong> - Rendition name</li>
+              <li><strong>Type</strong> - Rendition type; values: <strong>default</strong>, <strong>custom</strong></li>
+              <li><strong>Codec</strong> - Video compression standard</li>
+              <li><strong>Bitrate</strong> - Amount of video data bits transferred within second, measured in kilobits per second (kbps)</li>
+              <li><strong>Height</strong> - Video height, measured in pixels</li>
+              <li><strong>Aspect Mode</strong>
+                <ul>
+                  <li><strong>Preserve</strong> - Preserve the aspect ratio of the video</li>
+                  <li><strong>Custom</strong> - Select the aspect ratio for the video</li>
+                </ul>
+              </li>
+                <li><strong>Profile</strong> - Type of rendition</li>
             </ul>
-           </li>
-            <li><strong>Profile</strong> - Type of rendition</li>
-        </ul>
-       
-        <h3>Audio renditions</h3>
-        <ul>
-          <li><strong>Name</strong> - Rendition name</li>
-          <li><strong>Type</strong> - Rendition type; values: <strong>default</strong>, <strong>custom</strong></li>
-          <li><strong>Codec</strong> - Audio compression standard</li>
-          <li><strong>Bitrate</strong> - Amount of video data bits transferred within second, measured in bits per second (bps)</li>
-          <li><strong>Channel</strong> - Number of channels supported</li>
-        </ul>
+          </section>
+        </details>
+
+        <details>
+          <summary>Audio renditions</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>Name</strong> - Rendition name</li>
+              <li><strong>Type</strong> - Rendition type; values: <strong>default</strong>, <strong>custom</strong></li>
+              <li><strong>Codec</strong> - Audio compression standard</li>
+              <li><strong>Bitrate</strong> - Amount of video data bits transferred within second, measured in bits per second (bps)</li>
+              <li><strong>Channel</strong> - Number of channels supported</li>
+            </ul>
+          </section>
+        </details>
+        
       
   </section>
     <section class="bcls-section">
