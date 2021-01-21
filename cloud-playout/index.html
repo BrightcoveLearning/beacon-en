@@ -10,12 +10,14 @@ layout: staging
   <h1>{{ page.icon }} {{ page.title }}</h1>
   <summary>{{ page.description }}</summary>
   <h2>Topics</h2>
-  <section class="card-wrapper">
+  <section>
     {% for item in site.data.navigation %}
       {% if item.name == page.title %}
+        {% for doc in item.docs %}
         <ul>
-          <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
         </ul>
+        {% endfor %}
       {% endif %}
     {% endfor %}
   </section>
