@@ -9,6 +9,7 @@ layout: staging
 <article class="bcls-article">
   <h1>{{ page.icon }} {{ page.title }}</h1>
   <summary>{{ page.description }}</summary>
+  <h2>Topics</h2>
   <section class="card-wrapper">
     {% for item in site.data.navigation %}
       {% if item.name == page.title %}
