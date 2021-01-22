@@ -1,0 +1,295 @@
+---
+title: 'Beacon Analytics Business Metrics'
+description: 'In this topic, you will learn ...'
+parent: General Information
+layout: staging
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <h4>
+      General list of business metrics in use followed by custom
+      dimensions/metrics index and definition.
+    </h4>
+    <ul>
+      <li>Applicable to all platforms;</li>
+      <li>Reporting is done on Priority items listed in the last column</li>
+      <li>
+        All custom dimensions & metrics for reporting are set-up by Brightcove
+      </li>
+      <li>
+        Please note that there is a maximum of 20 custom dimensions for FREE
+        Google Analytics accounts and 20 custom metrics
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Metrics_and_dimensions">Metrics and dimensions</h2>
+
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Description</th>
+          <th>Custom Dimension</th>
+          <th>Custom Metric</th>
+          <th>Dimension</th>
+          <th>Metric</th>
+          <th>Using Event and Filters</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Play events by city</td>
+          <td></td>
+          <td></td>
+          <td>Town/City</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Geographic distribution</td>
+          <td></td>
+          <td></td>
+          <td>Town/City</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Play events by production year</td>
+          <td>Production Year</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Play events by country of origin (production)</td>
+          <td>Country of Origin</td>
+          <td></td>
+          <td></td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Top movies</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Top series</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Top channels</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by movie</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Event Action</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by episodes</td>
+          <td>
+            Season Number / <br />
+            Episode Number
+          </td>
+          <td>Time Watched</td>
+          <td>Event Action</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by series</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Event Action</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by channel</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Event Action</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by movie genre</td>
+          <td>Genre</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by series genre</td>
+          <td>Genre</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by channels genre</td>
+          <td>Genre</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Movies watched by account</td>
+          <td>Account Token (GDPR)</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Series watched by account</td>
+          <td>Account Token (GDPR)</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Channels watched by account</td>
+          <td>Account Token (GDPR)</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Consolidation of VOD during the week - movies</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Day of Week Name</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Consolidation of VOD during the week - series</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Day of Week Name</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Consolidation of VOD during the week - channels</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Day of Week Name</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Top search keywords</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Top rated titles</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Pick time of VOD</td>
+          <td></td>
+          <td></td>
+          <td>Hour</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Pick time Live Channels</td>
+          <td></td>
+          <td></td>
+          <td>Hour</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Number of users by country/city</td>
+          <td></td>
+          <td></td>
+          <td>Country OR City</td>
+          <td>Users</td>
+          <td>N</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>Users by type (subscription related)</td>
+          <td>User Type (e.g. visitor, free_user, trialist, subscriber)</td>
+          <td></td>
+          <td></td>
+          <td>Users</td>
+          <td>N</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Users by platform</td>
+          <td>Platform</td>
+          <td>Users</td>
+          <td></td>
+          <td></td>
+          <td>N</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>
