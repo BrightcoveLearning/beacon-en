@@ -1,0 +1,105 @@
+---
+title: "Brightcove Beacon Tasks Performed in Video Cloud "
+description: "In this topic, you will learn the tasks that must/should be done in Video Cloud Studio as a Brightcove Beacon customer."
+parent: General Information
+layout: staging
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+    <summary>{{ page.description }}</summary>
+
+    <section class="bcls-section">
+        <h2 id="Task_summary">Task summary</h2>
+        <p>The following is the list of tasks that you as a Brightcove Beacon customer should/must do in Video Cloud Studio:</p>
+        <ul>
+            <li><a href="#Add_video_assets">Add video assets</a></li>
+            <li><a href="#Create_custom_fields">Create custom fields</a></li>
+            <li><a href="#Add_images">Add images associated with the video asset</a></li>
+            <li><a href="#Add_rights_management_information">Add rights management information</a></li>
+            <li><a href="#Add_episode_data">Add episode data for a series/season to a video asset</a></li>
+            <li><a href="#Create_video_playlists">Create video playlists</a></li>
+            <li><a href="#Create_Brightcove_Live_events">Create Brightcove Live events</a></li>
+            <li><a href="#Create_an_SSAI_ad_configuration">Create an SSAI ad configuration</a></li>
+        </ul>
+        <p>Each task will be further explained later in this document with a link to the documentation where instructions are provided on how to perform that particular task.</p>
+        <p>This document is NOT a "how to" manual for each task, but each section will link you out to the appropriate document that contains steps on how to complete the task.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Add_video_assets">Add video assets</h2>
+        <p>Video Cloud is the tool used to upload your videos that you use in Brightcove Beacon. Throughout this document you will see Video Cloud Studio is a commonly used tool when working with your Brightcove Beacon app.</p>
+        <p>The following are resources for getting your videos into Video Cloud:</p>
+        <ul>
+            <li><a href="https://studio.support.brightcove.com/basics/video-cloud-basics-uploading-videos.html">Video Cloud Basics: Uploading Videos</a> - A 1 minute 30 second video and four steps for a quick start to uploading content into Video Cloud.</li>
+            <li><a href="https://studio.support.brightcove.com/media/uploading-videos-using-upload-module.html">Uploading Videos Using the Upload Module</a> - The full document on uploading videos with Video Cloud.</li>
+            <li><a href="https://studio.support.brightcove.com/media/index.html">Managing Videos</a> - The landing page which encompasses the entire video management workflow, including documents on uploading videos, playlists, organizing videos with folders, etc.</li>
+        </ul>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Create_custom_fields">Create custom fields</h2>
+        <p>Video Cloud permits you to use custom fields to add metadata to your videos. Once you have videos, custom fields play a large part in preparing those videos to be used in Brightcove Beacon. The custom fields you add to Video Cloud videos that work with Brightcove Beacon fall into three categories. Those categories, and a brief explanation of each, are:</p>
+        <ul>
+            <li><strong>General</strong> - Information about the video content, including:
+                <ul>
+                    <li>Genre</li>
+                    <li>Short and long description</li>
+                    <li>Production year</li>
+                    <li>Cast</li>
+                    <li>Writer</li>
+                    <li>etc.</li>
+                </ul>
+            </li>
+            <li><strong>Rights management</strong> - Supports monetization and access restrictions. For instance, type of advertising and dates of video availability.</li>
+            <li><strong>Episode data</strong> - If the video is an episode of a series, you define the series, season and episode number.</li>
+        </ul>
+        <p>The <a href="/syncing-with-video-cloud/vc-custom-fields.html">Creating Video Cloud Custom Fields</a> document is solely dedicated to helping you create the required custom fields.</p>
+        <p>Values are assigned to these custom fields in Video Cloud Studio.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Add_images">Add images</h2>
+        <p>Images you add in Video Cloud appear in your Brightcove Beacon apps. For instance, poster images from Video Cloud appear as shown here in your apps:</p>
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/references/bcb-tasks-performed-in-vc/thumbnail-images.png" alt="">
+        </figure>
+        <p>The <a href="/references/image-requirements.html">Images and Their Specifications</a> document specifies image requirements and also how to upload the images in Video Cloud Studio.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Add_rights_management_information">Add rights management information</h2>
+        <p>As mentioned earlier, custom fields are used to add rights management information that controls monetization and access restrictions. For instance, the fields</p>
+        <ul>
+            <li>beacon.rights.<em>index</em>.startDate</li>
+            <li>beacon.rights.<em>index</em>.endDate</li>
+        </ul>
+        <p>define when a particular video asset can be accessed.</p>
+        <p>Also, the following documents show how to implement monetization via advertising and subscriptions:</p>
+        <ul>
+            <li><a href="/using-brightcove-beacon/vod-ssai.html">Implementing VOD SSAI</a>; see the <a href="/using-brightcove-beacon/vod-ssai.html#Setting_custom_field_values">Setting custom field values</a> section of the document for supplying values to the appropriate custom fields.</li>
+            <li><a href="/using-brightcove-beacon/using-subscription-package.html">Using a Subscription Package</a></li>
+        </ul>
+        <p>The rights management custom fields are assigned values in Video Cloud Studio. </p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Add_episode_data">Add episode data</h2>
+        <p>If a particular video is an episode of a series, custom fields are used to assign episode data that associates the video to the correct series, season and episode number. This example shows the custom fields used, and specific values for each field.</p>
+        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/episode-example.png" alt=""> </figure>
+        <p>The <a href="/using-brightcove-beacon/series-seasons-episodes.html#Ingesting_episodes">Ingesting episodes</a> section of the <strong>Creating Series/Seasons/Episodes</strong> document provides specific instructions.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Create_video_playlists">Create video playlists</h2>
+        <p>Playlists are heavily leveraged in Brightcove Beacon when deciding what video content to display on an app page. You create playlists in Video Cloud Studio.</p>
+        <p>The following are resources on getting your videos into Video Cloud:</p>
+        <ul>
+            <li><a href="https://studio.support.brightcove.com/basics/video-cloud-basics-creating-manual-playlist.html">Video Cloud Basics: Creating a Manual Playlist</a></li>
+            <li><a href="https://studio.support.brightcove.com/basics/video-cloud-basics-creating-smart-playlist.html">Video Cloud Basics: Creating a Smart Playlist</a></li>
+            <li><a href="https://studio.support.brightcove.com/media/creating-and-managing-playlists.html">Creating and Managing Playlists</a></li>
+        </ul>
+        <aside class="bcls-aside bcls-aside--warning">Playlists created in Video Cloud Studio may ONLY contains videos. If you wish to create playlists that contain series, live events, etc., those must be created in Brightcove Beacon.</aside>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Create_Brightcove_Live_events">Create Brightcove Live events</h2>
+        <p>If you wish to play live streaming events in your Brightcove Beacon apps, part of the process must be done in Video Cloud Studio. The <a href="/using-brightcove-beacon/streaming-live-event.html">Streaming a Live Event</a> document walks you through the entire process.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Create_an_SSAI_ad_configuration">Create an SSAI ad configuration</h2>
+        <p>Server-side ad insertion (SSAI) can be used in Brightcove Beacon. To implement this you must create an ad configuration in Video Cloud Studio. The <a href="/using-brightcove-beacon/vod-ssai.html">Implementing VOD SSAI</a> document includes how to create that ad configuration, as well as the end-to-end process of setting up VOD SSAI for Brightcove Beacon.</p>
+    </section>
+</article>
