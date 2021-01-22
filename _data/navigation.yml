@@ -188,6 +188,12 @@
   url: /training/index.html
   docs:
 - section:
+  name: Release Notes
+  url: /release-notes/index.html
+  docs:
+    - name: Beacon Studio Release Notes
+      url: /release-notes/product-updates.html
+- section:
   name: 'Support'
   url: '/support/index.html'
   icon: '<img class="bcls-icon" src="/assets/images/feather/help-circle.svg">'
