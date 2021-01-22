@@ -8,49 +8,65 @@ layout: help
     <section class="bcls-section">
         <p>Brightcove's Server-Side Ad Insertion (SSAI) embeds ads in your video stream to provide a TV-like viewing experience with no ad buffering.</p>
 
-        <h3>Actions</h3>
-        <ul>
-          <li><strong>Delete</strong> - Select one or more ad configurations, and click <img class="ui-image" src="/assets/images/admin/help/delete-button.png" alt="Delete button"> to remove them from your account</li>
-          <li><strong>Duplicate</strong> - Select an ad configuration, and click <img class="ui-image" src="/assets/images/admin/help/duplicate-button.png" alt="Duplicate button"> to create an ad configuration copy; you can cancel, or edit and save the new configuration</li>
-        </ul>
-       
-        <h3>Ad configurations list</h3>
-        <ul>
-          <li><strong>Name</strong> - The name of the ad configuration; click the name link to view the details for the ad configuration</li>
-          <li><strong>Type</strong> - Either <strong>VOD</strong> or <strong>Live</strong></li>
-          <li><strong>Ad Server Response</strong> - The response format from your ad server</li>
-          <li><strong>Created</strong> - The creation date for the ad configuration</li>
-        </ul>
-
-        <h3>Create ad configuration</h3>
-        <ol class="bcls-tasklist">
-          <li>Click <img class="ui-image" src="/assets/images/admin/help/create-ad-configuration-button.png" alt="Create ad configuration button"> to expand the dropdown menu.</li>
-          <li>Choose one:
+        <details>
+          <summary>Actions</summary>
+          <section class="bcls-section">
             <ul>
-              <li><strong>VOD</strong> - Video on Demand</li>
-              <li><strong>Live</strong> - Live stream</li>
+              <li><strong>Delete</strong> - Select one or more ad configurations, and click <img class="ui-image" src="/assets/images/admin/help/delete-button.png" alt="Delete button"> to remove them from your account</li>
+              <li><strong>Duplicate</strong> - Select an ad configuration, and click <img class="ui-image" src="/assets/images/admin/help/duplicate-button.png" alt="Duplicate button"> to create an ad configuration copy; you can cancel, or edit and save the new configuration</li>
             </ul>
-          </li>
-          <li><strong>Name</strong> - The name of the ad configuration</li>
-          <li><strong>Ad Server Response</strong> - The response format from your ad server
-          <ul>
-            <li><strong><a href="https://www.google.com/ads/publisher/#?modal_active=none" target="_blank">DFP Ad Rules <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></strong> - Proprietary format for DFP/Google for Publishers</li>
-            <li><strong><a href="https://www.iab.com/guidelines/vmap/" target="_blank">DFP VMAP <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></strong> - Video Multiple Ad Playlist</li>
-            <li><strong><a href="https://www.freewheel.com/" target="_blank">Smart XML <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></strong> - Proprietary format for FreeWheel</li>
-            <li><strong><a href="https://www.iab.com/guidelines/vast/" target="_blank">VAST 3.0 <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></strong> - Digital Video Ad Serving Template</li>
-          </ul>
-          </li>
-          <li><strong>Ad Tag</strong> - The server URL for your ad tag</li>
-          <li><strong>Disable server-side beacons</strong> - These beacons emit events from the server to measure ad impressions and report ad errors; if disabled, events will not be fired from the server, but will be included in the ad response</li>
-          <li>Click <img class="ui-image" src="/assets/images/admin/help/save-button.png" alt="Save button">.</li>
-        </ol>
+          </section>
+        </details>
+        
+        <details>
+          <summary>View ad configurations</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>Name</strong> - The name of the ad configuration; click the name link to view the details for the ad configuration</li>
+              <li><strong>Type</strong> - Either <strong>VOD</strong> or <strong>Live</strong></li>
+              <li><strong>Ad Server Response</strong> - The response format from your ad server</li>
+              <li><strong>Created</strong> - The creation date for the ad configuration</li>
+            </ul>
+          </section>
+        </details>
 
-        <h3>Edit ad configuration</h3>
-        <ol class="bcls-tasklist-restart">
-          <li>Click the ad configuration name link.</li>
-          <li>Edit the ad configuration values.</li>
-          <li>Click <img class="ui-image" src="/assets/images/admin/help/save-button.png" alt="Save button"></li>
-        </ol>
+        <details>
+          <summary>Create ad configuration</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist">
+              <li>Click <img class="ui-image" src="/assets/images/admin/help/create-ad-configuration-button.png" alt="Create ad configuration button"> to expand the dropdown menu.</li>
+              <li>Choose one:
+                <ul>
+                  <li><strong>VOD</strong> - Video on Demand</li>
+                  <li><strong>Live</strong> - Live stream</li>
+                </ul>
+              </li>
+              <li><strong>Name</strong> - The name of the ad configuration</li>
+              <li><strong>Ad Server Response</strong> - The response format from your ad server
+              <ul>
+                <li><strong><a href="https://www.google.com/ads/publisher/#?modal_active=none" target="_blank">DFP Ad Rules <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></strong> - Proprietary format for DFP/Google for Publishers</li>
+                <li><strong><a href="https://www.iab.com/guidelines/vmap/" target="_blank">DFP VMAP <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></strong> - Video Multiple Ad Playlist</li>
+                <li><strong><a href="https://www.freewheel.com/" target="_blank">Smart XML <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></strong> - Proprietary format for FreeWheel</li>
+                <li><strong><a href="https://www.iab.com/guidelines/vast/" target="_blank">VAST 3.0 <img src="/assets/images/feather/external-link.svg" alt="external link" style="width: .8rem;"></a></strong> - Digital Video Ad Serving Template</li>
+              </ul>
+              </li>
+              <li><strong>Ad Tag</strong> - The server URL for your ad tag</li>
+              <li><strong>Disable server-side beacons</strong> - These beacons emit events from the server to measure ad impressions and report ad errors; if disabled, events will not be fired from the server, but will be included in the ad response</li>
+              <li>Click <img class="ui-image" src="/assets/images/admin/help/save-button.png" alt="Save button">.</li>
+            </ol>
+          </section>
+        </details>
+
+        <details>
+          <summary>Edit ad configuration</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist-restart">
+              <li>Click the ad configuration name link.</li>
+              <li>Edit the ad configuration values.</li>
+              <li>Click <img class="ui-image" src="/assets/images/admin/help/save-button.png" alt="Save button"></li>
+            </ol>
+          </section>
+        </details>
       
   </section>
     <section class="bcls-section">
