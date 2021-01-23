@@ -3,18 +3,19 @@ var BCLS_details = ( function (window, document) {
     i,
     iMax = all_details.length;
 
+  function detailHandler(evt) {
+    var j;
+    
+    if (!this.hasAttribute('open')) {
+    evt.preventDefault();
+    for (j = 0; j < iMax; j++) {
+      all_details[j].removeAttribute('open');
+    }
+    this.setAttribute('open', 'true');
+    }
+  }
   
   for (i = 0; i < iMax; i++) {
-    all_details[i].addEventListener('click', function(evt) {
-      var j;
-      
-      if (!this.hasAttribute('open')) {
-      evt.preventDefault();
-      for (j = 0; j < iMax; j++) {
-        all_details[j].removeAttribute('open');
-      }
-      this.setAttribute('open', 'true');
-      }
-    });
+    all_details[i].addEventListener('click', detailHandler);
   }
 })(window, document);
