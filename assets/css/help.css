@@ -375,7 +375,7 @@ code {
 .bcls-tasklist>li::before {
   color: #a1a1a1;
   content: counters(step, ".") " ";
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
   left: -2em;
   line-height: 1;
@@ -419,7 +419,7 @@ code {
   color: #a1a1a1;
   content: counters(rstep, ".") " ";
   /* counter-increment: rstep; */
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
   left: -2em;
   line-height: 1;

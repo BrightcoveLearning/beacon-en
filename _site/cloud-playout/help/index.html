@@ -39,6 +39,7 @@
 </header>
 
 <h1>Cloud Playout Help</h1>
+<article class="bcls-article">
 <summary>Cloud Playout allows you to compile and schedule a combination of videos-on-demand and live feeds as a live linear channel.</summary>
 <details>
   <summary>Add new channel</summary>
@@ -51,8 +52,17 @@
       <li>If you toggle <img src="/assets/images/cloud-playout/playout-loop-playout.png" alt="loop toggle" class="ui-image"> on, you may also enter an optional <strong>End Date/Time</strong></li>
       <li>Toggle <img src="/assets/images/cloud-playout/playout-ad-insertion.png" alt="SSAI toggle" class="ui-image"> on to enable SSAI - it will also remove the Live Input option.</li>
       <li>Toggle <img src="/assets/images/cloud-playout/playout-live-input.png" alt="live input toggle" class="ui-image"> to include live events in your channel. You will also need to provide a URL for slate content or use the default slate to fill time when the live stream isn't available.</li>
+      <li>Select <strong>Mobile & Web</strong> and/or <strong>Smart TV</strong> for the output.</li>
+      <li>Select the <strong>Output Region</strong> closest to the majority of your audience.</li>
+      <li>
+        Choose whether to output to:
+        <ul style="padding: 0;margin-left: 1rem;">
+          <li>Brightcove Live (select an existing event or generate a new one)</li>
+          <li>RTMP (enter the RTMP URL for YouTube, Facebook or another service)</li>
+          <li>An S3 bucket (enter the public/private access keys and region)</li>
+        </ul>
+      </li>
       <li>Click <img src="/assets/images/cloud-playout/cloudplayout-create-channel.png" alt="create chanel" class="ui-image"> to create the channel.</li>
-      <li></li>
     </ol>
 
     <ul class="doc-links">
@@ -66,8 +76,8 @@
   <section class="bcls-section">
     <ol class="bcls-tasklist-restart">
       <li>Select one or more channels by clicking the check boxes.</li>
-      <li>Click <img src="/assets/images/cloud-playout/cloudplayout-delete-button.png" alt="delete" class="ui-image">.</li>
-      <li>Click <img src="/assets/images/cloud-playout/cloudplayout-delete-button.png" alt="delete" class="ui-image"> in the confirmation modal to delete the channel(s) permanently.</li>
+      <li>Click <img src="/assets/images/cloud-playout/cloudplayout-delete-button.png" alt="delete" class="ui-image" style="vertical-align: bottom;">.</li>
+      <li>Click <img src="/assets/images/cloud-playout/cloudplayout-delete-button.png" alt="delete" class="ui-image" style="vertical-align: bottom;"> in the confirmation modal to delete the channel(s) permanently.</li>
     </ol>
     <ul class="doc-links">
       <li><img src="/assets/images/feather/chevrons-right.svg" alt="full documentation" class="external-link-icon"><a href="/cloud-playout/guides/cloud-playout-stream-vod.html#edit_delete" target="_blank">Details <img src="/assets/images/feather/external-link.svg" alt="External link" class="external-link-icon"></a></li>
@@ -86,7 +96,6 @@
     </ul>
   </section>
 </details>
-
 </article>
 <footer class="help-footer" role="contentinfo">
 <a href="mailto:docs@brightcove.com?subject=In-app%20help%20feedback" style="margin-right: 1rem;">Comments?</a> | <a href="/index.html" target="_blank" style="margin-right: 1rem;margin-left:1rem;">Full Documentation <img src="/assets/images/feather/external-link-white.svg" alt="External Link" style="height: .8rem;vertical-align: text-top;"></a>
