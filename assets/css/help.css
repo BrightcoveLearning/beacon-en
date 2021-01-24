@@ -439,7 +439,7 @@ code {
 .ui-image {
   cursor: not-allowed;
   width: auto;
-  vertical-align: -webkit-baseline-middle;
+  vertical-align: text-bottom;
   height: 1.5em;
 }
 .imageWithText {
