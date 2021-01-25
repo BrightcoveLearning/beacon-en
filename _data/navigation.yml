@@ -98,17 +98,17 @@
   url: /cloud-playout/index.html
   docs:
     - name: 'Overview: Cloud Playout'
-      url: /cloud-playout/guides/cloud-playout-overview.html
+      url: /cloud-playout/cloud-playout-overview.html
     - name: Creating a Cloud Playout Channel
-      url: /cloud-playout/guides/cloud-playout-stream-vod.html
+      url: /cloud-playout/cloud-playout-stream-vod.html
     - name: Using Channel Actions
-      url: /cloud-playout/guides/using-channel-actions.html
+      url: /cloud-playout/using-channel-actions.html
     - name: Monetizing Cloud Playout
-      url: /cloud-playout/guides/enabling-server-side-ads.html
+      url: /cloud-playout/enabling-server-side-ads.html
     - name: Viewing Channel Output and Analytics
-      url: /cloud-playout/guides/viewing-channel-output-and-analytics.html
+      url: /cloud-playout/viewing-channel-output-and-analytics.html
     - name: Generating the Channel Embed Code
-      url: /cloud-playout/guides/generating-channel-embed-code.html
+      url: /cloud-playout/generating-channel-embed-code.html
 - section:
   name: Reviewing Analytics
   url: /analytics/index.html
