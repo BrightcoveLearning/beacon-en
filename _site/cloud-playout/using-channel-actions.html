@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="In this topic you will learn how get the embed code to play a Cloud Playout channel in the Brightcove Player. The embed code can be placed in any web page." />
+  <meta name="description" content="In this topic you will learn how to use channel actions to activate, play, or stop a Cloud Playout channel." />
 
-  <title>Generating the Channel Embed Code</title>
+  <title>Using Channel Actions</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -130,9 +130,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/cloud-playout/guides/">Cloud Playout</a></li>
+    <li class="breadcrumb-item"><a href="/cloud-playout/">Cloud Playout</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Generating the Channel Embed Code</li>
+    <li class="breadcrumb-item active" aria-current="page">Using Channel Actions</li>
   </ol>
 </nav>
 
@@ -323,27 +323,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <ul class="sidenav-submenu" style="display:none;">
           
           
-          <li><a href="/cloud-playout/guides/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+          <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+          <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/using-channel-actions.html">Using Channel Actions</a></li>
+          <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+          <li><a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+          <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+          <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
           
           
         </ul>
@@ -541,42 +541,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Generating the Channel Embed Code</h1>
+<h1>Using Channel Actions</h1>
 <article class="bcls-article">
-  <summary>In this topic you will learn how get the embed code to play a Cloud Playout channel in the Brightcove Player. The embed code can be placed in any web page.</summary>
+  <summary>In this topic you will learn how to use channel actions to activate, play, or stop a Cloud Playout channel.</summary>
   <aside class="bcls-aside bcls-aside--information">Note: This feature is currently in Limited Availability. Contact your Brightcove Account Manager for more information.</aside>
   <section class="bcls-section">
-    <h2 id="publish">Generating the embed code for a Cloud Playout channel</h2>
-    <p>To generate the embed code for a Cloud Playout channel, you will use the Live module. For full details on using the Live module, see <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Creating and Managing Live Events using the Live Module</a>.</p>
-    <p>Two types of embed code are available:</p>
+    <h2 id="actions">Using channel actions</h2>
+    <p>Depending on the status of the channel, various channel action buttons will be available on the channel settings page. Access the channel action buttons by clicking on the channel name to view the channel details. The following channel action buttons are available:</p>
     <ul>
-      <li><strong>Standard</strong> - iframe embed code. Recommended for most cases. This type places the player inside an &lt;iframe&gt; tag.</li>
-      <li><strong>Advanced</strong> - In-page embed code. Allows the player to exist in the HTML page directly, not in an iframe. This offers developers the benefits of ease of accessing the player and associated properties and events.</li>
+      <li><img src="/assets/images/cloudplayout/cloudplayout-activate-button.png" alt="activate" class="ui-image"> - Activating a channel makes it available for streaming. You must add videos and/or live events to the channel and click <img src="/assets/images/cloudplayout/cloudplayout-save-button.png" alt="save" class="ui-image"> before the Activate button will appear.</li>
+      <li><img src="/assets/images/cloudplayout/cloudplayout-play-now-button.png" alt="play now" class="ui-image"> - Click <strong>Play Now</strong> to start streaming the channel. This option is only available for channels that have an upcoming start time. The channel will start at the scheduled start time automatically.</li>
+      <li><img src="/assets/images/cloudplayout/playout-stop-now.png" alt="stop now" class="ui-image"> - Click <strong>Stop Now</strong> to stop a running channel. This will stop the channel and end the live stream. If the channel is looping, and has an end date/time, the channel will stop at that time automatically. This option gives you a way to stop it early.</li>
     </ul>
-    <p>You also have the ability to get the URL to the published player. This is useful for viewing the event in a browser.</p>
-    <p>To generate the embed code for a live event, follow these steps:</p>
-    <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Open the Live module.</li>
-      <li>Locate the live event the channel will be streaming to. Typically, the event will be located in the <strong>Standby</strong> tab and have a name of <strong>Channel</strong> unless you selected a specific event to stream to when the channel was created.</li>
-      <li>Click on the event name to open the <strong>Control Room</strong> page.</li>
-      <li>Click <strong>Publish and Embed &gt; Player Configuration</strong> in the left navigation.
-        <aside class="bcls-aside bcls-aside--information">Note: If the channel is configured to enable server-side ads (SSAI),  Brightcove Player version 6.18.3 and above <strong>must</strong> be used. Only version 6.18.3 and above players will appear in the dropdown list.</aside>
-      </li>
-      <li>Click the <strong>Player URL</strong> to preview the event in a browser or copy the appropriate embed code to use.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/cloudplayout/playout-embed-code.png" /></figure>
-      </li>
-    </ol>
-    <p>If the program was create with <strong>Ad Insertion</strong> option set to <strong>On</strong>, the publishing options will include a <strong>Select Ad Configuration</strong> dropdown where the ad configuration to use can be selected.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-embed-code-ads.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Related_topics">Related topics</h2>
     <ul>
       <li><a href="/cloud-playout/guides/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
       <li><a href="/cloud-playout/guides/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
-      <li><a href="/cloud-playout/guides/using-channel-actions.html">Using Channel Actions</a></li>
-      <li><a href="/cloud-playout/guides/enabling-server-side-ads.html">Enabling Server-Side Ads (SSAI)</a></li>
       <li><a href="/cloud-playout/guides/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+      <li><a href="/cloud-playout/guides/enabling-server-side-ads.html">Enabling Server-Side Ads (SSAI)</a></li>
+      <li><a href="/cloud-playout/guides/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API Reference</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Channel API Reference</a></li>
@@ -608,7 +593,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 24 Jan 2021
+  Page last updated on 25 Jan 2021
 </div>
 
 

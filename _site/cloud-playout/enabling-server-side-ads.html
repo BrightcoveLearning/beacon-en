@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="In this topic you will learn how to use channel actions to activate, play, or stop a Cloud Playout channel." />
+  <meta name="description" content="In this topic you will learn how a collection of VOD videos and live events can be streamed as a live linear channel." />
 
-  <title>Using Channel Actions</title>
+  <title>Monetizing Cloud Playout</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -130,9 +130,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/cloud-playout/guides/">Cloud Playout</a></li>
+    <li class="breadcrumb-item"><a href="/cloud-playout/">Cloud Playout</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Using Channel Actions</li>
+    <li class="breadcrumb-item active" aria-current="page">Monetizing Cloud Playout</li>
   </ol>
 </nav>
 
@@ -323,27 +323,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <ul class="sidenav-submenu" style="display:none;">
           
           
-          <li><a href="/cloud-playout/guides/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+          <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+          <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/using-channel-actions.html">Using Channel Actions</a></li>
+          <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+          <li><a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+          <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+          <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
           
           
         </ul>
@@ -541,26 +541,69 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Using Channel Actions</h1>
+<h1>Monetizing Cloud Playout</h1>
 <article class="bcls-article">
-  <summary>In this topic you will learn how to use channel actions to activate, play, or stop a Cloud Playout channel.</summary>
+  <summary>In this topic you will learn how a collection of VOD videos and live events can be streamed as a live linear channel.</summary>
   <aside class="bcls-aside bcls-aside--information">Note: This feature is currently in Limited Availability. Contact your Brightcove Account Manager for more information.</aside>
   <section class="bcls-section">
-    <h2 id="actions">Using channel actions</h2>
-    <p>Depending on the status of the channel, various channel action buttons will be available on the channel settings page. Access the channel action buttons by clicking on the channel name to view the channel details. The following channel action buttons are available:</p>
+    <h2 id="requirements">Requirements</h2>
+    <p>To use server-side ad insertion (SSAI) with Cloud Playout the following are required:</p>
     <ul>
-      <li><img src="/assets/images/cloudplayout/cloudplayout-activate-button.png" alt="activate" class="ui-image"> - Activating a channel makes it available for streaming. You must add videos and/or live events to the channel and click <img src="/assets/images/cloudplayout/cloudplayout-save-button.png" alt="save" class="ui-image"> before the Activate button will appear.</li>
-      <li><img src="/assets/images/cloudplayout/cloudplayout-play-now-button.png" alt="play now" class="ui-image"> - Click <strong>Play Now</strong> to start streaming the channel. This option is only available for channels that have an upcoming start time. The channel will start at the scheduled start time automatically.</li>
-      <li><img src="/assets/images/cloudplayout/playout-stop-now.png" alt="stop now" class="ui-image"> - Click <strong>Stop Now</strong> to stop a running channel. This will stop the channel and end the live stream. If the channel is looping, and has an end date/time, the channel will stop at that time automatically. This option gives you a way to stop it early.</li>
+      <li>The account must be enabled for Brightcove Live and Live with SSAI.</li>
+      <li>Brightcove Live and/or S3 must be used as the destination for the channel.</li>
     </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="ads">Enabling Server-Side Ads</h2>
+    <p>It is possible to configure a channel so that server-side ads are displayed using Brightcove's Server-Side Ad Insertion technology. </p>
+    <aside class="bcls-aside bcls-aside--information">Notes: 
+      <ul>
+        <li>When using ad insertion, the channel can only be output to a Brightcove Live Event.</li>
+        <li>If you enable ad insertion, Live Inputs may not be used in the channel.</li>
+      </ul>
+      </aside>
+    <h3>Configuring Ad tags and fill slates</h3>
+    <p>Ensure that you have ad tags and fill slates configured as part of your account administration. For information on configuring ad tags, see <a href="/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a>. Fill slates are content that can be served when there are gaps in a live stream ad break. For information on creating fill slates, see <a href="https://live.support.brightcove.com/admin/managing-live-settings.html">Managing Live Settings</a>.</p>
+    <p>
+      <aside class="bcls-aside bcls-aside--information">Note: Cloud Playout will use the default ad slate configured as part of the <a href="https://live.support.brightcove.com/admin/managing-live-settings.html">Live Settings</a>.</aside>
+    </p>
+    <h3>Creating placeholder ad break videos</h3>
+    <p>You need to indicate which video(s) should be used as "placeholder" videos. "Placeholder" videos will be inserted into the program listing to indicate that an ad should be served and the length of the ad. This needs to be done because when using Server-Side Ad Insertion with Brightcove Live, the "placeholder" video will be replaced with ad content. If you do not insert an ad "placeholder" video, parts of the actual video will be replaced with ad content. If the ad duration is shorter than the ad returned, SSAI will show the ad slate. If the ad duration is longer than the ads returned, the ads will be displayed followed by the ad slate. </p>
+    <p>You may need to create/upload video source files that have video lengths equal to the ad break durations you want to have (i.e. 2 mins, 4 mins, etc.). The content of these videos doesn't matter as they will not actually be played as part of a program. </p>
+    <p>To mark a video as a "placeholder" video, use the Media module to edit the video properties for these videos and tag them with <code translate="No">cp-ad-holder</code>.
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-ad-tag-video.png" /></figure>
+    </p>
+    <h3>Enabling Server-Side Ads for a channel</h3>
+    <p>When creating a channel, set the <strong>Ad Insertion</strong> option to <strong>On</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-ad-insertion-option.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Note: For existing channels, the Ad Insertion setting cannot be changed.</aside>
+    <h3>Inserting ad placeholders into a program</h3>
+    <p>You need to insert ad placeholders into the program listing where ads should be displayed. Follow these steps to insert ad placeholders.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Click a channel name to edit it.</li>
+      <li>In the program listing, click the checkbox next to the video <strong>after</strong> which you want an ad to play.</li>
+      <li>Click <strong>Insert Ads</strong> and select an <strong>ad duration</strong>. The list of ad durations is generated based upon the lengths of all the ad break "placeholder" videos (tagged <code translate="No">cp-ad-holder</code>).
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-insert-ads-button.png" /></figure>
+      </li>
+      <li>Click <strong>Ok</strong>. The "placeholder" video with the selected length will be inserted into the program after the selected video.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-ad-break-inserted.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Note: The video that is inserted as a "placeholder" <strong>will not</strong> be played as part of the program. This video is only used to indicate where an ad request will be made and the ad length.</aside>
+      </li>
+      <li>Click <strong>Save</strong> to save the changes to the program.</li>
+    </ol>
+    <h3>Selecting the ad configuration</h3>
+    <p>Once the program begins playing, click <strong>View in Brightcove Live</strong> to view the channel in the Live module. The dropdown below the player can be used to select the ad configuration that will be used.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-live-select-ad-config.png" /></figure>
+    <figure class="bcls-figure"></figure>
+    <p>For complete information on Server-Side Ad Insertion, see the <a href="https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html">Video Cloud SSAI Overview</a> topic.</p>
   </section>
   <section class="bcls-section">
     <h2 id="Related_topics">Related topics</h2>
     <ul>
       <li><a href="/cloud-playout/guides/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
       <li><a href="/cloud-playout/guides/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+      <li><a href="/cloud-playout/guides/using-channel-actions.html">Using Channel Actions</a></li>
       <li><a href="/cloud-playout/guides/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
-      <li><a href="/cloud-playout/guides/enabling-server-side-ads.html">Enabling Server-Side Ads (SSAI)</a></li>
       <li><a href="/cloud-playout/guides/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API Reference</a></li>
@@ -593,7 +636,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 24 Jan 2021
+  Page last updated on 25 Jan 2021
 </div>
 
 

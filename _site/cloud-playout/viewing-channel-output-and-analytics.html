@@ -1,38 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="This topic provides an overview of Cloud Playout, which allows you to compile and schedule a combination of videos-on-demand and live feeds as a live linear channel.">
-  
-  <title>Overview: Cloud Playout</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="/assets/css/site/styles.css">
-  <link rel="stylesheet" href="/assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="/assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="In this topic you will learn to view the output and analytics for a running Cloud Playout channel." />
 
-  gtag('config', 'UA-2728311-17');
-</script>
+  <title>Viewing Channel Output and Analytics</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="/assets/js/site/google-analytics.js"></script>
   <script src="/assets/js/sajari-head.js"></script>
+  <link rel="stylesheet" href="/assets/css/local.css" />
 </head>
 
 <body class="body">
-
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
@@ -128,9 +130,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/cloud-playout/guides/">Cloud Playout</a></li>
+    <li class="breadcrumb-item"><a href="/cloud-playout/">Cloud Playout</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Overview: Cloud Playout</li>
+    <li class="breadcrumb-item active" aria-current="page">Viewing Channel Output and Analytics</li>
   </ol>
 </nav>
 
@@ -321,27 +323,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <ul class="sidenav-submenu" style="display:none;">
           
           
-          <li><a href="/cloud-playout/guides/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+          <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+          <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/using-channel-actions.html">Using Channel Actions</a></li>
+          <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+          <li><a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+          <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+          <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
           
           
         </ul>
@@ -539,57 +541,36 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Overview: Cloud Playout</h1>
+<h1>Viewing Channel Output and Analytics</h1>
 <article class="bcls-article">
-  <summary>This topic provides an overview of Cloud Playout, which allows you to compile and schedule a combination of videos-on-demand and live feeds as a live linear channel.</summary>
+  <summary>In this topic you will learn to view the output and analytics for a running Cloud Playout channel.</summary>
+  <aside class="bcls-aside bcls-aside--information">Note: This feature is currently in Limited Availability. Contact your Brightcove Account Manager for more information.</aside>
   <section class="bcls-section">
-    <h2 id="Introduction">Introduction</h2>
-    <p>Brightcove Cloud Playout is a Studio module that enables you to program a scheduled playout of items from your VOD catalogue, combined with live feeds, and stream it as a Linear Channel all with the reliability and scalability of Brightcove Live.</p>
-    <p>Cloud Playout offers a powerful, end-to-end solution for channels of scheduled programming, including:</p>
+    <h2 id="analytics">Viewing channel output and analytics</h2>
+    <p>While the channel is in a <strong>RUNNING</strong> state, it is possible to view channel output and analytics. Click on the channel on the <strong>Channels</strong> page to open the channel details.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/cloudplayout/cloudplayout-program-analytics.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Note: The preview image is updated every three seconds.</aside>
+    <p>Click <strong>View in Brightcove Live</strong> to open the Live module Control Room page with the currently running program. The currently playing video in the program will be highlighted with a <strong>Playing Now</strong> banner. Also notice the <strong>Status</strong> notification in the upper right, and the <img src="/assets/images/cloudplayout/cloudplayout-video-icon.png" alt="Live icon"> that will be green if there is a live feed available. Otherwise it will be red if a live event is currently playing, or gray if VOD content is playing.</p>
+    <p>The following analytics values will be displayed:</p>
     <ul>
-      <li>24x7 Linear Channels</li>
-      <li>Pop-Up / Virtual Channels</li>
-      <li>Simulated Live Events</li>
+      <li><strong>Network In</strong> - Average bytes per second in the last minute</li>
+      <li><strong>Network Out</strong> - Average bytes per second in the last minute</li>
+      <li><strong>Frames Dropped</strong> - Percent of frames dropped in the last minute</li>
     </ul>
-    <p>Cloud Playout helps you increase audience engagement and create new revenue opportunities through a broadcast-like, Live TV experience leveraging pre-recorded content. Use existing VOD assets to create scheduled live channels.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Features">Features</h2>
-    <p>Features of Cloud Playout include:</p>
-    <ul>
-      <li>Import VOD assets from your Video Cloud Media library.</li>
-      <li>Switch between VOD assets and scheduled live feeds.</li>
-      <li>React in real time to last minute schedule changes in an easy, quick, and reliable manner.</li>
-      <li>Monetize your channel content with server-side ad insertion (SSAI).</li>
-      <li>Configure your channel to loop your program.</li>
-      <li>Optimize playout by device.</li>
-      <li>Drag and drop to re-order the program schedule at any moment, even in Running state.</li>
-      <li>Push a channel to your owned and operated properties via Brightcove Live, an Amazon S3 bucket, or a 3rd party destination via RTMP output.</li>
-      <li>API to retrieve the EPG (electronic program guide) for a channel</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="limitations">Limitations</h2>
-    <p>The following assumptions and limitations apply.</p>
-    <ul>
-      <li> Your videos must be ingested using a Dynamic Delivery profile and  must have an MP4 rendition</li>
-      <li>The maximum input bitrate and resolution supported for Cloud Playout is 20MBPS/1080p. This applies both to VOD content and live inputs.</li>
-      <li>Brightcove recommends using videos with at least a 2 minute duration to ensure a correct transition between videos and electronic program guide accuracy</li>
-      <li>The minimum length for Live events is 5 minutes.</li>
-      <li>Every Live Event in Cloud Playout shares an 1:1 relation with a Video Cloud remote asset. This remote asset cannot be re-used in other channels. If the live event is removed from the channel, the associated remote asset will be automatically deleted. When a channel is deleted, any associated remote assets will also be deleted automatically.</li>
-      <li>When a live event is currently playing, but no active feed is available, the slate content will be played in a loop until the live feed resumes or the event ends. There will be a delay of approximately 30 seconds before the slate MP4 starts playing.</li>
-      <!--<li><strong>Input Looper : if the asset URL is duplicated, then input looper rely on order for switching; if the order is changes during the course of the switching , then subsequent N+1 switch it attempt to create would rely on the order. </strong></li>-->
-      <li>If the Video Cloud account is configured for geo-restriction, then the channel <strong>Output Region</strong> should be created in a  region compatible with the Video Cloud geo-restriction policy.</li>
-      <li>For the best experience, Brightcove recommends using the Google Chrome browser.</li>
-    </ul>
+    <p>The <strong>Network In</strong> analytics are particularly useful for detecting when the stream for a live event has failed (you should also see the slate video playing in the output rather than the live stream):
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/cloudplayout/cloudplayout-network-in-analytics.png" alt="Network In Analytics">
+        <figcaption class="bcls-caption--image">Network In Analytics</figcaption>
+      </figure>
+    </p>
   </section>
   <section class="bcls-section">
     <h2 id="Related_topics">Related topics</h2>
     <ul>
-      <li><a href="/cloud-playout/guides/cloud-playout-stream-vod.html">Creating a Channel</a></li>
+      <li><a href="/cloud-playout/guides/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+      <li><a href="/cloud-playout/guides/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
       <li><a href="/cloud-playout/guides/using-channel-actions.html">Using Channel Actions</a></li>
       <li><a href="/cloud-playout/guides/enabling-server-side-ads.html">Enabling Server-Side Ads (SSAI)</a></li>
-      <li><a href="/cloud-playout/guides/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
       <li><a href="/cloud-playout/guides/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API Reference</a></li>
@@ -622,7 +603,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 24 Jan 2021
+  Page last updated on 25 Jan 2021
 </div>
 
 

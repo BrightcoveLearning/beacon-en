@@ -1,38 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Brightcove Cloud Playout is a Studio module that enables you to program a scheduled playout of items from your VOD catalogue, combined with live feeds, and stream it as a Linear Channel all with the reliability and scalability of Brightcove Live.">
-  
-  <title>Managing Cloud Playout Channels</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="/assets/css/site/styles.css">
-  <link rel="stylesheet" href="/assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="/assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="In this topic you will learn how get the embed code to play a Cloud Playout channel in the Brightcove Player. The embed code can be placed in any web page." />
 
-  gtag('config', 'UA-2728311-17');
-</script>
+  <title>Generating the Channel Embed Code</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="/assets/js/site/google-analytics.js"></script>
   <script src="/assets/js/sajari-head.js"></script>
+  <link rel="stylesheet" href="/assets/css/local.css" />
 </head>
 
 <body class="body">
-
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
@@ -128,7 +130,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item active" aria-current="page">Managing Cloud Playout Channels</li>
+    <li class="breadcrumb-item"><a href="/cloud-playout/">Cloud Playout</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Generating the Channel Embed Code</li>
   </ol>
 </nav>
 
@@ -319,27 +323,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <ul class="sidenav-submenu" style="display:none;">
           
           
-          <li><a href="/cloud-playout/guides/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+          <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+          <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/using-channel-actions.html">Using Channel Actions</a></li>
+          <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+          <li><a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+          <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
           
           
           
-          <li><a href="/cloud-playout/guides/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+          <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
           
           
         </ul>
@@ -537,28 +541,48 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Managing Cloud Playout Channels</h1>
+<h1>Generating the Channel Embed Code</h1>
 <article class="bcls-article">
-  <summary>Brightcove Cloud Playout is a Studio module that enables you to program a scheduled playout of items from your VOD catalogue, combined with live feeds, and stream it as a Linear Channel all with the reliability and scalability of Brightcove Live.</summary>
+  <summary>In this topic you will learn how get the embed code to play a Cloud Playout channel in the Brightcove Player. The embed code can be placed in any web page.</summary>
   <aside class="bcls-aside bcls-aside--information">Note: This feature is currently in Limited Availability. Contact your Brightcove Account Manager for more information.</aside>
-
   <section class="bcls-section">
-    <h2 id="topics">Topics</h2>
-    <ul style="padding: 0;margin-left: 1rem;list-style: none;">
-      <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
-      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
-      <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
-      <li><a href="/cloud-playout/enabling-server-side-ads.html">Enabling Server-Side Ads (SSAI)</a></li>
-      <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
-      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+    <h2 id="publish">Generating the embed code for a Cloud Playout channel</h2>
+    <p>To generate the embed code for a Cloud Playout channel, you will use the Live module. For full details on using the Live module, see <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Creating and Managing Live Events using the Live Module</a>.</p>
+    <p>Two types of embed code are available:</p>
+    <ul>
+      <li><strong>Standard</strong> - iframe embed code. Recommended for most cases. This type places the player inside an &lt;iframe&gt; tag.</li>
+      <li><strong>Advanced</strong> - In-page embed code. Allows the player to exist in the HTML page directly, not in an iframe. This offers developers the benefits of ease of accessing the player and associated properties and events.</li>
+    </ul>
+    <p>You also have the ability to get the URL to the published player. This is useful for viewing the event in a browser.</p>
+    <p>To generate the embed code for a live event, follow these steps:</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Open the Live module.</li>
+      <li>Locate the live event the channel will be streaming to. Typically, the event will be located in the <strong>Standby</strong> tab and have a name of <strong>Channel</strong> unless you selected a specific event to stream to when the channel was created.</li>
+      <li>Click on the event name to open the <strong>Control Room</strong> page.</li>
+      <li>Click <strong>Publish and Embed &gt; Player Configuration</strong> in the left navigation.
+        <aside class="bcls-aside bcls-aside--information">Note: If the channel is configured to enable server-side ads (SSAI),  Brightcove Player version 6.18.3 and above <strong>must</strong> be used. Only version 6.18.3 and above players will appear in the dropdown list.</aside>
+      </li>
+      <li>Click the <strong>Player URL</strong> to preview the event in a browser or copy the appropriate embed code to use.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/cloudplayout/playout-embed-code.png" /></figure>
+      </li>
+    </ol>
+    <p>If the program was create with <strong>Ad Insertion</strong> option set to <strong>On</strong>, the publishing options will include a <strong>Select Ad Configuration</strong> dropdown where the ad configuration to use can be selected.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-embed-code-ads.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Related topics</h2>
+    <ul>
+      <li><a href="/cloud-playout/guides/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+      <li><a href="/cloud-playout/guides/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+      <li><a href="/cloud-playout/guides/using-channel-actions.html">Using Channel Actions</a></li>
+      <li><a href="/cloud-playout/guides/enabling-server-side-ads.html">Enabling Server-Side Ads (SSAI)</a></li>
+      <li><a href="/cloud-playout/guides/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API Reference</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Channel API Reference</a></li>
     </ul>
   </section>
 </article>
-
-
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
@@ -572,6 +596,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <div class="col-sm-2 right-side-bar">
       
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
       
     </div>
   </div>
@@ -579,7 +608,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 18 Jan 2021
+  Page last updated on 25 Jan 2021
 </div>
 
 
