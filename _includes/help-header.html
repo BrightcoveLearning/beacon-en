@@ -3,7 +3,7 @@
 <nav id="breadcrumbs" aria-label="breadcrumb" style="display: inline-block;">
   <ol class="breadcrumb arr-right">
     {% if page.parent and page.name != "index.html" %}
-    <li class="breadcrumb-item"><a href="/{{ page.parent | downcase }}/help/index.html">{{ page.parent | capitalize }}</a></li>
+    <li class="breadcrumb-item"><a href="/{{ page.section }}/help/index.html">{{ page.parent | capitalize }}</a></li>
     {% endif %}
     <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
   </ol>

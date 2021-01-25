@@ -118,11 +118,6 @@ h1 {
   margin-bottom: 0;
 }
 
-h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
-  font-size: 3rem;
-  color:{{site.product_color}};
-  margin-right: 1rem;
-}
 .card-icon i {
   color: {{site.product_color}};
 }
@@ -149,7 +144,7 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
     font-size: 1.1em;
     margin-left: 1rem;
   }
-  p, a {
+  p, a, summary {
     margin-left: 1.1rem;
   }
 
