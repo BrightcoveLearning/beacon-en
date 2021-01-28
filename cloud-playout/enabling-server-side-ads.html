@@ -33,11 +33,11 @@ parent: Cloud Playout
     <p>You need to indicate which video(s) should be used as "placeholder" videos. "Placeholder" videos will be inserted into the program listing to indicate that an ad should be served and the length of the ad. This needs to be done because when using Server-Side Ad Insertion with Brightcove Live, the "placeholder" video will be replaced with ad content. If you do not insert an ad "placeholder" video, parts of the actual video will be replaced with ad content. If the ad duration is shorter than the ad returned, SSAI will show the ad slate. If the ad duration is longer than the ads returned, the ads will be displayed followed by the ad slate. </p>
     <p>You may need to create/upload video source files that have video lengths equal to the ad break durations you want to have (i.e. 2 mins, 4 mins, etc.). The content of these videos doesn't matter as they will not actually be played as part of a program. </p>
     <p>To mark a video as a "placeholder" video, use the Media module to edit the video properties for these videos and tag them with <code translate="No">cp-ad-holder</code>.
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-ad-tag-video.png" /></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-ad-tag-video.png" /></figure>
     </p>
     <h3>Enabling Server-Side Ads for a channel</h3>
     <p>When creating a channel, set the <strong>Ad Insertion</strong> option to <strong>On</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-ad-insertion-option.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-ad-insertion-option.png" /></figure>
     <aside class="bcls-aside bcls-aside--information">Note: For existing channels, the Ad Insertion setting cannot be changed.</aside>
     <h3>Inserting ad placeholders into a program</h3>
     <p>You need to insert ad placeholders into the program listing where ads should be displayed. Follow these steps to insert ad placeholders.</p>
@@ -45,17 +45,17 @@ parent: Cloud Playout
       <li>Click a channel name to edit it.</li>
       <li>In the program listing, click the checkbox next to the video <strong>after</strong> which you want an ad to play.</li>
       <li>Click <strong>Insert Ads</strong> and select an <strong>ad duration</strong>. The list of ad durations is generated based upon the lengths of all the ad break "placeholder" videos (tagged <code translate="No">cp-ad-holder</code>).
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-insert-ads-button.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-insert-ads-button.png" /></figure>
       </li>
       <li>Click <strong>Ok</strong>. The "placeholder" video with the selected length will be inserted into the program after the selected video.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-ad-break-inserted.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-ad-break-inserted.png" /></figure>
         <aside class="bcls-aside bcls-aside--information">Note: The video that is inserted as a "placeholder" <strong>will not</strong> be played as part of the program. This video is only used to indicate where an ad request will be made and the ad length.</aside>
       </li>
       <li>Click <strong>Save</strong> to save the changes to the program.</li>
     </ol>
     <h3>Selecting the ad configuration</h3>
     <p>Once the program begins playing, click <strong>View in Brightcove Live</strong> to view the channel in the Live module. The dropdown below the player can be used to select the ad configuration that will be used.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloudplayout/playout-live-select-ad-config.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-live-select-ad-config.png" /></figure>
     <figure class="bcls-figure"></figure>
     <p>For complete information on Server-Side Ad Insertion, see the <a href="https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html">Video Cloud SSAI Overview</a> topic.</p>
   </section>
