@@ -546,7 +546,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <summary>In this topic you will learn how a collection of VOD videos and live events can be streamed as a live linear channel.</summary>
   <section class="bcls-section">
     <p>The  Cloud Playout module enables broadcasters and media publishers to use a collection of VOD videos and live streams and then stream them as a linear channel. The channel can be streamed to Brightcove Live, Amazon S3 or a specified RTMP URL.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: This feature is currently in Limited Availability. Contact your Brightcove Account Manager for more information.</aside>
     <p>To access the Cloud Playout module, click <strong>Cloud Playout</strong> in the navigation menu. A list of all Cloud Playout channels that have been created will be displayed (if any).</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="playout channel list" src="/assets/images/cloud-playout/playout-channel-list.png" /></figure>
     <p>The page will display the following information:</p>
@@ -595,13 +594,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Enter the channel <strong>Schedule</strong> details.
         <ul>
           <li><strong>Loop Playout Content</strong> - If <strong>On</strong>, the program will be played in a loop and the <strong>End Date/Time</strong> will be enabled. The program can still be modified at any time and the changes will be reflected in the current program and the loops to follow. See the <a href="#looping">Creating a looping program</a> section below.</li>
-          <li><strong>Ad Insertion</strong> - If on, allows ads to be displayed during channel playback. If this option is selected, Live inputs are not allowed, and you can only output to a <strong>Brightcove Live Event or</strong> <strong>Amazon S3 Bucket</strong>. See <a href="/cloud-playout/enabling-server-side-ads.html">Enabling Server-Side Ads</a>.</li>
+          <li><strong>Ad Insertion</strong> - If on, allows ads to be displayed during channel playback. If this option is selected, Live inputs are not allowed, and you can only output to a <strong>Brightcove Live Event</strong> or <strong>Amazon S3 Bucket</strong>. See <a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Content</a>.</li>
           <li><strong>Start Date/Time</strong> - Time when the channel will start playing out. The start time for all assets will be calculated by adding their duration to this start time. This time can be updated only when the channel is not in running state.</li>
           <li><strong>End Date/Time</strong> - If no value is entered and <strong>Loop Playout Content</strong> is not selected, the stream will end once the playout is complete. If <strong>Loop Playout Content</strong> is selected and there is no <strong>End Date/Time</strong>, the playout will be streamed until the channel is stopped. This time can be updated at any time.</li>
         </ul>
       </li>
       <li>If you will be using Live inputs, set <strong>Live Input</strong> to On, and enter a Slate URL, unless you are going to use the default Brightcove MP4 for you slate. The slate MP4 will play whenever Live input is stopped because the encoder is stopped or some technical issue blocks the live stream. <strong>Note that <strong>the Slate URL must be a static URL that is always available</strong> (short-lived CDN URLs are not allowed).</strong></li>
-      <li>Enter the channel <strong>Destination</strong> details. Cloud Playout  supports 2 outputs at the same time. For example, you can output HLS into an S3 Bucket and an RTMP feed to  a Brightcove Live Channel or a 3rd party ingestion point. Note that <strong>Brightcove Live Event</strong> and <strong>RTMP</strong> is not supported.
+      <li>Enter the channel <strong>Destination</strong> details. Cloud Playout  supports 2 outputs at the same time. For example, you can output HLS into an S3 Bucket and an RTMP feed to  a Brightcove Live Channel or a 3rd party ingestion point. Note that combining <strong>Brightcove Live Event</strong> and <strong>RTMP</strong> as simultaneous destinations is not supported.
         <ul>
           <li><strong>Optimize Display for</strong> - Controls the bitrate and dimensions for the output
             <ul>
