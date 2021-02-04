@@ -1,0 +1,2783 @@
+openapi: 3.0.0
+x-bc-implicit-head: true
+x-bc-implicit-options: true
+x-bc-upstream: 'http://backend_server'
+info:
+  title: Brightcove Beacon API Reference
+  description: 'Reference for the Brightcove Beacon API.'
+  version: 1.0.0
+  x-bc-studio: beacon
+servers:
+  - url: 'https://beacon.api.brightcove.com/v1'
+    variables: {}
+tags:
+  - name: Apps
+    description: Apps related endpoints
+  - name: Playlists
+    description: Playlists related endpoints
+  - name: Pages
+    description: Pages related endpoints
+  - name: Series
+    description: Series related endpoints
+  - name: Seasons
+    description: Seasons related endpoints
+  - name: Genres
+    description: Genres related endpoints
+  - name: Metadata
+    description: Metadata related endpoints
+paths:
+  '/accounts/{account_id}/apps':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+    get:
+      tags:
+        - Apps
+      summary: Get a list of Beacon Apps for this account
+      operationId: GetBeaconApps
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppsList'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/apps/{app_id}/config':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/AppId'
+    get:
+      tags:
+        - Apps
+      summary: Configuration options for Beacon Apps
+      operationId: GetBeaconAppConfig
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppsConfig'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/apps/{app_id}/config/languages':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/AppId'
+    get:
+      tags:
+        - Apps
+      summary: List of languages supported by this Beacon app
+      operationId: GetAppLanguages
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppsConfigLanguages'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    put:
+      tags:
+        - Apps
+      summary: Update languages supported by this Beacon app
+      operationId: UpdateAppLanguages
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppsConfigLanguages'
+        '400':
+          description: 'Unexpected language data'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/apps/{app_id}/languages':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/AppId'
+    get:
+      tags:
+        - Apps
+      summary: List of all languages supported by this Beacon app
+      operationId: GetBeaconAppLanguages
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AvailableLanguages'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/apps/{app_id}/plans':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/AppId'
+    get:
+      tags:
+        - Apps
+      summary: List all available plans for Beacon Apps
+      operationId: GetBeaconPlans
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plans'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/series':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/order'
+      - $ref: '#/components/parameters/sort'
+    get:
+      tags:
+        - Series
+      summary: Get a list of Series for this account
+      operationId: GetAllBeaconSeries
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesList'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    post:
+      tags:
+        - Series
+      summary: Create a new Series for this account
+      operationId: CreateBeaconSeries
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Series created'
+                  result:
+                    type: 
+                      object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Series'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/series/{series_id}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/SeriesId'
+    get:
+      tags:
+        - Series
+      summary: Get one Beacon Series for this account
+      operationId: GetBeaconSeries
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                    result:
+                      type: 
+                        object
+                      properties:
+                        data:
+                          $ref: '#/components/schemas/Series'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    put:
+      tags:
+        - Series
+      summary: Update One Beacon Series for this account
+      operationId: UpdateBeaconSeries
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Series updated'
+                  result:
+                    type: 
+                      object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Series'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+    patch:
+      tags:
+        - Series
+      summary: Partially update One Beacon Series for this account
+      operationId: PartiallyUpdateBeaconSeries
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Series updated'
+                  result:
+                    type: 
+                      object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Series'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+    delete:
+      tags:
+        - Series
+      summary: Delete One Beacon Series for this account
+      operationId: DeleteBeaconSeries
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Series deleted'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/series/{series_id}/seasons':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/SeriesId'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/order'
+      - $ref: '#/components/parameters/sort'
+    get:
+      tags:
+        - Series
+      summary: Get all seasons in one Beacon Series
+      operationId: GetBeaconSeriesSeasons
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeasonsList'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/series/{series_id}/seasons/{season_id}/episodes':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/SeriesId'
+      - $ref: '#/components/parameters/SeasonId'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/order'
+      - $ref: '#/components/parameters/sort'
+    get:
+      tags:
+        - Series
+      summary: Get all episodes in one Season in one Beacon Series
+      operationId: GetBeaconSeriesSeasonsEpisodes
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EpisodesList'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/seasons':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+    get:
+      tags:
+        - Seasons
+      summary: Get a list of Seasons for this account
+      operationId: GetAllBeaconSeasons
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeasonsList'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    post:
+      tags:
+        - Seasons
+      summary: Create a new Season for this account
+      operationId: CreateBeaconSeason
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Season created'
+                  result:
+                    type: 
+                      object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Season'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/seasons/{season_id}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/SeasonId'
+    get:
+      tags:
+        - Seasons
+      summary: Get one Beacon Season for this account
+      operationId: GetBeaconSeason
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                    result:
+                      type: 
+                        object
+                      properties:
+                        data:
+                          $ref: '#/components/schemas/Season'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    patch:
+      tags:
+        - Seasons
+      summary: Partially update One Beacon Season for this account
+      operationId: PartialUpdateBeaconSeason
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Season updated'
+                  result:
+                    type: 
+                      object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Season'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+    put:
+      tags:
+        - Seasons
+      summary: Update One Beacon Season for this account
+      operationId: UpdateBeaconSeason
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Season updated'
+                  result:
+                    type: 
+                      object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Season'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+    delete:
+      tags:
+        - Seasons
+      summary: Delete One Beacon Season for this account
+      operationId: DeleteBeaconSeason
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Season deleted'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/seasons/{season_id}/episodes':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/SeasonId'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/order'
+      - $ref: '#/components/parameters/sort'
+    get:
+      tags:
+        - Seasons
+      summary: Get episodes for one  Beacon Season
+      operationId: GetBeaconSeasonEpisodes
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EpisodesList'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/genres':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+    get:
+      tags:
+        - Genres
+      summary: Get a list of Genre for this account
+      operationId: GetAllBeaconGenre
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenresList'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    post:
+      tags:
+        - Genres
+      summary: Create a new Genre or update existing one for this account
+      operationId: CreateBeaconGenre
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Genre'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdatedGenres'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/genres/{genre_id}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/GenreId'
+    get:
+      tags:
+        - Genres
+      summary: Get one Beacon Genre for this account
+      operationId: GetBeaconGenre
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Genre'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/apps/{app_id}/pages':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/order'
+      - $ref: '#/components/parameters/sort'
+      - $ref: '#/components/parameters/archived'
+      - $ref: '#/components/parameters/published'
+    get:
+      tags:
+        - Pages
+      summary: Get a list of Pages
+      operationId: GetAllBeaconPages
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagesList'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    post:
+      tags:
+        - Pages
+      summary: Create a new Page
+      operationId: CreateBeaconPage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Page'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: 
+                  object
+                properties:
+                  result:
+                    type: 
+                      object
+                    properties:
+                      message:
+                        type:
+                          string
+                        example:
+                          'page created'
+                      data:
+                        $ref: '#/components/schemas/Page'
+        '400':
+          description: 'Unable to create a Page'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/apps/{app_id}/pages/{page_id}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/PageId'
+    get:
+      tags:
+        - Pages
+      summary: Get one Beacon Page
+      operationId: GetBeaconPages
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Page'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    put:
+      tags:
+        - Pages
+      summary: Update One Beacon Page for this account
+      operationId: UpdateBeaconPage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Page'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: 
+                  object
+                properties:
+                  result:
+                    type: 
+                      object
+                    properties:
+                      message:
+                        type:
+                          string
+                        example:
+                          'page updated'
+                      data:
+                        $ref: '#/components/schemas/Page'
+        '400':
+          description: 'Invalid parameters'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+    delete:
+      tags:
+        - Pages
+      summary: Permanently Delete One Beacon Page
+      operationId: DeleteBeaconPage
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessDataResponse'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/apps/{app_id}/pages/{page_id}/archive':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/PageId'
+    post:
+      tags:
+        - Pages
+      summary: Archive one Beacon Page
+      operationId: ArchiveBeaconPage
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                 $ref: '#/components/schemas/SuccessDataResponse'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/apps/{app_id}/pages/{page_id}/restore':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/PageId'
+    post:
+      tags:
+        - Pages
+      summary: Restore one Beacon Page
+      operationId: RestoreBeaconPage
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                 $ref: '#/components/schemas/SuccessDataResponse'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/apps/{app_id}/pages/{page_id}/rights':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/PageId'
+    get:
+      tags:
+        - Pages
+      summary: Get one Beacon Page rights
+      operationId: GetBeaconPageRights
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageRight'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+    put:
+      tags:
+        - Pages
+      summary: Update Beacon Page rights
+      operationId: UpdateBeaconPageRights
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                 $ref: '#/components/schemas/SuccessDataResponse'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/apps/{app_id}/pages/{page_id}/images':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/PageId'
+    post:
+      tags:
+        - Pages
+      summary: Upload images for a Beacon Page
+      operationId: UploadBeaconPageImages
+      requestBody:
+        description: Images for a page
+        required: true
+        content:
+         multipart/form-data:
+          schema:
+            type: object
+            properties:
+              language:
+                type: string
+                example: 'en'
+              icon:
+                type: string
+                format: binary
+              hover:
+                type: string
+                format: binary
+              focused:
+                type: string
+                format: binary
+              background_horizontal:
+                type: string
+                format: binary
+              background_vertical:
+                type: string
+                format: binary
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadedPageImages'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/apps/{app_id}/users':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/Id'
+    get:
+      tags:
+        - Users
+      summary: Return users by id
+      operationId: GetBeaconUsersById
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSimple'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read            
+  '/accounts/{account_id}/apps/{app_id}/users/search':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/Query'
+    get:
+      tags:
+        - Users
+      summary: Return first 10 users containing query string in email and first 10 containing it in the name
+      operationId: SearchBeaconUsers
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersSearchResult'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/apps/{app_id}/users/count':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+    get:
+      tags:
+        - Users
+      summary: Return total number of users
+      operationId: CountBeaconUsers
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+                    example: 1234
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read            
+  '/accounts/{account_id}/apps/{app_id}/users/{user_id}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/UserId'
+    get:
+      tags:
+        - Users
+      summary: Get one Beacon User
+      operationId: GetBeaconUser
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: 'User not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    delete:
+      tags:
+        - Users
+      summary: Delete one Beacon User and all related data
+      operationId: DeleteBeaconUser
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: 
+                  object
+                properties:
+                  result:
+                    type: 
+                      object
+                    properties:
+                      message:
+                        type:
+                          string
+                        example:
+                          'user and all related data deleted'
+        '404':
+          description: 'User not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/apps/{app_id}/users/{user_id}/viewinghistory':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/order'
+      - $ref: '#/components/parameters/sort'
+    get:
+      tags:
+        - Users
+      summary: Get Users Viewing History
+      operationId: GetUserViewingHistory
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ViewingHistory'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/apps/{app_id}/history':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/BcUserId'
+      - $ref: '#/components/parameters/Context'
+      - $ref: '#/components/parameters/ContentType'
+    get:
+      tags:
+        - History
+      summary: Get activity history for a BC Account/App/User
+      operationId: GetBcUserHistory
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActivityHistory'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    post:
+      tags:
+        - History
+      summary: Save one event in activity history for a BC Account/App/User
+      operationId: AddBcUserHistory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/History'     
+      responses:
+          '200':
+            description: SUCCESS
+            content:
+              application/json:
+                schema:
+                  type: 
+                    object
+                  properties:
+                    result:
+                      type: 
+                        object
+                      properties:
+                        message:
+                          type:
+                            string
+                          example:
+                            'user activity history event created'
+                        data:
+                          type: string  
+                          example: '123'
+  '/accounts/{account_id}/apps/{app_id}/users/{user_id}/sessions/{sessions_id}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/SessionId'
+    delete:
+      tags:
+        - Users
+      summary: Delete one device session
+      operationId: DeleteDeviceSession
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: 
+                  object
+                properties:
+                  result:
+                    type: 
+                      object
+                    properties:
+                      message:
+                        type:
+                          string
+                        example:
+                          'Device session deleted'
+  '/accounts/{account_id}/apps/{app_id}/users/{user_id}/profiles/{profile_id}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/ProfileId'
+    delete:
+      tags:
+        - Users
+      summary: Delete one user's profile
+      operationId: DeleteUserProfile
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: 
+                  object
+                properties:
+                  result:
+                    type: 
+                      object
+                    properties:
+                      message:
+                        type:
+                          string
+                        example:
+                          'User profile deleted'                     
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/apps/{app_id}/cache/{cache_type}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/CacheType'
+      - $ref: '#/components/parameters/ContentType'
+    post:
+      tags:
+        - Apps
+      summary: Clear Beacon Cache
+      operationId: ClearBeaconCache
+      responses:
+        '200':
+          description: SUCCESS
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/apps/{app_id}/ingestion/{resource_type}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/AppId'
+      - $ref: '#/components/parameters/CacheType'
+      - $ref: '#/components/parameters/ResourceType'
+    post:
+      tags:
+        - Apps
+      summary: Start ingestion of Brightcove content into Beacon
+      operationId: BeaconIngestionStart
+      responses:
+        '200':
+          description: SUCCESS
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+  '/accounts/{account_id}/metadata':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+    get:
+      tags:
+        - Metadata
+      summary: Search for metadata through the whole account
+      operationId: SearchBeaconMetadata
+      responses:
+        '200':
+          description: SUCCESS
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+  '/accounts/{account_id}/playlists':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/order'
+      - $ref: '#/components/parameters/sort'
+    get:
+      tags:
+        - Playlists
+      summary: Get a list of Playlists for this account
+      operationId: GetAllBeaconPlaylists
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaylistList'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+    post:
+      tags:
+        - Playlists
+      summary: Create a new playlists for this account
+      operationId: CreateBeaconPlaylists
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Playlists created'
+                  result:
+                    type: 
+                      object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Playlists'
+  '/accounts/{account_id}/playlists/{playlist_id}':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/PlaylistId'
+    delete:
+      tags:
+        - Playlists
+      summary: Delete One Beacon playlists for this account
+      operationId: DeleteBeaconPlaylists
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Playlist deleted'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/all
+    patch:
+      tags:
+        - Playlists
+      summary: Update a playlists for this account
+      operationId: UpdateBeaconPlaylists
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Playlist Updated'
+                  result:
+                    type: 
+                      object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Playlists'
+  '/accounts/{account_id}/playlists/search':
+    parameters:
+      - $ref: '#/components/parameters/AccountId'
+      - $ref: '#/components/parameters/ContentType'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/Query'
+    get:
+      tags:
+        - Playlists
+      summary: Return all the playlists containing query string in title or a matched id.
+      operationId: SearchBeaconPlaylists
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaylistList'
+        '404':
+          description: 'Page not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDataResponse'
+      security:
+        - BC_OAuth2:
+            - video-cloud/beacon/read
+components:
+  parameters:
+    AccountId:
+      name: account_id
+      in: path
+      description: Video Cloud account ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    ContentType:
+      name: Content-Type
+      in: header
+      description: 'Content-Type: application/json'
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+        default: application/json
+      example: application/json
+    AppId:
+      name: app_id
+      in: path
+      description: Beacon App ID
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    SeriesId:
+      name: series_id
+      in: path
+      description: Beacon Series ID
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    PlaylistId:
+      name: playlist_id
+      in: path
+      description: Beacon Playlist ID
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    SeasonId:
+      name: season_id
+      in: path
+      description: Beacon Season ID
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    GenreId:
+      name: genre_id
+      in: path
+      description: Beacon Genre ID
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    PageId:
+      name: page_id
+      in: path
+      description: Beacon Page ID
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    UserId:
+      name: user_id
+      in: path
+      description: Beacon User ID
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: integer
+    BcUserId:
+      name: user
+      in: query
+      description: Brigtcove User ID
+      required: true
+      schema:
+        type: integer
+    Context:
+      name: context
+      in: query
+      description: Type of history objects. Currenty only viewers supported
+      required: true
+      schema:
+        type: integer
+        example:
+          viewers
+    SessionId:
+      name: sessions_id
+      in: path
+      description: Beacon Device Session ID
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: integer
+    ProfileId:
+      name: profile_id
+      in: path
+      description: Beacon User profile ID
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: integer        
+    limit:
+      name: limit
+      in: query
+      description: "The requested maximum number of collection items to return for a single request."
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 50
+    page:
+      name: page
+      in: query
+      description: 'page number of the elements to be requested from server. one-indexed'
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 1
+    order:
+      name: order
+      in: query
+      description: "The order to be applied to the specified field in the assets returned."
+      required: false
+      schema:
+        type: string
+        enum:
+          - ASC
+          - DESC
+    sort:
+      name: sort
+      in: query
+      description: "The sort to be applied to the specified field in the assets returned."
+      required: false
+      schema:
+        type: string
+    published:
+      name: published
+      in: query
+      description: "The published filter to be applied to the assets returned."
+      required: false
+      schema:
+        type: boolean
+    archived:
+      name: archived
+      in: query
+      description: "The archived filter to be applied to the assets returned."
+      required: false
+      schema:
+        type: boolean
+    Query:
+      name: query
+      in: query
+      description: "Query substring used for user lookup."
+      required: false
+      schema:
+        type: string
+    Id:
+      name: id
+      in: query
+      description: "Comma separated list of users ids."
+      required: false
+      schema:
+        type: string        
+        example: 100,101
+    CacheType:
+      name: cache_type
+      in: path
+      description: Beacon Cache Type
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    ResourceType:
+      name: resource_type
+      in: path
+      description: Beacon Resource Type
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+  schemas:
+    AgeRating:
+      type: object
+      properties:
+        country_name:
+          type: string
+        country_code:
+          type: string
+        ratings:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+    Store:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        gateway:
+          type: string
+    PageImages:
+      type: array
+      items:
+        type: object
+        properties:
+          language:
+            type: string
+            example:
+              en
+          icon:
+            type: string
+            example:
+              https://beacon.qa.brightcove.com/cmsqa7/uploads/navigations/2_1566993970_img_icon_en.png
+          hover:
+            type: string
+            example:
+              https://beacon.qa.brightcove.com/cmsqa7/uploads/navigations/2_1566993970_img_icon_en.png
+          focused:
+            type: string
+            example:
+              https://beacon.qa.brightcove.com/cmsqa7/uploads/navigations/2_1566993970_img_icon_en.png
+          background:
+            type: object
+            properties:
+              horizontal:
+                type: string
+                example:
+                  https://beacon.qa.brightcove.com/cmsqa7/uploads/navigations/2_1566993970_img_icon_en.png
+              vertical:
+                type: string
+                example:
+                  https://beacon.qa.brightcove.com/cmsqa7/uploads/navigations/2_1566993970_img_icon_en.png
+    UploadedPageImages:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            message:
+              type: string
+              example: 'images uploaded'
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  entry:
+                    type: string
+                    example:
+                      icon
+                  path:
+                    type: string
+                    example:
+                      https://beacon.qa.brightcove.com/cmsqa7/uploads/navigations/2_1566993970_img_icon_en.png
+    AppsList:
+      type: array
+      description: The list of the Beacon apps configured for this account.
+      items:
+        type: string
+      example: ["default"]
+    AppsConfig:
+      description: Configuration of a Beacon app.
+      type: object
+      properties:
+        languages:
+          description: List of languages supported by this Beacon app
+          type: object
+          properties:
+              codes:
+                type: array
+                items:
+                  type: string
+              default:
+                type: string
+        devices:
+          description: List of devices supported by this Beacon app
+          type: array
+          items:
+            type: string
+        locations:
+          description: List of locations supported by this Beacon app
+          type: array
+          items:
+            type: string
+        stores:
+          description: List of stores supported by this Beacon app
+          type: array
+          items:
+            $ref: '#/components/schemas/Store'
+        age_ratings:
+          description: List of age ratings supported by this Beacon app
+          type: array
+          items:
+            $ref: '#/components/schemas/AgeRating'
+      example:
+        languages:
+          codes:
+            - en
+          default: en
+        devices:
+          - iOS
+          - Android
+          - web
+          - Roku
+          - STV
+          - Firetv
+          - LGTV
+        locations:
+          - World
+          - USA
+          - St. George
+          - CA
+        stores:
+          - id: ID
+            name: Name
+            gateway: Gateway
+        age_ratings:
+          - country_name: United States of America
+            country_code: us
+            ratings:
+              - name: TV-G
+                description: Most parents would find this program unsuitable for ages 1-9
+              - name: TV-PG
+                description: This program contains material that parents may find unsuitable for younger children
+    AppsConfigLanguages:
+      description: List of languages supported by this Beacon app
+      type: object
+      properties:
+          codes:
+            type: array
+            items:
+              type: string
+          default:
+            type: string
+      example:
+        languages:
+          - en
+          - es
+          - it
+        default: en
+    AvailableLanguages:
+      description: List of all languages supported by this Beacon app
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+          code:
+            type: string
+          language:
+            type: string
+      example:
+      - id: 1
+        code: en
+        language: English
+      - id: 2
+        code: es
+        language: Spanish
+      - id: 3
+        code: it
+        language: Italian
+    Plans:
+      description: Plans available for a Beacon App.
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+              type: string            
+          published:
+            type: boolean
+          max_devices:
+            type: integer
+          interval:
+            type: string
+          prices:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                store_id:
+                  type: string
+                store_name:
+                  type: string  
+                price:
+                  type: number
+                currency:
+                  type: string
+          content:
+            type: array
+            items:
+              type: object
+              properties:
+                language:
+                  type: string
+                  example:
+                    en
+                name:
+                  type: string
+                description:
+                  type: string
+      example:
+      - id: 1
+        published: true
+        allow_downloads: true
+        max_devices: 0
+        interval: month
+        prices:
+          - id: 567
+            store_id: yearly-premium-package-month-USD-Default-1607347767
+            store_name: Stripe
+            price: 49.99
+            currency: USD
+          - id: 568
+            store_id: nonrenewable1yearsub
+            store_name: Roku Store
+            price: 49.99
+            currency: USD
+        content:
+          - language: en
+            name: 'Yearly Premium Package'
+            description: 'Unlock Access for unlimited TV shows and movies, on as many devices as you want. Pay for a year and benefit from 2 months worth discount.'
+    GenresList:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Genre'
+        status:
+          type: object
+          properties:
+            total:
+              type: integer
+              example: 10
+    UpdatedGenres:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            status:
+              type: string
+              example: success
+            message:
+              type: string
+              example: 'Genres processed successfully'
+            updates:
+              type: array
+              items:
+                $ref: '#/components/schemas/Genre'
+    Genre:
+      type: object
+      properties:
+        name:
+          type: string        
+          example: 'Action'        
+        slug:
+          type: string
+          example: 'action'
+        translations:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenreTranslation'
+    GenreTranslation:
+      type: object
+      properties:
+        lang_code:
+          type: string        
+          example: 'en'     
+        name:
+          type: string        
+          example: 'Action'        
+        slug:
+          type: string
+          example: 'action'            
+    PagesList:
+      allOf:
+        - $ref: '#/components/schemas/Pagination'
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/Page'
+    UsersSearchResult:
+      type: object
+      properties:
+        found_by_name:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserSimple'
+        found_by_email:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserSimple'
+    Page:
+      type: object
+      properties:
+        id:
+          type: integer
+          example:
+            1
+        published:
+          type: boolean
+        order:
+          type: integer
+        title:
+          type: string
+          example:
+            Home
+        slug:
+          type: string
+          example:
+            1-home
+        default:
+          description: Option that should be selected/focused by default.
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+          default: null
+        page_type:
+          description: Defines the general type of the page.
+          type: string
+          enum:
+            - custom
+            - epg
+            - live_player
+            - liveTV
+            - my_stuff
+            - redirect
+            - screen
+            - search
+            - static
+            - vod_preview
+        page_layout:
+          description: Defines the layout of the page, only available for page type 'screen'
+          type: string
+          enum:
+            - grid
+            - auto_play
+            - hero_playlist
+            - hero_image
+            - carousels
+            - unknown
+        presentation_type:
+          type: string
+          enum:
+            - icon
+            - text
+            - icontext
+          example: 'icontext'
+        show_page_title:
+          type: boolean
+          example: false
+        images:
+          $ref: '#/components/schemas/PageImages'
+        content:
+          type: array
+          items:
+            type: object
+            properties:
+              language:
+                type: string
+                example:
+                  en
+              title:
+                type: string
+                example:
+                  Home
+        blocks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Block'
+    Block:
+      type: object
+      properties:
+        order:
+          type: integer
+        playlists:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example:
+                  1
+              order:
+                type: integer
+              carousel_type:
+                type: string
+                enum:
+                    - standard
+                    - featured
+                example: standard                                 
+              aspect_ratio:
+                type: string
+                enum:
+                    - landscape
+                    - portrait
+                    - banner
+                    - wide_banner
+                example:
+                  landscape
+              show_playlist_title:
+                type: string
+                example: 'on'
+                enum:
+                  - 'on'
+                  - 'off'
+              show_video_title:
+                type: boolean
+                example: true
+              video_title_position:
+                type: string
+                example: 'inside'
+                enum:
+                    - inside
+                    - outside
+              thumbnail_size:
+                type: string
+                example: 'l'
+                enum:
+                    - s
+                    - m
+                    - l
+              view_all_position:
+                type: string
+                enum:
+                    - start
+                    - end
+                    - 'no'                    
+    PageRight:
+      type: object
+      properties:
+        start_date:
+          type: string
+          format: date-time
+          default: null
+        end_date:
+          type: string
+          format: date-time
+          default: null
+        streams:
+          type: integer
+        type:
+          type: string
+          enum:
+          - "Free"
+        advertisement:
+          type: object
+        store:
+          type: object
+        plans:
+          type: array
+          items:
+            type: string
+          example:
+            - 1
+        permitted_locations:
+          type: array
+          items:
+            type: string
+          example:
+            - World
+        denied_locations:
+          type: array
+          items:
+            type: string
+          example:
+            - Belgium
+        devices:
+          type: array
+          items:
+            type: string
+          example:
+            - iOS
+            - Android
+    PlaylistList:
+      allOf:
+        - $ref: '#/components/schemas/Pagination'
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/PlaylistSimple'
+    PlaylistSimple:
+      type: object
+      properties:
+        id:
+          type: integer
+          example:
+            1
+        title:
+          type: string
+          example:
+            Game of Thrones
+        smart:
+          type: boolean
+          example:
+            false
+        asset_count:
+          type: integer
+          example:
+            10
+        assets:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 12345
+              order:
+                type: integer
+                example: 0
+              'type':
+                type: string
+                example: 'episodes'
+                enum: 
+                  - 'channels'
+                  - 'episodes'
+                  - 'events'
+                  - 'movies'
+                  - 'seasons'
+                  - 'series'
+    UserSimple:
+      type: object
+      properties:
+        id:
+          type: integer
+          example:
+            1
+        name:
+          type: string
+          example:
+            John Snow
+        email:
+          type: string
+          example:
+            john.snow@winterfell.ws
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string    
+        last_login:
+          type: string
+        active:
+          type: boolean
+        created_at:
+          type: string
+        parental_pin_active:
+          type: boolean
+        current_streams:
+          type: integer  
+        subscriptions:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              plan_id:
+                type: integer
+              store_product_id:
+                type: string
+              subscription_active:
+                type: boolean
+              created_at:
+                type: string
+              trial_ends_at:
+                type: string
+              ends_at:
+                type: string
+              canceled_at:
+                type: string
+        sessions:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              created_at:
+                type: string
+        profiles:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              created_at:
+                type: string
+        transactions:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              entry_type:
+                type: string
+              subscription_id:
+                type: integer
+              created_at:
+                type: string
+      example:
+        id: 107
+        name: test
+        email: test@gmail.com
+        active: true
+        created_at: '2019-10-15T04:29:16.000Z'
+        parental_pin_active: true
+        last_login: '2020-08-27T10:30:34.000Z'
+        current_streams: 2
+        subscriptions:
+          - id: 285
+            plan_id: '1'
+            store_product_id: yearly-premium-package-month-USD-Default
+            created_at: '2019-12-05T05:09:07.000Z'
+            trial_ends_at: '2020-03-05T05:58:22.000Z'
+            ends_at: '2020-03-05T05:58:22.000Z'
+            canceled_at: '2020-03-05T05:58:22.000Z'
+        sessions:
+          - id: 91942
+            created_at: '2020-08-27T10:30:34.000Z'
+            name: Samsung
+          - id: 91657
+            created_at: '2020-08-26T09:23:38.000Z'
+            name: Firetv
+        profiles:
+          - id: 107
+            name: test
+            created_at: '2019-10-15T04:29:16.000Z'
+          - id: 6072
+            name: asd
+            created_at: '2020-03-12T07:07:17.000Z'
+        transactions:
+          - id: 1542
+            entry_type: insert
+            subscription_id: 860
+            created_at: '2020-08-27T04:02:52.000Z'
+      
+    ViewingHistory:
+      allOf:
+        - $ref: '#/components/schemas/Pagination'
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/Bookmark'
+    History:              
+      type: object
+      properties:
+        context:
+          type: string
+          example: viewers
+        user:
+          type: integer
+          example: 11111111111
+        data:
+          type: string
+          example: 123
+    ActivityHistory:
+      type: array
+      items:
+        type: string
+        example: '123'
+    Bookmark:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 20
+        updated_at:
+          type: string
+          example: '2020-08-26T09:25:57.000Z'
+        type:
+          type: string
+          example: series
+        original_title:
+          type: string
+          example: 'Fifth Gear'
+        production_year:
+          type: string
+          example: '2002'
+        length_full:
+          type: string
+          example: '2:00:00'
+        genres:
+          type: string
+          example: 'Talk-Show,Motoring'
+        profile_name:
+          type: string
+          example: 'Ned'
+    Pagination:
+      type: object
+      properties:
+        per_page:
+          type: integer
+          description: "Number of items per page"
+          example: 50
+          default: 50
+        first_page:
+          type: integer
+          description: "First page URL"
+          example: 1
+        prev_page:
+          type: integer
+          description: "Previous page URL"
+          example: 2
+        current_page:
+          type: integer
+          description: "Current page number"
+          example: 3
+          default: 1
+        next_page:
+          type: integer
+          description: "Next page URL"
+          example: 4
+        last_page:
+          type: integer
+          description: "Last page"
+          example: 5
+        total_items:
+          type: integer
+          description: "Total of assets"
+          example: 250
+    SuccessDataResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+        message:
+          type: string
+          example: "Asset updated successfully"
+        data:
+          type: array
+          items:
+            type: string
+    ErrorDataResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "error"
+        message:
+          type: string
+          example: "Error processing asset"
+        errors:
+          type: array
+          items:
+            type: string
+    SeriesList:
+      allOf:
+        - $ref: '#/components/schemas/Pagination'
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    is_published:
+                      type: integer
+                      example: 1
+                    original_title:
+                      type: string
+                      example: 'Series Name'
+                    friendly_url:
+                      type: string
+                      example: '24788-test-series'
+                    created_at:
+                      type: string
+                      format: date-time
+                      example: "2020-07-08T16:31:49.000Z"
+                    updated_at:
+                      type: string
+                      format: date-time
+                      example: "2020-07-08T16:31:49.000Z"
+                    landscape_poster: 
+                      type: string
+                      example: "https://SERVER/imageLocation.png"
+                    portrait_poster:
+                      type: string
+                      example: "https://SERVER/imageLocation.png"
+    SeasonsList:
+      allOf:
+        - $ref: '#/components/schemas/Pagination'
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                type: object
+                properties:
+                  season_id:
+                    type: integer
+                    example: 1234
+                  series_id:
+                    type: integer
+                    example: 1234   
+                  series_title:
+                    type: string
+                    example: 'Series Name'  
+                  season_number:
+                    type: integer
+                    example: 1   
+                  total_episodes:
+                    type: integer
+                    example: 1                  
+                  is_published:
+                    type: integer
+                    example: 1
+                  original_title:
+                    type: string
+                    example: 'Season Name'
+                  friendly_url:
+                    type: string
+                    example: '24788-test-series'
+                  created_at:
+                    type: string
+                    format: date-time
+                    example: "2020-07-08T16:31:49.000Z"
+                  updated_at:
+                    type: string
+                    format: date-time
+                    example: "2020-07-08T16:31:49.000Z"
+                  landscape_poster: 
+                    type: string
+                    example: "https://SERVER/imageLocation.png"
+                  portrait_poster:
+                    type: string
+                    example: "https://SERVER/imageLocation.png"            
+    EpisodesList:
+      allOf:
+        - $ref: '#/components/schemas/Pagination'
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                type: object
+                properties:
+                  episode_id:
+                    type: integer
+                    example: 1234
+                  season_id:
+                    type: integer
+                    example: 1234
+                  season_title:
+                    type: string
+                    example: 'Season Name'                      
+                  series_id:
+                    type: integer
+                    example: 1234   
+                  series_title:
+                    type: string
+                    example: 'Series Name'  
+                  is_published:
+                    type: integer
+                    example: 1
+                  original_title:
+                    type: string
+                    example: 'Episode Name'
+                  friendly_url:
+                    type: string
+                    example: '24788-test-series'
+                  created_at:
+                    type: string
+                    format: date-time
+                    example: "2020-07-08T16:31:49.000Z"
+                  landscape_poster: 
+                    type: string
+                    example: "https://SERVER/imageLocation.png"
+                  portrait_poster:
+                    type: string
+                    example: "https://SERVER/imageLocation.png"                       
+    Series:
+      allOf:
+        - $ref: '#/components/schemas/Asset'
+        - type: object
+          properties:
+            original_title:
+              type: string              
+              example: 'Game of Thrones'
+            production_year:
+              type: string
+              example: 2005
+            sort_episodes:
+              type: string 
+              example: 2
+            created_at:
+              type: string
+              format: date-time
+              example: "2020-07-08T16:31:49.000Z"
+            updated_at:
+              type: string
+              format: date-time
+              example: "2020-07-08T16:31:49.000Z"
+    Season:
+      allOf:
+        - $ref: '#/components/schemas/Asset'
+        - type: object
+          properties:
+            season_id:
+              type: number
+              example: 1234          
+            original_title:
+              type: string              
+              example: 'Season 4'              
+            series_title:
+              type: string              
+              example: 'Game of Thrones'
+            season_number:
+              type: number
+              example: 4              
+            production_year:
+              type: string
+              example: 2005
+            created_at:
+              type: string
+              format: date-time
+              example: "2020-07-08T16:31:49.000Z"
+            updated_at:
+              type: string
+              format: date-time
+              example: "2020-07-08T16:31:49.000Z"
+    Asset:
+      type: object
+      properties:
+        published:
+          type: integer
+          example: 1
+        asset_id:
+          type: integer
+          example: 1245
+        production_country:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListOfNames'
+        genres:
+          type: array
+          items:
+            $ref: '#/components/schemas/Genres'
+        cast:
+          type: object
+          properties:
+            actors:
+              $ref: '#/components/schemas/ListOfNames'
+            directors:
+              $ref: '#/components/schemas/ListOfNames'
+            singers:
+              $ref: '#/components/schemas/ListOfNames'
+            composers:
+              $ref: '#/components/schemas/ListOfNames'
+            song_writers:
+              $ref: '#/components/schemas/ListOfNames'
+            writers:
+              $ref: '#/components/schemas/ListOfNames'
+        seo:
+          type: object
+          properties:
+            friendly_url:
+              type: string
+              example: "2777-new-series"
+            title:
+              type: string
+              example: 'New asset'
+            description:
+              type: string
+              example: 'Asset Description'
+        textual:
+          type: array
+          items:
+            $ref: '#/components/schemas/Textual'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/Images'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListOfNames'
+        metadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListOfNames'
+        provider:
+          type: object
+          properties:
+            name:
+              type: string
+              example: Brightcove
+            slug:
+              type: string
+              example: brightcove
+            config_provider:
+              type: string
+              example: brightcove
+        streams:
+          type: array
+          items:
+            $ref: '#/components/schemas/Stream'
+        rights:
+          type: array
+          items:
+            $ref: '#/components/schemas/Right'
+    ListOfNames:
+      type: object
+      properties:
+        name:
+          type: string
+    Genres:
+      type: object
+      properties:
+        name:
+          type: string
+          example: action
+        slug:
+          type: string
+          example: actuin
+    Textual:
+      type: object
+      properties:
+        lang_code:
+          type: string
+          example: 'en'
+        title:
+          type: string
+          example: 'Asset'
+        description:
+          type: string
+          example: 'Translation of asset title'
+        synopsis:
+          type: string
+          example: 'Synopsis'
+    Images:
+      type: object
+      properties:
+        lang_code:
+          type: string
+          example: 'en'
+        landscape_poster:
+          type: string
+          example: "https://SERVER/imageLocation.png"
+        portrait_poster:
+          type: string
+          example: "https://SERVER/imageLocation.png"
+        thumbnail:
+          type: string
+          example: "https://SERVER/imageLocation.png"
+        wide_banner:
+          type: string
+          example: "https://SERVER/imageLocation.png"
+    Stream:
+      type: object
+      properties:
+        video_id:
+          type: integer
+          example: '1678'
+        type:
+          type: string
+          example: 'Trailer'
+        drm:
+          type: string
+          example: 'Widevine'
+        format:
+          type: string
+          example: 'HLS'
+        devices:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListOfNames'
+    Right:
+      type: object
+      properties:
+        start_time:
+          type: string
+          format: date-time
+          example: "2020-07-08T16:31:49.000Z"
+        end_time:
+          type: string
+          format: date-time
+          example: "2020-07-08T16:31:49.000Z"
+        max_streams:
+          type: integer
+          example: 0
+        type:
+          type: string
+          example: 'FREE'
+        advertisement:
+          type: string
+          example: 'Some advertisement'
+        store:
+          type: object
+          properties:
+            price: 
+              type: number
+              example: 99,
+            currency: 
+              type: string
+              example: "US Dollar"
+            store_id:
+              type: string
+              example: 1213
+            name: 
+              type: string
+              example: "Store Name"
+            gateway: 
+              type: string
+              example: "Store Gateway"
+        packages:
+          type: array
+          items:
+            type: object
+            properties:
+                id:
+                  type: number
+                  example: 1
+                name:
+                  type: string
+                  example: '1 Year Plan'
+        permitted_locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListOfNames'
+        denied_locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListOfNames'
+        devices:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListOfNames'
+    Playlists:
+      type: object
+      properties:
+        playlist_title:
+          type: string
+        id_layout:
+          type: integer
+        playlist_ref: 
+          type: string
+        dynamic:
+          type: integer
+        newestfirst:
+          type: integer
+        special: 
+          type: integer
+        view_all_filter:
+          type: string
+        seo:
+          type: object
+          properties:
+            friendly_url:
+              type: string
+              example: "2777-new-series"
+            title:
+              type: string
+              example: 'New asset'
+            description:
+              type: string
+              example: 'Asset Description'
+        textual:
+          type: array
+          items:
+            $ref: '#/components/schemas/Textual'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/Images'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListOfNames'
+        rights:
+          type: array
+          items:
+            $ref: '#/components/schemas/Right'
+        assets:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 12345
+              order:
+                type: integer
+                example: 0
+              'type':
+                type: string
+                example: 'episodes'
+                enum: 
+                  - 'channels'
+                  - 'episodes'
+                  - 'events'
+                  - 'movies'
+                  - 'seasons'
+                  - 'series'
+  securitySchemes:
+    BC_OAuth2:
+      type: oauth2
+      description: 'Brightcove OAuth API. See the [support documentation](https://support.brightcove.com/oauth-api) or [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token) to learn more'
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://oauth.brightcove.com/v4/access_token'
+          scopes:
+            video-cloud/beacon/read: Read
+            video-cloud/beacon/all: All
