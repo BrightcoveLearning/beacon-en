@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="Quickly view account details, subscription plans and viewing history for the registered users in your account.">
   
-  <title>Creating and Managing Playlists</title>
+  <title>Registered Users</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -128,9 +128,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/media/">Managing Videos</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">Creating and Managing Playlists</li>
+    <li class="breadcrumb-item active" aria-current="page">Registered Users</li>
   </ol>
 </nav>
 
@@ -551,189 +549,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Creating and Managing Playlists</h1>
-  <summary>In this topic you will learn how to create and manage playlists in  Video Cloud Studio.</summary>
-  <section class="bcls-section">
-    <p>A playlist is a collection of videos that are grouped together in a particular order for playback in a player. The Media module makes it easy to create playlists and add videos to a playlist. After you've created your playlist, you can publish a playlist to a player. <span class="BCL-objective">For more information on publishing playlists, see <a href="/publishing-videos-and-playlists.html">Publishing Videos and Playlists</a>.</span></p>
-    <p><span class="BCL-objective">For more information about playlists, including best practices and tips for using them effectively, see <a href="/media/introduction-playlists.html">Introduction to Playlists</a>.</span></p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="types">Types of playlists</h2>
-    <p>There are two types of playlists:</p>
-    <ul>
-      <li><strong>Manual</strong> - With a manual playlist, you assign specific videos to the playlist and re-order them manually.</li>
-      <li><strong>Smart</strong> - With a smart playlist, the list of videos in the playlist is constructed automatically, based on video tags or other video properties. Smart playlists are dynamic and automatically update based upon the videos in your media library and the rules that define the playlist.</li>
-    </ul>
-    <p>A maximum of 100 videos can be added to a playlist (both Manual and Smart). There is no limit to the number of playlists that can be created. The videos that are initially loaded into a playlist in the player is determined by the type of playlist:</p>
-    <ul>
-      <li><strong>Manual Playlists</strong> - Videos are loaded into the playlist based upon the order of the videos in the manual playlist.</li>
-      <li><strong>Smart Playlists</strong> - Videos are loaded into the playlist based upon the <strong>Play Order</strong> playlist setting.</li>
-    </ul>
-    <p>For information on programmatically retrieving additional videos into a playlist, see the <a href="https://player.support.brightcove.com/code-samples/brightcove-player-sample-playback-api-paging.html">Playback API Paging</a> player sample.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="create">Creating a playlist</h2>
-    <p>To create a playlist, open the Media module and follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the side navigation panel, click <strong>Create Playlist</strong>. The New Playlist dialog will open.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-new-manual-playlist.png" /></figure>
-        <aside class="bcls-aside bcls-aside--information">Note: You can hide or show the side navigation panel by clicking the side navigation button <img alt="" src="/assets/images/media/side-nav-button.png" />.</aside>
-      </li>
-      <li>Select the playlist type, <strong>Manual</strong> or <strong>Smart</strong>.</li>
-      <li>Enter a <strong>Playlist Name</strong> using the following guidelines.
+  <h1><img src="/assets/images/feather/user.svg" alt="registered users"> Registered Users</h1>
+  <summary>Quickly view account details, subscription plans and viewing history for the registered users in your account.</summary>
+  <h2>Topics</h2>
+  <section>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
         <ul>
-          <li>Name is limited to 100 characters</li>
-          <li>Illegal character: /</li>
+          <li><a href="/registered-users/working-with-registered-users.html">Working with Registered Users</a></li>
         </ul>
-      </li>
-      <li>(Optional). Enter a <strong>Reference ID</strong> and <strong>Description</strong>.</li>
-      <li>Check <strong>Show Playlist in Sidebar</strong> to have the playlist appear in the sidebar.
-        <aside class="bcls-aside bcls-aside--information">Note: A maximum of 100 playlists can appear in the sidebar.</aside>
-      </li>
-      <li>Click <strong>Save</strong>.</li>
-    </ol>
-    <div class="BCL-subsection">
-      <h3>Working with Smart playlists</h3>
-      <p>If you are creating a Smart playlist, the following settings can also be configured.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-new-smart-playlist.png" /></figure>
-      <ul>
-        <li><strong>Tags</strong> - Tags are used to define the videos that will appear in the playlist. The <strong>Tags</strong> dropdown provides these options:
-          <ul>
-            <li><strong>contains one or more</strong> - Include videos that have one or more of the tags listed</li>
-            <li><strong>contains all</strong> - Require that all the videos in the playlist have all the tags that are listed</li>
-          </ul>
-          <p>In the tags text field, enter one or more tags (separated by commas) that will be used to define the playlist.</p>
-        </li>
-        <li><strong>Play Order</strong> - Controls the order in which videos in the playlist are played. The following options are available.
-          <table class="bcls-table">
-            <thead class="bcls-table__head">
-              <tr>
-                <th width="35%">Play Order</th>
-                <th width="65%">Description</th>
-              </tr>
-            </thead>
-            <tbody class="bcls-table__body">
-              <tr>
-                <td>Activated Date (Oldest First)</td>
-                <td>Based on the date the video was activated, oldest videos first</td>
-              </tr>
-              <tr>
-                <td>Activated Date (Newest First)</td>
-                <td>Based on the date the video was activated, newest videos first</td>
-              </tr>
-              <tr>
-                <td>Video Name (A - Z)</td>
-                <td>Alphabetical by video name</td>
-              </tr>
-              <tr>
-                <td>Total Plays</td>
-                <td>Based on the total video plays</td>
-              </tr>
-              <tr>
-                <td>Trailing Week Plays</td>
-                <td>Based on the trailing week total video plays<sup><strong><a href="#1">[1]</a></strong></sup></td>
-              </tr>
-              <tr>
-                <td>Start Date (Oldest First)</td>
-                <td>Based on the date the video was scheduled to start, oldest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
-              </tr>
-              <tr>
-                <td>Start Date (Newest First)</td>
-                <td>Based on the date the video was scheduled to start, newest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>Notes</p>
-          <ul>
-            <li id="1"><sup><strong>[1]</strong></sup> Note that the trailing week plays data maintained in the video metadata may be up to 2 days old, and so the videos you get may not match what you see if you look at video views over the past 7 days on the Analytics module.</li>
-          </ul>
-        </li>
-        <li><strong>Limit Number of Videos</strong> - Enter the maximum number of videos that should be in the playlist.</li>
-      </ul>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="addmanual">Adding videos to a manual playlist</h2>
-    <p>To add videos to a manual playlist, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Check the boxes next to the videos that should be added to the playlist.</li>
-      <li>Click <strong>More &gt; Add to Playlist</strong> at the top of the page.</li>
-      <li>Select the playlist to add the videos to.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-add-videos-manual-playlist.png" /></figure>
-      </li>
-      <li>Click<strong> Add</strong>. Videos added to a manual playlist will be added to the top of the playlist.</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="order">Changing the order of videos in a playlist</h2>
-    <p>To change the order of the videos in a playlist, follow the steps based upon the type of playlist you are working with.</p>
-    <div class="BCL-subsection">
-      <h3>Changing the order of videos in a manual playlist</h3>
-      <ol class="bcls-tasklist-restart">
-        <li>Open the playlist using one of these methods:
-          <ul>
-            <li>Click on the playlist name in the side navigation panel</li>
-            <li>Click <strong>All Playlists</strong> in the side navigation panel, locate the playlist and click the playlist name link.</li>
-          </ul>
-        </li>
-        <li>The list of videos in the playlist will appear.</li>
-        <li>Click on a video and drag it to its new location in the order.</li>
-      </ol>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-edit-manual-playlist-order.png" /></figure>
-      <aside class="bcls-aside bcls-aside--information">Note: You can also change the video order by editing the <strong>Play Order</strong> field.</aside>
-      <aside class="bcls-aside bcls-aside--information">Re-ordering by drag and drop does <strong>not</strong> work in IE11 or Edge, but you can re-order the items by editing the numbers in the <strong>Play Order</strong> field.</aside>
-    </div>
-    <div class="BCL-subsection">
-      <h3>Changing the order of videos in a smart playlist</h3>
-      <ol class="bcls-tasklist-restart">
-        <li>If the playlist is displayed in the sidebar, click on the playlist and then click the down arrow next to the playlist and click<strong> Edit Settings</strong>.</li>
-        <li>If the playlist is not displayed in the sidebar, click the <strong>All Playlists</strong> heading in the side navigation, locate the playlist and click the playlist name link and then click <strong>Edit Settings</strong>.</li>
-        <li>Select a new <strong>Play Order</strong> for the playlist.</li>
-        <li>Click <strong>Save</strong>.</li>
-      </ol>
-      <p>Smart playlists are created dynamically when the player is loaded from the available video information and so the order should always reflect current state. However, the player always gets its info via the Playback API, which uses data cached for up to 20 min. Playlists may take that long to refresh and may be behind what the CMS API would show.</p>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="edit">Editing playlist settings</h2>
-    <p>To edit the settings for a manual or smart playlist, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>If the playlist is displayed in the sidebar, click on the playlist and then click the down arrow next to the playlist and click<strong> Edit Settings</strong>.</li>
-      <li>If the playlist is not displayed in the sidebar, click the <strong>All Playlists</strong> heading in the side navigation, locate the playlist and click the playlist name link and then click <strong>Edit Settings</strong>.</li>
-      <li>Edit the playlist settings and then click <strong>Save</strong>.</li>
-    </ol>
-    <aside class="bcls-aside bcls-aside--information">Note:  It is <strong>not</strong> possible to convert a manual playlist to a smart playlist or vice-versa.</aside>
-    <p>If the playlist is displayed in the side navigation panel, you can click on the playlist and then click the down arrow next to the playlist and click<strong> Edit Settings</strong>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="delete">Deleting a playlist</h2>
-    <p>To delete a playlist, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <strong>All Playlists</strong> to display a list of all the playlists.</li>
-      <li>Click the checkbox next to the playlist to delete.</li>
-      <li>Click the delete button (<img alt="" src="/assets/images/media/playlist-delete-icon.png" />).</li>
-      <li>Click <strong>Delete Playlist</strong> to confirm the deletion.</li>
-    </ol>
-    <p>If the playlist is displayed in the side navigation panel, you can click on the playlist and then click the down arrow next to the playlist and click<strong> Delete</strong>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="remove">Removing videos from a manual playlist</h2>
-    <p>To remove a video from a manual playlist, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the manual playlist using one of these methods:
-        <ul>
-          <li>Click on the playlist name in the side navigation panel</li>
-          <li>Click <strong>All Playlists</strong> in the side navigation panel, locate the playlist and click the playlist name link.</li>
-        </ul>
-      </li>
-      <li>The list of videos in the playlist will appear.</li>
-      <li>Click the checkbox next to the video(s) to delete.</li>
-      <li>Click <strong>Remove from Playlist</strong>.</li>
-    </ol>
-    <p>You can also remove a video from a manual playlist by editing the video properties. In the <strong>Video Information</strong> section, delete the playlist ID from the <strong>Manual Playlists</strong> section.</p>
+        
+      
+    
+      
+    
+      
+    
+      
+    
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
@@ -747,11 +599,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <div class="col-sm-2 right-side-bar">
       
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Page Contents</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
       
     </div>
   </div>
@@ -759,7 +606,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 13 Jan 2021
+  Page last updated on 04 Feb 2021
 </div>
 
 
