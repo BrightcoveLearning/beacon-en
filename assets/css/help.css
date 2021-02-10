@@ -5,7 +5,7 @@ layout: null
 
 @import url(https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap);
 
-@font-face {
+/* @font-face {
   font-family: 'Balto Web';
   src: url(https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot);
   font-weight: 900;
@@ -83,24 +83,20 @@ layout: null
   font-weight: 500;
   font-style: normal;
   font-display: swap
-}
+} */
 
 
 /* site styles */
 body, .body {
   font-family: 'Public Sans', Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   counter-reset: figure 0 table 0 step 0;
   background-color: white;
-  color: rgb(68, 68, 68);
-  margin: 1rem;
-}
-
-body {
-  counter-reset: figure 0 table 0 step 0;
-  margin: 0;
+  color: #01050e;
+  margin: 16px 24px;
   position: relative;
 }
+
 
 strong {
   font-weight: bold;
@@ -109,24 +105,20 @@ strong {
 
 /* css specific to the site */
 
-.bcls-active {
-  border-left: 3px {{ site.product_color }} solid;
-}
 
-h1 {
-  margin-top: .5rem;
-  margin-bottom: 0;
-}
 
-.card-icon i {
-  color: {{site.product_color}};
-}
 
 /* for phones and embedded pages */
 /* @media screen and (max-width: 1000px) { */
   h1 {
-    font-size: 2em;
-    margin-left: 1rem;
+    height: 40px;
+    color: rgb(1, 5, 14);
+    font-size: 37.9px;
+    /* font-family: PublicSans; */
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 40px;
+    margin-top: 0;
   }
   h2 {
     font-size: 1.7em;
@@ -159,17 +151,15 @@ h1 {
     font-size: smaller;
   }
   
+  .breadcrumb-item {
+    font-size: 12px;
+    line-height: 16px;
+    color: #08088c;
+  }
 
-  footer.help-footer {
-    position: fixed;
-    bottom: 0;
-    min-width: 100%;
-    width: 100%;
-    background-color: rgb(9, 7, 140);
-    /* margin-top:1rem; */
-    margin-left: -1rem;
-    margin-right: -1rem;
-    }
+  .breadcrumb-item * {
+    color: #08088c;
+  }
 
   .bcls-article {
     margin-bottom: 40px;
@@ -321,9 +311,8 @@ details[open]>summary {
   details::after {
     transform: translateY(-50%) rotate(90deg);
   }
-    details[open] & {
+    details[open] {
       transform: translateY(-50%) rotate(180deg);
-    }
   }
   
   &::-webkit-details-marker {
