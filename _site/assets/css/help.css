@@ -1,87 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap);
-
-/* @font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot);
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff) format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-super.eot);
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-super.woff) format("woff");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-black.eot);
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-black.woff) format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-bold.eot);
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-bold.woff) format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-medium.eot);
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Balto Web';
-  src: url(https://files.brightcove.com/fonts/balto/baltoweb-medium.woff) format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap
-} */
+@import url(https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500;1,700;1,800&display=swap);
 
 
-/* site styles */
 body, .body {
   font-family: 'Public Sans', Helvetica, sans-serif;
   font-size: 14px;
@@ -92,59 +11,32 @@ body, .body {
   position: relative;
 }
 
-
-strong {
-  font-weight: bold;
-  color: black;
-}
-
-/* css specific to the site */
-
-
-
-
-/* for phones and embedded pages */
-/* @media screen and (max-width: 1000px) { */
   h1 {
     height: 40px;
     color: rgb(1, 5, 14);
     font-size: 37.9px;
-    /* font-family: PublicSans; */
     font-weight: 800;
     letter-spacing: -0.5px;
     line-height: 40px;
-    margin-top: 0;
+    margin-top: -16px;
   }
   h2 {
-    font-size: 1.7em;
-    margin-left: 1rem;
+    font-size: 30px;
+    
   }
   h3 {
-    font-size: 1.3em;
-    margin-left: 1rem;
+    font-size: 20px;
+    
   }
   h4 {
     font-size: 1.1em;
-    margin-left: 1rem;
+    
   }
   h5 {
     font-size: 1em;
-    margin-left: 1rem;
-  }
-  p, a, summary {
-    margin-left: 1.1rem;
+    
   }
 
-  a, a::visited, a::hover {
-    color:rgb(7, 33, 144)!important;
-  }
-
-  footer, footer a {
-    text-align: center;
-    padding: .5rem;
-    color: whitesmoke;
-    font-size: smaller;
-  }
   
   .breadcrumb-item {
     font-size: 12px;
@@ -170,50 +62,53 @@ strong {
 
 
 .external-link-icon {
-  height: .8rem;
+  height: 14px;
   margin-left:.2rem;
-  vertical-align: middle;
+  vertical-align: text-top;
 }
 
 #breadcrumbs {
   /* position: fixed;
   top: 3rem; */
-  margin-left: 0;
+  margin-left: -15px;
   margin-right: 0;
   margin-bottom: 0;
-  width: 80%;
+  /* width: 80%; */
 }
 
 #breadcrumbs > ol {
   background-color: white;
-  color: #333;
+  color: #08088c;
   z-index: 9999;
 }
 
-/* #more_resources {
-  display: none;
-  font-size: smaller;
+summary {
+  margin-bottom: 16px !important;
+  font-size: 14px;
+  cursor: none;
 }
-#more_resources img {
-  height: 1rem;
-}
-#more_resources h2 {
-  font-size: small;
-  margin: 0;
-} */
+
+p, div, ul, ol, summary (
+  margin-bottom: 16px !important;
+  font-size: 14px;
+)
 
 a {
-  color: rgb(7, 33, 144);
+  color: #08088c !important;
   text-decoration: none;
   background-color: transparent
 }
 
 
 a, a::visited, a::hover {
-  color:rgb(7, 33, 144)!important;
+  color:#08088c!important;
 }
 .bcls-section a, .bcls-section a::visited, .bcls-section a::hover {
-  color:rgb(7, 33, 144)!important;
+  color:#08088c!important;
+}
+
+a::hover {
+  text-decoration: underline;
 }
 
 
@@ -221,7 +116,6 @@ ul.doc-links {
   list-style: none;
   margin-left: -2em;
 }
-
 
 /* details */
 
@@ -233,20 +127,34 @@ ul.doc-links {
 
 
 details {
-  margin: 1rem auto;
-  padding: 0 1rem;
+  margin: 0 auto 0 ;
+  padding: 0;
   width: 100%;
-  max-width: calc(100% - 2rem);
+  /* max-width: calc(100% - 48px); */
   position: relative;
-  border: 1px solid #78909C;
-  border-radius: 6px;
-  background-color: #fff;
+  border-top: 1px solid #e5e6e6;
+  border-bottom: 1px solid #e5e6e6;
+  border-right: none;
+  border-left: none;
+  border-radius: 0;
+  /* background-color: #fff; */
   /* color: #263238; */
-  transition: background-color .15s;
+  /* transition: background-color .15s; */
 }
+/* details :first-child {
+  margin-top: 8px;
+}
+  
+details :first-of-type {
+  margin-top: 8px;
+}
+  
 details :last-child {
-  margin-bottom: 1rem;
-}
+  margin-bottom: 8px;
+} */
+
+/* details :last-of-type {
+} */
   
 details::before {
   width: 100%;
@@ -255,9 +163,9 @@ details::before {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: inherit;
+  /* border-radius: inherit; */
   opacity: .15;
-  box-shadow: 0 .25em .5em #263238;
+  /* box-shadow: 0 .25em .5em #263238; */
   pointer-events: none;
   transition: opacity .2s;
   z-index: -1;
@@ -274,10 +182,11 @@ details>summary {
   padding: .5rem .5em .5rem 0;
   display: block;
   position: relative;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: normal;
   cursor: pointer;
   outline: none;
+  margin-top: 16px;
 }
 details[open]>summary {
   border: none;
@@ -307,7 +216,7 @@ details[open]>summary {
     transform: translateY(-50%) rotate(90deg);
   }
     details[open] {
-      transform: translateY(-50%) rotate(180deg);
+      /* transform: translateY(-50%) rotate(180deg); */
   }
   
   &::-webkit-details-marker {
@@ -324,7 +233,7 @@ details[open]>summary {
 }
 
 .bcls-tasklist>li::before {
-  color: #a1a1a1;
+  color: #01050e;
   content: counters(step, ".") " ";
   font-size: 1.3em;
   font-weight: bold;
@@ -337,16 +246,14 @@ details[open]>summary {
 }
 
 .bcls-tasklist>li {
-  border-left: 5px solid #ddd;
+  border-left: 4px solid #e5e6e6;
   list-style: none;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  margin-left: -30px;
   min-height: 1.7em;
   padding-left: 1em;
   position: relative;
   counter-increment: step;
-}
-.bcls-tasklist ul, .bcls-tasklist ol {
-  margin-bottom: 1rem;;
 }
 
 .bcls-tasklist-restart {
@@ -357,9 +264,10 @@ details[open]>summary {
 }
 
 .bcls-tasklist-restart>li {
-  border-left: 5px solid #ddd;
+  border-left: 4px solid #e5e6e6;
   list-style: none;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  margin-left: -30px;
   min-height: 1.7em;
   padding-left: 1em;
   position: relative;
@@ -367,7 +275,7 @@ details[open]>summary {
 }
 
 .bcls-tasklist-restart>li::before {
-  color: #a1a1a1;
+  color: #01050e;
   content: counters(rstep, ".") " ";
   /* counter-increment: rstep; */
   font-size: 1.3em;
