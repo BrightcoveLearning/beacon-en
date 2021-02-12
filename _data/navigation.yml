@@ -184,6 +184,13 @@
     - name: Viewing Billing Information
       url: /admin/viewing-billing-information.html
 - section:
+  name: Registered Users
+  url: /registered-users/index.html
+  icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
+  docs:
+    - name: Working with Registered Users
+      url: /registered-users/working-with-registered-users.html
+- section:
   name: Training
   url: /training/index.html
   docs:

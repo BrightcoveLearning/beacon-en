@@ -87,7 +87,7 @@ var BCLS_local = ( function (window, document) {
       a.setAttribute('href', window.location.href);
       a.setAttribute('target', '_blank');
       img = document.createElement('img');
-      img.setAttribute('src', '/assets/images/feather/external-link.svg');
+      img.setAttribute('src', '/assets/images/feather/external-link-blue.svg');
       img.setAttribute('alt', 'Open in New Tab');
       img.setAttribute('class', 'external-link-icon');
       img.setAttribute('style', 'margin-left:1rem;width:1.3rem;vertical-align:text-top');

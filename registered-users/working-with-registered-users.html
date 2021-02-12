@@ -11,7 +11,9 @@ layout: staging
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>Registered users are users who have signed in or authenticated with your Brightcove Beacon app. If one of your registered users has a question or a problem with their account, you can quickly look them up using a smart search, and verify their details. User information can be found in the following tab sections:</p>
+    <p>A registered user is someone who has created an account with your Brightcove Beacon app. This can be a free account or a paid subscription.</p>
+    <p>When a registered user has a question or a problem with their account, you can quickly look them up using a smart search, and verify their details. The first thing you will see is a list of registered users. </p>
+    <p>Click an <strong>E-mail</strong> link in the list to display more information about the user. For each user, you will have the following tab sections:</p>
     <ul>
       <li><strong>Overview</strong></li>
       <li><strong>Viewing history</strong></li>
@@ -23,6 +25,29 @@ layout: staging
   </section>
 
   <section class="bcls-section">
+    <h2 id="Users_list">Users list</h2>
+    <p>In Beacon Studio, in the primary navigation, click <strong>Registered Users</strong> to view a list of users for your account.</p>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Overview"
+        src="/assets/images/registered-users/users-list.png"
+      />
+    </figure>
+    <h4>Actions</h4>
+    <p>For user details, do either:</p>
+    <ul>
+      <li>Click an <strong>E-mail</strong> link in the <strong>Users</strong> list</li>
+      <li>In the search box, start typing either an email address or a user name; select a user from the results list</li>
+    </ul>
+    <p>Detailed information about a specific user is described in the following sections of this document.</p>
+    <!-- <ol class="bcls-tasklist-restart">
+      <li>In the search box, start typing either an email address or a user name, and select a user from the results list.</li>
+      <li>Click an <strong>E-mail</strong> link in the list to display more information about the user, as described in the following sections of this document.</li>
+    </ol> -->
+  </section>
+  
+  <section class="bcls-section">
     <h2 id="Overview">Overview</h2>
     <p>The <strong>Overview</strong> tab displays general information about the selected user, including the plan names they have signed up for, and their parental control setting.</p>
     <figure class="bcls-figure">
@@ -32,12 +57,42 @@ layout: staging
         src="/assets/images/registered-users/overview.png"
       />
     </figure>
+
+    <h4>Fields</h4>
+    <ul>
+      <li><strong>Email</strong> - Email address for this user</li>
+      <li><strong>Name</strong> - First and last name of the user</li>
+      <li><strong>Last Login</strong> - Date when the user was last logged into your app</li>
+      <li><strong>Plan</strong> - A list of subscription plans that the user is signed up for</li>
+      <li><strong>Parental Control</strong> - Whether the user has turned on parental controls for their account, and if a pin is required for access</li>
+    </ul>
+    <h4>Actions</h4>
+    <ul>
+      <li>Click a <strong>Plan</strong> name to see details</li>
+    </ul> 
+
+    <h3>Plan Details</h3>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        width="400"
+        alt="Plan information"
+        src="/assets/images/registered-users/plan-information.png"
+      />
+    </figure>
+    <h4>Fields</h4>
+    <ul>
+      <li><strong>Name</strong> - Subscription plan name</li>
+      <li><strong>Description</strong> - Summary of the subscription plan</li>
+      <li><strong>Status</strong> - Current status of the plan (whether it is published or not), and the user's subscription status</li>
+      <li><strong>Last transaction</strong> - Monetary amount and date of the user's last transaction</li>
+      <li><strong>Options</strong> - Additional plan options available for the user</li>
+    </ul>
   </section>
 
   <section class="bcls-section">
     <h2 id="Viewing_history">Viewing history</h2>
     <p><strong>Viewing history</strong> displays a list of movies that this registered user has watched. History is captured and saved for 1 year.</p>
-  
     <figure class="bcls-figure">
       <img
         class="bcls-image--no-border"
@@ -46,22 +101,48 @@ layout: staging
       />
     </figure>
 
-     <h3>Actions</h3>
+    <h4>Columns</h4>
     <ul>
-      <li>Use the <strong>Show</strong> filter dropdown to limit display results</li>
+      <li><strong>Date</strong> - Date that a movie was viewed; click this column header to control the results sort order (descending or ascending)</li>
+      <li><strong>Title</strong> - Name of the movie viewed</li>
+      <li><strong>Profile</strong> - Name of the user profile</li>
     </ul>
 
-    <h3>Columns</h3>
+    <h4>Actions</h4>
     <ul>
-      <li><strong>Date</strong> - Date that a movie was viewed; click this header to control the results sort order (descending or ascending)</li>
-      <li><strong>Title</strong> - Name of the movie viewed</li>
-      <li><strong>Profile</strong> - User profile</li>
+      <li>Use the <strong>Show</strong> filter dropdown to limit display results</li>
+      <li>Click a <strong>Title</strong> name to see movie details</li>
+    </ul>
+
+    <h3>Movie details</h3>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        width="400"
+        alt="Title information"
+        src="/assets/images/registered-users/title-information.png"
+      />
+    </figure>
+    <h4>Fields</h4>
+    <ul>
+      <li><strong>Title</strong> - Name of the movie, including it's season and episode</li>
+      <li><strong>Genre</strong> - Descriptive category for the movie</li>
+      <li><strong>Released</strong> - Year the movie was released</li>
+      <li><strong>Duration</strong> - Time length of the movie in hours and minutes</li>
+      <li><strong>Available</strong> - Movie availability</li>
+      <li><strong>Plans</strong> - A list of plans that the user is subscribed to</li>
+      <li><strong>Asset ID</strong> - Unique identifier for the movie</li>
+    </ul>
+
+    <h4>Actions</h4>
+    <ul>
+      <li>Click the <strong>Asset ID</strong> number to view more details in the <strong>Media</strong> module</li>
     </ul>
   </section>
 
   <section class="bcls-section">
     <h2 id="Transactions">Transactions</h2>
-    <p>The <strong>Transactions</strong> tab shows a list of plan purchases and changes for a registered user.</p>
+    <p>The <strong>Transactions</strong> tab shows a list of plan purchases and changes for a registered user. This includes plan trial periods.</p>
   
     <figure class="bcls-figure">
       <img
@@ -71,12 +152,7 @@ layout: staging
       />
     </figure>
 
-    <h3>Actions</h3>
-    <ul>
-      <li>Use the <strong>Show</strong> filter dropdown to limit display results</li>
-    </ul>
-
-    <h3>Columns</h3>
+    <h4>Columns</h4>
     <ul>
       <li><strong>Store name</strong> - App store name</li>
       <li><strong>Plan name</strong> - Subscription plan name</li>
@@ -85,6 +161,29 @@ layout: staging
       <li><strong>Trial ends</strong> - End date for the user's trial period</li>
       <li><strong>Ends</strong> - End date for the associated subscription</li>
       <li><strong>Canceled</strong> - Date that the subscription was canceled</li>
+    </ul>
+    <h4>Actions</h4>
+    <ul>
+      <li>Use the <strong>Show</strong> filter dropdown to limit display results</li>
+      <li>Click the <strong>Plan name</strong> to view more details about the plan</li>
+    </ul>
+
+    <h3>Plan Details</h3>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        width="400"
+        alt="Plan information"
+        src="/assets/images/registered-users/plan-information.png"
+      />
+    </figure>
+    <h4>Fields</h4>
+    <ul>
+      <li><strong>Name</strong> - Subscription plan name</li>
+      <li><strong>Description</strong> - Summary of the subscription plan</li>
+      <li><strong>Status</strong> - Current status of the plan (whether it is published or not), and the user's subscription status</li>
+      <li><strong>Last transaction</strong> - Monetary amount and date of the user's last transaction</li>
+      <li><strong>Options</strong> - Additional plan options available for the user</li>
     </ul>
   </section>
 
@@ -100,17 +199,16 @@ layout: staging
       />
     </figure>
 
-    <h3>Actions</h3>
-    <ul>
-      <li>Click <strong>End all sessions</strong> to terminate all currently active user sessions</li>
-    </ul>
-
     <h3>Columns</h3>
     <ul>
       <li><strong>Date</strong> - Date when a session was started; click this header to control the results sort order (descending or ascending)</li>
       <li><strong>Device</strong> - Type of device being used for a session</li>
       <li><strong>Start time</strong> - Time when a session was started</li>
-      <li><strong>End Session</strong> - Click <img class="ui-image" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a session to delete it</li>
+      <li><strong>End Session</strong> - Click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a session to delete it</li>
+    </ul>
+    <h3>Actions</h3>
+    <ul>
+      <li>Click <strong>End all sessions</strong> to terminate all currently active user sessions</li>
     </ul>
   </section>
 
@@ -130,23 +228,21 @@ layout: staging
     <ul>
       <li><strong>Profile</strong> - Name of the profile</li>
       <li><strong>Created</strong> - Creation date and time</li>
-      <li><strong>Remove Profile</strong> - Click <img class="ui-image" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a profile to delete it; the main profile can not be deleted</li>
+      <li><strong>Remove Profile</strong> - Click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a profile to delete it; the main profile can not be deleted</li>
     </ul>
   </section>
 
   <section class="bcls-section">
     <h2 id="Quick_actions">Quick actions</h2>
     <p>The <strong>Quick actions</strong> can be performed from any tab in the Registered Users module.</p>
-    <ul>
-          <li><strong>Delete and forget</strong>
-          <p><strong>WARNING: Deleting a viewer will delete all related data and permissions. This CANNOT be undone!</strong></p>
-            <ol class="bcls-tasklist">
-              <li>Click <strong>Delete and forget</strong>.</li>
-              <li>To continue, enter "Delete".</li>
-              <li>Click <strong>Confirm delete</strong>.</li>
-            </ol>
-          </li>
-        </ul>
+    <h4>Delete and forget</h4>
+    <p>This action is used for <a href="https://gdpr.eu/">GDPR compliance</a>, when a user requests that their personal data be erased.</p>
+    <aside class="bcls-aside bcls-aside--warning language-editable"><strong>WARNING: Deleting a viewer will delete all related data and permissions. This CANNOT be undone!</strong></aside>
+      <ol class="bcls-tasklist">
+        <li>Click <strong>Delete and forget</strong>.</li>
+        <li>To continue, enter "Delete".</li>
+        <li>Click <strong>Confirm delete</strong>.</li>
+      </ol>
   </section>
 
 </article>
