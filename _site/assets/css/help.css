@@ -3,7 +3,7 @@
 
 body, .body {
   font-family: 'Public Sans', Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 14px;
   counter-reset: figure 0 table 0 step 0;
   background-color: white;
   color: #01050e;
@@ -12,28 +12,36 @@ body, .body {
 }
 
   h1 {
-    height: 2.5em;
+    height: 40px;
     color: rgb(1, 5, 14);
-    font-size: 39px;
+    font-size: 37.9px;
     font-weight: 800;
     letter-spacing: -0.5px;
-    /* line-height: .95; */
+    line-height: 40px;
     margin-top: -16px;
     margin-bottom: 24px;
   }
   h2 {
-    font-size: 1.7em;
+    font-size: 30px;
     
   }
   h3 {
-    font-size: 1.3em;
+    font-size: 20px;
+    
+  }
+  h4 {
+    font-size: 1.1em;
+    
+  }
+  h5 {
+    font-size: 1em;
     
   }
 
   
-  .breadcrumb-item, .breadcrumb-item.active {
-    font-size: 1em;
-    /* line-height: 16px; */
+  .breadcrumb-item {
+    font-size: 12px;
+    line-height: 16px;
     color: #08088c;
   }
 
@@ -55,7 +63,7 @@ body, .body {
 
 
 .external-link-icon {
-  height: .9em;
+  height: 14px;
   margin-left:.2rem;
   vertical-align: text-top;
 }
@@ -78,12 +86,12 @@ body, .body {
 summary {
   margin-bottom: 16px !important;
   font-size: 14px;
-  cursor: auto;
+  cursor: none;
 }
 
 p, div, ul, ol, summary (
-  margin-bottom: 1em !important;
-  font-size: .9em;
+  margin-bottom: 16px !important;
+  font-size: 14px;
 )
 
 a {
@@ -113,14 +121,13 @@ ul.doc-links {
 /* details */
 
 *,
-details::before,
-details::after {
+::before,
+::after {
   box-sizing: border-box;
 }
 
 
 details {
-  background-color: #fff;
   margin: 0 auto 0 ;
   padding: 0;
   width: 100%;
@@ -200,23 +207,9 @@ details[open]>summary {
     transition: transform .2s ease-in-out;
   }
 
-  details.details-section[open] {
-    background-color: #f9f9f9;
-  }
 
-  details.details-item[open] {
-    background-color: #f2f4f9;
-  }
-
-  details.details-item>summary {
-    color: #08088c;
-  }
-
-  details section {
-    background-color: #fff;
+  details section.bcls-section {
     border: none;
-    margin: 0;
-    padding: 16px 0 8px 0;
     padding-top: 0;
   }
   
