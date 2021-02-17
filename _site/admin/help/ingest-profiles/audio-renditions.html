@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Upload Settings</title>
+  <title>Audio Renditions</title>
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -34,40 +34,27 @@
     
     <li class="breadcrumb-item"><a href="//help/index.html">Admin</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Upload Settings</li>
+    <li class="breadcrumb-item active" aria-current="page">Audio Renditions</li>
   </ol>
 </nav>
 </header>
 
-<h1>Upload Settings</h1>
+<h1>Audio Renditions</h1>
 <article class="bcls-article">
     <section class="bcls-section">
-        <p>These settings are associated with uploading a video in the <strong>Media</strong> module.</p>
+        <p>Here are audio renditions available to include in your ingest profiles for Dynamic Delivery.</p>
 
-        <h3>Settings</h3>
-        <ul>
-          <li><strong>Default to Inactive</strong> - When checked, sets all uploaded videos to be inactive</li>
-          <li><strong>Required Fields</strong>:
-            <ul>
-              <li><strong>Required for activation</strong> - Include required field values for video activation</li>
-              <li><strong>Required for upload</strong> - Include required field values when uploading a video</li>
-            </ul>
-          </li>
-          <li><strong>Upload Additional Assets</strong> - Allow poster and thumbnail images to be generated when uploading a video</li>
-          <li><strong>Poster Image Default Size (px)</strong> - The default poster image size used when not specified in the ingest profile</li>
-          <li><strong>Thumbnail Image Default Size (px)</strong> - The default thumbnail image size used when not specified in the ingest profile</li>
-          <li><strong>Upload Queueing:</strong>
-            <ul>
-              <li><strong>Allow concurrent uploads</strong> - Multiple files are uploaded concurrently</li>
-              <li><strong>Upload one file at a time</strong> - Files are uploaded one at a time (Recommended for large files)</li>
-            </ul>
-          </li>
-        </ul>
-        <p>After changing settings, click <img class="ui-image" src="/assets/images/admin/help/save-button.png" alt="Save button">.</p>
+         <ul>
+              <li><strong>Name</strong> - Rendition name</li>
+              <li><strong>Type</strong> - Rendition type; values: <strong>default</strong>, <strong>custom</strong></li>
+              <li><strong>Codec</strong> - Audio compression standard</li>
+              <li><strong>Bitrate</strong> - Amount of video data bits transferred within second, measured in bits per second (bps)</li>
+              <li><strong>Channel</strong> - Number of channels supported</li>
+            </ul>        
       
   </section>
     <section class="bcls-section">
-       <h3><a href="https://beacon-la.support.brightcove.com/admin/managing-account-settings.html#upload" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></h3>
+       <h3><a href="https://beacon-la.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></h3>
     </section>
 </article>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
