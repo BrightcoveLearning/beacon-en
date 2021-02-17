@@ -470,12 +470,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/help/index-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/index-test.html",
       "oldURL": "/index-test"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/index-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/help/index-test.html",
       "oldURL": "/index-test"
   },
 
@@ -495,27 +495,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/registered-users/help/",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/support/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/getting-started/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/howto/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/release-notes/",
+      "newURL": "https://beacon-help.support.brightcove.com/registered-users/",
       "oldURL": "/index"
   },
 
@@ -525,7 +510,27 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/",
+      "newURL": "https://beacon-help.support.brightcove.com/release-notes/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/howto/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/general/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/getting-started/",
       "oldURL": "/index"
   },
 
@@ -540,7 +545,17 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/media/help/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/support/",
       "oldURL": "/index"
   },
 
@@ -550,7 +565,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
       "oldURL": "/index"
   },
 
@@ -560,27 +575,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
+      "newURL": "https://beacon-help.support.brightcove.com/registered-users/help/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/help/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/media/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/general/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/registered-users/",
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/",
       "oldURL": "/index"
   },
 
@@ -615,6 +615,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/live/help/manage-completed.html",
+      "oldURL": "/manage-completed"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/live/help/manage-live-event.html",
       "oldURL": "/manage-live-event"
   },
@@ -622,6 +627,11 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/live/help/manage-live-eventTest.html",
       "oldURL": "/manage-live-eventTest"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/live/help/manage-standby.html",
+      "oldURL": "/manage-standby"
   },
 
   {
@@ -680,12 +690,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/organizing-videos-using-folders.html",
       "oldURL": "/organizing-videos-using-folders"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/organizing-videos-using-folders.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html",
       "oldURL": "/organizing-videos-using-folders"
   },
 
