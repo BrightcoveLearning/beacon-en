@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how about working with captions in Video Cloud.">
+  <meta name="description" content="In this topic you will learn how add bumpers (in-house ads) to VOD videos and live events in a Cloud Playout channel.">
   
-  <title>Overview: Adding Captions to a Video</title>
+  <title>Adding Bumpers to Cloud Playout</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -128,9 +128,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/media/">Managing Videos</a></li>
+    <li class="breadcrumb-item"><a href="/cloud-playout/">Cloud Playout</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Overview: Adding Captions to a Video</li>
+    <li class="breadcrumb-item active" aria-current="page">Adding Bumpers to Cloud Playout</li>
   </ol>
 </nav>
 
@@ -554,84 +554,82 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<!-- 
-  This content appears on:
-  
-  https://studio.support.brightcove.com/media/overview-adding-captions-video.html
-
-  If you update in one place, you MUST update it in all!
- -->
-
- <h1>Overview: Adding Captions to a Video</h1>
- <article class="bcls-article">
-  <summary>In this topic, you will learn how about working with captions in Video Cloud.</summary>
+<h1>Adding Bumpers to Cloud Playout</h1>
+<article class="bcls-article">
+  <summary>In this topic you will learn how add bumpers (in-house ads) to VOD videos and live events in a Cloud Playout channel.</summary>
   <section class="bcls-section">
-    <h2 id="intro">Introduction</h2>
-    
-    <p>Closed captions can be added to videos to provide additional or interpretive information to individuals who wish to access it. Captions are necessary so the deaf and hard of hearing can access the audio portion of video presentations.</p>
-    
-    <figure class="bcls-figure"><img class="bcls-image" alt="Example of Captions" src="https://general.support.brightcove.com/assets/images/general/sample-captions.png" />
-    <figcaption class="bcls-caption--image">Example of Captions</figcaption>
-    </figure>
-    
-    <p>Such text may be used for accessibility, to provide translations of the audio track or some other purpose, but the underlying technology used is the same.</p>
-    </section>
-    
-    <section class="bcls-section">
-    <h2 id="filelocation">Captions file location</h2>
-    
-    <p>You can choose where to host the WebVTT captions file:</p>
-    
-    <ol>
-      <li><strong>At a Remote URL (remote asset)</strong> - In this case, the WebVTT file is hosted on your server and you add the URL for the file to the video metadata.
-    
-      <aside class="bcls-aside bcls-aside--information">Note: If you are hosting captions files on your own server, make sure the file is located at a URL that can be accessed by the Brightcove player. The server hosting the captions file should also have Cross-Origin Resource Sharing (CORS) enabled. You can read more about CORS <a href="https://general.support.brightcove.com/developer/concepts-cors.html">here</a>.</aside>
+    <h2 id="Introduction">Introduction</h2>
+    <p>If you are not enabling Server-Side Ads (SSAI) for your channel, you may still want to include bumpers - pre- or post-roll short videos which might be in-house ads or some other kind of announcement or promotion. You might also use bumpers to create buffers for your live programming segments.</p>
+    <p>There is nothing you need to do in the initial channel creation - the option to <span class="button-blue">Insert Bumpers</span> will appear automatically after the channel is created.</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note that you can <strong>not</strong> include bumpers if the the channel is enabled for SSAI.</aside>
+    <p>You can add multiple bumpers to the same video, and you can rearrange bumpers in the program order, just as you can videos. However, some care needs to be taken in doing this or you may end up with an inaccurate EPG. See <a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html#epg_bumpers">The EPG and Bumpers</a> for full details.</p>
+    <p>Bumpers will <strong>not</strong> appear in the <a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG</a> but the duration of the bumper will be added to the video before or after (depending on whether it is pre-roll or post-roll).</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Enabling_bumper_content">Enabling bumper content</h2>
+    <p>The bumpers can be any video in your account, but it must have <strong>one of</strong> the following tags:</p>
+    <ul>
+      <li><code>cp-preroll-bumper</code></li>
+      <li><code>cp-postroll-bumper</code></li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--warning language-editable">If you add both of these tags to the same video, it will still work as a bumper, but the <a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">EPG</a> will be inaccurate.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="inserting-bumpers">Inserting bumpers</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>Before you can insert bumpers, you must <a href="/cloud-playout/cloud-playout-stream-vod.html#add_videos">add videos and/or live events to the channel</a> and <strong>save</strong> the changes.</li>
+      <li>
+        Select one or more videos and/or live events and click <span class="button-blue">Insert Bumpers</span>.<sup><strong><a href="#note1-1">[1-1]</a></strong></sup>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/select-videos-for-bumper.png" alt="Select Videos for Bumper">
+          <figcaption class="bcls-caption--image">Select Videos for Bumper</figcaption>
+        </figure>
       </li>
-      <li><strong>Uploaded using Video Cloud</strong> (<strong>ingested</strong>) - In this case, the WebVTT file is uploaded (ingested) to Video Cloud using the  Media module.</li>
+      <li>
+        In the <strong>Bumpers</strong> dialog select <strong>Pre-Roll</strong> or <strong>Post-Roll</strong> and then click <span class="button-blue">Insert</span> beside the bumper video you want to insert.<sup><strong><a href="#note1-2">[1-2]</a></strong></sup>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/bumper-dialog.png" alt="Bumper Dialog">
+          <figcaption class="bcls-caption--image">Bumper Dialog</figcaption>
+        </figure>
+      </li>
+      <li>
+        You will now see the bumpers appear in the program list:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/bumper-in-program-list.png" alt="Bumper in Program List">
+          <figcaption class="bcls-caption--image">Bumper in Program List</figcaption>
+        </figure>
+      </li>
     </ol>
-    
-    <aside class="bcls-aside bcls-aside--information">Note: If the video source file you ingest into Video Cloud has embedded 608/708 captions, they will be ignored during the processing of the video, and <strong>not</strong> present in the video renditions. To have captions with your videos, you will need to add them using the the <a href="adding-captions-videos.html">Media module</a>.</aside>
-    </section>
-    
-    <section id="associate" class="bcls-section">
-    <h2>Associating captions with a video</h2>
-    
-    <p>There are several ways to associate a captions file with a video:</p>
-    
-    <ol>
-      <li>Using Studio</li>
-      <li>Modifying the player publishing code</li>
-      <li>Using the APIs</li>
-    </ol>
-    
-    <h3 id="studio">Adding captions in Studio</h3>
-    
-    <p>Captions can be associated with a video using the Media module. For information, see <a href="adding-captions-videos.html">Adding Captions to Videos</a>.</p>
-    
-    <h3 id="pubcode">Modifying the player publishing code</h3>
-    
-    <p>In this case, a <code>&lt;track&gt;</code> tag is added to the player publishing code. For more information, see <a href="https://player.support.brightcove.com/general/adding-captions-videos-programmatically.html">Adding Captions to Videos Programmatically</a>.</p>
-    
-    <h3 id="api">Adding captions via the APIs</h3>
-    
-    <p>How you add captions via the APIs varies depending on whether the captions file will be ingested or used as a remote asset.      </p>
-    
-    <aside class="bcls-aside bcls-aside--information">Note: No more than 1000 text tracks may be added.</aside>
-    </section>
-    
-    <section id="remove" class="bcls-section">
-    <h2>Removing captions</h2>
-    
-    <p>Captions can be removed from videos using the Media module. In Studio, open the Media module and edit the video details. Edit the <strong>Text Tracks</strong> property as needed.</p>
-        </section>
-    
-    <section id="styling" class="bcls-section">
-    <h2>Styling captions</h2>
-    
-    <p>Styling can be applied to WebVTT captions using CSS. See <a href="https://studio.support.brightcove.com/media/styling-captions.html">Styling Captions</a> for details.</p>
-    </section>
-    
-    </article>
+    <h3>Notes</h3>
+    <ul style="list-style: none;">
+      <li id="note1-1" style="list-style: none;"><sup><strong>[1-1]</strong></sup> If you select multiple items, the same bumper will be added to each one. If you want different bumpers for different items, add them one by one.</li>
+      <li id="note1-2" style="list-style: none;"><sup><strong>[1-2]</strong></sup> Remember that only videos that have been <a href="#Enabling_bumper_content">tagged as bumpers</a> will appear in the list.</li>
+  </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="removing_bumpers">Moving or removing bumpers</h2>
+    <p>Drag and drop bumpers to move them to new locations in the program list.</p>
+    <p>To remove a bumper, just select it, click <strong>Delete</strong>, and then click <strong>Delete</strong> again in the confirmation dialog.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/delete-bumper.png" alt="Delete Bumper">
+      <figcaption class="bcls-caption--image">Delete Bumper</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Related topics</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API Reference</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Channel API Reference</a></li>
+    </ul>
+  </section>
+</article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
@@ -657,7 +655,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 13 Jan 2021
+  Page last updated on 17 Feb 2021
 </div>
 
 

@@ -63,7 +63,7 @@ layout: staging
         </ul>
       </li>
       <li>If you will be using Live inputs, set <strong>Live Input</strong> to On, and enter a Slate URL, unless you are going to use the default Brightcove MP4 for you slate. The slate MP4 will play whenever Live input is stopped because the encoder is stopped or some technical issue blocks the live stream. <strong>Note that <strong>the Slate URL must be a static URL that is always available</strong> (short-lived CDN URLs are not allowed).</strong></li>
-      <li>Enter the channel <strong>Destination</strong> details. Cloud Playout  supports 2 outputs at the same time. For example, you can output HLS into an S3 Bucket and an RTMP feed to  a Brightcove Live Channel or a 3rd party ingestion point. Note that combining <strong>Brightcove Live Event</strong> and <strong>RTMP</strong> as simultaneous destinations is not supported.
+      <li>Enter the channel <strong>Destination</strong> details. Cloud Playout  supports 2 outputs at the same time. For example, you can output HLS into an S3 Bucket and an RTMP feed to a Brightcove Live Channel or a 3rd party ingestion point. Note that combining <strong>Brightcove Live Event</strong> and <strong>RTMP</strong> as simultaneous destinations is not supported.
         <ul>
           <li><strong>Optimize Display for</strong> - Controls the bitrate and dimensions for the output
             <ul>
@@ -136,6 +136,7 @@ layout: staging
         </li>
         <li>You can drag live events to reorder the list just as you can videos. You can also use the <img src="/assets/images/cloud-playout/cloudplayout-quick-edit.png" alt="quick edit" class="ui-image"> button to modify the duration of a live event.</li>
     </ol>
+    <p>Also see <a href="/cloud-playout/adding-bumpers-to-vod.html">Adding Bumpers to Content</a> for adding bumpers to VOD or live event items.</p>
     <p>After videos and live events have been added to a channel, click <strong>Activate</strong> to activate the channel. A channel must be activated before streaming can begin. See the <a href="/cloud-playout/using-channel-actions.html">Using channel actions</a> for more information.</p>
     <aside class="bcls-aside bcls-aside--information">Note: To change the order of the videos in a program, click on a video and drag it to a new position.</aside>
     <p>When videos are added to a channel, a system-generated playlist will be created and visible in the Media module.</p>
