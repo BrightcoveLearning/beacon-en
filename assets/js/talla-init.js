@@ -12,7 +12,7 @@ var token =
     Talla.OptionJWTCredentials(token),
     Talla.OptionBotName("{{ site.product }} Doc Search"),
     Talla.OptionAnonymous(true),
-    Talla.OptionThemeColor('{{ site.product_color }}'),
+    Talla.OptionThemeColor('rgb(1, 5, 14)'),
     Talla.OptionDisplayName('Search {{ site.product }} Docs'),
     Talla.OptionKnowledgeGroups(['{{ site.talla_knowledgegroup }}']),
     Talla.OptionWideBeacon(true),

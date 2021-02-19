@@ -5,7 +5,7 @@ layout: null
 /* css specific to the site */
 
 .bcls-active {
-  border-left: 3px {{ site.product_color }} solid;
+  border-left: 3px rgb(1, 5, 14) solid;
 }
 
 h1 {
