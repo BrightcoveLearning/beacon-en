@@ -46,7 +46,7 @@
         <p>Manage fill slates and credentials for Brightcove Live streams. SSAI ad configurations are managed in <strong>Server-Side Ad Settings</strong>.</p>
 
         <details class="details-item">
-          <summary>Manage Fill Slate</summary>
+          <summary>Add fill slate</summary>
           <section class="bcls-section">
             <p>Fill slates are content to be served when there are gaps in a live stream ad break.</p>
             <ol class="bcls-tasklist">
@@ -59,14 +59,58 @@
         </details>
 
         <details class="details-item">
-          <summary>Manage Credentials</summary>
+          <summary>Delete Fill Slate</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist">
+              <li>Click <img class="ui-image" alt="Delete icon" src="/assets/images/admin/help/delete-icon.png" /> to delete the associated fill slate.</li>
+              <li>In the <strong>Delete</strong> dialog, click <span class="button-red">Delete</span> to confirm.</li>
+            </ol>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Add credential</summary>
           <section class="bcls-section">
             <p>Live credentials are required when using either the Live module or the Live API.</p>
             <ol class="bcls-tasklist">
-              <li>For Live Video Cloud credentials, start with <a href="https://live.support.brightcove.com/admin/managing-live-settings.html" target="_blank">API Authentication credentials <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a>.</li>
-              <li>Enter <strong>Name</strong> - a descriptive name for your fill slate.</li>
-              <li>Enter <strong>Source URL</strong> - full address of the fill slate.</li>
+              <li>For Live Video Cloud credentials, start with <a href="https://live.support.brightcove.com/admin/managing-live-settings.html#credentials" target="_blank">API Authentication credentials <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a>. <br>
+              For S3, FTP or RTMP credentials, skip this step.</li>
+              <li>Enter <strong>Label</strong> - an internal name for this credential</li>
+              <li>Select a <strong>Type</strong>:
+                <ul>
+                  <li><strong>FTP</strong> - Used to save the VOD asset to an ftp location (API use)</li>
+                  <li><strong>RTMP</strong> - Used to create RTMP credentials to be used by the encoder</li>
+                  <li><strong>S3</strong> - Used to save the VOD asset to an Amazon S3 account (API use)</li>
+                  <li><strong>Video Cloud</strong> - Used to save the VOD asset to a Video Cloud account (API use)</li>
+                </ul>
+              </li>
+              <li>Enter <strong>Public Key / Username</strong>:
+                <ul>
+                  <li><strong>FTP</strong> - Enter the username for the FTP site</li>
+                  <li><strong>RTMP</strong> - Enter the username that the encoder will use to authenticate</li>
+                  <li><strong>S3</strong> - Enter the username for the S3 account</li>
+                  <li><strong>Video Cloud</strong> - Enter the Client ID generated for the API Authentication credential</li>
+                </ul>
+              </li>
+              <li>Enter <strong>Private Key / Password</strong>:
+                <ul>
+                  <li><strong>FTP</strong> - Enter the password for the FTP site</li>
+                  <li><strong>RTMP</strong> - Enter the password that the encoder will use to authenticate</li>
+                  <li><strong>S3</strong> - Enter the password for the S3 account</li>
+                  <li><strong>Video Cloud</strong> - Enter the Client secret generated for the API Authentication credential</li>
+                </ul>
+              </li>
               <li>Click <span class="button-blue">Save</span>.</li>
+            </ol>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Delete credential</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist">
+              <li>Click <img class="ui-image" alt="Delete icon" src="/assets/images/admin/help/delete-icon.png" /> to delete the associated credential.</li>
+              <li>In the <strong>Delete</strong> dialog, click <span class="button-red">Delete</span> to confirm.</li>
             </ol>
           </section>
         </details>
