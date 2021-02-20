@@ -1,27 +1,22 @@
 ---
 title: Page Name
-parent: Pages
+description: Define the system name is the internal name for the page, which is not necessarily what viewers will see in the Brightcove Beacon app.
+parent: help
+section: pages
 layout: help
 ---
-<h1>Page Name</h1>
+
+<h1>{{ page.title }}</h1>
 <article class="bcls-article">
-    <section class="bcls-section">
-        <p>The system name is the internal name for the page, and not necessarily what viewers will see in the Brightcove Beacon app.</p>
+    <summary>{{ page.description }}</summary>
+    <section>
         <ol class="bcls-tasklist">
             <li>Enter the system name for the page and press <strong>Enter</strong>.</li>
         </ol>
         <ul>
             <li>This is also the default language's page title.</li>
             <li>The page title can be changed later.</li>
-            <li>The maximum number of characters is 25, including spaces.</li>
+            <li>Maximum characters allowed is beyond the practical limit you would want to use.</li>
         </ul>
     </section>
-
-    <!--     <script>
-        document.getElementById('help-link').addEventListener('click', handleButtonClick, false);
-
-        function handleButtonClick(e) {
-            window.parent.postMessage('page-layout', '*')
-        }
-    </script> -->
 </article>

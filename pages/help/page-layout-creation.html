@@ -1,27 +1,23 @@
 ---
 title: Page Layout
+description: Select a page layout. The layout will control the look and feel of the page and determines the number of playlists that can be added to a page.
+parent: help
+section: Pages
 layout: help
 ---
-<h1>Page Layout</h1>
+
+<h1>{{ page.title }}</h1>
 <article class="bcls-article">
+    <summary>{{ page.description }}</summary>
     <section class="bcls-section">
-        <p>Select a page layout. The layout will control the look and feel of the page and determines the number of playlists that can be added to a page.</p>
         <ul>
-            <li>Tabs</li>
-            <li>Grid</li>
+            <li>Playlist Grid</li>
             <li>Hero (Autoplay Channel)</li>
+            <li>Hero (Featured Playlist)</li>
             <li>Hero (Image)</li>
+            <li>Carousels</li>
         </ul>
         <p>When a page layout is selected, the page preview will update to reflect the current selection.</p>
         <p>After making your selection, click the <strong>Next</strong> button that is positioned under the container types.</p>
     </section>
-
-    <script>
-        document.getElementById('help-link').addEventListener('click', handleButtonClick, false);
-
-        function handleButtonClick(e) {
-            window.parent.postMessage('page-details', '*')
-        }
-    </script>
-
-</article
+</article>
