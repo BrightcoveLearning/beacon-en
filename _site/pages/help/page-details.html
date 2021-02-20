@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="Use the Page Details screen to manage layout, add content and control availability.">
   
   <title>Page Details</title>
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -33,7 +33,7 @@
 <nav id="breadcrumbs" aria-label="breadcrumb" style="display: inline-block;">
   <ol class="breadcrumb arr-right">
     
-    <li class="breadcrumb-item"><a href="//help/index.html">Pages</a></li>
+    <li class="breadcrumb-item"><a href="/pages/help/index.html">Help</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Page Details</li>
   </ol>
@@ -42,35 +42,26 @@
 
 <h1>Page Details</h1>
 <article class="bcls-article">
-    <section class="bcls-section">
-        <p>Use the Page Details screen to create, delete and generally build and manage pages.</p>
+    <summary>Use the Page Details screen to manage layout, add content and control availability.</summary>
+    <section>
         <ul>
-            <li>Click the gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) to edit the page details.</li>
-            <li>Click <strong>Add Playlist</strong> to select the playlist(s) that will be displayed on this page. If playlists have been selected, they will be displayed.</li>
-            <li>The <strong>Availability</strong> settings can be used to restrict page availability based upon:
+            <li>Click the gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) to edit the page details including:
                 <ul>
-                    <li><a href="/pages/howto/availability-date.html">Date</a></li>
-                    <li><a href="/pages/howto/availability-device.html">Device Type</a></li>
-                    <li><a href="/pages/howto/availability-location.html">Location</a></li>
+                    <li>Change page title</li>
+                    <li>Control availability</li>
+                    <li>Archive page</li>
+                </ul>
+            </li>
+            <li>Click <strong>Add Playlist</strong> to control the playlist(s) that are displayed on this page.</li>
+            <li>The <strong>Availability</strong> settings are used to restrict page availability based upon:
+                <ul>
+                    <li>Date</li>
+                    <li>Device Type</li>
+                    <li>Location</li>
                 </ul>
             </li>
         </ul>
-        <a id="help-link" href="/pages/help/choose-playlist.html">&gt;</a>
     </section>
-    <section class="bcls-section">
-        <h3>Related</h3>
-        <ul>
-            <li><a href="../howto/creating-page.html" target="_blank">How To: Create a Page</a></li>
-        </ul>
-    </section>
-
-    <script>
-        document.getElementById('help-link').addEventListener('click', handleButtonClick, false);
-
-        function handleButtonClick(e) {
-            window.parent.postMessage('choose-playlist', '*')
-        }
-    </script>
 </article>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

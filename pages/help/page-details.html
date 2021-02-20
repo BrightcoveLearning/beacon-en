@@ -1,37 +1,31 @@
 ---
 title: Page Details
-parent: Pages
+description: Use the Page Details screen to manage layout, add content and control availability.
+parent: help
+section: pages
 layout: help
 ---
-<h1>Page Details</h1>
+
+<h1>{{ page.title }}</h1>
 <article class="bcls-article">
-    <section class="bcls-section">
-        <p>Use the Page Details screen to create, delete and generally build and manage pages.</p>
+    <summary>{{ page.description }}</summary>
+    <section>
         <ul>
-            <li>Click the gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) to edit the page details.</li>
-            <li>Click <strong>Add Playlist</strong> to select the playlist(s) that will be displayed on this page. If playlists have been selected, they will be displayed.</li>
-            <li>The <strong>Availability</strong> settings can be used to restrict page availability based upon:
+            <li>Click the gear icon (<img class="bcls-image--no-border" alt="" src="icon-gear.png" />) to edit the page details including:
                 <ul>
-                    <li><a href="/pages/howto/availability-date.html">Date</a></li>
-                    <li><a href="/pages/howto/availability-device.html">Device Type</a></li>
-                    <li><a href="/pages/howto/availability-location.html">Location</a></li>
+                    <li>Change page title</li>
+                    <li>Control availability</li>
+                    <li>Archive page</li>
+                </ul>
+            </li>
+            <li>Click <strong>Add Playlist</strong> to control the playlist(s) that are displayed on this page.</li>
+            <li>The <strong>Availability</strong> settings are used to restrict page availability based upon:
+                <ul>
+                    <li>Date</li>
+                    <li>Device Type</li>
+                    <li>Location</li>
                 </ul>
             </li>
         </ul>
-        <a id="help-link" href="/pages/help/choose-playlist.html">&gt;</a>
     </section>
-    <section class="bcls-section">
-        <h3>Related</h3>
-        <ul>
-            <li><a href="../howto/creating-page.html" target="_blank">How To: Create a Page</a></li>
-        </ul>
-    </section>
-
-    <script>
-        document.getElementById('help-link').addEventListener('click', handleButtonClick, false);
-
-        function handleButtonClick(e) {
-            window.parent.postMessage('choose-playlist', '*')
-        }
-    </script>
 </article>
