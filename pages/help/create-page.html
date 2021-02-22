@@ -19,13 +19,4 @@ layout: help
             <li><a href="../howto/creating-page.html" target="_blank">How To: Create a Page</a></li>
         </ul>
     </section>
-
-    <script>
-        document.getElementById('help-link').addEventListener('click', handleButtonClick, false);
-
-        function handleButtonClick(e) {
-            window.parent.postMessage('page-title', '*')
-        }
-    </script>
-
 </article>
