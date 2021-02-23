@@ -328,6 +328,6 @@ details[open] {
 
 .button-icon {
 	white-space: nowrap;
-	padding-right: .25rem;
-	padding-top: .85rem;
+  padding-right: .15rem;
+  width: 16px;
 }
