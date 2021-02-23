@@ -44,7 +44,6 @@ h3 {
 }
 
 .bcls-article {
-	/* margin-top: -2.7em; */
 	font-size: 14px;
 }
 
@@ -123,25 +122,8 @@ details {
 	border-right: none;
 	border-left: none;
 	border-radius: 0;
-	/* background-color: #fff; */
-	/* color: #263238; */
-	/* transition: background-color .15s; */
 }
 
-/* details :first-child {
-  margin-top: 8px;
-}
-  
-details :first-of-type {
-  margin-top: 8px;
-}
-  
-details :last-child {
-  margin-bottom: 8px;
-} */
-
-/* details :last-of-type {
-} */
 
 details::before {
 	width: 100%;
