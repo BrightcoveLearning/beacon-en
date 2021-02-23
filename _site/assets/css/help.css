@@ -1,30 +1,31 @@
 @import url(https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500;1,700;1,800&display=swap);
+
 body, .body {
-	font-family: 'Public Sans', Helvetica, sans-serif;
-	font-size: 1em;
+	font-family: 'Public Sans', sans-serif;
+	font-size: 14px;
 	counter-reset: figure 0 table 0 step 0;
 	background-color: white;
 	color: #01050e;
-	margin: 16px 24px;
+	margin: 0;
 	position: relative;
 }
 
 h1 {
-	height: 2.5em;
+	height: auto;
 	color: rgb(1, 5, 14);
-	font-size: 39px;
+	font-size: 2.5rem;
 	font-weight: 800;
 	letter-spacing: -0.5px;
-	margin-top: -16px;
+	margin-top: 0;
 	margin-bottom: 0;
 }
 
 h2 {
-	font-size: 1.7em;
+	font-size: 1.7rem;
 }
 
 h3 {
-	font-size: 1.3em;
+	font-size: 1.2rem;
 }
 
 .breadcrumb {
@@ -43,7 +44,6 @@ h3 {
 }
 
 .bcls-article {
-	margin-top: -2.7em;
 	font-size: 14px;
 }
 
@@ -87,7 +87,7 @@ a, section a {
 	background-color: transparent
 }
 
-a, a::visited, a::hover {
+a, .a, a::visited, a::hover {
 	color: #08088c!important;
 }
 
@@ -122,25 +122,8 @@ details {
 	border-right: none;
 	border-left: none;
 	border-radius: 0;
-	/* background-color: #fff; */
-	/* color: #263238; */
-	/* transition: background-color .15s; */
 }
 
-/* details :first-child {
-  margin-top: 8px;
-}
-  
-details :first-of-type {
-  margin-top: 8px;
-}
-  
-details :last-child {
-  margin-bottom: 8px;
-} */
-
-/* details :last-of-type {
-} */
 
 details::before {
 	width: 100%;
@@ -166,7 +149,7 @@ details[open]::before {
 }
 
 details>summary {
-	padding: .0 .5em 0 0;
+	padding: 0 .5em;
 	display: block;
 	position: relative;
 	font-size: 14px;
@@ -222,7 +205,7 @@ details[open] {
 	/* transform: translateY(-50%) rotate(180deg); */
 }
 
-&::-webkit-details-marker {
+.-webkit-details-marker {
 	display: none;
 }
 
@@ -251,7 +234,7 @@ details[open] {
 	border-left: 4px solid #e5e6e6;
 	list-style: none;
 	margin-bottom: 16px;
-	margin-left: -30px;
+	margin-left: -1em;
 	min-height: 1.7em;
 	padding-left: 1em;
 	position: relative;
@@ -269,7 +252,7 @@ details[open] {
 	border-left: 4px solid #e5e6e6;
 	list-style: none;
 	margin-bottom: 16px;
-	margin-left: -30px;
+	margin-left: -1em;
 	min-height: 1.7em;
 	padding-left: 1em;
 	position: relative;
