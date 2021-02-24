@@ -5,7 +5,7 @@ body, .body {
 	font-size: 14px;
 	counter-reset: figure 0 table 0 step 0;
 	background-color: white;
-	color: #01050e;
+	color: rgb(1, 5, 14);
 	margin: 0;
 	position: relative;
 }
@@ -36,11 +36,11 @@ h3 {
 .breadcrumb-item, .breadcrumb-item.active {
 	font-size: 1em;
 	/* line-height: 16px; */
-	color: #08088c;
+	color: rgb(8, 8, 140);
 }
 
 .breadcrumb-item * {
-	color: #08088c;
+	color: rgb(8, 8, 140);
 }
 
 .bcls-article {
@@ -49,7 +49,6 @@ h3 {
 
 .bcls-section {
 	/*  padding-top: .5em; */
-	/* border-top: 1px #CCC solid; */
 }
 
 .external-link-icon {
@@ -65,8 +64,8 @@ h3 {
 }
 
 #breadcrumbs>ol {
-	background-color: white;
-	color: #08088c;
+	background-color: rgb(255, 255, 255);
+	color: rgb(8, 8, 140);
 	z-index: 9999;
 }
 
@@ -82,17 +81,17 @@ p, div, ul, ol, summary {
 }
 
 a, section a {
-	color: #08088c !important;
+	color: rgb(8, 8, 140) !important;
 	text-decoration: none;
 	background-color: transparent
 }
 
 a, .a, a::visited, a::hover {
-	color: #08088c!important;
+	color: rgb(8, 8, 140)!important;
 }
 
 .bcls-section a, .bcls-section a::visited, .bcls-section a::hover {
-	color: #08088c!important;
+	color: rgb(8, 8, 140)!important;
 }
 
 a::hover {
@@ -111,14 +110,14 @@ ul.doc-links {
 }
 
 details {
-	background-color: #fff;
+	background-color: rgb(255, 255, 255);
 	margin: 0 auto 0;
 	padding: 0;
 	width: 100%;
 	/* max-width: calc(100% - 48px); */
 	position: relative;
-	border-top: 1px solid #e5e6e6;
-	border-bottom: 1px solid #e5e6e6;
+	border-top: 1px solid rgb(1, 5, 14);
+	border-bottom: 1px solid rgb(1, 5, 14);
 	border-right: none;
 	border-left: none;
 	border-radius: 0;
@@ -132,9 +131,7 @@ details::before {
 	position: absolute;
 	top: 0;
 	left: 0;
-	/* border-radius: inherit; */
 	opacity: .15;
-	/* box-shadow: 0 .25em .5em #263238; */
 	pointer-events: none;
 	transition: opacity .2s;
 	z-index: -1;
@@ -178,19 +175,19 @@ details>summary::before, details>summary::after {
 }
 
 details.details-section[open] {
-	background-color: #f9f9f9;
+	background-color: rgb(249, 249, 249);
 }
 
 details.details-item[open] {
-	background-color: #f2f4f9;
+	background-color: rgb(242, 244, 249);
 }
 
 details.details-item>summary {
-	color: #08088c;
+	color: rgb(8, 8, 140);
 }
 
 details section {
-	background-color: #fff;
+	background-color: rgb(255, 255, 255);
 	border: none;
 	margin: 0;
 	padding: 16px 0 8px 0;
@@ -218,7 +215,7 @@ details[open] {
 }
 
 .bcls-tasklist>li::before {
-	color: #01050e;
+	color: rgb(1, 5, 14);
 	content: counters(step, ".") " ";
 	font-size: 1.3em;
 	font-weight: bold;
@@ -231,7 +228,7 @@ details[open] {
 }
 
 .bcls-tasklist>li {
-	border-left: 4px solid #e5e6e6;
+	border-left: 4px solid rgb(229, 230, 230);
 	list-style: none;
 	margin-bottom: 16px;
 	margin-left: -1em;
@@ -249,7 +246,7 @@ details[open] {
 }
 
 .bcls-tasklist-restart>li {
-	border-left: 4px solid #e5e6e6;
+	border-left: 4px solid rgb(229, 230, 230);
 	list-style: none;
 	margin-bottom: 16px;
 	margin-left: -1em;
@@ -260,7 +257,7 @@ details[open] {
 }
 
 .bcls-tasklist-restart>li::before {
-	color: #01050e;
+	color: rgb(1, 5, 14);
 	content: counters(rstep, ".") " ";
 	/* counter-increment: rstep; */
 	font-size: 1.3em;
@@ -308,18 +305,17 @@ details[open] {
 }
 
 .button-blue {
-	color: white;
-	background-color: #0D2CBD;
+	color: rgb(255, 255, 255);
+	background-color: rgb(13, 44, 189);
 }
 
 .button-red {
-	color: #D33D00;
-	background-color: white;
+	color: rgb(211, 61, 0);
+	background-color: rgb(255, 255, 255);
 }
 
 .button-gray {
-	/* color: black; */
-	background-color: #F2F4F9;
+	background-color: rgb(242, 244, 249);
 }
 
 .button-icon {
