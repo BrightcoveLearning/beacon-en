@@ -116,8 +116,7 @@ details {
 	width: 100%;
 	/* max-width: calc(100% - 48px); */
 	position: relative;
-	border-top: 1px solid rgb(1, 5, 14);
-	border-bottom: 1px solid rgb(1, 5, 14);
+	border-bottom: 1px solid rgb(229, 230, 230);
 	border-right: none;
 	border-left: none;
 	border-radius: 0;
@@ -172,6 +171,18 @@ details>summary::before, details>summary::after {
     text-align: right; */
 	transform: translateY(-50%);
 	transition: transform .2s ease-in-out;
+}
+
+details.details-section>summary {
+	font-weight: bold;
+}
+
+details.details-section:first-of-type {
+	border-top: 1px solid rgb(229, 230, 230);
+}
+
+details.details-item:first-of-type {
+	border-top: 1px solid rgb(229, 230, 230);
 }
 
 details.details-section[open] {
