@@ -120,13 +120,18 @@ details {
 	width: 100%;
 	/* max-width: calc(100% - 48px); */
 	position: relative;
-	border-top: 1px solid rgb(1, 5, 14);
 	border-bottom: 1px solid rgb(1, 5, 14);
 	border-right: none;
 	border-left: none;
 	border-radius: 0;
 }
 
+details.details-section:first-of-type {
+	border-top: 1px solid rgb(1, 5, 14);
+}
+details.details-item:first-of-type {
+	border-top: 1px solid rgb(1, 5, 14);
+}
 
 details::before {
 	width: 100%;
@@ -186,7 +191,15 @@ details.details-item[open] {
 	background-color: rgb(242, 244, 249);
 }
 
+details.details-nested[open] {
+	background-color: rgb(242, 244, 249);
+}
+
 details.details-item>summary {
+	color: rgb(8, 8, 140);
+}
+
+details.details-nested>summary {
 	color: rgb(8, 8, 140);
 }
 
