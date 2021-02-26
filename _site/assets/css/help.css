@@ -116,17 +116,21 @@ details {
 	width: 100%;
 	/* max-width: calc(100% - 48px); */
 	position: relative;
-	border-bottom: 1px solid rgb(1, 5, 14);
+	border-bottom: 1px solid rgb(229, 230, 230);
 	border-right: none;
 	border-left: none;
 	border-radius: 0;
 }
 
 details.details-section:first-of-type {
-	border-top: 1px solid rgb(1, 5, 14);
+	border-top: 1px solid rgb(229, 230, 230);
 }
 details.details-item:first-of-type {
-	border-top: 1px solid rgb(1, 5, 14);
+	border-top: 1px solid rgb(229, 230, 230);
+}
+
+details.details-nested:last-of-type {
+	border-bottom: none;
 }
 
 details::before {
@@ -161,9 +165,30 @@ details>summary {
 	margin-top: 16px;
 }
 
+details>summary::-webkit-details-marker {
+	float: right;
+	color: transparent;
+	background: url(https://support.brightcove.com/https://support.brightcove.comsite-assets/images/site/aside-icons/chevron-right-blue.svg/);
+}
+
+details[open]>summary::-webkit-details-marker {
+	float: right;
+	color: transparent;
+	background: url(https://support.brightcove.com/https://support.brightcove.comsite-assets/images/site/aside-icons/chevron-down-blue.svg/);
+}
+
 details[open]>summary {
 	border: none;
 	outline: none;
+}
+
+details.details-section>summary {
+	color: rgb(1, 5, 14);
+	font-weight: bold;
+}
+
+details.details-item>summary, details.details-item>summary {
+	color: rgb(8, 8, 140);
 }
 
 details>summary::before, details>summary::after {
