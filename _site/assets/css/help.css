@@ -333,41 +333,34 @@ details[open] {
 }
 
 /* in-app help text buttons */
-
-.button-blue, .button-red, .button-gray, .button-red-bkgd, .button-blue-text {
+.button-blue, .button-blue-text, .button-red, .button-red-text, .button-gray {
 	/* font-family: 'Public Sans'; */
 	font-weight: bold;
 	font-size: .65rem;
 	padding: .4rem;
 	white-space: nowrap;
 }
-
 .button-blue {
 	color: rgb(255, 255, 255);
 	background-color: rgb(13, 44, 189);
 }
-
 .button-blue-text {
 	color: rgb(13, 44, 189);
 	background-color: rgb(255, 255, 255);
 }
-
 .button-red {
-	color: rgb(211, 61, 0);
-	background-color: rgb(255, 255, 255);
-}
-
-.button-red-bkgd {
 	color: rgb(255, 255, 255);
 	background-color: rgb(211, 61, 0);
 }
-
+.button-red-text {
+	color: rgb(211, 61, 0);
+	background-color: rgb(255, 255, 255);
+}
 .button-gray {
 	background-color: rgb(242, 244, 249);
 }
-
 .button-icon {
 	white-space: nowrap;
   padding-right: .15rem;
-  width: 16px;
+  width: 1rem;
 }
