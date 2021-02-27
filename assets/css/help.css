@@ -169,21 +169,22 @@ details>summary {
 	margin-top: 16px;
 }
 
-details>summary::-webkit-details-marker {
+details>summary::after {
 	float: right;
-	color: transparent;
-	height: .7rem;
-	width: .7rem;
+	height: .5rem;
+	width: .5rem;
 	margin-right: 1rem;
-	background: url(https://support.brightcove.com/site-assets/images/site/aside-icons/chevron-right-blue.svg);
+	content: url(https://support.brightcove.com/site-assets/images/site/aside-icons/chevron-down-blue.svg);
+}
+details>summary::-webkit-details-marker {
+	display: none;
 }
 
-details[open]>summary::-webkit-details-marker {
+details[open]>summary::after {
 	float: right;
-	color: transparent;
-	height: .7rem;
-	width: .7rem;
-	background: url(https://support.brightcove.com/site-assets/images/site/aside-icons/chevron-down-blue.svg);
+	height: .5rem;
+	width: .5rem;
+	content: url(https://support.brightcove.com/site-assets/images/site/aside-icons/chevron-up-blue.svg);
 }
 
 details[open]>summary {
