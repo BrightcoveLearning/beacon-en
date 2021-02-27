@@ -172,13 +172,18 @@ details>summary {
 details>summary::-webkit-details-marker {
 	float: right;
 	color: transparent;
-	background: url(https://support.brightcove.com/https://support.brightcove.comsite-assets/images/site/aside-icons/chevron-right-blue.svg/);
+	height: .7rem;
+	width: .7rem;
+	margin-right: 1rem;
+	background: url(https://support.brightcove.com/site-assets/images/site/aside-icons/chevron-right-blue.svg);
 }
 
 details[open]>summary::-webkit-details-marker {
 	float: right;
 	color: transparent;
-	background: url(https://support.brightcove.com/https://support.brightcove.comsite-assets/images/site/aside-icons/chevron-down-blue.svg/);
+	height: .7rem;
+	width: .7rem;
+	background: url(https://support.brightcove.com/site-assets/images/site/aside-icons/chevron-down-blue.svg);
 }
 
 details[open]>summary {
