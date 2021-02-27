@@ -17,7 +17,9 @@ var BCLS_details = ( function (window, document) {
       item_details[j].removeAttribute('open');
     }
     this.setAttribute('open', 'true');
-    }
+    } else {
+			this.removeAttribute('open');
+		}
   }
   
   function nestedDetailHandler(evt) {
@@ -29,7 +31,9 @@ var BCLS_details = ( function (window, document) {
       nested_details[j].removeAttribute('open');
     }
     this.setAttribute('open', 'true');
-    }
+    } else {
+			this.removeAttribute('open');
+		}
   }
   
   function sectionDetailHandler(evt) {
@@ -41,7 +45,9 @@ var BCLS_details = ( function (window, document) {
       section_details[j].removeAttribute('open');
     }
     this.setAttribute('open', 'true');
-    }
+    } else {
+			this.removeAttribute('open');
+		}
   }
   
   for (i = 0; i < iMax; i++) {
