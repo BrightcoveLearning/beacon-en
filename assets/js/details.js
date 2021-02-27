@@ -45,9 +45,7 @@ var BCLS_details = ( function (window, document) {
       section_details[j].removeAttribute('open');
     }
     this.setAttribute('open', 'true');
-    } else {
-			this.removeAttribute('open');
-		}
+    }
   }
   
   for (i = 0; i < iMax; i++) {
@@ -60,7 +58,7 @@ var BCLS_details = ( function (window, document) {
     }
   }
   if (nMax > 0) {
-    for (n = 0; n < nMax; s++) {
+    for (n = 0; n < nMax; n++) {
       nested_details[n].addEventListener('click', nestedDetailHandler);
     }
   }
