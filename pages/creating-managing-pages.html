@@ -1,11 +1,12 @@
 ---
-title: Creating and Managing Pages
-parent: Manging Pages
-layout: howto
+title: "Creating and Managing Pages"
+description: "In this topic, you will learn how to create and manage pages."
+parent: "pages"
 ---
+<h1>{{ page.title }}</h1>
 <article class="bcls-article">
-    <h1>Creating and Managing Pages</h1>
-    <summary>In this topic you will learn how to create and manage pages.</summary>
+    <summary>{{ page.description }}</summary>
+
     <section class="bcls-section">
         <p>Pages are used to display video content in a Brightcove Beacon application. To create and manage pages, open the <strong>Pages</strong> page by clicking <strong>Pages</strong> in the left navigation. A list of pages that have been created will be displayed in the left margin.</p>
         <figure class="bcls-figure">
@@ -21,6 +22,7 @@ layout: howto
             </ul>
         </figure>
     </section>
+
     <section class="bcls-section">
         <h2 id="create">Creating pages</h2>
         <ol class="bcls-tasklist-restart">
@@ -29,10 +31,8 @@ layout: howto
                 <figure class="bcls-figure">
                     <img class="bcls-image" src="/assets/images/pages/pages-new-page.png" alt="new page panel">
                 </figure>
-
-                <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/" /></figure>
             </li>
-            <li>Enter a <strong>Page Name</strong>. The number of characters allowed exceeds what you would practically want for a page title. Press <strong>enter</strong> to save the name.
+            <li>Enter a <strong>Page Name</strong>. The number of characters allowed exceeds what you would practically want for a page title, to that is not a concern. Press <strong>Enter</strong> to save the name.
                 <aside class="bcls-aside bcls-aside--information">Note: After you enter the page name, a system generated, internal name is also created and will be displayed below the page name. This internal name cannot be changed.</aside>
                 <aside class="bcls-aside bcls-aside--information">Note: If your account is configured with <a href="/admin/configuring-language-settings.html">multiple languages</a>, enter a title using the primary language here. Page names for any additional languages can be entered by <a href="#page-title">editing the page title</a> after the page has been created.</aside>
             </li>
@@ -41,13 +41,25 @@ layout: howto
                     <img class="bcls-image" src="/assets/images/pages/layout-preview.png" alt="layout preview">
                 </figure>
             </li>
-            <li>At the bottom of the navigation panel, click <span class="button-blue">Save</span>.</li>
-            <li>The page settings that can be configured will be displayed in the left margin. For more infomation on adding videos to a page and configuring page availability, see one of the following topics:
+            <li>At the bottom of the navigation panel, click <span class="button-blue">Next →</span>.</li>
+            <li>At this point, you can:
+                <ol>
+                    <li>See the page is unpublished by default.</li>
+                    <li>Click <span class="button-blue">PUBLISH</span> to publish the page.</li>
+                    <li>Change the page layout (on hover).</li>
+                    <li>Click <span class="button-blue-text">Add playlist</span> to add video content to your page.</li>
+                    <li>Configure page availability.</li>
+                </ol>
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/pages/page-info-after-creation.png" alt="page actions after creation">
+                </figure>
+            </li>
+            <li>The page settings that can be configured will be displayed in the left margin. For more information on adding videos to a page and configuring page availability, see one of the following topics:
                 <ul>
                     <li><a href="/pages/adding-videos-pages.html">Adding Videos to Pages</a></li>
                     <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
                 </ul>
-                <p>Click <strong>Back to All Pages</strong> to return to the list of pages.</p>
+                <p>Click the vertical <span class="button-blue-text">Back to All Pages</span> to return to the list of pages.</p>
             </li>
         </ol>
         <p>The page that was created will display in the list of pages.</p>
