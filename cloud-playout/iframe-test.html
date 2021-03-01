@@ -12,9 +12,10 @@ layout: iframe
     position: fixed;
     top: 0;
     right: 10px;
-    min-width: 500px;
+    min-width: 450px;
     min-height: 800px;
-    display: none;
+		padding: 24px 16px 24px 16px;
+    display: block;
   }
 
   #modal_header {
@@ -99,19 +100,4 @@ layout: iframe
 
   // side_nav.setAttribute('style', 'display:none');
 
-  function removeFeedbackify() {
-    var t,
-      feedbackify = document.getElementById('feedbackify');
-    console.log('feedbackify', feedbackify);
-    if (feedbackify) {
-      var feedbackify_parent = feedbackify.parentNode;
-      console.log('feedbackify_parent', feedbackify_parent);
-      feedbackify_parent.removeChild(feedbackify);
-    } else {
-      console.log('retry');
-      t = window.setTimeout(removeFeedbackify, 2000);
-    }
-  }
-
-  removeFeedbackify();
 </script>
