@@ -556,107 +556,101 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Creating and Managing Pages</h1>
-  <summary>In this topic you will learn how to create and manage pages.</summary>
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create and manage pages, open the <strong>Pages</strong> page by clicking <strong>Pages</strong> in the left navigation. A list of pages that have been created will be displayed in the left margin.</p>
-    <figure class="bcls-figure">
-      <p><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-home.png" /></p>
-      <p>The homepage provides the ability to:</p>
-      <ul>
-        <li><a href="#create">Create pages</a></li>
-        <li><a href="#edit">Edit pages</a></li>
-        <li><a href="#duplicate">Duplicate pages</a></li>
-        <li><a href="#rearrange">Rearrange page order</a></li>
-        <li><a href="#hide">Hide pages</a></li>
-        <li><a href="#archive">Archive and delete pages</a></li>
-      </ul>
-    </figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="create">Creating pages</h2>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Pages</strong> page.</li>
-      <li>In the side navigation panel, click <strong>Create Page</strong>. The new page panel will open.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/pages-new-page.png" /></figure>
-      </li>
-      <li>Enter a <strong>Page Name</strong> using the following guidelines. Press <strong>enter</strong> to save the name.
-        <ul>
-          <li> Name is limited to 100 characters</li>
-          <li>Illegal character: /</li>
-        </ul>
-          <aside class="bcls-aside bcls-aside--information">Note: After you enter the page name, a system generated, internal name is also created and will be displayed below the page name.  This internal name cannot be changed.</aside>
-        <aside class="bcls-aside bcls-aside--information">Note: If your account is configured with <a href="/admin/configuring-language-settings.html">multiple languages</a>, enter a title using the primary language  here. Page names for any additional languages can be entered by <a href="#page-title">editing the page title</a> after the page has been created.</aside>
-      </li>
-      <li>The <strong>Page Type</strong> controls the layout of the page and how the content is displayed on the page.
-        <ul>
-          <li><strong>Tabs</strong> - Playlists are organized into tabs that display your content in a multi-column grid of thumbnails</li>
-          <li><strong>Grid</strong> - Playlist are displayed as a multi-column grid of thumbnails</li>
-          <li><strong>Hero (Autoplay Channel)</strong> - One playlist is featured  as a fullscreen autoplaying video with additional playlists displayed as carousels</li>
-          <li><strong>Hero (Image)</strong> - One playlist is featured  as a fullscreen image with additional playlists displayed as carousels</li>
-        </ul>
-        <p>Select a <strong>Page Type</strong> by clicking on it. Selecting a type will update the page preview on the right.</p>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <strong>Next</strong>.</li>
-      <li>The page settings that can be configured will be displayed in the left margin. For more infomation on adding videos to a page and configuring page availability, see one of the following topics:
-        <ul>
-          <li><a href="/pages/adding-videos-pages.html">Adding Videos to Pages</a></li>
-          <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
-        </ul>
-        <p>Click <strong>Back to All Pages</strong> to return to the list of pages.</p>
-      </li>
-    </ol>
-    <p>The page that was created will display in the list of pages.</p>
-    <p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/pages-list-of-pages.png" /></figure>
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="edit">Editing pages</h2>
-    <p>To edit a page, in the side navigation panel, click on the page to edit. The  page settings will be displayed.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-settings.png" /></figure>
-    <h3 id="page-title">Editing the page title</h3>
-    <p>To edit the page title, click the edit icon (<img class="bcls-image--no-border" alt="" src="/assets/images/pages/icon-edit.png" />) next to the page name and enter a new name.</p>
-    <h3>Editing the page type</h3>
-    <p>To edit the page type, click <strong>Change</strong> next to the current page type. Click on new Page Type and then click <strong>Select</strong>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="duplicate">Duplicating pages</h2>
-    <p>Duplicating pages can be useful when you need to create a new page that is similar to an existing page. To duplicate a page, hover over the page name and click on <strong>Duplicate</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-duplicate.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="rearrange">Rearranging page order</h2>
-    <p>The order of the pages in the left navigation determines the order of the display in a Beacon application. To change the page order, click on a page and drag it to a new location.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-rearrange.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="hide">Hiding pages</h2>
-    <p>Hiding a page will cause it to not display in a Beacon application. Hiding a page does not delete the page. To hide a page, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click on a page to open the page details.</li>
-      <li>Click <strong>Hide Page</strong> at the bottom of the page details.</li>
-    </ol>
-    <p>Pages that are hidden will display a hidden icon (<img class="bcls-image--no-border" alt="" src="/assets/images/pages/icon-hidden.png"/>) next to them.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-hidden.png" /></figure>
-    <p>To show a hidden page, click on the page to open the page details and then click <strong>Show Page</strong>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="archive">Archiving and deleting pages</h2>
-    <p>Archiving a page will remove it from the application but it will not delete the page. To archive a page, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click on a page to open the page details.</li>
-      <li>Click <strong>Archive Page</strong> at the bottom of the page details.</li>
-    </ol>
-    <p>The total number of archived pages will appear at the bottom of the left margin.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-archived.png" /></figure>
-    <p>Click <strong>Archived Pages</strong> to display a list of archived pages.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-archive-delete-restore.png" /></figure>
-    <p>To permanently delete an archived page, click <strong>Delete</strong>. Click <strong>Restore</strong> to unarchive a page and add it back to the page listing.</p>
-  </section>
-</article>
+    <h1>Creating and Managing Pages</h1>
+    <summary>In this topic you will learn how to create and manage pages.</summary>
+    <section class="bcls-section">
+        <p>Pages are used to display video content in a Brightcove Beacon application. To create and manage pages, open the <strong>Pages</strong> page by clicking <strong>Pages</strong> in the left navigation. A list of pages that have been created will be displayed in the left margin.</p>
+        <figure class="bcls-figure">
+            <p><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-home.png" /></p>
+            <p>The homepage provides the ability to:</p>
+            <ul>
+                <li><a href="#create">Create pages</a></li>
+                <li><a href="#edit">Edit pages</a></li>
+                <li><a href="#duplicate">Duplicate pages</a></li>
+                <li><a href="#rearrange">Rearrange page order</a></li>
+                <li><a href="#hide">Hide pages</a></li>
+                <li><a href="#archive">Archive and delete pages</a></li>
+            </ul>
+        </figure>
+    </section>
+    <section class="bcls-section">
+        <h2 id="create">Creating pages</h2>
+        <ol class="bcls-tasklist-restart">
+            <li>Open the <strong>Pages</strong> page.</li>
+            <li>In the side navigation panel, click <strong>Create Page</strong>. The new page panel will open.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/pages/pages-new-page.png" alt="new page panel">
+                </figure>
 
+                <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/" /></figure>
+            </li>
+            <li>Enter a <strong>Page Name</strong>. The number of characters allowed exceeds what you would practically want for a page title. Press <strong>enter</strong> to save the name.
+                <aside class="bcls-aside bcls-aside--information">Note: After you enter the page name, a system generated, internal name is also created and will be displayed below the page name. This internal name cannot be changed.</aside>
+                <aside class="bcls-aside bcls-aside--information">Note: If your account is configured with <a href="/admin/configuring-language-settings.html">multiple languages</a>, enter a title using the primary language here. Page names for any additional languages can be entered by <a href="#page-title">editing the page title</a> after the page has been created.</aside>
+            </li>
+            <li>Next choose the page layout, which controls how your video content is displayed on the page. For each layout you can read the description and click the layout from the list to see a skeleton preview display of the layout.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/pages/layout-preview.png" alt="layout preview">
+                </figure>
+            </li>
+            <li>At the bottom of the navigation panel, click <span class="button-blue">Save</span>.</li>
+            <li>The page settings that can be configured will be displayed in the left margin. For more infomation on adding videos to a page and configuring page availability, see one of the following topics:
+                <ul>
+                    <li><a href="/pages/adding-videos-pages.html">Adding Videos to Pages</a></li>
+                    <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
+                </ul>
+                <p>Click <strong>Back to All Pages</strong> to return to the list of pages.</p>
+            </li>
+        </ol>
+        <p>The page that was created will display in the list of pages.</p>
+        <p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/pages-list-of-pages.png" /></figure>
+        </p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="edit">Editing pages</h2>
+        <p>To edit a page, in the side navigation panel, click on the page to edit. The page settings will be displayed.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-settings.png" /></figure>
+        <h3 id="page-title">Editing the page title</h3>
+        <p>To edit the page title, click the edit icon (<img class="bcls-image--no-border" alt="" src="/assets/images/pages/icon-edit.png" />) next to the page name and enter a new name.</p>
+        <h3>Editing the page type</h3>
+        <p>To edit the page type, click <strong>Change</strong> next to the current page type. Click on new Page Type and then click <strong>Select</strong>.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="duplicate">Duplicating pages</h2>
+        <p>Duplicating pages can be useful when you need to create a new page that is similar to an existing page. To duplicate a page, hover over the page name and click on <strong>Duplicate</strong>.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-duplicate.png" /></figure>
+    </section>
+    <section class="bcls-section">
+        <h2 id="rearrange">Rearranging page order</h2>
+        <p>The order of the pages in the left navigation determines the order of the display in a Beacon application. To change the page order, click on a page and drag it to a new location.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-rearrange.png" /></figure>
+    </section>
+    <section class="bcls-section">
+        <h2 id="hide">Hiding pages</h2>
+        <p>Hiding a page will cause it to not display in a Beacon application. Hiding a page does not delete the page. To hide a page, follow these steps:</p>
+        <ol class="bcls-tasklist-restart">
+            <li>Click on a page to open the page details.</li>
+            <li>Click <strong>Hide Page</strong> at the bottom of the page details.</li>
+        </ol>
+        <p>Pages that are hidden will display a hidden icon (<img class="bcls-image--no-border" alt="" src="/assets/images/pages/icon-hidden.png" />) next to them.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-hidden.png" /></figure>
+        <p>To show a hidden page, click on the page to open the page details and then click <strong>Show Page</strong>.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="archive">Archiving and deleting pages</h2>
+        <p>Archiving a page will remove it from the application but it will not delete the page. To archive a page, follow these steps:</p>
+        <ol class="bcls-tasklist-restart">
+            <li>Click on a page to open the page details.</li>
+            <li>Click <strong>Archive Page</strong> at the bottom of the page details.</li>
+        </ol>
+        <p>The total number of archived pages will appear at the bottom of the left margin.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-archived.png" /></figure>
+        <p>Click <strong>Archived Pages</strong> to display a list of archived pages.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-archive-delete-restore.png" /></figure>
+        <p>To permanently delete an archived page, click <strong>Delete</strong>. Click <strong>Restore</strong> to unarchive a page and add it back to the page listing.</p>
+    </section>
+</article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
