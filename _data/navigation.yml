@@ -9,7 +9,7 @@
     - name: App Design Best Practices
       url: /getting-started/design-best-practices.html
     - name: App Design Considerations
-      url: /getting-started/app-design-considerations.html 
+      url: /getting-started/app-design-considerations.html
     - name: Brightcove Beacon Learning Guide
       url: /getting-started/learning-guide-bc-beacon.html
     - name: Implementation Phases
@@ -86,12 +86,12 @@
   icon: '<img class="bcls-icon" src="/assets/images/feather/send.svg">'
   url: '/pages/index.html'
   docs:
-    - name: Adding Videos to Pages
-      url: /pages/adding-videos-pages.html
     - name: Configuring Page Availability
       url: /pages/configuring-page-availability.html
     - name: Creating and Managing Pages
       url: /pages/creating-managing-pages.html
+    - name: Managing Playlists on Pages
+      url: /pages/managing-playlists-on-pages.html
 - section:
   name: Using Cloud Playout
   icon: '<img class="bcls-icon" src="/assets/images/feather/cloud-lightning.svg">'
