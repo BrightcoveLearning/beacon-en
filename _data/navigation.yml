@@ -118,7 +118,7 @@
 - section:
   name: General Information
   url: /general/index.html
-  icon: '<img class="bcls-icon" src="/assets/images/feather/info.svg">'
+  icon: '<i data-feather="info"></i>'
   docs:
     - name: Beacon Analytics Business Metrics
       url: /general/analytics-business-metrics.html
@@ -147,7 +147,7 @@
 - section:
   name: Administering Accounts
   url: /admin/index.html
-  icon: '<img class="bcls-icon" src="/assets/images/feather/tool.svg">'
+  icon: '<i data-feather="tool"></i>'
   docs:
     - name: Configuring Language Settings
       url: /admin/configuring-language-settings.html
@@ -205,7 +205,7 @@
 - section:
   name: 'Support'
   url: '/support/index.html'
-  icon: '<img class="bcls-icon" src="/assets/images/feather/help-circle.svg">'
+  icon: '<i data-feather="help-circle"></i>'
   docs:
     - name: 'Viewing the Brightcove System Status Page'
       url: '/support/viewing-brightcove-system-status-page.html'
