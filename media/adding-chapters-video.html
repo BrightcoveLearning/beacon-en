@@ -58,11 +58,11 @@ layout: staging
     <div class="video-cloud-only">
       <p>The WebVTT file can be associated with a video in any of three ways:</p>
       <ol>
-        <li>Upload the WebVTT file using the <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Ingesting WebVTT Files</a> document in the Dynamic Ingest API information.</li>
         <li>Add the URL for the WebVTT file in the <a href="/media/adding-captions-videos.html">Text Track properties for the video in Studio</a> - be sure the access the Advanced Settings and set the <code>Kind</code> to <code>Chapters</code>:
           <figure class="bcls-figure"><img class="bcls-image" alt="studio text track settings" src="/assets/images/media/chapters-text-tracks-studio.png" /></figure>
           <aside class="bcls-aside bcls-aside--information">Note that the <code>default</code> value is not per track, but set to <code>true</code> for all tracks of the same language (<code>srclang</code>)</aside>
         </li>
+        <li>Upload the WebVTT file using the <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Ingesting WebVTT Files</a> document in the Dynamic Ingest API information.</li>
         <li>Reference the WebVTT file URL in a <code>&lt;track&gt;</code> tag to the in-page embed code:
           <pre class="line-numbers">
             <code class="language-html">&lt;video-js
