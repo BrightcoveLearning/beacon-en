@@ -1,32 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-
-  <title>Search Results</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-<link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Getting Started with the Media Module</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="/assets/css/site/styles.css">
+  <link rel="stylesheet" href="/assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="/assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="/assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
-  <link rel="stylesheet" href="/assets/css/local.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
+
 <body class="body">
+
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
@@ -54,7 +62,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item active" aria-current="page">Search Results</li>
+    <li class="breadcrumb-item"><a href="/media/">Managing Media</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Getting Started with the Media Module</li>
   </ol>
 </nav>
 
@@ -546,26 +556,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
       <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
 <!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;display: none;"></div>
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
 
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link-blue.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
-  
-    
 
-
-<style>
-  a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-    background-color: lightblue;
-  }
-</style>
-
-<h1>Search Results</h1>
-<!-- This div is used to host the search box -->
-<div id="results-search-box"></div>
-<!-- This div is used to host the search response -->
-<div id="results-search-response"></div>
+<article class="bcls-article">
+  <h1>Getting Started with the Media Module</h1>
+  <summary>This topic provides an overview of the Media module which is used to manage series, videos and playlists  in a Brightcove Beacon  account.</summary>
+  <section class="bcls-section">
+    <h2 id="open">Accessing the Media module</h2>
+    <p>To access the Media module, login to <a href="https://studio.brightcove.com">Beacon Studio</a> and click <strong>Media</strong> in the primary navigation.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/start-nav.png" /></figure>
+    <p>The body of the page will display a list of all series in the account. </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/media-page-home-series.png" /></figure>
+    <p>The side navigation panel is organized into three main sections:</p>
+    <ul>
+      <li><strong>Programs</strong> - Used to view and create series. See <a href="managing-series.html">Managing Series</a> for information.</li>
+      <li><strong>Videos</strong> - Used to view videos and create folders. See <a href="managing-videos.html">Managing Videos</a> for information.</li>
+      <li><strong>Playlists</strong> - Used to view and create playlists. See <a href="introduction-playlists.html">Introduction to Playlists</a> for information.</li>
+    </ul>
+    <p>The side navigation panel is displayed by default.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/media-side-nav.png" /></figure>
+    <p>The side navigation button <img alt="" src="/assets/images/media/side-nav-button.png" /> can be used to hide and show the side navigation panel. The size of the side navigation panel can be changed by clicking on the black border and dragging.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="keyboard">Keyboard shortcuts</h2>
+    <p>Pressing the <strong>?</strong> key in the Media module will open a list of the shortcut keys that are available.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/start-keyboard-shortcuts.png" /></figure>
+  </section>
+</article>
 
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
@@ -592,7 +619,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 17 Nov 2020
+  Page last updated on 11 Mar 2021
 </div>
 
 
@@ -707,7 +734,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <script src="/assets/js/feedback.js"></script>
   <script src="/assets/js/local.js"></script>
   
-  <script src="/assets/js/sajari-results-foot.js"></script>
+  <script src="/assets/js/sajari-search-foot.js"></script>
   
   <!-- <script src="/assets/js/sajari-index.js"></script> -->
   <style>
