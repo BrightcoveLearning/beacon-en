@@ -7,7 +7,7 @@ layout: staging
   <h1>Increasing the Quality of Poster and Thumbnail Images</h1>
   <summary>In this topic you will learn how you can increase the quality of poster and thumbnail images.</summary>
   <section class="bcls-section">
-    <p>When a video is uploaded to Video Cloud, poster and thumbnail images are created automatically by taking a snapshot from the source video at the midway point. The size of the poster and thumbnail is based upon the dimensions specified in the ingest profile used when uploading the video.</p>
+    <p>When a video is uploaded to Brightcove Beacon, poster and thumbnail images are created automatically by taking a snapshot from the source video at the midway point. The size of the poster and thumbnail is based upon the dimensions specified in the ingest profile used when uploading the video.</p>
     <p>Poster and thumbnail images can be seen in the following areas:</p>
     <ul>
       <li>In the Media module, the thumbnail image is displayed next to the video; the poster image will appear in the preview player on the video properties page</li>
@@ -29,17 +29,19 @@ layout: staging
       <p>To check the size of the poster and thumbnail images in the Media module, follow these steps:</p>
       <ol class="bcls-tasklist-restart">
         <li>Open the Media module.</li>
-        <li>Click on a video to open the video properties.</li>
-        <li>In the <strong>IMAGES</strong> section, hover over the poster/thumbnail image.</li>
+        <li>Click <strong>All videos</strong> in the panel navigation.</li>
+        <li>Click on a video to open the video details.</li>
+        <li>Click the <strong>Images</strong> tab.</li>
+        <li><strong>H</strong>over over the poster/thumbnail image.</li>
         <li>Click the view icon (<img alt="" src="/assets/images/media/icon-eye.png" />) to open the image in a new browser tab.</li>
       </ol>
       <p>You may wish to use one of the many tools available that can give you the exact dimensions of the image. Remember, if any of your players are larger than the size of the poster, the image will be upscaled.</p>
     </div>
     <div id="ingest" class="BCL-subsection">
       <h3>Checking ingest profile image sizes</h3>
-      <p>Video Cloud Studio does not display the ingest profile that was used when a video was uploaded. You can, however, check the image sizes for ingest profiles:</p>
+      <p>Beacon Studio does not display the ingest profile that was used when a video was uploaded. You can, however, check the image sizes for ingest profiles:</p>
       <ol class="bcls-tasklist-restart">
-        <li>In the Studio header, click the <strong>ADMIN</strong> link. Note that you must be a Video Cloud Studio user with the Administrator role to access the ADMIN menu.</li>
+        <li>In the Studio header, click the <strong>ADMIN</strong> link. Note that you must be a user with the <strong>Administrator</strong> role to access the ADMIN menu.</li>
         <li>Click <strong>Ingest Profiles</strong>.</li>
         <li>Click on a <strong>Profile Name</strong>. The Profile Editor will display the profile definition.</li>
         <li>The method to view the image sizes will vary based upon the <strong>Profile Version</strong> (i.e. Legacy, Dynamic Delivery or Context-Aware) that was clicked.
@@ -64,13 +66,11 @@ layout: staging
     <h2 id="profile">Creating a custom ingest profile</h2>
     <p>In order to change the image sizes, you should create a custom ingest profile and set the sizes to the appropriate values. For information on creating custom ingest profiles, see <a href="/admin/managing-ingest-profiles.html">Managing Ingest Profiles</a>.</p>
     <aside class="bcls-aside bcls-aside--information">Note: Increasing image sizes will cause an increase in managed content and bandwidth usage but this should be negligible, unless the play rate on your videos is extremely low, in which case the images loaded for unplayed videos could consume more bandwidth than actual video playback.</aside>
-    <aside class="bcls-aside bcls-aside--information">Note: The ability to create and edit ingest profiles is available only to publishers with Enterprise and Professional accounts.</aside>
     <p>Once a new ingest profile (or profiles) has been created, that profile should be used when uploading videos.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: The standard set of ingest profiles can't be edited or deleted.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="resize">Automatic resizing</h2>
-    <p>When you add custom poster and/or thumbnail images via Studio or the Dynamic Ingest API, by default Video Cloud will resize these to match the image sizes defined in the default Ingest Profile for the account.</p>
+    <p>When you add custom poster and/or thumbnail images via Studio or the Dynamic Ingest API, by default Brightcove Beacon will resize these to match the image sizes defined in the default Ingest Profile for the account.</p>
     <h3>Override auto-resizing</h3>
     <aside class="bcls-aside bcls-aside--information">Note: This option is only available when using a <strong>Legacy</strong> profile version.</aside>
     <p>If you want to override this behavior and have Video Cloud retain actual image dimensions, follow these steps:</p>
@@ -106,7 +106,7 @@ layout: staging
     </ul>
     <div id="retranscode" class="BCL-subsection">
       <h3>Retranscoding existing videos</h3>
-      <p>Retranscoding an existing video will generate new poster and thumbnail images. The video should be retranscoded using an ingest profile that has larger image sizes. For information on retranscoding existing videos, see <a href="/media/retranscoding-videos.html">Retranscoding Videos using the Media Module</a>.</p>
+      <p>Retranscoding an existing video will generate new poster and thumbnail images. The video should be retranscoded using an ingest profile that has larger image sizes. For information on retranscoding existing videos, see <a href="/media/retranscoding-videos.html">Retranscoding Videos</a>.</p>
     </div>
     <div id="uploadnew" class="BCL-subsection">
       <h3>Uploading a new poster image</h3>
