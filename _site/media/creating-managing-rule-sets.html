@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>Configuring Series Availability</title>
+  <title>Creating and Managing Rule Sets</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -64,7 +64,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     <li class="breadcrumb-item"><a href="/media/">Managing Media</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Configuring Series Availability</li>
+    <li class="breadcrumb-item active" aria-current="page">Creating and Managing Rule Sets</li>
   </ol>
 </nav>
 
@@ -569,18 +569,55 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Configuring Series Availability</h1>
-  <summary>In this topic you will learn how to configure series availability.</summary>
+  <h1>Creating and Managing Rule Sets</h1>
+  <summary>In this topic you will learn how to create and manage rule sets.</summary>
   <section class="bcls-section">
-    <p>Series availability details can be used to restrict access to a series based upon date, locations and devices. To view and edit the availability details for a series, open the Media module and click on a series name link. The series overview page will open. Click the <strong>Availability</strong> tab.</p>
+    <p>The availability settings for series and seasons can be configured so that access  is based upon a start/end date, locations and/or devices. One or more rule sets can be created to allow you to configure when/where an asset will be available. To create and manage rule sets, edit a series or season and click the <strong>Availability</strong> tab.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-availability-tab.png" /></figure>
-    <p>The availability settings are controlled using rule sets. All series must have at least one rule set. Rule sets are created to control access to a series based upon:</p>
+    <p>All series must have at least one rule set. Rule sets are created to control access to a series based upon:</p>
     <ul>
       <li>Start/end dates</li>
       <li>Locations</li>
       <li>Devices</li>
     </ul>
-  For information on creating and managing rule sets, see <a href="creating-managing-rule-sets.html">Creating and Managing Rule Sets</a>.</section>
+  </section>
+  <section class="bcls-section">
+    <h2 id="schedule">Configuring schedule availability</h2>
+    <p>Configure <strong>Schedule</strong> availability to configure the start and optional end date that a media asset will be available. By default, media assets are always available.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>Add New Rule Set</strong> to create a new rule set or hover over an existing rule set and click the edit icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-edit.png" />).</li>
+      <li>Click the calendar icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-calendar.png" />) and pick a <strong>Start Date</strong>.</li>
+      <li>Click the clock icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-clock.png" />) and pick a start time.</li>
+      <li>(Optional) Check the <strong>End Date</strong> checkbox and select an <strong>End Date</strong> and time.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-schedule-availability.png" /></figure>
+      </li>
+      <li>Click <strong>Done</strong> when finished.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="devices">Configuring device availability</h2>
+    <p>Configure <strong>Device</strong> availability to configure the devices that a media asset can be viewed on. By default, media assets are  available on all devices.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>Add New Rule Set</strong> to create a new rule set or hover over an existing rule set and click the edit icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/help/icon-edit.png" />).</li>
+      <li>Click on <strong>Devices</strong> to expand the device settings.</li>
+      <li>Select the devices the media asset can be viewed on.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-device-availability.png" /></figure>
+      </li>
+      <li>Click <strong>Done</strong> when finished.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="location">Configuring location availability</h2>
+    <p>Configure <strong>Location</strong> availability to configure the locations that a media asset can be viewed from. By default, media assets are  available in all locations.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>Add New Rule Set</strong> to create a new rule set or hover over an existing rule set and click the edit icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/help/icon-edit.png" />).</li>
+      <li>Click on <strong>Location</strong> to expand the location settings.</li>
+      <li>Enter the <strong>Permitted Locations</strong> and <strong>Denied Locations</strong> for the media asset. Note that the locations that appear are based upon your account settings.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-location-availability.png" /></figure>
+      </li>
+      <li>Click <strong>Done</strong> when finished.</li>
+    </ol>
+  </section>
 </article>
 
 <!-- complete bootstrap layout -->
