@@ -13,9 +13,6 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   color:rgb(28, 185, 213);
   margin-right: 1rem;
 }
-.card-icon i {
-  color: rgb(28, 185, 213);
-}
 
 /* for phones and embedded pages */
 @media screen and (max-width: 1000px) {
@@ -83,7 +80,6 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   height: 1rem;
 }
 #more_resources h2 {
-  font-size: small;
   margin: 0;
 }
 

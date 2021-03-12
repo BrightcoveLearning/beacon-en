@@ -17,9 +17,6 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   color:{{site.product_color}};
   margin-right: 1rem;
 }
-.card-icon i {
-  color: {{site.product_color}};
-}
 
 /* for phones and embedded pages */
 @media screen and (max-width: 1000px) {
@@ -87,7 +84,6 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   height: 1rem;
 }
 #more_resources h2 {
-  font-size: small;
   margin: 0;
 }
 
