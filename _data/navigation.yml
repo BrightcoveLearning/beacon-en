@@ -19,6 +19,8 @@
   url: /media/index.html
   icon: '<img class="bcls-icon" src="/assets/images/feather/film.svg">'
   docs:
+    - name: Adding an Application ID
+      url: /media/adding-application-id-player-embed-code.html
     - name: Adding Audio Tracks to Videos
       url: /media/adding-audio-tracks-videos.html
     - name: Adding Captions to Videos
@@ -27,6 +29,8 @@
       url: /media/adding-chapters-video.html
     - name: Capturing Poster and Thumbnail Images
       url: /media/capturing-poster-and-thumbnail-images.html
+    - name: Choosing the Correct Embed Code
+      url: /media/choosing-correct-embed-code.html
     - name: Configuring Season Availability
       url: /media/configuring-season-availability.html
     - name: Configuring Video Availability
