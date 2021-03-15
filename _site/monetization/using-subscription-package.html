@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="In this topic, you will learn how to use a video subscription package that was created using the Commerce tab of Brightcove Beacon. The subscription package implements SVOD (subscription video on demand) monetization. For details on creating the subscription see the Creating a Subscription Package document.">
   
-  <title>Organizing Videos Using Folders</title>
+  <title>Using a Subscription Package</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -62,9 +62,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/media/">Managing Media</a></li>
+    <li class="breadcrumb-item"><a href="/monetization/">monetization</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Organizing Videos Using Folders</li>
+    <li class="breadcrumb-item active" aria-current="page">Using a Subscription Package</li>
   </ol>
 </nav>
 
@@ -580,104 +580,218 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
+<h1>Using a Subscription Package</h1>
 <article class="bcls-article">
-  <h1>Organizing Videos Using Folders</h1>
-  <summary>In this topic you will learn how to organize videos using folders.</summary>
+  <summary>In this topic, you will learn how to use a video subscription package that was created using the <strong>Commerce</strong> tab of Brightcove Beacon. The subscription package implements SVOD (subscription video on demand) monetization. For details on creating the subscription see the <a href="/using-brightcove-beacon/creating-subscription-package.html">Creating a Subscription Package</a> document.</summary>
   <section class="bcls-section">
-    <p>Folders can be created using the Media module and can be used to organize videos. You may choose to organize videos by subject, author, product, region, etc. Having videos in folders makes them easier to manage in an account with hundreds or thousands of videos. Folders are displayed in the side navigation panel. The number of videos in each folder is displayed next to the folder name.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/folders-list.png" /></figure>
-    <aside class="bcls-aside bcls-aside--information">Note: Nested folders are not supported.</aside>
-    <aside class="bcls-aside bcls-aside--information">Note: A maximum of 100 videos can be moved to a folder at the same time.</aside>
+    <h2 id="Overview">Overview</h2>
+    <p>
+      A subscription package defines how a particular set of videos can be purchased by your apps' customers. The subscription package must be created in Brightcove Beacon, and is detailed in the <a href="/using-brightcove-beacon/creating-subscription-package.html">Creating a Subscription Package</a> document. Also crucial in the use of the subscription package are the Video Cloud custom fields created for videos in a Video Cloud account, as detailed in the
+      <a href="/syncing-with-video-cloud/vc-custom-fields.html"> Creating Video Cloud Custom Fields </a>
+      document. Specifically, the
+      <a href="/syncing-with-video-cloud/vc-custom-fields.html#Rights_Management_fields"> Rights Management fields
+      </a>
+      will be used.
+    </p>
   </section>
   <section class="bcls-section">
-    <h2 id="create">Creating folders</h2>
-    <p>To create a new folder, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the Media module.</li>
-      <li>Click <strong>Create folder</strong> in the panel navigation.</li>
-      <li>Enter a name for the folder using the following guidelines. Press enter.
-        <ul>
-          <li>Name is limited to 100 characters</li>
-          <li>Folder names must be unique within an account</li>
-          <li>Illegal character: /</li>
-        </ul>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/folders-new-folder.png" /></figure>
-      </li>
-    </ol>
-    <aside class="bcls-aside bcls-aside--information">Note: A maximum of 1000 folders can be created.</aside>
-  </section>
-  <section class="bcls-section">
-    <h2 id="add">Adding videos to folders</h2>
-    <p>There are a couple of ways to add videos to a folder. You can:</p>
+    <h2 id="Understanding_the_rights_management_custom_fields"> Understanding the rights management custom fields </h2>
+    <p>The rights management custom fields consist of:</p>
     <ul>
-      <li><a href="#multipleadd">Add multiple videos to a folder</a></li>
-      <li><a href="#propertiesadd">Edit the video details to assign a folder</a></li>
+      <li>beacon.rights.&lt;counter&gt;.type</li>
+      <li>beacon.rights.&lt;counter&gt;.startDate</li>
+      <li>beacon.rights.&lt;counter&gt;.endDate</li>
+      <li>beacon.rights.&lt;counter&gt;.devices</li>
+      <li>beacon.rights.&lt;counter&gt;.locationsPermit</li>
+      <li>beacon.rights.&lt;counter&gt;.locationsDeny</li>
+      <li>beacon.rights.&lt;counter&gt;.packageName</li>
+      <li>beacon.rights.&lt;counter&gt;.adConfiguration</li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information">Note: There is no limit to the number of videos that can be in a folder.</aside>
-    <div class="BCL-subsection" id="multipleadd">
-      <h3>Adding multiple videos to a folder</h3>
-      <p>Multiple videos at a time can be added to a folder by following these steps.</p>
-      <ol class="bcls-tasklist-restart">
-        <li>In the <strong>Media</strong> module, click <strong>All videos</strong> in the side navigation panel to display all the videos.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/folders-select-videos.png" /></figure>
-          <aside class="bcls-aside bcls-aside--information">Note: The number after the folder name indicates how many videos are in that folder.</aside>
-        </li>
-        <li>Select the videos to add to a folder by clicking the checkbox next to the video thumbnail. Click <strong>More &gt; Move to Folder</strong>.</li>
-        <li>Select a folder and click <strong>Move</strong>.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/folders-move-to-folder.png" /></figure>
-        </li>
-      </ol>
-    </div>
-    <div class="BCL-subsection" id="propertiesadd">
-      <h3>Editing the video details to assign a folder</h3>
-      <p>Videos can be added to a folder by editing the video properties and assigning a folder.</p>
-      <ol class="bcls-tasklist-restart">
-        <li>In the <strong>Media</strong> module, click the link for the video.</li>
-        <li>In the <strong>CATEGORIZATION</strong> section, select a different <strong>Folder</strong>. You can also create a new folder by clicking on <strong>+ Create folder</strong>.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/folders-categorization-folder.png" /></figure>
-        </li>
-      </ol>
-    </div>
+    <p>
+      First consider the <strong>&lt;counter&gt;</strong> part of each name.
+      This is included as you may wish to create multiple sets of rights management fields, and the <strong>&lt;counter&gt;</strong> is utilized so you can use array type syntax to group associated fields.
+    </p>
+    <p>
+      For instance, say you wanted to create subscription packages around the holidays and have packages for:
+    </p>
+    <ul>
+      <li>Earth Day</li>
+      <li>Arbor Day</li>
+      <li>New Years</li>
+    </ul>
+    <p>
+      You must go into Video Cloud and create three sets of rights management fields, using counter values of 0-2 (or 1-3 if you prefer) that would appear as shown here:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/monetization/using-subscription-package/index-of-rights-fields.png" alt="index of rights fields" />
+    </figure>
+    <p>
+      To summarize, for each package you wish to use you will need to create a "counter" set of rights management fields.
+    </p>
   </section>
   <section class="bcls-section">
-    <h2 id="view">Viewing videos in a folder</h2>
-    <p>To view the videos in a folder, click on a folder name.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/folders-videos-in-folder.png" /></figure>
+    <h2 id="Package_and_custom_field_similar_rights"> Package and custom field similar rights </h2>
+    <p>
+      Some custom fields to which you can assign data, and have applied to a video when ingested, can seem the same as form fields when creating your package in Brightcove Beacon. For example, the custom field <em>beacon.rights.&lt;counter&gt;.locationsDeny</em> and the package's <strong>Denied locations</strong> form field may seem like they could be in conflict. Remember, when considering these "conflicts" there are two different questions being asked, those being: </p>
+    <ul>
+      <li>Do the rights on the video allow it to play?</li>
+      <li>Is a user allowed to subscribe to the package?</li>
+    </ul>
+    <p>
+      Consider these scenarios:
+    </p>
+    <ul>
+      <li>
+        An end date in the <em>beacon.rights.&lt;counter&gt;.endDate</em> custom field is later than the end date of the package itself. This means the video's rights would allow it to be viewed until the custom field end date, but the user could not subscribe to the package that may have, for example, lowered the cost of viewing the video.
+      </li>
+      <li>
+        A package is created that has permitted locations of US, Canada and Mexico, and that package is assigned to the video in the custom field <em>beacon.rights.&lt;counter&gt;.packageName</em>. Also in the video's custom fields, UK is placed in the <em>beacon.rights.&lt;counter&gt;.locationsPermit</em> custom field. The package is assigned to the video, but the package cannot be purchased in the UK. The video would be able to play in the UK, but it would could not be part of the package for a UK customer.
+      </li>
+      <li>
+        A package is created that has permitted locations of US, Canada and Mexico. In the custom fields US and Canada are added in the video's <em>beacon.rights.&lt;counter&gt;.locationsDeny</em> custom field. Here the customers in US, Canada and Mexico could subscribe to the package, but the specific video where US and Canada are denied locations means the video could not be viewed by customers in those locations even though the video is in the package.
+      </li>
+    </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="remove">Removing videos from folders</h2>
-    <p>You can <a href="#removedel">remove multiple videos from a folder</a> or remove a single video from a folder by <a href="#propertiesdel">editing the video details</a>.</p>
-    <div class="BCL-subsection" id="removedel">
-      <h3>Removing multiple videos from a folder</h3>
-      <p>Multiple videos can be removed from a folder by following these steps.</p>
-      <ol class="bcls-tasklist-restart">
-        <li>In the <strong>Media</strong> module, click the link for the folder.</li>
-        <li>Check the checkboxes next to the videos to remove and click <strong>Remove Videos &gt; Remove Videos from Folder</strong>.</li>
-      </ol>
-    </div>
-    <div class="BCL-subsection" id="propertiesdel">
-      <h3>Editing the video details</h3>
-      <p>Videos can be removed from a folder by editing the video details and removing the folder in the <strong>CATEGORIZATION</strong> section.</p>
-      <ol class="bcls-tasklist-restart">
-        <li>In the <strong>Media</strong> module, click the link for the video.</li>
-        <li>In the <strong>CATEGORIZATION</strong> section, set the <strong>Folder</strong> to <strong>--</strong>.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/folders-clear-folder.png" /></figure>
-        </li>
-      </ol>
-      <p>Note that this method can also be used to select another folder to move the video to.</p>
-    </div>
+    <h2 id="Subscription_interval_support"> Subscription interval support
+    </h2>
+    <p>
+      The following table shows the time intervals supported for recurring subscriptions for each store: </p>
+    <table class="bcls-table">
+      <!-- <caption class="bcls-caption--table">Table Caption (optional <strong><caption class="bcls-caption--table"></strong>)</caption> -->
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Time Interval</th>
+          <th>Apple Store</th>
+          <th>Google Play Store</th>
+          <th>Roku Store</th>
+          <th>Amazon Store</th>
+          <th>Stripe</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>1 Week</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td></td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>1 Month</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>3 Months</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td></td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>6 Months</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td></td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>1 Year</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
   <section class="bcls-section">
-    <h2 id="delete">Deleting and renaming folders</h2>
-    <p>Folders can be renamed or deleted by following these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click the folder to be renamed or deleted. Click the down arrow next to the folder and click <strong>Rename</strong> or <strong>Delete</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/folders-delete-folder.png" /></figure>
+    <h2 id="Assigning_a_single_video_to_a_package"> Assigning a single video to a package </h2>
+    <p>
+      To assign a single video to a package you must use Video Cloud Studio.
+      Perform the following steps:
+    </p>
+    <ol class="bcls-tasklist">
+      <li>In Studio, navigate to the <strong>Media</strong> module.</li>
+      <li>
+        Click on the video's title you are adding to the package to see that video's properties.
+      </li>
+      <li>
+        Scroll down until you see the <strong>Custom Fields</strong> section on the right hand side and click the <strong>Edit</strong> button.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/monetization/using-subscription-package/single-video-edit-fields.png" alt="index of rights fields" />
+        </figure>
+      </li>
+      <li>
+        Place the name of the subscription package created in Brightcove Beacon in the
+        <code translate="No">beacon.rights.&lt;counter&gt;.packageName</code> field.
+      </li>
+      <li>
+        Since you are using a package, you MUST set the <code translate="No">beacon.rights.&lt;counter&gt;.type</code> to <strong>SVOD</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/monetization/using-subscription-package/custom-fields.png" alt="index of rights fields" />
+        </figure>
+      </li>
+      <li>
+        Scroll to the bottom of the list of custom fields and click the <strong>Save</strong> button.
       </li>
     </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Assigning_a_single_video_to_a_package"> Assigning multiple videos to a package </h2>
+    <p>
+      To assign multiple videos to a package you must use Video Cloud Studio.
+      The following screenshot is helpful when performing the steps:
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/monetization/using-subscription-package/multiple-video-edit.png" alt="index of rights fields" />
+    </figure>
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        In Studio, navigate to the <strong>Media</strong> module and check the checkbox in front of each video you wish to add to the package.
+      </li>
+      <li>Click the <strong>Quick Edit</strong> button.</li>
+      <li>
+        The <strong>Quick Edit</strong> section appears on the right side of the screen, and there you can place the name of the subscription package created in Brightcove Beacon in the <code translate="No">beacon.rights.&lt;counter&gt;.packageName</code> field.
+      </li>
+      <li>
+        Since you are using a package, you MUST set the <code translate="No">beacon.rights.&lt;counter&gt;.type</code> to <strong>SVOD</strong>.
+      </li>
+      <li>
+        At the bottom of the <strong>Quick Edit</strong> section, click the <strong>Save</strong> button.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Ingesting_the_videos_into_Brightcove_Beacon"> Ingesting the videos into Brightcove Beacon </h2>
+    <p>
+      You now have associated one or videos with your subscription package. You now have to ingest those associations into Brightcove Beacon. To do this, follow these steps:
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>Log in to Brightcove Beacon.</li>
+      <li>Click on the wrench icon (Tools).</li>
+      <li>From the left side navigation click <strong>Ingestion</strong>.</li>
+      <li>Click the <strong>Update Brightcove Videos</strong> button.</li>
+      <li>
+        If any errors are reported, check those to be sure none are related to your subscription package.
+      </li>
+      <li>
+        If you wish to have the new associations immediately active in Brightcove Beacon, you must clear the current cache. To do this, from the left side navigation click <strong>Cache</strong>, then click <strong>Cache Purge</strong>.
+      </li>
+    </ol>
+    <p>
+      For more details on the actions taken in this section, see the <a href="/using-brightcove-beacon/tools.html">Using the Tools</a> document.
+    </p>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
