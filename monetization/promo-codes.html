@@ -1,0 +1,51 @@
+---
+title: "Creating Promo Coupons"
+description: In this topic, you will learn how to create Brightcove Beacon coupons/vouchers for the use of your customers when paying.
+parent: monetization
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}
+    <aside class="bcls-aside bcls-aside--information">Note: Alternatively you can create the coupons directly in Stripe.</aside>
+  </summary>
+  <section class="bcls-section">
+    <h2 id="overview"> Steps to Create a new Coupon</h2>
+    <p>To create new coupons/vouchers in Brightcove Beacon, follow these steps: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the Brightcove Beacon UI click the <strong>Commerce</strong> tab.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/promo-codes/1-beacon-ui.png" />
+        </figure>
+      </li>
+      <li>In the left menu, select <strong>Coupons by Stripe</strong>.</li>
+      <li>Click the <strong>Add new Voucher</strong> button.</li>
+      <li>In the <strong>Id</strong> field, type the code that users will use.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/promo-codes/2-id-name.png" />
+        </figure>
+      </li>
+      <li>For the <strong>Name</strong> field, use a User-friendly name that can be displayed in invoices.</li>
+      <li>For the <strong>Duration</strong> field, enter the duration of the coupon in months. </li>
+      <li>In the <strong>Discount type</strong> you have the option to specify the discount in currency or percentage. For example, if the discount is 3 months free, set the duration to <strong>Repeating</strong> with 3 months and <strong>Discount Type</strong> as 100%.</li>
+      <li>In the <strong>Limitations</strong> section, you can limit the number of redemptions or date to use the coupon. For example, assume that the coupon can only be used until the end of August, or that only the first 100 people will get the coupon.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/promo-codes/3-lmitations-packages.png" />
+        </figure>
+      </li>
+      <li>In the <strong>Packages/Subscription Associated</strong> section, specify the subscriptions that can be used with the coupon. If you do not select a subscription, then it will apply to all package subscriptions.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note the following <ul>
+        <li>Once the Coupon/Voucher has been created, any registered user can apply it when buying a subscription.
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/promo-codes/4-enter-voucher.png" />
+          </figure>
+        </li>
+        <li>If an invalid coupon is entered, the following is displayed: <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/promo-codes/5-error.png" />
+          </figure>
+        </li>
+      </ul>
+    </aside>
+  </section>
+</article>
