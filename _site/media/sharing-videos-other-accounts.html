@@ -601,7 +601,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <p>Sharing videos that have been secured using DRM is <strong>not</strong> supported. Sharing videos from an account that is not DRM-enabled to an account that is DRM-enabled is supported, but the shared videos will <strong>not</strong> be packaged for DRM.</p>
       </li>
       <li>
-        <p>Sharing will fail for videos created using the "Convert live stream to VOD" option. It will work for videos made by clipping live streams.</p>
+        <p>Sharing will fail for live videos created using the "Convert live stream to VOD" option. It will work for videos made by clipping live streams.</p>
       </li>
       <li>
         <p>Shared videos can be downloaded for offline viewing only if the original video can be. The property is inherited from the original video and cannot be changed for shared video only.</p>
@@ -613,7 +613,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="manage">Managing media sharing relationships</h2>
-    <p>Before videos can be shared between accounts, media sharing settings must be configured as part of the <strong>ADMIN &gt; Media Sharing</strong> settings. Note that only account administrators have access to the Admin menu. If you wish to share videos to other accounts, affiliates must be added and the affiliate accounts must accept the relationship. Master and affiliate accounts can terminate the relationship at any time. Terminating a media sharing relationship <strong>does not</strong> remove any shared videos from affiliate accounts. If you want to remove shared videos from an affiliate's account, you need either delete them from your own (master) account or open the video properties, go to the <strong>Media Sharing</strong> section, and click the <strong>Remove Video</strong> icon for the affiliate account.</p>
+    <p>Before videos can be shared between accounts, media sharing settings must be configured as part of the <strong>ADMIN &gt; Media Sharing</strong> settings. Note that only account administrators have access to the Admin menu. If you wish to share videos to other accounts, affiliates must be added and the affiliate accounts must accept the relationship. Master and affiliate accounts can terminate the relationship at any time. Terminating a media sharing relationship <strong>does not</strong> remove any shared videos from affiliate accounts. If you want to remove shared videos from an affiliate's account, you need either delete them from your own (master) account or open the video details, click the <strong>Video and Tracks</strong> tab, go to the <strong>MEDIA SHARING</strong> section, and click the <strong>Remove Video</strong> icon for the affiliate account.</p>
     <figure><img class="bcls-image--no-border" alt="" src="/assets/images/media/node18465-remove-video.png" /></figure>
     <p>For information on configuring the Media Sharing settings, see <a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a>.</p>
   </section>
@@ -642,7 +642,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Reject</strong> - To reject the shared video and not include it in your account. Rejecting a shared video does not prevent the master from sharing it to your account again in the future.</li>
       <li><strong>Accept</strong> - To accept the shared video into your account.</li>
     </ul>
-    <p><strong>Quick View</strong> can be used to open a panel to view video properties. Once you accept a shared video, it no longer appears in the Shares Pending list in the Media module, and it appears in the All Videos view.</p>
+    <p><strong>Quick View</strong> can be used to open a panel to view video properties. Once you accept a shared video, it no longer appears in the Shares Pending list in the Media module, and it appears in the <strong>All videos</strong> view.</p>
   </section>
   <section class="bcls-section">
     <h2 id="view">Shared videos in the Media module</h2>
@@ -657,10 +657,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <p>Hovering over the sharing icon (<img alt="" src="/assets/images/media/node15924-shared-out-icon.png" />) will display sharing details.</p>
       <figure><img alt="" src="/assets/images/media/node18465-shared-out.png" /></figure>
     </section>
-    <p>Master accounts can see the status of videos shared to affiliate accounts using the <strong>Media Sharing</strong> section of the video properties page.</p>
+    <p>Master accounts can see the status of videos shared to affiliate accounts using the <strong>MEDIA SHARING</strong> section of the video details page.</p>
     <figure><img alt="" src="/assets/images/media/node18465-media-sharing-status.png" /></figure>
     <p>Errors may also appear here. For example, if <strong>Enforce custom field matching</strong> is checked, the affiliate account must have the same custom fields as the master account or any shares will fail.</p>
-    <figure><img alt="" src="/assets/images/media/node18465-media-sharing-error.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="delete">Deleting shared videos</h2>
@@ -735,7 +734,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Pub B pays Brightcove for streams and bandwidth assuming that the billing parameters are being passed. We have seen edge cases where the billing parameters are not being passed due to the creation of custom video players that are not properly passing the billing parameters.</li>
     </ul>
     <h3>Scenario 4 - Content must be fetched from Origin</h3>
-    <p>We pass along the account ID&nbsp;in every request&nbsp;so that each account is billed for its own origin access. So if the <strong>Sharer</strong> account frequently misses its CDN cache and has to go back to origin for content, then the <strong>Sharer</strong> will be billed for that. If the <strong>Sharee</strong> account frequently misses its CDN cache and has to go back to origin for content, then the <strong>Sharee</strong> account is billed for that. Charges for Origin access stay separate regardless of the CDN config scenario.</p>
+    <p>We pass along the account ID&nbsp;in every request&nbsp;so that each account is billed for its own origin access. So if the <strong>Master</strong> account frequently misses its CDN cache and has to go back to origin for content, then the <strong>Master</strong> will be billed for that. If the <strong>Affiliate</strong> account frequently misses its CDN cache and has to go back to origin for content, then the <strong>Affiliate</strong> account is billed for that. Charges for Origin access stay separate regardless of the CDN config scenario.</p>
     <h3>Scenario 5 - Images</h3>
     <p>By default with Dynamic Delivery, the master account (creator of the images) is billed for all image traffic associated with a shared asset. If the affiliate account uploads or captures new images for the shared content, then the image traffic will be associated and billed to the affiliate account.</p>
   </section>
