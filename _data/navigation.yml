@@ -38,7 +38,7 @@
     - name: Creating and Managing Playlists
       url: /media/creating-and-managing-playlists.html
     - name: Creating and Managing Rule Sets
-      url: /media/creating-managing-rule-sets.html      
+      url: /media/creating-managing-rule-sets.html
     - name: 'Creating Series, Seasons & Episodes'
       url: /media/creating-series-seasons-episodes.html
     - name: Downloading Videos
@@ -126,9 +126,11 @@
     - name: Generating the Channel Embed Code
       url: /cloud-playout/generating-channel-embed-code.html
 - section:
-  name: Reviewing Analytics
-  url: /analytics/index.html
+  name: Monetizing Content
+  url: /monetization/index.html
   docs:
+    - name: Creating a Stripe Account
+      url: /monetization/creating-stripe-account.html
 - section:
   name: General Information
   url: /general/index.html
