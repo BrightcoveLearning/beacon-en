@@ -21,7 +21,7 @@
           <li><a href="{{ entry.url }}">{{ entry.name }}</a></li>
           {% else %}
           <li class="submenu-header">
-            <a href="{{ entry.url }}">{{ entry.name }} <strong>+</strong></a>
+            <a href="{{ entry.url }}"><strong>+</strong> &nbsp;{{ entry.name }}</a>
             <ul class="sidenav-subsubmenu" style="display:none;">
               {% for doc in entry.docs %}
               <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
