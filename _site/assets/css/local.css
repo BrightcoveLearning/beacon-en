@@ -1,6 +1,6 @@
 /* css specific to the site */
 
-.bcls-active {
+/* .bcls-active {
   border-left: 3px rgb(1, 5, 14) solid;
 }
 
@@ -15,7 +15,7 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
 }
 
 /* for phones and embedded pages */
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
   h1 {
     font-size: 2.2em !important;
   }
@@ -58,8 +58,6 @@ h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
   cursor: pointer;
 }
 #breadcrumbs {
-  /* position: fixed;
-  top: 3rem; */
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
@@ -95,6 +93,5 @@ a, a::visited, a::hover {
 }
 .bcls-section a, .bcls-section a::visited, .bcls-section a::hover {
   color:rgb(7, 33, 144)!important;
-}
+} */
 
-}
