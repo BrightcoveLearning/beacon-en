@@ -148,34 +148,14 @@
     - name: Using a Subscription Package
       url: /monetization/using-subscription-package.html
 - section:
-  name: General Information
-  url: /general/index.html
-  icon: '<i data-feather="info"></i>'
+  name: Reviewing Analytics
+  url: /reviewing-analytics/index.html
+  icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
   docs:
-    - name: Beacon Analytics Business Metrics
-      url: /general/analytics-business-metrics.html
-    - name: Beacon Tasks Performed in VC
-      url: /general/beacon-tasks-in-vc.html
-    - name: Common Config Settings
-      url: /general/common-configuration-settings.html
-    - name: Creating a Stripe Account
-      url: /general/creating-stripe-account.html
-    - name: Glossary
-      url: /general/glossary.html
-    - name: Image Specifications
-      url: /general/image-requirements.html
-    - name: Known Issues
-      url: /general/known-issues.html
-    - name: Overview of Context Aware Encoding
-      url: /general/overview-context-aware-encoding.html
-    - name: Overview of Dynamic Delivery
-      url: /general/overview-dynamic-delivery.html
-    - name: Remote Asset Limitations
-      url: /general/remote-asset-limitations.html
-    - name: Supported Video and Audio Formats
-      url: /general/supported-video-and-audio-formats-codecs-and-containers.html
-    - name: Working with 360° Videos
-      url: /general/working-360deg-videos.html
+    - name: Google Analytics Self Configuration
+      url: /http://localhost:4002/reviewing-analytics/ga-self-configuration.html
+    - name: Viewing Analytics Data
+      url: /reviewing-analytics/viewing-analytics-data.html
 - section:
   name: Administering Accounts
   url: /admin/index.html
@@ -224,6 +204,35 @@
   docs:
     - name: Working with Registered Users
       url: /registered-users/working-with-registered-users.html
+- section:
+  name: General Information
+  url: /general/index.html
+  icon: '<i data-feather="info"></i>'
+  docs:
+    - name: Beacon Analytics Business Metrics
+      url: /general/analytics-business-metrics.html
+    - name: Beacon Tasks Performed in VC
+      url: /general/beacon-tasks-in-vc.html
+    - name: Common Config Settings
+      url: /general/common-configuration-settings.html
+    - name: Creating a Stripe Account
+      url: /general/creating-stripe-account.html
+    - name: Glossary
+      url: /general/glossary.html
+    - name: Image Specifications
+      url: /general/image-requirements.html
+    - name: Known Issues
+      url: /general/known-issues.html
+    - name: Overview of Context Aware Encoding
+      url: /general/overview-context-aware-encoding.html
+    - name: Overview of Dynamic Delivery
+      url: /general/overview-dynamic-delivery.html
+    - name: Remote Asset Limitations
+      url: /general/remote-asset-limitations.html
+    - name: Supported Video and Audio Formats
+      url: /general/supported-video-and-audio-formats-codecs-and-containers.html
+    - name: Working with 360° Videos
+      url: /general/working-360deg-videos.html
 - section:
   name: Training
   url: /training/index.html
