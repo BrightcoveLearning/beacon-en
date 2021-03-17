@@ -13,8 +13,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="/assets/css/site/styles.css">
-  <link rel="stylesheet" href="/assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="/assets/css/site/tabs.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
   <link rel="stylesheet" href="/assets/css/local.css">
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
@@ -650,11 +651,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       you will need:
       <ul>
         <li>
-          <a
-            href="https://developer.android.com/studio/debug/dev-options"
-            target="_blank"
-            >Developer mode</a
-          >
+          <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">Developer mode</a>
           activated in your Android device.
         </li>
         <li>Android Debug Bridge (adb) installed on your computer.</li>
@@ -706,22 +703,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       You need to use Android Debug Bridge (adb) to connect your computer to an
       Android TV device for installing, testing and debugging your apps. For
       more information on how to enable adb please follow the
-      <a
-        href="https://developer.android.com/studio/command-line/adb.html"
-        target="_blank"
-        >Android</a
-      >
+      <a href="https://developer.android.com/studio/command-line/adb.html" target="_blank">Android</a>
       documentation.
     </p>
     <p>To install the Android TV app please follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>
         Enable
-        <a
-          href="https://developer.android.com/studio/debug/dev-options"
-          target="_blank"
-          >Developer options</a
-        >
+        <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">Developer options</a>
         in your Android TV device.
       </li>
       <li>
@@ -731,35 +720,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Turn on <strong>Apps from Unknown Sources</strong>.</li>
       <li>
         Connect your computer to you device via Wi-Fi using
-        <a
-          href="https://developer.android.com/studio/command-line/adb.html#wireless"
-          target="_blank"
-          >Android Debug Bridge (adb)</a
-        >.
+        <a href="https://developer.android.com/studio/command-line/adb.html#wireless" target="_blank">Android Debug Bridge (adb)</a>.
       </li>
       <li>Open your terminal or command line.</li>
       <li>
         Type the following command, where <code translate="No">path-to-apk-file</code> is the
         file system path to your app's APK.
-        <pre
-          class="line-numbers"
-        ><code class=“language-bash”>adb install path-to-apk-file</code></pre>
+        <pre class="line-numbers"><code class=“language-bash”>adb install path-to-apk-file</code></pre>
       </li>
       <li>
         If your installation was successful, adb will respond with a message
         similar to this one:
-        <pre
-          class="line-numbers"
-        ><code class=“language-bash”>764 KB/s (217246 bytes in 0.277s)
+        <pre class="line-numbers"><code class=“language-bash”>764 KB/s (217246 bytes in 0.277s)
 pkg: /data/local/tmp/HelloWorld.apk
 Success</code></pre>
       </li>
       <li>
         To re-install an app that already exists on the device, you can use the
         <code translate="No">-r</code> option to reinstall it.
-        <pre
-          class="line-numbers"
-        ><code class=“language-bash”>adb install -r path-to-apk-file</code></pre>
+        <pre class="line-numbers"><code class=“language-bash”>adb install -r path-to-apk-file</code></pre>
       </li>
       <li>
         The Android App will be automatically added to your device home screen.
@@ -771,69 +750,39 @@ Success</code></pre>
   <section class="bcls-section">
     <h2 id="istalling-androidtv-invitation">Installing the Android TV App by Invitation</h2>
     <p>To be able to install the Android TV app on your device, you will need an email invitation from Brightcove.</p>
-    <aside class="bcls-aside bcls-aside--information">For this process, you will need to use a Google account to sign in to the <a href="https://play.google.com/store" target="_blank">Play Store</a> website and your Android TV device, both with the same Google account.  </aside>
+    <aside class="bcls-aside bcls-aside--information">For this process, you will need to use a Google account to sign in to the <a href="https://play.google.com/store" target="_blank">Play Store</a> website and your Android TV device, both with the same Google account. </aside>
     <p>Once you receive the email invitation please perform the following steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>Brightcove will send you an email with a Play Store URL directing to the Brightcove Beacon test app.</li>
       <li>From your email account, click on the URL or copy and paste it in your browser.</li>
       <li>You will be prompted to the App page. Click on the <strong>download it on Google Play</strong> link.
         <figure class="bcls-figure">
-          <img
-            class="bcls-image--no-border"
-            alt=""
-            width=""
-            height=""
-            src="/assets/images/creating-your-apps/android-test-build/1-url-path.png"
-          />
+          <img class="bcls-image--no-border" alt="" width="" height="" src="/assets/images/publishing-apps/android-test-build/1-url-path.png" />
         </figure>
       </li>
       <li>In the Play Store click in the <strong>Install</strong> button.
         <figure class="bcls-figure">
-          <img
-            class="bcls-image--no-border"
-            alt=""
-            width=""
-            height=""
-            src="/assets/images/creating-your-apps/android-test-build/2-app-download.png"
-          />
+          <img class="bcls-image--no-border" alt="" width="" height="" src="/assets/images/publishing-apps/android-test-build/2-app-download.png" />
         </figure>
       </li>
       <li>When the pop-up window appears click on the <strong>Choose a device</strong> option.
         <figure class="bcls-figure">
-          <img
-            class="bcls-image--no-border"
-            alt=""
-            width="400"
-            height="600"
-            src="/assets/images/creating-your-apps/android-test-build/3-intall1.png"
-          />
+          <img class="bcls-image--no-border" alt="" width="400" height="600" src="/assets/images/publishing-apps/android-test-build/3-intall1.png" />
         </figure>
       </li>
       <li>A list with all your Android devices connected to your Google account will appear. Select the Android TV device on which you want to install the Brightcove Beacon App.
         <figure class="bcls-figure">
-          <img
-            class="bcls-image--no-border"
-            alt=""
-            width="400"
-            height="600"
-            src="/assets/images/creating-your-apps/android-test-build/4-install2.png"
-          />
+          <img class="bcls-image--no-border" alt="" width="400" height="600" src="/assets/images/publishing-apps/android-test-build/4-install2.png" />
         </figure>
       </li>
-      <li>After selecting your device, click the <strong>Install</strong> button. 
+      <li>After selecting your device, click the <strong>Install</strong> button.
         <figure class="bcls-figure">
-          <img
-            class="bcls-image--no-border"
-            alt=""
-            width="400"
-            height="600"
-            src="/assets/images/creating-your-apps/android-test-build/5-install3.png"
-          />
-        </figure>   
+          <img class="bcls-image--no-border" alt="" width="400" height="600" src="/assets/images/publishing-apps/android-test-build/5-install3.png" />
+        </figure>
       </li>
       <li>The Google account will ask for your password. Type it, and click the <strong>next</strong> button.
         A message will appear telling you that the Brightcove Beacon App will be installed shortly on your Android TV device.
-        </li>
+      </li>
       <li>Go to your Android TV Device. </li>
       <aside class="bcls-aside bcls-aside--information">Google can take up to 30 minutes to synchronize the Brightcove Beacon App and install it on your Android TV device.</aside>
       <li>The Brightcove Beacon App will be automatically added to your Android TV device home screen.</li>
@@ -864,7 +813,7 @@ Success</code></pre>
       </li>
       <li>Select the Brightcove Beacon app.</li>
       <li>Select <strong>Uninstall</strong> > <strong>Uninstall</strong></li>
-      
+
     </ol>
   </section>
 
@@ -872,7 +821,6 @@ Success</code></pre>
 
 
 </article>
-
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
@@ -898,7 +846,7 @@ Success</code></pre>
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 28 Sep 2020
+  Page last updated on 17 Mar 2021
 </div>
 
 
