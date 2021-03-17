@@ -1,0 +1,1497 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic, you will learn how to configure Google Analytics to work with Brightcove Beacon when you either can't, or choose not to, allow Brightcove to do this process for you.">
+  
+  <title>Google Analytics Self Configuration</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="/assets/css/site/styles.css">
+  <link rel="stylesheet" href="/assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="/assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
+  <script src="/assets/js/sajari-head.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
+    <br>
+    
+  </div>
+</header>
+<br style="clear: both;">
+<nav id="breadcrumbs" aria-label="breadcrumb">
+  <ol class="breadcrumb arr-right">
+    
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    
+    
+    
+    <li class="breadcrumb-item"><a href="/reviewing-analytics/">using-brightcove-beacon</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Google Analytics Self Configuration</li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Other Brightcove Docs</option>
+					
+						
+							<option value="https://support.brightcove.com">Documentation Home</option>
+						
+					
+						
+							<option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+						
+					
+						
+							<option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
+						
+					
+						
+							<option value="https://campaign.support.brightcove.com">Brightcove Campaign</option>
+						
+					
+						
+							<option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+						
+					
+						
+							<option value="https://live.support.brightcove.com">Brightcove Live</option>
+						
+					
+						
+							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+						
+					
+						
+							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+						
+					
+						
+							<option value="https://social.support.brightcove.com">Brightcove Social</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+						
+					
+						
+							<option value="https://player.support.brightcove.com">Brightcove Player Development</option>
+						
+					
+						
+							<option value="https://apis.support.brightcove.com">Video Cloud Platform APIs</option>
+						
+					
+						
+							<option value="https://sdks.support.brightcove.com">Video Cloud Device SDKs</option>
+						
+					
+						
+							<option value="https://integrations.support.brightcove.com">Integrations and CMS Connectors</option>
+						
+					
+						
+							<option value="https://general.support.brightcove.com">Video Cloud General Information</option>
+						
+					
+						
+							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
+						
+					
+				</select>
+      <nav class="sidenav" id="side_nav">
+        
+        
+        <h5><a href="/index.html">Home</a></h5>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/getting-started/index.html">Getting Started <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/getting-started/design-best-practices.html">App Design Best Practices</a></li>
+          
+          
+          
+          <li><a href="/getting-started/app-design-considerations.html">App Design Considerations</a></li>
+          
+          
+          
+          <li><a href="/getting-started/learning-guide-bc-beacon.html">Brightcove Beacon Learning Guide</a></li>
+          
+          
+          
+          <li><a href="/getting-started/implementation-phases.html">Implementation Phases</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/media/index.html">Managing Media <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/media/adding-application-id-player-embed-code.html">Adding an Application ID</a></li>
+          
+          
+          
+          <li><a href="/media/adding-audio-tracks-videos.html">Adding Audio Tracks to Videos</a></li>
+          
+          
+          
+          <li><a href="/media/adding-captions-videos.html">Adding Captions to Videos</a></li>
+          
+          
+          
+          <li><a href="/media/adding-chapters-video.html">Adding Chapters to a Video</a></li>
+          
+          
+          
+          <li><a href="/media/capturing-poster-and-thumbnail-images.html">Capturing Poster and Thumbnail Images</a></li>
+          
+          
+          
+          <li><a href="/media/choosing-correct-embed-code.html">Choosing the Correct Embed Code</a></li>
+          
+          
+          
+          <li><a href="/media/configuring-season-availability.html">Configuring Season Availability</a></li>
+          
+          
+          
+          <li><a href="/media/configuring-video-availability.html">Configuring Video Availability</a></li>
+          
+          
+          
+          <li><a href="/media/creating-and-managing-playlists.html">Creating and Managing Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/creating-managing-rule-sets.html">Creating and Managing Rule Sets</a></li>
+          
+          
+          
+          <li><a href="/media/creating-series-seasons-episodes.html">Creating Series, Seasons & Episodes</a></li>
+          
+          
+          
+          <li><a href="/media/downloading-videos.html">Downloading Videos</a></li>
+          
+          
+          
+          <li><a href="/media/editing-series-details.html">Editing Series Details</a></li>
+          
+          
+          
+          <li><a href="/media/editing-video-details.html">Editing Video Details</a></li>
+          
+          
+          
+          <li><a href="/media/editing-video-details-using-quick-edit.html">Editing Details using Quick Edit</a></li>
+          
+          
+          
+          <li><a href="/media/editing-series-details.html">Editing Series Details</a></li>
+          
+          
+          
+          <li><a href="/media/exporting-video-data.html">Exporting Video Data</a></li>
+          
+          
+          
+          <li><a href="/media/getting-started-media-module.html">Getting Started with the Media Module</a></li>
+          
+          
+          
+          <li><a href="/media/increasing-quality-poster-and-thumbnail-images.html">Increasing the Quality of Poster Images</a></li>
+          
+          
+          
+          <li><a href="/media/introduction-playlists.html">Introduction to Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/managing-series.html">Managing Series</a></li>
+          
+          
+          
+          <li><a href="/media/managing-videos.html">Managing Videos</a></li>
+          
+          
+          
+          <li><a href="/media/organizing-videos-using-folders.html">Organizing Videos Using Folders</a></li>
+          
+          
+          
+          <li><a href="/media/overview-adding-captions-video.html">Overview: Adding Captions to a Video</a></li>
+          
+          
+          
+          <li><a href="/media/publishing-videos-and-playlists.html">Publishing Videos and Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/replacing-video-source-file.html">Replacing a Video Source File</a></li>
+          
+          
+          
+          <li><a href="/media/retranscoding-videos.html">Retranscoding Videos</a></li>
+          
+          
+          
+          <li><a href="/media/searching-videos-and-playlist.html">Searching Videos and Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/setting-required-fields-videos.html">Setting Required Fields</a></li>
+          
+          
+          
+          <li><a href="/media/styling-captions.html">Styling Captions</a></li>
+          
+          
+          
+          <li><a href="/media/uploading-video-images.html">Uploading Video Images</a></li>
+          
+          
+          
+          <li><a href="/media/uploading-videos.html">Uploading Videos</a></li>
+          
+          
+          
+          <li><a href="/media/uploading-videos-remote-urls.html">Uploading Videos Remote URLs</a></li>
+          
+          
+          
+          <li><a href="/media/working-cue-points.html">Working with Cue Points</a></li>
+          
+          
+          
+          <li><a href="/media/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a></li>
+          
+          
+          
+          <li><a href="/media/working-remote-asset-videos.html">Working with Remote Asset Videos</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/pages/index.html">Managing Pages <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/pages/getting-started-layout-module.html">Getting Started with the Layout Module</a></li>
+          
+          
+          
+          <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
+          
+          
+          
+          <li><a href="/pages/creating-managing-pages.html">Creating and Managing Pages</a></li>
+          
+          
+          
+          <li><a href="/pages/managing-playlists-on-pages.html">Managing Playlists on Pages</a></li>
+          
+          
+          
+          <li><a href="/pages/page-details-overview.html">Page Details Overview</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/cloud-playout/index.html">Using Cloud Playout <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/adding-bumpers-to-vod.html">Adding Bumpers to Cloud Playout</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/monetization/index.html">Monetizing Content <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/monetization/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+          
+          
+          
+          <li><a href="/monetization/creating-stripe-account.html">Creating a Stripe Account</a></li>
+          
+          
+          
+          <li><a href="/monetization/creating-subscription-package.html">Creating a Subscription Package</a></li>
+          
+          
+          
+          <li><a href="/monetization/promo-codes.html">Creating Promo Coupons</a></li>
+          
+          
+          
+          <li><a href="/monetization/implementing-authvod.html">Implementing AuthVOD</a></li>
+          
+          
+          
+          <li><a href="/monetization/live-ssai.html">Implementing Live SSAI</a></li>
+          
+          
+          
+          <li><a href="/monetization/vod-ssai.html">Implementing VOD SSAI</a></li>
+          
+          
+          
+          <li><a href="/monetization/monetization-options.html">Understanding Monetization Options</a></li>
+          
+          
+          
+          <li><a href="/monetization/using-subscription-package.html">Using a Subscription Package</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/general/index.html">General Information <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/general/analytics-business-metrics.html">Beacon Analytics Business Metrics</a></li>
+          
+          
+          
+          <li><a href="/general/beacon-tasks-in-vc.html">Beacon Tasks Performed in VC</a></li>
+          
+          
+          
+          <li><a href="/general/common-configuration-settings.html">Common Config Settings</a></li>
+          
+          
+          
+          <li><a href="/general/creating-stripe-account.html">Creating a Stripe Account</a></li>
+          
+          
+          
+          <li><a href="/general/glossary.html">Glossary</a></li>
+          
+          
+          
+          <li><a href="/general/image-requirements.html">Image Specifications</a></li>
+          
+          
+          
+          <li><a href="/general/known-issues.html">Known Issues</a></li>
+          
+          
+          
+          <li><a href="/general/overview-context-aware-encoding.html">Overview of Context Aware Encoding</a></li>
+          
+          
+          
+          <li><a href="/general/overview-dynamic-delivery.html">Overview of Dynamic Delivery</a></li>
+          
+          
+          
+          <li><a href="/general/remote-asset-limitations.html">Remote Asset Limitations</a></li>
+          
+          
+          
+          <li><a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Supported Video and Audio Formats</a></li>
+          
+          
+          
+          <li><a href="/general/working-360deg-videos.html">Working with 360° Videos</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/admin/index.html">Administering Accounts <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/admin/configuring-language-settings.html">Configuring Language Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-ingest-profiles-context-aware-encoding.html">Creating Ingest Profiles for Context Aware Encoding</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-ingest-profiles-dynamic-delivery.html">Creating Ingest Profiles for Dynamic Delivery</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-legacy-ingest-profiles.html">Creating Legacy Ingest Profiles</a></li>
+          
+          
+          
+          <li><a href="/admin/ingest-profiles-best-practices.html">Ingest Profiles Best Practices</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-account-information.html">Managing Account Information</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-account-settings.html">Managing Account Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-api-authentication-credentials.html">Managing API Authentication Credentials</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-ingest-profiles.html">Managing Ingest Profiles</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-profile-information.html">Managing Profile Information</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-users.html">Managing Users</a></li>
+          
+          
+          
+          <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles (DD & CAE)</a></li>
+          
+          
+          
+          <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Standard Ingest Profiles (Legacy)</a></li>
+          
+          
+          
+          <li><a href="/admin/using-directed-migration-tool-migrate-brightcove-smart-players.html">Using the Directed Migration Tool</a></li>
+          
+          
+          
+          <li><a href="/admin/viewing-billing-information.html">Viewing Billing Information</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/registered-users/index.html">Registered Users <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/registered-users/working-with-registered-users.html">Working with Registered Users</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5><a href="/training/index.html">Training</a></h5>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/release-notes/index.html">Release Notes <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/release-notes/product-updates.html">Beacon Studio Release Notes</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/support/index.html">Support <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+          
+          
+          
+          <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+          
+          
+          
+          <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+          
+          
+        </ul>
+        
+        
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+      <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+
+
+<h1>Google Analytics Self Configuration</h1>
+<article class="bcls-article">
+    <summary>In this topic, you will learn how to configure Google Analytics to work with Brightcove Beacon when you either can't, or choose not to, allow Brightcove to do this process for you.</summary>
+
+    <section class="bcls-section">
+        <h2 id="Introduction">Introduction</h2>
+        <p>The configuration process consists of the following tasks:</p>
+        <ul>
+            <li>Create four Google Analytics properties.</li>
+            <li>Create a set of custom dimensions and one custom metric for each property.</li>
+            <li>Create four Google Tag Manager containers.</li>
+            <li>Configure Google Tag Manger for each container.</li>
+            <li>Configure Firebase to assist in analytics collection with iOS and Android.</li>
+            <li>Install templates in Google Data Studio for viewing your analytics data.</li>
+        </ul>
+
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Required_tools">Required tools</h2>
+        <p>Brightcove uses various tools to implement the collection, manipulation and display of analytics data using Google Analytics. These tools are:</p>
+        <ul>
+            <li><strong>Google Analytics</strong> - A web analytics platform offered by Google as part of their Google Marketing Platform brand.</li>
+            <li><strong>Google Tag Manager</strong> - First, understand that tags are snippets of code which are added to a site to collect information and send it to third parties. Tags are use for numerous reasons, including scroll tracking, monitoring form submissions, conducting surveys, etc. With Google Tag Manager you can "manage and update tags quickly and make more informed decisions faster. Tag Manager integrates with all Google and third-party tags, and gives you complete control over when and how your tags fire."</li>
+            <li><strong>Firebase</strong> - Firebase is a platform developed by Google for creating mobile and web applications. Firebase includes the <strong>Firebase Realtime Database</strong>, which is a cloud-hosted database.</li>
+            <li><strong>Google Data Studio</strong> - Google Data Studio is a "free tool that turns your data into informative, easy to read, easy to share, and fully customizable dashboards and reports."</li>
+        </ul>
+        <p>The following diagram details the interaction/flow of these tools when gathering analytics for Brightcove Beacon:</p>
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tool-diagram.png" alt="">
+        </figure>
+
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Obtain_the_templates_and_configuration_files">Obtain templates and configuration files</h2>
+        <p>There are a number of files/URLs you need to successfully complete your setup of analytics for Brightcove Beacon. The files/URLs are detailed in the following bullets. You need to contact your Brightcove onboarding manager to obtains these files/URLs. You will receive: </p>
+        <ul>
+            <li>URLs to three pre-built Google Analytics Dashboard configurations, one each for mobile, web and smart tv.</li>
+            <li>Four JSON files which configure each of the four containers created in Google Tag Manager.</li>
+            <li>URLs to three pre-built Google Data Studio templates, one each for mobile, web and smart tv.</li>
+        </ul>
+        <p>Directions for installing/using each of the files/URLs appear in the appropriate sections later in this document.</p>
+        <aside class="bcls-aside bcls-aside--tip language-editable">You will need to obtain these files/URLs BEFORE starting the configuration process.</aside>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Create_Google_Analytics_properties">Configure Google Analytics</h2>
+        <p>In this section of the document you will configure Google Analytics, which includes the following tasks:</p>
+        <ul>
+            <li>Create four Google Analytics properties.</li>
+            <li>Create a mobile view for the iOS and Android properties</li>
+            <li>Create a set of custom dimensions for each property.</li>
+            <li>Create a single custom metric for each property.</li>
+            <li>Import three Brightcove created dashboard configurations, one each for mobile, web and smart tv.</li>
+        </ul>
+        <h3>Create four properties</h3>
+        <p>You need to create these four properties:</p>
+        <ul>
+            <li>Beacon Android</li>
+            <li>Beacon iOS</li>
+            <li>Beacon STV (Smart TV)</li>
+            <li>Beacon Web</li>
+        </ul>
+        <p>The following steps guide you through creating the <strong>Beacon Android</strong> property. You will need to create the others following the same process.</p>
+        <ol class="bcls-tasklist">
+            <li>Log in to your Google Analytics account.</li>
+            <li>Click the <strong>Admin (gear)</strong> icon on the bottom-left of the screen.</li>
+            <li>On the top of the middle column, click <strong>Create Property</strong>.</li>
+            <li>In the <strong>Property setup</strong>, supply the <strong>Property name</strong>, for the first property, use <samp>Beacon Android</samp>.</li>
+            <li>Supply the <strong>Reporting time zone</strong>.</li>
+            <li>Supply the <strong>Currency</strong>.</li>
+            <li>Click the <strong>Show advanced options</strong> link.</li>
+            <li>Turn on <strong>Create a Universal Analytics property.</strong></li>
+            <li>Enter your website's URL.</li>
+            <li>Click the <strong>Create a Universal Analytics property only</strong> radio button.</li>
+            <li>Be sure your property information is filled in similar to the following:
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/property1-setup.png" alt="create property">
+                </figure>
+            </li>
+            <li>Click <strong>Next</strong>.</li>
+            <li>Complete the <strong>Business information</strong> form with your data.</li>
+            <li>Click <strong>Create</strong>.</li>
+            <li>Read any details you wish about your new property.</li>
+            <li>Click the back arrow, highlighted in the following screenshot:
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/property3-back.png" alt="back button">
+                </figure>
+            </li>
+            <li>Just below the <strong>Create Property</strong> you clicked earlier, click the down arrow to be sure your property was correctly created.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/property-view.png" alt="property selector">
+                </figure>
+            </li>
+            <li>Perform the proceeding steps to create the three other required properties:
+                <ol>
+                    <li>Beacon iOS</li>
+                    <li>Beacon STV</li>
+                    <li>Beacon WEB</li>
+                </ol>
+            </li>
+        </ol>
+        <h3>Create mobile view for iOS and Android</h3>
+        <p>For mobile platforms, iOS and Android, you need to create a mobile view in each of those properties. You do not need to complete the steps in this section if you do not have mobile apps.</p>
+        <ol class="bcls-tasklist-restart">
+            <li>Click on the dropdown (highlighted in yellow in the screenshot) to see all your Google Analytics accounts, properties and views.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/choose-property.png" alt="choose property">
+                </figure>
+            </li>
+            <li>From the three-paneled dropdown, select:
+                <ul type="a">
+                    <li>Your Brightcove Beacon account</li>
+                    <li>The <strong>Beacon Android</strong> property</li>
+                    <li>The <strong>All Web Site Data</strong> view</li>
+                </ul>
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/choose-property-3-column.png" alt="Select property">
+                </figure>
+            </li>
+            <li>Click the <strong>Admin (gear)</strong> icon on the bottom-left of the screen.</li>
+            <li>At the top of the third column, click <strong>Create View</strong>.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/ga-create-view.png" alt="create view">
+                </figure>
+            </li>
+            <li>Fill in the from following these steps:
+                <ol>
+                    <li>Click the <strong>Mobile app</strong> button for the type of data to track.</li>
+                    <li>Supply a name for your view. A logical name would be <samp>All Mobile Data</samp>.</li>
+                    <li>Click <strong>Create View</strong>.</li>
+                </ol>
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/ga-mobile-view-form.png" alt="create view form">
+                </figure>
+            </li>
+            <li>Change the view to the newly created mobile view.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/ga-change-view.png" alt="change view">
+                </figure>
+            </li>
+            <li>Follow the same steps in this section of the document to create a mobile view for the iOS property.</li>
+        </ol>
+        <p>When working with your accounts, make sure when selecting an account/property/view your mobile properties use the <strong>All Mobile Data</strong> view and the web and STV accounts use the default <strong>All Web Site Data</strong>, as shown here:</p>
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/account-property-view.png" alt="account property view">
+        </figure>
+        <p>Note the iOS and Android views will have <em>All Web Site Data</em> views, as those are created by default when creating the property</p>
+
+        <h3>Create custom metric and dimensions</h3>
+        <p>Now for each property you need to create a set of custom dimensions and one custom metric.</p>
+        <p>This section will be organized in the following manner:</p>
+        <ul>
+            <li>Steps will be shown how to create a single custom dimension.</li>
+            <li>Steps will be shown how to create a single custom metric.</li>
+            <li>A table will show the dimensions required for the properties <strong>Beacon Android</strong> and <strong>Beacon iOS</strong>.</li>
+            <li>A table will show the dimensions required for the properties <strong>Beacon STV</strong> and <strong>Beacon WEB</strong>.</li>
+            <li>A table will show the single metric that <strong>all four</strong> properties must have.</li>
+        </ul>
+        <p>You will then need to create the dimensions and metric for each of the four properties.</p>
+        <h4>Creating a custom dimension</h4>
+        <ol class="bcls-tasklist-restart">
+            <li>Select one of your properties from the account/property/view selector for which you want to create the custom dimensions.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/account-property-view-selelctor.png" alt="choose property">
+                </figure>
+            </li>
+            <li>Click the <strong>Admin (gear)</strong> icon on the bottom-left of the screen.</li>
+            <li>Near the bottom of the middle column, under <strong>Custom Definitions</strong>, click <strong>Custom Dimensions</strong>
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/click-custom-demensions.png" alt="click custom dimensions">
+                </figure>
+            </li>
+            <li>Click <strong>NEW CUSTOM DIMENSION</strong>.</li>
+            <li>For the <strong>Name</strong> enter <samp>Episode Number</samp>.</li>
+            <li>From the <strong>Scope</strong> dropdown, select <samp>Hit</samp>.</li>
+            <li>Leave the dimension <strong>Active</strong>.</li>
+            <li>Click <strong>Create</strong>.</li>
+            <li>From the example code screen, click <strong>Done</strong>.</li>
+            <li>You will see your newly created dimension in a list, as shown here:
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/dimension-list.png" alt="list dimensions">
+                </figure>
+                <aside class="bcls-aside bcls-aside--warning language-editable">It is crucial that the <strong>Index</strong> matches the dimension name as shown in the tables below. To do this, simply create the dimensions in the order shown in the tables.</aside>
+            </li>
+            <li>To create another dimension click <strong>NEW CUSTOM DIMENSION</strong>.</li>
+        </ol>
+        <h4>Creating a custom metric</h4>
+        <ol class="bcls-tasklist-restart">
+            <li>Select one of your properties from the account/property/view selector for which you want to create the custom metric.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/account-property-view-selelctor.png" alt="choose property">
+                </figure>
+            </li>
+            <li>Click the <strong>Admin (gear)</strong> icon on the bottom-left of the screen.</li>
+            <li>Near the bottom of the middle column, under <strong>Custom Definitions</strong>, click <strong>Custom Metrics</strong></li>
+            <li>Click <strong>NEW CUSTOM METRIC</strong>.</li>
+            <li>For the <strong>Name</strong> enter <samp>Time Watched</samp>.</li>
+            <li>From the <strong>Scope</strong> dropdown, select <samp>Hit</samp>.</li>
+            <li>For the <strong>Formatting Type</strong>, select <samp>Time</samp>.</li>
+            <li>Leave the dimension <strong>Active</strong>.</li>
+            <li>Click <strong>Create</strong>.</li>
+            <li>From the example code screen, click <strong>Done</strong>.</li>
+            <li>You will see your newly created metric in a list.</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--information language-editable">This is the only custom metric you will need to create for each of the four properties.</aside>
+        <h4>Android and iOS dimensions and metric</h4>
+        <p>The following table displays the custom dimensions that must be added to the Beacon Android and Beacon iOS properties.</p>
+        <aside class="bcls-aside bcls-aside--warning language-editable">It is crucial that the <strong>Index</strong> matches the dimension name as shown in the tables below. To do this, simply create the dimensions in the order shown in the table.</aside>
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Custom Dimension Name</th>
+                    <th>Index</th>
+                    <th>Scope</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>Episode Number</td>
+                    <td>1</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Genre</td>
+                    <td>2</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Production Year</td>
+                    <td>3</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Country of Origin</td>
+                    <td>4</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Asset ID</td>
+                    <td>5</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Login State</td>
+                    <td>6</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>Language</td>
+                    <td>7</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>User Type</td>
+                    <td>8</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>Content Provider</td>
+                    <td>9</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Series Title</td>
+                    <td>10</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Episode Title</td>
+                    <td>11</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Season Number</td>
+                    <td>12</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Timestamp</td>
+                    <td>13</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Streaming Time</td>
+                    <td>14</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Account Token</td>
+                    <td>15</td>
+                    <td>User</td>
+                </tr>
+                <tr>
+                    <td>Profile Token</td>
+                    <td>16</td>
+                    <td>User</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>STV and WEB dimensions and metric</h4>
+        <p>The following table displays the custom dimensions that must be added to the Beacon STV and Beacon Web properties.</p>
+        <aside class="bcls-aside bcls-aside--warning language-editable">It is crucial that the <strong>Index</strong> matches the dimension name as shown in the tables below. To do this, simply create the dimensions in the order shown in the table.</aside>
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Custom Dimension Name</th>
+                    <th>Index</th>
+                    <th>Scope</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>User ID</td>
+                    <td>1</td>
+                    <td>User</td>
+                </tr>
+                <tr>
+                    <td>Platform</td>
+                    <td>2</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>Account Token</td>
+                    <td>3</td>
+                    <td>User</td>
+                </tr>
+                <tr>
+                    <td>App Version</td>
+                    <td>4</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>Episode Number</td>
+                    <td>5</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Season Number</td>
+                    <td>6</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Episode Title</td>
+                    <td>7</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Program</td>
+                    <td>8</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Device Model</td>
+                    <td>9</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>Genre</td>
+                    <td>10</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Production Year</td>
+                    <td>11</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Country of Origin</td>
+                    <td>12</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Keyword</td>
+                    <td>13</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>OS Version</td>
+                    <td>14</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>OS Language</td>
+                    <td>15</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>Account Number</td>
+                    <td>16</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>Language</td>
+                    <td>17</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>User Type</td>
+                    <td>18</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>Content Type</td>
+                    <td>19</td>
+                    <td>Hit</td>
+                </tr>
+                <tr>
+                    <td>Content Provider</td>
+                    <td>20</td>
+                    <td>Hit</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Custom metric</h4>
+        <p>The following table display the single custom metric that must be added to all four properties.</p>
+        <table class="bcls-table">
+            <thead class="bcls-table__head">
+                <tr>
+                    <th>Custom Metric Name</th>
+                    <th>Index</th>
+                    <th>Scope</th>
+                    <th>Formatting Type</th>
+                </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+                <tr>
+                    <td>Time Watched</td>
+                    <td>1</td>
+                    <td>Hit</td>
+                    <td>Formatting Type</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Import dashboard configurations</h3>
+        <p>In the <a href="#Obtain_the_templates_and_configuration_files">Obtain templates and configuration files</a> section earlier in this document, you requested files/URLs from your onboarding manager. Three of the URLs are as follows:</p>
+        <ul>
+            <li>Mobile: https://analytics.google.com/analytics/web/template?uid=QTJbSdv3Sk6gvpa4Go_CRQ</li>
+            <li>Web: https://analytics.google.com/analytics/web/template?uid=pIoBH8hYRSO3JZL4WbFTlA</li>
+            <li>Smart TV: https://analytics.google.com/analytics/web/template?uid=eZhlzo76QtSn5BNi-rXJyQ</li>
+        </ul>
+        <p>To use the configurations, perform the following steps:</p>
+        <ol class="bcls-tasklist-restart">
+            <li>Note the use for the configuration, mobile, web or smart tv, then click on the URL.</li>
+            <li>In a new browser tab, be sure you are seeing the following:
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/ga-dashboard-config-import.png" alt="import configuration">
+                </figure>
+            </li>
+            <li>From the <strong>Select a view</strong> drop down, choose the matching property, mobile (iOS and Android), web or smart tv.</li>
+            <li>Change the name of the configuration if you choose.</li>
+            <li>Click <strong>Create</strong>.</li>
+            <li>Be sure the configuration opens. An example is shown here:
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/ga-example-imported-configuration.png" alt="example configuration">
+                </figure>
+            </li>
+        </ol>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Configuring_Google_Tag_Manager">Configuring Google Tag Manager</h2>
+        <p>In this section of the document you will perform the following tasks:</p>
+        <ul>
+            <li>Create four containers, one for each property created earlier.</li>
+            <li>Import the configuration JSON files which were emailed to you are part of the <a href="#Obtain_the_templates_and_configuration_files">Obtain the templates and configuration files</a> section above.</li>
+            <li>Enter your tracking ID, copied from your Google Analytics account, into each of the containers' <strong>Tracking Code</strong> variable.</li>
+            <li>Publish your containers.</li>
+        </ul>
+        <h3>Create containers</h3>
+        <ol class="bcls-tasklist-restart">
+            <li>
+                Review Google's documentation to <a href="https://support.google.com/tagmanager/answer/6103696?hl=en">Setup and install Tag Manager</a>.
+            </li>
+            <li>
+                <p>
+                    In <a href="https://tagmanager.google.com/#/home">Tag Manager</a>, create an account or use an existing account. To create a new account, select the <strong>Create Account</strong> button.
+                </p>
+                <p>
+                    By default, a new container is created for a new account. You will create additional containers within each account.
+                </p>
+                <figure class="bcls-figure">
+                    <img class="bcls-image" alt="Create account" src="/assets/images/using-bcb/self-config-ga/tm-click-to-create.png" />
+                </figure>
+            </li>
+            <li>
+                <p>Enter values for your new account page:</p>
+                <ul>
+                    <li><strong>Account Name</strong>: Your company name, or perhaps <samp>Beacon</samp>.</li>
+                    <li><strong>Country</strong>: Home country for your company.</li>
+                    <li><strong>Container Name</strong>: <samp>Beacon WEB</samp> You will be creating a container for each property.</li>
+                    <li><strong>Target Platform</strong>: Web</li>
+                </ul>
+            <li>Be sure your container information is filled in similar to the following:</li>
+            <figure class="bcls-figure">
+                <img class="bcls-image" alt="New account information" src="/assets/images/using-bcb/self-config-ga/tm-add-new-account.png" />
+            </figure>
+            </li>
+            <li>Click <strong>Create</strong>.</li>
+            <li>Click <strong>OK</strong> to close the dialog that opens.</li>
+            <li>From the <strong>Workspace</strong>, click <strong>Admin</strong>.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-workspace-click-admin.png" alt="click admin">
+                </figure>
+            </li>
+            <li>Click the plus sign to add another container.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-plus-to-add-container.png" alt="plus to add container">
+                </figure>
+            </li>
+            <li>Complete the form and click <strong>Create</strong> to create the <strong>iOS</strong> container.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-create-ios.png" alt="create iOS container">
+                </figure>
+            </li>
+            <li>Be sure the following four containers are created with the correct <strong>Target Platform</strong>.
+                <table class="bcls-table">
+                    <thead class="bcls-table__head">
+                        <tr>
+                            <th>Container Name</th>
+                            <th>Target Platform</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bcls-table__body">
+                        <tr>
+                            <td>Beacon Android</td>
+                            <td>Android</td>
+                        </tr>
+                        <tr>
+                            <td>Beacon iOS</td>
+                            <td>iOS</td>
+                        </tr>
+                        <tr>
+                            <td>Beacon STV</td>
+                            <td>Web</td>
+                        </tr>
+                        <tr>
+                            <td>Beacon WEB</td>
+                            <td>Web</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>From the <strong>Workspace</strong>, use the account dropdown at the top of the page to be sure all containers have been created.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-all-containers-created.png" alt="all containers list">
+                </figure>
+            </li>
+            <li>At this point it is critical you take a screen shot of this dropdown. The Brightcove Beacon engineers need this data, that being the container names and associated <strong>GTM</strong> ID. You will send this file to your onboarding manager along with other files downloaded, as explained in the <a href="#Publish_each_container">Publish each container</a> section that comes later in this document. Please be sure the screenshot is clear and legible:
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-containers-with-ids.png" alt="containers with IDs">
+                </figure>
+            </li>
+        </ol>
+        <h3>Import configuration files</h3>
+        <p>Perform the following steps to import the configuration files for your containers:</p>
+        <ol class="bcls-tasklist-restart">
+            <li>From the <strong>Workspace</strong>, click <strong>Admin</strong>.</li>
+            <li>Check which container you are now configuring, then click <strong>Import Container</strong>.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-check-container.png" alt="import container">
+                </figure>
+            </li>
+            <li>Click <strong>Chose container file</strong>, and select the correct JSON file for this container.</li>
+            <li>For <strong>Choose workspace</strong>, click <strong>Existing</strong>, then from the dialog that opens select <strong>Default Workspace</strong>.</li>
+            <li>For <strong>Choose an import option</strong>, click the <strong>Overwrite</strong> radio button.</li>
+            <li>Be sure you see information about tags, triggers, variables and templates.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-import-info.png" alt="import information">
+                </figure>
+            </li>
+            <li>Click <strong>Confirm</strong>, and you will be taken back to the <strong>Workspace.</strong>.</li>
+            <li>In the <strong>Workspace</strong>, click on <strong>Tags</strong>, <strong>Triggers</strong> and <strong>Variables</strong> to confirm the import was successful.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-check-ttv.png" alt="check import">
+                </figure>
+            </li>
+            <li>You now need to import the correct JSON file for each container.</li>
+        </ol>
+        <h3>Enter tracking ID</h3>
+        <p>You will now copy from Google Analytics the tracking ID for each property, then paste it into the corresponding container.</p>
+        <ol class="bcls-tasklist-restart">
+            <li>Log in to Google Analytics.</li>
+            <li>Use the account/property selector at the top of the page to choose the <strong>Beacon Android</strong> property.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-ga-choose-property.png" alt="select android">
+                </figure>
+            </li>
+            <li>Click <strong>Admin</strong>.</li>
+            <li>From the <strong>Property</strong> column first click <strong>Tracking Info</strong> then <strong>Tracking Code.</strong>
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-ga-tracking-info-code.png" alt="click tracking code">
+                </figure>
+            </li>
+            <li>Copy the <strong>Tracking ID</strong>.
+                <figure class=" bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-ga-copy-tracking-id.png" alt="copy tracking ID">
+                </figure>
+            </li>
+            <li>Return to Google Tag Manager.</li>
+            <li>Be sure you are editing the <strong>Beacon Android</strong> container.</li>
+            <li>Click <strong>Variables</strong> from the left side navigation.</li>
+            <li>Click the <strong>Tracking Code</strong> variable.</li>
+            <li>Paste the copied tracking ID from Google Analytics into the <strong>Value</strong> form field.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-paste-id-in-tracking-variable.png" alt="paste id">
+                </figure>
+            </li>
+            <li>You now need to paste the corresponding tracking ID into the <strong>Tracking Code</strong> variable in each container.</li>
+        </ol>
+
+        <h3 id="Publish_each_container">Publish each container</h3>
+        <aside class="bcls-aside bcls-aside--tip language-editable">Later in these steps you will publish your containers. For iOS and Android, you will need to download configuration files and have your app development team add those files to the respective app.</aside>
+        <p>The last step you need to do in Google Tag Manger is submit each container for publishing. The following steps guide you through that process:</p>
+        <ol class="bcls-tasklist-restart">
+            <li>Return to your Workspace.</li>
+            <li>Note the container you are in.</li>
+            <li>On the top right of the UI, click <strong>Submit</strong>.</li>
+            <li>Be sure the <strong>Publish and Create Version</strong> button is selected.</li>
+            <li>If you choose, add a version name and version description.</li>
+            <li>Click <strong>Publish</strong>.</li>
+            <li>If you did not provide a version name and description, you be asked again. Skip if you are sure you do not want those.</li>
+            <li>Be sure the information returned about your container is correct.</li>
+            <li><strong>For iOS and Android containers</strong>: Click <strong>Download</strong> in the top right of the UI to download the associated file. This file will need to be sent to your onboarding manager.
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/tm-download-button.png" alt="download button">
+                </figure>
+            </li>
+            <li><strong>For iOS and Android containers</strong>: Contact your onboarding manager and send these downloaded files to her/him, along with the screenshot of your containers and corresponding IDs. The files will be added to your corresponding apps.</li>
+            <li>Be sure all containers are published.</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--warning">To reiterate, at this point you need to send the downloaded files, along with the screenshot showing each container name and associated <strong>GTM</strong> ID, to your onboarding manager. These files will then be routed to the Brightcove Beacon engineering staff and to configure your apps.</aside>
+    </section>
+    <section class="bcls-section">
+        <h2 id="section-name">Configure Firebase</h2>
+        <aside class="bcls-aside bcls-aside--tip language-editable">The steps in this section are only necessary if you have Android and/or iOS apps. Also, if you are completely unfamiliar with Google Firebase, an introductory 2 1/2 minute marketing video is available form <a href="https://firebase.google.com/">Firebase's home page</a>.</aside>
+        <p></p>
+        <ol class="bcls-tasklist-restart">
+            <li>Browse to the <a href="https://console.firebase.google.com/?pli=1">Firebase Getting Started page</a>.</li>
+            <li>Click <strong>Create a project</strong>.</li>
+            <li>Enter a project name.</li>
+            <li>Accept the terms and click <strong>Continue</strong>.</li>
+            <li>Accept the default of enabling Google Analytics for the project, and click <strong>Continue</strong>.</li>
+            <li>Choose or supply a Google Analytics account.</li>
+            <li>Click <strong>Create project</strong>.</li>
+            <li>Be sure you are returned to the <strong>Project Overview</strong> page. Also note the iOS and Android create app buttons (the red arrows indicate their positions).
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/fb-project-overview.png" alt="project overview">
+                </figure>
+            </li>
+            <li>If you are using an iOS app, click the iOS app button and complete the five steps to add Firebase to your iOS app. To complete the steps you will need an iOS developer to assist. The following Google document provides details on the steps:
+                <ul>
+                    <li><a href="https://firebase.google.com/docs/ios/setup">Add Firebase to your iOS project</a>.</li>
+                </ul>
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/fb-add-ios-app.png" alt="add iOS">
+                </figure>
+            </li>
+            <li>If you are using an Android app, click the Android app button and complete the four steps to add Firebase to your Android app. To complete the steps you will need an Android developer to assist. The following Google document provides details on the steps:
+                <ul>
+                    <li><a href="https://firebase.google.com/docs/android/setup">Add Firebase to your Android project</a>.</li>
+                </ul>
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/fb-add-android-app.png" alt="add android">
+                </figure>
+            </li>
+        </ol>
+        <p>After adding the Goggle Tag Manager and Firebase files, as detailed in the last two sections of this document, you should be able to check for events in Firebase itself. In addition, hits will have been sent to Google Analytics. Note that Google Tag Manager is acting as a middle man here, sending that information to Google Analytics based on data that is pushed to Firebase.</p>
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/fb-test-install.png" alt="firebase results">
+        </figure>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Install_templates_into_Google_Data_Studio">Install templates into Google Data Studio</h2>
+        <p>Brightcove supplies Google Data Studio prebuilt report templates, one each for web, mobile and smart tv. In the <a href="#Obtain_the_templates_and_configuration_files">Obtain templates and configuration files</a> section earlier in this document you requested files/URLs from your onboarding manager. Three of the URLs are as follows:</p>
+        <ul>
+            <li>WEB: https://datastudio.google.com/reporting/43b8362b-785a-487d-b681-39dde640f029</li>
+            <li>Mobile: https://datastudio.google.com/reporting/2ca9572d-e50e-4931-858a-e67dc99f62f9</li>
+            <li>STV: https://datastudio.google.com/reporting/bfa8fad2-b4f6-4bfc-aee2-33742bf600a5</li>
+        </ul>
+        <p>To use the templates, perform the following tasks:</p>
+        <ol class="bcls-tasklist-restart">
+            <li>Note the use for the report, mobile, web or smart tv, then click on the URL.</li>
+            <li>In a new browser tab, be sure you see the following:
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/ga-dashboard-config-import.png" alt="import configuration">
+                </figure>
+            </li>
+            <li>From the <strong>Select a view</strong> drop down, choose the matching property, mobile (iOS and Android), web or smart tv.</li>
+            <li>Change the name of the configuration if you choose.</li>
+            <li>Click <strong>Create</strong>.</li>
+            <li>The imported configuration will open. Examine the data to be sure it seems valid. An example is shown here:
+                <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/using-bcb/self-config-ga/ds-sample-report.png" alt="example report">
+                </figure>
+            </li>
+        </ol>
+        <p>That's it! Congratulations you have configured Google Analytics for Brightcove Beacon.</p>
+    </section>
+</article>
+<!-- complete bootstrap layout -->
+<!-- <nav id="more_resources">
+  <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
+  <ul style="list-style: none;">
+    <li><a href="https://beacon-help.support.brightcove.com" target="_blank"><img src="/assets/images/feather/search.svg" alt="Search" >Search Brightcove Beacon Documentation <img src="/assets/images/feather/external-link-blue.svg" alt="External Link" class="external-link-icon"></a></li>
+    <li><a href="/#" target="_blank"><img src="/assets/images/feather/file-text.svg" alt="Release Notes">View Release Notes <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+    <li><a href="https://status.brightcove.com" target="_blank"><img src="/assets/images/feather/info.svg" alt="System Status"> System Status <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+    <li><a href="https://supportportal.brightcove.com/s/login/" target="_blank"><img src="/assets/images/feather/message-circle.svg" alt="Contact Support"> Contact Support <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+  </ul>
+</nav> -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div id="last_updated" class="last-updated">
+  Page last updated on 25 Feb 2021
+</div>
+
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  <script src="/assets/js/local.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+    <link rel="stylesheet" href="/assets/css/local.css" />
+		<script>
+			feather.replace()
+		</script>
+</body>
+
+</html>
