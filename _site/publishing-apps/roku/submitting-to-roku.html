@@ -1,0 +1,1677 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic, you will learn how to submit your device app to the Roku store.">
+  
+  <title>Submitting Apps to the Roku Store</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="/assets/css/site/styles.css">
+  <link rel="stylesheet" href="/assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="/assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
+  <script src="/assets/js/sajari-head.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Beacon_Logo.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
+    <br>
+    
+  </div>
+</header>
+<br style="clear: both;">
+<nav id="breadcrumbs" aria-label="breadcrumb">
+  <ol class="breadcrumb arr-right">
+    
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    
+    
+    
+    <li class="breadcrumb-item"><a href="/publishing-apps/roku/">Roku</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Submitting Apps to the Roku Store</li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Other Brightcove Docs</option>
+					
+						
+							<option value="https://support.brightcove.com">Documentation Home</option>
+						
+					
+						
+							<option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+						
+					
+						
+							<option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
+						
+					
+						
+							<option value="https://campaign.support.brightcove.com">Brightcove Campaign</option>
+						
+					
+						
+							<option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+						
+					
+						
+							<option value="https://live.support.brightcove.com">Brightcove Live</option>
+						
+					
+						
+							<option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+						
+					
+						
+							<option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+						
+					
+						
+							<option value="https://social.support.brightcove.com">Brightcove Social</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+						
+					
+						
+							<option value="https://player.support.brightcove.com">Brightcove Player Development</option>
+						
+					
+						
+							<option value="https://apis.support.brightcove.com">Video Cloud Platform APIs</option>
+						
+					
+						
+							<option value="https://sdks.support.brightcove.com">Video Cloud Device SDKs</option>
+						
+					
+						
+							<option value="https://integrations.support.brightcove.com">Integrations and CMS Connectors</option>
+						
+					
+						
+							<option value="https://general.support.brightcove.com">Video Cloud General Information</option>
+						
+					
+						
+							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
+						
+					
+				</select>
+      <nav class="sidenav" id="side_nav">
+        
+        
+        <h5><a href="/index.html">Home</a></h5>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/getting-started/index.html">Getting Started <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/getting-started/design-best-practices.html">App Design Best Practices</a></li>
+          
+          
+          
+          <li><a href="/getting-started/app-design-considerations.html">App Design Considerations</a></li>
+          
+          
+          
+          <li><a href="/getting-started/learning-guide-bc-beacon.html">Brightcove Beacon Learning Guide</a></li>
+          
+          
+          
+          <li><a href="/getting-started/implementation-phases.html">Implementation Phases</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/media/index.html">Managing Media <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/media/adding-application-id-player-embed-code.html">Adding an Application ID</a></li>
+          
+          
+          
+          <li><a href="/media/adding-audio-tracks-videos.html">Adding Audio Tracks to Videos</a></li>
+          
+          
+          
+          <li><a href="/media/adding-captions-videos.html">Adding Captions to Videos</a></li>
+          
+          
+          
+          <li><a href="/media/adding-chapters-video.html">Adding Chapters to a Video</a></li>
+          
+          
+          
+          <li><a href="/media/capturing-poster-and-thumbnail-images.html">Capturing Poster and Thumbnail Images</a></li>
+          
+          
+          
+          <li><a href="/media/choosing-correct-embed-code.html">Choosing the Correct Embed Code</a></li>
+          
+          
+          
+          <li><a href="/media/configuring-season-availability.html">Configuring Season Availability</a></li>
+          
+          
+          
+          <li><a href="/media/configuring-video-availability.html">Configuring Video Availability</a></li>
+          
+          
+          
+          <li><a href="/media/creating-and-managing-playlists.html">Creating and Managing Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/creating-managing-rule-sets.html">Creating and Managing Rule Sets</a></li>
+          
+          
+          
+          <li><a href="/media/creating-series-seasons-episodes.html">Creating Series, Seasons & Episodes</a></li>
+          
+          
+          
+          <li><a href="/media/downloading-videos.html">Downloading Videos</a></li>
+          
+          
+          
+          <li><a href="/media/editing-series-details.html">Editing Series Details</a></li>
+          
+          
+          
+          <li><a href="/media/editing-video-details.html">Editing Video Details</a></li>
+          
+          
+          
+          <li><a href="/media/editing-video-details-using-quick-edit.html">Editing Details using Quick Edit</a></li>
+          
+          
+          
+          <li><a href="/media/editing-series-details.html">Editing Series Details</a></li>
+          
+          
+          
+          <li><a href="/media/exporting-video-data.html">Exporting Video Data</a></li>
+          
+          
+          
+          <li><a href="/media/getting-started-media-module.html">Getting Started with the Media Module</a></li>
+          
+          
+          
+          <li><a href="/media/increasing-quality-poster-and-thumbnail-images.html">Increasing the Quality of Poster Images</a></li>
+          
+          
+          
+          <li><a href="/media/introduction-playlists.html">Introduction to Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/managing-series.html">Managing Series</a></li>
+          
+          
+          
+          <li><a href="/media/managing-videos.html">Managing Videos</a></li>
+          
+          
+          
+          <li><a href="/media/organizing-videos-using-folders.html">Organizing Videos Using Folders</a></li>
+          
+          
+          
+          <li><a href="/media/overview-adding-captions-video.html">Overview: Adding Captions to a Video</a></li>
+          
+          
+          
+          <li><a href="/media/publishing-videos-and-playlists.html">Publishing Videos and Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/replacing-video-source-file.html">Replacing a Video Source File</a></li>
+          
+          
+          
+          <li><a href="/media/retranscoding-videos.html">Retranscoding Videos</a></li>
+          
+          
+          
+          <li><a href="/media/searching-videos-and-playlist.html">Searching Videos and Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/setting-required-fields-videos.html">Setting Required Fields</a></li>
+          
+          
+          
+          <li><a href="/media/styling-captions.html">Styling Captions</a></li>
+          
+          
+          
+          <li><a href="/media/uploading-video-images.html">Uploading Video Images</a></li>
+          
+          
+          
+          <li><a href="/media/uploading-videos.html">Uploading Videos</a></li>
+          
+          
+          
+          <li><a href="/media/uploading-videos-remote-urls.html">Uploading Videos Remote URLs</a></li>
+          
+          
+          
+          <li><a href="/media/working-cue-points.html">Working with Cue Points</a></li>
+          
+          
+          
+          <li><a href="/media/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a></li>
+          
+          
+          
+          <li><a href="/media/working-remote-asset-videos.html">Working with Remote Asset Videos</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/pages/index.html">Managing Pages <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/pages/getting-started-layout-module.html">Getting Started with the Layout Module</a></li>
+          
+          
+          
+          <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
+          
+          
+          
+          <li><a href="/pages/creating-managing-pages.html">Creating and Managing Pages</a></li>
+          
+          
+          
+          <li><a href="/pages/managing-playlists-on-pages.html">Managing Playlists on Pages</a></li>
+          
+          
+          
+          <li><a href="/pages/page-details-overview.html">Page Details Overview</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/cloud-playout/index.html">Using Cloud Playout <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/adding-bumpers-to-vod.html">Adding Bumpers to Cloud Playout</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/monetization/index.html">Monetizing Content <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/monetization/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+          
+          
+          
+          <li><a href="/monetization/creating-stripe-account.html">Creating a Stripe Account</a></li>
+          
+          
+          
+          <li><a href="/monetization/creating-subscription-package.html">Creating a Subscription Package</a></li>
+          
+          
+          
+          <li><a href="/monetization/promo-codes.html">Creating Promo Coupons</a></li>
+          
+          
+          
+          <li><a href="/monetization/implementing-authvod.html">Implementing AuthVOD</a></li>
+          
+          
+          
+          <li><a href="/monetization/live-ssai.html">Implementing Live SSAI</a></li>
+          
+          
+          
+          <li><a href="/monetization/vod-ssai.html">Implementing VOD SSAI</a></li>
+          
+          
+          
+          <li><a href="/monetization/monetization-options.html">Understanding Monetization Options</a></li>
+          
+          
+          
+          <li><a href="/monetization/using-subscription-package.html">Using a Subscription Package</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/reviewing-analytics/index.html">Reviewing Analytics <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/http://localhost:4002/reviewing-analytics/ga-self-configuration.html">Google Analytics Self Configuration</a></li>
+          
+          
+          
+          <li><a href="/reviewing-analytics/viewing-analytics-data.html">Viewing Analytics Data</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/admin/index.html">Administering Accounts <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/admin/configuring-language-settings.html">Configuring Language Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-ingest-profiles-context-aware-encoding.html">Creating Ingest Profiles for Context Aware Encoding</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-ingest-profiles-dynamic-delivery.html">Creating Ingest Profiles for Dynamic Delivery</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-legacy-ingest-profiles.html">Creating Legacy Ingest Profiles</a></li>
+          
+          
+          
+          <li><a href="/admin/ingest-profiles-best-practices.html">Ingest Profiles Best Practices</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-account-information.html">Managing Account Information</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-account-settings.html">Managing Account Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-api-authentication-credentials.html">Managing API Authentication Credentials</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-ingest-profiles.html">Managing Ingest Profiles</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-profile-information.html">Managing Profile Information</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-users.html">Managing Users</a></li>
+          
+          
+          
+          <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles (DD & CAE)</a></li>
+          
+          
+          
+          <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Standard Ingest Profiles (Legacy)</a></li>
+          
+          
+          
+          <li><a href="/admin/using-directed-migration-tool-migrate-brightcove-smart-players.html">Using the Directed Migration Tool</a></li>
+          
+          
+          
+          <li><a href="/admin/viewing-billing-information.html">Viewing Billing Information</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/registered-users/index.html">Registered Users <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/registered-users/working-with-registered-users.html">Working with Registered Users</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/general/index.html">General Information <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/general/analytics-business-metrics.html">Beacon Analytics Business Metrics</a></li>
+          
+          
+          
+          <li><a href="/general/beacon-tasks-in-vc.html">Beacon Tasks Performed in VC</a></li>
+          
+          
+          
+          <li><a href="/general/common-configuration-settings.html">Common Config Settings</a></li>
+          
+          
+          
+          <li><a href="/general/creating-stripe-account.html">Creating a Stripe Account</a></li>
+          
+          
+          
+          <li><a href="/general/glossary.html">Glossary</a></li>
+          
+          
+          
+          <li><a href="/general/image-requirements.html">Image Specifications</a></li>
+          
+          
+          
+          <li><a href="/general/known-issues.html">Known Issues</a></li>
+          
+          
+          
+          <li><a href="/general/overview-context-aware-encoding.html">Overview of Context Aware Encoding</a></li>
+          
+          
+          
+          <li><a href="/general/overview-dynamic-delivery.html">Overview of Dynamic Delivery</a></li>
+          
+          
+          
+          <li><a href="/general/remote-asset-limitations.html">Remote Asset Limitations</a></li>
+          
+          
+          
+          <li><a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Supported Video and Audio Formats</a></li>
+          
+          
+          
+          <li><a href="/general/working-360deg-videos.html">Working with 360° Videos</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5><a href="/training/index.html">Training</a></h5>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/release-notes/index.html">Release Notes <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/release-notes/product-updates.html">Beacon Studio Release Notes</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/support/index.html">Support <strong>+</strong></a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+          
+          
+          
+          <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+          
+          
+          
+          <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+          
+          
+        </ul>
+        
+        
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+      <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+
+
+<h1>Submitting Apps to the Roku Store</h1>
+<article class="bcls-article">
+  <summary>In this topic, you will learn how to submit your device app to the Roku store.</summary>
+
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>
+      With Brightcove Beacon, you will receive a generated device app which can
+      be added to the Roku Channel Store.
+    </p>
+    <ul>
+      <li>
+        Store details:
+        <a href="https://developer.roku.com/overview">
+          https://developer.roku.com/overview
+        </a>
+      </li>
+      <li>
+        Developer Account Setup:
+        <a href="https://my.roku.com/signup">https://my.roku.com/signup</a>
+      </li>
+      <li>
+        Implementing Roku Search:
+        <a
+          href="https://developer.roku.com/en-gb/docs/developer-program/discovery/search/implementing-search.md"
+          >https://developer.roku.com/en-gb/docs/developer-program/discovery/search/implementing-search.md</a
+        >
+      </li>
+      <li>Suggested lead time for approval: Three weeks</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--warning language-editable">
+      Note that it can take up to 48 hours after publishing for your channel to
+      be searchable on all devices. From the Roku site:
+      <a
+        href="https://partnersuccess.roku.com/hc/en-us/articles/360007222714"
+        target="_blank"
+      >
+        My channel was just published, why can't I find it with Search?
+      </a>
+    </aside>
+    <h3>Required information for Roku:</h3>
+    <ul>
+      <li>
+        Poster and screenshot requirements
+        <ul>
+          <li>Channel Poster (540x405)</li>
+          <li>Screenshots up to 1920x1080</li>
+        </ul>
+      </li>
+      <li>Developer Email</li>
+      <li>Preferred URL for more information</li>
+      <li>Administrative Contact (Name / Phone / Email)</li>
+      <li>Technical Contact (Name / Phone / Email)</li>
+      <li>Client to set up App logins for QA in store</li>
+    </ul>
+    <!-- <figure class="bcls-figure">
+        <img class="bcls-image--no-border" width="350" src="//beacon.support.brightcove.com/assets/images/pages/home-example.png" alt="Home with carousels">
+        <figcaption class="bcls-caption--image">Home with carousels</figcaption>
+      </figure> -->
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Getting_started">Getting started</h2>
+    <p>To access the Roku developer pages, follow these steps:</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          In a browser, navigate to the
+          <a href="https://my.roku.com/index">Roku Sign in</a> page.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/roku-login.png"
+            alt="Roku sign in"
+          />
+          <figcaption class="bcls-caption--image">Roku sign in</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Either sign in with your account or create a new account.
+        </p>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Adding_a_channel">Adding a channel</h2>
+    <p>Learn how to add a channel.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>From the top navigation, click in the profile icon.</li>
+      <li> <p>In the drop-down menu, click on the <strong>Developers</strong> option.  </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/profile-developer-option.png"
+            alt="Developer options"
+            width="400"
+            height="600"
+          />
+          <figcaption class="bcls-caption--image">Developer Options</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          From the top navigation, select the <strong>Dashboard</strong> link.
+        </p>
+      </li>
+      <li>
+        <p>
+          From the dashboard, you can manage your channels. Select the
+          <strong>Add Channel</strong> button.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/add-channel-button.png"
+            alt="Manage Channels"
+          />
+          <figcaption class="bcls-caption--image">Manage Channels</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          When the <strong>Developer SDK</strong> option is chosen, you will see
+          options for a public or a non-certified channel.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/developer-sdk-channel.png"
+            alt="Developer SDK Channel"
+          />
+          <figcaption class="bcls-caption--image">
+            Developer SDK Channel
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Select <strong>Public</strong> when you want the channel to go to the
+          store. Select <strong>Non-certified</strong> when you want to create a
+          testing channel.
+        </p>
+        <aside class="bcls-aside bcls-aside--warning">
+          The channel name must be unique across both
+          <strong>Public</strong> and <strong>Non-certified</strong> channels.
+        </aside>
+        <p>
+          We recommend the following:
+        </p>
+        <ul>
+          <li>
+            Create your <strong>Public</strong> channel name, for example
+            <strong>Destinations</strong>.
+          </li>
+          <li>
+            <p>
+              Create a <strong>Non-certified</strong> testing channel with a
+              suffix of <strong>QA</strong>. So, in this case it would be named
+              <strong>Destinations QA</strong>.
+            </p>
+          </li>
+        </ul>
+        <p>
+          First, we are creating the public channel.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/channel-public.png"
+            alt="Public channel"
+          />
+          <figcaption class="bcls-caption--image">Public channel</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Next, we are creating the testing channel.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/channel-qa.png"
+            alt="Testing channel"
+          />
+          <figcaption class="bcls-caption--image">Testing channel</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Channel_properties">Channel properties</h2>
+    <p>Properties are associated with each channel.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          Return to your Developer Dashboard and select the
+          <strong>Manage My Channels</strong> link.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/manage-properties.png"
+            alt="Manage Properties"
+          />
+          <figcaption class="bcls-caption--image">Manage Properties</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          For your channel, select the
+          <strong>Preview and Update</strong> button.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/update-properties.png"
+            alt="Update Properties"
+          />
+          <figcaption class="bcls-caption--image">Update Properties</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Expand the <strong>Preview and Publish</strong> dropdown menu, and
+          select <strong>Properties</strong>.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/properties-dropdown.png"
+            alt="Properties dropdown menu"
+          />
+          <figcaption class="bcls-caption--image">
+            Properties dropdown menu
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          You should see a list of channel properties. On the left side, you
+          will see a list of Channel Store countries where your channel will
+          appear. For testing, you can select all countries. For your live
+          channel, choose the countries where you want your channel to be seen.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/countries.png"
+            alt="Channel Store countries"
+          />
+          <figcaption class="bcls-caption--image">
+            Channel Store countries
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          For accessibility features and compliance, select
+          <strong>Yes</strong>. All Brightcove Beacon apps meet these
+          requirements.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/accessibility.png"
+            alt="Accessibility"
+          />
+          <figcaption class="bcls-caption--image">Accessibility</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Based on your content, choose the appropriate content rating.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/content-rating.png"
+            alt="Content rating"
+          />
+          <figcaption class="bcls-caption--image">Content rating</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Select whether a customer account is required to access your channel
+          features.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/customer-account.png"
+            alt="Customer account"
+          />
+          <figcaption class="bcls-caption--image">Customer account</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Enter the URL for the privacy policy associated with your entire app.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/privacy-policy.png"
+            alt="Privacy policy"
+          />
+          <figcaption class="bcls-caption--image">Privacy policy</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          The Vanity Access Code is automatically generated by Roku. You can
+          leave this value.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/vanity-code.png"
+            alt="Vanity code"
+          />
+          <figcaption class="bcls-caption--image">Vanity code</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Select the languages that you want to support.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/langugages.png"
+            alt="Languages"
+          />
+          <figcaption class="bcls-caption--image">Languages</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          For <strong>Required Features</strong>, first choose the
+          <strong>Classification</strong> that best describes your channel.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/classification.png"
+            alt="Classification"
+          />
+          <figcaption class="bcls-caption--image">Classification</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Then, specify whether your app requires an internet connection. When
+          you are done updating the properties for your channel, select the
+          <strong>Save</strong> button.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/properties/internet.png"
+            alt="Internet connection"
+          />
+          <figcaption class="bcls-caption--image">
+            Internet connection
+          </figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Channel_store_info">Channel store info</h2>
+    <p>Here you will add descriptions and icons for your channel.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          Return to the Preview and Publish page, expand the
+          <strong>Preview and Publish</strong> dropdown menu, and select
+          <strong>Channel Store Info</strong>.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/store-info/dropdown-menu.png"
+            alt="Channel Store Info dropdown menu"
+          />
+          <figcaption class="bcls-caption--image">
+            Channel Store Info dropdown menu
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          For Channel Store Info, enter the following field values:
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/store-info/store-info-screen.png"
+            alt="Channel Store Info"
+          />
+          <figcaption class="bcls-caption--image">
+            Channel Store Info
+          </figcaption>
+        </figure>
+        <ul>
+          <li>
+            <strong>Channel Name</strong> - This should already be populated
+            with your channel name.
+          </li>
+          <li>
+            <strong>Description</strong> - Add a detailed description about the
+            channel, that will appear in the Channel Store description. (300
+            characters)
+          </li>
+          <li>
+            <strong>Web Description</strong> - Enter a channel description for
+            U.S. web-based marketing of your channel. This will not display on
+            devices. (1500 characters)
+          </li>
+          <li>
+            <strong>Channel Poster</strong> - Add a poster image that will
+            display in the Roku Channel Store. (540 x 405 JPEG or PNG)
+          </li>
+          <li>
+            <strong>Descriptive Category</strong> - Select the category where
+            you want to channel to show up. (Example: Sports, Drama, Comedy,
+            etc.)
+          </li>
+          <li>
+            <strong>Domestic Region</strong> - Select the country where your
+            channel is considered native and/or domestic. Your channel will
+            appear in the "International" category of all regional Channel
+            Stores that include your channel, with the exception of the Channel
+            Store associated with your Domestic Region.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          When you are done adding Channel Store Info, select the
+          <strong>Save</strong> button.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Monetization">Monetization</h2>
+    <p>Here you will add monetization information about your channel.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          Return to the Preview and Publish page, expand the
+          <strong>Preview and Publish</strong> dropdown menu, and select
+          <strong>Monetization</strong>.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/monetization/monetization-option.png"
+            alt="Monetization dropdown menu"
+          />
+          <figcaption class="bcls-caption--image">
+            Monetization dropdown menu
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Specify whether your channel will contain adds or support a
+          subscription model.</p>
+          <aside class="bcls-aside bcls-aside--information">Notice that even if you are using Brightcove SSAI, you will need to enroll in Roku's <strong>Partner Payouts Program</strong>. It is a Roku store requirement to make the Ads callback during Ad playing.</aside>
+        
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/monetization/monetization-page.png"
+            alt="Monetization"
+          />
+          <figcaption class="bcls-caption--image">Monetization</figcaption>
+        </figure>
+        <p>
+          For subscription channels, you will include the following information:
+        </p>
+        <ul>
+          <li>
+            <strong>Purchase Type</strong> - How users are billed for the
+            channel. (One time, monthly, yearly, etc.)
+          </li>
+          <li>
+            <strong>Price Tier</strong> - Select a value from the drop-down
+            menu. The purchase price for EU Channel Store countries includes
+            VAT. Proceeds are based on pre-tax (net) prices.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          When you are done adding Monetization information, select the
+          <strong>Save</strong> button.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Screenshots">Screenshots</h2>
+    <p>Here you can add screenshots to your channel.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          Return to the Preview and Publish page, expand the
+          <strong>Preview and Publish</strong> dropdown menu, and select
+          <strong>Screenshots</strong>.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/screenshots/screenshots-menu.png"
+            alt="Screenshots dropdown menu"
+          />
+          <figcaption class="bcls-caption--image">
+            Screenshots dropdown menu
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Add screenshots that will appear in the Channel Store.
+        </p>
+        <p>
+          You can add up to 6 screenshots. Each must be 1920 x 1080 JPEG or PNG
+          files.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/screenshots/screenshots-page.png"
+            alt="Screenshots"
+          />
+          <figcaption class="bcls-caption--image">Screenshots</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          When you are done adding screenshots, select the
+          <strong>Save</strong> button.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Support_information">Support information</h2>
+    <p>Provide contact information to help with support of your channel.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          Return to the Preview and Publish page, expand the
+          <strong>Preview and Publish</strong> dropdown menu, and select
+          <strong>Support Information</strong>.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/support-info/support-menu.png"
+            alt="Support Information dropdown menu"
+          />
+          <figcaption class="bcls-caption--image">
+            Support Information dropdown menu
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          For Support information, enter the following field values:
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/support-info/support-page.png"
+            alt="Support information"
+          />
+          <figcaption class="bcls-caption--image">
+            Support information
+          </figcaption>
+        </figure>
+        <ul>
+          <li>
+            <strong>Developer Email</strong> - Enter your developer email
+            address. If it is not correct, update your contact information.
+          </li>
+          <li>
+            <strong>Preferred URL</strong> - Specify the URL for your channel.
+            This may be used by the Roku website or newsletter to link to your
+            channel.
+          </li>
+          <li>
+            <strong>End User Support Contact</strong> - Provide a web page,
+            email address or phone number or multiple of these. Roku will use
+            this when customer service is contacted about your channel. (300
+            characters) This is required.
+          </li>
+          <li>
+            <p>
+              <strong>Test Accounts & Deep Linking Parameters</strong> - Tell
+              Brightcove which assets you want to open as deep links, and we
+              will update the deep linking parameters. If you do not want to set
+              up an account sharing, then Brightcove will provide you with the
+              parameters.
+            </p>
+            <p>
+              You will also provide credentials for 3 test accounts. These
+              accounts will be used for customer support, demos and QA. (1500
+              characters) If you have accounts with different subscriptions, you
+              need to list them here so that the Channel Store has access to all
+              of them.
+            </p>
+          </li>
+          <li>
+            <strong>Adminitstrative Contact</strong> - Provide the
+            admininstrative contact information for your app.
+          </li>
+          <li>
+            <strong>Technical Contact</strong> - Provide the technical contact
+            information for your app.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          When you are done adding Support information, select the
+          <strong>Save</strong> button.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Package_upload">Package upload</h2>
+    <p>Upload a package to your channel.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          Return to the Preview and Publish page, expand the
+          <strong>Preview and Publish</strong> dropdown menu, and select
+          <strong>Package Upload</strong>.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/package/package-menu.png"
+            alt="Package Upload dropdown menu"
+          />
+          <figcaption class="bcls-caption--image">
+            Package Upload dropdown menu
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          First, you need to verify your email address. Then, you will be able
+          to upload.
+        </p>
+      </li>
+      <li>
+        <p>
+          For Package Upload, enter the following field values:
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/package/package-page.png"
+            alt="Package Upload"
+          />
+          <figcaption class="bcls-caption--image">Package Upload</figcaption>
+        </figure>
+        <ul>
+          <li>
+            <strong>Channel Version</strong> - Specify the version of your app,
+            starting with version 1.0.
+          </li>
+          <li>
+            <strong>Minimum Firmware</strong> - Select the Roku firmware
+            version. The package will only run on devices that support the
+            minimum firmware version or higher. The latest stable build version
+            that we recommend is Roku v9.2 bl.
+          </li>
+          <li>
+            <strong>Package File</strong> - The package file can be uploaded by
+            you or by Brightcove. This file will have a similar name to:
+            Beacon_1.0.6138.pkg.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          When you are done adding Package Upload information, select the
+          <strong>Save</strong> button.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Static_analysis">Static analysis</h2>
+    <p>Create an analysis report about your channel.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          Return to the Preview and Publish page, expand the
+          <strong>Preview and Publish</strong> dropdown menu, and select
+          <strong>Static Analysis</strong>.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/static-analysis/static-analysis-menu.png"
+            alt="Static Analysis dropdown menu"
+          />
+          <figcaption class="bcls-caption--image">
+            Static Analysis dropdown menu
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          When you upload a package in the previous section, then your package
+          is analyzed for errors in structure or syntax. A table may be shown
+          with errors and warnings.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/static-analysis/static-analysis-page.png"
+            alt="Static Analysis"
+          />
+          <figcaption class="bcls-caption--image">Static Analysis</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Preview_and_publish">Preview and publish</h2>
+    <p>
+      When you are done filling out all of the forms related to your channel,
+      you will be shown the <strong>Preview and Publish</strong> screen.
+    </p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          Return to the Preview and Publish page, expand the
+          <strong>Preview and Publish</strong> dropdown menu, and select
+          <strong>Preview and Publish</strong>.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/publish/publish-menu.png"
+            alt="Preview and Publish dropdown menu"
+          />
+          <figcaption class="bcls-caption--image">
+            Preview and Publish dropdown menu
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          This page gives you a summary preview of you channel.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            src="/assets/images/creating-your-apps/roku/publish/publish-page.png"
+            alt="Preview and Publish"
+          />
+          <figcaption class="bcls-caption--image">
+            Preview and Publish
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          When you are ready, select the <strong>Submit</strong> button to
+          publish your channel.
+        </p>
+      </li>
+      <li>
+        <p>
+          Your app will be checked by the Roku store to see if it has any
+          issues. If your channel is rejected for any reason, an email will be
+          sent to the <strong>Developer Email</strong> that you set in the
+          <strong>Support Information</strong> screen. Review the reasons for
+          rejection, and create a Brightcove support ticket to have the issues
+          resolved.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Updating_your_channel">Updating your channel</h2>
+    <p>If you want to update an existing app, follow these steps:</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>
+          Create a new Roku package.
+        </p>
+        <p>
+          Give the new package a unique id and password. Provide Brightcove the
+          new package along with the keys to this package. We need the new
+          information to submit the new package to the store.
+        </p>
+        <p>
+          Remember, if you want to change channel names, they must be unique
+          within the Channel Store.
+        </p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            width="75%"
+            src="/assets/images/creating-your-apps/roku/updating-channel/manage-channels.png"
+            alt="Manage Channels"
+          />
+          <figcaption class="bcls-caption--image">Manage Channels</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+<!-- <nav id="more_resources">
+  <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
+  <ul style="list-style: none;">
+    <li><a href="https://beacon-help.support.brightcove.com" target="_blank"><img src="/assets/images/feather/search.svg" alt="Search" >Search Brightcove Beacon Documentation <img src="/assets/images/feather/external-link-blue.svg" alt="External Link" class="external-link-icon"></a></li>
+    <li><a href="/#" target="_blank"><img src="/assets/images/feather/file-text.svg" alt="Release Notes">View Release Notes <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+    <li><a href="https://status.brightcove.com" target="_blank"><img src="/assets/images/feather/info.svg" alt="System Status"> System Status <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+    <li><a href="https://supportportal.brightcove.com/s/login/" target="_blank"><img src="/assets/images/feather/message-circle.svg" alt="Contact Support"> Contact Support <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+  </ul>
+</nav> -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div id="last_updated" class="last-updated">
+  Page last updated on 10 Jul 2020
+</div>
+
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  <script src="/assets/js/local.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+    <link rel="stylesheet" href="/assets/css/local.css" />
+		<script>
+			feather.replace()
+		</script>
+</body>
+
+</html>

@@ -65,6 +65,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/adding-subscriptions-in-android.html",
+      "oldURL": "/adding-subscriptions-in-android"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/admin/howto/adding-user-account.html",
       "oldURL": "/adding-user-account"
   },
@@ -167,6 +172,16 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/general/common-configuration-settings.html",
       "oldURL": "/common-configuration-settings"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/common-required-info.html",
+      "oldURL": "/common-required-info"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/roku/configuring-inchannel-products.html",
+      "oldURL": "/configuring-inchannel-products"
   },
 
   {
@@ -310,12 +325,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/general/creating-stripe-account.html",
+      "newURL": "https://beacon-help.support.brightcove.com/monetization/creating-stripe-account.html",
       "oldURL": "/creating-stripe-account"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/monetization/creating-stripe-account.html",
+      "newURL": "https://beacon-help.support.brightcove.com/general/creating-stripe-account.html",
       "oldURL": "/creating-stripe-account"
   },
 
@@ -342,6 +357,11 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/getting-started/design-best-practices.html",
       "oldURL": "/design-best-practices"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/device-apps-validation-guide.html",
+      "oldURL": "/device-apps-validation-guide"
   },
 
   {
@@ -387,6 +407,11 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/media/exporting-video-data.html",
       "oldURL": "/exporting-video-data"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/ios-tvos/fairplay-certificate.html",
+      "oldURL": "/fairplay-certificate"
   },
 
   {
@@ -445,12 +470,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/help/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/help/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
@@ -472,6 +497,16 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/monetization/implementing-authvod.html",
       "oldURL": "/implementing-authvod"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/improving-relevance-android.html",
+      "oldURL": "/improving-relevance-android"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/in-app-subscription-resources.html",
+      "oldURL": "/in-app-subscription-resources"
   },
 
   {
@@ -535,17 +570,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/general/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/registered-users/help/",
+      "newURL": "https://beacon-help.support.brightcove.com/analytics/",
       "oldURL": "/index"
   },
 
@@ -555,7 +580,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/registered-users/help/",
       "oldURL": "/index"
   },
 
@@ -565,57 +595,37 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/getting-started/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/support/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/dashboard/help/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/registered-users/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/media/help/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/release-notes/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/howto/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/analytics/",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/panasonic/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/ios-tvos/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/lg/",
       "oldURL": "/index"
   },
 
@@ -625,12 +635,17 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/howto/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/fire-tv/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/roku/",
       "oldURL": "/index"
   },
 
@@ -640,8 +655,93 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/support/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/samsung/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/dashboard/help/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/help/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/registered-users/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/general/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/release-notes/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/admin/ingest-profiles-best-practices.html",
       "oldURL": "/ingest-profiles-best-practices"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/installing-android-test-build.html",
+      "oldURL": "/installing-android-test-build"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/fire-tv/installing-fire-tv-test-build.html",
+      "oldURL": "/installing-fire-tv-test-build"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/ios-tvos/installing-ios-test-build.html",
+      "oldURL": "/installing-ios-test-build"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/roku/installing-roku-test-build.html",
+      "oldURL": "/installing-roku-test-build"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/samsung/installing-samsung-test-build.html",
+      "oldURL": "/installing-samsung-test-build"
   },
 
   {
@@ -707,6 +807,16 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/admin/managing-api-authentication-credentials.html",
       "oldURL": "/managing-api-authentication-credentials"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/managing-google-subscriptions-1.html",
+      "oldURL": "/managing-google-subscriptions-1"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/managing-google-subscriptions-2.html",
+      "oldURL": "/managing-google-subscriptions-2"
   },
 
   {
@@ -880,6 +990,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/samsung/samsung-partner.html",
+      "oldURL": "/samsung-partner"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/search-test.html",
       "oldURL": "/search-test"
   },
@@ -960,6 +1075,41 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/fire-tv/submitting-to-amazon.html",
+      "oldURL": "/submitting-to-amazon"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/submitting-to-android.html",
+      "oldURL": "/submitting-to-android"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/ios-tvos/submitting-to-apple.html",
+      "oldURL": "/submitting-to-apple"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/lg/submitting-to-lg.html",
+      "oldURL": "/submitting-to-lg"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/panasonic/submitting-to-panasonic.html",
+      "oldURL": "/submitting-to-panasonic"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/roku/submitting-to-roku.html",
+      "oldURL": "/submitting-to-roku"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/samsung/submitting-to-samsung.html",
+      "oldURL": "/submitting-to-samsung"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/general/supported-video-and-audio-formats-codecs-and-containers.html",
       "oldURL": "/supported-video-and-audio-formats-codecs-and-containers"
   },
@@ -975,6 +1125,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/updating-android-apps-to-bcb.html",
+      "oldURL": "/updating-android-apps-to-bcb"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/admin/help/upload-settings.html",
       "oldURL": "/upload-settings"
   },
@@ -985,12 +1140,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/uploading-video-images.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/uploading-video-images.html",
       "oldURL": "/uploading-video-images"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/uploading-video-images.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/uploading-video-images.html",
       "oldURL": "/uploading-video-images"
   },
 

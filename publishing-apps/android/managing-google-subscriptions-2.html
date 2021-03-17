@@ -1,0 +1,101 @@
+---
+title: "Managing Google Subscriptions Part 2"
+description: "In this topic, you will learn how to configure Google subscriptions' publisher/subscriber data exchange. This is the second part of the larger process of establishing communication between your Brightcove Beacon apps and the Google Store."
+parent: "android"
+layout: "staging"
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--warning">Completing the steps in this document rely on previous work done in the <a href="/creating-your-apps/android/managing-google-subscriptions-1.html">Managing Google Subscriptions Part 1</a>.</aside>
+    <h2 id="section-name">Introduction</h2>
+    <p>This document steps you through using the Google Cloud Platform to create a <strong>Pub/Sub topic</strong> and add a previously created service account to the Pub/Sub topic.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Create_a_Pub/Sub_topic">Create a Pub/Sub topic</h2>
+    <p>Perform the following steps to create a Pub/Sub topic:</p>
+    <ol class="bcls-tasklist">
+      <li>Browse to the index page for Google Cloud platform (https://cloud.google.com).</li>
+      <li>Click the <strong>Console</strong> link in the top-right of the screen.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gcp-pub-sub-subscription-notifications/first-page-click-console.png" alt="click console">
+        </figure>
+      </li>
+      <li>Choose the correct project. You most likely have named your project around your app, like <strong>Beacon</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gcp-pub-sub-subscription-notifications/choose-project.png" alt="choose project">
+        </figure>
+      </li>
+      <li>In the <strong>Search</strong>, enter <samp>pub</samp>, and once it appears, click <strong>Pub/Sub</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gcp-pub-sub-subscription-notifications/search-4-pub.png" alt="search for pub/sub">
+        </figure>
+      </li>
+      <li>From the <strong>Pub/Sub</strong> page, click <strong>CREATE TOPIC</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gcp-pub-sub-subscription-notifications/click-create-topic.png" alt="click create topic">
+        </figure>
+      </li>
+      <li>In the <strong>Create a topic</strong> dialog, enter the <strong>Topic ID</strong> to be <samp>subs</samp>, then click <strong>CREATE TOPIC</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gcp-pub-sub-subscription-notifications/create-topic-dialog.png" alt="sub for topic ID">
+        </figure>
+      </li>
+      <li>On the page that appears, click ← to return to the the <strong>Topics</strong> page.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/back-to-topics-left-arrow.png" alt="back to topics">
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Add_a_member_to_the_topic">Add a member to the topic</h2>
+    <p>Perform the following steps to add a service account as a member of the Pub/Sub topic:</p>
+    <ol class="bcls-tasklist">
+      <li>From the <strong>Topics</strong> page, for the <strong>subs</strong> topic, click <strong>More actions</strong> (the three vertical dots) then from the dropdown select <strong>View permissions</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/more-actions-permissions.png" alt="view permissions">
+        </figure>
+      </li>
+      <li>From the permission panel, click <strong>ADD MEMBER</strong>.<figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/add-member.png" alt="click add member">
+        </figure>
+      </li>
+      <li>Confirm you are seeing the following form:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/empty-subs-member-form.png" alt="add member form">
+        </figure>
+      </li>
+      <li>To get the required email address, browse to the <a href="https://console.cloud.google.com/iam-admin/serviceaccounts?project=pc-api-8769861187782665707-545">Google Cloud Console - Service Accounts</a> page. You will find the service account you created in the <a href="/creating-your-apps/android/managing-google-subscriptions-1.html">Managing Google Subscriptions Part 1</a> document. Copy the email address for the <strong>Android Subscriptions</strong> (or the name you chose) service account.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/copy-email.png" alt="">
+        </figure>
+      </li>
+      <li>Return to the <strong>Add members</strong> form in <strong>Google Cloud Platform</strong>.</li>
+      <li>Paste the retrieved email address into the <strong>New members</strong> text field.</li>
+      <li>For the role, select <strong>Pub/Sub → Pub/Sub Publisher</strong>.</li>
+      <li>Click the <strong>Send notification email</strong> checkbox, and add a message.</li>
+      <li>Confirm your form is filled in similar to the following:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/new-member-completed-form.png" alt="filled in form">
+        </figure>
+      </li>
+      <li>Click <strong>Save</strong>.</li>
+      <li>From the <strong>Topics</strong> page, click the <strong>subs</strong> topic.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/click-on-subs.png" alt="click subs">
+        </figure>
+      </li>
+      <li>From the <strong>Topic details</strong>, copy the <strong>Topic name</strong> (note there is built in copy button, outlined in red).
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/copy-topic-name.png" alt="copy topic name">
+        </figure>
+      </li>
+      <li>Send this name to your onboarding manager.
+      </li>
+    </ol>
+  </section>
+</article>

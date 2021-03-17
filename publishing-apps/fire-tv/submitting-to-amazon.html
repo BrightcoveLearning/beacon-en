@@ -1,0 +1,1037 @@
+---
+title: 'Submitting Apps to the Amazon Appstore'
+description: 'In this topic, you will learn how to submit your Fire TV app to the Amazon Appstore.'
+parent: 'Fire TV'
+grandparent: 'Creating Your Apps'
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="overview">Overview</h2>
+    <p>
+      This document will assist you in submitting your Brightcove Beacon app to
+      the Amazon Appstore.
+    </p>
+    <p>A high-level view of the process is:</p>
+    <ol>
+      <li>Add a new Android app in the Amazon Developer Console.</li>
+      <li>Set the availability and pricing for your new Fire TV app.</li>
+      <li>
+        Add text descriptions for your Fire TV app in the Amazon Appstore.
+      </li>
+      <li>Add the icons and images for your Fire TV app.</li>
+      <li>Select a content rating for your Fire TV app.</li>
+      <li>Upload the APK file supplied by Brightcove.</li>
+    </ol>
+    <p>
+      The rest of this document will provide details for each of the steps
+      above.
+    </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Amazon">Amazon Resources</h2>
+    <ul>
+      <li>
+        Appstore details:
+        <a href="https://developer.amazon.com/home.html">
+          https://developer.amazon.com/home.html
+        </a>
+        (requires Amazon Developer Account - no fee )
+      </li>
+      <li>
+        Fire TV App Submission Guide:
+        <a
+          href="https://developer.amazon.com/docs/fire-tv/submitting-your-app-to-the-amazon-appstore.html"
+        >
+          https://developer.amazon.com/docs/fire-tv/submitting-your-app-to-the-amazon-appstore.html
+        </a>
+        and more generally:
+        <a href="https://developer.amazon.com/apps-and-games/app-submission">
+          https://developer.amazon.com/apps-and-games/app-submission
+        </a>
+      </li>
+      <li>Suggested lead time for approval: Three weeks</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="information_amazon">Required information for Amazon</h2>
+    <ul>
+      <li>Fire TV App icon (1280 x 720px PNG (no transparency)).</li>
+      <li>
+        Between three and ten screenshots ( 1920 x 1080px JPG or PNG (landscape,
+        no transparency).
+        <ul>
+          <li>
+            These images must not appear distorted, stretched, or pixelated when
+            viewed in the UI.
+          </li>
+          <li>
+            Please provide Fire TV screen shots when you submit your app, or use
+            screenshots that can represent your app generically for all devices.
+          </li>
+          <li>
+            Note that if you do not provide Amazon Fire TV-specific screen shots
+            for your app in the submission process, any phone or tablet screen
+            shots you have provided are used to represent your app in the Fire
+            TV App Store.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Background image 1920 x 1080px JPG or PNG (landscape, no transparency).
+      </li>
+      <li>APK package provided from Brightcove.</li>
+      <li>Display title.</li>
+      <li>Short description.</li>
+      <li>Long description.</li>
+      <li>
+        Product feature bullet points (Up to 10 key features of your Fire TV
+        app).
+      </li>
+      <li>
+        Keywords (Search terms used to increase the discoverability of your
+        app).
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Submitting_your_first_FireTV">
+      Submitting your FireTV App to the Amazon Appstore
+    </h2>
+    <p>
+      Follow these steps to submit your FireTV App to the Amazon Appstore.
+    </p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Enter the
+        <a
+          href="https://developer.amazon.com/settings/console/home"
+          target="_blank"
+          >Amazon Developer console</a
+        >. You will need to
+        <a
+          href="https://www.amazon.com/ap/register?clientContext=134-1654773-5582608&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&siteState=clientContext%3D131-8250356-2896517%2CsourceUrl%3Dhttps%253A%252F%252Fdeveloper.amazon.com%252Fsettings%252Fconsole%252Fregistration%253Freturn_to%253D%252Fapps-and-games%2Csignature%3DcFhxbzDeo5JuzCUqkMHotnfOUw0j3D&marketPlaceId=ATVPDKIKX0DER&language=en_US&pageId=amzn_developer_portal&openid.return_to=https%3A%2F%2Fdeveloper.amazon.com%2Fsettings%2Fconsole%2Fregistration%3Freturn_to%3D%252Fapps-and-games&prevRID=Y35GF8Q90QBTXRBDCQHV&openid.assoc_handle=mas_dev_portal&openid.mode=checkid_setup&prepopulatedLoginId=&failedSignInCount=0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
+          target="_blank"
+          >create an Amazon Developer account</a
+        >
+        in order to use the console.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            src="/assets/images/creating-your-apps/amazon/1-dev-console.png"
+          />
+        </figure>
+      </li>
+      <li>
+        In the <strong>Amazon Appstore</strong> section, click on the
+        <strong>Add a New App</strong> button.
+      </li>
+      <li>
+        From the drop-down menu, select <strong>Android</strong>. (At the moment
+        Brightcove only supports the Android version for a Fire TV App
+        submission.)
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="400"
+            height="700"
+            src="/assets/images/creating-your-apps/amazon/2-add-new-app.png"
+          />
+        </figure>
+      </li>
+      <li>
+        The <strong>New App Submission</strong> form will display.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="700"
+            src="/assets/images/creating-your-apps/amazon/3-app-sub-form.png"
+          />
+        </figure>
+      </li>
+      <li>Enter your <strong>App title.</strong></li>
+      <li>
+        Choose an <strong>App SKU</strong>. This is a unique-to-your-app string
+        that you define yourself. The SKU (Stock Keeping Unit) becomes the ID
+        for your app for your own tracking purposes, for example:
+        <em>com.amazon.example.myapp.v1</em>.
+      </li>
+      <li>
+        Select an <strong>App category</strong>. By properly categorizing your
+        app, users will be able to find your app more easily, which increases
+        downloads for your app. For more information please review the
+        <a
+          href="https://developer.amazon.com/docs/app-submission/categories.html"
+          target="_blank"
+          >Amazon category documentation</a
+        >.
+      </li>
+      <li>
+        You can mark the
+        <strong>Use my default support information</strong> checkbox or
+        introduce different information details ( email, phone, website) for the
+        customer support contact of the Fire TV app.
+      </li>
+      <li>Click on the <strong>Save</strong> button.</li>
+      <li>
+        After saving, you will reach the Fire TV app settings and the
+        <strong>General Information</strong> tab.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="900"
+            height="700"
+            src="/assets/images/creating-your-apps/amazon/4-dashboard.png"
+          />
+        </figure>
+      </li>
+      <li>
+        In this tab, you will be able to see your
+        <strong>App Submission API Keys</strong> generated automatically by
+        Amazon and all the information provided at the moment of creating your
+        Fire TV app.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Availability_&_Pricing">
+      Complete the Availability & Pricing information
+    </h2>
+    <p>
+      In this section you will be able to set the pricing and availability of
+      your Fire TV app. Remember that the prices you select must match those set
+      in the Brightcove Beacon platform.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Click in the <strong>Availability & Pricing</strong> tab.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            src="/assets/images/creating-your-apps/amazon/5-availability-pricing.png"
+          />
+        </figure>
+      </li>
+      <li>
+        In the first section, you will be able to choose where you would like
+        your Fire TV app to be available:
+        <ul>
+          <li>
+            <strong
+              >In all countries and regions where Amazon sells apps.</strong
+            >
+          </li>
+          <li><strong>Only in selected countries and regions.</strong></li>
+        </ul>
+      </li>
+      <li>
+        If you select <strong>Only in selected countries and regions</strong>,
+        this option will allow you to select what countries or specific regions
+        will be able to find your Fire TV app on the Amazon store. In the
+        example shown below, all of <strong>North America</strong> and three
+        countries in <strong>Europe</strong> are selected for the Fire TV app.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="700"
+            src="/assets/images/creating-your-apps/amazon/6-select-regions.png"
+          />
+        </figure>
+      </li>
+      <li>
+        To select a specific country from the region, click on the
+        <strong>+ Select countries/regions</strong> button.
+      </li>
+      <li>
+        Select the countries you want your Fire TV app to be published from the
+        region you choose.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="500"
+            height="600"
+            src="/assets/images/creating-your-apps/amazon/7-select-countries.png"
+          />
+        </figure>
+      </li>
+      <li>Click the <strong>Add</strong> button.</li>
+      <li>
+        The next option will allow you to select if your Fire TV app is
+        <strong>Free</strong> or <strong>Paid</strong>. Normally the default
+        Brightcove Beacon app is set as <strong>Free</strong>.
+      </li>
+      <li>
+        If you select <strong>Paid</strong>, you will have to
+        <strong>Set a baseline price</strong> and a type of currency. (Please
+        contact your Brightcove Beacon account representative in the case you
+        want to assign a price for your Fire TV app).
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/8-price-app.png"
+          />
+        </figure>
+      </li>
+      <li>
+        (Optional) Leave this field blank to start the publishing process as
+        soon as your Fire TV app has been approved. To defer the start of the
+        publishing process to a future time and date, assign a publishing date
+        for your Fire TV App.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/9-publishing-time.png"
+          />
+        </figure>
+      </li>
+      <li>Click the <strong>Save</strong> button.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="IAP_Subscription">
+      Creating an In-App Purchases (IAP) Subscription
+    </h2>
+    <p>
+      In this section you will learn how to create an In-App Purchases
+      subscription for your Fire TV app.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        After saving your <strong>Availability & Pricing</strong> settings, an
+        additional field for <strong>Add IAP</strong> (In-App Purchases) will
+        appear.
+      </li>
+      <li>
+        Click in the <strong>Add IAP</strong> button to add In-App Purchases as
+        subscriptions.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/10-in-app-purchase.png"
+          />
+        </figure>
+      </li>
+      <li>
+        You see the <strong>In-App Items</strong> tab.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/11-in-app-items.png"
+          />
+        </figure>
+      </li>
+      <li>
+        At the moment you will not have any in-app items there. To create one
+        click in the <strong>Add Single IAP</strong> button.
+      </li>
+      <li>
+        Note that you have three different types of in-app purchases to select.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="200"
+            height="200"
+            src="/assets/images/creating-your-apps/amazon/12-add-iap.png"
+          />
+        </figure>
+        <ul>
+          <li>
+            <strong>Add a Consumable:</strong> A consumable includes any type of
+            content that you sell within your app that is consumed within the
+            app itself. This type of content is available only on the device
+            from which it is purchased.
+          </li>
+          <li>
+            <strong>Add an Entitlement:</strong> An entitlement includes any
+            type of content that you sell within your app that requires access
+            rights. This type of content is available anywhere the customer is
+            logged into the Amazon Apps client. The entitlement to the content
+            does not expire.
+          </li>
+          <li>
+            <strong>Add a Subscription:</strong> A subscription includes any
+            type of content that:
+            <ul>
+              <li>Carries an entitlement</li>
+              <li>Is bound by a period of time</li>
+              <li>Auto-renews at the end of the period</li>
+              <li>
+                Is available on all eligible devices registered to the
+                customer's Amazon account
+              </li>
+            </ul>
+          </li>
+          Your app can have multiple subscriptions defined for it, with each
+          subscription having multiple periods.
+        </ul>
+      </li>
+      <li>
+        Please select the IAP of your preference or contact your Brightcove
+        Beacon account representative to know more about which options are best
+        for your content.
+      </li>
+      <li>
+        In this example, <strong>Subscription</strong> is selected.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/13-subscription.png"
+          />
+        </figure>
+      </li>
+      <li>Give a <strong>Title</strong> to your new subscription.</li>
+      <li>
+        Choose an <strong>SKU</strong>. The SKU (Stock Keeping Unit) becomes the
+        ID for your subscription for your own tracking purposes, for example
+        <em>subscription.gold</em>.
+      </li>
+      <li>Click the <strong>Save</strong> button.</li>
+      <li>
+        After saving your IAP you will be prompted to the
+        <strong>Subscription Period</strong> tab.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/14-subscription-details.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Select a <strong>Subscription period</strong>. You will be able to
+        select the time in which the subscription will be charged to your users.
+        For example: <strong>monthly, weekly, annually</strong>, etc.
+      </li>
+      <li>
+        Choose an <strong>SKU</strong>. The SKU (Stock Keeping Unit) becomes the
+        ID for your subscription period for your own tracking purposes, for
+        example <em>monthly.subscription</em>.
+      </li>
+      <li>
+        (Optional) Select if you want to give a <strong>Free trial</strong> of
+        your subscription. For example: <strong>7 days, 1 month</strong>, etc.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="500"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/14.5-free-trial.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Select if you will be charging for this subscription. For charging,
+        select the <strong>Yes, my base list price is...</strong> option.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/15-subscription-price.png"
+          />
+        </figure>
+      </li>
+      <li>Enter your subscription price and the type of currency.</li>
+      <li>
+        The <strong>Calculated prices</strong> setting will appear which will
+        allow you to decide if you want Amazon to calculate the list prices for
+        you, or you set the prices manually.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/16-currency-prices.png"
+          />
+        </figure>
+      </li>
+      <li>Click the <strong>Save</strong> button.</li>
+      <li>
+        Go to the <strong>Description</strong> tab and add a description to your
+        new subscription.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/18-subscription.png"
+          />
+        </figure>
+      </li>
+      <li>Click the <strong>Save</strong> button.</li>
+      <li>
+        When all your IAP settings are completed the
+        <strong>Submit In-App Item</strong> button will be enabled. Click the
+        button to send your IAP for approval to Amazon.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/19-submit-item.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Click the <strong>Submit In-App Item</strong> button and you will be
+        able to see your IAP item in the <strong>In-App items</strong> tab list.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/20-subscription-approved.png"
+          />
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="description_information">Complete the Description information</h2>
+    <p>
+      In this section, you will be able to add all the Fire TV app text
+      descriptions that will be visible to the users in the Amazon store.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Click in the <strong>Current Version</strong> tab and select the
+        <strong>Description</strong> tab from the Fire TV app menu.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/21-subscription-menu.png"
+          />
+        </figure>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/21.5-text-descriptions.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Complete the following in the form:
+        <ul>
+          <li>
+            <strong>Short description</strong>: A brief description of your app,
+            shown on mobile devices.
+          </li>
+          <li>
+            <strong>Long description</strong>: A lengthier description of your
+            app, for the App Store website.
+          </li>
+          <li>
+            <strong>Product feature bullets</strong>: Up to 10 key features of
+            your app, one feature per line. These features will appear on the
+            App Store website, formatted as a bulleted list.
+          </li>
+          <li>
+            (Optional) <strong>Keywords</strong>: Search terms used to increase
+            the discoverability of your app, Use a comma or white space to
+            separate your terms.
+          </li>
+        </ul>
+      </li>
+      <li>
+        By default, the description will be displayed in English but you can add
+        translations by clicking on the
+        <strong>Add Localized Descriptions</strong> button.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/22-translations.png"
+          />
+        </figure>
+      </li>
+      <li>
+        A form will appear allowing you to select the translation languages you
+        want to add.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="400"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/23-languages.png"
+          />
+        </figure>
+      </li>
+      <li>Click the <strong>Add</strong> button.</li>
+      <li>
+        At the top of the form, you will be able to select between the language
+        forms and add each of the language descriptions.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/24-spanish-description.png"
+          />
+        </figure>
+      </li>
+      <li>Click the <strong>Save</strong> button.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="images_information">Complete Images & Multimedia information</h2>
+    <p>
+      In this section you will learn how to upload the images for your Fire TV
+      app.
+    </p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Click in the <strong>Images & Multimedia</strong> tab.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/25-images-media.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Click in the <strong>Table and Phone Assets</strong> section. Although
+        your app is aimed for Fire TV and not tablets and phones, Amazon
+        requires these images be supplied. You can use the same image sizes that
+        you will use for your Fire TV app.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Image</th>
+              <th>Requirements</th>
+              <th>Mandatory/Optional</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Icons</td>
+              <td>
+                PNG (no transparency)
+                <table>
+                  <tr>
+                    <td>Width:1280px</td>
+                    <td>Height:720px</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Mandatory
+              </td>
+            </tr>
+            <tr>
+              <td>Screenshots</td>
+              <td>
+                Between 3 and 10 JPG or PNG (no transparency, landscape)
+                <table>
+                  <tr>
+                    <td>Width:1920px</td>
+                    <td>Height:1080px</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Mandatory
+              </td>
+            </tr>
+            <tr>
+              <td>Background Image</td>
+              <td>
+                JPG or PNG (no transparency, landscape)
+
+                <table>
+                  <tr>
+                    <td>Width:1920px</td>
+                    <td>Height:1080px</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Mandatory
+              </td>
+            </tr>
+            <tr>
+              <td>Featured Content Logo</td>
+              <td>
+                PNG (transparency optional)
+                <table>
+                  <tr>
+                    <td>Width:640px</td>
+                    <td>Height:260px</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Optional
+              </td>
+            </tr>
+            <tr>
+              <td>Featured Content Background</td>
+              <td>
+                JPG or PNG (no transparency)
+                <table>
+                  <tr>
+                    <td>Width:1920px</td>
+                    <td>Height:720px</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                Optional
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        Upload an image for the <strong>Icons</strong> by clicking in the box on
+        the right.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/26-upload-images.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Upload an image for the <strong>Screenshots</strong> by clicking in the
+        box on the right.
+      </li>
+      <li>
+        Click in the <strong>Fire TV Assets</strong> section.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/26.5-firetv-images.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Upload an image for the <strong>App Icon</strong> by clicking in the box
+        on the right.
+      </li>
+      <li>
+        Upload an image for the <strong>Screenshots</strong> by clicking in the
+        box on the right.
+      </li>
+      <li>
+        Upload an image for the <strong>Background Image</strong> by clicking in
+        the box on the right.
+      </li>
+      <li>
+        (Optional) Upload an image for the
+        <strong>Featured Content Logo</strong> by clicking in the box on the
+        right.
+      </li>
+      <li>
+        (Optional) Upload an image for the
+        <strong>Featured Content Background</strong> by clicking in the box on
+        the right.
+      </li>
+      <li>
+        Once all your images are uploaded you will be able to click on the
+        <strong>Preview Images on TV</strong> button to have a visualization of
+        how your Fire TV app will look like in the Appstore.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/27-preview-image-button.png"
+          />
+        </figure>
+      </li>
+      <li>Click the <strong>Save</strong> button.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="content_rating">Complete Content Rating information</h2>
+    <p>
+      The content rating section requests that you categorize the types of
+      content that you will be presenting in your Fire TV app. The Amazon
+      categorization divides content into these three types:
+    </p>
+    <ul>
+      <li>
+        <strong>Moderate:</strong> Occurs once or rarely and is not fundamental
+        to the overall purpose and/or intent of the app.
+      </li>
+      <li>
+        <strong>Strong:</strong> Occurs regularly and is fundamental to the
+        overall purpose and/or intent of the app.
+      </li>
+      <li><strong>None:</strong> Does not occur in the app.</li>
+    </ul>
+
+    <p>
+      Types of the subjects are
+      <strong>violence, academic, cartoon violence</strong>.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Click in the <strong>Content Rating</strong> tab.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/28.5-content-rating-tab.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Select a category type for each of the subjects. All this information
+        corresponds to the content types of your Fire TV app. If you are not
+        sure what to answer, please contact your Brightcove Beacon account
+        representative.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/29-category-subjects.png"
+          />
+        </figure>
+      </li>
+      <li>
+        In the <strong>Additional Information</strong> section, respond
+        <strong>Yes</strong> or <strong>No</strong> depending on the features
+        that your Fire TV app contains. All this information corresponds to the
+        additional information and features that your Fire TV app may or may not
+        hold. If you are not sure what to answer, please contact your Brightcove
+        Beacon account representative.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/30-additional-info.png"
+          />
+        </figure>
+      </li>
+      <li>
+        If your Fire TV app collects personal information, you should add a
+        <strong>Privacy policy URL</strong> to review your privacy policy
+        statements for users.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/31-policy-url.png"
+          />
+        </figure>
+      </li>
+      <li>Click on the <strong>Save</strong> button.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="apk_information">
+      Complete Android Package Kit (APK) Files information
+    </h2>
+    <p>
+      The <strong>APK Files</strong> section is where the Android app file
+      should be uploaded. The APK is supplied to you from Brightcove.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Click in the <strong>APK Files</strong> tab.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/31.4-apk-tab.png"
+          />
+        </figure>
+      </li>
+      <li>
+        In the <strong>Apply Amazon DRM?</strong> option, select
+        <strong>No</strong>.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/31.5-upload-apk.png"
+          />
+        </figure>
+      </li>
+      <li>
+        In the <strong>APK File</strong> section, click on the box of the right
+        and upload the APK file supplied to you from Brightcove.
+      </li>
+      <li>
+        Once the file is uploaded, you will be able to see your file on the
+        screen. Click in the <strong>View</strong> button.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/31.6-apk-file.png"
+          />
+        </figure>
+      </li>
+      <li>
+        The <strong>Device Support</strong> window will open, on which you can
+        select the devices on which your Fire TV app will be supported.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="400"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/31.7-unabled-devices.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Click in the <strong>Amazon Fire TV</strong> tab and select all the
+        devices. Brightcove Beacon is only available for Amazon Fire TV, so keep
+        unselected the <strong>Amazon Fire Tablets and Phones</strong> and
+        <strong>Non-Amazon Devices</strong> tabs.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="400"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/31.8-enabled-devices.png"
+          />
+        </figure>
+      </li>
+      <li>Close the <strong>Device Support</strong> window.</li>
+      <li>
+        In the <strong>Add Other Details</strong> section, select at least one
+        language support from the list. This is the language in which users will
+        communicate for support.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="500"
+            src="/assets/images/creating-your-apps/amazon/32-language-support.png"
+          />
+        </figure>
+      </li>
+      <li>
+        For the <strong>Testing Instructions</strong> field, provide special
+        instructions to the Amazon testing team, such as required login
+        credentials to test video streams, or notes that explain how to use
+        different subscription levels.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/33-testing-instructions.png"
+          />
+        </figure>
+      </li>
+      <li>
+        Mark the <strong>Export Compliance</strong> and
+        <strong>Use Amazon Maps Redirection</strong> checkboxes.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="400"
+            src="/assets/images/creating-your-apps/amazon/34-checkbox.png"
+          />
+        </figure>
+      </li>
+      <li>Click the <strong>Save</strong> button.</li>
+      <li>
+        After saving, the <strong>Review Status</strong> tab will appear in the
+        menu.
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt=""
+            width="700"
+            height="300"
+            src="/assets/images/creating-your-apps/amazon/39-review-status.png"
+          />
+        </figure>
+      </li>
+      <li>
+        You will be able to check information about your Fire TV app as your
+        last activity and submission history. If there are not any errors, click
+        the <strong>Submit App</strong> button at the top left corner of the
+        screen to submit your Fire TV app.
+      </li>
+    </ol>
+
+    <p>
+      Now you just have to wait for Amazon to approve your Fire TV app and
+      publish it in the Amazon Appstore.
+    </p>
+  </section>
+</article>
