@@ -8,7 +8,6 @@ grandparent: 'publishing-apps'
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
-
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
     <p>This document focuses on two topics:</p>
@@ -17,46 +16,30 @@ grandparent: 'publishing-apps'
       <li>Creating a service account</li>
     </ul>
     <p>
-      Subscriptions need to be created in Brightcove Beacon, then referenced in
-      the <em>Google Play Console</em>. Instructions for creating a subscription
-      in Brightcove Beacon are detailed in the
-      <a href="/using-brightcove-beacon/creating-subscription-package.html">Creating a Subscription Package</a>
-      document. This document details how to create the corresponding
-      subscription for Android.
+      Subscriptions need to be created in Brightcove Beacon, then referenced in the <em>Google Play Console</em>. Instructions for creating a subscription in Brightcove Beacon are detailed in the <a href="/monetization/creating-subscription-package.html">Creating a Subscription Package</a> document. This document details how to create the corresponding subscription for Android.
     </p>
     <p>
-      A service account allows you to update your Brightcove Beacon app on the
-      Google Play Store, which is especially helpful when testing subscriptions.
-      Later in this document you will find steps to create a service account and
-      generate the file needed for Google Play server to server subscriptions.
+      A service account allows you to update your Brightcove Beacon app on the Google Play Store, which is especially helpful when testing subscriptions.
+      Later in this document you will find steps to create a service account and generate the file needed for Google Play server to server subscriptions.
     </p>
   </section>
-
   <section class="bcls-section">
     <h2 id="Adding a subscription">Adding a subscription</h2>
     <p>
-      Creating a subscription in Android requires you to have the information
-      about the subscriptions you created in Brightcove Beacon. Follow these
-      steps to create a subscription.
+      Creating a subscription in Android requires you to have the information about the subscriptions you created in Brightcove Beacon. Follow these steps to create a subscription.
     </p>
     <ol class="bcls-tasklist">
       <li>
         Sign in to the
-        <a href="https://play.google.com/apps/publish/">Google Play Console</a>
-        and click on your app.
+        <a href="https://play.google.com/apps/publish/">Google Play Console</a> and click on your app.
       </li>
       <li>
-        You need to move into the <strong>Subscriptions</strong> section in the
-        <strong>Google Play Console</strong>. This process is slightly different
-        depending on if you have created subscriptions previously. Choose
-        <em>ONE</em> of the subsections of this step, depending upon previous
-        subscription creation.
+        You need to move into the <strong>Subscriptions</strong> section in the <strong>Google Play Console</strong>. This process is slightly different depending on if you have created subscriptions previously. Choose <em>ONE</em> of the subsections of this step, depending upon previous subscription creation.
         <h3>No previous subscriptions</h3>
         <ol>
           <li>
             From the left navigation select
-            <strong>In-app products > Subscriptions</strong> and you see the
-            following page:
+            <strong>In-app products > Subscriptions</strong> and you see the following page:
             <figure class="bcls-figure">
               <img class="bcls-image" src="/assets/images/publishing-apps/android-subscriptions/intro-no-previous.png" alt="subscriptions index no previous" />
             </figure>
@@ -69,17 +52,14 @@ grandparent: 'publishing-apps'
             </figure>
           </li>
           <li>
-            After completing the form and clicking <strong>SUBMIT</strong> you
-            will be placed in the subscriptions page where you can add a new
-            subscription.
+            After completing the form and clicking <strong>SUBMIT</strong> you will be placed in the subscriptions page where you can add a new subscription.
           </li>
         </ol>
         <h3>Subscriptions exist</h3>
         <ol>
           <li>
             From the left navigation select
-            <strong>In-app products > Subscriptions</strong> and you see the
-            following page:
+            <strong>In-app products > Subscriptions</strong> and you see the following page:
             <figure class="bcls-figure">
               <img class="bcls-image" src="/assets/images/publishing-apps/android-subscriptions/subscriptions-landing.png" alt="subscriptions landing page" />
             </figure>
@@ -96,37 +76,26 @@ grandparent: 'publishing-apps'
         </figure>
       </li>
       <li>
-        In the form, start by entering the <strong>Product ID</strong>. This
-        value MUST match the <strong>Name</strong> provided when creating a
-        subscription in Brightcove Beacon.
+        In the form, start by entering the <strong>Product ID</strong>. This value MUST match the <strong>Name</strong> provided when creating a subscription in Brightcove Beacon.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/publishing-apps/android-subscriptions/subscription-id.png" alt="enter subscriptions id" />
         </figure>
       </li>
       <li>Enter the default language.</li>
       <li>
-        Enter the subscription details. Although not required, it is a best
-        practice to match the <strong>Name</strong> and
-        <strong>Description</strong> to the subscription definition in
-        Brightcove Beacon.
+        Enter the subscription details. Although not required, it is a best practice to match the <strong>Name</strong> and <strong>Description</strong> to the subscription definition in Brightcove Beacon.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/publishing-apps/android-subscriptions/subscription-details.png" alt="enter subscriptions details" />
         </figure>
       </li>
       <li>
-        Enter the <strong>Billing period</strong> and
-        <strong>Default price</strong>. These values MUST match the subscription
-        created in Brightcove Beacon. If the values don't match, the subscriber
-        will see one price in the Brightcove Beacon app, but be charged a
-        different price in the Google Play Store.
+        Enter the <strong>Billing period</strong> and <strong>Default price</strong>. These values MUST match the subscription created in Brightcove Beacon. If the values don't match, the subscriber will see one price in the Brightcove Beacon app, but be charged a different price in the Google Play Store.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/publishing-apps/android-subscriptions/subscription-price.png" alt="enter subscriptions price" />
         </figure>
       </li>
       <li>
-        Enter the values for the subscription options. Although not required, it
-        is a best practice to match the corresponding values to the subscription
-        definition in Brightcove Beacon.
+        Enter the values for the subscription options. Although not required, it is a best practice to match the corresponding values to the subscription definition in Brightcove Beacon.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/publishing-apps/android-subscriptions/subscription-options.png" alt="enter subscriptions options" />
         </figure>
@@ -136,7 +105,6 @@ grandparent: 'publishing-apps'
       </li>
     </ol>
   </section>
-
   <section class="bcls-section">
     <h2 id="Creating_a_service_account">Creating a service account</h2>
     <p>To create a Google Play server account, follow these steps:</p>
@@ -148,8 +116,7 @@ grandparent: 'publishing-apps'
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/play-console.png" alt="Google Play Console" />
-          <figcaption class="bcls-caption--image">
-            Google Play Console
+          <figcaption class="bcls-caption--image"> Google Play Console
           </figcaption>
         </figure>
       </li>
@@ -158,21 +125,18 @@ grandparent: 'publishing-apps'
       </li>
       <li>
         <p>
-          In the left navigation, under <strong>Developer account</strong>,
-          select <strong>API access</strong>.
+          In the left navigation, under <strong>Developer account</strong>, select <strong>API access</strong>.
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/api-access.png" alt="Create a service account" />
-          <figcaption class="bcls-caption--image">
-            Create a service account
+          <figcaption class="bcls-caption--image"> Create a service account
           </figcaption>
         </figure>
       </li>
       <li>Select the <strong>+CREATE SERVICE ACCOUNT</strong> button.</li>
       <li>
         <p>
-          In the <strong>Create Service Account</strong> dialog, select the
-          <strong>Google API Console</strong> link in step 1.
+          In the <strong>Create Service Account</strong> dialog, select the <strong>Google API Console</strong> link in step 1.
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/account-dialog.png" alt="Account dialog" />
@@ -184,27 +148,20 @@ grandparent: 'publishing-apps'
       </li>
       <li>
         <p>
-          In the left navigation, <strong>Service Accounts</strong> will already
-          be selected. Below the blue header bar, select the
-          <strong>Create Service Account</strong> button.
+          In the left navigation, <strong>Service Accounts</strong> will already be selected. Below the blue header bar, select the <strong>Create Service Account</strong> button.
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/api-console.png" alt="Google API Console" />
-          <figcaption class="bcls-caption--image">
-            Google API Console
+          <figcaption class="bcls-caption--image"> Google API Console
           </figcaption>
         </figure>
       </li>
       <li>
-        Enter a name for the service account. The
-        <strong>Service account ID</strong> will be automatically populated. Add
-        a description. Select the <strong>Create</strong> button.
+        Enter a name for the service account. The <strong>Service account ID</strong> will be automatically populated. Add a description. Select the <strong>Create</strong> button.
       </li>
       <li>
         <p>
-          In the <strong>Service account permissions</strong> screen, expand the
-          <strong>Select a role</strong> dropdown menu and select
-          <strong>Owner</strong>.
+          In the <strong>Service account permissions</strong> screen, expand the <strong>Select a role</strong> dropdown menu and select <strong>Owner</strong>.
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/owner-role.png" alt="Owner role" />
@@ -214,8 +171,7 @@ grandparent: 'publishing-apps'
       <li>Select <strong>Continue</strong>.</li>
       <li>
         <p>
-          Next, you will create a key that can be used by Brightcove. Select the
-          <strong>+CREATE KEY</strong> button.
+          Next, you will create a key that can be used by Brightcove. Select the <strong>+CREATE KEY</strong> button.
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/create-key.png" alt="Create key" />
@@ -224,8 +180,7 @@ grandparent: 'publishing-apps'
       </li>
       <li>
         <p>
-          In the side panel, leave the default <strong>Key type</strong> as
-          <strong>JSON</strong>. Select the <strong>CREATE</strong> button.
+          In the side panel, leave the default <strong>Key type</strong> as <strong>JSON</strong>. Select the <strong>CREATE</strong> button.
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/key-format.png" alt="Key format" />
@@ -234,8 +189,7 @@ grandparent: 'publishing-apps'
       </li>
       <li>
         <p>
-          Download the private key file to your computer and select the
-          <strong>CLOSE</strong> button.
+          Download the private key file to your computer and select the <strong>CLOSE</strong> button.
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/download-key.png" alt="Download key" />
@@ -248,13 +202,11 @@ grandparent: 'publishing-apps'
       <li>Select <strong>DONE</strong>.</li>
       <li>
         <p>
-          You should see the following screen with your own values. Close this
-          browser tab and return to the Google Play Console.
+          You should see the following screen with your own values. Close this browser tab and return to the Google Play Console.
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/service-account-final.png" alt="Service account created" />
-          <figcaption class="bcls-caption--image">
-            Service account created
+          <figcaption class="bcls-caption--image"> Service account created
           </figcaption>
         </figure>
       </li>
@@ -270,9 +222,7 @@ grandparent: 'publishing-apps'
       </li>
       <li>
         <p>
-          In the <strong>Add a new user</strong> dialog, make sure the
-          <strong>FINANCIAL DATA</strong> buttons are checked. Select the
-          <strong>ADD USER</strong> button.
+          In the <strong>Add a new user</strong> dialog, make sure the <strong>FINANCIAL DATA</strong> buttons are checked. Select the <strong>ADD USER</strong> button.
         </p>
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/publishing-apps/google-play/add-user.png" alt="Add new user" />
