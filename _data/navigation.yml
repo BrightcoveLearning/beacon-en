@@ -205,6 +205,28 @@
     - name: Working with Registered Users
       url: /registered-users/working-with-registered-users.html
 - section:
+  name: 'Publishing Apps'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/send.svg">'
+  url: '/publishing-apps/index.html'
+  docs:
+    - name: 'Android'
+      url: '/publishing-apps/android/index.html'
+      docs:
+        - name: 'Submitting New Apps to the Android Store'
+          url: '/publishing-apps/android/submitting-to-android.html'
+        - name: 'Updating Android Apps to Brightcove Beacon'
+          url: '/publishing-apps/android/updating-android-apps-to-bcb.html'
+        - name: 'Adding Subscriptions to Android'
+          url: '/publishing-apps/android/adding-subscriptions-in-android.html'
+        - name: 'Improving Search Relevance in the Android Play Store'
+          url: '/publishing-apps/android/improving-relevance-android.html'
+        - name: 'Installing an Android Test Build'
+          url: '/publishing-apps/android/installing-android-test-build.html'
+        - name: 'Managing Google Subscriptions Part 1'
+          url: '/publishing-apps/android/managing-google-subscriptions-1.html'
+        - name: 'Managing Google Subscriptions Part 2'
+          url: '/publishing-apps/android/managing-google-subscriptions-2.html'
+- section:
   name: General Information
   url: /general/index.html
   icon: '<i data-feather="info"></i>'
