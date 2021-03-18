@@ -641,19 +641,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
     <p>
-      This document shows you how to install a test build so you don't have to
-      go through the app submission process before you can test your app.
+      This document shows you how to install a test build so you don't have to go through the app submission process before you can test your app.
     </p>
-    <aside class="bcls-aside bcls-aside--information">
-      To be able to install the Brightcove Beacon app in your Fire TV device,
-      you will need:
+    <aside class="bcls-aside bcls-aside--information"> To be able to install the Brightcove Beacon app in your Fire TV device, you will need:
       <ul>
         <li>Developer mode activated in your Fire TV device.</li>
         <li>Android Debug Bridge (adb) installed on your computer.</li>
       </ul>
-      <p>If you want to test the App internal payment methods, such as subscriptions or event payments, please follow the <a href="https://beacon.support.brightcove.com/creating-your-apps/fire-tv/installing-fire-tv-test-build.html#install-with-live-service">Live App Testing installation instructions</a>.</p>
+      <p>If you want to test the App internal payment methods, such as subscriptions or event payments, please follow the <a href="#install-with-live-service">Live App Testing installation instructions</a>.</p>
     </aside>
-
     <p>A high-level view of the process is:</p>
     <ol>
       <li>Enable debugging on your Amazon Fire TV device.</li>
@@ -664,170 +660,110 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Run your Brightcove Beacon App.</li>
     </ol>
   </section>
-
   <section class="bcls-section">
     <h2 id="enabling-debugging">Enabling Debugging on Amazon Fire TV</h2>
     <p>
-      To enable debugging in your Fire TV device, please follow the steps below:
-    </p>
-
+      To enable debugging in your Fire TV device, please follow the steps below: </p>
     <ol class="bcls-tasklist">
       <li>
         From the main screen of your Fire TV, select <strong>Settings</strong>.
       </li>
       <li>
-        Select <strong>Device (or My Fire TV)</strong> >
-        <strong>Developer Options</strong>.
+        Select <strong>Device (or My Fire TV)</strong> > <strong>Developer Options</strong>.
       </li>
       <li>Turn on <strong>ADB Debugging</strong>.</li>
       <li>Turn on <strong>Apps from Unknown Sources</strong>.</li>
     </ol>
   </section>
-
   <section class="bcls-section">
     <h2 id="connecting-adb">Connecting through Android Debug Bridge (adb)</h2>
     <p>
-      You need to use Android Debug Bridge (adb) to connect your computer to an
-      Amazon Fire TV device for installing, testing and debugging your apps. For
-      more information on how to enable adb please follow the
-      <a
-        href="https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html"
-        target="_blank"
-        >Amazon</a
-      >
-      and
-      <a
-        href="https://developer.android.com/studio/command-line/adb.html"
-        target="_blank"
-        >Android</a
-      >
-      documentation.
+      You need to use Android Debug Bridge (adb) to connect your computer to an Amazon Fire TV device for installing, testing and debugging your apps. For more information on how to enable adb please follow the <a href="https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html" target="_blank">Amazon</a> and
+      <a href="https://developer.android.com/studio/command-line/adb.html" target="_blank">Android</a> documentation.
     </p>
   </section>
-
   <section class="bcls-section">
     <h2 id="installing-firetv">Installing your Brightcove Beacon App</h2>
     <p>
-      To install and test your Brightcove Beacon app before submitting it to the
-      Amazon Appstore, you need to use the Android Debug Bridge (adb).
+      To install and test your Brightcove Beacon app before submitting it to the Amazon Appstore, you need to use the Android Debug Bridge (adb).
     </p>
     <p>
-      Installing your own app (outside of the Appstore) is sometimes referred to
-      as sideloading an app.
+      Installing your own app (outside of the Appstore) is sometimes referred to as sideloading an app.
     </p>
-    <aside class="bcls-aside bcls-aside--information">
-      To follow these steps, you must have already used <em>adb</em> to connect
-      your development computer to your Fire TV device.
+    <aside class="bcls-aside bcls-aside--information"> To follow these steps, you must have already used <em>adb</em> to connect your development computer to your Fire TV device.
     </aside>
     <ol class="bcls-tasklist">
       <li>Open your terminal or command line.</li>
       <li>
-        Type the following command, where <code translate="No">path-to-apk-file</code> is the
-        file system path to your app's APK.
-        <pre
-          class="line-numbers"
-        ><code class=“language-bash”>adb install path-to-apk-file</code></pre>
+        Type the following command, where <code translate="No">path-to-apk-file</code> is the file system path to your app's APK.
+        <pre class="line-numbers"><code class=“language-bash”>adb install path-to-apk-file</code></pre>
       </li>
       <li>
-        If your installation was successful, adb will respond with a message
-        similar to this one:
-        <pre class="line-numbers"><code class=“language-bash”>
-                        764 KB/s (217246 bytes in 0.277s)
-                        pkg: /data/local/tmp/HelloWorld.apk
-                        Success
-                    </code></pre>
+        If your installation was successful, adb will respond with a message similar to this one:
+        <pre class="line-numbers"><code class=“language-bash”> 764 KB/s (217246 bytes in 0.277s)
+ pkg: /data/local/tmp/HelloWorld.apk
+ Success</code></pre>
       </li>
       <li>
-        To re-install an app that already exists on the device, you can use the
-        <code translate="No">-r</code> option to reinstall it.
-        <pre class="line-numbers"><code class=“language-bash”>
-                        adb install -r path-to-apk-file
-                    </code></pre>
+        To re-install an app that already exists on the device, you can use the <code translate="No">-r</code> option to reinstall it.
+        <pre class="line-numbers"><code class=“language-bash”> adb install -r path-to-apk-file</code></pre>
       </li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="running-firetv">Running your Brightcove Beacon App</h2>
     <p>
-      Sideloaded apps appear in both the <strong>Recent</strong> row and in the
-      <strong>My Library</strong> row in the <strong>Apps</strong> section. You
-      can also find your app in the <strong>Settings</strong> menu.
+      Sideloaded apps appear in both the <strong>Recent</strong> row and in the <strong>My Library</strong> row in the <strong>Apps</strong> section. You can also find your app in the <strong>Settings</strong> menu.
     </p>
     <ol class="bcls-tasklist">
       <li>
-        From the Amazon Fire TV main screen, select <strong>Settings</strong> >
-        <strong>Applications</strong> >
+        From the Amazon Fire TV main screen, select <strong>Settings</strong> > <strong>Applications</strong> >
         <strong>Manage Installed Applications</strong>.
       </li>
       <li>Select the Brightcove Beacon app.</li>
       <li>Select <strong>Launch application</strong>.</li>
     </ol>
   </section>
-
   <section class="bcls-section">
     <h2 id="install-with-live-service">Installing the Fire TV app with Amazon Live App Testing service</h2>
-
     <p>In this section, you will learn how to install and test the Fire TV app with the Amazon Live App Testing service.</p>
     <aside class="bcls-aside bcls-aside--information">Use this installation procedure in case you want to test the App internal payment methods, such as subscriptions or event payments.</aside>
     <p>To be able to install the Fire TV app in your device, you will need a Live App Testing email invitation from Brightcove.</p>
-    <aside class="bcls-aside bcls-aside--information">In the case you are not receiving the invitation email for the Live App Testing, please follow this <a href="https://www.amazon.com/gp/gss/ccp/" target="_blank" >link</a> and enable marketing communication for Appstore by selecting the option labeled <strong>Send me marketing email from the following categories</strong> and click <strong>Save</strong>.
-
-      <p>After setting the marketing communication preferences, the change will start with the next and all subsequent email invitation tests.</p></aside>
-    <p>Once you receive the email invitation to participate in the Live App Testing,  please perform the following steps:</p>
+    <aside class="bcls-aside bcls-aside--information">In the case you are not receiving the invitation email for the Live App Testing, please follow this <a href="https://www.amazon.com/gp/gss/ccp/" target="_blank">link</a> and enable marketing communication for Appstore by selecting the option labeled <strong>Send me marketing email from the following categories</strong> and click <strong>Save</strong>.
+      <p>After setting the marketing communication preferences, the change will start with the next and all subsequent email invitation tests.</p>
+    </aside>
+    <p>Once you receive the email invitation to participate in the Live App Testing, please perform the following steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>In your email invitation, click the link for the marketplace that you will be testing
-        <figure class="bcls-figure">
-          <img
-            class="bcls-image--no-border"
-            alt=""
-            width=""
-            height=""
-            src="/assets/images/creating-your-apps/firetv-installation/1-install-email.png"
-          />
+      <li>In your email invitation, click the link for the marketplace that you will be testing <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="" height="" src="/assets/images/publishing-apps/firetv-installation/1-install-email.png" />
         </figure>
         <p>The link will open the retail page for the Brightcove Beacon App in the specified marketplace.</p>
       </li>
       <li>On the app retail page, from the <strong>Deliver To:</strong> drop-down menu, select the device where you want to install the Brightcove Beacon app.
         <figure class="bcls-figure">
-          <img
-            class="bcls-image--no-border"
-            alt=""
-            width=""
-            height=""
-            src="/assets/images/creating-your-apps/firetv-installation/2-app-installation.png"
-          />
+          <img class="bcls-image--no-border" alt="" width="" height="" src="/assets/images/publishing-apps/firetv-installation/2-app-installation.png" />
         </figure>
       </li>
       <li>If a particular device is not available in the tester's current marketplace, that device will not appear in the drop-down menu. If none of the devices that your app targets are available in a given marketplace, the drop-down menu will be replaced with a <strong>Continue</strong> button on the app's retail page.
         <figure class="bcls-figure">
-          <img
-            class="bcls-image--no-border"
-            alt=""
-            width="200"
-            height="200"
-            src="/assets/images/creating-your-apps/firetv-installation/3-continue-button.png"
-          />
+          <img class="bcls-image--no-border" alt="" width="200" height="200" src="/assets/images/publishing-apps/firetv-installation/3-continue-button.png" />
         </figure>
       </li>
       <li>Install the Brightcove Beacon app to the specified device. You can test on as many devices as you have associated with your Amazon account that the app targets.</li>
       <li>
-        From the Amazon Fire TV main screen, select <strong>Settings</strong> >
-        <strong>Applications</strong> >
+        From the Amazon Fire TV main screen, select <strong>Settings</strong> > <strong>Applications</strong> >
         <strong>Manage Installed Applications</strong>.
       </li>
       <li>Select the Brightcove Beacon app.</li>
       <li>Select <strong>Launch application</strong>.</li>
     </ol>
   </section>
-
   <section class="bcls-section">
     <h2 id="running-firetv">Uninstalling your Brightcove Beacon App</h2>
-
     <p>To uninstall your app from the Fire TV device follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>
-        From Fire TV's main screen, select <strong>Settings</strong> >
-        <strong>Applications</strong> >
+        From Fire TV's main screen, select <strong>Settings</strong> > <strong>Applications</strong> >
         <strong>Manage Installed Applications</strong>.
       </li>
       <li>Select your Brightcove Beacon app.</li>
@@ -836,13 +772,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="additional-resources">Additional Resources</h2>
-<p>For additional information, please refer to the following Amazon documentation: </p>
-<p><a href="https://developer.amazon.com/docs/app-testing/live-app-testing-faq.html" target="_blank">Amazon FAQs for Live App Testing</a></p>
-
-
-    </section>
+    <p>For additional information, please refer to the following Amazon documentation: </p>
+    <p><a href="https://developer.amazon.com/docs/app-testing/live-app-testing-faq.html" target="_blank">Amazon FAQs for Live App Testing</a></p>
+  </section>
 </article>
-
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
@@ -868,7 +801,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 17 Mar 2021
+  Page last updated on 18 Mar 2021
 </div>
 
 
