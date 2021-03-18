@@ -2,7 +2,7 @@
 title: 'Fire TV'
 description: 'Documents to help you test and submit your Fire TV apps.'
 parent: 'Fire TV'
-grandparent: 'Creating Your Apps'
+grandparent: 'publishing-apps'
 ---
 
 
@@ -14,17 +14,17 @@ grandparent: 'Creating Your Apps'
       <div class="card-content">
         <h2 id="Topics_in_this_section">Topics in {{ page.title }}</h2>
         <ul>
-        {% for item in site.data.navigation %}
-          {% if item.name == 'Creating Your Apps' %}
-            {% for entry in item.docs %}
-              {% if entry.name == page.title %}
-                {% for doc in entry.docs %}
-                  <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
+          {% for item in site.data.navigation %}
+          {% if item.name == 'publishing-apps' %}
+          {% for entry in item.docs %}
+          {% if entry.name == page.title %}
+          {% for doc in entry.docs %}
+          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+          {% endfor %}
           {% endif %}
-        {% endfor %}
+          {% endfor %}
+          {% endif %}
+          {% endfor %}
       </div>
     </section>
   </section>

@@ -2,7 +2,7 @@
 title: 'FairPlay Certificate Registration'
 description: 'In this topic, you will learn the Apple process to create a FairPlay Streaming (FPS) DRM certificate.'
 parent: 'iOS/tvOS'
-grandparent: 'Creating Your Apps'
+grandparent: 'publishing-apps'
 ---
 
 <h1>{{ page.title }}</h1>
@@ -20,10 +20,6 @@ grandparent: 'Creating Your Apps'
       <li>Application secret key (ASK) string</li>
 
     </ul>
-
-    </p>
-
-
   </section>
 
   <section class="bcls-section">
@@ -60,9 +56,7 @@ grandparent: 'Creating Your Apps'
 <code class="command-line" translate="No">openssl req -new -sha1 -key privatekey.pem -out certreq.csr -subj "/CN=SubjectName/OU=OrganizationalUnit/O=Organization/C=US"</code></pre>
       </li>
       <li>Enter the <strong>Private Key</strong> password. </li>
-
     </ol>
-
   </section>
   <section class="bcls-section">
     <h2 id="required-information">Step 3: Create FPS Cert at Apple Developer Portal</h2>
