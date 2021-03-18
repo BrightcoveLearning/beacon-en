@@ -637,112 +637,113 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h1>Configuring In-Channel Products in Roku</h1>
 <article class="bcls-article">
-    <summary>In this topic, you will learn how to configure in-channel products in the Roku Developers Dashboard and associate them in Brightcove Beacon.</summary>
+  <summary>In this topic, you will learn how to configure in-channel products in the Roku Developers Dashboard and associate them in Brightcove Beacon.</summary>
 
-    <section class="bcls-section">
-        <h2 id="introduction">Introduction</h2>
-        <p>In-channel products are monetization solutions that you can offer in your channels, such as a monthly or yearly subscription. This document will cover how to create in-channel products to monetize your Roku application channels.</p>
-    </section>
+  <section class="bcls-section">
+    <h2 id="introduction">Introduction</h2>
+    <p>In-channel products are monetization solutions that you can offer in your channels, such as a monthly or yearly subscription. This document will cover how to create in-channel products to monetize your Roku application channels.</p>
+  </section>
 
-    <section class="bcls-section">
-        <h2 id="adding-product">Creating an in-channel product in Roku</h2>
-        <p>Learn how to add an in-channel product in the Roku Developers page by following these steps:</p>
-        <ol class="bcls-tasklist-restart">
-            <li>From the top navigation, click in the profile icon.</li>
-            <li>
-                <p>In the drop-down menu, click on the <strong>Developers</strong> option. </p>
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/profile-developer-option.png" alt="Developer options" width="400" height="600" />
-                    <figcaption class="bcls-caption--image">Developer Options</figcaption>
-                </figure>
-            </li>
-            <li>
-                <p>
-                    From the top navigation, select the <strong>Dashboard</strong> link.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Select <strong>Manage My In-Channel Products.</strong>
-                </p>
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/developer-dashboard.png" alt="" width="" height="" />
-                </figure>
-            <li>Click the <strong>Add a new product</strong> button.
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/add-a-product.png" alt="" width="" height="" />
-                </figure>
-            </li>
-            <li>In the <strong>Channels</strong> field, select the channels where the product will be available for sale.
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/2add-channel.png" alt="" width="" height="" />
-                </figure>
-            </li>
-            <li>Complete the form (reference screenshot below the list of steps):
-                <ol type="a">
-                    <li>For the <strong>Product Category</strong> select <strong>Video</strong>.</li>
-                    <li>For the <strong>Product Name</strong>, type the name that will be visible for customers. You can add the product name in different languages by clicking on the <strong>Add product name in another language</strong> button.</li>
-                    <li>For the <strong>Product Identifier</strong>, type your internal reference Id.
-                        <aside class="bcls-aside bcls-aside--information">Notice that the internal reference Id needs to be unique, and you will need it later to add your In-Channel product to the Brightcove Beacon CMS configuration.</aside>
+  <section class="bcls-section">
+    <h2 id="adding-product">Creating an in-channel product in Roku</h2>
+    <p>Learn how to add an in-channel product in the Roku Developers page by following these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>From the top navigation, click in the profile icon.</li>
+      <li>
+        <p>In the drop-down menu, click on the <strong>Developers</strong> option. </p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/profile-developer-option.png" alt="Developer options" width="400" height="600" />
+          <figcaption class="bcls-caption--image">Developer Options</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          From the top navigation, select the <strong>Dashboard</strong> link.
+        </p>
+      </li>
+      <li>
+        <p>
+          Select <strong>Manage My In-Channel Products.</strong>
+        </p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/developer-dashboard.png" alt="" width="" height="" />
+        </figure>
+      <li>Click the <strong>Add a new product</strong> button.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/add-a-product.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>In the <strong>Channels</strong> field, select the channels where the product will be available for sale.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/2add-channel.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>Complete the form (reference screenshot below the list of steps):
+        <ol type="a">
+          <li>For the <strong>Product Category</strong> select <strong>Video</strong>.</li>
+          <li>For the <strong>Product Name</strong>, type the name that will be visible for customers. You can add the product name in different languages by clicking on the <strong>Add product name in another language</strong> button.</li>
+          <li>For the <strong>Product Identifier</strong>, type your internal reference Id.
+            <aside class="bcls-aside bcls-aside--information">Notice that the internal reference Id needs to be unique, and you will need it later to add your In-Channel product to the Brightcove Beacon CMS configuration.</aside>
 
-                    </li>
-                    <li><p>For the <strong>Purchase type</strong>, select the subscription type based on how your customers are billed for your in-channel product. In this example a <strong>Monthly Subscription</strong>.</p>
-                    <aside class="bcls-aside bcls-aside--information">Note that the subscription interval for Roku is different from the other stores. For details, see the <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/using-subscription-package.html#Subscription_interval_support">Subscription interval support</a> section of the Using a Subscription Package document</aside>
-                    </li>
-                    <li>For the <strong>Price Tier</strong> option, select a price tier based on the price of your in-channel product.</li>
-                </ol>
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/9product-name.png" alt="" width="" height="" />
-                </figure>
-            </li>
-
-            <li>In the <strong>Trials and offers</strong> section, depending on your in-channel product strategy, you can select <strong>Free trial</strong> and type a number duration in the <strong>Trial duration</strong> field and select <strong>Days</strong> or <strong>Months</strong> from the time filed.
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/free-trial.png" alt="" width="" height="" />
-                </figure>
-            </li>
-
-            <li>Go to the bottom of the page, check the <strong>Cleared for sale</strong> box and click the <strong>Save</strong> button.
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/create-button.png" alt="" width="400" height="400" />
-                </figure>
-            </li>
-            <li>After creation, check to be sure your product is visible on the <strong>Manage My In-Channel Products</strong> page.
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/inchannel-product.png" alt="" width="" height="" />
-                </figure>
-                <aside class="bcls-aside bcls-aside--information">You can create any number of additional in-channel products based on the type of subscriptions you want to offer. Example: yearly or monthly. </aside>
-            </li>
-    </section>
-    <section>
-        <h2 id="associate-product">Associate your in-channel product to a channel in Brightcove Beacon</h2>
-
-        <p>Once your in-channel products have been created, go to the Brightcove Beacon platform to associate your new in-channel products to a channel.</p>
-        <ol class="bcls-tasklist-restart">
-            <li>In the top menu click the <strong>Commerce</strong> tab.
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/beacon-commerce-tab.png" alt="" width="" height="" />
-                </figure>
-            </li>
-            <li>From the left menu, select the <strong>Packages</strong> option.</li>
-            <li>Click on your package.</li>
-            <li>From the <strong>Package</strong> tab, go down to the <strong>Price Details</strong> section.
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/price-details.png" alt="" width="" height="" />
-                </figure>
-            </li>
-            <li>In the <strong>Price</strong> field, type your in-channel product price.</li>
-            <li>In the <strong>Currency</strong> field, select the currency type.</li>
-            <li>In the <strong>Roku Store ID</strong>, type the identifier ID of your in-channel product created in the Roku Developers Platform. </li>
-            <li>Go to the bottom of the page and click the <strong>Edit Package</strong> button to save your changes.
-                <figure class="bcls-figure">
-                    <img class="bcls-image--no-border" src="/assets/images/creating-your-apps/roku/setting-in-channel-products/edit-button.png" alt="" width="300" height="300" />
-                </figure>
-            </li>
+          </li>
+          <li>
+            <p>For the <strong>Purchase type</strong>, select the subscription type based on how your customers are billed for your in-channel product. In this example a <strong>Monthly Subscription</strong>.</p>
+            <aside class="bcls-aside bcls-aside--information">Note that the subscription interval for Roku is different from the other stores. For details, see the <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/using-subscription-package.html#Subscription_interval_support">Subscription interval support</a> section of the Using a Subscription Package document</aside>
+          </li>
+          <li>For the <strong>Price Tier</strong> option, select a price tier based on the price of your in-channel product.</li>
         </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/9product-name.png" alt="" width="" height="" />
+        </figure>
+      </li>
+
+      <li>In the <strong>Trials and offers</strong> section, depending on your in-channel product strategy, you can select <strong>Free trial</strong> and type a number duration in the <strong>Trial duration</strong> field and select <strong>Days</strong> or <strong>Months</strong> from the time filed.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/free-trial.png" alt="" width="" height="" />
+        </figure>
+      </li>
+
+      <li>Go to the bottom of the page, check the <strong>Cleared for sale</strong> box and click the <strong>Save</strong> button.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/create-button.png" alt="" width="400" height="400" />
+        </figure>
+      </li>
+      <li>After creation, check to be sure your product is visible on the <strong>Manage My In-Channel Products</strong> page.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/inchannel-product.png" alt="" width="" height="" />
+        </figure>
+        <aside class="bcls-aside bcls-aside--information">You can create any number of additional in-channel products based on the type of subscriptions you want to offer. Example: yearly or monthly. </aside>
+      </li>
+  </section>
+  <section>
+    <h2 id="associate-product">Associate your in-channel product to a channel in Brightcove Beacon</h2>
+
+    <p>Once your in-channel products have been created, go to the Brightcove Beacon platform to associate your new in-channel products to a channel.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the top menu click the <strong>Commerce</strong> tab.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/beacon-commerce-tab.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>From the left menu, select the <strong>Packages</strong> option.</li>
+      <li>Click on your package.</li>
+      <li>From the <strong>Package</strong> tab, go down to the <strong>Price Details</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/price-details.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>In the <strong>Price</strong> field, type your in-channel product price.</li>
+      <li>In the <strong>Currency</strong> field, select the currency type.</li>
+      <li>In the <strong>Roku Store ID</strong>, type the identifier ID of your in-channel product created in the Roku Developers Platform. </li>
+      <li>Go to the bottom of the page and click the <strong>Edit Package</strong> button to save your changes.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/publishing-apps/roku/setting-in-channel-products/edit-button.png" alt="" width="300" height="300" />
+        </figure>
+      </li>
+    </ol>
 
 
-    </section>
+  </section>
 </article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
