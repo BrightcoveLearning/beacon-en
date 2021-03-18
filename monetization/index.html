@@ -1,30 +1,28 @@
 ---
-title: 'Monetization'
+title: 'Monetizing Content'
 description: 'Documents to help you implement monetizing your content.'
-parent: 'monetization'
+parent: 'Home'
 ---
 
 
 <article class="bcls-article">
   <h1>{{ page.title }}</h1>
   <summary>{{ page.description }}</summary>
-  <section class="card-wrapper">
-    <section class="bcls-card">
-      <div class="card-content">
+  <section>
         <h2 id="Topics_in_this_section">Topics in {{ page.title }}</h2>
         <ul>
           {% for item in site.data.navigation %}
-          {% if item.name == 'monetization' %}
+          {% if item.name == page.title %}
           {% for entry in item.docs %}
-          {% if entry.name == page.title %}
-          {% for doc in entry.docs %}
-          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+          <li><a href="{{ entry.url }}">{{ entry.name }}</a> {% if entry.docs %}
+            <ul>
+              {% for subentry in entry.docs %}
+              <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %} </li>
           {% endfor %}
           {% endif %}
           {% endfor %}
-          {% endif %}
-          {% endfor %}
-      </div>
-    </section>
   </section>
 </article>
