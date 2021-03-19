@@ -175,7 +175,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/common-required-info.html",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/general/common-required-info.html",
       "oldURL": "/common-required-info"
   },
 
@@ -205,12 +205,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/configuring-server-side-ad-settings.html",
+      "newURL": "https://beacon-help.support.brightcove.com/monetization/configuring-server-side-ad-settings.html",
       "oldURL": "/configuring-server-side-ad-settings"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/monetization/configuring-server-side-ad-settings.html",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/configuring-server-side-ad-settings.html",
       "oldURL": "/configuring-server-side-ad-settings"
   },
 
@@ -360,7 +360,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/device-apps-validation-guide.html",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/general/device-apps-validation-guide.html",
       "oldURL": "/device-apps-validation-guide"
   },
 
@@ -470,7 +470,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
@@ -480,7 +480,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
@@ -505,7 +505,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/in-app-subscription-resources.html",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/general/in-app-subscription-resources.html",
       "oldURL": "/in-app-subscription-resources"
   },
 
@@ -575,12 +575,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/howto/",
+      "newURL": "https://beacon-help.support.brightcove.com/registered-users/help/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/",
+      "newURL": "https://beacon-help.support.brightcove.com/media/help/",
       "oldURL": "/index"
   },
 
@@ -590,7 +590,37 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/admin/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/analytics/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/release-notes/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/general/",
       "oldURL": "/index"
   },
 
@@ -605,37 +635,17 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/support/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/help/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/general/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/howto/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/",
+      "newURL": "https://beacon-help.support.brightcove.com/monetization/",
       "oldURL": "/index"
   },
 
@@ -650,17 +660,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/lg/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/",
       "oldURL": "/index"
   },
 
@@ -670,22 +670,17 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/monetization/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/analytics/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/ios-tvos/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/howto/",
       "oldURL": "/index"
   },
 
@@ -695,12 +690,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/help/",
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/help/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/",
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/",
       "oldURL": "/index"
   },
 
@@ -710,12 +705,17 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/general/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/reviewing-analytics/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/registered-users/",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
       "oldURL": "/index"
   },
 
@@ -725,7 +725,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/registered-users/help/",
+      "newURL": "https://beacon-help.support.brightcove.com/registered-users/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/pages/howto/",
       "oldURL": "/index"
   },
 
@@ -885,12 +890,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/organizing-videos-using-folders.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html",
       "oldURL": "/organizing-videos-using-folders"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/organizing-videos-using-folders.html",
       "oldURL": "/organizing-videos-using-folders"
   },
 
@@ -1155,12 +1160,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/uploading-video-images.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/uploading-video-images.html",
       "oldURL": "/uploading-video-images"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/uploading-video-images.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/uploading-video-images.html",
       "oldURL": "/uploading-video-images"
   },
 
@@ -1175,12 +1180,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/uploading-videos.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/uploading-videos.html",
       "oldURL": "/uploading-videos"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/uploading-videos.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/uploading-videos.html",
       "oldURL": "/uploading-videos"
   },
 
