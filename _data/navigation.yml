@@ -224,6 +224,50 @@
           url: '/publishing-apps/android/managing-google-subscriptions-1.html'
         - name: 'Managing Google Subscriptions Part 2'
           url: '/publishing-apps/android/managing-google-subscriptions-2.html'
+    - name: 'Fire TV'
+      url: '/creating-your-apps/fire-tv/index.html'
+      docs:
+        - name: 'Installing a Fire TV Test Build'
+          url: '/creating-your-apps/fire-tv/installing-fire-tv-test-build.html'
+        - name: 'Submitting to the Amazon Store'
+          url: '/creating-your-apps/fire-tv/submitting-to-amazon.html'
+    - name: 'iOS/tvOS'
+      url: '/creating-your-apps/ios-tvos/index.html'
+      docs:
+        - name: 'Installing an iOS/tvOS Test Build'
+          url: '/creating-your-apps/ios-tvos/installing-ios-test-build.html'
+        - name: 'Submitting to the Apple Store'
+          url: '/creating-your-apps/ios-tvos/submitting-to-apple.html'
+    #    - name: 'LG'
+    #      url: '/creating-your-apps/lg/index.html'
+    #      docs:
+    #        - name: 'Submitting to the LG (webOS) Store'
+    #          url: '/creating-your-apps/lg/submitting-to-lg.html'
+    - name: 'Panasonic'
+      url: '/creating-your-apps/panasonic/index.html'
+      docs:
+        - name: 'Submitting to the Panasonic Store'
+          url: '/creating-your-apps/panasonic/submitting-to-panasonic.html'
+    - name: 'Roku'
+      url: '/creating-your-apps/roku/index.html'
+      docs:
+        - name: 'Configuring In-Channel Products in Roku'
+          url: '/creating-your-apps/roku/configuring-inchannel-products.html'
+        - name: 'Installing a Roku Test Build'
+          url: '/creating-your-apps/roku/installing-roku-test-build.html'
+        - name: 'Submitting to the Roku Store'
+          url: '/creating-your-apps/roku/submitting-to-roku.html'
+    - name: 'Samsung'
+      url: '/creating-your-apps/samsung/index.html'
+      docs:
+        - name: 'Becoming a Samsung Partner'
+          url: '/creating-your-apps/samsung/samsung-partner.html'
+        - name: 'Submitting to the Samsung Store'
+          url: '/creating-your-apps/samsung/submitting-to-samsung.html'
+    - name: 'Common Required Information'
+      url: '/creating-your-apps/common-required-info.html'
+    - name: 'Device Apps Validation Guide'
+      url: '/creating-your-apps/device-apps-validation-guide.html'
 - section:
   name: General Information
   url: /general/index.html
