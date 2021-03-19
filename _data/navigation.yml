@@ -153,7 +153,7 @@
   icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
   docs:
     - name: Google Analytics Self Configuration
-      url: /http://localhost:4002/reviewing-analytics/ga-self-configuration.html
+      url: /reviewing-analytics/ga-self-configuration.html
     - name: Viewing Analytics Data
       url: /reviewing-analytics/viewing-analytics-data.html
 - section:
@@ -193,8 +193,6 @@
       url: /admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
     - name: 'Standard Ingest Profiles (Legacy)'
       url: /admin/standard-ingest-profiles-legacy-transcoding.html
-    - name: Using the Directed Migration Tool
-      url: /admin/using-directed-migration-tool-migrate-brightcove-smart-players.html
     - name: Viewing Billing Information
       url: /admin/viewing-billing-information.html
 - section:
