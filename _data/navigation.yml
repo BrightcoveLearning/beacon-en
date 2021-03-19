@@ -207,6 +207,15 @@
   icon: '<img class="bcls-icon" src="/assets/images/feather/send.svg">'
   url: '/publishing-apps/index.html'
   docs:
+    - name: 'General Information'
+      url: '/publishing-apps/general/index.html'
+      docs:
+        - name: 'Common Required Information for Submitting Apps'
+          url: '/publishing-apps/general/common-required-info.html'
+        - name: 'Device Apps Validation Guide'
+          url: '/publishing-apps/general/device-apps-validation-guide.html'
+        - name: 'In-App Subscription Resources'
+          url: '/publishing-apps/general/in-app-subscription-resources.html'
     - name: 'Android'
       url: '/publishing-apps/android/index.html'
       docs:
