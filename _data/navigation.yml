@@ -153,7 +153,7 @@
   icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
   docs:
     - name: Google Analytics Self Configuration
-      url: /http://localhost:4002/reviewing-analytics/ga-self-configuration.html
+      url: /reviewing-analytics/ga-self-configuration.html
     - name: Viewing Analytics Data
       url: /reviewing-analytics/viewing-analytics-data.html
 - section:
@@ -193,8 +193,6 @@
       url: /admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
     - name: 'Standard Ingest Profiles (Legacy)'
       url: /admin/standard-ingest-profiles-legacy-transcoding.html
-    - name: Using the Directed Migration Tool
-      url: /admin/using-directed-migration-tool-migrate-brightcove-smart-players.html
     - name: Viewing Billing Information
       url: /admin/viewing-billing-information.html
 - section:
@@ -235,6 +233,50 @@
           url: '/publishing-apps/android/managing-google-subscriptions-1.html'
         - name: 'Managing Google Subscriptions Part 2'
           url: '/publishing-apps/android/managing-google-subscriptions-2.html'
+    - name: 'Fire TV'
+      url: '/publishing-apps/fire-tv/index.html'
+      docs:
+        - name: 'Installing a Fire TV Test Build'
+          url: '/publishing-apps/fire-tv/installing-fire-tv-test-build.html'
+        - name: 'Submitting to the Amazon Store'
+          url: '/publishing-apps/fire-tv/submitting-to-amazon.html'
+    - name: 'iOS/tvOS'
+      url: '/publishing-apps/ios-tvos/index.html'
+      docs:
+        - name: 'Installing an iOS/tvOS Test Build'
+          url: '/publishing-apps/ios-tvos/installing-ios-test-build.html'
+        - name: 'Submitting to the Apple Store'
+          url: '/publishing-apps/ios-tvos/submitting-to-apple.html'
+    #    - name: 'LG'
+    #      url: '/publishing-apps/lg/index.html'
+    #      docs:
+    #        - name: 'Submitting to the LG (webOS) Store'
+    #          url: '/publishing-apps/lg/submitting-to-lg.html'
+    - name: 'Panasonic'
+      url: '/publishing-apps/panasonic/index.html'
+      docs:
+        - name: 'Submitting to the Panasonic Store'
+          url: '/publishing-apps/panasonic/submitting-to-panasonic.html'
+    - name: 'Roku'
+      url: '/publishing-apps/roku/index.html'
+      docs:
+        - name: 'Configuring In-Channel Products in Roku'
+          url: '/publishing-apps/roku/configuring-inchannel-products.html'
+        - name: 'Installing a Roku Test Build'
+          url: '/publishing-apps/roku/installing-roku-test-build.html'
+        - name: 'Submitting to the Roku Store'
+          url: '/publishing-apps/roku/submitting-to-roku.html'
+    - name: 'Samsung'
+      url: '/publishing-apps/samsung/index.html'
+      docs:
+        - name: 'Becoming a Samsung Partner'
+          url: '/publishing-apps/samsung/samsung-partner.html'
+        - name: 'Submitting to the Samsung Store'
+          url: '/publishing-apps/samsung/submitting-to-samsung.html'
+    - name: 'Common Required Information'
+      url: '/publishing-apps/common-required-info.html'
+    - name: 'Device Apps Validation Guide'
+      url: '/publishing-apps/device-apps-validation-guide.html'
 - section:
   name: General Information
   url: /general/index.html
