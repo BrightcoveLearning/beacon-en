@@ -7,25 +7,25 @@ parent: monetization
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
+  <aside class="bcls-aside bcls-aside--information">NOTE: This document defines a process where you must complete some of the work in Beacon Classic, some in Video Cloud Studio and some in Brightcove Beacon Studio.</aside>
   <section class="bcls-section">
     <h2 id="overview">Overview</h2>
     <p>Server-side ads are embedded in the video stream so they cannot be blocked by ad blockers in the browser.
       It works with both DRM-protected and non-protected content. Brightcove Beacon supports VOD with SSAI.</p>
     <p>Here are the steps for adding server-side ads:</p>
     <ol>
-      <li>In Video Cloud Studio, <a href="#Creating_an_ad_configuration">create an ad configuration</a></li>
-      <li><a href="#Setting_custom_field_values">Set the custom field values</a> for your video</li>
-      <li><a href="#Adding_videos_to_a_Playlist">Add your video to a playlist</a></li>
-      <li>In Brightcove Beacon, <a href="#Importing_videos_and_playlists">import your videos and playlists</a></li>
+      <li>In Video Cloud Studio, <a href="#Creating_an_ad_configuration">create an ad configuration.</a></li>
+      <li>In Brightcove Beacon Studio, <a href="#Setting_custom_field_values">Set the custom field values</a> for your video.</li>
+      <li>In Brightcove Beacon Studio, <a href="#Adding_videos_to_a_Playlist">Add your video to a playlist</a>.</li>
+      <li>In Beacon Classic, <a href="#Importing_videos_and_playlists">import your videos and playlists</a>, then set advertising options.</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="Best_practices">Best practices</h2>
     <p>Brightcove recommends following these best practices when adding server-side ads to VOD content:</p>
     <ul>
-      <li>Create your ad configuration in Video Cloud</li>
-      <li>Assign the ad configuration to videos using the custom fields in Video Cloud</li>
-      <li>Even though you can assign ad configurations to videos in Brightcove Beacon, it is recommended to do that in Video Cloud</li>
+      <li>Create your ad configuration in Video Cloud Studio.</li>
+      <li>Assign the ad configuration to videos using the custom fields in Beacon Studio.</li>
       <li>Only use the <strong>Advertisement</strong> section in Brightcove Beacon for live events and channels</li>
     </ul>
   </section>
@@ -106,10 +106,10 @@ parent: monetization
   </section>
   <section class="bcls-section">
     <h2 id="Setting_custom_field_values">Setting custom field values</h2>
-    <p>In this section, you will learn how to configure your VOD asset with the necessary settings to display SSAI in Brightcove Beacon.</p>
+    <p>In this section, you will learn how to configure your VOD asset with the necessary settings to display SSAI in your Brightcove Beacon apps.</p>
     <ol class="bcls-tasklist-restart">
       <li>
-        In Studio, go to the <strong>Media</strong> module.
+        In Beacon Studio, go to the <strong>Media</strong> module.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/vod-ssai/studio-home-media.png" />
         </figure>
