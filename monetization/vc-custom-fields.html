@@ -5,7 +5,6 @@ parent: "monetization"
 ---
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
-
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
     <p>
@@ -15,16 +14,16 @@ parent: "monetization"
     <h2 id="Creating_custom_fields">Creating custom fields</h2>
     <p>To create custom fields, follow these steps.</p>
     <ol class="bcls-tasklist">
-      <li>Log in to Video Cloud Studio.</li>
+      <li>Log in to Brightcove Beacon Studio.</li>
       <li>
-        In the navigation header, click <strong>ADMIN</strong> and then <strong>Video Fields</strong>. Note that you must be an account administrator to access the ADMIN menu.
+        In the primary navigation, click <strong>ADMIN</strong> and then <strong>Video Fields</strong>. Note that you must be an account administrator to access the ADMIN menu.
       </li>
       <li>
-        The Video Fields page will display your custom fields and all the standard video metadata fields, as shown in the following screenshot: <figure class="bcls-figure"> <img class="bcls-image" src="https://img.brightcove.com/node1050-custom-fields-overview1.png" alt="" /> </figure>
+        The Video Fields page will display your custom fields and all the standard video metadata fields, as shown in the following screenshot: <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/node1050-custom-fields-overview1.png" alt="" /> </figure>
       </li>
       <li>
         Click <strong>Add Custom Field</strong>.
-        <figure class="bcls-figure"> <img class="bcls-image" src="https://img.brightcove.com/node1050-new-custom-field1.png" alt="" /> </figure>
+        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/node1050-new-custom-field1.png" alt="" /> </figure>
       </li>
       <li>
         <p>
@@ -55,8 +54,7 @@ parent: "monetization"
         <p>
           If your field type is <strong>List</strong>, enter a comma-separated list of values and then click <strong>Add to List</strong>, as shown in the following screenshot.
         </p>
-        <aside class="bcls-aside bcls-aside--information"> Notes:
-          <ol>
+        <aside class="bcls-aside bcls-aside--information"> Notes: <ol>
             <li>
               The values must not contain quotation marks (example: Animals,Birds,Fish).
             </li>
@@ -65,7 +63,7 @@ parent: "monetization"
             </li>
           </ol>
         </aside>
-        <figure class="bcls-figure"> <img class="bcls-image" src="https://img.brightcove.com/node1050-new-custom-field-added1.png" alt="" /> </figure>
+        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/node1050-new-custom-field-added1.png" alt="" /> </figure>
       </li>
       <li>
         Click <strong>Save Field</strong> to save the changes. Click <strong>Save and Add Another</strong> to save the field and begin creating another field.
@@ -83,7 +81,7 @@ parent: "monetization"
     </p>
     <h3 id="delete">Deleting list values</h3>
     <p>
-      You can add remove existing values from a List type custom field. Click the custom field name link, click the delete icon (<img alt="" src="https://img.brightcove.com/node1050-delete-icon.png" />) associated with the value and then click <strong>Save Field</strong>.
+      You can add remove existing values from a List type custom field. Click the custom field name link, click the delete icon (<img alt="" src="/assets/images/monetization/vc-custom-fields/node1050-delete-icon.png" />) associated with the value and then click <strong>Save Field</strong>.
     </p>
     <p>
       When a list value is removed, any videos that were previously assigned that value will keep the value. However, if a video with the deleted value is edited, the value will be cleared and a new value will have to be selected.
@@ -121,7 +119,7 @@ parent: "monetization"
         List - Can have no more than 150 possible values and each value in the list can be no more than 100 characters long.
       </li>
     </ul>
-    <aside class="bcls-aside bcls-aside--warning language-editable"> Note: Please pay close attention to the definitions for the <strong>images.poster.src </strong> and <strong>images.thumbnail.src </strong> as you will supply images different from those asked for in the Studio UI. You will add images using the UI shown here, but following the guidelines in the table, not in the UI: <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/editing-images.png" alt="" /> </figure>
+    <aside class="bcls-aside bcls-aside--warning language-editable"> Note: Please pay close attention to the definitions for the <strong>images.poster.src </strong> and <strong>images.thumbnail.src </strong> as you will supply images different from those asked for in the Studio UI. You will add images using the UI shown here, but following the guidelines in the table, not in the UI: <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/vc-custom-fields/editing-images.png" alt="" /> </figure>
     </aside>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -139,8 +137,7 @@ parent: "monetization"
         <tr>
           <td>duration</td>
           <td>
-            Used by Brightcove Beacon to show percentage watched and duration in details screens
-          </td>
+            Used by Brightcove Beacon to show percentage watched and duration in details screens </td>
           <td>Automatically populated by Video Cloud</td>
           <td>Yes</td>
         </tr>
@@ -214,8 +211,7 @@ parent: "monetization"
         <tr>
           <td>tags</td>
           <td>
-            Not displayed in applications, but rather used by Brightcove Beacon to create playlists
-          </td>
+            Not displayed in applications, but rather used by Brightcove Beacon to create playlists </td>
           <td>
             Edit the <strong>VIDEO INFORMATION </strong> section of the video's properties and enter <em>Tags</em> </td>
           <td>No</td>
@@ -263,8 +259,7 @@ parent: "monetization"
             Text
           </td>
           <td>
-            * Year of production of the asset - will show up in details pages<br> * A four digit integer
-          </td>
+            * Year of production of the asset - will show up in details pages<br> * A four digit integer </td>
         </tr>
         <tr>
           <td>
@@ -394,13 +389,11 @@ parent: "monetization"
     <h2 id="Rights_Management_fields">Rights Management fields</h2>
     <p>
       To support the monetization and access restrictions for assets, a set of custom fields should be used. As you can have multiples instances of rights management configurations, the suggested approach is to create multiple sets of custom fields. In each instance's name a counter is used to differentiate between them. The first instance should use the counter to 0. Here is an example of these grouped fields actually using a counter value:
-    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/rights-management.png" alt=""> </figure>
-    For instance, you may need a set to define your advertising used in videos, and another to define specials for a holiday, like New Years.
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/vc-custom-fields/rights-management.png" alt=""> </figure> For instance, you may need a set to define your advertising used in videos, and another to define specials for a holiday, like New Years.
     </p>
     <p>
       A specific example will help clarify the use of these fields. The following screenshot shows setting Server-Side Ad Insertion (SSAI) used on a video from Video Cloud.
-    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/rights-mamagement-example-avod.png" alt=""> </figure>
-    You can learn the following from this example: </p>
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/vc-custom-fields/rights-mamagement-example-avod.png" alt=""> </figure> You can learn the following from this example: </p>
     <ul>
       <li>Not all the rights management fields in a group must be be assigned values. In this case, only the <em>beacon.rights.&lt;counter&gt;.adConfiguration</em> and <em>beacon.rights.&lt;counter&gt;.type</em> are used.</li>
       <li>You can use the SSAI configuration ID created in Studio in the Brightcove Beacon custom fields.</li>
@@ -499,8 +492,7 @@ parent: "monetization"
         </tr>
         <tr>
           <td>
-            beacon.rights.&lt;counter&gt;.<br /> locationsDeny
-          </td>
+            beacon.rights.&lt;counter&gt;.<br /> locationsDeny </td>
           <td>
             beacon_rights_ <br />
             &lt;counter&gt;_<br />
@@ -508,8 +500,7 @@ parent: "monetization"
           </td>
           <td>Text</td>
           <td>
-            * Comma separated list of locations defined in Brightcove Beacon to which the asset should NOT be exposed under the access restrictions and monetization options in this particular set<br> * No default value
-          </td>
+            * Comma separated list of locations defined in Brightcove Beacon to which the asset should NOT be exposed under the access restrictions and monetization options in this particular set<br> * No default value </td>
         </tr>
         <tr>
           <td>
@@ -524,8 +515,7 @@ parent: "monetization"
           </td>
           <td>Text</td>
           <td>
-            * A value for this field MUST be entered if the <strong>beacon.rights.<counter>.type</strong> field value is set to <strong>SVOD</strong><br> * A comma separated list of package names, as defined in Brightcove Beacon<br> * Examples: <em>Premium Sports, Action Movies, Earth Day Movies</em><br> * No default value
-          </td>
+            * A value for this field MUST be entered if the <strong>beacon.rights.<counter>.type</strong> field value is set to <strong>SVOD</strong><br> * A comma separated list of package names, as defined in Brightcove Beacon<br> * Examples: <em>Premium Sports, Action Movies, Earth Day Movies</em><br> * No default value </td>
         </tr>
         <tr>
           <td>
@@ -540,8 +530,7 @@ parent: "monetization"
           </td>
           <td>Text</td>
           <td>
-            * A value for this field MUST be entered if the <strong>beacon.rights.<counter>.type</strong> field value is set to <strong>AVOD</strong><br> * Identifier of an ad configuration in Brightcove Beacon<br> * No default value
-          </td>
+            * A value for this field MUST be entered if the <strong>beacon.rights.<counter>.type</strong> field value is set to <strong>AVOD</strong><br> * Identifier of an ad configuration in Brightcove Beacon<br> * No default value </td>
         </tr>
       </tbody>
     </table>
@@ -551,7 +540,7 @@ parent: "monetization"
     <p>
       The following will need to be completed for videos that are episodes of a series. The following diagram shows the relationship between a series and its seasons and episodes.
     </p>
-    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/beacon-series-season-episode.png" alt="" /> </figure>
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/vc-custom-fields/beacon-series-season-episode.png" alt="" /> </figure>
     <p>
       Based on the diagram, the following would be the required fields for the six videos in the series.
     </p>
@@ -606,7 +595,7 @@ parent: "monetization"
       </li>
     </ul>
     <p>Here is an actual implementation of the use of the episode fields. In this case, the custom fields are show with associated values (the values highlighted in yellos).</p>
-    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/episode-example.png" alt=""> </figure>
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/monetization/vc-custom-fields/vc-custom-fields/episode-example.png" alt=""> </figure>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
