@@ -3,23 +3,18 @@ title: "Using a Subscription Package"
 description: In this topic, you will learn how to use a video subscription package that was created using the <strong>Commerce</strong> tab of Brightcove Beacon. The subscription package implements SVOD (subscription video on demand) monetization. For details on creating the subscription see the <a href="/monetization/creating-subscription-package.html">Creating a Subscription Package</a> document.
 parent: monetization
 ---
-
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
   <section class="bcls-section">
     <h2 id="Overview">Overview</h2>
     <p>
-      A subscription package defines how a particular set of videos can be purchased by your apps' customers. The subscription package must be created in Brightcove Beacon, and is detailed in the <a href="/monetization/creating-subscription-package.html">Creating a Subscription Package</a> document. Also crucial in the use of the subscription package are the Video Cloud custom fields created for videos in a Video Cloud account, as detailed in the
-      <a href="/syncing-with-video-cloud/vc-custom-fields.html"> Creating Video Cloud Custom Fields </a>
-      document. Specifically, the
-      <a href="/syncing-with-video-cloud/vc-custom-fields.html#Rights_Management_fields"> Rights Management fields
-      </a>
-      will be used.
+      A subscription package defines how a particular set of videos can be purchased by your apps' customers. The subscription package must be created in Brightcove Beacon, and is detailed in the <a href="/monetization/creating-subscription-package.html">Creating a Subscription Package</a> document. Also crucial in the use of the subscription package are the Video Cloud custom fields created for videos in a Video Cloud account, as detailed in the <a href="/monetization/vc-custom-fields.html">Custom Fields for Monetization</a> document. Specifically, the <a href="/monetization/vc-custom-fields.html#Rights_Management_fields">Rights Management fields</a> are used.
     </p>
   </section>
   <section class="bcls-section">
     <h2 id="Understanding_the_rights_management_custom_fields"> Understanding the rights management custom fields </h2>
+    <aside class="bcls-aside bcls-aside--information">For more information on creating and using custom fields with Brightcove Beacon, see the <a href="/monetization/vc-custom-fields.html">Custom Fields for Monetization</a> document.</aside>
     <p>The rights management custom fields consist of:</p>
     <ul>
       <li>beacon.rights.&lt;counter&gt;.type</li>
@@ -36,16 +31,14 @@ parent: monetization
       This is included as you may wish to create multiple sets of rights management fields, and the <strong>&lt;counter&gt;</strong> is utilized so you can use array type syntax to group associated fields.
     </p>
     <p>
-      For instance, say you wanted to create subscription packages around the holidays and have packages for:
-    </p>
+      For instance, say you wanted to create subscription packages around the holidays and have packages for: </p>
     <ul>
       <li>Earth Day</li>
       <li>Arbor Day</li>
       <li>New Years</li>
     </ul>
     <p>
-      You must go into Video Cloud and create three sets of rights management fields, using counter values of 0-2 (or 1-3 if you prefer) that would appear as shown here:
-    </p>
+      You must go into Video Cloud and create three sets of rights management fields, using counter values of 0-2 (or 1-3 if you prefer) that would appear as shown here: </p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/monetization/using-subscription-package/index-of-rights-fields.png" alt="index of rights fields" />
     </figure>
@@ -77,8 +70,7 @@ parent: monetization
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="Subscription_interval_support"> Subscription interval support
-    </h2>
+    <h2 id="Subscription_interval_support"> Subscription interval support </h2>
     <p>
       The following table shows the time intervals supported for recurring subscriptions for each store: </p>
     <table class="bcls-table">
@@ -140,23 +132,16 @@ parent: monetization
   <section class="bcls-section">
     <h2 id="Assigning_a_single_video_to_a_package"> Assigning a single video to a package </h2>
     <p>
-      To assign a single video to a package you must use Video Cloud Studio.
-      Perform the following steps:
+      To assign a single video to a package use Beacon Studio. Perform the following steps:
     </p>
     <ol class="bcls-tasklist">
-      <li>In Studio, navigate to the <strong>Media</strong> module.</li>
+      <li>Log in to Beacon Studio.</li>
+      <li>From the primary navigation, select the <strong>Media</strong> module.</li>
+      <li>Click the video name to which you wish to add custom field values, which displays that video's properties.</li>
+      <li>Click the <strong>Video and Tracks</strong> tab.</li>
+      <li>In the <strong>CUSTOM FIELDS</strong> section (right side), click <strong>Edit</strong> button.</li>
       <li>
-        Click on the video's title you are adding to the package to see that video's properties.
-      </li>
-      <li>
-        Scroll down until you see the <strong>Custom Fields</strong> section on the right hand side and click the <strong>Edit</strong> button.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/using-subscription-package/single-video-edit-fields.png" alt="index of rights fields" />
-        </figure>
-      </li>
-      <li>
-        Place the name of the subscription package created in Brightcove Beacon in the
-        <code translate="No">beacon.rights.&lt;counter&gt;.packageName</code> field.
+        Place the name of the subscription package created in Brightcove Beacon in the <code translate="No">beacon.rights.&lt;counter&gt;.packageName</code> field.
       </li>
       <li>
         Since you are using a package, you MUST set the <code translate="No">beacon.rights.&lt;counter&gt;.type</code> to <strong>SVOD</strong>.
@@ -164,9 +149,7 @@ parent: monetization
           <img class="bcls-image" src="/assets/images/monetization/using-subscription-package/custom-fields.png" alt="index of rights fields" />
         </figure>
       </li>
-      <li>
-        Scroll to the bottom of the list of custom fields and click the <strong>Save</strong> button.
-      </li>
+      <li>At either the top or bottom of the list of custom fields, click <strong>Save</strong>.</li>
     </ol>
   </section>
   <section class="bcls-section">
@@ -180,7 +163,7 @@ parent: monetization
     </p>
     <ol class="bcls-tasklist-restart">
       <li>
-        In Studio, navigate to the <strong>Media</strong> module and check the checkbox in front of each video you wish to add to the package.
+        In Beacon Studio, navigate to the <strong>Media</strong> module and check the checkbox in front of each video you wish to add to the package.
       </li>
       <li>Click the <strong>Quick Edit</strong> button.</li>
       <li>
@@ -193,26 +176,5 @@ parent: monetization
         At the bottom of the <strong>Quick Edit</strong> section, click the <strong>Save</strong> button.
       </li>
     </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Ingesting_the_videos_into_Brightcove_Beacon"> Ingesting the videos into Brightcove Beacon </h2>
-    <p>
-      You now have associated one or videos with your subscription package. You now have to ingest those associations into Brightcove Beacon. To do this, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Log in to Brightcove Beacon.</li>
-      <li>Click on the wrench icon (Tools).</li>
-      <li>From the left side navigation click <strong>Ingestion</strong>.</li>
-      <li>Click the <strong>Update Brightcove Videos</strong> button.</li>
-      <li>
-        If any errors are reported, check those to be sure none are related to your subscription package.
-      </li>
-      <li>
-        If you wish to have the new associations immediately active in Brightcove Beacon, you must clear the current cache. To do this, from the left side navigation click <strong>Cache</strong>, then click <strong>Cache Purge</strong>.
-      </li>
-    </ol>
-    <p>
-      For more details on the actions taken in this section, see the <a href="/using-brightcove-beacon/tools.html">Using the Tools</a> document.
-    </p>
   </section>
 </article>
