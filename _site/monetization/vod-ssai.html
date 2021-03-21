@@ -760,7 +760,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <h1>Implementing VOD SSAI</h1>
 <article class="bcls-article">
   <summary>In this topic, you will learn how to create and manage Server-Side Ad Insertion (SSAI) with Video On Demand (VOD) for Brightcove Beacon.</summary>
-  <aside class="bcls-aside bcls-aside--information">NOTE: This document defines a process where you must complete some of the work in Beacon Classic, some in Video Cloud Studio and some in Brightcove Beacon Studio.</aside>
+  <aside class="bcls-aside bcls-aside--information">NOTE: This document defines a process where you must complete some of the work in Video Cloud Studio and some in Beacon Classic.</aside>
   <section class="bcls-section">
     <h2 id="overview">Overview</h2>
     <p>Server-side ads are embedded in the video stream so they cannot be blocked by ad blockers in the browser.
@@ -768,8 +768,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Here are the steps for adding server-side ads:</p>
     <ol>
       <li>In Video Cloud Studio, <a href="#Creating_an_ad_configuration">create an ad configuration.</a></li>
-      <li>In Brightcove Beacon Studio, <a href="#Setting_custom_field_values">Set the custom field values</a> for your video.</li>
-      <li>In Brightcove Beacon Studio, <a href="#Adding_videos_to_a_Playlist">Add your video to a playlist</a>.</li>
+      <li>In Video Cloud Studio, <a href="#Setting_custom_field_values">set the custom field values</a> for your video.</li>
+      <li>In Video Cloud Studio, <a href="#Adding_videos_to_a_Playlist">add your video to a playlist</a>.</li>
       <li>In Beacon Classic, <a href="#Importing_videos_and_playlists">import your videos and playlists</a>, then set advertising options.</li>
     </ol>
   </section>
@@ -778,8 +778,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Brightcove recommends following these best practices when adding server-side ads to VOD content:</p>
     <ul>
       <li>Create your ad configuration in Video Cloud Studio.</li>
-      <li>Assign the ad configuration to videos using the custom fields in Beacon Studio.</li>
-      <li>Only use the <strong>Advertisement</strong> section in Brightcove Beacon for live events and channels</li>
+      <li>Assign the ad configuration to videos using the custom fields in Video Cloud Studio.</li>
+      <li>Only use the <strong>Advertisement</strong> section in Brightcove Beacon for live events and channels.</li>
     </ul>
   </section>
   <section class="bcls-section">
@@ -859,10 +859,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="Setting_custom_field_values">Setting custom field values</h2>
+    <aside class="bcls-aside bcls-aside--information">NOTE: This section uses Video Cloud rights management custom fields. See the <a href="/monetization/vc-custom-fields.html">Custom Fields for Monetization</a> document for information on creating and using rights management custom fields.</aside>
     <p>In this section, you will learn how to configure your VOD asset with the necessary settings to display SSAI in your Brightcove Beacon apps.</p>
     <ol class="bcls-tasklist-restart">
       <li>
-        In Beacon Studio, go to the <strong>Media</strong> module.
+        In Video Cloud Studio, go to the <strong>Media</strong> module.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/vod-ssai/studio-home-media.png" />
         </figure>
@@ -912,7 +913,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>In this section, you will add your VOD asset to a playlist.</p>
     <ol class="bcls-tasklist-restart">
       <li>
-        In Studio, return to the <strong>Media</strong> module.
+        In Video Cloud Studio, return to the <strong>Media</strong> module.
       </li>
       <li>
         Click the checkbox for your video.
@@ -936,7 +937,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Importing_videos_and_playlists">Importing videos and playlists</h2>
     <p>In Brightcove Beacon, you can ingest/import videos and playlists from Video Cloud.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Log in to your Brightcove Beacon account.</li>
+      <li>Log in to your Beacon Classic.</li>
       <li>In the top menu, select <strong>Tools</strong>, which is the wrench icon.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/vod-ssai/ingest-videos.jpg" />
@@ -1066,7 +1067,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 15 Mar 2021
+  Page last updated on 20 Mar 2021
 </div>
 
 
