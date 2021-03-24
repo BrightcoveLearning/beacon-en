@@ -154,6 +154,8 @@
   url: /reviewing-analytics/index.html
   icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
   docs:
+    - name: Beacon Analytics Business Metrics
+      url: /reviewing-analytics//analytics-business-metrics.html
     - name: Google Analytics Self Configuration
       url: /reviewing-analytics/ga-self-configuration.html
     - name: Viewing Analytics Data
@@ -280,8 +282,6 @@
   url: /general/index.html
   icon: '<i data-feather="info"></i>'
   docs:
-    - name: Beacon Analytics Business Metrics
-      url: /general/analytics-business-metrics.html
     - name: Beacon Tasks Performed in VC
       url: /general/beacon-tasks-in-vc.html
     - name: Common Config Settings
