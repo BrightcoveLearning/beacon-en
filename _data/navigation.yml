@@ -278,6 +278,13 @@
         - name: 'Submitting to the Samsung Store'
           url: '/publishing-apps/samsung/submitting-to-samsung.html'
 - section:
+  name: Styling & Appearance
+  url: /styling/index.html
+  icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
+  docs:
+    - name: Branding Brightcove Beacon Apps
+      url: /styling/branding-beacon-apps.html
+- section:
   name: General Information
   url: /general/index.html
   icon: '<i data-feather="info"></i>'
