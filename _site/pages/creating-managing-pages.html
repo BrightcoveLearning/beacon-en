@@ -777,102 +777,106 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h1>Creating and Managing Pages</h1>
 <article class="bcls-article">
-    <summary>In this topic, you will learn how to create and manage pages.</summary>
+  <summary>In this topic, you will learn how to create and manage pages.</summary>
 
-    <section class="bcls-section">
-        <p>Pages are used to display video content in a Brightcove Beacon application. To create and manage pages, open the <strong>Layout</strong> module by clicking <strong>Layout</strong> in the left navigation. A list of pages that have been created will be displayed in the left margin.</p>
+  <section class="bcls-section">
+    <p>Pages are used to display video content in a Brightcove Beacon application. To create and manage pages, open the <strong>Layout</strong> module by clicking <strong>Layout</strong> in the left navigation. A list of pages that have been created will be displayed in the left margin.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/create-commerce-package/.png" alt="">
+    </figure>
+
+    <figure class="bcls-figure">
+      <img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-home.png" />
+    </figure>
+    <p>The homepage provides the ability to:</p>
+    <ul>
+      <li><a href="#create">Create pages</a></li>
+      <li><a href="#edit">Edit pages</a></li>
+      <li><a href="#duplicate">Duplicate pages</a></li>
+      <li><a href="#rearrange">Rearrange page order</a></li>
+      <li><a href="#hide">Hide pages</a></li>
+      <li><a href="#archive">Archive and delete pages</a></li>
+    </ul>
+
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="create">Creating pages</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Layout</strong> module.</li>
+      <li>In the side navigation panel, click <strong>Create Page</strong>. The new page panel will open.
         <figure class="bcls-figure">
-            <img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-home.png" />
+          <img class="bcls-image" src="/assets/images/pages/pages-new-page.png" alt="new page panel">
         </figure>
-        <p>The homepage provides the ability to:</p>
+      </li>
+      <li>Enter a <strong>Page Name</strong>. The number of characters allowed exceeds what you would practically want for a page title, so title length is not a concern. Press <strong>Enter</strong> to save the name.
+        <aside class="bcls-aside bcls-aside--information">Note: After you enter the page name, a system generated, internal name is also created and will be displayed below the page name. This internal name cannot be changed.</aside>
+        <aside class="bcls-aside bcls-aside--information">Note: If your account is configured with <a href="/admin/configuring-language-settings.html">multiple languages</a>, enter a title using the primary language here. Page names for any additional languages can be entered by <a href="#page-title">editing the page title</a> after the page has been created.</aside>
+      </li>
+      <li>Next choose the page layout, which controls how your video content is displayed on the page. For each layout you can read the description and click the layout from the list to see a skeleton preview display of the layout.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/pages/layout-preview.png" alt="layout preview">
+        </figure>
+      </li>
+      <li>At the bottom of the navigation panel, click <span class="button-blue">Next →</span>.</li>
+      <li>At this point, you can:
+        <ol>
+          <li>See the page is unpublished by default.</li>
+          <li>Click <span class="button-blue">PUBLISH</span> to publish the page.</li>
+          <li>Edit page settings, including page title.</li>
+          <li>Change the page layout (on hover).</li>
+          <li>Click <span class="button-blue-text">Add playlist</span> to add video content to your page.</li>
+          <li>Configure page availability.</li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/pages/page-info-after-creation.png" alt="page actions after creation">
+        </figure>
+      </li>
+      <li>The page settings that can be configured will be displayed in the left margin. For more information on adding videos to a page and configuring page availability, see one of the following topics:
         <ul>
-            <li><a href="#create">Create pages</a></li>
-            <li><a href="#edit">Edit pages</a></li>
-            <li><a href="#duplicate">Duplicate pages</a></li>
-            <li><a href="#rearrange">Rearrange page order</a></li>
-            <li><a href="#hide">Hide pages</a></li>
-            <li><a href="#archive">Archive and delete pages</a></li>
+          <li><a href="/pages/adding-videos-pages.html">Adding Videos to Pages</a></li>
+          <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
         </ul>
+      </li>
+      <li>If you wish to return to the list of pages, click the vertical <span class="button-blue-text">Back to All Pages</span> link. The page that was created will display in the list of pages.</li>
+    </ol>
+  </section>
 
-    </section>
+  <section class="bcls-section">
+    <h2 id="edit">Editing pages</h2>
+    <p>To edit a page, from the <strong>Layout</strong> module index page in the side navigation panel, click on the page to edit. The page settings will be displayed.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-settings.png" /></figure>
+    <h3 id="page-title">Editing the page title</h3>
+    <p>To edit the page title, click the gear icon <img class="bcls-image--no-border" alt="" src="/assets/images/common/gear-blue.png" /> next to the page name and enter a new name. You can also edit the title in multiple languages, if they are enabled for your apps.</p>
+    <h3>Editing the page type</h3>
+    <p>To edit the layout, hover over the current layout then click <span class="button-blue-text">Change</span>. Click on a new layout then click <strong>Select</strong>.</p>
+  </section>
 
-    <section class="bcls-section">
-        <h2 id="create">Creating pages</h2>
-        <ol class="bcls-tasklist-restart">
-            <li>Open the <strong>Layout</strong> module.</li>
-            <li>In the side navigation panel, click <strong>Create Page</strong>. The new page panel will open.
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/pages/pages-new-page.png" alt="new page panel">
-                </figure>
-            </li>
-            <li>Enter a <strong>Page Name</strong>. The number of characters allowed exceeds what you would practically want for a page title, so title length is not a concern. Press <strong>Enter</strong> to save the name.
-                <aside class="bcls-aside bcls-aside--information">Note: After you enter the page name, a system generated, internal name is also created and will be displayed below the page name. This internal name cannot be changed.</aside>
-                <aside class="bcls-aside bcls-aside--information">Note: If your account is configured with <a href="/admin/configuring-language-settings.html">multiple languages</a>, enter a title using the primary language here. Page names for any additional languages can be entered by <a href="#page-title">editing the page title</a> after the page has been created.</aside>
-            </li>
-            <li>Next choose the page layout, which controls how your video content is displayed on the page. For each layout you can read the description and click the layout from the list to see a skeleton preview display of the layout.
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/pages/layout-preview.png" alt="layout preview">
-                </figure>
-            </li>
-            <li>At the bottom of the navigation panel, click <span class="button-blue">Next →</span>.</li>
-            <li>At this point, you can:
-                <ol>
-                    <li>See the page is unpublished by default.</li>
-                    <li>Click <span class="button-blue">PUBLISH</span> to publish the page.</li>
-                    <li>Edit page settings, including page title.</li>
-                    <li>Change the page layout (on hover).</li>
-                    <li>Click <span class="button-blue-text">Add playlist</span> to add video content to your page.</li>
-                    <li>Configure page availability.</li>
-                </ol>
-                <figure class="bcls-figure">
-                    <img class="bcls-image" src="/assets/images/pages/page-info-after-creation.png" alt="page actions after creation">
-                </figure>
-            </li>
-            <li>The page settings that can be configured will be displayed in the left margin. For more information on adding videos to a page and configuring page availability, see one of the following topics:
-                <ul>
-                    <li><a href="/pages/adding-videos-pages.html">Adding Videos to Pages</a></li>
-                    <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
-                </ul>
-            </li>
-            <li>If you wish to return to the list of pages, click the vertical <span class="button-blue-text">Back to All Pages</span> link. The page that was created will display in the list of pages.</li>
-        </ol>
-    </section>
+  <section class="bcls-section">
+    <h2 id="duplicate">Duplicating pages</h2>
+    <p>Duplicating pages can be useful when you need to create a new page that is similar to an existing page. To duplicate a page, hover over the page name and click on <strong>Duplicate</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-duplicate.png" /></figure>
+  </section>
 
-    <section class="bcls-section">
-        <h2 id="edit">Editing pages</h2>
-        <p>To edit a page, from the <strong>Layout</strong> module index page in the side navigation panel, click on the page to edit. The page settings will be displayed.</p>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-settings.png" /></figure>
-        <h3 id="page-title">Editing the page title</h3>
-        <p>To edit the page title, click the gear icon <img class="bcls-image--no-border" alt="" src="/assets/images/common/gear-blue.png" /> next to the page name and enter a new name. You can also edit the title in multiple languages, if they are enabled for your apps.</p>
-        <h3>Editing the page type</h3>
-        <p>To edit the layout, hover over the current layout then click <span class="button-blue-text">Change</span>. Click on a new layout then click <strong>Select</strong>.</p>
-    </section>
+  <section class="bcls-section">
+    <h2 id="rearrange">Rearranging page order</h2>
+    <p>The order of the pages in the left navigation determines the order of the display in a Beacon application. To change the page order, click on a page and drag it to a new location.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-rearrange.png" /></figure>
+  </section>
 
-    <section class="bcls-section">
-        <h2 id="duplicate">Duplicating pages</h2>
-        <p>Duplicating pages can be useful when you need to create a new page that is similar to an existing page. To duplicate a page, hover over the page name and click on <strong>Duplicate</strong>.</p>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-duplicate.png" /></figure>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="rearrange">Rearranging page order</h2>
-        <p>The order of the pages in the left navigation determines the order of the display in a Beacon application. To change the page order, click on a page and drag it to a new location.</p>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-rearrange.png" /></figure>
-    </section>
-
-    <section class="bcls-section">
-        <h2 id="archive">Archiving and deleting pages</h2>
-        <p>Archiving a page will remove it from the application but it will not delete the page. To archive a page, follow these steps:</p>
-        <ol class="bcls-tasklist-restart">
-            <li>Click on a page to open the page details.</li>
-            <li>Click <strong>Archive Page</strong> at the bottom of the page details.</li>
-        </ol>
-        <p>The total number of archived pages will appear at the bottom of the left margin.</p>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-archived.png" /></figure>
-        <p>Click <strong>Archived Pages</strong> to display a list of archived pages.</p>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-archive-delete-restore.png" /></figure>
-        <p>To permanently delete an archived page, click <strong>Delete</strong>. Click <strong>Restore</strong> to unarchive a page and add it back to the page listing.</p>
-    </section>
+  <section class="bcls-section">
+    <h2 id="archive">Archiving and deleting pages</h2>
+    <p>Archiving a page will remove it from the application but it will not delete the page. To archive a page, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click on a page to open the page details.</li>
+      <li>Click <strong>Archive Page</strong> at the bottom of the page details.</li>
+    </ol>
+    <p>The total number of archived pages will appear at the bottom of the left margin.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-archived.png" /></figure>
+    <p>Click <strong>Archived Pages</strong> to display a list of archived pages.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/pages/pages-archive-delete-restore.png" /></figure>
+    <p>To permanently delete an archived page, click <strong>Delete</strong>. Click <strong>Restore</strong> to unarchive a page and add it back to the page listing.</p>
+  </section>
 </article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
