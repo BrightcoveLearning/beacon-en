@@ -6,7 +6,7 @@ body, .body {
 	counter-reset: figure 0 table 0 step 0;
 	background-color: white;
 	color: rgb(1, 5, 14);
-	margin: 0;
+	margin: 16px 24px;
 	position: relative;
 }
 
@@ -26,6 +26,10 @@ h2 {
 
 h3 {
 	font-size: 1.2rem;
+}
+
+summary {
+	display: block;
 }
 
 .breadcrumb {
@@ -238,6 +242,10 @@ details section {
 	padding-top: 0;
 }
 
+details section p {
+	margin-left: 1rem;
+}
+
 details::after {
 	transform: translateY(-50%) rotate(90deg);
 }
@@ -341,7 +349,7 @@ details[open] {
 }
 
 /* in-app help text buttons */
-.button-blue, .button-blue-text, .button-red, .button-red-text, .button-gray {
+.button-blue, .button-blue, .button-red, .button-red-text, .button-gray {
 	/* font-family: 'Public Sans'; */
 	font-weight: bold;
 	font-size: .65rem;
@@ -352,7 +360,7 @@ details[open] {
 	color: rgb(255, 255, 255);
 	background-color: rgb(13, 44, 189);
 }
-.button-blue-text {
+.button-blue {
 	color: rgb(13, 44, 189);
 	background-color: rgb(255, 255, 255);
 }
