@@ -63,7 +63,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/general/">General Information</a></li>
+    <li class="breadcrumb-item"><a href="/styling/">General Information</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Images and Their Specifications</li>
   </ol>
@@ -777,25 +777,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h1>Images and Their Specifications</h1>
 <article class="bcls-article">
-    <summary>In this topic, you will learn of the images required for your Brightcove Beacon Experience. Also detailed are the required image sizes, aspect ratios, etc. Some images are needed for videos ingested into Video Cloud, while others are used in Brightcove Beacon.</summary>
-    <section class="bcls-section">
-        <h2 id="Video_Cloud_images">Video Cloud images</h2>
-        <p>
-            Whenever a video is ingested into Video Cloud, two images are automatically created and shown in the video's properties. The two images created are a <em>Poster</em> and a <em>Thumbnail</em>. The images are displayed in the <strong>IMAGES</strong> section in Studio. You will use these upload images for use in Brightcove Beacon, but must a change to the default ingest profile for proper functionality. The steps shown in the following alert box show you how to make the change. If you do not make the change, the portrait image you are uploading will keep getting sized for a thumbnail and look very poor in your Brightcove Beacon app.
-        </p>
-        <aside class="bcls-aside bcls-aside--warning language-editable">You MUST change your default ingest profile. Follow these steps:
-            <ol class="bcls-tasklist">
-                <li>In Studio go to <strong>ADMIN → Ingest Profiles</strong>.</li>
-                <li>Click on the title of your current default profile which is labeled with an <strong>Uploading default</strong> label.
-                    <figure class="bcls-figure">
-                        <img class="bcls-image" src="/assets/images/general/image-requirements/uploading-default.png" alt="">
-                    </figure>
-                </li>
-                <li>Click the <strong>Duplicate</strong> button.</li>
-                <li>Locate where the <strong>images</strong> are defined. The exact JSON may look slightly different than what is shown below, depending on the profile you have duplicated.</li>
-                <li>Alter the width and height for both the poster and thumbnail images as shown:.
-                    <h4>Old Settings</h4>
-                    <pre class="line-numbers">< class="language-json">{
+  <summary>In this topic, you will learn of the images required for your Brightcove Beacon Experience. Also detailed are the required image sizes, aspect ratios, etc. Some images are needed for videos ingested into Video Cloud, while others are used in Brightcove Beacon.</summary>
+  <section class="bcls-section">
+    <h2 id="Video_Cloud_images">Video Cloud images</h2>
+    <p>
+      Whenever a video is ingested into Video Cloud, two images are automatically created and shown in the video's properties. The two images created are a <em>Poster</em> and a <em>Thumbnail</em>. The images are displayed in the <strong>IMAGES</strong> section in Studio. You will use these upload images for use in Brightcove Beacon, but must a change to the default ingest profile for proper functionality. The steps shown in the following alert box show you how to make the change. If you do not make the change, the portrait image you are uploading will keep getting sized for a thumbnail and look very poor in your Brightcove Beacon app.
+    </p>
+    <aside class="bcls-aside bcls-aside--warning language-editable">You MUST change your default ingest profile. Follow these steps:
+      <ol class="bcls-tasklist">
+        <li>In Studio go to <strong>ADMIN → Ingest Profiles</strong>.</li>
+        <li>Click on the title of your current default profile which is labeled with an <strong>Uploading default</strong> label.
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/styling/image-requirements/uploading-default.png" alt="">
+          </figure>
+        </li>
+        <li>Click the <strong>Duplicate</strong> button.</li>
+        <li>Locate where the <strong>images</strong> are defined. The exact JSON may look slightly different than what is shown below, depending on the profile you have duplicated.</li>
+        <li>Alter the width and height for both the poster and thumbnail images as shown:.
+          <h4>Old Settings</h4>
+          <pre class="line-numbers">< class="language-json">{
   "media_type": "image",
   "format": "jpg",
   "label": "poster",
@@ -811,8 +811,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   "height": 90,</span>
   "id": "559a8b0ee4b07cbb40be7d23"
 }</code></pre>
-                    <h4>New Settings</h4>
-                    <pre class="line-numbers">< class="language-json">{
+          <h4>New Settings</h4>
+          <pre class="line-numbers">< class="language-json">{
   "media_type": "image",
   "format": "jpg",
   "label": "poster",
@@ -828,268 +828,269 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     "height": 2000,</span>
     "id": "559a8b0ee4b07cbb40be7d23"
 }</code></pre>
-                </li>
-                <li>Click <strong>Save</strong>.</li>
-                <li>Then click the <strong>Make this my default profile</strong> link.
-                    <figure class="bcls-figure">
-                        <img class="bcls-image" src="/assets/images/general/image-requirements/make-my-default.png" alt="">
-                    </figure>
-                </li>
-                <li>Check to be sure profile is now labeled as your uploading default.</li>
-            </ol>
-            You are now ready to upload images for Brightcove Beacon using Video Cloud Studio.
-        </aside>
-        <p>Use the Studio interface to upload two images. You will decide on an images that represent your video and take the appropriate screenshots that meet the requirements shown above. You will then upload the two images into Video Cloud.</p>
-        </p>
-        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/general/image-requirements/studio-images.png" alt="studio images UI" />
-        </figure>
-        <p>
-            The <em>Poster</em> and a <em>Thumbnail</em> are placeholders for the images used in Brightcove Beacon.
-            <em>DO NOT follow the recommendations for the images as shown in Video Cloud Studio!</em> Instead, use these guidelines: </p>
-        <table class="bcls-table">
-            <thead class="bcls-table__head">
-                <tr>
-                    <th>Poster</th>
-                    <th>Thumbnail</th>
-                </tr>
-            </thead>
-            <tbody class="bcls-table__body">
-                <tr>
-                    <td>
-                        Landscape image (16:9): <table>
-                            <tr>
-                                <td>Minimum</td>
-                                <td>Width: 1000px</td>
-                                <td>Height: 563px</td>
-                            </tr>
-                            <tr>
-                                <td>Maximum</td>
-                                <td>Width: 4000px</td>
-                                <td>Height: 2250px</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        Poster image (2:3) <table>
-                            <tr>
-                                <td>Minimum</td>
-                                <td>Width: 1000px</td>
-                                <td>Height: 1500px</td>
-                            </tr>
-                            <tr>
-                                <td>Maximum</td>
-                                <td>Width: 2000px</td>
-                                <td>Height: 3000px</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <p>The image on the left in the screenshot is an example use of the portrait image. If you see a very pixelated image there you will know the default ingest profile needs to be updated.</p>
-        <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/general/image-requirements/portrait-used.png" alt="">
-        </figure>
-    </section>
-    <section class="bcls-section">
-        <h2 id="Corporate_logo">Corporate logo</h2>
-        <p>
-            You will need to supply your corporate logo for use in the Brightcove Beacon Experience. Follow these guidelines for the image: </p>
-        <table class="bcls-table">
-            <thead class="bcls-table__head">
-                <tr>
-                    <th>Specification</th>
-                    <th>Value</th>
-                </tr>
-            </thead>
-            <tbody class="bcls-table__body">
-                <tr>
-                    <td>Format</td>
-                    <td>.png</td>
-                </tr>
-                <tr>
-                    <td>Aspect Ratio</td>
-                    <td>1:1</td>
-                </tr>
-                <tr>
-                    <td>Size</td>
-                    <td>1500px x 1500px</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <section class="bcls-section">
-        <h2 id="Working_in_Brightcove_Beacon">Working in Brightcove Beacon</h2>
-        <p>
-            When entering information in Brightcove Beacon, you will be asked for <strong>Non-Textual Data</strong>. This means images for the assets you are currently creating. These images can be broken down into three groups, those being:
-        </p>
-        <ul>
-            <li>Series/Seasons</li>
-            <li>Live Events</li>
-            <li>Channel Logos</li>
-        </ul>
-        <p>Details for images of the groups follow.</p>
-        <h3>Series/Seasons</h3>
-        <p>
-            For series/seasons a page will appear similar to the following (without the red <strong>OPTIONAL</strong> text over the <strong>Thumbnail</strong>, for which you do not need to supply an image): </p>
-        <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/general/image-requirements/four-images-required.png" alt="studio images UI" />
-        </figure>
-        <p>
-            When you encounter this screen, supply a <strong>JPEG</strong> image for the <strong>Portrait Poster</strong>, <strong>Landscape Poster</strong> and <strong>Wide banner</strong> matching the requirements below. You DO NOT need to supply an image for <strong>Thumbnail</strong>. If not provided, the Thumbnail image will be generated from the Portrait Poster.
-        </p>
-        <table class="bcls-table">
-            <thead class="bcls-table__head">
-                <tr>
-                    <th>Image</th>
-                    <th>Requirements</th>
-                </tr>
-            </thead>
-            <tbody class="bcls-table__body">
-                <tr>
-                    <td>Portrait Poster</td>
-                    <td>
-                        Poster image (2:3) <table>
-                            <tr>
-                                <td>Minimum</td>
-                                <td>Width: 1000px</td>
-                                <td>Height: 1500px</td>
-                            </tr>
-                            <tr>
-                                <td>Maximum</td>
-                                <td>Width: 2000px</td>
-                                <td>Height: 3000px</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Landscape Poster</td>
-                    <td>
-                        Landscape image (16:9): <table>
-                            <tr>
-                                <td>Minimum</td>
-                                <td>Width: 1000px</td>
-                                <td>Height: 563px</td>
-                            </tr>
-                            <tr>
-                                <td>Maximum</td>
-                                <td>Width: 4000px</td>
-                                <td>Height: 2250px</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Wide Banner</td>
-                    <td>
-                        Landscape image (21:9): <table>
-                            <tr>
-                                <td>Minimum</td>
-                                <td>Width: 1000px</td>
-                                <td>Height: 428px</td>
-                            </tr>
-                            <tr>
-                                <td>Maximum</td>
-                                <td>Width: 4000px</td>
-                                <td>Height: 1714px</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        </li>
+        <li>Click <strong>Save</strong>.</li>
+        <li>Then click the <strong>Make this my default profile</strong> link.
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/styling/image-requirements/make-my-default.png" alt="">
+          </figure>
+        </li>
+        <li>Check to be sure profile is now labeled as your uploading default.</li>
+      </ol>
+      You are now ready to upload images for Brightcove Beacon using Video Cloud Studio.
+    </aside>
+    <p>Use the Studio interface to upload two images. You will decide on an images that represent your video and take the appropriate screenshots that meet the requirements shown above. You will then upload the two images into Video Cloud.</p>
+    </p>
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/styling/image-requirements/studio-images.png" alt="studio images UI" />
+    </figure>
+    <p>
+      The <em>Poster</em> and a <em>Thumbnail</em> are placeholders for the images used in Brightcove Beacon.
+      <em>DO NOT follow the recommendations for the images as shown in Video Cloud Studio!</em> Instead, use these guidelines:
+    </p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Poster</th>
+          <th>Thumbnail</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>
+            Landscape image (16:9): <table>
+              <tr>
+                <td>Minimum</td>
+                <td>Width: 1000px</td>
+                <td>Height: 563px</td>
+              </tr>
+              <tr>
+                <td>Maximum</td>
+                <td>Width: 4000px</td>
+                <td>Height: 2250px</td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            Poster image (2:3) <table>
+              <tr>
+                <td>Minimum</td>
+                <td>Width: 1000px</td>
+                <td>Height: 1500px</td>
+              </tr>
+              <tr>
+                <td>Maximum</td>
+                <td>Width: 2000px</td>
+                <td>Height: 3000px</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p>The image on the left in the screenshot is an example use of the portrait image. If you see a very pixelated image there you will know the default ingest profile needs to be updated.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/styling/image-requirements/portrait-used.png" alt="">
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Corporate_logo">Corporate logo</h2>
+    <p>
+      You will need to supply your corporate logo for use in the Brightcove Beacon Experience. Follow these guidelines for the image: </p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Specification</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Format</td>
+          <td>.png</td>
+        </tr>
+        <tr>
+          <td>Aspect Ratio</td>
+          <td>1:1</td>
+        </tr>
+        <tr>
+          <td>Size</td>
+          <td>1500px x 1500px</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Working_in_Brightcove_Beacon">Working in Brightcove Beacon</h2>
+    <p>
+      When entering information in Brightcove Beacon, you will be asked for <strong>Non-Textual Data</strong>. This means images for the assets you are currently creating. These images can be broken down into three groups, those being:
+    </p>
+    <ul>
+      <li>Series/Seasons</li>
+      <li>Live Events</li>
+      <li>Channel Logos</li>
+    </ul>
+    <p>Details for images of the groups follow.</p>
+    <h3>Series/Seasons</h3>
+    <p>
+      For series/seasons a page will appear similar to the following (without the red <strong>OPTIONAL</strong> text over the <strong>Thumbnail</strong>, for which you do not need to supply an image): </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/styling/image-requirements/four-images-required.png" alt="studio images UI" />
+    </figure>
+    <p>
+      When you encounter this screen, supply a <strong>JPEG</strong> image for the <strong>Portrait Poster</strong>, <strong>Landscape Poster</strong> and <strong>Wide banner</strong> matching the requirements below. You DO NOT need to supply an image for <strong>Thumbnail</strong>. If not provided, the Thumbnail image will be generated from the Portrait Poster.
+    </p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Image</th>
+          <th>Requirements</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Portrait Poster</td>
+          <td>
+            Poster image (2:3) <table>
+              <tr>
+                <td>Minimum</td>
+                <td>Width: 1000px</td>
+                <td>Height: 1500px</td>
+              </tr>
+              <tr>
+                <td>Maximum</td>
+                <td>Width: 2000px</td>
+                <td>Height: 3000px</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>Landscape Poster</td>
+          <td>
+            Landscape image (16:9): <table>
+              <tr>
+                <td>Minimum</td>
+                <td>Width: 1000px</td>
+                <td>Height: 563px</td>
+              </tr>
+              <tr>
+                <td>Maximum</td>
+                <td>Width: 4000px</td>
+                <td>Height: 2250px</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>Wide Banner</td>
+          <td>
+            Landscape image (21:9): <table>
+              <tr>
+                <td>Minimum</td>
+                <td>Width: 1000px</td>
+                <td>Height: 428px</td>
+              </tr>
+              <tr>
+                <td>Maximum</td>
+                <td>Width: 4000px</td>
+                <td>Height: 1714px</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-        <h3>Live Events</h3>
-        <p>
-            For live events a page will appear similar to the following (without the red <strong>OPTIONAL</strong> text over the <strong>Thumbnail</strong> and <strong>Wide Banner</strong>, for which you do not need to supply images): </p>
-        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/general/image-requirements/live-event-images.png" alt="studio images UI" />
-        </figure>
-        <p>
-            When you encounter this screen, supply a <strong>JPEG</strong> image for the <strong>Portrait Poster</strong> and <strong>Landscape Poster</strong> matching the requirements below. You DO NOT need to supply images for <strong>Thumbnail</strong> and <strong>Wide banner</strong>. If not provided, the Thumbnail image will be generated from the Portrait Poster and the Wide banner from the Landscape Poster.
-        </p>
-        <table class="bcls-table">
-            <thead class="bcls-table__head">
-                <tr>
-                    <th>Image</th>
-                    <th>Requirements</th>
-                </tr>
-            </thead>
-            <tbody class="bcls-table__body">
-                <tr>
-                    <td>Portrait Poster</td>
-                    <td>
-                        Poster image (2:3) <table>
-                            <tr>
-                                <td>Minimum</td>
-                                <td>Width: 1000px</td>
-                                <td>Height: 1500px</td>
-                            </tr>
-                            <tr>
-                                <td>Maximum</td>
-                                <td>Width: 2000px</td>
-                                <td>Height: 3000px</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Landscape Poster</td>
-                    <td>
-                        Landscape image (16:9): <table>
-                            <tr>
-                                <td>Minimum</td>
-                                <td>Width: 1000px</td>
-                                <td>Height: 563px</td>
-                            </tr>
-                            <tr>
-                                <td>Maximum</td>
-                                <td>Width: 4000px</td>
-                                <td>Height: 2250px</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <h3>Channel logos</h3>
-        <p>
-            Channel logo images are composed of a thumbnail background and an image (with or without transparency), both with a 16:9 aspect ratio. The following diagram shows how channel logos are created: </p>
-        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/general/image-requirements/channel-logo.png" alt="channel logo creation" />
-        </figure>
-        <p>
-            This is the
-            <strong>Non-Textual Data</strong> form you will see for when creating a new channel:
-        </p>
-        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/general/image-requirements/channel-logo-form.png" alt="channel logo creation" />
-        </figure>
-        <p>
-            The size requirements are detailed in the table.
-        </p>
-        <table class="bcls-table">
-            <thead class="bcls-table__head">
-                <tr>
-                    <th>Image</th>
-                    <th>Requirements</th>
-                </tr>
-            </thead>
-            <tbody class="bcls-table__body">
-                <tr>
-                    <td>Channel logo images</td>
-                    <td>
-                        Landscape image (16:9): <table>
-                            <tr>
-                                <td>Required Size</td>
-                                <td>Width: 1000px</td>
-                                <td>Height: 563px</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <h3>Live Events</h3>
+    <p>
+      For live events a page will appear similar to the following (without the red <strong>OPTIONAL</strong> text over the <strong>Thumbnail</strong> and <strong>Wide Banner</strong>, for which you do not need to supply images): </p>
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/styling/image-requirements/live-event-images.png" alt="studio images UI" />
+    </figure>
+    <p>
+      When you encounter this screen, supply a <strong>JPEG</strong> image for the <strong>Portrait Poster</strong> and <strong>Landscape Poster</strong> matching the requirements below. You DO NOT need to supply images for <strong>Thumbnail</strong> and <strong>Wide banner</strong>. If not provided, the Thumbnail image will be generated from the Portrait Poster and the Wide banner from the Landscape Poster.
+    </p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Image</th>
+          <th>Requirements</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Portrait Poster</td>
+          <td>
+            Poster image (2:3) <table>
+              <tr>
+                <td>Minimum</td>
+                <td>Width: 1000px</td>
+                <td>Height: 1500px</td>
+              </tr>
+              <tr>
+                <td>Maximum</td>
+                <td>Width: 2000px</td>
+                <td>Height: 3000px</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>Landscape Poster</td>
+          <td>
+            Landscape image (16:9): <table>
+              <tr>
+                <td>Minimum</td>
+                <td>Width: 1000px</td>
+                <td>Height: 563px</td>
+              </tr>
+              <tr>
+                <td>Maximum</td>
+                <td>Width: 4000px</td>
+                <td>Height: 2250px</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Channel logos</h3>
+    <p>
+      Channel logo images are composed of a thumbnail background and an image (with or without transparency), both with a 16:9 aspect ratio. The following diagram shows how channel logos are created: </p>
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/styling/image-requirements/channel-logo.png" alt="channel logo creation" />
+    </figure>
+    <p>
+      This is the
+      <strong>Non-Textual Data</strong> form you will see for when creating a new channel:
+    </p>
+    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/styling/image-requirements/channel-logo-form.png" alt="channel logo creation" />
+    </figure>
+    <p>
+      The size requirements are detailed in the table.
+    </p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Image</th>
+          <th>Requirements</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Channel logo images</td>
+          <td>
+            Landscape image (16:9): <table>
+              <tr>
+                <td>Required Size</td>
+                <td>Width: 1000px</td>
+                <td>Height: 563px</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 </article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
@@ -1116,7 +1117,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 25 Mar 2021
+  Page last updated on 02 Apr 2021
 </div>
 
 
