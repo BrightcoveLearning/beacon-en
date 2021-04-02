@@ -818,8 +818,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ul>
     <p>In the sample above, note that each chapter entry consists of two lines:</p>
     <ol>
-      <li>The start and end time for the chapter, in the format: <code>hours:minutes:seconds:milliseconds</code> (for example: 00:02:23.000) and is strictly parsed; numbers must be zero padded if necessary</li>
-      <li>The chapter title that will appear in the player chapter menu - note that only plain text is supported, and the title must not contain the substring <code>--&gt;</code></li>
+      <li>The start and end time for the chapter, in the format: <code translate="no">hours:minutes:seconds:milliseconds</code> (for example: 00:02:23.000) and is strictly parsed; numbers must be zero padded if necessary</li>
+      <li>The chapter title that will appear in the player chapter menu - note that only plain text is supported, and the title must not contain the substring <code translate="no">--&gt;</code></li>
     </ol>
     <aside class="bcls-aside bcls-aside--tip">Notes:
       <ul>
@@ -830,12 +830,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <div class="video-cloud-only">
       <p>The WebVTT file can be associated with a video in any of three ways:</p>
       <ol>
-        <li>Add the URL for the WebVTT file in the <a href="/media/adding-captions-videos.html">Text Track properties for the video in Studio</a> - be sure the access the Advanced Settings and set the <code>Kind</code> to <code>Chapters</code>:
+        <li>Add the URL for the WebVTT file in the <a href="/media/adding-captions-videos.html">Text Track properties for the video in Studio</a> - be sure the access the Advanced Settings and set the <code translate="no">Kind</code> to <code translate="no">Chapters</code>:
           <figure class="bcls-figure"><img class="bcls-image" alt="studio text track settings" src="/assets/images/media/chapters-text-tracks-studio.png" /></figure>
-          <aside class="bcls-aside bcls-aside--information">Note that the <code>default</code> value is not per track, but set to <code>true</code> for all tracks of the same language (<code>srclang</code>)</aside>
+          <aside class="bcls-aside bcls-aside--information">Note that the <code translate="no">default</code> value is not per track, but set to <code translate="no">true</code> for all tracks of the same language (<code translate="no">srclang</code>)</aside>
         </li>
         <li>Upload the WebVTT file using the <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Ingesting WebVTT Files</a> document in the Dynamic Ingest API information.</li>
-        <li>Reference the WebVTT file URL in a <code>&lt;track&gt;</code> tag to the in-page embed code:
+        <li>Reference the WebVTT file URL in a <code translate="no">&lt;track&gt;</code> tag to the in-page embed code:
           <pre class="line-numbers">
             <code class="language-html">&lt;video-js
               data-video-id="4426931680001"
@@ -850,7 +850,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </ol>
     </div>
     <div class="player-only">
-      <p>Add the WebVTT file for the chapters using the <code>&lt;track&gt;</code> tag to the in-page embed code:</p>
+      <p>Add the WebVTT file for the chapters using the <code translate="no">&lt;track&gt;</code> tag to the in-page embed code:</p>
       <pre class="line-numbers">
             <code class="language-html">&lt;video-js
               data-account="3676484086001"
@@ -868,7 +868,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="publishing">Publishing the player</h2>
     <p class="video-cloud-only">You can use either the iframe or in-page embed - chapters will work the same in both.</p>
-    <p class="player-only">Since you will need to add a <code>track</code> tag to the <code>video</code> for the .vtt file, you will need to use the in-page embed for chaptered video.</p>
+    <p class="player-only">Since you will need to add a <code translate="no">track</code> tag to the <code translate="no">video</code> for the .vtt file, you will need to use the in-page embed for chaptered video.</p>
     <p>No additional plugins, CSS, or JavaScript code is required.</p>
   </section>
 </article>
