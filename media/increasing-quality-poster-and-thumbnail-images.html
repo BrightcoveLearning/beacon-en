@@ -45,7 +45,7 @@ parent: Managing Media
         <li>Click on a <strong>Profile Name</strong>. The Profile Editor will display the profile definition.</li>
         <li>The method to view the image sizes will vary based upon the <strong>Profile Version</strong> (i.e. Legacy, Dynamic Delivery or Context-Aware) that was clicked.
           <ul>
-            <li>For <strong>Legacy</strong> profiles, scroll to the bottom of the Profile Editor window and search for <strong><code>"media_type": "image"</code></strong>. There should be two entries, one for the poster and one for the thumbnail.</li>
+            <li>For <strong>Legacy</strong> profiles, scroll to the bottom of the Profile Editor window and search for <strong><code translate="no">"media_type": "image"</code></strong>. There should be two entries, one for the poster and one for the thumbnail.</li>
             <li>For <strong>Dynamic Delivery</strong> and <strong>Context-Aware</strong> profiles, image sizes are listed in the <strong>Images</strong> section of the profile definition.</li>
           </ul>
           <p>The following example is from a Dynamic Delivery Profile Version.</p>
@@ -75,7 +75,7 @@ parent: Managing Media
     <p>If you want to override this behavior and have Video Cloud retain actual image dimensions, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li><a href="/admin/managing-ingest-profiles.html">Create a new custom ingest profile</a> for your account (or modify an existing custom profile)</li>
-      <li>Include image renditions for the poster and thumbnail that have <strong>exactly</strong> these <code>width</code> and <code>height</code> values:
+      <li>Include image renditions for the poster and thumbnail that have <strong>exactly</strong> these <code translate="no">width</code> and <code translate="no">height</code> values:
         <pre class="line-numbers">
 <code class="language-json">{
 "media_type": "image",
