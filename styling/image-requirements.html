@@ -7,6 +7,7 @@ parent: styling
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
+  <aside class="bcls-aside bcls-aside--information">NOTE: This document defines a process where you must complete the work in Beacon Classic.</aside>
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
@@ -14,124 +15,108 @@ parent: styling
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/styling/image-requirements/all-images-in-studio.png" alt="all images in studio">
     </figure>
-    <p></p>
+    <p>Following are details about each of the images:</p>
+    <ul>
+      <li><strong>Poster</strong>
+        <ul>
+          <li>Created automatically by Beacon Studio</li>
+          <li>Change by creating a new image meeting the requirements shown below and uploading it by hovering over the image and clicking <img class=”ui-image” src="/assets/images/common/upload-image.png" alt="upload image"></li>
+          <li>Use <strong>JPG</strong> or <strong>PNG</strong></li>
+          <li>Minimum 640px wide</li>
+          <li>Aspect ratio should match video, generally 16:9 or 4:3</li>
+          <li>Used in carousel displays in <strong>Landscape</strong> orientation, as shown here:
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/styling/image-requirements/image-use-landscape.png" alt="landscape">
+            </figure>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Thumbnail</strong>: <ul>
+          <li>Created automatically by Beacon Studio</li>
+          <li>Change by creating a new image meeting the requirements shown below and uploading it by hovering over the image and clicking <img class=”ui-image” src="/assets/images/common/upload-image.png" alt="upload image"></li>
+          <li>Use <strong>JPG</strong> or <strong>PNG</strong></li>
+          <li>Minimum 160px wide</li>
+          <li>Aspect ratio should match video, generally 16:9 or 4:3</li>
+          <li>Used in ..., as shown here:
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/styling/image-requirements/image-use-landscape.png" alt="landscape">
+            </figure>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Wide</strong>: <ul>
+          <li></li>
+          <li>
+            <table class="bcls-table">
+              <tbody class="bcls-table__body">
+                <tr>
+                  <td>Minimum</td>
+                  <td>Width: 1000px</td>
+                  <td>Height: 563px</td>
+                </tr>
+                <tr>
+                  <td>Maximum</td>
+                  <td>Width: 4000px</td>
+                  <td>Height: 2250px</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </li>
+      <li><strong>Portrait</strong>: <ul>
+          <li></li>
+          <li>
+            <table class="bcls-table">
+              <tbody class="bcls-table__body">
+                <tr>
+                  <td>Minimum</td>
+                  <td>Width: 1000px</td>
+                  <td>Height: 1500px</td>
+                </tr>
+                <tr>
+                  <td>Maximum</td>
+                  <td>Width: 2000px</td>
+                  <td>Height: 3000px</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </li>
+      <li><strong>Ultrawide</strong>: <ul>
+          <li></li>
+          <li>
+            <table class="bcls-table">
+              <tbody class="bcls-table__body">
+                <tr>
+                  <td>Minimum</td>
+                  <td>Width: 1000px</td>
+                  <td>Height: 428px</td>
+                </tr>
+                <tr>
+                  <td>Maximum</td>
+                  <td>Width: 4000px</td>
+                  <td>Height: 1714px</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </li>
+    </ul>
+
   </section>
 
-  <section class="bcls-section">
-    <h2 id="Video_Cloud_images">Video Cloud images</h2>
-    <p>
-      Whenever a video is ingested into Video Cloud, two images are automatically created and shown in the video's properties. The two images created are a <em>Poster</em> and a <em>Thumbnail</em>. The images are displayed in the <strong>IMAGES</strong> section in Studio. You will use these upload images for use in Brightcove Beacon, but must a change to the default ingest profile for proper functionality. The steps shown in the following alert box show you how to make the change. If you do not make the change, the portrait image you are uploading will keep getting sized for a thumbnail and look very poor in your Brightcove Beacon app.
-    </p>
-    <aside class="bcls-aside bcls-aside--warning language-editable">You MUST change your default ingest profile. Follow these steps:
-      <ol class="bcls-tasklist">
-        <li>In Studio go to <strong>ADMIN → Ingest Profiles</strong>.</li>
-        <li>Click on the title of your current default profile which is labeled with an <strong>Uploading default</strong> label.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/styling/image-requirements/uploading-default.png" alt="">
-          </figure>
-        </li>
-        <li>Click the <strong>Duplicate</strong> button.</li>
-        <li>Locate where the <strong>images</strong> are defined. The exact JSON may look slightly different than what is shown below, depending on the profile you have duplicated.</li>
-        <li>Alter the width and height for both the poster and thumbnail images as shown:.
-          <h4>Old Settings</h4>
-          <pre class="line-numbers">< class="language-json">{
-  "media_type": "image",
-  "format": "jpg",
-  "label": "poster",
-  <span class="bcls-highlight">"width": 1280,
-  "height": 720,</span>
-  "id": "559a8b0ee4b07cbb40be7d22"
-},
-{
-  "media_type": "image",
-  "format": "jpg",
-  "label": "thumbnail",
-  <span class="bcls-highlight">"width": 160,
-  "height": 90,</span>
-  "id": "559a8b0ee4b07cbb40be7d23"
-}</code></pre>
-          <h4>New Settings</h4>
-          <pre class="line-numbers">< class="language-json">{
-  "media_type": "image",
-  "format": "jpg",
-  "label": "poster",
-  <span class="bcls-highlight">"width": 4000,
-  "height": 2250,</span>
-  "id": "559a8b0ee4b07cbb40be7d22"
-},
-{
-    "media_type": "image",
-    "format": "jpg",
-    "label": "thumbnail",
-    <span class="bcls-highlight">"width": 3000,
-    "height": 2000,</span>
-    "id": "559a8b0ee4b07cbb40be7d23"
-}</code></pre>
-        </li>
-        <li>Click <strong>Save</strong>.</li>
-        <li>Then click the <strong>Make this my default profile</strong> link.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/styling/image-requirements/make-my-default.png" alt="">
-          </figure>
-        </li>
-        <li>Check to be sure profile is now labeled as your uploading default.</li>
-      </ol>
-      You are now ready to upload images for Brightcove Beacon using Video Cloud Studio.
-    </aside>
-    <p>Use the Studio interface to upload two images. You will decide on an images that represent your video and take the appropriate screenshots that meet the requirements shown above. You will then upload the two images into Video Cloud.</p>
-    </p>
-    <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/styling/image-requirements/studio-images.png" alt="studio images UI" />
-    </figure>
-    <p>
-      The <em>Poster</em> and a <em>Thumbnail</em> are placeholders for the images used in Brightcove Beacon.
-      <em>DO NOT follow the recommendations for the images as shown in Video Cloud Studio!</em> Instead, use these guidelines:
-    </p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Poster</th>
-          <th>Thumbnail</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>
-            Landscape image (16:9): <table>
-              <tr>
-                <td>Minimum</td>
-                <td>Width: 1000px</td>
-                <td>Height: 563px</td>
-              </tr>
-              <tr>
-                <td>Maximum</td>
-                <td>Width: 4000px</td>
-                <td>Height: 2250px</td>
-              </tr>
-            </table>
-          </td>
-          <td>
-            Poster image (2:3) <table>
-              <tr>
-                <td>Minimum</td>
-                <td>Width: 1000px</td>
-                <td>Height: 1500px</td>
-              </tr>
-              <tr>
-                <td>Maximum</td>
-                <td>Width: 2000px</td>
-                <td>Height: 3000px</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p>The image on the left in the screenshot is an example use of the portrait image. If you see a very pixelated image there you will know the default ingest profile needs to be updated.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/styling/image-requirements/portrait-used.png" alt="">
-    </figure>
-  </section>
   <section class="bcls-section">
     <h2 id="Corporate_logo">Corporate logo</h2>
     <p>
@@ -160,87 +145,10 @@ parent: styling
     </table>
   </section>
   <section class="bcls-section">
-    <h2 id="Working_in_Brightcove_Beacon">Working in Brightcove Beacon</h2>
+    <h2 id="Working_in_Brightcove_Beacon">Working in Beacon Classic</h2>
     <p>
-      When entering information in Brightcove Beacon, you will be asked for <strong>Non-Textual Data</strong>. This means images for the assets you are currently creating. These images can be broken down into three groups, those being:
+      When entering information in Beacon Classic, you will be asked for <strong>Non-Textual Data</strong>. This means images for the assets you are currently creating. These images can be broken down into three groups, those being:
     </p>
-    <ul>
-      <li>Series/Seasons</li>
-      <li>Live Events</li>
-      <li>Channel Logos</li>
-    </ul>
-    <p>Details for images of the groups follow.</p>
-    <h3>Series/Seasons</h3>
-    <p>
-      For series/seasons a page will appear similar to the following (without the red <strong>OPTIONAL</strong> text over the <strong>Thumbnail</strong>, for which you do not need to supply an image): </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/styling/image-requirements/four-images-required.png" alt="studio images UI" />
-    </figure>
-    <p>
-      When you encounter this screen, supply a <strong>JPEG</strong> image for the <strong>Portrait Poster</strong>, <strong>Landscape Poster</strong> and <strong>Wide banner</strong> matching the requirements below. You DO NOT need to supply an image for <strong>Thumbnail</strong>. If not provided, the Thumbnail image will be generated from the Portrait Poster.
-    </p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Image</th>
-          <th>Requirements</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>Portrait Poster</td>
-          <td>
-            Poster image (2:3) <table>
-              <tr>
-                <td>Minimum</td>
-                <td>Width: 1000px</td>
-                <td>Height: 1500px</td>
-              </tr>
-              <tr>
-                <td>Maximum</td>
-                <td>Width: 2000px</td>
-                <td>Height: 3000px</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td>Landscape Poster</td>
-          <td>
-            Landscape image (16:9): <table>
-              <tr>
-                <td>Minimum</td>
-                <td>Width: 1000px</td>
-                <td>Height: 563px</td>
-              </tr>
-              <tr>
-                <td>Maximum</td>
-                <td>Width: 4000px</td>
-                <td>Height: 2250px</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td>Wide Banner</td>
-          <td>
-            Landscape image (21:9): <table>
-              <tr>
-                <td>Minimum</td>
-                <td>Width: 1000px</td>
-                <td>Height: 428px</td>
-              </tr>
-              <tr>
-                <td>Maximum</td>
-                <td>Width: 4000px</td>
-                <td>Height: 1714px</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
     <h3>Live Events</h3>
     <p>
       For live events a page will appear similar to the following (without the red <strong>OPTIONAL</strong> text over the <strong>Thumbnail</strong> and <strong>Wide Banner</strong>, for which you do not need to supply images): </p>
