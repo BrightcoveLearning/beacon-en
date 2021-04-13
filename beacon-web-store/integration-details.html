@@ -1,0 +1,109 @@
+---
+title: 'Integrating with the Beacon Web Store'
+description: This topic covers Beacon Web Store integration via OIDC (Open ID Connect).
+parent: Beacon Web Store
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  
+  <section class="bcls-section">
+    <h2 id="Authentication_through_OIDC_and_entitlements">Authentication through OIDC and entitlements</h2>
+    <h3>Authentication</h3>
+    <p>Beacon leverages the following OAuth 2.0 flows for Authentication:</p>
+    <ul>
+      <li>
+        Authorization Code with PKCE: iOS, Android and Web
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/developer-topics/integration-details/oidc-1.png" alt="Authorization with PKCE">
+          <figcaption class="bcls-caption--image">Authorization with PKCE</figcaption>
+        </figure>
+      </li>
+      <li>
+        <a href="https://tools.ietf.org/html/rfc8628">Device Flow</a>
+        (Oauth 2.0 Extension): Connected and Smart TVs
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/developer-topics/integration-details/oidc-2.png" alt="Device Flow">
+          <figcaption class="bcls-caption--image">Device Flow</figcaption>
+        </figure>
+      </li>
+    </ul>
+    ,
+    <p>There are 3 tokens that are expected to be made available to Beacon:</p>
+    <ul>
+      <li>
+        Access token: validates that a user was able to authenticate and should be granted access to Beacon (
+        <strong>JWT format and need to include iss and sub</strong>
+        )
+      </li>
+      <li>
+        Refresh token: allows the user to remain logged in after the access token expires by providing a mechanism to automatically obtain a new access token on behalf of the user (as long as user is allowed access) -
+        <strong>this is especially important on TVs</strong>
+      </li>
+      <li>Identity token: standardizes the way we obtain information about users</li>
+    </ul>
+    <p>The following grant types should be supported:</p>
+    <ul>
+      <li>
+        <code translate="No">authorization_code</code>
+      </li>
+      <li>
+        <code translate="No">refresh_token</code>
+      </li>
+      <li>
+        <code translate="No">urn:ietf:params:oauth:grant-type:device_code</code>
+      </li>
+    </ul>
+    <p>
+      Following Authentication provider endpoints will need to be configured in Beacon (customer needs to provide us these so that we can configure - if
+      <a href="https://swagger.io/docs/specification/authentication/openid-connect-discovery/">OpenID Connect Discovery</a>
+      is available we can discover these):
+    </p>
+    <ul>
+      <li>Access Token (JWT)</li>
+      <li>Refresh Token (JWT)</li>
+      <li>User Info</li>
+      <li>Revoke Token (JWT)</li>
+      <li>Authorize</li>
+      <li>Pairing codes</li>
+      <li>
+        <a href="https://auth0.com/docs/tokens/json-web-tokens/json-web-key-sets">JWKS</a>
+      </li>
+      <li>Logout</li>
+      <li>
+        <a href="https://swagger.io/docs/specification/authentication/openid-connect-discovery/">OpenID Connect Discovery</a>
+        (/.well-known/openid-configuration) - Used for configuration of the system
+      </li>
+    </ul>
+    <h4>Examples of items configured in Beacon CMS</h4>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/developer-topics/integration-details/oidc-3.png" alt="Example Configuration">
+      <figcaption class="bcls-caption--image">Example Configuration</figcaption>
+    </figure>
+    <h3>Entitlements</h3>
+		<p>In terms of telling Beacon about entitlements for users, Beacon provides the following API:
+			<code translate="no">https://beacon.brightcove.com/<span class="bcls-highlight">{instance}</span>/webhook/beacon</code> (API key provided by Brightcove)</p>
+			<h4>The payload will be JSON:</h4>
+<pre class="line-numbers"><code class="language-json" translate="No">[
+  {
+    "package_name": "string",			// Commerce package for SVOD or SKU for TVOD purchases - required
+    "external_user_id": "string",			// User identifier (username or email depending on configuration of users)- required
+    "transaction_id": "string",			// Unique transaction id for purchase - required for subscriptions (this will be used in renewal)
+    "start_date": "string",				// Start date for entitlements 
+    "end_date": "string",				// End date for entitlements (applicable if a rent or a subscription)
+    "trial_end_date": "string",			// End date for a trial if applicable
+    "effective_cancelation_date": "string",		// Date by when cancellation is effective (for example, end of current subscription period)
+    "notification_type": "new",			// One of: new, renew, cancellation, buy or rent - required
+    “payment_gateway”: “beaconstore”      // One of: “beaconstore”
+  }
+]
+</code></pre>
+		<p>When using an external authentication system, the external_user_id corresponds to the subject value in the Access token</p>
+		<aside class="bcls-aside bcls-aside--information language-editable">NOTE: The API key will need to be sent in the HEADER in the auth-token key</aside>
+		<h4>Sample Postman call to the entitlement webhook:</h4>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/developer-topics/integration-details/oidc-4.png" alt="Sample Postman Call">
+			<figcaption class="bcls-caption--image">Sample Postman Call</figcaption>
+		</figure>
+  </section>
+</article>

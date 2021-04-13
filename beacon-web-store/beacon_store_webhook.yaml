@@ -1,0 +1,222 @@
+openapi: 3.0.0
+info:
+  version: 1.0.1
+  title: Beacon Store Webhook Reference
+  license:
+    name: Brightcove
+  description: |-
+    Reference for the Brightcove Beacon Webhook.
+
+    **Base URL**: https://beacon.brightcove.com/{project}
+
+
+tags:
+  - name: WebHook
+    description: |-
+      Operations for creating/updating Beacon user entitlements
+paths:
+  '/webhook/beacon':
+    post:
+      tags:
+        - WebHook
+      summary: Update user beacon store
+      description: 'Beacon Entitlement update'
+      operationId: UpdateBeaconStore
+      parameters:
+        - $ref: '#/components/parameters/auth-token'
+      requestBody:
+        description: body subscriptions
+        content: {
+          application/json: {
+            schema: {
+              type: "array",
+              items: {
+                $ref: '#/components/schemas/BeaconRequestBody'
+              }
+            }
+          }
+        }
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BeaconResponse'
+              examples:
+                1:
+                  value:
+                    success: true
+                    message: 'All entitlements processed'
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BeaconErrorResponse'
+              examples: # Multiple examples
+                1: # Distinct name
+                  value:
+                    success: false
+                    errors: 'Invalid request, no data received'
+                    message:
+                  summary: No valid structure data in body
+                2: # Distinct name
+                  value:
+                    success: false
+                    errors:
+                    message: 'Errors detected processing entitlements'
+                  summary: Errors related to validating fields
+                3: # Distinct name
+                  value:
+                    success: false
+                    errors:
+                    message: 'Errors processing entitlements'
+                  summary: Errors during the updating/saving entitlements
+                4: # Distinct name
+                  value:
+                    success: false
+                    errors: 'No valid entitlements'
+                    message: 'No valid entitlements'
+                  summary: Theres no valid entitlements to process
+        '500':
+          description: '500'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BeaconErrorResponse'
+              examples: # Multiple examples
+                1: # Distinct name
+                  value:
+                    success: false
+                    errors: No Beacon Store defined
+                    message: No Beacon Store defined
+                  summary:  Beacon Store not configured in CMS, needs to be configured in cms
+                2:
+                  value:
+                    success: false
+                    errors: Api key is not defined
+                    message: Api key is not defined
+                  summary: Api key is not defined, needs to exist in cms and not empty
+                3:
+                  value:
+                    success: false
+                    errors: Api key is not valid
+                    message: Api key is not valid
+                  summary: Api key is not valid, needs to be same as the one configured in cms
+     #       deprecated: false
+      security: [ ]
+
+components:
+  schemas:
+    BeaconRequestBody:
+      properties:
+        package_name:
+          description: Package name for subscriptions (SVOD), or the product SKU for TVOD (buy/rent)
+          type: string
+          example: "GOLD_PACKAGE"
+        payment_gateway:
+          description: Payment gateway (should be beaconstore)
+          type: string
+          maxLength: 50
+          example: "beaconstore"
+        external_user_id:
+          description: user identifier (username if using Beacon UMS or sub id from access token for external UMS systems using OIDC integration)
+          type: string
+          example: "john_smith@acme.co"
+        transaction_id:
+          description: transaction id, unique value used for subscriptions mainly in order to update or create subscriptions
+          type: string
+          maxLength: 191
+          example: "XW85649"
+        start_date:
+          description: Start date Unix timestamp
+          type: integer
+          minLength: 10
+          maxLength: 13
+          example: 1615998269
+        end_date:
+          description: End date Unix timestamp (SVOD (new, renew, cancellation) and rent)
+          type: integer
+          nullable: true
+          minLength: 10
+          maxLength: 13
+          example: 1615998269
+        trial_end_date:
+          description: Trial end date Unix timestamp ( only used when notification_type = new/renew and SVOD)
+          type: integer
+          nullable: true
+          minLength: 10
+          maxLength: 13
+          example: 1615998269
+        effective_cancellation_date:
+          description: Cancellation date Unix timestamp ( only when notification_type = cancellation)
+          type: integer
+          nullable: true
+          minLength: 10
+          maxLength: 13
+          example: 1615998269
+        notification_type:
+          description: 'new,renew,cancellation,buy,rent'
+          type: string
+          enum: [ new, renew, cancellation, buy, rent ]
+        notification_date:
+          description: Notification date Unix timestamp
+          type: integer
+          minLength: 10
+          maxLength: 13
+          example: 1615998269
+      required:
+        - package_name
+        - payment_gateway
+        - transaction_id
+        - start_date
+        - notification_type
+        - notification_date
+    BeaconResponse:
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          description: "Informational message"
+          type: string
+          example: All subscriptions processed
+      title: "Beacon Success Response"
+      type: object
+    BeaconErrorResponse:
+      properties:
+        success:
+          type: boolean
+          example: false
+        errors:
+          description: errors description
+          type: string
+        message:
+          description: error message
+          type: string
+          example: No Beacon Store defined
+      title: "Beacon Error Response"
+      type: object
+  parameters:
+    ContentType:
+      name: Content-Type
+      in: header
+      description: 'Content-Type: application/json'
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+        default: application/json
+      example: application/json
+    auth-token:
+      name: auth-token
+      in: header
+      description: '{Webhook_Api_Key}'
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string

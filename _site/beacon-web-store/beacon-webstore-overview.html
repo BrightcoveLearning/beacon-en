@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="This topic provides an overview of the Brightcove Beacon Web Store service.">
+  
+  <title>Overview: Brightcove Beacon Web Store</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="/assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
+  <script src="/assets/js/sajari-head.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> Contact Support</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><i data-feather="cloud"></i> System Status</a></span>
+    <br>
+    
+  </div>
+</header>
+<br style="clear: both;">
+<nav id="breadcrumbs" aria-label="breadcrumb">
+  <ol class="breadcrumb arr-right">
+    
+    <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
+    
+    
+    
+    <li class="breadcrumb-item"><a href="/beacon-web-store/">Beacon Web Store</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Overview: Brightcove Beacon Web Store</li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Other Brightcove Docs</option>
+					
+						
+							<option value="https://support.brightcove.com">Documentation Home</option>
+						
+					
+						
+							<option value="">-- VIDEO CLOUD --</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+						
+					
+						
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
+						
+					
+						
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
+						
+					
+						
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
+						
+					
+						
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
+						
+					
+						
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
+						
+					
+						
+							<option value="">-- VIDEO ESSENTIALS --</option>
+						
+					
+						
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon</option>
+						
+					
+						
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+						
+					
+						
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+						
+					
+						
+							<option value="">-- VIDEO CLOUD ADD-ONS --</option>
+						
+					
+						
+							<option value="https://audience.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Audience</option>
+						
+					
+						
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
+						
+					
+						
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
+						
+					
+						
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
+						
+					
+						
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+						
+					
+						
+							<option value="https://social.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+						
+					
+				</select>
+      <nav class="sidenav" id="side_nav">
+        
+        
+        <h5><a href="/index.html">Home</a></h5>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/getting-started/index.html"><strong>+</strong> &nbsp;Getting Started</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/getting-started/design-best-practices.html">App Design Best Practices</a></li>
+          
+          
+          
+          <li><a href="/getting-started/app-design-considerations.html">App Design Considerations</a></li>
+          
+          
+          
+          <li><a href="/getting-started/learning-guide-bc-beacon.html">Brightcove Beacon Learning Guide</a></li>
+          
+          
+          
+          <li><a href="/getting-started/implementation-phases.html">Implementation Phases</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/media/index.html"><strong>+</strong> &nbsp;Managing Media</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/media/adding-application-id-player-embed-code.html">Adding an Application ID</a></li>
+          
+          
+          
+          <li><a href="/media/adding-audio-tracks-videos.html">Adding Audio Tracks to Videos</a></li>
+          
+          
+          
+          <li><a href="/media/adding-captions-videos.html">Adding Captions to Videos</a></li>
+          
+          
+          
+          <li><a href="/media/adding-chapters-video.html">Adding Chapters to a Video</a></li>
+          
+          
+          
+          <li><a href="/media/capturing-poster-and-thumbnail-images.html">Capturing Poster and Thumbnail Images</a></li>
+          
+          
+          
+          <li><a href="/media/choosing-correct-embed-code.html">Choosing the Correct Embed Code</a></li>
+          
+          
+          
+          <li><a href="/media/configuring-season-availability.html">Configuring Season Availability</a></li>
+          
+          
+          
+          <li><a href="/media/configuring-series-availability.html">Configuring Series Availability</a></li>
+          
+          
+          
+          <li><a href="/media/configuring-video-availability.html">Configuring Video Availability</a></li>
+          
+          
+          
+          <li><a href="/media/creating-and-managing-playlists.html">Creating and Managing Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/creating-managing-rule-sets.html">Creating and Managing Rule Sets</a></li>
+          
+          
+          
+          <li><a href="/media/creating-series-seasons-episodes.html">Creating Series, Seasons & Episodes</a></li>
+          
+          
+          
+          <li><a href="/media/downloading-videos.html">Downloading Videos</a></li>
+          
+          
+          
+          <li><a href="/media/editing-series-details.html">Editing Series Details</a></li>
+          
+          
+          
+          <li><a href="/media/editing-video-details.html">Editing Video Details</a></li>
+          
+          
+          
+          <li><a href="/media/editing-video-details-using-quick-edit.html">Editing Details using Quick Edit</a></li>
+          
+          
+          
+          <li><a href="/media/editing-series-details.html">Editing Series Details</a></li>
+          
+          
+          
+          <li><a href="/media/exporting-video-data.html">Exporting Video Data</a></li>
+          
+          
+          
+          <li><a href="/media/getting-started-media-module.html">Getting Started with the Media Module</a></li>
+          
+          
+          
+          <li><a href="/media/increasing-quality-poster-and-thumbnail-images.html">Increasing the Quality of Poster Images</a></li>
+          
+          
+          
+          <li><a href="/media/introduction-playlists.html">Introduction to Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/managing-series.html">Managing Series</a></li>
+          
+          
+          
+          <li><a href="/media/managing-videos.html">Managing Videos</a></li>
+          
+          
+          
+          <li><a href="/media/organizing-videos-using-folders.html">Organizing Videos Using Folders</a></li>
+          
+          
+          
+          <li><a href="/media/overview-adding-captions-video.html">Overview: Adding Captions to a Video</a></li>
+          
+          
+          
+          <li><a href="/media/publishing-videos-and-playlists.html">Publishing Videos and Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/replacing-video-source-file.html">Replacing a Video Source File</a></li>
+          
+          
+          
+          <li><a href="/media/retranscoding-videos.html">Retranscoding Videos</a></li>
+          
+          
+          
+          <li><a href="/media/searching-videos-and-playlist.html">Searching Videos and Playlists</a></li>
+          
+          
+          
+          <li><a href="/media/setting-required-fields-videos.html">Setting Required Fields</a></li>
+          
+          
+          
+          <li><a href="/media/sharing-videos-other-accounts.html">Sharing Videos</a></li>
+          
+          
+          
+          <li><a href="/media/styling-captions.html">Styling Captions</a></li>
+          
+          
+          
+          <li><a href="/media/uploading-videos.html">Uploading Videos</a></li>
+          
+          
+          
+          <li><a href="/media/uploading-video-images.html">Uploading Video Images</a></li>
+          
+          
+          
+          <li><a href="/media/uploading-videos-remote-urls.html">Uploading Videos Remote URLs</a></li>
+          
+          
+          
+          <li><a href="/media/working-cue-points.html">Working with Cue Points</a></li>
+          
+          
+          
+          <li><a href="/media/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a></li>
+          
+          
+          
+          <li><a href="/media/working-remote-asset-videos.html">Working with Remote Asset Videos</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/pages/index.html"><strong>+</strong> &nbsp;Managing Pages</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/pages/getting-started-layout-module.html">Getting Started with the Layout Module</a></li>
+          
+          
+          
+          <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
+          
+          
+          
+          <li><a href="/pages/creating-managing-pages.html">Creating and Managing Pages</a></li>
+          
+          
+          
+          <li><a href="/pages/managing-playlists-on-pages.html">Managing Playlists on Pages</a></li>
+          
+          
+          
+          <li><a href="/pages/page-details-overview.html">Page Details Overview</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/cloud-playout/index.html"><strong>+</strong> &nbsp;Using Cloud Playout</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/adding-bumpers-to-vod.html">Adding Bumpers to Cloud Playout</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+          
+          
+          
+          <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/monetization/index.html"><strong>+</strong> &nbsp;Monetizing Content</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/monetization/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+          
+          
+          
+          <li><a href="/monetization/creating-stripe-account.html">Creating a Stripe Account</a></li>
+          
+          
+          
+          <li><a href="/monetization/creating-subscription-package.html">Creating a Subscription Package</a></li>
+          
+          
+          
+          <li><a href="/monetization/promo-codes.html">Creating Promo Coupons</a></li>
+          
+          
+          
+          <li><a href="/monetization/vc-custom-fields.html">Custom Fields for Monetization</a></li>
+          
+          
+          
+          <li><a href="/monetization/implementing-authvod.html">Implementing AuthVOD</a></li>
+          
+          
+          
+          <li><a href="/monetization/live-ssai.html">Implementing Live SSAI</a></li>
+          
+          
+          
+          <li><a href="/monetization/vod-ssai.html">Implementing VOD SSAI</a></li>
+          
+          
+          
+          <li><a href="/monetization/monetization-options.html">Understanding Monetization Options</a></li>
+          
+          
+          
+          <li><a href="/monetization/using-subscription-package.html">Using a Subscription Package</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/beacon-web-store/index.html"><strong>+</strong> &nbsp;Beacon Web Store</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/beacon-web-store/beacon-webstore-overview.html">Overview: Brightcove Beacon Web Store</a></li>
+          
+          
+          
+          <li><a href="/beacon-web-store/integration-details.html">Integrating with the Beacon Web Store</a></li>
+          
+          
+          
+          <li><a href="/beacon-web-store/beacon-store-webhook-reference.html">Beacon Store Webhook Reference</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/reviewing-analytics/index.html"><strong>+</strong> &nbsp;Reviewing Analytics</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/reviewing-analytics//analytics-business-metrics.html">Beacon Analytics Business Metrics</a></li>
+          
+          
+          
+          <li><a href="/reviewing-analytics/ga-self-configuration.html">Google Analytics Self Configuration</a></li>
+          
+          
+          
+          <li><a href="/reviewing-analytics/viewing-analytics-data.html">Viewing Analytics Data</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/admin/index.html"><strong>+</strong> &nbsp;Administering Accounts</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/admin/configuring-language-settings.html">Configuring Language Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-ingest-profiles-context-aware-encoding.html">Creating Ingest Profiles for Context Aware Encoding</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-ingest-profiles-dynamic-delivery.html">Creating Ingest Profiles for Dynamic Delivery</a></li>
+          
+          
+          
+          <li><a href="/admin/creating-legacy-ingest-profiles.html">Creating Legacy Ingest Profiles</a></li>
+          
+          
+          
+          <li><a href="/admin/ingest-profiles-best-practices.html">Ingest Profiles Best Practices</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-account-information.html">Managing Account Information</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-account-settings.html">Managing Account Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-api-authentication-credentials.html">Managing API Authentication Credentials</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-ingest-profiles.html">Managing Ingest Profiles</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-profile-information.html">Managing Profile Information</a></li>
+          
+          
+          
+          <li><a href="/admin/managing-users.html">Managing Users</a></li>
+          
+          
+          
+          <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles (DD & CAE)</a></li>
+          
+          
+          
+          <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Standard Ingest Profiles (Legacy)</a></li>
+          
+          
+          
+          <li><a href="/admin/viewing-billing-information.html">Viewing Billing Information</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/registered-users/index.html"><strong>+</strong> &nbsp;Registered Users</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/registered-users/working-with-registered-users.html">Working with Registered Users</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/publishing-apps/index.html"><strong>+</strong> &nbsp;Publishing Apps</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li class="submenu-header">
+            <a href="/publishing-apps/general/index.html"><strong>+</strong> &nbsp;General Information</a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/publishing-apps/general/common-required-info.html">Common Required Information for Submitting Apps</a></li>
+              
+              <li><a href="/publishing-apps/general/device-apps-validation-guide.html">Device Apps Validation Guide</a></li>
+              
+              <li><a href="/publishing-apps/general/in-app-subscription-resources.html">In-App Subscription Resources</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/publishing-apps/android/index.html"><strong>+</strong> &nbsp;Android</a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/publishing-apps/android/submitting-to-android.html">Submitting New Apps to the Android Store</a></li>
+              
+              <li><a href="/publishing-apps/android/updating-android-apps-to-bcb.html">Updating Android Apps to Brightcove Beacon</a></li>
+              
+              <li><a href="/publishing-apps/android/adding-subscriptions-in-android.html">Adding Subscriptions to Android</a></li>
+              
+              <li><a href="/publishing-apps/android/improving-relevance-android.html">Improving Search Relevance in the Android Play Store</a></li>
+              
+              <li><a href="/publishing-apps/android/installing-android-test-build.html">Installing an Android Test Build</a></li>
+              
+              <li><a href="/publishing-apps/android/managing-google-subscriptions-1.html">Managing Google Subscriptions Part 1</a></li>
+              
+              <li><a href="/publishing-apps/android/managing-google-subscriptions-2.html">Managing Google Subscriptions Part 2</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/publishing-apps/fire-tv/index.html"><strong>+</strong> &nbsp;Fire TV</a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/publishing-apps/fire-tv/installing-fire-tv-test-build.html">Installing a Fire TV Test Build</a></li>
+              
+              <li><a href="/publishing-apps/fire-tv/submitting-to-amazon.html">Submitting to the Amazon Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/publishing-apps/ios-tvos/index.html"><strong>+</strong> &nbsp;iOS/tvOS</a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/publishing-apps/ios-tvos/installing-ios-test-build.html">Installing an iOS/tvOS Test Build</a></li>
+              
+              <li><a href="/publishing-apps/ios-tvos/submitting-to-apple.html">Submitting to the Apple Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/publishing-apps/panasonic/index.html"><strong>+</strong> &nbsp;Panasonic</a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/publishing-apps/panasonic/submitting-to-panasonic.html">Submitting to the Panasonic Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/publishing-apps/roku/index.html"><strong>+</strong> &nbsp;Roku</a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/publishing-apps/roku/configuring-inchannel-products.html">Configuring In-Channel Products in Roku</a></li>
+              
+              <li><a href="/publishing-apps/roku/installing-roku-test-build.html">Installing a Roku Test Build</a></li>
+              
+              <li><a href="/publishing-apps/roku/submitting-to-roku.html">Submitting to the Roku Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+          
+          <li class="submenu-header">
+            <a href="/publishing-apps/samsung/index.html"><strong>+</strong> &nbsp;Samsung</a>
+            <ul class="sidenav-subsubmenu" style="display:none;">
+              
+              <li><a href="/publishing-apps/samsung/samsung-partner.html">Becoming a Samsung Partner</a></li>
+              
+              <li><a href="/publishing-apps/samsung/submitting-to-samsung.html">Submitting to the Samsung Store</a></li>
+              
+            </ul>
+          </li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/styling/index.html"><strong>+</strong> &nbsp;Styling & Appearance</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/styling/branding-beacon-apps.html">Branding Brightcove Beacon Apps</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/general/index.html"><strong>+</strong> &nbsp;General Information</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/general/creating-stripe-account.html">Creating a Stripe Account</a></li>
+          
+          
+          
+          <li><a href="/general/glossary.html">Glossary</a></li>
+          
+          
+          
+          <li><a href="/general/image-requirements.html">Image Specifications</a></li>
+          
+          
+          
+          <li><a href="/general/known-issues.html">Known Issues</a></li>
+          
+          
+          
+          <li><a href="/general/overview-context-aware-encoding.html">Overview of Context Aware Encoding</a></li>
+          
+          
+          
+          <li><a href="/general/overview-dynamic-delivery.html">Overview of Dynamic Delivery</a></li>
+          
+          
+          
+          <li><a href="/general/remote-asset-limitations.html">Remote Asset Limitations</a></li>
+          
+          
+          
+          <li><a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Supported Video and Audio Formats</a></li>
+          
+          
+          
+          <li><a href="/general/working-360deg-videos.html">Working with 360° Videos</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/training/index.html"><strong>+</strong> &nbsp;Training</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/training/placeholder.html">Placeholder Page</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/release-notes/index.html"><strong>+</strong> &nbsp;Release Notes</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/release-notes/product-updates.html">Beacon Studio Release Notes</a></li>
+          
+          
+        </ul>
+        
+        
+        
+        <h5 class="submenu-header"><a href="/support/index.html"><strong>+</strong> &nbsp;Support</a></h5>
+        <ul class="sidenav-submenu" style="display:none;">
+          
+          
+          <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+          
+          
+          
+          <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+          
+          
+          
+          <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+          
+          
+        </ul>
+        
+        
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+      <!-- bootstrap layout -->
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+
+
+<h1>Overview: Brightcove Beacon Web Store</h1>
+<article class="bcls-article">
+  <summary>This topic provides an overview of the Brightcove Beacon Web Store service.</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>The Beacon Web Store is a configuration, features and API integration that enables Beacon licensees to implement subscriptions, in Bring Your Own (BYO) web stores. The content owners implement the store front and business logic for renting and selling and the payment system integration in the web store. An Beacon API provides the interface for the store to add, remove and edit the resulting entitlement changes within the Beacon CMS. The logic defining access and display of the content titles in Beacon apps is unchanged.</p>
+    <p>Implementation of all financial reporting, dashboards, and tax payment are not managed or tracked in Beacon and are the responsibility of the Content Owner.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="glossary_of_terms">Glossary of terms</h2>
+    <p>The table below explains terms used in this topic.</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">Glossary of Terms</caption>
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Term</th>
+          <th>Explanation</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Web Store</td>
+          <td>A BYO commerce website for selling, renting and selling subscriptions</td>
+        </tr>
+        <tr>
+          <td>Payment processor</td>
+          <td>A system used by the web store to process transactions and deposit revenue into an account</td>
+        </tr>
+        <tr>
+          <td>SKU</td>
+          <td>Identifier for Beacon Assets</td>
+        </tr>
+        <tr>
+          <td>SVOD</td>
+          <td>Subscription VOD, recurring payment model</td>
+        </tr>
+        <!-- <tr>
+          <td>TVOD</td>
+          <td>One time purchase or rental payment model</td>
+        </tr> -->
+        <tr>
+          <td>Plan</td>
+          <td>An SVOD offer definition</td>
+        </tr>
+        <tr>
+          <td>UMS</td>
+          <td>User Management System</td>
+        </tr>
+        <tr>
+          <td>Proxy UMS</td>
+          <td>Proxy copies of users that map to master copies in BYO UMS. Beacon entitlements are managed in the Proxy UMS system.</td>
+        </tr>
+        <tr>
+          <td>OIDC</td>
+          <td>Open ID Connect, a protocol to communication Authorization during Authentication</td>
+        </tr>
+        <tr>
+          <td>Authentication</td>
+          <td>Identification of specific users for the purpose of granting access </td>
+        </tr>
+        <tr>
+          <td>Authorization</td>
+          <td>Communicating user entitlements via tokens upon login</td>
+        </tr>
+        <tr>
+          <td>In App Purchase (available in Q2 2021)</td>
+          <td>For cases where customers are adding Beacon apps to their web store product offers, and wish to sell the new product configurations through app stores, Beacon Stores can be configured for in app purchase. </td>
+        </tr>
+        <tr>
+          <td>Entitlements</td>
+          <td>Access to Beacon content or features</td>
+        </tr>
+        <tr>
+          <td>Purchase Notifications</td>
+          <td>A message, sent from a Beacon store to Beacon CMS that indicates a change in purchase status (purchase, cancel) of a subscription or asset rights</td>
+        </tr>
+        <tr>
+          <td>Connected TVs</td>
+          <td>HDMI connected external devices that provide app management support to televisions: Apple TV, FireTV, Roku, and Android TV STBs</td>
+        </tr>
+        <tr>
+          <td>Smart TV</td>
+          <td>Televisions with built-in support for app management</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_Components">Beacon Store components</h2>
+    <p>All Beacon Store purchases are made through web stores. The selling model requires Viewers to visit the customer web store, purchase content and then open Beacon apps on their supported devices as a separate action.</p>
+    <p>The required components are:</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">Beacon Store Components</caption>
+      <thead class="bcls-table__head">
+          <tr>
+              <th>Component</th>
+              <th>Responsibility</th>
+              <th>Description</th>
+          </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+          <tr>
+              <td>Web Store</td>
+              <td>Content Owner</td>
+              <td>A user provided web store that implements the logic and process for selling and renting access to individual content titles and renewable subscriptions.</td>
+          </tr>
+          <tr>
+              <td>Payment Processor</td>
+              <td>Content Owner</td>
+              <td>A system for processing payments for items sold through the web store.  This service will transact credit card debit card, e-wallet, and QR code payments in local currency and settle with the bank of the content owner.</td>
+          </tr>
+          <tr>
+              <td>User Management System</td>
+              <td>Content Owner</td>
+              <td>A User Management System must be provided for storing records of registered users.  The owners of existing web stores will want to maintain their existing UMS since it contains all of the historical information about their customers.</td>
+          </tr>
+          <tr>
+              <td>Brightcove Beacon</td>
+              <td>Brightcove</td>
+              <td>Brightcove Beacon provides configuration and packaging of content into named SKUs that are sold on the web store and the Beacon Entitlements API where the web store registers entitlements for specific content access rights in viewer records.</td>
+          </tr>
+          <tr>
+              <td>Entitlement Notifications</td>
+              <td>Brightcove and Content Owner</td>
+              <td>
+                The Webstore sends notifications of commerce events such as subscription purchase or cancellation to Beacon and Beacon updates the user entitlements to Beacon assets in the Beacon UMS.
+                <p>(Coming in Q2 2021) In cases where Beacon Store In App Purchases are required, the web store will maintain a separate entitlements database that must be updated.  Beacon will send notifications to an end point defined by the customer and their system is responsible for maintaining the matching entitlements. </p>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_Workflows_and_Configurations">Beacon Store Workflows and Configurations</h2>
+    <p>You may well have already had a commerce web sites as an integral component of their businesses prior to introducing Beacon and want to add Beacon subscriptions to your web store products.  The web stores consist of three components:</p>
+    <ol>
+      <li><strong>Web store</strong> - The web store is your organization’s commerce site.  It presents the products, pricing and purchase models. </li>
+      <li><strong>Payment processor</strong> - The payment processor is a system that processes transactions, accepting payment from credit cards, debit cards and e-wallets, deposits the payments in the organization’s bank account and sends receipts to the purchaser.</li>
+      <li><strong>User Management System</strong> - Your organization maintains a list of their registered patrons in their UMS.</li>
+    </ol>
+
+    <p>The Beacon Store integration has two development activities</p>
+    <ol>
+      <li><strong>Beacon receives notifications of financial transactions from the web store</strong> - Sales and cancellations of Beacon subscriptions from the web store are reported to a Beacon API.  Beacon adds or removes entitlements based on these notifications.</li>
+      <li><strong>Connect and synchronize the Beacon and Web Store User Management Systems</strong> - The Webstore UMS user record contains the master record and the user and is the source of stored user data.  Proxy users are created in the Beacon UMS for each of the registered patrons.  Beacon assigns entitlements to the proxy user record upon receiving transaction notifications.  Changes in the store UMS such as adding and deleting users are applied to matching user records in the Beacon UMS.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_Configurations">Beacon Store Configurations</h2>
+    <p>Beacon Stores are pre-existing, customer owned and operated BYO web stores that are integrated with Beacon for the purpose of adding Beacon subscriptions to the list of products sold on the web store.  Arts organizations provide an example illustrating the  two primary selling models for supporting this objective.</p>
+    <p>Arts organizations currently sell subscriptions, tickets and physical merchandise related to performances through their web stores.  Therefore, there are existing web stores, user management, payment processing and entitlement tracking systems in place to manage that commerce.</p>
+    <p>Some organizations have decided to expand their audience by including virtual access to these same events as well as recorded content.  They further want to consolidate the entire commerce management process within their web stores.</p>
+    <p>A subset of organizations want to achieve the same result with their web stores, and want to sell those same products as in app purchases in the app stores (Apple Store, Google Play, Amazon, Roku and the Stripe integration with the Beacon Web app).</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Web_Store_Only_Purchases">Web Store Only Purchases</h2>
+    <p>Web store only workflow is implemented as shown in Figure 1.  The customer brings their own web store, payment processor and UMS.  The integration points are:</p>
+    <ul>
+      <li>
+        <strong>UMS Proxy Users</strong> - The full records of the registered users are maintained in the customer’s BYO UMS and that is the source of truth for user account and account management of the user.   User authentication on login occurs in the BYO UMS.  Proxy users are created in the Beacon UMS upon authentication or subscription.   When users are deleted from the UMS, proxy users are also deleted from Beacon.
+        <p>The synchronization for authentication and account management is accomplished using OIDC (<a href="https://openid.net/developers/specs/">Open ID Connect</a>) protocol, an extension of OAuth 2.0. You must either provide a system with native OIDC support or update your UMS interface to support OIDC.</p>
+      </li>
+      <li><strong>Purchase Notification</strong> - The web store is modified by you to send notifications of Commerce Events to the Beacon Entitlements API. The notification includes the USER ID and PRODUCT SKU.  When Beacon receives the notification the appropriate update to the entitlement in the User record is recorded in the Beacon UMS.  Thus bestowing or revoking the entitlement that enables the user to view content in Beacon apps.  The technical Entitlements API interface is defined in <a href="/developer-topics/integration-details.html">Beacon Integration Details</a></li>
+    </ul>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/developer-topics/beacon-web-store/beacon-store.png" alt="Beacon Store">
+      <figcaption class="bcls-caption--image">Beacon Store</figcaption>
+    </figure>
+    <p>Configuration details:</p>
+    <ul>
+      <li>The subscription definitions in webstore and Beacon <strong>MUST</strong> be configured with the IDENTICAL SKU names.</li>
+      <li>The web store notifications are sent to a web hook URL that is presented from the Beacon CMS.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_with_In_App_Purchases">Beacon Store with In App Purchases</h2>
+    <p>The Web store within the app purchase workflow is implemented as shown in Figure 2.  In this model, in app purchases can be made from the Amazon, Apple, Google and Roku stores and the your web store.  You are responsible for:</p>
+    <ul>
+      <li>Your own web store</li>
+      <li>The payment processor</li>
+      <li>The UMS</li>
+      <li>Merchant accounts at the required stores</li>
+    </ul>
+    <p>Brightcove Beacon provides the in app purchase integrations.  The integration points are modified from what is described in the previous section to include payment notification FROM Beacon TO the webstore of successful in app purchases that occur.  The notification messages generate by Beacon follow a similar schema.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/developer-topics/beacon-web-store/beacon-store-with-in-app-purchases.png" alt="Beacon Store with In-App Purchases">
+      <figcaption class="bcls-caption--image">Beacon Store with In-App Purchases</figcaption>
+    </figure>
+    <p>Configuration details:</p>
+    <ul>
+      <li>The subscription definitions in webstore and Beacon <strong>MUST</strong> be configured with the IDENTICAL SKU names.</li>
+      <li>The web store notifications are sent to a web hook URL that is presented from the Beacon CMS.</li>
+      <li>Beacon communications are sent to a webhook URL that is presented from a service of the your choosing.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="User_Management_Systems">User Management Systems</h2>
+    <p>The typical use case for Beacon stores is the integration of Beacon with a pre-existing, established web store. Less common is the launch of a new service with a new web store for managing commerce.</p>
+    <h3>Externally Connected UMS</h3>
+    <p>Pre-existing web stores are always integrated with user management and payment processing systems.  In this case, your goal is to integrate Beacon within the pre-existing commerce configuration.  Your UMS will remain the point of authentication and user record management.  Therefore, the integration will use the customers UMS to authenticate and Authorize Beacon users.  The user’s email address is used as the account ID and the entitlements are associated with that account.  All user personal information data is stored in the BYO UMS.</p>
+    <p>External BYO UMS systems interface with Beacon using the OIDC interface protocol.  Open ID Connect is an extension to OAuth  that standardizes identity token schemas.</p>
+    <h3>Mobile and Web UMS Configuration</h3>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/developer-topics/beacon-web-store/mobile-web-ums.png" alt="Mobile and Web UMS">
+      <figcaption class="bcls-caption--image">Mobile and Web UMS</figcaption>
+    </figure>
+    <ol>
+      <li>User selects to login in Beacon App</li>
+      <li>App interacts with the OIDC provider to guide users through login flow. On success, access, refresh and identity tokens are provided to the app</li>
+      <li>App uses access token to connect to Beacon backend</li>
+      <li>Beacon backend validates access token</li>
+    </ol>
+    <h3>Connected and SmartTV UMS Configuration</h3>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/developer-topics/beacon-web-store/tv-ums.png" alt="Connected and SmartTV UMS">
+      <figcaption class="bcls-caption--image">Connected and SmartTV UMS</figcaption>
+    </figure>
+    <ol>
+      <li>User selects to login in Beacon App</li>
+      <li>App requests a device code</li>
+      <li>User goes to Mobile or web device, enters authentication URL and device code</li>
+      <li>Device interacts with OIDC provider to authenticate user</li>
+      <li>Connected or Smart TV continuously poll the OIDC provider to find out if user authenticated, when authenticated, access, refresh and identity tokens are provided to the app</li>
+      <li>App uses access token to connect to Beacon backend</li>
+      <li>Beacon backend validates access token</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_User_Management_Autosync">Beacon User Management Autosync</h2>
+    <p>When integrating an existing UMS with Beacon, proxy users must be created in the Beacon UMS so that entitlements created by Beacon Store sales notifications can be assigned to the proper user.</p>
+    <p>Users are maintained in Beacon as a result of events in the customer’s UMS.  Through the OIDC interface, users are created in Beacon when they authenticate in the external UMS or if an entitlement is sent to Beacon. No manual synchronization is required.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Beacon_Store_Monetization_Models">Beacon Store Monetization Models</h2>
+    <p>Beacon Stores are configurable to support SVODtransactions.   Configuration details:</p>
+    <h3>SVOD configuration</h3>
+    <h4>Beacon configuration</h4>
+    <ol class="bcls-tasklist-restart">
+      <li>Create an SVOD Plan in Beacon</li>
+      <li>Set state to UNPUBLISHED in Beacon</li>
+      <li>Define a SKU for the plan in Beacon</li>
+      <li>Assign content to the plan</li>
+    </ol>
+    <h4>Web store configuration</h4>
+    <ol class="bcls-tasklist-restart">
+      <li>Create an SVOD Plan/product in the web store and web store payment system</li>
+      <li>Give the play <strong>the same name as that used in Beacon</strong></li>
+      <li>Copy the SKU from Beacon into the SKU ID in the web store payment system</li>
+    </ol>
+    <!-- <h3>TVOD configuration</h3>
+    <p>(TBD)</p> -->
+  </section>
+</article>
+<!-- complete bootstrap layout -->
+<!-- <nav id="more_resources">
+  <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
+  <ul style="list-style: none;">
+    <li><a href="https://beacon-help.support.brightcove.com" target="_blank"><img src="/assets/images/feather/search.svg" alt="Search" >Search Brightcove Beacon Documentation <img src="/assets/images/feather/external-link-blue.svg" alt="External Link" class="external-link-icon"></a></li>
+    <li><a href="/#" target="_blank"><img src="/assets/images/feather/file-text.svg" alt="Release Notes">View Release Notes <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+    <li><a href="https://status.brightcove.com" target="_blank"><img src="/assets/images/feather/info.svg" alt="System Status"> System Status <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+    <li><a href="https://supportportal.brightcove.com/s/login/" target="_blank"><img src="/assets/images/feather/message-circle.svg" alt="Contact Support"> Contact Support <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+  </ul>
+</nav> -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div id="last_updated" class="last-updated">
+  Page last updated on 12 Apr 2021
+</div>
+
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  <script src="/assets/js/local.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+    <link rel="stylesheet" href="/assets/css/local.css" />
+		<script>
+			feather.replace()
+		</script>
+</body>
+
+</html>
