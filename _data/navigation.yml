@@ -111,6 +111,15 @@
     - name: Page Details Overview
       url: /pages/page-details-overview.html
 - section:
+  name: Managing Channels
+  icon: '<img class="bcls-icon" src="/assets/images/feather/send.svg">'
+  url: '/channels/index.html'
+  docs:
+    - name: Creating a Beacon Channel
+      url: /channels/creating-a-channel.html
+    - name: Creating an Electronic Program Guide (EPG)
+      url: /channels/electronic-program-guides.html
+- section:
   name: Using Cloud Playout
   icon: '<img class="bcls-icon" src="/assets/images/feather/cloud-lightning.svg">'
   url: /cloud-playout/index.html

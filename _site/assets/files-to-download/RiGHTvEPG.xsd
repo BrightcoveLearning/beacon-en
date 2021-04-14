@@ -1,0 +1,44 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.orca.tv/RiGHTv/7.0/EPG" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RiGHTvEPG">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ChannelsList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="channel">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="program" maxOccurs="unbounded" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="title">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:minLength value="1"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="description"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:int" name="id" use="optional"/>
+                        <xs:attribute type="xs:dateTime" name="time" use="required" />
+                        <xs:attribute type="xs:duration" name="duration" use="required"/>
+                        <xs:attribute type="xs:string" name="delete" use="optional"/>
+                        <xs:attribute type="xs:string" name="pvrEnabled" use="optional"/>
+                        <xs:attribute type="xs:string" name="stovEnabled" use="optional"/>
+                        <xs:attribute type="xs:string" name="catchUpEnabled" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="id" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="version"/>
+      <xs:attribute type="xs:string" name="language"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
