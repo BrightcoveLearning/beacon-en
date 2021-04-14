@@ -1,0 +1,233 @@
+---
+title: Streaming VODs to a Channel
+description: 'In this topic, you will learn how to stream a set of video-on-demand assets (VODs) as a Live stream to a Channel in Brightcove Beacon.'
+parent: Using Brightcove Beacon
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="overview">Overview</h2>
+    <p>To stream a set of VODs as a live stream to a channel in Brightcove Beacon, you must follow a series of steps to create the video feed and send it to your third-party Cloud streaming partner.</p>
+    <aside class="bcls-aside bcls-aside--information">At the moment, Brightcove doesn't support this feature, so it is necessary to use the service from an external third-party company like Frequency, Veset, or Amagi to complete the process of generating a Live Stream from a set of VODs.</aside>
+    <p>A high-level view of the process is:</p>
+
+    <ol>
+      <li>Tag the videos you wish to use in your stream.</li>
+      <li>Create the XML video feed of your desired videos with the Social Syndication API. </li>
+      <li>Send your XML video feed URL to your third party Cloud Streaming partner.</li>
+      <li>Create a remote video in the Media module with the URL provided by your Cloud Streaming partner.</li>
+      <li>Connect the remote video with Brightcove Beacon via the video ID.</li>
+      <li>Upload the XML file provided by your Cloud Streaming provider to your Amazon S3 bucket to generate the Electronic Programming Guide (EPG)</li>
+    </ol>
+    <p>The rest of this document will provide details for each of the steps above.</p>
+  </section>
+
+  <section>
+    <h2 id="creating-video-feed">Tag the videos that will be in the stream</h2>
+    <p>You will use tags (metadata) to mark the videos you want to be in your stream.</p>
+    <ol class="bcls-tasklist">
+      <li>In Video Cloud Studio open the <strong>Media</strong> module. (The numbers in the screenshot refer to later steps.)
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/media-module.png" />
+        </figure>
+      </li>
+      <li>Check all the checkboxes in front of the videos you wish to use in your stream.</li>
+      <li>
+        Click the <strong>Quick Edit</strong> button located above your list of videos.
+      </li>
+      <li>
+        In the <strong>Quick Edit</strong> panel that appears to the right of your video titles, in the <strong>Tags to Add</strong> input box, enter the tag you choose to use to group all the videos you want in your stream. In this example the tag <strong>Aug_Stream</strong> is used.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/quick-edit-panel.png" />
+        </figure>
+        <aside class="bcls-aside bcls-aside--information">The tag will be needed to fill the XML template information. </aside>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="creating-video-feed">Creating the XML Video Feed with the Social Syndication API</h2>
+    <p>To stream your marked set of VODs as a live stream you need to create a Video Feed XML file. This file will contain all the information of the videos you wish stream. This file is a requirement for any third party Cloud Streaming partner such as Frequency, Veset, or Amagi. The following provides details of this process:</p>
+    <ul>
+      <li>You will need an API Development tool as <a href="https://www.postman.com/" target="_blank">Postman</a> or <a href="https://insomnia.rest/" target="_blank">Insomnia</a>. In this example <strong>Postman</strong> will be used.</li>
+      <li>To create the Video Feed XML file, you will need to use the Brightcove Social Syndication API, for information on how to use the API to obtain the XML URL please visit the <a href="https://apis.support.brightcove.com/social-syndication/getting-started/public-syndication-api-overview.html" target="_blank">Social Syndication API documentation</a>.
+      </li>
+      <li>Authentication for most platform APIs is via a temporary OAuth2 access token. A few APIs use a permanent API key or policy key instead. See the <a href="https://apis.support.brightcove.com/social-syndication/getting-started/public-syndication-api-overview.html" target="_blank">documentation</a> on the individual APIs for details.</li>
+    </ul>
+    <ol class="bcls-tasklist-restart">
+      <li>Open your API client tool, in this example <em>Postman</em> is used.</li>
+      <li>Select <strong>POST</strong> from the API call type dropmenu.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/5.5-post-call.png" />
+        </figure>
+      </li>
+      <li>Copy the Social Syndication API call:
+        <pre class="line-numbers"><code class="language-http" translate="No">https://social.api.brightcove.com/v1/accounts/your-account-id/mrss/syndications</code></pre>
+      </li>
+      <li>Paste the Social Syndication API call in the URL field and change the URL data with your own account ID information.</li>
+      <li>Select the <strong>Body</strong> tab in your API client.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/6.5-body-call.png" />
+        </figure>
+      </li>
+      <li>Copy the following Social Syndication Resource template:
+        <pre class="line-numbers"><code class="language-json" translate="No">
+{
+  "name": "Your Channel Syndication Videos",
+  "type": "universal",
+  "include_all_content": false,
+  "include_filter": "tags:yourtag",
+  "title": "80s Music Videos",
+  "description": "Amateur Tokyo drift!",
+  "destination_url": "http://mywebsite.com",
+  "keywords": "80s, rock",
+  "author": "Rick Astley",
+  "category": "Music",
+  "album_art_url": "http://my_album_art.jpg",
+  "explicit": "no",
+  "owner_name": "http://my_album_art.jpg",
+  "owner_email": "rick@astley.com",
+  "language": "en-us",
+  "fetch_sources": true,
+  "fetch_digital_master": false,
+  "fetch_dynamic_renditions": true,
+  "sort": "-created_at"
+ } </code></pre>
+      </li>
+      <li>Paste the Social Syndication Resource template in the <strong>Body</strong> text field. </li>
+      <li>Edit the Social Syndication Resource template data with your own information. </li>
+      <li>Remember to add the Tag you created previously in Video Cloud, in the <strong>"include_filter": "tags: YourTag"</strong> field.
+      </li>
+      <li>Click the <strong>Send</strong> button in your API client to make the <strong>POST</strong> call.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/6-first-api-call.png" />
+        </figure>
+      </li>
+      <li>Note that the Social Syndication API response adds some read-only fields:
+        <pre class="line-numbers"><code class="language-json" translate="No">
+ {
+    "id": "7f594cd3-4853-4174-aff3-203c3e99e9c2",
+    "name": "Your Channel Syndication Videos",
+    "type": "universal",
+    "include_all_content": false,
+    "include_filter": "tags:yourtag",
+    "title": "80s Music Videos",
+    "description": "Amateur Tokyo drift!",
+    "syndication_url": "https://social.feeds.brightcove.com/v1/accounts/9999999999999/mrss/accounts/{account_id}/mrss/syndications/7f594cd3-4853-4174-aff3-203c3e99e9c2/feed",
+    "destination_url": "http://mywebsite.com",
+    "keywords": "80s, rock",
+    "author": "Rick Astley",
+    "category": "Music",
+    "album_art_url": "http://my_album_art.jpg",
+    "explicit": "no",
+    "owner_name": "http://my_album_art.jpg",
+    "owner_email": "rick@astley.com",
+    "language": "en-us",
+    "fetch_sources": true,
+    "fetch_digital_master": false,
+    "fetch_dynamic_renditions": true,
+    "sort": "-created_at"
+ }</code></pre>
+      </li>
+
+      <li>After the Video Feed creation, note that the API response includes the <strong>id</strong> and the <strong>syndication_url</strong>. The <strong>syndication_url</strong> is the one that you should provide to your Cloud Streaming partner, but there are still some steps to do before the Video Feed is ready.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/7-api-response-id.png" />
+        </figure>
+      </li>
+      <li>Copy the API response <strong>id</strong>.</li>
+      <li>The next step is to add a template for the data. From the dropdown menu select <strong>PUT</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/8-api-template.png" />
+        </figure>
+      </li>
+      <li>Add the <strong>id</strong> response from the last API call in the URL petition. </li>
+      <li>Click the <strong>Body</strong> tab.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/9-body-template.png" />
+        </figure>
+      </li>
+      <li>Select the <strong>raw</strong> option.</li>
+      <li>Copy and Paste one of the <a href="https://apis.support.brightcove.com/social-syndication/getting-started/sample-templates-universal-syndication.html" target="_blank">XML templates provided for Universal Syndication</a> in the text section. </li>
+      <li>Click <strong>Send</strong> to make the <strong>PUT</strong> API call.
+        <aside class="bcls-aside bcls-aside--information">Remember that you will need to have a valid token in your <strong>Authorization > Manage Access Token</strong> section for the API calls work correctly.
+          For more information on how to create the OAuth 2.0 token please read the <a href="https://apis.support.brightcove.com/oauth/index.html" target="_blank">OAuth API documentation</a>.
+        </aside>
+
+      </li>
+      <li>After making the <strong>PUT</strong> call, the API response will contain the template with your videos' information and the <strong>syndication_url</strong> will be updated and ready to deliver to your Cloud Streaming partner. </li>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="delivering-xml">Delivering the XML feed to your Cloud Streaming Partner</h2>
+
+    <p>Once that you have the <strong>syndication_url</strong> updated with your Video Feed, you need to deliver it to your Cloud Streaming partner (Frequency, Veset, Amagi), as the URL contains the XML file.</p>
+    <p>After receiving it, your Cloud Streaming partner should provide you with a streaming URL and a new XML file that contains the Electronic Programming Guide for Brightcove Beacon. </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="remote-video-studio">Adding a Remote Video in Studio</h2>
+    <p>Once you have received the streaming URL for your Channel, you need to send the Live stream as a Remote Video in Video Cloud to Brightcove Beacon.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong> module in your Video Cloud account.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/10-media-module.png" />
+        </figure>
+      </li>
+      <li>In the left panel click the <strong>+ Add Remote Video</strong> button.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/11-remote-video.png" />
+        </figure>
+      </li>
+      <li>In the <strong>Video Name</strong> field, name your stream video.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/12-create-remote.png" />
+        </figure>
+      </li>
+      <li>In the <strong>Video Type</strong> menu, select the <strong>Live</strong> option. </li>
+      <li> In the <strong>Format</strong> field, select the <strong>HLS</strong> option.</li>
+      <li>In the <strong>URL</strong> field, paste the stream URL provided by your Cloud Streaming partner. </li>
+      <li>Click the <strong>Save</strong> button.</li>
+      <li>Once the remote video has been created, click on it in the <strong>Media</strong> module.
+      </li>
+      <li>Open the <strong>VIDEO INFORMATION</strong> section, and copy the <strong>ID</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/13-studio-id.png" />
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="connect-video-beacon">Connecting the Remote Video to Brightcove Beacon</h2>
+
+    <p>The last step is to connect the Remote Video stream you just created in Video Cloud to a Brightcove Beacon Channel.</p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>Open Brightcove Beacon.</li>
+      <li>In the upper menu, click the <strong>Channels</strong> tab.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/14-channels-tab.png" />
+        </figure>
+      </li>
+      <li>Click your desired Channel. For more information on how to create a channel, please visit the <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/creating-a-channel.html" target="_blank">Channels documentation</a>.</li>
+      <li>In the Channel settings, click the <strong>Streams</strong> tab.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/vod-to-channels/15-channel-streams.png" />
+        </figure>
+      </li>
+      <li>In the <strong>Stream Video ID</strong> field, paste the video <strong>ID</strong> from your Video Cloud Remote Video.</li>
+      <li>Click <strong>Update Channel</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="400" height="700" src="/assets/images/channels/vod-to-channels/16-update-button.png" />
+        </figure>
+      </li>
+      <li>Open the Brightcove Beacon web app for testing and you should see your VOD stream on your desired Channel.</li>
+      <li>The last step is to upload the XML file provided by your third-party Cloud Streaming partner into your Amazon S3 bucket. This creates the EPG for the Channel. For more information on how to upload and fetch the XML file, please visit the <a href="/using-brightcove-beacon/electronic-program-guides.html#fetching-xml" target="_blank">EPG documentation</a>.</li>
+    </ol>
+
+  </section>
+</article>
