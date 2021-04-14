@@ -49,7 +49,7 @@ parent: Using Brightcove Beacon
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="creating-video-feed">Creating the XML Video Feed with the Social Syndication API</h2>
+    <h2 id="creating-xml-video-feed">Creating the XML Video Feed with the Social Syndication API</h2>
     <p>To stream your marked set of VODs as a live stream you need to create a Video Feed XML file. This file will contain all the information of the videos you wish stream. This file is a requirement for any third party Cloud Streaming partner such as Frequency, Veset, or Amagi. The following provides details of this process:</p>
     <ul>
       <li>You will need an API Development tool as <a href="https://www.postman.com/" target="_blank">Postman</a> or <a href="https://insomnia.rest/" target="_blank">Insomnia</a>. In this example <strong>Postman</strong> will be used.</li>
@@ -153,12 +153,13 @@ parent: Using Brightcove Beacon
       <li>Select the <strong>raw</strong> option.</li>
       <li>Copy and Paste one of the <a href="https://apis.support.brightcove.com/social-syndication/getting-started/sample-templates-universal-syndication.html" target="_blank">XML templates provided for Universal Syndication</a> in the text section. </li>
       <li>Click <strong>Send</strong> to make the <strong>PUT</strong> API call.
-        <aside class="bcls-aside bcls-aside--information">Remember that you will need to have a valid token in your <strong>Authorization > Manage Access Token</strong> section for the API calls work correctly.
+        <aside class="bcls-aside bcls-aside--information">Remember that you will need to have a valid token in your <strong>Authorization &gt; Manage Access Token</strong> section for the API calls work correctly.
           For more information on how to create the OAuth 2.0 token please read the <a href="https://apis.support.brightcove.com/oauth/index.html" target="_blank">OAuth API documentation</a>.
         </aside>
 
       </li>
       <li>After making the <strong>PUT</strong> call, the API response will contain the template with your videos' information and the <strong>syndication_url</strong> will be updated and ready to deliver to your Cloud Streaming partner. </li>
+    </ol>
   </section>
 
 
