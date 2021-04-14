@@ -3,18 +3,14 @@ title: Creating a Beacon Channel
 description: 'In this topic, you will learn how to create a channel using the Channels tab in Brightcove Beacon.'
 parent: Using Brightcove Beacon
 ---
-
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
-
   <section class="bcls-section">
     <h2 id="overview">Description</h2>
-    <p>Channels are created to stream 24/7 Live events just like a regular TV channel will do. The channel's content can be generated through a set of VODs that will broadcast for as long as the channel is available or by transmitting a Live event directly. For more information on how to create Live events, please visit the <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#Live" target="_blank">Brightcove Beacon Live Documentation</a>.</p>
-    <p>In addition to the classic Beacon channel, you can now use a <a href="/using-brightcove-beacon/cloud-playout/cloud-playout-overview.html">Cloud Playout Channel</a> to provide the content for your channel. The main advantage of Cloud Playout channels is that Brightcove generates the EPG - you do not need a 3rd party service for that.</p>
-
+    <p>Channels are created to stream 24/7 Live events just like a regular TV channel will do. The channel's content can be generated through a set of VODs that will broadcast for as long as the channel is available or by transmitting a Live event directly. For more information on how to create Live events, please visit the <a href="/live/streaming-live-event.html#Live" target="_blank">Brightcove Beacon Live Documentation</a>.</p>
+    <p>In addition to the classic Beacon channel, you can now use a <a href="/cloud-playout/cloud-playout-overview.html">Cloud Playout Channel</a> to provide the content for your channel. The main advantage of Cloud Playout channels is that Brightcove generates the EPG - you do not need a 3rd party service for that.</p>
   </section>
-
   <section class="bcls-section">
     <h2 id="basic-data">Basic Data section</h2>
     <p>To create a Channel in Brightcove Beacon, follow these steps:</p>
@@ -28,16 +24,15 @@ parent: Using Brightcove Beacon
       </li>
       <li>In the <strong>Basic Data</strong> tab, define a <strong>Name</strong> for your channel.
         <figure class="bcls-figure">
-          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/2-basic-data.png" alt="" width="" height="" />
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/2-basic-data.png" alt="" />
         </figure>
       </li>
       <li>
-        If you are using a Cloud Playout channel as the source for your Beacon channel, enter the Cloud Playout channel id:
-        <figure class="bcls-figure">
+        If you are using a Cloud Playout channel as the source for your Beacon channel, enter the Cloud Playout channel id: <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/cloud-playout/enter-cloud-playout-channel-id.png" alt="Enter Cloud Playout Channel ID">
           <figcaption class="bcls-caption--image">Enter Cloud Playout Channel ID</figcaption>
         </figure>
-        <p>To find the Cloud Playout channel id, see <a href="/using-brightcove-beacon/cloud-playout/cloud-playout-stream-vod.html#Get_information_for_the_Beacon_Channel">Get information for the Beacon Channel</a>.</p>
+        <p>To find the Cloud Playout channel id, see <a href="/cloud-playout/cloud-playout-stream-vod.html#Get_information_for_the_Beacon_Channel">Get information for the Beacon Channel</a>.</p>
       </li>
       <li>In the <strong>Content Rating</strong> dropdown menu, select your channel's content rating based on the Content Rating System of the country where your channel will be streaming. In the example image, it is for the US <strong>TV-Y</strong>.
         <figure class="bcls-figure">
@@ -48,9 +43,7 @@ parent: Using Brightcove Beacon
       <li>If you don’t find the correct genre for your channel, you can create additional ones by clicking the <strong>Create Genre</strong> button.</li>
       <aside class="bcls-aside bcls-aside--information">The <strong>Sub-Genres</strong> dropdown menu, is not functional at this time.</aside>
     </ol>
-
   </section>
-
   <section class="bcls-section">
     <h2 id="textual-data">Textual Data</h2>
     <p>The <strong>Textual Data</strong> section allows you to add displayable text for your Channel.</p>
@@ -66,10 +59,7 @@ parent: Using Brightcove Beacon
       </li>
       <aside class="bcls-aside bcls-aside--information">You can add a <strong>Textual Data</strong> section for every different language you will use in your channel. </aside>
     </ol>
-
-
   </section>
-
   <section class="bcls-section">
     <h2 id="non-textual-data">Non-Textual Data</h2>
     <p>The <strong>Non-Textual Data</strong> section allows you to add Portrait and Landscape images for your Channel. You will be supplying portrait and landscape images. Be sure the images meet these requirements:
@@ -134,15 +124,11 @@ parent: Using Brightcove Beacon
   <section class="bcls-section">
     <h2 id="tags">Tags</h2>
     <p>The <strong>Tags</strong> tab is not functional at this time.</p>
-
   </section>
-
   <section class="bcls-section">
     <h2 id="Metadata">Metadata</h2>
     <p>The <strong>Metadata</strong> tab is not functional at this time.</p>
-
   </section>
-
   <section class="bcls-section">
     <h2 id="Streams">Streams</h2>
     <p>The <strong>Stream</strong> section allows you to set the options and permissions for the playback URL.</p>
@@ -154,21 +140,16 @@ parent: Using Brightcove Beacon
       </li>
       <li>Select your <strong>Provider</strong>. You will most likely only have one provider, which references your Brightcove Video Cloud account.</li>
       <li>Click the <strong>Add new stream</strong> button.</li>
-      <li>In the <strong>Stream Video ID</strong> field, paste the Video ID from your Video Cloud Live Event. If you are using a Cloud Playout channel as the source for your Beacon Channel, see <a href="/using-brightcove-beacon/cloud-playout/cloud-playout-stream-vod.html#Get_information_for_the_Beacon_Channel">Get information for the Beacon channel.</a>
-      </li>
+      <li>In the <strong>Stream Video ID</strong> field, paste the Video ID from your Video Cloud Live Event. If you are using a Cloud Playout channel as the source for your Beacon Channel, see <a href="/cloud-playout/cloud-playout-stream-vod.html#Get_information_for_the_Beacon_Channel">Get information for the Beacon channel.</a> </li>
       <li>In the <strong>Devices to publish</strong> section, add the devices to which you wish to publish. Select the <strong>Select / Unselect All Devices</strong> to see a list of available devices. </li>
       <li>In the <strong>Stream Type</strong> select <strong>Live</strong>.</li>
       <li>Note that the <strong>DRM Type</strong> and <strong>Stream Format</strong> values do not need to be altered.</li>
-
     </ol>
-
   </section>
-
   <section class="bcls-section">
     <h2 id="Rights_and_Scheduling">Rights & Scheduling</h2>
     <p>
-      The <strong>Rights & Scheduling</strong> section is where you set the
-      publish status and availability.
+      The <strong>Rights & Scheduling</strong> section is where you set the publish status and availability.
     </p>
     <ol class="bcls-tasklist-restart">
       <li>
@@ -178,12 +159,10 @@ parent: Using Brightcove Beacon
         </figure>
       </li>
       <li>
-        Be sure the <strong>Status</strong> is set to
-        <strong>Published</strong> for your channel.
+        Be sure the <strong>Status</strong> is set to <strong>Published</strong> for your channel.
       </li>
       <li>
-        For the <strong>Availability Details</strong>, use the following as a
-        guide to complete the information:
+        For the <strong>Availability Details</strong>, use the following as a guide to complete the information:
         <table class="bcls-table">
           <thead class="bcls-table__head">
             <tr>
@@ -196,12 +175,10 @@ parent: Using Brightcove Beacon
             <tr>
               <td>Rights Type</td>
               <td>Yes</td>
-              <td>Select depending on your monetization model:
-                <ul>
+              <td>Select depending on your monetization model: <ul>
                   <li><strong>Free</strong></li>
                   <li><strong>Advertising - AVOD </strong>: For Channels monetized with advertising.</li>
                   <li><strong>Subscription - SVOD</strong>: For Channels monetized with a subscription.</li>
-
                 </ul>
               </td>
             </tr>
@@ -224,9 +201,7 @@ parent: Using Brightcove Beacon
               <td>Devices to publish</td>
               <td>Yes</td>
               <td>
-                Add the devices you wish to publish to. Select the
-                <strong>Select/ Unselect All Devices</strong> to see a list of
-                available devices.
+                Add the devices you wish to publish to. Select the <strong>Select/ Unselect All Devices</strong> to see a list of available devices.
               </td>
             </tr>
             <tr>
@@ -240,37 +215,26 @@ parent: Using Brightcove Beacon
               <td>Denied locations</td>
               <td>No</td>
               <td>
-                Select the locations where you DO NOT want to stream your
-                content.
+                Select the locations where you DO NOT want to stream your content.
               </td>
             </tr>
           </tbody>
         </table>
         <br />
-        <aside class="bcls-aside bcls-aside--tip">
-          To add or edit geographic locations, navigate to
-          <strong>Settings</strong> and then <strong>Locations</strong>.
+        <aside class="bcls-aside bcls-aside--tip"> To add or edit geographic locations, navigate to <strong>Settings</strong> and then <strong>Locations</strong>.
         </aside>
       </li>
       <li>
-        Be sure to click the <strong>Create New Channel</strong> button to save
-        your work.
+        Be sure to click the <strong>Create New Channel</strong> button to save your work.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/7-create-button.png" alt="" width="" height="" />
         </figure>
       </li>
     </ol>
   </section>
-
   <section class="bcls-section">
     <h2 id="Add-Channel-to-EPG">Adding your Channel to an Electronic Program Guide (EPG)</h2>
-
     <p>Once your channel has been created, the last step will be to add it to the Brightcove Beacon EPG schedule. For information on how to do this, please visit the <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/electronic-program-guides.html" target="_blank">Creating an Electronic Program Guide (EPG)</a> documentation. </p>
-
     <aside class="bcls-aside bcls-aside--information language-editable">Note that if you are using a Cloud Playout channel as the source for your Beacon channel, Brightcove will create the EPG for you, and there is no further action you need to take.</aside>
-
-
-
   </section>
-
 </article>
