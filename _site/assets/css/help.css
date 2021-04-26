@@ -349,10 +349,10 @@ details[open] {
 }
 
 /* in-app help text buttons */
-.button-blue, .button-blue, .button-red, .button-red-text, .button-gray {
+.button-blue, .button-blue-text, .button-red, .button-red-text, .button-gray {
 	/* font-family: 'Public Sans'; */
 	font-weight: bold;
-	font-size: .65rem;
+	font-size: .9rem;
 	padding: .4rem;
 	white-space: nowrap;
 }
@@ -360,7 +360,7 @@ details[open] {
 	color: rgb(255, 255, 255);
 	background-color: rgb(13, 44, 189);
 }
-.button-blue {
+.button-blue-text {
 	color: rgb(13, 44, 189);
 	background-color: rgb(255, 255, 255);
 }
