@@ -394,7 +394,7 @@ details[open] {
 
 /* info, tips, warnings */
 
-.bcls-aside {
+aside, .bcls-aside {
   margin-bottom: 1em;
   padding: 1em 2em 1em 3.5em;
 }
