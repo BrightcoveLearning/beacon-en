@@ -387,3 +387,48 @@ details[open] {
   padding-right: .15rem;
   height: 1rem;
 }
+
+/* info, tips, warnings */
+
+.bcls-aside {
+  margin-bottom: 1em;
+  padding: 1em 2em 1em 3.5em;
+}
+
+.bcls-aside--information {
+  background-color: #f2f4f9;
+  border-left: 4px solid #092dbd;
+}
+
+.bcls-aside--information:before {
+  content: url(https://support.brightcove.com/site-assets/images/site/aside-icons/info-aqua.svg);
+  float: left;
+  margin-left: -2.5em;
+}
+
+
+.bcls-aside--tip {
+  background-color: #d7f6e6;
+  border-left: 4px solid #009e4f;
+}
+
+.bcls-aside--tip:before {
+  content: url(https://support.brightcove.com/site-assets/images/site/aside-icons/lightbulb-blue.svg);
+  float: left;
+  /* color: rgb(8, 8, 139);
+  height: 28px; */
+  margin-left: -2.5em;
+}
+
+
+.bcls-aside--warning {
+  background-color: #fffbf2;
+  border-left: 4px solid #ffba00;
+}
+
+.bcls-aside--warning:before {
+  content: url(https://support.brightcove.com/site-assets/images/site/aside-icons/alert-triangle-gray.svg);
+  float: left;
+  margin-left: -2.5em;
+}
+
