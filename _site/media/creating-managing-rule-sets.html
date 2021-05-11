@@ -869,11 +869,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 <section class="bcls-section">
     <h2 id="monetize">Configuring monetization availability</h2>
-    <p>Configure <strong>Monetization</strong> availability to configure the locations that a media asset can be viewed from. By default, media assets are  &quot;free&quot;.</p>
+    <p>Configure <strong>Monetization</strong> availability to assign a  monetization model  to a media asset. By default, media assets are  &quot;free&quot;.</p>
     <ol class="bcls-tasklist-restart">
       <li>Click <strong>Add New Rule Set</strong> to create a new rule set or hover over an existing rule set and click the edit icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/help/icon-edit.png" />).</li>
       <li>Click on <strong>Monetization</strong> to expand the monetization settings.</li>
-      <li>Enter the <strong>Permitted Locations</strong> and <strong>Denied Locations</strong> for the media asset. Note that the locations that appear are based upon your account settings.
+      <li>Select the <strong>Monetization</strong> model for the media asset:
+          <ul>
+              <li><strong>Free</strong> - Anyone can view the asset</li>
+              <li><strong>AVOD</strong> - Paste in ad ID that was created as part of the Server-Side Ad Settings config in the Admin UI</li>
+              <li><strong>SVOD</strong> - Select a plan from the dropdown list. Plans are configured using Beacon Classic.</li>
+              </ul>
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/series-monetize-availability.png" /></figure>
       </li>
       <li>Click <strong>Done</strong> when finished.</li>
@@ -906,7 +911,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 25 Mar 2021
+  Page last updated on 11 May 2021
 </div>
 
 
