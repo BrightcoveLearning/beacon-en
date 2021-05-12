@@ -842,8 +842,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="manage">Managing media sharing relationships</h2>
-    <p>Before videos can be shared between accounts, media sharing settings must be configured as part of the <strong>ADMIN &gt; Media Sharing</strong> settings. Note that only account administrators have access to the Admin menu. If you wish to share videos to other accounts, affiliates must be added and the affiliate accounts must accept the relationship. Master and affiliate accounts can terminate the relationship at any time. Terminating a media sharing relationship <strong>does not</strong> remove any shared videos from affiliate accounts. If you want to remove shared videos from an affiliate's account, you need either delete them from your own (master) account or open the video details, click the <strong>Video and Tracks</strong> tab, go to the <strong>MEDIA SHARING</strong> section, and click the <strong>Remove Video</strong> icon for the affiliate account.</p>
-    <figure><img class="bcls-image--no-border" alt="" src="/assets/images/media/node18465-remove-video.png" /></figure>
+    <p>Before videos can be shared between accounts, media sharing settings must be configured as part of the <strong>ADMIN &gt; Media Sharing</strong> settings. Note that only account administrators have access to the Admin menu. If you wish to share videos to other accounts, affiliates must be added and the affiliate accounts must accept the relationship. Master and affiliate accounts can terminate the relationship at any time. Terminating a media sharing relationship <strong>does not</strong> remove any shared videos from affiliate accounts. If you want to remove shared videos from an affiliate's account, you need either delete them from your own (master) account or open the video details, click the <strong>Video and Tracks</strong> tab, go to the <strong>Media Sharing</strong> section, and click the <strong>Remove Video</strong> icon for the affiliate account.</p>
+    <figure><img class="bcls-image--no-border" alt="" src="/assets/images/media/sharing-remove-video.png" /></figure>
     <p>For information on configuring the Media Sharing settings, see <a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a>.</p>
   </section>
   <section class="bcls-section">
@@ -854,7 +854,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <aside class="bcls-aside bcls-aside--information">Note: When sharing large numbers of videos, Brightcove recommends sharing at most 50 videos at a time. Sharing a large number of videos at once may cause a time out error in Studio. If you need to share a large number of videos, the CMS API should be used.</aside>
       </li>
       <li>Select the affiliate account(s) to share the video(s) to and then click <strong>Share</strong>. The search field can be used to search for an account ID. The search field supports fuzzy searches so entering part of an ID will return matches.
-        <figure><img alt="" src="/assets/images/media/node18465-select-accounts.png" /></figure>
+        <figure><img alt="" src="/assets/images/media/sharing-select-accounts.png" /></figure>
       </li>
     </ol>
     <p>It is possible to reshare videos (share previously shared videos to the same account). Doing so will replace any video metadata changes made by the affiliate account with the values from the master (sharing) account. Use caution when resharing videos.</p>
@@ -863,9 +863,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="review">Reviewing shared videos</h2>
     <p>Affiliate accounts have the ability to configure an <strong>Acceptance Mode</strong> for each master account. When the <strong>Acceptance Mode</strong> is <strong>Auto</strong>, shared videos will appear in the affiliate account's list of videos in the Media module. When the <strong>Acceptance Mode</strong> is <strong>Manual</strong>, a <strong>Shares Pending</strong> link displaying the number of shared videos will appear in the Media module.</p>
     <aside class="bcls-aside bcls-aside--information">Note: For information on configuring the Acceptance Mode, see <a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a>.</aside>
-    <figure><img alt="" src="/assets/images/media/node18465-shares-pending.png" /></figure>
+    <figure><img alt="" src="/assets/images/media/sharing-shares-pending.png" /></figure>
     <p>Clicking the <strong>Shares Pending</strong> link will display the list of shared videos.</p>
-    <figure><img alt="" src="/assets/images/media/node18465-shares-pending-list.png" /></figure>
+    <figure><img alt="" src="/assets/images/media/sharing-shares-pending-list.png" /></figure>
     <p>From the shares pending list, you can:</p>
     <ul>
       <li><strong>Reject</strong> - To reject the shared video and not include it in your account. Rejecting a shared video does not prevent the master from sharing it to your account again in the future.</li>
@@ -879,21 +879,21 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <div class="BCL-subsection">
       <h3>Video shared into an account</h3>
       <p>Hovering over the sharing icon (<img alt="" src="/assets/images/media/node15924-shared-in-icon.png" />) will display sharing details.</p>
-      <figure><img alt="" src="/assets/images/media/node18465-shared-in.png" /></figure>
+      <figure><img alt="" src="/assets/images/media/sharing-shared-in.png" /></figure>
     </div>
     <section class="bcls-subsection">
       <h3>Video shared to another account</h3>
       <p>Hovering over the sharing icon (<img alt="" src="/assets/images/media/node15924-shared-out-icon.png" />) will display sharing details.</p>
-      <figure><img alt="" src="/assets/images/media/node18465-shared-out.png" /></figure>
+      <figure><img alt="" src="/assets/images/media/sharing-shared-out.png" /></figure>
     </section>
-    <p>Master accounts can see the status of videos shared to affiliate accounts using the <strong>MEDIA SHARING</strong> section of the video details page.</p>
-    <figure><img alt="" src="/assets/images/media/node18465-media-sharing-status.png" /></figure>
+    <p>Master accounts can see the status of videos shared to affiliate accounts by viewing the video details page, clicking on the using the <strong>Video and Tracks</strong> tab and then locationg the <strong>Media Sharing</strong> section of the video details page.</p>
+    <figure><img alt="" src="/assets/images/media/sharing-media-sharing-status.png" /></figure>
     <p>Errors may also appear here. For example, if <strong>Enforce custom field matching</strong> is checked, the affiliate account must have the same custom fields as the master account or any shares will fail.</p>
   </section>
   <section class="bcls-section">
     <h2 id="delete">Deleting shared videos</h2>
     <p>When a shared video is deleted from a master account, a message is displayed reminding you that deleting the shared video will delete it from all the affiliate accounts you've shared it with.</p>
-    <figure><img alt="" src="/assets/images/media/node18465-delete-shared-video.png" /></figure>
+    <figure><img alt="" src="/assets/images/media/sharing-delete-shared-video.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="properties">Shared video properties</h2>
@@ -906,7 +906,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Tags</li>
       <li>Video projection</li>
       <li>Thumbnail and poster images - By default, poster and thumbnail images for the master videos will be used in the affiliate accounts. If changes are made to the poster and/or thumbnail in the master account, those changes will be reflected in the affiliate accounts <strong>unless</strong> the affiliate account has previously generated new poster or thumbnail images. Once the affiliate account makes a change to the poster or thumbnail images, any changes to the poster/thumbnail made in the master account <strong>will not </strong>propagate to the affiliate account.</li>
-      <li>Text Tracks - Affiliates do not have the ability to delete or edit the text track properties for shared videos.</li>
+      <li>Text Tracks - Affiliates do not have the ability to delete or edit the text track properties for shared videos</li>
+      <li>Audio Tracks - Affiliates do not have the ability to delete or edit the audio track properties for shared videos</li>
       <li>Advertising (Free / Ad Supported)</li>
       <li>Ad keys</li>
       <li>Scheduling start date and end date</li>
@@ -918,14 +919,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>The shared video has all the values for these video metadata fields that the master video had at the moment it was shared. However, from that point on, the master copy and the affiliate copy become independent entities:</p>
     <ul>
       <li>Video files are not copied when you use Media Sharing, only the video metadata is copied. The shared video points to the original video files in your account.</li>
-      <li>If the video is deleted from the master account, the video is deleted from all affiliate accounts.</li>
+      <li>If the video is deleted from the master account, the video is deleted from all affiliate accounts</li>
       <li>Any changes an affiliate makes to a video will not affect the original or any other shared copies. If an affiliate deletes a shared video, it is removed from the affiliate's account but remains in the master account and in all other affiliate accounts.</li>
-      <li>Affiliates can't remove or update text tracks using the Media Module.</li>
+      <li>Affiliates can't remove or update text tracks using the Media Module</li>
       <li>When affiliates receive a video by sharing, it is in the active state. This is true even if the video was not active in the master account.</li>
-      <li>If an affiliate accepts a video and required fields are missing, the video will be inactive.</li>
+      <li>If an affiliate accepts a video and required fields are missing, the video will be inactive</li>
       <li>An affiliate account that receives a shared video cannot share that video to another account. Only the master account can share the video.</li>
-      <li>Each account is billed separately for playback (video plays and bandwidth usage) of a shared video from that account.</li>
-      <li>Reporting about a shared video is specific to each account and does not aggregate information about each copy of the video in each account.</li>
+      <li>Each account is billed separately for playback (video plays and bandwidth usage) of a shared video from that account</li>
+      <li>Reporting about a shared video is specific to each account and does not aggregate information about each copy of the video in each account</li>
     </ul>
     <p>It is possible to reshare videos (share previously shared videos to the same account). Doing so will replace any video metadata changes made by the affiliate account with the values from the master (sharing) account. Use caution when resharing videos.</p>
   </section>
