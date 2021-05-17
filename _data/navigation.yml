@@ -144,6 +144,8 @@
   name: Monetizing Content
   url: /monetization/index.html
   docs:
+    - name: Creating an Advertisement
+      url: /monetization/advertisement.html
     - name: Configuring Server-Side Ad Settings
       url: /monetization/configuring-server-side-ad-settings.html
     - name: Creating a Stripe Account
