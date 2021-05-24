@@ -1,0 +1,29 @@
+---
+title: 'Live Events'
+description: 'Documents to help you configure Live events.'
+parent: 'Home'
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section>
+    <h2 id="Topics_in_this_section">Topics in {{ page.title }}</h2>
+    <ul>
+      {% for item in site.data.navigation %}
+      {% if item.name == page.title %}
+      {% for entry in item.docs %}
+      <li><a href="{{ entry.url }}">{{ entry.name }}</a> {% if entry.docs %}
+        <ul>
+          {% for subentry in entry.docs %}
+          <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+</article>

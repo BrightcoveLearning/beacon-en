@@ -316,6 +316,13 @@
     - name: Image Specifications
       url: /styling/image-requirements.html
 - section:
+  name: Live Events
+  url: /live/index.html
+  icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
+  docs:
+    - name: Streaming a Live Event
+      url: /live/streaming-live-event.html
+- section:
   name: General Information
   url: /general/index.html
   icon: '<i data-feather="info"></i>'
