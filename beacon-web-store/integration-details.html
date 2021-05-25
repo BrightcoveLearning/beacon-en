@@ -6,7 +6,7 @@ parent: Beacon Web Store
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
-  
+
   <section class="bcls-section">
     <h2 id="Authentication_through_OIDC_and_entitlements">Authentication through OIDC and entitlements</h2>
     <h3>Authentication</h3>
@@ -15,7 +15,7 @@ parent: Beacon Web Store
       <li>
         Authorization Code with PKCE: iOS, Android and Web
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/developer-topics/integration-details/oidc-1.png" alt="Authorization with PKCE">
+          <img class="bcls-image" src="/assets/images/beacon-web-store/integration-details/oidc-1.png" alt="Authorization with PKCE">
           <figcaption class="bcls-caption--image">Authorization with PKCE</figcaption>
         </figure>
       </li>
@@ -23,7 +23,7 @@ parent: Beacon Web Store
         <a href="https://tools.ietf.org/html/rfc8628">Device Flow</a>
         (Oauth 2.0 Extension): Connected and Smart TVs
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/developer-topics/integration-details/oidc-2.png" alt="Device Flow">
+          <img class="bcls-image" src="/assets/images/beacon-web-store/integration-details/oidc-2.png" alt="Device Flow">
           <figcaption class="bcls-caption--image">Device Flow</figcaption>
         </figure>
       </li>
@@ -77,14 +77,15 @@ parent: Beacon Web Store
     </ul>
     <h4>Examples of items configured in Beacon CMS</h4>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/developer-topics/integration-details/oidc-3.png" alt="Example Configuration">
+      <img class="bcls-image" src="/assets/images/beacon-web-store/integration-details/oidc-3.png" alt="Example Configuration">
       <figcaption class="bcls-caption--image">Example Configuration</figcaption>
     </figure>
     <h3>Entitlements</h3>
-		<p>In terms of telling Beacon about entitlements for users, Beacon provides the following API:
-			<code translate="no">https://beacon.brightcove.com/<span class="bcls-highlight">{instance}</span>/webhook/beacon</code> (API key provided by Brightcove)</p>
-			<h4>The payload will be JSON:</h4>
-<pre class="line-numbers"><code class="language-json" translate="No">[
+    <p>In terms of telling Beacon about entitlements for users, Beacon provides the following API:
+      <code translate="no">https://beacon.brightcove.com/<span class="bcls-highlight">{instance}</span>/webhook/beacon</code> (API key provided by Brightcove)
+    </p>
+    <h4>The payload will be JSON:</h4>
+    <pre class="line-numbers"><code class="language-json" translate="No">[
   {
     "package_name": "string",			// Commerce package for SVOD or SKU for TVOD purchases - required
     "external_user_id": "string",			// User identifier (username or email depending on configuration of users)- required
@@ -98,12 +99,12 @@ parent: Beacon Web Store
   }
 ]
 </code></pre>
-		<p>When using an external authentication system, the external_user_id corresponds to the subject value in the Access token</p>
-		<aside class="bcls-aside bcls-aside--information language-editable">NOTE: The API key will need to be sent in the HEADER in the auth-token key</aside>
-		<h4>Sample Postman call to the entitlement webhook:</h4>
-		<figure class="bcls-figure">
-			<img class="bcls-image" src="/assets/images/developer-topics/integration-details/oidc-4.png" alt="Sample Postman Call">
-			<figcaption class="bcls-caption--image">Sample Postman Call</figcaption>
-		</figure>
+    <p>When using an external authentication system, the external_user_id corresponds to the subject value in the Access token</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">NOTE: The API key will need to be sent in the HEADER in the auth-token key</aside>
+    <h4>Sample Postman call to the entitlement webhook:</h4>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/beacon-web-store/integration-details/oidc-4.png" alt="Sample Postman Call">
+      <figcaption class="bcls-caption--image">Sample Postman Call</figcaption>
+    </figure>
   </section>
 </article>
