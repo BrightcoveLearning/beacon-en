@@ -835,6 +835,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
     <p>Brightcove Cloud Playout is a Studio module that enables you to program a scheduled playout of items from your VOD catalogue, combined with live feeds, and stream it as a Linear Channel all with the reliability and scalability of Brightcove Live.</p>
+		<p>You can then use the Cloud Playout channel as a Beacon Channel by entering information about it in creating a <a href="/using-brightcove-beacon/creating-a-channel.html">Beacon Channel</a>. One major advantage to using Cloud Playout channels is that you will not need to find and integrate a 3rd party EPG provider, since an EPG service is built into Cloud Playout.</p>
     <p>Cloud Playout offers a powerful, end-to-end solution for channels of scheduled programming, including:</p>
     <ul>
       <li>24x7 Linear Channels</li>
@@ -858,6 +859,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>API to retrieve the EPG (electronic program guide) for a channel</li>
     </ul>
   </section>
+	<section class="bcls-section">
+		<h2 id="workflow_overview">Workflow overview</h2>
+		<p>There are two parts to creating a Cloud Playout channel and adding it to your Beacon app:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>In <strong>Beacon Studio</strong>, create the channel.</li>
+			<li>In <strong>Beacon Classic</strong>, create a new Beacon channel that uses the Cloud Playout channel as its source.</li>
+		</ol>
+		<p>These tasks are detailed in the <a href="#Related_topics">Related topics</a></p>
+	</section>
   <section class="bcls-section">
     <h2 id="limitations">Limitations</h2>
     <p>The following assumptions and limitations apply.</p>
