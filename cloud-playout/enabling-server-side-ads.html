@@ -1,11 +1,17 @@
 ---
 title: Monetizing Cloud Playout
-description: In this topic you will learn how a collection of VOD videos and live events can be streamed as a live linear channel.
+description: In this topic you will learn how to enable server-side ads (SSAI) for a Cloud Playout channel.
 parent: Cloud Playout
 ---
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
+	<section class="bcls-section">
+		<h2 id="introduction">Introduction</h2>
+		<p>One way to monetize a Cloud Playout channel is through advertising. The most reliable way to deliver ads is through server-side ad insertion, or SSAI.</p>
+		<aside class="bcls-aside bcls-aside--information language-editable">If you are interested in adding SSAI capability to your account, contact your account manager.</aside>
+		<p>This topic covers enabling SSAI for a Cloud Playout channel, and setting up pre-roll and post-roll ad insertion. Because mid-roll ad insertion works different, that is covered in <a href="/cloud-playout/mid-roll-ad-insertion.html">Adding Mid-Roll Ads to a Channel</a>. Pre-roll, post-roll, and mid-roll ads can all be inserted into a channel of VOD content.</p>
+	</section>
   <section class="bcls-section">
     <h2 id="requirements">Requirements</h2>
     <p>To use server-side ad insertion (SSAI) with Cloud Playout the following are required:</p>
@@ -16,7 +22,11 @@ parent: Cloud Playout
   </section>
   <section class="bcls-section">
     <h2 id="ads">Enabling Server-Side Ads</h2>
-    <p>It is possible to configure a channel so that server-side ads are displayed using Brightcove's Server-Side Ad Insertion technology. </p>
+    <p>When you create a channel, you have the option to enable SSAI, so that server-side ads are displayed using Brightcove's Server-Side Ad Insertion technology. You can also enable </p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/cloud-playout/new-channel-with-ssai.png" alt="Enable SSAI">
+			<figcaption class="bcls-caption--image">Enable SSAI</figcaption>
+		</figure>
     <aside class="bcls-aside bcls-aside--information">Notes: 
       <ul>
         <li>When using ad insertion, the channel can only be output to a Brightcove Live Event.</li>
