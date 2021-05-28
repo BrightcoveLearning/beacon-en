@@ -1,19 +1,29 @@
 ---
-title: Managing Pages
-parent: Home
-layout: howto
+title: 'Managing Pages'
+description: 'Learn how to create and manage pages.'
+parent: 'pages'
 ---
+
 <article class="bcls-article">
-    <h1>Managing Pages</h1>
-    <summary>
-        <p>Learn how to create and manage pages.</p>
-    </summary>
-    <section class="bcls-section">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section>
+    <h2 id="Topics_in_this_section">Topics in {{ page.title }}</h2>
+    <ul>
+      {% for item in site.data.navigation %}
+      {% if item.name == page.title %}
+      {% for entry in item.docs %}
+      <li><a href="{{ entry.url }}">{{ entry.name }}</a> {% if entry.docs %}
         <ul>
-            <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
-            <li><a href="/pages/creating-managing-pages.html">Creating and Managing Pages</a></li>
-            <li><a href="/pages//managing-playlists-on-pages.html">Managing Playlists on Pages</a></li>
-            <li><a href="/pages/page-details-overview.html">Page Details Overview</a></li>
+          {% for subentry in entry.docs %}
+          <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>
+          {% endfor %}
         </ul>
-    </section>
+        {% endif %}
+      </li>
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
 </article>
