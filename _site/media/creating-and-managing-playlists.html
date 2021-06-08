@@ -868,15 +868,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Creating and Managing Video Cloud Playlists</h1>
   <summary>In this topic you will learn how to create and manage Video Cloud playlists in Beacon Studio.</summary>
   <section class="bcls-section">
-    <aside class="bcls-aside bcls-aside--information">Note: The Media module will display both Beacon and Video Cloud playlists but in order to create or edit a Beacon playlist, you must use Beacon Classic. For information on creating a Beacon playlist, see <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/creating-a-playlist.html">Creating a Playlist</a>.</aside>
     <p>A playlist is a collection of videos that are grouped together in a particular order for playback in a player. The Media module makes it easy to create Video Cloud playlists and add videos to a playlist. After you've created a playlist, you can add it to a page or publish it in a player. </p>
-    <p>For information on publishing playlists, see <a href="/media/publishing-videos-and-playlists.html">Publishing Videos and Playlists</a>. For more information about playlists, including best practices and tips for using them effectively, see <a href="/media/introduction-playlists.html">Introduction to Video Cloud Playlists</a>.</p>
-        <aside class="bcls-aside bcls-aside--information">Note: For information on creating and managing Beacon  playlists, see <a href="/media/creating-and-managing-beacon-playlists.html">Creating and Managing Beacon Playlists</a>.</aside>
-
+    <p>For information on publishing playlists, see <a href="/media/publishing-videos-and-playlists.html">Publishing Videos and Playlists</a>. For more information about playlists, including best practices and tips for using them effectively, see <a href="/media/introduction-playlists.html">Introduction to Playlists</a>.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: For information on creating and managing Beacon  playlists, see <a href="/media/creating-and-managing-beacon-playlists.html">Creating and Managing Beacon Playlists</a>.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="types">Types of Video Cloud playlists</h2>
-    <p>There are two types of playlists:</p>
+    <p>There are two types of Video Cloud playlists:</p>
     <ul>
       <li><strong>Manual</strong> - With a manual playlist, you assign specific videos to the playlist and re-order them manually.</li>
       <li><strong>Smart</strong> - With a smart playlist, the list of videos in the playlist is constructed automatically, based on video tags or other video properties. Smart playlists are dynamic and automatically update based upon the videos in your media library and the rules that define the playlist.</li>
@@ -886,27 +884,22 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Manual Playlists</strong> - Videos are loaded into the playlist based upon the order of the videos in the manual playlist</li>
       <li><strong>Smart Playlists</strong> - Videos are loaded into the playlist based upon the <strong>Play Order</strong> playlist setting</li>
     </ul>
-    <p>For information on programmatically retrieving additional videos into a playlist, see the <a href="https://player.support.brightcove.com/code-samples/brightcove-player-sample-playback-api-paging.html">Playback API Paging</a> player sample.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="create">Creating a playlist</h2>
+    <h2 id="create">Creating a Video Cloud playlist</h2>
     <p>To create a playlist, open the Media module and follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>In the panel navigation, click <strong>Create playlist</strong>. The New Playlist dialog will open.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-new-manual-playlist.png" /></figure>
+      <li>In the panel navigation, click <strong>Create playlist</strong>. The Create a playlist dialog will open.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-create-panel.png" /></figure>
       </li>
-      <li>Select the <strong>Playlist type</strong>, <strong>Manual</strong> or <strong>Smart</strong>.</li>
-      <li>Enter a <strong>Playlist Name</strong> using the following guidelines.
+      <li>Enter a <strong>Playlist name</strong> using the following guidelines.
         <ul>
-          <li>Name is limited to 100 characters</li>
+          <li>Name is limited to 255 characters</li>
           <li>Illegal character: /</li>
         </ul>
       </li>
-      <li>(Optional). Enter a <strong>Reference ID</strong> and <strong>Description</strong>.</li>
-      <li>Check <strong>Show Playlist in Sidebar</strong> to have the playlist appear in the sidebar.
-        <aside class="bcls-aside bcls-aside--information">Note: A maximum of 100 playlists can appear in the sidebar.</aside>
-      </li>
-      <li>Click <strong>Save</strong>.</li>
+      <li>Select the <strong>Playlist type</strong>, <strong>Video Cloud manual playlist</strong> or <strong>Video Cloud smart playlist</strong>.</li>
+      <li>Click <strong>Create playlist</strong>.</li>
     </ol>
     <div class="BCL-subsection">
       <h3>Working with Smart playlists</h3>
@@ -1054,6 +1047,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
   </section>
 </article>
+
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
@@ -1079,7 +1073,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 04 May 2021
+  Page last updated on 08 Jun 2021
 </div>
 
 
