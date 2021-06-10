@@ -29,20 +29,25 @@ parent: monetization
       <tbody class="bcls-table__body">
         <tr>
           <td>AVOD</td>
-          <td>Advertising-based video on demand</td>
+          <td>Advertising-based video on demand
+          </td>
         </tr>
         <tr>
           <td>AuthVOD</td>
-          <td>Authenticated video on demand</td>
+          <td>Authenticated video on demand<br>
+            <em>*Note that AuthVOD can be implemented with and without ads</em>
+          </td>
         </tr>
         <tr>
           <td>SVOD</td>
-          <td>Subscription video on demand</td>
+          <td>Subscription video on demand<br>
+            <em>*Note that SVOD can be implemented with and without ads</em>
+          </td>
         </tr>
         <!-- <tr>
-          <td>TVOD</td>
-          <td>Transactional video on demand</td>
-        </tr> -->
+            <td>TVOD</td>
+            <td>Transactional video on demand</td>
+          </tr> -->
         <tr>
           <td>VOD</td>
           <td>Video on demand generally refers to video on demand services through cable networks.</td>
@@ -67,48 +72,84 @@ parent: monetization
       <tbody class="bcls-table__body">
         <tr>
           <td>Free</td>
-          <td>Visitors can view ad-free content in this plan without authentication.</td>
+          <td>
+            <ul>
+              <li>Visitors can view ad-free content in this plan without authentication.</li>
+            </ul>
+          </td>
         </tr>
         <tr>
           <td>AVOD</td>
-          <td>Visitors can view content containing ads in this plan without authentication. Generally free to consumers since advertisements are shown.
+          <td>
+            <ul>
+              <li>Visitors can view content containing ads in this plan without authentication.</li>
+              <li>Generally free to consumers since advertisements are shown.</li>
+            </ul>
           </td>
         </tr>
         <tr>
           <td>AuthVOD without ads</td>
-          <td>Authenticated users can view ad-free content in this plan by signing in.<br /><br />
-            This model often requires users to log in using credentials from another platform, service, cable (TVE), or cellular subscription in order to access content. For this reason, AuthVOD is valuable when coordinating with partnerships or managing multiple properties or branded services.
+          <td>
+            <ul>
+              <li>Authenticated users can view ad-free content in this plan by signing in.</li>
+              <li> This model often requires users to log in using credentials from another platform, service, cable (TVE), or cellular subscription in order to access content.</li>
+              <li>Valuable when coordinating with partnerships or managing multiple properties or branded services.</li>
+            </ul>
           </td>
         </tr>
         <tr>
           <td>AuthVOD with ads</td>
-          <td>Authenticated users can view content containing ads in this plan by signing in.<br /><br />
-            AuthVOD can also refer to a free, ad-supported service that requires a viewer to create a login to view. The benefit to the end viewer is the ability to do things like make “watchlists” of content and “pause and resume” across devices. The benefit to the service provider is the ability to know more about the end viewer for marketing and advertising purposes.<br /><br />
-            Another benefit for users, depending on their plan settings, might be access to more content and different ad loads.
+          <td>
+            <ul>
+              <li>Authenticated users view content containing ads in this plan by signing in.</li>
+              <li>Since viewers have authenticated, they can, for example, make “watchlists” of content and “pause and resume” across devices.</li>
+              <li>The service provider can learn more about the end viewer for marketing and advertising purposes.</li>
+              <li>Can be thought of as an AuthVOD/AVOD combination.</li>
+            </ul>
           </td>
         </tr>
         <tr>
-          <td>SVOD</td>
-          <td>Subscribers can view ad-free content in this plan. Similar to traditional TV packages, it allows users to consume as much content as they desire at a flat rate per month.</td>
+          <td>SVOD without ads</td>
+          <td>
+            <ul>
+              <li>Subscribers can view ad-free content in this plan.</li>
+              <li>It allows users to consume as much content as they desire at a flat rate per month without ads.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>SVOD with ads</td>
+          <td>
+            <ul>
+              <li>Subscribers can view content with advertisements in this plan.</li>
+              <li>Subscribers may pay a lower monthly rate, but with the lower rate ads must be viewed.</li>
+              <li>Can be thought of as an SVOD/AVOD combination.</li>
+            </ul>
+          </td>
         </tr>
         <tr>
           <td>Mixed</td>
-          <td>Subscribers can view content with a mixture of AVOD and SVOD options.</td>
-        </tr>
-        <!-- <tr>
-          <td>TVOD purchase</td>
-          <td>Authenticated users can buy content in this plan.<br/>
-              Transactional video on demand, is the opposite of subscription video, where consumers purchase content on a pay-per-view basis.
+          <td>
+            <ul>
+              <li>Subscribers can view content with a mixture of AVOD and SVOD options.</li>
+            </ul>
           </td>
         </tr>
-        <tr>
-          <td>TVOD rental</td>
-          <td>Authenticated users can rent content in this plan for a limited time.<br/>
-              Transactional video on demand, is the opposite of subscription video, where consumers rent content on a pay-per-view basis.
-          </td> -->
+        <!-- <tr>
+            <td>TVOD purchase</td>
+            <td>Authenticated users can buy content in this plan.<br/>
+                Transactional video on demand, is the opposite of subscription video, where consumers purchase content on a pay-per-view basis.
+            </td>
+          </tr>
+          <tr>
+            <td>TVOD rental</td>
+            <td>Authenticated users can rent content in this plan for a limited time.<br/>
+                Transactional video on demand, is the opposite of subscription video, where consumers rent content on a pay-per-view basis.
+            </td> 
+          </tr>-->
 
       </tbody>
     </table>
-
   </section>
+
 </article>
