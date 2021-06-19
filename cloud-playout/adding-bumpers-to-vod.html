@@ -20,7 +20,7 @@ parent: Cloud Playout
       <li><code translate="no">cp-preroll-bumper</code></li>
       <li><code translate="no">cp-postroll-bumper</code></li>
     </ul>
-    <aside class="bcls-aside bcls-aside--warning language-editable">Potential problems:
+    <aside class="bcls-aside bcls-aside--warning">Potential problems:
 			<ul>
 				<li>If you add both of these tags to the same video, it will still work as a bumper, but the <a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">EPG</a> will be inaccurate.</li>
 				<li>Similarly, for SSAI-enabled channels, ad placeholders are treated as post-roll ads. You should not have a pre-roll bumper followed by an ad placeholder, as this effectively creates a pre-roll<i data-feather="arrow-right"></i>post-roll sequence that will cause the EPG to be inaccurate.</li>
