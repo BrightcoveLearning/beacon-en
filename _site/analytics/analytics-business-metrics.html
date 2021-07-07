@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn what analytics data is available to you for your Brightcove Beacon apps and how to examine that data in Google Analytics.">
+  <meta name="description" content="In this topic, you will learn you will learn about the custom dimensions and single custom metric added to your Google Analytics account for Brightcove Beacon.">
   
-  <title>Viewing Analytics Data</title>
+  <title>Beacon Analytics Business Metrics</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/reviewing-analytics/">reviewing-analytics</a></li>
+    <li class="breadcrumb-item"><a href="/analytics/">reviewing-analytics</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Viewing Analytics Data</li>
+    <li class="breadcrumb-item active" aria-current="page">Beacon Analytics Business Metrics</li>
   </ol>
 </nav>
 
@@ -504,19 +504,67 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
-              <h5 class="submenu-header"><a href="/reviewing-analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Reviewing Analytics</a></h5>
+              <h5 class="submenu-header"><a href="/analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Reviewing Analytics</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
                 
                   
-                    <li><a href="/reviewing-analytics/analytics-business-metrics.html">Beacon Analytics Business Metrics</a></li>
+                    <li><a href="/analytics/analytics-module-ui-glossary.html">Analytics Module UI Glossary</a></li>
                   
                 
                   
-                    <li><a href="/reviewing-analytics/ga-self-configuration.html">Google Analytics Self Configuration</a></li>
+                    <li><a href="/analytics/analytics-report-reference.html">Analytics Report Reference</a></li>
                   
                 
                   
-                    <li><a href="/reviewing-analytics/viewing-analytics-data.html">Viewing Analytics Data</a></li>
+                    <li><a href="/analytics/analytics-business-metrics.html">Beacon Analytics Business Metrics</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/calculating-video-engagement-score.html">Calculating Video Engagement Score</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/creating-custom-analytics-reports.html">Creating Custom Analytics Reports</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/engagement-report-reference.html">Engagement Report Reference</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/exporting-data-analytics-module.html">Exporting Data</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/faq-analytics-module.html">FAQ: Analytics Module</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/getting-started-analytics-module.html">Getting Started with the Analytics Module</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/ga-self-configuration.html">Google Analytics Self Configuration</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/how-search-videos-analytics-module.html">How to Search for Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/managing-scheduled-reports.html">Managing Scheduled Reports</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/performance-report-reference.html">Performance Report Reference</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Reviewing Player Events in Google Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/analytics/viewing-analytics-data.html">Viewing Analytics Data</a></li>
                   
                 
               </ul>
@@ -872,210 +920,282 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Viewing Analytics Data</h1>
+<h1>Beacon Analytics Business Metrics</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn what analytics data is available to you for your Brightcove Beacon apps and how to examine that data in Google Analytics.</summary>
+  <summary>In this topic, you will learn you will learn about the custom dimensions and single custom metric added to your Google Analytics account for Brightcove Beacon.</summary>
+
   <section class="bcls-section">
-    <aside class="bcls-aside bcls-aside--information">Brightcove Beacon does NOT send full analytics back to Video Cloud. Only video starts are reported back to Video Cloud Analytics.</aside>
     <h2 id="Introduction">Introduction</h2>
-    <p>Undoubtedly you will want to know what viewers are watching in your Brightcove Beacon apps. To accomplish this you will use Google Analytics. Brightcove will load a customized Dashboard and a customized Google Data Studio report into your Google Analytics account. Both of these tools provide great insight into how your customers are using your Brightcove Beacon apps.</p>
-    <p>In addition to the customized dashboard and report, you can use the standard analytics tools in Google Analytics to view customer behavior. You can use the standard analytics data gathered by Google, and in addition Brightcove adds other entities to use, detailed later in this document. For instance, <strong>Movies</strong> events are dispatched when a movie is played, a default Google analytics measure, and time watched is calculated, a measure added by Brightcove. Therefore, in Google Analytics you can see the "most watched" movies by both how many times viewers played the movie and total time watched. These entities added by Brightcove are used extensively in the customized dashboard and report mentioned in the previous paragraph.</p>
+    <p>The table in the next section lists the custom dimensions and single custom metric used by Brightcove Beacon in Google Analytics. These are added to your Google Analytics account by Brightcove, or you can do this yourself following the steps in the <a href="/reviewing-analytics/ga-self-configuration.html">Google Analytics Self Configuration</a> document. Note the following for the custom dimensions and metic:</p>
+    <ul>
+      <li>Applicable to all platforms</li>
+      <li>Reporting is done on Priority items listed in the last column</li>
+      <li>Please note that there is a maximum of 20 custom dimensions for FREE Google Analytics accounts and 20 custom metrics</li>
+    </ul>
   </section>
+
   <section class="bcls-section">
-    <h2 id="Viewing_the_Dashboard">Viewing the Dashboard</h2>
-    <p>To view the Google Analytics Dashboard installed by Brightcove, and more importantly the data the dashboard displays, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Log in to <a href="https://analytics.google.com">Google Analytics</a>.</li>
-      <li>Click on the dropdown (highlighted in yellow in the screenshot) to see all your Google Analytics accounts.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/click-accounts.png" alt="Beacon analytics accounts" />
-        </figure>
-      </li>
-      <li>From the three-paneled dropdown, select:
-        <ol type="a">
-          <li>Your Brightcove Beacon account</li>
-          <li>Your app for which you want analytics</li>
-          <li>Your view (you will only have one view per app)</li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/app-groups.png" alt="Beacon analytics app groups" />
-        </figure>
-      </li>
-      <li>In the left side navigation, click on the <strong>Customization</strong> option, then on <strong>Dashboards</strong> to see the customized dashboard for your current view.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/select-dashboards.png" alt="select dashboards">
-        </figure>
-      </li>
-      <li>If the Dashboard does not appear, you will need to select it from the list:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/click-on-report.png" alt="Select dashboard">
-        </figure>
-      </li>
-      <li>Your dashboard will appear on the right side of the screen. A sample dashboard is shown here:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/dashboard.png" alt="Dashboard">
-        </figure>
-      </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Viewing_the_Data_Studio_report">Viewing the Data Studio report</h2>
-    <p>According to Google: "Data Studio is a free tool that turns your data into informative, easy to read, easy to share, and fully customizable dashboards and reports."</p>
-    <p>To view the customized Google Data Studio report installed by Brightcove, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Log in to <a href="https://datastudio.google.com/">Google Data Studio (datastudio.google.com)</a>.</li>
-      <li>You will see a list of report(s) listed on the landing page (highlighted in yellow):
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/data-studio-landing-page.png" alt="data studio landing page">
-        </figure>
-      </li>
-      <li>Click on the report name to open it.</li>
-      <li>The first page of an example report is shown here. Note in the top left corner of the report is the navigation (highlighted in yellow) to see the other pages.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/data-studio-report.png" alt="data studio report">
-        </figure>
-      </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Viewing_dimensions_and_metrics">Viewing dimensions and metrics</h2>
-    <aside class="bcls-aside bcls-aside--tip">If you are not familiar with analytics dimensions and metrics here is a VERY simplified explanation:
-      <ul>
-        <li>Dimensions are attributes of your data. For example, the city where views are coming from is a dimension. A single dimension can contain many values, like the names of all the cities from which you have views.</li>
-        <li>Metrics are quantitative measurements. So the number of sessions from a particular city would be a metric.</li>
-      </ul>
-    </aside>
-    <p>Brightcove adds functionality to the default Google measures for your analytics reports. You can use the default Google Analytics dimensions and metrics, the building blocks of analytics reports, as well as numerous dimensions and one metric added by Brightcove. These additional dimensions and the one metric are used in the dashboard and Data Studio report shown in the first two sections of this document.</p>
-    <p> Note that the dimensions and metric added by Brightcove are NOT the same for each type of Brightcove Beacon app. For instance, the iOS mobile data has 16 custom dimensions added, whereas the web site app has 20 custom dimensions added. To see a list of the dimensions and metric in the Google Analytics UI, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Log in to <a href="https://analytics.google.com">Google Analytics</a>.</li>
-      <li>Click on the dropdown (highlighted in yellow in the screenshot) to see all your Google Analytics accounts.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/click-accounts.png" alt="Beacon analytics accounts" />
-        </figure>
-      </li>
-      <li>From the three-paneled dropdown, select:
-        <ol type="a">
-          <li>Your Brightcove Beacon account</li>
-          <li>Your app for which you want analytics</li>
-          <li>Your view (you will only have one view per app)</li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/app-groups.png" alt="Beacon analytics app groups" />
-        </figure>
-      </li>
-      <li>In the left side navigation, click the <strong>Admin</strong> option.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/admin-click.png" alt="Click admin" />
-        </figure>
-      </li>
-      <li>Click <strong>Custom Definitions</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/click-custom-definitions.png" alt="Click custom definitions" />
-        </figure>
-      </li>
-      <li>When you click <strong>Custom Definitions</strong> you will see links for <strong>Custom Dimensions</strong> and <strong>Custom Metrics</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/list-custom-definitions.png" alt="list custom definitions" />
-        </figure>
-      </li>
-      <li>Click the <strong>Custom Dimensions</strong> link to see the dimensions for this app. Dimensions change per app.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/dimensions-list.png" alt="list custom definitions" />
-        </figure>
-      </li>
-      <li>Click the <strong>Custom Metrics</strong> link to see the single metic, <strong>Time Watched</strong>. This is the only custom metric for Brightcove Beacon apps.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/metrics-list.png" alt="list custom definitions" />
-        </figure>
-      </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Report_examples">Report examples</h2>
-    <p>This document is to make you aware of information you can use from Google Analytics. It is NOT the intention of this document to be a complete instructional guide on how to use Google Analytics with your Brightcove Beacon apps. That being said, the next section of the document will detail how to see a few commonly requested reports about your Brightcove Beacon apps.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Audience_information">Audience information</h2>
-    <p>You can view analytics on your audience by following these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Choose your app/view by following the first three steps from any of the sections above.</li>
-      <li>In the left side navigation, first click <strong>Audience</strong> then <strong>Overview</strong>.
-        <p></p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/audience-overview.png" alt="audience overview" />
-        </figure>
-      </li>
-      <li>On the right side of the screen, you see a summary of your audience using different metrics like <strong>Language</strong>, <strong>App Info</strong>, and <strong>Devices</strong>. You can click on a specific metric for more detail.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/audience-details.png" alt="audience details" />
-        </figure>
-      </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Screen_views_information">Screen views information</h2>
-    <p>Of course, you will want to see what your viewers are doing in your apps. The option for this is <strong>Behavior</strong>. Follow these steps to see <strong>screen views</strong> information:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left side navigation, click <strong>Behavior</strong> → <strong>Site Content</strong> → All Pages.
-        <p></p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/behavior-screens.png" alt="behavior screens" />
-        </figure>
-      </li>
-      <li>On the right side of the screen you see a list of the most viewed screens.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/screens-details.png" alt="screens details" />
-        </figure>
-      </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Played_and_time_watched_information">Played and time watched information</h2>
-    <p>Still in the <strong>Behavior</strong> option, you can see the number of times a video asset has had the play button clicked for it, and also how long the asset was actually watched. Follow these steps for that info:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>While still in the <strong>Behavior</strong> option, click <strong>Events → Top Events</strong>.</li>
-      <li>In the <strong>Event Category</strong> list, click <strong>Play movies</strong>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/event-category-play-movie.png" alt="event category play movie" />
-        </figure>
-      </li>
-      <li>In the <strong>Event Category</strong> list, click <strong>Movie</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/event-category.png" alt="event category" />
-        </figure>
-      </li>
-      <li>In the <strong>Even Action</strong> list, click <strong>Play</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/event-action.png" alt="event action" />
-        </figure>
-      </li>
-      <li>Note that the list shows the number of times the play button was click for each asset.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/play-movies-details.png" alt="play movies details" />
-        </figure>
-      </li>
-      <li>Note that you can see information on one or more of your custom dimensions by adding the appropriate column to the table. To do this, click the down arrow for the <strong>Secondary dimension</strong> dropdown, where you can see the <strong>Custom Dimensions</strong> group.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/secondary-dimension-dropdown.png" alt="secondary dimension dropdown" />
-        </figure>
-      </li>
-      <li>You can now open the <strong>Custom Dimensions</strong> group and select a dimension.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/choose-custom-definition.png" alt="choose custom definition" />
-        </figure>
-      </li>
-      <li>View the example table with the <strong>Genre</strong> custom dimension added.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/reviewing-analytics/using-beacon-analytics/language-in-table.png" alt="language in table" />
-        </figure>
-      </li>
-      <li>Note the in the <strong>Event Action</strong> list you can also see <strong>Time Watched</strong>, which of course uses your custom metric <strong>Time Watched</strong>.</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Google_Analytics_learning_resources">Google Analytics learning resources</h2>
-    <p>You have just scratched the surface of Google Analytics in this document. You can put together custom reports with daily or weekly summary information on selected assets, etc. A good place to start your journey of learning more about Google Analytics could be the <a href="https://analytics.google.com/analytics/academy/">Google Analytics Academy</a> and/or the <a href="https://developers.google.com/analytics">Google Analytics documentation</a>.</p>
+    <h2 id="Metrics_and_dimensions">Custom metrics and dimensions</h2>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Description</th>
+          <th>Custom Dimension</th>
+          <th>Custom Metric</th>
+          <th>Dimension</th>
+          <th>Metric</th>
+          <th>Using Event and Filters</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Play events by city</td>
+          <td></td>
+          <td></td>
+          <td>Town/City</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Geographic distribution</td>
+          <td></td>
+          <td></td>
+          <td>Town/City</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Play events by production year</td>
+          <td>Production Year</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Play events by country of origin (production)</td>
+          <td>Country of Origin</td>
+          <td></td>
+          <td></td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Top movies</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Top series</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Top channels</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by movie</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Event Action</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by episodes</td>
+          <td>
+            Season Number / <br /> Episode Number
+          </td>
+          <td>Time Watched</td>
+          <td>Event Action</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by series</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Event Action</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by channel</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Event Action</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by movie genre</td>
+          <td>Genre</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by series genre</td>
+          <td>Genre</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Time watched by channels genre</td>
+          <td>Genre</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Movies watched by account</td>
+          <td>Account Token (GDPR)</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Series watched by account</td>
+          <td>Account Token (GDPR)</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Channels watched by account</td>
+          <td>Account Token (GDPR)</td>
+          <td>Time Watched</td>
+          <td></td>
+          <td></td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Consolidation of VOD during the week - movies</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Day of Week Name</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Consolidation of VOD during the week - series</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Day of Week Name</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Consolidation of VOD during the week - channels</td>
+          <td></td>
+          <td>Time Watched</td>
+          <td>Day of Week Name</td>
+          <td></td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Top search keywords</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Top rated titles</td>
+          <td></td>
+          <td></td>
+          <td>Event Action</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Pick time of VOD</td>
+          <td></td>
+          <td></td>
+          <td>Hour</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Pick time Live Channels</td>
+          <td></td>
+          <td></td>
+          <td>Hour</td>
+          <td>Total Events</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Number of users by country/city</td>
+          <td></td>
+          <td></td>
+          <td>Country OR City</td>
+          <td>Users</td>
+          <td>N</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Users by type (subscription related)</td>
+          <td>User Type (e.g. visitor, free_user, trialist, subscriber)</td>
+          <td></td>
+          <td></td>
+          <td>Users</td>
+          <td>N</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Users by platform</td>
+          <td>Platform</td>
+          <td>Users</td>
+          <td></td>
+          <td></td>
+          <td>N</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </article>
 <!-- complete bootstrap layout -->
@@ -1103,7 +1223,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 19 Jun 2021
+  Page last updated on 07 Jul 2021
 </div>
 
 
