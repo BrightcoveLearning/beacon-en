@@ -550,7 +550,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
@@ -560,7 +560,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/iframe-test.html",
+      "newURL": "https://beacon-help.support.brightcove.com/cloud-playout/iframe-test.html",
       "oldURL": "/iframe-test"
   },
 
@@ -655,7 +655,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/lg/",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/",
       "oldURL": "/index"
   },
 
@@ -696,6 +696,11 @@
 
   {
       "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/lg/",
       "oldURL": "/index"
   },
 
@@ -796,11 +801,6 @@
 
   {
       "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/",
       "oldURL": "/index"
   },
 
@@ -1287,11 +1287,6 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/admin/help/test-buttons.html",
       "oldURL": "/test-buttons"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/analytics/trending-now-report-reference.html",
-      "oldURL": "/trending-now-report-reference"
   },
 
   {
