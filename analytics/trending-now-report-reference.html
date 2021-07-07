@@ -1,0 +1,25 @@
+---
+title: Trending Now Report Reference
+description: In this topic you will learn about the Trending Now report that is provided as part of the Analytics module.
+parent: Analytics
+layout: staging
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--information">Note: This feature is in currently in Beta. If you are interested in enabling it for your account, contact your Account Manager.</aside>
+    <p>To view the Trending Now report, open the Analytics module and select <span class="BCL_command"><strong>Trending Now</strong></span> from the left side navigation. The report will display a graph showing the number of concurrent viewers for the past hour. The graph will update every 5 seconds.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="trending now graph" src="/assets/images/analytics/trending-now-report.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">
+      <p>Note:  A unique user is determined by browser user agent combined with IP address. Multiple tabs of the same player running in the same browser will only be 1 user.</p>
+      <p>The Trending Now report uses speculative windowing to calculate partially-completed value.  These aggregations emit a new minutely value every 1 minute and then a complete value at the end of the minute. Depending on the system load, the overwriting process may not be completed causing one minute outstanding spikes in the CCU reporting.</p>
+    </aside>
+    <p>If your account is enabled for Brightcove Live, you will have the option to view the number of concurrent viewers for  all videos, VOD assets or live assets.</p>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/analytics/trending-now-select-all-vod-live.png" /></figure>
+    </p>
+    <p>Sections below the graph will display the <strong>Top Videos</strong>, <strong>Top Countries</strong> and <strong>Top Cities</strong> for the last minute and will update every 5 seconds.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/analytics/trending-now-top-sections.png" /></figure>
+  </section>
+</article>
