@@ -1,0 +1,168 @@
+---
+title: 'Step-by-Step:  Using the Players Module to Create and Publish a Player'
+description: The purpose of this topic is to show you how you can create and publish a player using the Players module.
+parent: 'Publishing Videos & Players'
+---
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="3721051666001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>After working through the steps in this topic, you should be able to:</p>
+    <ul>
+      <li>Navigate inside the Players module</li>
+      <li>Create a player</li>
+      <li>Set player properties</li>
+      <li>Pass a Video Cloud video ID to display in the player</li>
+      <li>Preview and publish a player</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Note: If you are looking to publish a playlist or a single video to a player, use the publish function inside the Media module. For more information, see <a href="/publish/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists with the Media Module</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="audience">Audience</h2>
+    <p>Any video publisher who needs to create and publish videos using the Players module.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="prereq">Prerequisites</h2>
+    <ul>
+      <li>A Video Cloud account with access to the Players module</li>
+      <li>A video in your Video Cloud account to publish; The video used in this Quick Start can be downloaded <a href="//solutions.brightcove.com/bcls/docs/quickstart/oystercatcher.mp4">here</a> or you can use your own content</li>
+      <li>If you are using the video provided with this Quick Start, upload it to your Video Cloud account</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="instructions">Instructions</h2>
+    <p>To create and publish a Brightcove player using Video Cloud Studio, you will complete the following tasks:</p>
+    <ul>
+      <li><a href="#create">Create a player</a></li>
+      <li><a href="#size">Configure the player dimensions</a></li>
+      <li><a href="#publish">Publish and preview the player</a></li>
+      <li><a href="#assign">Dynamically assign video content to the player</a></li>
+      <li><a href="#style">Configure styling properties</a></li>
+      <li><a href="#social">Configure social sharing properties</a></li>
+      <li><a href="#preview">Preview the player</a></li>
+      <li><a href="#final">Publish the final player</a></li>
+    </ul>
+    <div class="BCL-taskSubsection" id="create">
+      <h3>Create a player</h3>
+      <p>To create a new player, follow these steps.</p>
+      <ol class="bcls-tasklist">
+        <li>Log in to Video Cloud Studio.</li>
+        <li>The current Video Cloud account name will appear in the upper right corner of the page. If you have multiple accounts, click the <strong>current user - current account</strong> link and select the account you would like to create the player in.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-current-account.png" /></figure>
+        </li>
+        <li>Click the <strong>Players</strong> link in the navigation header.</li>
+        <li>Click the <strong>New Player</strong> button.</li>
+        <li>Enter a <strong> Name </strong>and <strong>Short Description</strong> for the player. For this Quick Start, the player name will be <strong>Sample Player</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-new-player-dialog.png" /></figure>
+        </li>
+        <li>Confirm that the player appears in the list of players.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-list-of-players.png" /></figure>
+        </li>
+      </ol>
+      <p>When a new player is created using the Players module, the player is built using the latest player version as published by Brightcove. To see the player version, open the Players module and click on the player that you want to check. The Player Information properties will display the <strong>Published Player Version</strong>.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-player-version.png" /></figure>
+      <p>Note that all players may not be the same version. As Brightcove continues to develop and improve the Brightcove player, new player versions will be released. By default, updates are applied to all players automatically. To prevent auto-updating of a player, you must set the <strong>Update Mode</strong> setting to <strong>Manual</strong> (also known as locking a player). For more information, see <a href="/players/setting-player-update-mode-and-version.html">Setting the Player Update Mode and Version</a>.</p>
+    </div>
+    <div class="BCL-taskSubsection" id="size">
+      <h3>Configure the player dimensions</h3>
+      <p>By adding player dimensions, width and height parameters will be added to the iframe embed code. If you leave the dimensions blank, the player can be put into a <code translate="No">&lt;div&gt;</code> of any size on a page and it will expand to fill the space. To set the player dimensions, follow these steps.</p>
+      <ol class="bcls-tasklist">
+        <li>Click the link for the <strong>Sample Player</strong> to open the player properties page.</li>
+        <li>Click <strong>Player Information</strong> in the left navigation menu.</li>
+        <li>Set the <strong>Aspect Ratio</strong> to <strong>16:9</strong>.</li>
+        <li>Set the <strong>Player Width</strong> to <strong>640</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-settings-props.png" /></figure>
+        </li>
+        <li>Click <strong>Save</strong>.</li>
+      </ol>
+      <p>For more information on the Player Information properties, see <a href="/players/setting-player-information-properties.html">Setting Player Information Properties</a>.</p>
+    </div>
+    <div class="BCL-taskSubsection" id="publish">
+      <h3>Publish and preview the player</h3>
+      <p>Publishing the player will push the changes to the published player. For more information on preview players, published players and player publishing code, see <a href="/players/generating-player-embed-code.html">Generating Player Embed&nbsp;Code</a>.</p>
+      <p>To publish the player, follow these steps.</p>
+      <ol class="bcls-tasklist">
+        <li>Click <strong>Publish &amp; Embed</strong> and then <strong>Publish Changes</strong> to publish the player.</li>
+        <li>Confirm that the publish was successful.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-publish-ok.png" /></figure>
+        </li>
+        <li>Click the <strong>Player URL</strong> to open the preview player in a new browser tab. The player will be empty as no video has been assigned to the player.
+<figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-published-player-code.png" /></figure>
+        </li>
+      </ol>
+    </div>
+    <div class="BCL-taskSubsection" id="assign">
+      <h3>Dynamically assign video content to the player</h3>
+      <p>For this Quick Start, we will dynamically assign a Video Cloud video ID to the player by using a URL parameter. To do this, follow these steps.</p>
+      <ol class="bcls-tasklist">
+        <li>Open the Media module and locate the video you want to publish. The video ID will appear below the video name.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-vc-video-id.png" /></figure>
+        </li>
+        <li>Copy the video ID to the clipboard.</li>
+        <li>Return to the tab with the preview player. To dynamically pass in the video ID to display, append the following to the URL and press enter:<br />
+          <code translate="No">?videoId=your video id</code>
+          <aside class="bcls-aside bcls-aside--information">Note: The URL parameter name is case sensitive.</aside>
+          <p>The complete URL will look something like:</p>
+          <code translate="No">https://players.brightcove.net/1486906377/Ctzra7vEL_default/index.html?videoId=5798846643001</code></li>
+        <li>Confirm the video appears.</li>
+      </ol>
+    </div>
+    <div class="BCL-taskSubsection" id="style">
+      <h3>Configure styling properties</h3>
+      <p>The style properties are used to customize the appearance of the player. For more information on styling players, see <a href="/players/styling-players.html">Styling Players</a>.</p>
+      <p>To configure the style settings, return to the Players module and follow these steps.</p>
+      <ol class="bcls-tasklist">
+        <li>Click the link for the <strong>Sample Player</strong> to open the player properties page.</li>
+        <li>Click <strong>Styling</strong> in the left navigation menu.</li>
+        <li>Select a <strong>Play Button Shape</strong> and <strong>Play Button Position</strong>.</li>
+        <li>In the <strong>Color Theme</strong> section, click the <strong>Play Button</strong> color picker.</li>
+        <li>Click the red color on the ride side of the control. Click in the square to select a shade of red.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-progress-bar-color.png" /></figure>
+        </li>
+        <li>Click outside of the control to collapse the color picker.</li>
+        <li>Note that below the preview player there is a message stating that changes have been made to the player.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-unpub-changes.png" /></figure>
+        </li>
+      </ol>
+    </div>
+    <div class="BCL-taskSubsection" id="social">
+      <h3>Configure social sharing properties</h3>
+      <p>When social sharing is enabled, a share icon will appear at the bottom of the player next to the playhead. This will allow viewers to share your content out to popular social media sites. For more information on configuring the social properties for a player, see <a href="/players/configuring-social-properties-player.html">Configuring the Social Properties for a Player</a>.</p>
+      <p>To configure the social settings, follow these steps.</p>
+      <ol class="bcls-tasklist">
+        <li>Click <strong>Social</strong> in the left navigation menu.</li>
+        <li>Check the <strong>Enable Sharing </strong>checkbox.</li>
+        <li>Select all of the social media sites.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-social-sharing-settings.png" /></figure>
+        </li>
+      </ol>
+    </div>
+    <div class="BCL-taskSubsection" id="preview">
+      <h3>Preview the player</h3>
+      <p>The preview player on the page should reflect the styling and social changes that have been made to the player.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-studio-preview-player.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">Note: If you return to the published player that we opened earlier and refresh the page, you will notice that these changes are not live in the published player. The color and social changes will not be pushed to the published player until the changes have been published inside of the Players module.</aside>
+      <p>It is also possible to generate the publishing code for the preview player. For example, maybe the marketing department needs to approve all changes made to the player. You can send them a URL to the preview player so they can approve the changes. To generate the publishing code for the preview player, follow these steps.</p>
+      <ol class="bcls-tasklist">
+        <li>On the Players module homepage, click <strong>Embed Code &amp; URL</strong> and click <strong>Preview Player</strong>. The Preview Player Embed Code dialog will display.</li>
+        <li>Click the <strong>Player URL</strong> to open the preview player in a new browser tab.</li>
+        <li>The preview player should occupy the entire width of the browser page and have a Brightcove logo overlay indicating that it is the preview player. Confirm that the color changes and viral promotion changes are visible.</li>
+        <li>Leave the preview player open and return to the Players module.</li>
+      </ol>
+    </div>
+    <div class="BCL-taskSubsection" id="final">
+      <h3>Publish the final player</h3>
+      <p>The changes in the preview player will not be visible in the published player until the changes are published. To publish the changes, follow these steps.</p>
+      <ol class="bcls-tasklist">
+        <li>In the Players module, click <strong>Publish &amp; Embed</strong> and then <strong>Publish Changes</strong> to publish the player.</li>
+        <li>Confirm that the publish was successful.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node14057-publish-ok.png" /></figure>
+        </li>
+        <li>Return to the browser tab with the published player. Remember, the preview player will display a Brightcove logo overlay.</li>
+        <li>Refresh the page and verify that the color change and viral promotion settings are now visible in the published player. Note that there might be a slight delay before the changes appear in the published player.</li>
+      </ol>
+    </div>
+  </section>
+</article>
