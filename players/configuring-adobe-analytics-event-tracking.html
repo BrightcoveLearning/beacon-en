@@ -1,0 +1,194 @@
+---
+title: Configuring Adobe Analytics Event Tracking
+description: In this topic you will learn how to configure Adobe Analytics event tracking in the Players module.
+parent: Managing Players
+---
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>The Players module provides the ability to easily integrate Brightcove Players with Adobe Analytics. This allows event tracking data to be sent to an Adobe Analytics account for reporting purposes.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Each analytics system gathers data and calculates metrics differently. Video Cloud analytics data will not be identical to what appears in Adobe Analytics.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: The Adobe Analytics plugin is not supported when using the Brightcove Player SDKs.</aside>
+    <p>To configure the integration, the following tasks need to be performed:</p>
+    <ul>
+      <li><a href="#review_events">Review the available events to track</a></li>
+      <li><a href="#add_events">Create Custom Success Events in Adobe Analytics</a></li>
+      <li><a href="#review_parameters">Review the available parameters to capture</a></li>
+      <li><a href="#add_parameters">Create Traffic Variables in Adobe Analytics</a></li>
+      <li><a href="#enable">Enable the integration in the Players module</a></li>
+      <li><a href="#configure_page">Configure the page to collect data</a></li>
+    </ul>
+    <p>Note that when the integration is configured, only analytics for video events will be passed to Adobe Analytics.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="review_events">Reviewing the available events to track</h2>
+    <p>Every Brightcove event that will be tracked must be created as a Custom Success Event in Adobe Analytics. The event IDs from Adobe will then be used inside the Players module. This allows Brightcove event data to be passed to Adobe Success events. Review the list of events below to determine which events you want to track.</p>
+    <ul>
+      <li><strong>Player Load (bcvideo_player_load)</strong> - Sent when a player has been loaded and is ready for playback</li>
+      <li><strong>Video Impression (bcvideo_video_impression)</strong> - Sent when a video has been loaded into a player and is ready for playback</li>
+      <li><strong>Video View (bcvideo_video_view)</strong> - Sent when a video has started playing back either through auto-play or due to user interaction</li>
+      <li><strong>Video Engagement (bcvideo_video_engagement)</strong> - A user watched a range of seconds of a video's timeline. This event is a heartbeat for tracking video engagement and will likely be sent many times during playback, depending on the user interaction and the length of the video.</li>
+      <li><strong>Play Request (bcvideo_play_request)</strong> - Sent when playback is initiated either by the user expressly clicking the play button, or automatically when the platform triggers playback in an auto-play scenario</li>
+      <li><strong>Ad Start (bcvideo_ad_start)</strong> - Sent when control is handed over to an advertising agent by the playback platform</li>
+      <li><strong>Ad End (bcvideo_ad_end)</strong> - Sent when control is handed back from the advertising agent to the playback platform</li>
+      <li><strong>Error (bcvideo_error)</strong>- Sent when fatal errors which disrupt the playback experience are encountered</li>
+      <li><strong>Video Complete (bcvideo_video_complete)</strong> - Sent when video playback finishes</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="add_events">Adding Custom Success Events to Adobe Analytics</h2>
+    <p>After you determine which events you want to track, Custom Success Events must be created in Adobe Analytics. To create Custom Success Events in Adobe Analytics, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Log in to your Adobe Analytics account.</li>
+      <li>Select a Report Suite to work with or create a new one (<strong>Admin &gt; Report Suites</strong>).</li>
+      <li>Click <strong>Edit Settings &gt; Conversion &gt; Success Events</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-adobe-success-events.png" /></figure>
+      </li>
+      <li>Click <strong>Add New</strong>.</li>
+      <li>Enter the event information:
+        <ul>
+          <li><strong>Name</strong> - You <strong>must</strong> use the <strong>bcvideo-</strong> name listed in the previous section</li>
+          <li><strong>Type</strong> - Set to <strong>Counter</strong></li>
+          <li><strong>Description</strong> - Add a meaningful description</li>
+        </ul>
+      </li>
+      <li>Create a new success event for each event you want to track. Click <strong>Save</strong> to save the events.</li>
+    </ol>
+    <p>The image below shows Custom Success Events created (event7 - event15) for each of the Brightcove events.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-success-events-list.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="review_parameters">Reviewing the available parameters to capture</h2>
+    <p>Parameters carry additional data and are passed with events. Every Brightcove parameter that will be recorded must be created as a Traffic Variable (eVarXX, where XX is a number like 88) in Adobe Analytics. The parameter named will then be used inside the Players module. This allows Brightcove parameters to be passed to Adobe Traffic Variables. Review the list of parameters below to determine which ones you want to capture.</p>
+    <ul>
+      <li><strong>Account ID&nbsp;(bcvideo_account) </strong>- Brightcove account name</li>
+      <li><strong>Player ID&nbsp;(bcvideo_player)</strong><strong> </strong>- Player ID</li>
+      <li><strong>Player Name&nbsp;(bcvideo_player_name)</strong><strong> </strong>- Player Name</li>
+      <li><strong>Player Version&nbsp;(bcvideo_platform_version)</strong> - Player version number</li>
+      <li><strong>Session&nbsp;(bcvideo_session)</strong><strong> </strong>- Session identifier</li>
+      <li><strong>Video ID&nbsp;(bcvideo_video)</strong><strong> </strong>- Video ID of the video</li>
+      <li><strong>Video Name&nbsp;(bcvideo_video_name)</strong> - Name of the video</li>
+      <li><strong>Range&nbsp;(bcvideo_range)</strong><strong> </strong>- The range of seconds viewed in the format StartSecond..EndSecond</li>
+      <li><strong>Video Seconds Viewed&nbsp;(bcvideo_video_seconds_viewed)</strong> - Count of watched seconds</li>
+      <li><strong>Video Duration&nbsp;(bcvideo_video_duration)</strong><strong> </strong>- The duration of the video in seconds</li>
+      <li><strong>Video Percent Viewed&nbsp;(bcvideo_video_percent_viewed)</strong> - Percentage of video watched</li>
+      <li><strong>Error Code&nbsp;(bcvideo_error_code)</strong><strong> </strong>- Platform specific error code associated with the event</li>
+    </ul>
+    <h3>Example</h3>
+    <ol>
+      <li>In the Player plugin values in Video Cloud set <code translate="No">bcvideo_player_name</code> = <code translate="No">eVar88</code></li>
+      <li>And in the Adobe Console, you should set <code translate="No">eVar88</code> to <code translate="No">bcvideo_player_name</code></li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="add_parameters">Creating Traffic Variables in Adobe Analytics</h2>
+    <p>After you determine which parameters you want to track, Traffic Variables must be created in Adobe Analytics. To create Traffic Variables in Adobe Analytics, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Log in to your Adobe Analytics account.</li>
+      <li>Select a Report Suite to work with or create a new one (<strong>Admin &gt; Report Suites</strong>).</li>
+      <li>Click <strong>Edit Settings &gt; Traffic &gt; Traffic Variables</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-adobe-traffic-variables.png" /></figure>
+      </li>
+      <li>Enter the parameter information:
+        <ul>
+          <li><strong>Name</strong> - You <strong>must</strong> use the <strong>bcvideo-</strong> name listed in the previous section</li>
+          <li><strong>Description</strong> - Add a meaningful description</li>
+        </ul>
+      </li>
+      <li>Create a new traffic variable for each parameter you want to track. Click <strong>Save</strong> to save the variables.</li>
+    </ol>
+    <p>The image below shows Traffic Variables created for each of the Brightcove parameters.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-traffic-vars-list.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="enable">Enabling the integration</h2>
+    <p>You may want to login to your Adobe Analytics account to copy needed information from there to the Players module. To configure Adobe Analytics event tracking for a player, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>Players</strong> in the navigation header to open the Players module.</li>
+      <li>Click the link for the player you want to configure.</li>
+      <li>Click <strong>Third-Party Analytics &gt; Adobe Analytics </strong>in the left navigation menu.</li>
+      <li>Check <strong>Enable Adobe Analytics</strong>.</li>
+      <li>Enter your Adobe account information.
+        <ul>
+          <li><strong>Report Suite ID</strong></li>
+          <li><strong>Marketing Cloud Org ID</strong></li>
+          <li><strong>Tracking Server</strong></li>
+          <li><strong>CNAME Enabled</strong></li>
+          <li><strong>Visitor Namespace</strong></li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-adobe-account-info.png" /></figure>
+      </li>
+      <li>For each event you want to track, enter the event ID from Adobe Analytics into the corresponding field for the Brightcove event. In this example, when the <strong>bcvideo_player_load</strong> event was created as a Custom Success Event in Adobe Analytics, the event ID assigned was <strong>event7</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-player-load-event.png" /></figure>
+        <p>This is the value that should be entered into the field for the <strong>Player Load (bcvideo_player_load)</strong> event in the Players module.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-player-load-event-value.png" /></figure>
+      </li>
+      <li>Enter all of the event IDs from Adobe Analytics into the Players module as needed.</li>
+      <li>Click <strong>Save</strong> to save the event mappings.</li>
+      <li>For each parameter you want to capture, enter the parameter number from Adobe Analytics into the corresponding field for the Brightcove parameter using the format <strong>propX</strong> where <strong>X</strong> corresponds to the <strong>Property #</strong> in Adobe Analytics. In this example, a <strong>bcvideo-account</strong> Traffic Variable was created in Adobe Analytics to hold the Brightcove account ID. It was assigned to Property # 1.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-param-account.png" /></figure>
+        <p>Therefore, <strong>prop1</strong> should also be entered into the corresponding field for the parameter in the Players module.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-param-account-value.png" /></figure>
+      </li>
+      <li>Enter all of the parameter names from Adobe Analytics into the Players module as needed.</li>
+      <li>Click <strong>Save</strong> to save the parameter mappings.</li>
+    </ol>
+    <p><strong>Make sure to publish the changes to the player.</strong></p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="ipx">Using the integration with a Gallery In-Page experience</h2>
+    <p>If the player will be used in a Gallery In-Page experience, some configuration of the In-Page experience is required:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the Gallery module.</li>
+      <li>Edit the experience using the player with Adobe Analytics integration.</li>
+      <li>Click <strong>SETTINGS &gt; Advanced</strong> in the left navigation.</li>
+      <li>Add the following to the JavaScript <strong>Code</strong> section:
+        <pre>
+window.s_gi = window.top.s_gi</pre>
+      </li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+    <p>Remember to republish the experience.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure_page">Configuring a page to collect data</h2>
+    <p>To begin sending data to Adobe Analytics, data must be sent to a report suite to display in reporting. To successfully implement a page with code to collect data, you must have access to your hosting servers to upload new content to your website. It is also useful to have an existing site to implement code.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Use the Advanced embed (in-page) code when publishing your player. The Standard embed (iframe) code will not work as the plugin will be running inside of an iframe and therefore will be unable to interact with the needed JavaScript.</aside>
+    <p>The following steps walk through a basic Adobe Analytics implementation.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Download <strong>AppMeasurement</strong> for JavaScript and the <strong>Visitor ID</strong> service. The download is available in Code Manager (<strong>Analytics &gt; Admin &gt; Code Manager</strong>). The download zip contains several files. <code translate="No">AppMeasurement.js</code> and <code translate="No">VisitorAPI.js</code> are the relevant files when implementing Analytics.</li>
+      <li>Host&nbsp;<code translate="No">AppMeasurement.js</code>&nbsp;and&nbsp;<code translate="No">VisitorAPI.js</code>. These core JavaScript files must be hosted on a web server that is accessible to all pages on your site. You need the path to these files when adding them to your pages.</li>
+      <li>Reference&nbsp;<code translate="No">AppMeasurement.js</code>&nbsp;and&nbsp;<code translate="No">VisitorAPI.js</code>&nbsp;on all site pages with a Brightcove Player by adding the following lines of code in the&nbsp;<code translate="No">&lt;head&gt;</code>&nbsp;or <code translate="No">&lt;body&gt;</code> tag on each page. <code translate="No">VisitorAPI.js</code>&nbsp;must be included before&nbsp;<code translate="No">AppMeasurement.js</code>.
+        <pre>
+&lt;script&nbsp;language="JavaScript"&nbsp;type="text/javascript"&nbsp; src="https://Insert Domain and path to file here/VisitorAPI.js"&gt;&lt;/script&gt;
+&lt;script&nbsp;language="JavaScript"&nbsp;type="text/javascript"&nbsp; src="https://Insert Domain and path to file here/AppMeasurement.js"&gt;&lt;/script&gt;</pre>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="confirm">Confirming the setup</h2>
+    <p>To confirm that Brightcove event data is being captured in Adobe Analytics, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Log in to your Adobe Analytics account.</li>
+      <li>Click <strong>Reports</strong>.</li>
+      <li>Click <strong>Site Metrics &gt; Real-Time</strong>.</li>
+      <li>Confirm that the correct Report Suite is selected.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-confirm-report-suite.png" /></figure>
+      </li>
+      <li>Click <strong>Configure</strong>.</li>
+      <li>Enter a <strong>Report Name</strong>.</li>
+      <li>For the <strong>Metric</strong>, <strong>Primary Dimension</strong> and <strong>Secondary Dimension</strong>, select Brightcove events that you configured as <a href="#add_events">Success Events</a> in Adobe Analytics. The events should appear in the list.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-report-select-event.png" /></figure>
+      </li>
+      <li>Select other events to fill the dimensions.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-report-defined.png" /></figure>
+      </li>
+      <li>Click <strong>Save and View Report</strong>.</li>
+      <li>Confirm that the expected data appears in the report.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18852-report.png" /></figure>
+      </li>
+    </ol>
+    <p>If data is not appearing, verify that the URLs to the &nbsp;<code translate="No">AppMeasurement.js</code>&nbsp;and&nbsp;<code translate="No">VisitorAPI.js</code>&nbsp;files are valid. Check the browser console to make sure no 404 errors are appearing. Also, ad blockers may prevent data from being sent to Adobe Analytics.</p>
+  </section>
+</article>

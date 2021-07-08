@@ -1,0 +1,88 @@
+---
+title: Configuring Google Analytics Event Tracking
+description: In this topic you will learn how to configure Google Analytics event tracking in the Players module.
+parent: Reviewing Analytics
+---
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>The Players module provides the ability to easily integrate Brightcove Players with Google Analytics. This allows player events and custom dimension data to be sent to a Google Analytics account for reporting purposes. Note that when the integration is configured, only analytics for video events will be passed to Google Analytics.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Each analytics system gathers data and calculates metrics differently. Video Cloud analytics data will not be identical to what appears in Google Analytics.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: The Google Analytics plugin is not supported when using the Brightcove Player SDKs.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: The Players Module supports Google's Universal Analytics data model. The newer Google Analytics 4 update is not supported. See the <a href="#version">Google Analytics Versions</a> section below for more information.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">Configuring Google Analytics</h2>
+    <p>To configure Google Analytics integration, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Players</strong> module.</li>
+      <li>Click the player name you want to configure to open the player properties.</li>
+      <li>Click <strong>Third-Party Analytics &gt; Google Analytics </strong>in the left navigation menu.</li>
+      <li>Check <strong>Enable Google Analytics</strong>.</li>
+      <li>Click <strong>Sign In to Google Account</strong>.</li>
+      <li>Select the Google account to sign in with and enter your credentials if prompted.</li>
+      <li>Click <strong>Allow</strong> to let Brightcove access your Google account.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18804-permissions.png" /></figure>
+      </li>
+      <li>Use the <strong>Select Account</strong> dropdown to select the Google account to send tracking data to.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18804-select-account.png" /></figure>
+      </li>
+      <li>Select the <strong>Events for Tracking</strong>. See the <a href="#events">Events and custom dimensions </a> section below for a description of the events.</li>
+      <li>Click <strong>Save</strong>. This will configure the player with the Google Analytics plugin and create any needed custom dimensions in your Google Analytics account.
+        <aside class="bcls-aside bcls-aside--information">Note: You must have the <strong>Edit</strong> permission in your Google Analytics account in order to create dimensions.</aside>
+      </li>
+    </ol>
+    <p>Make sure to publish the changes to the player.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Use the Advanced embed (in-page) code when publishing your player. The Standard embed (iframe) code will not work as the plugin will be running inside of an iframe and therefore will be unable to interact with the needed JavaScript.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="events">Events &amp; custom dimensions</h2>
+    <p>Both events and custom dimension data can be passed to Google Analytics.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18804-select-events.png" /></figure>
+    <p>The following events can be passed.</p>
+    <h3>Basic Events</h3>
+    <ul>
+      <li><strong>Video Impression</strong> - Sent when a video has been loaded into a player and is ready for playback</li>
+      <li><strong>Play Request</strong> - Sent when playback is initiated either by the user expressly clicking the play button, or automatically when the platform triggers playback in an auto-play scenario</li>
+      <li><strong>Video Engagement</strong> - A user watched a range of seconds of a video's timeline. This event is a heartbeat for tracking video engagement and will likely be sent many times during playback, depending on the user interaction and the length of the video.</li>
+    </ul>
+    <h3>Advertising Events</h3>
+    <ul>
+      <li><strong>Ad Start</strong> - Sent when control is handed over to an advertising agent by the playback platform</li>
+      <li><strong>Ad End</strong> - Sent when control is handed back from the advertising agent to the playback platform</li>
+    </ul>
+    <h3>Advanced Events</h3>
+    <ul>
+      <li><strong>Player Load</strong> - A player session has been initiated by an end-user</li>
+      <li><strong>Error</strong> - Sent when fatal errors which disrupt the playback experience are encountered</li>
+    </ul>
+    <h3>Custom Dimensions</h3>
+    <p>Custom dimensions allow you to combine Google Analytics data with non-Analytics data. Custom dimensions collect data that Google Analytics doesn't automatically track. The following custom dimensions are available.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: For more information on custom dimensions, see the <a href="https://support.google.com/analytics/answer/2709828?hl=en">Google Analytics Help</a>.</aside>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18804-select-dimensions.png" /></figure>
+    <ul>
+      <li><strong>Video Seconds Viewed</strong> - Count of watched seconds (only available if the <strong>Video Engagement</strong> event was selected)</li>
+      <li><strong>Range</strong> - The range of seconds viewed (only available if the <strong>Video Engagement</strong> event was selected)</li>
+      <li><strong>Video Duration</strong> - The duration of the video in seconds (only available if the <strong>Video Engagement</strong> event was selected)</li>
+      <li><strong>Player ID and Player Name</strong> - Player ID and Name</li>
+      <li><strong>Account Name</strong> - Brightcove Account ID</li>
+      <li><strong>Session</strong> - The session identifier; the session value should be constant for the lifecycle of an experience and sent for all events from that experience</li>
+      <li><strong>Player Version</strong> - Brightcove Player version</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="version">Google Analytics Versions</h2>
+    <p>The Players module supports Google's Universal Analytics data model. Currently, the newer Google Analytics 4 update is not supported. Brightcove recommends using Universal Analytics when integrating with the Players module and  Brightcove Players.</p>
+    <p>Following are high level steps to creating a Universal Analytics property within Google Analytics.</p>
+    <ul>
+      <li>Create property</li>
+      <li>Show advanced options</li>
+      <li>Toggle <strong>Create a Universal Analytics property</strong> on (toggle switch is on the right)</li>
+      <li>Enter a website URL</li>
+      <li>Make sure <strong>Create a Universal Analytics property only</strong> is selected</li>
+      <li> Fill out the rest of the form; you will be provided with a new property ID beginning with <strong>UA-</strong></li>
+    </ul>
+    <p>Note that Google also provides the ability to create a hybrid selection with both a Google Analytics 4 and a Universal Analytics property. Brightcove has not fully tested this scenario.</p>
+  </section>
+</article>

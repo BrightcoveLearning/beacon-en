@@ -1,0 +1,120 @@
+---
+title: Getting Started with the Players Module
+description: This topic provides an overview of the Players module which is used to used to create and manage video players.
+parent: Managing Players
+---
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="4231692338001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>If you are looking to quickly get started creating and publishing a player, check out the <a href="/publish/step-step-using-players-module-create-and-publish-player.html">Step-by-Step: Using the Players Module to Create and Publish a Player</a> topic.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="using">Using the Players module</h2>
+    <p>To access the Players module, login to Studio and click <strong>Players</strong> in the navigation header. Video Cloud Studio is shown below. The Brightcove Player Studio UI will have minor differences.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-players-module.png" /></figure>
+    <p>The body of the page will display:</p>
+    <ul>
+      <li>Player name</li>
+      <li>Player ID</li>
+      <li>Updated date and time</li>
+      <li>Player status
+        <ul>
+          <li><img alt="" src="/assets/images/players/node14049-cone-icon.png" /> - Indicates that changes have been made to the player but the changes have not been published</li>
+          <li><img alt="" src="/assets/images/players/node14049-check-icon.png" /> - Indicates that the player is activated and all changes made to the player have been published</li>
+          <li><img alt="" src="/assets/images/players/node14049-red-circle-icon.png" /> - Indicates that the player is inactive</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Using the Players module, you can:</p>
+    <ul>
+      <li><a href="#create">Create a new player</a></li>
+      <li><a href="#edit">Edit player properties</a></li>
+      <li><a href="#duplicate">Duplicate a player</a></li>
+      <li><a href="#delete">Delete players</a></li>
+      <li><a href="#search">Search for players</a></li>
+      <li><a href="#preview">Preview a player</a></li>
+      <li><a href="#embed">Generate the embed code and URL for a player</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create">Creating a new player</h2>
+    <p>To create a new player using the Players module:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click the <strong>New Player</strong> button.</li>
+      <li>Enter a name and short description for the player and then click <strong>Save</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-new-player.png" /></figure>
+      </li>
+      <li>The new player will appear in the list of players.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-list-of-players.png" /></figure>
+      </li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Note: A maximum of 200 players can be created. Brightcove discourages the creation of a large numbers of players but, if this is necessary, please contact your Account Manager and request an increase in the number of players you can create.</aside>
+    <p>When a new player is created using the Players module, the player is built using the latest player version as published by Brightcove. The  player version appears on the Players module homepage.  Note that all players may not be the same version. As Brightcove continues to develop and improve the Brightcove player, new player versions will be released. By default, updates are applied to all players automatically. To prevent auto-updating of a player, you must set the <strong>Update Mode</strong> setting to <strong>Manual</strong> (also known as locking a player). For more information, see <a href="/players/setting-player-update-mode-and-version.html">Setting the Player Update Mode and Version</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">Editing player properties</h2>
+    <p>There are numerous player properties that can be configured to customize the look and feel of the player:</p>
+    <ul>
+      <li>Player Information</li>
+      <li>Styling</li>
+      <li>Playback</li>
+      <li>Controls</li>
+      <li>Social</li>
+      <li>Plugins</li>
+      <li>End Screens</li>
+      <li>Advertising</li>
+      <li>Content Restriction</li>
+      <li>Third-Party Analytics</li>
+      <li>Audience</li>
+      <li>JSON Editor</li>
+    </ul>
+    <p>To edit the player properties, click an item in the left navigation menu. For information on configuring player properties, see <a href="/players/setting-player-properties.html">Setting Player Properties</a>.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Any changes made to a player may take up to 5 minutes to appear in published players.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="duplicate">Duplicating a player</h2>
+    <p>Duplicating a player allows you to create a new player based upon an existing player. To duplicate a player in the Players module:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Check the box next to the player you want to duplicate.</li>
+      <li>Click the <strong>Duplicate</strong> button.</li>
+      <li>Enter a <strong>Name</strong> and <strong>Short Description</strong> for the player.</li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete">Deleting players</h2>
+    <p>Deleting a player removes it from your account and cannot be undone. To delete a player in the Players module:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Check the box next to the player(s) you want to delete.</li>
+      <li>Click the <strong>Delete</strong> button.</li>
+      <li>Confirm the deletion by clicking <strong>Delete</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="search">Searching for players</h2>
+    <p>The Search field can be used to search the players in your account. When searching, the following fields are searched:</p>
+    <ul>
+      <li>Player name</li>
+      <li>Player ID</li>
+      <li>Short description</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="preview">Previewing a player</h2>
+    <p>To preview a player, select a player from the list of players and then click <strong>Player Preview</strong>. The player will open in the preview dialog.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-preview-player.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="embed">Generating the embed code and URL for a player</h2>
+    <p>The <strong>Embed Code &amp; URL</strong> button can generate the player embed code and URL for the <strong>preview player</strong> or the <strong>published player</strong>. Typically, the preview player embed code and URL are used to preview the changes being made to a player. This gives you the ability to see the changes in action before publishing the player out to a production site. Once a player is published, changes will be reflected in all instances of that particular player.</p>
+    <p>For information on the differences between the preview player and published player and on generating the embed code for a player, see <a href="/players/generating-player-embed-code.html">Generating Player Embed&nbsp;Code</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="shortcuts">Keyboard shortcuts</h2>
+    <p>Pressing the <strong>?</strong> key in the Players module will open a list of the shortcut keys that are available.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-keyboard-shortcuts.png" /></figure>
+  </section>
+</article>
