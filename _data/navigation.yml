@@ -124,6 +124,48 @@
     - name: Streaming VODs to a Channel
       url: /channels/streaming-vods-to-a-channel.html
 - section:
+  name: Managing Players
+  url: /players/index.html
+  docs:
+    - name: Adding Thumbnail Seeking
+      url: /players/adding-thumbnail-seeking-player.html
+    - name: Configuring a Player Overlay
+      url: /players/configuring-player-overlay-using-overlay-plugin.html
+    - name: Configuring a Playlist Endscreen
+      url: /players/configuring-playlist-endscreen-using-plugin.html
+    - name: Configuring Adobe Analytics Event Tracking
+      url: /players/configuring-adobe-analytics-event-tracking.html
+    - name: Configuring Google Analytics Event Tracking
+      url: /players/configuring-google-analytics-event-tracking.html
+    - name: Configuring Player Advertising
+      url: /players/configuring-player-advertising-using-players-module.html
+    - name: Configuring Player Content Restrictions
+      url: /players/configuring-player-content-restrictions.html
+    - name: Configuring Player Controls
+      url: /players/configuring-player-controls.html
+    - name: Configuring the Player Endscreen
+      url: /players/configuring-player-endscreen.html
+    - name: Configuring Player Localization
+      url: /players/configuring-player-localization.html
+    - name: Configuring Player Playback Properties
+      url: /players/configuring-player-playback-properties.html
+    - name: Configuring Player Plugins
+      url: /players/configuring-player-plugins.html
+    - name: Configuring the Social Properties
+      url: /players/configuring-social-properties-player.html
+    - name: Generating Player Embed Code
+      url: /players/generating-player-embed-code.html
+    - name: Getting Started with the Players Module
+      url: /players/getting-started-players-module.html
+    - name: Setting Player Information Properties
+      url: /players/setting-player-information-properties.html
+    - name: Setting Player Properties
+      url: /players/setting-player-properties.html
+    - name: Setting the Player Update Mode
+      url: /players/setting-player-update-mode-and-version.html
+    - name: Styling Players
+      url: /players/styling-players.html
+- section:
   name: Using Cloud Playout
   icon: '<img class="bcls-icon" src="/assets/images/feather/cloud-lightning.svg">'
   url: /cloud-playout/index.html
