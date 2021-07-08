@@ -89,6 +89,8 @@
       url: /media/uploading-video-images.html
     - name: Uploading Videos Remote URLs
       url: /media/uploading-videos-remote-urls.html
+    - name: Working with 360° Videos
+      url: /media/working-360deg-videos.html
     - name: Working with Cue Points
       url: /media/working-cue-points.html
     - name: Working with Multi-Lingual Metadata
@@ -442,14 +444,10 @@
       url: /general/overview-context-aware-encoding.html
     - name: Overview of Dynamic Delivery
       url: /general/overview-dynamic-delivery.html
-    - name: Remote Asset Limitations
-      url: /general/remote-asset-limitations.html
     - name: Supported Video and Audio Formats
       url: /general/supported-video-and-audio-formats-codecs-and-containers.html
     - name: When to Use Beacon Studio and/or Beacon Classic
       url: /general/beacon-studio-or-classic.html
-    - name: Working with 360° Videos
-      url: /general/working-360deg-videos.html
 - section:
   name: Training
   url: /training/index.html

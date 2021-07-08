@@ -326,6 +326,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
+                    <li><a href="/media/working-360deg-videos.html">Working with 360° Videos</a></li>
+                  
+                
+                  
                     <li><a href="/media/working-cue-points.html">Working with Cue Points</a></li>
                   
                 
@@ -998,19 +1002,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/general/remote-asset-limitations.html">Remote Asset Limitations</a></li>
-                  
-                
-                  
                     <li><a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Supported Video and Audio Formats</a></li>
                   
                 
                   
                     <li><a href="/general/beacon-studio-or-classic.html">When to Use Beacon Studio and/or Beacon Classic</a></li>
-                  
-                
-                  
-                    <li><a href="/general/working-360deg-videos.html">Working with 360° Videos</a></li>
                   
                 
               </ul>
@@ -1123,6 +1119,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>Update the <strong>URL </strong> and <strong>Duration</strong> as needed. Click <strong>Save</strong> to save the changes.</li>
     </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="limitations">Remote asset limitations</h2>
+    <p>The following are limitations you should be aware of when using remote asset videos: </p>
+    <ul>
+      <li>SSAI is not supported for remote assets.</li>
+      <li>DRM is supported only if you can customize the player to communicate with the DRM license server. This is possible with the Brightcove Player through a plugin. For other players, you will need to consult the player documentation.</li>
+      <li>All videos ingested into Video Cloud can be played back in the Brightcove Player. For non-Brightcove players, which is you will mostly encounter in Brightcove Beacon, you will need to verify that the video format is fully supported by each platform. Also, there are a few advanced features of DASH and HLS that Brightcove do not yet support </li>
+    </ul>
   </section>
 </article>
 
