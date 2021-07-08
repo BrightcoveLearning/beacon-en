@@ -8,22 +8,21 @@ description: Learn how to use video analytics to check the performance and engag
   <summary>{{ page.description }}</summary>
   <br/>
   <section class="bcls-section">
+    <h2 id="Topics_in_this_section">Topics</h2>
     <ul class="bcls-topic-list">
       {% for item in site.data.navigation %}
       {% if item.name == page.title %}
-            {% for entry in item.docs %}
-              <li><a href="{{ entry.url }}">{{ entry.name }}</a>
-              {% if entry.docs %}
-                <ul>
-                  {% for subentry in entry.docs %}
-                    <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-              </li>
-            {% endfor %}
+      {% for entry in item.docs %}
+      <li><a href="{{ entry.url }}">{{ entry.name }}</a> {% if entry.docs %}
+        <ul>
+          {% for subentry in entry.docs %}
+          <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %} </li>
+      {% endfor %}
       {% endif %}
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
   </section>
 </article>
