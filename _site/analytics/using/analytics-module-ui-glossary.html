@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to configure a video subscription package using the Commerce tab of Brightcove Beacon. The subscription package implements SVOD (subscription video on demand) monetization. To learn how to apply the subscription package to videos see the Using a Subscription Package document.">
+  <meta name="description" content="This topic lists the terms that are used in the Analytics module UI.">
   
-  <title>Creating a Subscription Package</title>
+  <title>Analytics Module UI Glossary</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/monetization/">Monetization</a></li>
+    <li class="breadcrumb-item"><a href="/analytics/using/">Using the Analytics Module</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Creating a Subscription Package</li>
+    <li class="breadcrumb-item active" aria-current="page">Analytics Module UI Glossary</li>
   </ol>
 </nav>
 
@@ -1110,188 +1110,369 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Creating a Subscription Package</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to configure a video subscription package using the <strong>Commerce</strong> tab of Brightcove Beacon. The subscription package implements SVOD (subscription video on demand) monetization. To learn how to apply the subscription package to videos see the <a href="/monetization/using-subscription-package.html">Using a Subscription Package</a> document.</summary>
-  <aside class="bcls-aside bcls-aside--information">NOTE: In this topic, all of the steps are performed in Beacon Classic.</aside>
-  <section class="bcls-section">
-    <h2 id="Overview">Overview</h2>
-    <p>
-      A subscription package defines how a particular set of videos can be purchased by your apps' customers. When creating the package you can, for example, configure the following:
-    </p>
-    <ul>
-      <li>The billing frequency</li>
-      <li>Set if ad supported, and the advertising configuration to use</li>
-      <li>Payment methods</li>
-      <li>Maximum number of streams that can be played simultaneously by a user with the package</li>
-      <li>Start and end dates when the package can be purchased</li>
-      <li>Permitted devices and geo-locations to view videos in the package</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Steps to create a package">Steps to create a package</h2>
-    <p>Step through the following steps to create a new package:</p>
-    <ol class="bcls-tasklist">
-      <li>
-        In Beacon Classic, select the <strong>Commerce</strong> tab, be sure <strong>Packages</strong> is selected in the left navigation, then click <strong>Add New Package</strong> .
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/creating-subscription-package/initial-menu-selections.png" alt="initial menu selections" />
-        </figure>
-      </li>
-      <li>
-        On the <strong>Package</strong> tab (screenshot below), complete the following:
-        <ul>
-          <li>
-            <strong>Name</strong> : The name of the package that is used in the Video Cloud custom fields for a video.
-          </li>
-          <li>
-            <strong>Billing Frequency</strong> : Choose the billing frequency for this package.
-          </li>
-          <li>
-            <strong>Trial Period</strong> : The trial period for this package.
-            Enter <strong>0</strong> for no trial period.
-          </li>
-          <li>
-            <strong>Status</strong> : Chose if you wish to have the package published so it is available for use. Note that you will not be able to publish the package until at least one payment method is selected.
-          </li>
-          <li>
-            <strong>Advertisement</strong> : Choose if you wish to use advertisements with this package.
-          </li>
-          <li>
-            <strong>Ads Providers</strong> : If you have chosen to use ads in the previous step, choose the ad provider. This dropdown is populated with the advertisement configurations listed in the <strong>Advertisement</strong> section of Brightcove Beacon.
-            <!-- See the <a href="/using-brightcove-beacon/advertisement.html"> Advertisement </a> document for details on advertisement configurations. -->
-          </li>
-          <li>
-            <strong>Payment methods to use</strong> : Select the payment methods you want to use with this package. Note that for each method selected a section will open below the list of payment methods, which you must complete for each selected method. The screenshot below shows <strong>Stripe (in yellow)</strong> and <strong>Apple Store (in red)</strong> are selected.
-            <figure class="bcls-figure">
-              <img class="bcls-image" src="/assets/images/monetization/creating-subscription-package/payment-method-details.png" alt="payment method details" />
-            </figure>
-          </li>
-        </ul>
-      </li>
-      <li>
-        Click the <strong>Create Package</strong> button to save your current package configuration.
-      </li>
-      <li>
-        On the <strong>Textual Data</strong> tab, complete the following: <ul>
-          <li><strong>Pack Name</strong> : Name shown to users.</li>
-          <li>
-            <strong>Headline</strong> : Headline shown to users, for example <em>Holiday Special!</em> .
-          </li>
-        </ul>
-      </li>
-      <li>
-        Click the <strong>Create Package</strong> button to save your current package configuration.
-      </li>
-      <li>
-        On the <strong>Non-Textual Data</strong> tab, supply an image for use next to the package name.
-        <!-- The size of the image should be !!!!!!!!!!!!!!!!. -->
-      </li>
-      <li>
-        Click the <strong>Create Package</strong> button to save your current package configuration.
-      </li>
-      <li>
-        The <strong>Content</strong> tab is not for use at the current time.
-      </li>
-      <li>
-        On the <strong>Streams</strong> tab, complete the following: <ul>
-          <li>
-            <strong>Max Streams</strong> : Maximum number of connected devices that can be streaming at the same time.
-          </li>
-          <li>
-            <strong>Max Devices</strong> : Maximum number of connected devices that can have active connections.
-            <aside class="bcls-aside bcls-aside--information"> The two settings above are also set globally, so use these settings ONLY IF you wish to override the global settings in this package.
-            </aside>
-          </li>
-          <li>
-            <strong>Advanced Streams</strong> : Set this to <strong>Yes</strong> if you wish to customize the rights this package sets. The available changes are shown in the following screenshot:
-            <figure class="bcls-figure">
-              <img class="bcls-image" src="/assets/images/monetization/creating-subscription-package/advanced-stream-rights.png" alt="advanced stream rights" />
-            </figure>
-          </li>
-        </ul>
-      </li>
-      <li>
-        Click the <strong>Add new Right</strong> button to save your newly configured, customized rights.
-      </li>
-      <li>
-        Click the <strong>Create Package</strong> button to save your current package configuration.
-      </li>
-    </ol>
-    <p>That's it for the package creation!</p>
-  </section>
-  <!-- <section class="bcls-section"> <h2 id="Using_the_package_in_Video_Cloud"> Using the package in Video Cloud </h2> <p> Although the package is created in Brightcove Beacon, it is not applied to content in there. To use the package, and apply it to video content you use Video Cloud custom fields. </p> </section> -->
-  <section class="bcls-section">
-    <h2 id="Creating_a_Stripe_Coupon">Creating a Stripe Coupon</h2>
-    <p>
-      Coupons can be created to provide a discount, either a fixed monetary discount or a percentage discount, that can be applied when purchasing a package.
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>
-        In Beacon Classic, select the <strong>Commerce</strong> tab, then click <strong>Coupons by Stripe</strong> and finally click <strong>Add New Voucher</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/creating-subscription-package/coupon-menu-selection.png" alt="coupon menu selections" />
-        </figure>
-      </li>
-      <li>
-        On the <strong>Create New Coupons</strong> form (screenshot below), complete the following:
-        <ul>
-          <li>
-            <strong>Id</strong> : Code that viewers will enter in the Brightcove Beacon app to use the coupon
-          </li>
-          <li><strong>Name</strong> : A friendly name for the coupon that can be displayed in invoices</li>
-          <li>
-            <strong>Duration</strong> : Choose from <strong>Once</strong>, <strong>Forever</strong> or <strong>Repeating</strong>;<br /> If <strong>Repeating</strong> is selected, then set the number of months it can repeatedly be used.
-          </li>
-          <li>
-            For
-            <strong>Discount type</strong>
-            select one of the following:
-            <ul>
-              <li>
-                <strong>Monetary Amount</strong>: Enter the value of, and currency for, the coupon
-              </li>
-              <li>
-                <strong>Percentage</strong>: Enter the percentage of discount the coupon will carry
-              </li>
-            </ul>
-            <p>
-              Example: If the discount is 3 months free, then set the <strong>Duration</strong> to <strong>Repeating</strong> with 3 months and set the <strong>Discount type</strong> with <strong>Percentage</strong> of 100% </p>
-          </li>
-          <li>
-            <strong>Limit Date (UTC)</strong> : Select the last date the coupon can be used
-          </li>
-          <li>
-            <strong>Max redemption</strong> : Enter the maximum number of redemptions for the coupon; for instance only 50 customers can redeem the coupon
-          </li>
-          <li>
-            <strong>Select Packages</strong> : Select the packages to which the coupon can be applied; if you do not select a package the coupon can be applied to all packages<br />
-            Example: The coupon is only valid if you purchase the yearly subscription
-          </li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/creating-subscription-package/new-coupon-form.png" alt="coupon form" />
-        </figure>
-      </li>
-      <li>
-        <p>
-          Be sure to click the <strong>Save</strong> button to save your new coupon.
-        </p>
-      </li>
-    </ol>
-    <p>
-      In the Brightcove Beacon app when a package purchase takes place, viewers will be able to enter the coupon <strong>Id</strong>: </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/monetization/creating-subscription-package/use-coupon.png" alt="use coupon form" />
-    </figure>
-    <p>
-      Alternatively, you can create coupons directly in your Stripe account, and then use them in Brightcove Beacon.
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/monetization/creating-subscription-package/stripe-coupon-form.png" alt="use coupon form" />
-    </figure>
-  </section>
-</article>
+  <h1>Analytics Module UI Glossary</h1>
+  <summary>This topic lists the terms that are used in the Analytics module UI.</summary>
+<p>
+<style type="text/css">dt {font-weight: bold;}
+dd { padding-bottom: 10px; }
+</style>
+</p>
+
+<p>| <a href="#A">-A-</a> | <a href="#B">-B-</a> | <a href="#C">-C-</a> | <a href="#D">-D-</a> | <a href="#E">-E-</a> | <a href="#F">-F-</a> | <a href="#G">-G-</a> | <a href="#H">-H-</a> | <a href="#I">-I-</a> | <a href="#J">-J-</a> | <a href="#K">-K-</a> | <a href="#L">-L-</a> | <a href="#M">-M-</a> | <a href="#N">-N-</a> | <a href="#O">-O-</a> | <a href="#P">-P-</a> | <a href="#Q">-Q-</a> | <a href="#R">-R-</a> | <a href="#S">-S-</a> | <a href="#T">-T-</a> | <a href="#U">-U-</a> | <a href="#V">-V-</a> | <a href="#W">-W-</a> | <a href="#X">-X-</a> | <a href="#Y">-Y-</a> | <a href="#Z">-Z-</a> |</p>
+
+<aside class="bcls-aside bcls-aside--information">Note: For a list of data items that are returned by the <span translate="No">Analytics API</span> and when exporting analytics data, see the <a href="https://apis.support.brightcove.com/analytics/general/analytics-api-glossary.html">Analytics API Glossary</a>.</aside>
+
+<section class="bcls-section">
+<h2 id="A">A</h2>
+
+<dl>
+	<dt id="active_media">Active Media</dt>
+	<dd>The number of active videos in the account. Note that this data is not real-time - it is synced from your video library once a day. Also note that this data may not be accurate if you are looking at "real-time" analytics data (less than 3 days old).</dd>
+	<dt id="api">Analytics API</dt>
+	<dd>REST-based application programming interface that allows developers to retrieve analytics metrics for Video Cloud videos directly in JSON format. The <span translate="No">Analytics API</span> provides the data for the Analytics UI in Video Cloud Studio.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="B">B</h2>
+
+<dl>
+	<dt id="totalbandwidth">Total Bandwidth</dt>
+	<dd>Total bandwidth used to deliver videos, images and player loads. Note that some parts of bandwidth data are delayed, because they come from external sources such as CDNs. Normally the information is complete within 48 hours, but in some cases the day may be as much as 5 days.</dd>
+	<dt id="browser_type">Browser Type</dt>
+	<dd>The brower type. Typical values are:
+	<ul>
+		<li>chrome</li>
+		<li>safari</li>
+		<li>firefox</li>
+		<li>ie</li>
+	</ul>
+	</dd>
+	<dt id="bytes_delivered">Bytes Delivered</dt>
+	<dd>The total data, in bytes, delivered to viewers, including video/audio data (including buffered data whether or not it was played), poster and thumbnail images, and any data associated with the video player.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="C">C</h2>
+
+<dl>
+	<dt id="city">City</dt>
+	<dd>City where a video was viewed.</dd>
+	<dt id="country">Country</dt>
+	<dd>English short name of the country where the video was viewed. Follows the <a href="http://en.wikipedia.org/wiki/ISO_3166">ISO 3166</a> standard.</dd>
+	<dt id="csv">CSV</dt>
+	<dd>Comma-separated values. Analytics data can be exported in this format.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="D">D</h2>
+
+<dl>
+	<dt id="daily-unique-users">Daily Unique Users</dt>
+	<dd>This is the estimated number of unique viewers that a video had on a given day. This data is only available reconciled data (after 3 days), and only at the account level. For more information, see <a href="https://apis.support.brightcove.com/analytics/general/analytics-api-unique-users.html">Analytics API: Unique Users</a>.</dd>
+	<dt id="day">Day</dt>
+	<dd>Day of the month the video was viewed.</dd>
+	<dt id="device">Device</dt>
+	<dd>Combination of <a href="#device_type">device type</a> and <a href="#device_os">device operating system</a> used to view a video.</dd>
+	<dt id="device_os">Device Operating System</dt>
+	<dd>Device operating system used on the device to view a video. Possible values are:
+	<ul>
+		<li>Android</li>
+		<li>Bada</li>
+		<li>iOS</li>
+		<li>Linux</li>
+		<li>OS X</li>
+		<li>RIM (Blackberry)</li>
+		<li>Symbian</li>
+		<li>Web OS</li>
+		<li>Windows</li>
+		<li>Other - for user-agents which are not mapped to any of the above</li>
+	</ul>
+	</dd>
+	<dt id="device_manufacterer">Device Manufacterer</dt>
+	<dd>The manufacterer of the device. Some typical values are:
+	<ul>
+		<li>lenovo</li>
+		<li>apple</li>
+		<li>sony</li>
+		<li>microsoft</li>
+	</ul>
+	</dd>
+	<dt id="device_type">Device Type</dt>
+	<dd>Device type used to view a video. Possible values are:
+	<ul>
+		<li>Desktop - includes desktop and laptop computers</li>
+		<li>Tablet - includes iPads, Android tablets, etc.</li>
+		<li>Mobile - mobile phones</li>
+		<li>Connected TV/Game Console/Companion Device - includes Smart TVs, set-top boxes and game consoles</li>
+		<li>Other - for user-agents which are not mapped to any of the above</li>
+	</ul>
+	</dd>
+	<dd>&nbsp;</dd>
+	<dt id="dimension">Dimension</dt>
+	<dd>Dimensions are analytics data categories that you can report and filter on. Current dimensions available are:
+	<ul>
+		<li><a href="#player">Player</a></li>
+		<li><a href="#video">Video</a></li>
+		<li><a href="#country">Country</a></li>
+		<li><a href="#day">Day</a></li>
+		<li><a href="#display_domain">Display Domain</a></li>
+		<li><a href="#device">Device</a></li>
+		<li><a href="#device_type">Device Type</a></li>
+		<li><a href="#device_os">Device OS</a></li>
+		<li><a href="#traffic_sources">Source of Traffic</a></li>
+	</ul>
+	</dd>
+	<dd>&nbsp;</dd>
+	<dt id="display_domain">Display Domain</dt>
+	<dd>Referring domain reported by the client (browser or other).</dd>
+	<dt id="display_url">Display URL</dt>
+	<dd>The URL the viewer was on when they watched a video.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="E">E</h2>
+
+<dl>
+	<dt id="engagement_score">Engagement Score</dt>
+	<dd>The average percent watched per video view (calculated by adding all the percentage watched divided by the number of Video Views). For more information on how this is calculated, see <a href="/analytics/calculating-video-engagement-score.html">Calculating Video Engagement Score</a>.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="F">F</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="G">G</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="H">H</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="I">I</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="J">J</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="K">K</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="L">L</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="M">M</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="N">N</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="O">O</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="P">P</h2>
+
+<dl>
+	<dt id="play_rate">Play Rate</dt>
+	<dd>Play rate is the number of times a video was played back (video_view) divided by the number of opportunities for playback (video_impression).</dd>
+	<dt id="play_request">Play Request</dt>
+	<dd>A play request is counted every time the play button is clicked.</dd>
+	<dt id="player">Player</dt>
+	<dd>Video Cloud player ID.</dd>
+	<dt id="player_load">Player Load</dt>
+	<dd>Number of times a player was loaded.</dd>
+	<dt id="player_name">Player Name</dt>
+	<dd>Name of the Video Cloud player.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="Q">Q</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="R">R</h2>
+
+<dl>
+	<dt id="region">Region</dt>
+	<dd>Province or state name where a video was viewed. Follows the <a href="http://en.wikipedia.org/wiki/ISO_3166">ISO 3166</a> standard.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="S">S</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="T">T</h2>
+
+<dl>
+	<dt id="traffic_sources">Traffic Sources</dt>
+	<dd>An indication of how the viewer reached the player page. Possible values are:
+	<ul>
+		<li>Referral - User followed a link to the video</li>
+		<li>Direct - User typed the link directly, used a bookmark, or used a link from an email</li>
+		<li>Organic Search - User performed a search and clicked on a result to get to the video</li>
+		<li>Paid Search - User performed a search and clicked on a paid result to get to the video</li>
+		<li>Secure Search - User logged in with a Google account, performed a search and clicked on a result (either paid or organic; search information is not included in this case)</li>
+	</ul>
+	</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="U">U</h2>
+
+<dl>
+	<dt id="unique-users">Unique Users</dt>
+	<dd>See <a href="#daily-unique-users">Daily Unique Users</a></dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="V">V</h2>
+
+<dl>
+	<dt id="video">Video</dt>
+	<dd>Video Cloud ID of the video.</dd>
+	<dt id="videobandwidth">Video Bandwidth</dt>
+	<dd>Total bandwidth used to deliver videos only.</dd>
+	<dt id="video_duration">Video Duration</dt>
+	<dd>Length of the video in seconds.</dd>
+	<dt id="video_engagement">Video Engagement</dt>
+	<dd>A measure of the average percent watched per video view (calculated by adding all the percentage watched divided by the number of Video Views). For more information on how this is calculated, see <a href="/analytics/calculating-video-engagement-score.html">Calculating Video Engagement Score</a>.</dd>
+	<dt id="video_name">Video Name</dt>
+	<dd>Name of the video.</dd>
+	<dt id="video_view">Video Views</dt>
+	<dd>The number of times a video started playing, recorded when the stream is started (does not include rewind or replay). It is not a measure of individual viewers.</dd>
+	<dt id="video_view">Viewed Minutes</dt>
+	<dd>The total number of minutes a video was viewed</dd>
+	<dt id="video_engagement_1">Views at 1%</dt>
+	<dd>The number of views recorded at the 1% point of the video.</dd>
+	<dt id="video_engagement_25">Views at 25%</dt>
+	<dd>The number of views recorded at the 25% point of the video.</dd>
+	<dt id="video_engagement_50">Views at 50%</dt>
+	<dd>The number of views recorded at the 50% point of the video.</dd>
+	<dt id="video_engagement_75">Views at 75%</dt>
+	<dd>The number of views recorded at the 75% point of the video.</dd>
+	<dt id="video_engagement_100">Views at 100%</dt>
+	<dd>The number of views recorded at the 100% point of the video.</dd>
+	<dt id="video_impression">Video Impression</dt>
+	<dd>The number of times a video was loaded into a player and ready for interaction.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="W">W</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="X">X</h2>
+
+<dl>
+	<dt id="xlsx">XLSX</dt>
+	<dd>Microsoft Excel file. Analytics data can be exported in this format.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="Y">Y</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="Z">Z</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+    </article>
+
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
@@ -1317,7 +1498,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 01 Jul 2021
+  Page last updated on 09 Jul 2021
 </div>
 
 
