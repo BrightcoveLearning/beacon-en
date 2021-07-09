@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="This FAQ addresses some of the common questions about the Beacon Studio Analytics module. For more information about the Analytics module, see Getting Started with the Analytics Module.">
+  <meta name="description" content="This topic lists the terms that are used in the Analytics module UI.">
   
-  <title>FAQ: Analytics Module</title>
+  <title>Analytics Module UI Glossary</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     
     
-    <li class="breadcrumb-item"><a href="/analytics/using/">Using the Analytics Module</a></li>
+    <li class="breadcrumb-item"><a href="/analytics/">Using the Analytics Module</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">FAQ: Analytics Module</li>
+    <li class="breadcrumb-item active" aria-current="page">Analytics Module UI Glossary</li>
   </ol>
 </nav>
 
@@ -596,23 +596,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li class="submenu-header">
-                      <a href="/analytics/using/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Using the Analytics Module</a>
+                      <a href="/analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Using the Analytics Module</a>
                       <ul class="sidenav-subsubmenu" style="display:none;">
                         
                           
-                            <li><a href="/analytics/using/getting-started-analytics-module.html">Getting Started with the Analytics Module</a></li>
+                            <li><a href="/analytics/getting-started-analytics-module.html">Getting Started with the Analytics Module</a></li>
                           
                         
                           
-                            <li><a href="/analytics/using/analytics-module-ui-glossary.html">Analytics Module UI Glossary</a></li>
+                            <li><a href="/analytics/analytics-module-ui-glossary.html">Analytics Module UI Glossary</a></li>
                           
                         
                           
-                            <li><a href="/analytics/using/how-search-videos-analytics-module.html">How to Search for Videos</a></li>
+                            <li><a href="/analytics/how-search-videos-analytics-module.html">How to Search for Videos</a></li>
                           
                         
                           
-                            <li><a href="/analytics/using/faq-analytics-module.html">FAQ: Analytics Module</a></li>
+                            <li><a href="/analytics/faq-analytics-module.html">FAQ: Analytics Module</a></li>
                           
                         
                       </ul>
@@ -1111,134 +1111,367 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>FAQ: Analytics Module</h1>
-  <summary>This FAQ addresses some of the common questions about the Beacon Studio Analytics module. For more information about the Analytics module, see <a href="/analytics/using/getting-started-analytics-module.html">Getting Started with the Analytics Module</a>.</summary>
-  <section class="bcls-section">
-    <h2 id="1">1. What is the Analytics module?</h2>
-    <p>The Brightcove Beacon Analytics module is a user-interface module you can use to view close to real-time analytics information on your videos and players. The Analytics platform uses the latest innovations in big data technology and is architected for massive scale. The analytics platform offers fast, close to real-time access to analytics data and includes a powerful open API to allow developers to create custom analytics solutions and reports in addition to those included within Beacon Studio.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="2">2. Can I export report data from the analytics module?</h2>
-    <p>Yes. The analytics reports have links that can be used to download the report data to .csv and .xlsx files.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="3">3. How frequently is the data updated in the analytics module?</h2>
-    <p>Normally, the close-to-real-time data is delayed approximately 15 minutes. That time may vary depending on the volume of data currently being received by the data collection system, however, and in some cases the delay may be up to 3 hours.</p>
-    <p>Note that the Analytics system compiles data from multiple sources, and close-to-real-time data is an approximation based on data gathered so far. Numbers may vary from one report to another, and should be viewed as trends rather than hard figures.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="4">4. Is there a way to include our internal video IDs into reporting or your API?</h2>
-    <p>There is a Reference ID field available as a video property that you can use to map your internal id to videos in Brightcove Beacon. The reference ID field can be displayed when creating a custom report. For more information on custom reports, see <a href="/analytics/creating-custom-analytics-reports.html">Creating Custom Analytics Reports in the Analytics Module</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="5">5. What happens if there is a pre-roll ad before a video and a viewer watches the ad for a few seconds and then leaves. If the viewer didn't watch the main content at all, is that counted as a video view?</h2>
-    <p>No. A video view is counted only after the main content starts playing.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="6">6. Is it possible to filter out IP address ranges from our analytics?</h2>
-    <p>The ability to filter out IP address ranges is not available at this time.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="7">7. Does analytics track players with live event streaming?</h2>
-    <p>Analytics tracks viewed minutes as part of the Performance report. Live seconds viewed can be displayed when creating custom reports or through the Billing module. Live event bandwidth is not displayed.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="8">8. How do I find information on a specific video through the analytics module?</h2>
-    <p>The search feature can be used to search for a specific video. The video name, short description, long description, tags, video ID, reference ID and any custom text fields you have will be searched. Clicking on a result will display the performance or engagement for that video. Custom reports can also be created to display analytics for a given video ID.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="9">9. Can I search for a specific video using reference ID in the analytics module?</h2>
-    <p>Yes. The search feature can be used to search for a video based upon the reference ID field. The video name, short description, long description, tags, video ID and any custom text fields you have will also be searched.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="10">10. How can you report on customer engagement and drop off of a particular video?</h2>
-    <p>The Engagement Report shows this information. When you select the Engagement Report and select the Video dimension, you will see a graph showing overall engagement for your account. If you select a video, you will see a graph displaying the engagement for that video over time.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="11">11. Can I report on URL? For example, if we have the same video hosted on Page A and Page B, can we compare the performance between the two placements?</h2>
-    <p>Yes. The Performance Report offers the ability to view video analytics by display domain.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="12">12. If a video is looping, does that count as one video view or multiple views each time the video plays?</h2>
-    <p>Video views are counted only once per viewing session when the stream starts. Note that the <strong>Views at x%</strong> in the Engagement Report is not the same as a <strong>Video View</strong> in the Performance Report. A video view is counted when a video first starts playing back. The views at 1% is recorded when the first percent is watched. The difference here is that if the first percent is watched multiple times (if the video is set to auto-replay, for instance), the count increases, whereas a video view is counted when the video first starts playing back but is not counted on a replay (unless the user reloads the page or watches another video in the playlist, etc).</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="13">13. Can I run a report to show the number of unique viewers for my account?</h2>
-    <p>The number of unique viewers can be seen in the Performance Report.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="14">14. Can the standard reports that are available in the Analytics module be customized?</h2>
-    <p>The data displayed in the Performance and Engagement reports cannot be customized. However, the Analytics module provides the ability to create custom analytics reports allowing you to select the data to display. There is also an <span translate="No">Analytics API</span> which can be used to access the analytics data programmatically.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="15">15. Why are some engagement scores very high, greater than 100?</h2>
-    <p>It is possible for the engagement score to be greater than 100. Scrubbing and re-watching a video doesn't trigger new video_view events, but it does track video_engagement. For example, say we have a video in a single video player on a page somewhere. The following events show how the video engagement could vary widely:</p>
-    <ol>
-      <li>No watches yet. Engagement Score: 0.</li>
-      <li>A viewer loads the page and watches the video all the way through. Engagement Score: 100 (100 percent viewed / 1 view).</li>
-      <li>The same viewer scrubs back and watches it all the way through again (browser was not reloaded). Engagement Score: 200 (200 percent viewed / 1 view).</li>
-      <li>Another viewer loads the page and watches the entire video. Engagement Score: 150 (300 percent viewed / 2 views).</li>
-    </ol>
-    <p>For more details on how we calculate video engagement, watch the training video <a href="/analytics/calculating-video-engagement-score.html">Calculating Video Engagement</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="16">16. Why is the metric for Views at 25% higher than Views at 1%?</h2>
-    <p>There are a couple of factors which can cause the discrepancy in the two numbers:</p>
-    <ul>
-      <li>Views at 1% and Views at x% are two different metrics. Views at 1% is unique per viewing session and does not include rewind and replay. When a viewer replays or rewinds to a previous part of a video, the % point will increase the audience count but not video view.</li>
-      <li>The Views at % and engagement curve are stored in daily granularity using UTC time, so a specific date might sometimes include 2 days worth of data if UTC and reporting time zone crossover.</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="17">17. Why do the number of video views for a given day vary over time?</h2>
-    <p>The analytics system provides unreconciled recent metrics collected each hour, and automatically reconciles with actual metrics reported at the daily level. This reconciliation happens as soon as possible, usually in 3 to 5 days. We never reconcile data collected at the hourly level. Since publishers value hourly data, we make the hourly unreconciled data available for 32 days. Some further details on the reconciliation:</p>
-    <ul>
-      <li>Players send data to the Data Collection API</li>
-      <li><span id="1422467412848S" style="display: none;">&nbsp;</span>The Data Collection API does its best to write to the real-time database&nbsp;AND it writes the events to log storage</li>
-      <li>As we collect additional data from CDNs and other sources, the analytics data is updated; this is the reconciliation process</li>
-      <li>A nightly batch system looks at the raw log events and builds historical data import files</li>
-      <li>The data import files are loaded into the historical database. When you make an API call, you can choose whether to see only reconciled data (most accurate) or to see both reconciled and unreconciled data by using the reconciled parameter. See the <a href="https://apis.support.brightcove.com/analytics/getting-started/overview-analytics-api-v1.html">Analytics API Overview</a> for more information.</li>
-      <li>All historical data is reconciled; realtime data (available for 32 days) may or may not have been reconciled yet. If the time period you are getting data for ends more than 32 days ago, there is no need to use the <code translate="No">reconciled data, since the data will all be historical.</code></li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="18">18. Why do some metrics return a null value or have no value?</h2>
-    <p>This will happen if a metric is not available for the time period you have requested. Some metrics have 2 - 3 days of latency, so if, for example, you asked for this data over the last 30 days (including today), these metrics may be null since the requested range includes days that do not yet have this data. To avoid this when requesting data, make sure that the range requested is outside of the latency period.</p>
-    <p>We have also added additional metrics and dimension combinations over time. So, for example, if you are running a multi-year report, some of the metrics may be blank, or partial, due to the fact that we did not track that metric for the entire reporting date range. For information on valid dates and dimension combinations, see the <a href="https://apis.support.brightcove.com/analytics/getting-started/overview-analytics-api-v1.html">Analytics API Overview</a> document.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="19">19. Why does destination domain data from 2013 not match other performance data?</h2>
-    <p>The destination domain feature was not turned on until January 2014. Data from March 2013 to January 2014 was partially backfilled, but only some destination data is available for this time period. Data from January 2014 forward is complete.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="20">20. Are analytics for deleted videos included?</h2>
-    <p>The Analytics reports do include analytics for videos that have been deleted from your account. However, you cannot search for deleted videos in the Analytics module to see a report on a particular deleted video. To get such a report, you will need to know the video id for the deleted video and use the <a href="https://apis.support.brightcove.com/analytics/">Analytics API</a> to generate the report. Note that if report data is exported, data for deleted videos may appear without displaying a video ID or name.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="21">21. Can I exclude employee views from analytics reports?</h2>
-    <p>There is no easy way to do this, and for high-traffic videos, employee views are probably such a small percentage that their effect on analytics is negligible. However, for low traffic videos where you think it's important to do this, the simplest solution is to duplicate your production player(s) and have employees test/view videos on the copies. You can then use filters to create reports on your production player(s) only, using either the Custom Reports feature in the Analytics module or the Analytics API.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="22">22. Why don't I always see whole numbers for engagement?</h2>
-    <p>It is possible for engagement numbers to return with decimal points. The reason is because engagement is normalized which means that it's a ratio of "video_percent_viewed * (video_engagement_25 / video_engagement_sum)" so based on the time range selected for the query you may see floating point numbers in cases where they don’t divide exactly.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="23">23. Why do some reports display only the video ID, or why do some videos not appear at all?</h2>
-    <p>If there are no views for a video during a period, there will not be extensive data on it in the report (e.g. just the video ID and nothing else). If no data is downloaded at all (i.e. not even image data), then the video will not appear in the report.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="24">24. What is the earliest date that I can get analytics data?</h2>
-    <p>The earliest date for any analytics data is 28 December 2010. Some data items were not collected until later, so the earliest date you can see data will depend on exactly what you are looking at. Video views are available back to 28 December 2010.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="25">25. Should the Analytics module and the <span translate="No">Analytics API</span> give me identical data for the same date range?</h2>
-    <p>Yes, but they may be different if you are comparing data that is relatively recent, and you obtain data from Studio and the API at different times:</p>
-    <ol>
-      <li>The data is less than 3 days old. Analytics data less than 3 days old is provisional and subject to change at any time.</li>
-      <li>Data for same period is looked at when it was less than 32 days old, and again after it is 32 days old. After 32 days, data is moved to a separate "historical" repository, and at that point we discard some data, especially detailed engagement data. This means calculated fields such as engagement score may change slightly, because the calculation is being made on less granular data.</li>
-    </ol>
-  </section>
-</article>
+  <h1>Analytics Module UI Glossary</h1>
+  <summary>This topic lists the terms that are used in the Analytics module UI.</summary>
+<p>
+<style type="text/css">dt {font-weight: bold;}
+dd { padding-bottom: 10px; }
+</style>
+</p>
+
+<p>| <a href="#A">-A-</a> | <a href="#B">-B-</a> | <a href="#C">-C-</a> | <a href="#D">-D-</a> | <a href="#E">-E-</a> | <a href="#F">-F-</a> | <a href="#G">-G-</a> | <a href="#H">-H-</a> | <a href="#I">-I-</a> | <a href="#J">-J-</a> | <a href="#K">-K-</a> | <a href="#L">-L-</a> | <a href="#M">-M-</a> | <a href="#N">-N-</a> | <a href="#O">-O-</a> | <a href="#P">-P-</a> | <a href="#Q">-Q-</a> | <a href="#R">-R-</a> | <a href="#S">-S-</a> | <a href="#T">-T-</a> | <a href="#U">-U-</a> | <a href="#V">-V-</a> | <a href="#W">-W-</a> | <a href="#X">-X-</a> | <a href="#Y">-Y-</a> | <a href="#Z">-Z-</a> |</p>
+
+<aside class="bcls-aside bcls-aside--information">Note: For a list of data items that are returned by the <span translate="No">Analytics API</span> and when exporting analytics data, see the <a href="https://apis.support.brightcove.com/analytics/general/analytics-api-glossary.html">Analytics API Glossary</a>.</aside>
+
+<section class="bcls-section">
+<h2 id="A">A</h2>
+
+<dl>
+	<dt id="active_media">Active Media</dt>
+	<dd>The number of active videos in the account. Note that this data is not real-time - it is synced from your video library once a day. Also note that this data may not be accurate if you are looking at "real-time" analytics data (less than 3 days old).</dd>
+	<dt id="api">Analytics API</dt>
+	<dd>REST-based application programming interface that allows developers to retrieve analytics metrics for Video Cloud videos directly in JSON format. The <span translate="No">Analytics API</span> provides the data for the Analytics UI in Video Cloud Studio.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="B">B</h2>
+
+<dl>
+	<dt id="totalbandwidth">Total Bandwidth</dt>
+	<dd>Total bandwidth used to deliver videos, images and player loads. Note that some parts of bandwidth data are delayed, because they come from external sources such as CDNs. Normally the information is complete within 48 hours, but in some cases the day may be as much as 5 days.</dd>
+	<dt id="browser_type">Browser Type</dt>
+	<dd>The brower type. Typical values are:
+	<ul>
+		<li>chrome</li>
+		<li>safari</li>
+		<li>firefox</li>
+		<li>ie</li>
+	</ul>
+	</dd>
+	<dt id="bytes_delivered">Bytes Delivered</dt>
+	<dd>The total data, in bytes, delivered to viewers, including video/audio data (including buffered data whether or not it was played), poster and thumbnail images, and any data associated with the video player.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="C">C</h2>
+
+<dl>
+	<dt id="city">City</dt>
+	<dd>City where a video was viewed.</dd>
+	<dt id="country">Country</dt>
+	<dd>English short name of the country where the video was viewed. Follows the <a href="http://en.wikipedia.org/wiki/ISO_3166">ISO 3166</a> standard.</dd>
+	<dt id="csv">CSV</dt>
+	<dd>Comma-separated values. Analytics data can be exported in this format.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="D">D</h2>
+
+<dl>
+	<dt id="daily-unique-users">Daily Unique Users</dt>
+	<dd>This is the estimated number of unique viewers that a video had on a given day. This data is only available reconciled data (after 3 days), and only at the account level. For more information, see <a href="https://apis.support.brightcove.com/analytics/general/analytics-api-unique-users.html">Analytics API: Unique Users</a>.</dd>
+	<dt id="day">Day</dt>
+	<dd>Day of the month the video was viewed.</dd>
+	<dt id="device">Device</dt>
+	<dd>Combination of <a href="#device_type">device type</a> and <a href="#device_os">device operating system</a> used to view a video.</dd>
+	<dt id="device_os">Device Operating System</dt>
+	<dd>Device operating system used on the device to view a video. Possible values are:
+	<ul>
+		<li>Android</li>
+		<li>Bada</li>
+		<li>iOS</li>
+		<li>Linux</li>
+		<li>OS X</li>
+		<li>RIM (Blackberry)</li>
+		<li>Symbian</li>
+		<li>Web OS</li>
+		<li>Windows</li>
+		<li>Other - for user-agents which are not mapped to any of the above</li>
+	</ul>
+	</dd>
+	<dt id="device_manufacterer">Device Manufacterer</dt>
+	<dd>The manufacterer of the device. Some typical values are:
+	<ul>
+		<li>lenovo</li>
+		<li>apple</li>
+		<li>sony</li>
+		<li>microsoft</li>
+	</ul>
+	</dd>
+	<dt id="device_type">Device Type</dt>
+	<dd>Device type used to view a video. Possible values are:
+	<ul>
+		<li>Desktop - includes desktop and laptop computers</li>
+		<li>Tablet - includes iPads, Android tablets, etc.</li>
+		<li>Mobile - mobile phones</li>
+		<li>Connected TV/Game Console/Companion Device - includes Smart TVs, set-top boxes and game consoles</li>
+		<li>Other - for user-agents which are not mapped to any of the above</li>
+	</ul>
+	</dd>
+	<dd>&nbsp;</dd>
+	<dt id="dimension">Dimension</dt>
+	<dd>Dimensions are analytics data categories that you can report and filter on. Current dimensions available are:
+	<ul>
+		<li><a href="#player">Player</a></li>
+		<li><a href="#video">Video</a></li>
+		<li><a href="#country">Country</a></li>
+		<li><a href="#day">Day</a></li>
+		<li><a href="#display_domain">Display Domain</a></li>
+		<li><a href="#device">Device</a></li>
+		<li><a href="#device_type">Device Type</a></li>
+		<li><a href="#device_os">Device OS</a></li>
+		<li><a href="#traffic_sources">Source of Traffic</a></li>
+	</ul>
+	</dd>
+	<dd>&nbsp;</dd>
+	<dt id="display_domain">Display Domain</dt>
+	<dd>Referring domain reported by the client (browser or other).</dd>
+	<dt id="display_url">Display URL</dt>
+	<dd>The URL the viewer was on when they watched a video.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="E">E</h2>
+
+<dl>
+	<dt id="engagement_score">Engagement Score</dt>
+	<dd>The average percent watched per video view (calculated by adding all the percentage watched divided by the number of Video Views). For more information on how this is calculated, see <a href="/analytics/calculating-video-engagement-score.html">Calculating Video Engagement Score</a>.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="F">F</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="G">G</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="H">H</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="I">I</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="J">J</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="K">K</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="L">L</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="M">M</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="N">N</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="O">O</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="P">P</h2>
+
+<dl>
+	<dt id="play_rate">Play Rate</dt>
+	<dd>Play rate is the number of times a video was played back (video_view) divided by the number of opportunities for playback (video_impression).</dd>
+	<dt id="play_request">Play Request</dt>
+	<dd>A play request is counted every time the play button is clicked.</dd>
+	<dt id="player">Player</dt>
+	<dd>Video Cloud player ID.</dd>
+	<dt id="player_load">Player Load</dt>
+	<dd>Number of times a player was loaded.</dd>
+	<dt id="player_name">Player Name</dt>
+	<dd>Name of the Video Cloud player.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="Q">Q</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="R">R</h2>
+
+<dl>
+	<dt id="region">Region</dt>
+	<dd>Province or state name where a video was viewed. Follows the <a href="http://en.wikipedia.org/wiki/ISO_3166">ISO 3166</a> standard.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="S">S</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="T">T</h2>
+
+<dl>
+	<dt id="traffic_sources">Traffic Sources</dt>
+	<dd>An indication of how the viewer reached the player page. Possible values are:
+	<ul>
+		<li>Referral - User followed a link to the video</li>
+		<li>Direct - User typed the link directly, used a bookmark, or used a link from an email</li>
+		<li>Organic Search - User performed a search and clicked on a result to get to the video</li>
+		<li>Paid Search - User performed a search and clicked on a paid result to get to the video</li>
+		<li>Secure Search - User logged in with a Google account, performed a search and clicked on a result (either paid or organic; search information is not included in this case)</li>
+	</ul>
+	</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="U">U</h2>
+
+<dl>
+	<dt id="unique-users">Unique Users</dt>
+	<dd>See <a href="#daily-unique-users">Daily Unique Users</a></dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="V">V</h2>
+
+<dl>
+	<dt id="video">Video</dt>
+	<dd>Video Cloud ID of the video.</dd>
+	<dt id="videobandwidth">Video Bandwidth</dt>
+	<dd>Total bandwidth used to deliver videos only.</dd>
+	<dt id="video_duration">Video Duration</dt>
+	<dd>Length of the video in seconds.</dd>
+	<dt id="video_engagement">Video Engagement</dt>
+	<dd>A measure of the average percent watched per video view (calculated by adding all the percentage watched divided by the number of Video Views). For more information on how this is calculated, see <a href="/analytics/calculating-video-engagement-score.html">Calculating Video Engagement Score</a>.</dd>
+	<dt id="video_name">Video Name</dt>
+	<dd>Name of the video.</dd>
+	<dt id="video_view">Video Views</dt>
+	<dd>The number of times a video started playing, recorded when the stream is started (does not include rewind or replay). It is not a measure of individual viewers.</dd>
+	<dt id="video_view">Viewed Minutes</dt>
+	<dd>The total number of minutes a video was viewed</dd>
+	<dt id="video_engagement_1">Views at 1%</dt>
+	<dd>The number of views recorded at the 1% point of the video.</dd>
+	<dt id="video_engagement_25">Views at 25%</dt>
+	<dd>The number of views recorded at the 25% point of the video.</dd>
+	<dt id="video_engagement_50">Views at 50%</dt>
+	<dd>The number of views recorded at the 50% point of the video.</dd>
+	<dt id="video_engagement_75">Views at 75%</dt>
+	<dd>The number of views recorded at the 75% point of the video.</dd>
+	<dt id="video_engagement_100">Views at 100%</dt>
+	<dd>The number of views recorded at the 100% point of the video.</dd>
+	<dt id="video_impression">Video Impression</dt>
+	<dd>The number of times a video was loaded into a player and ready for interaction.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="W">W</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="X">X</h2>
+
+<dl>
+	<dt id="xlsx">XLSX</dt>
+	<dd>Microsoft Excel file. Analytics data can be exported in this format.</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="Y">Y</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+
+<section class="bcls-section">
+<h2 id="Z">Z</h2>
+
+<dl>
+	<dt id="">&nbsp;</dt>
+	<dd>&nbsp;</dd>
+</dl>
+</section>
+    </article>
 
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
