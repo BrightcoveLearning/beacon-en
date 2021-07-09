@@ -230,36 +230,48 @@
   name: Reviewing Analytics
   url: /analytics/index.html
   docs:
-    - name: Analytics Module UI Glossary
-      url: /analytics/analytics-module-ui-glossary.html
-    - name: Analytics Report Reference
-      url: /analytics/analytics-report-reference.html
-    - name: Beacon Analytics Business Metrics
-      url: /analytics/analytics-business-metrics.html
-    - name: Calculating Video Engagement Score
-      url: /analytics/calculating-video-engagement-score.html
-    - name: Creating Custom Analytics Reports
-      url: /analytics/creating-custom-analytics-reports.html
-    - name: Engagement Report Reference
-      url: /analytics/engagement-report-reference.html
-    - name: Exporting Data
-      url: /analytics/exporting-data-analytics-module.html
-    - name: 'FAQ: Analytics Module'
-      url: /analytics/faq-analytics-module.html
-    - name: Getting Started with the Analytics Module
-      url: /analytics/getting-started-analytics-module.html
-    - name: Google Analytics Self Configuration
-      url: /analytics/ga-self-configuration.html
-    - name: How to Search for Videos
-      url: /analytics/how-search-videos-analytics-module.html
-    - name: Managing Scheduled Reports
-      url: /analytics/managing-scheduled-reports.html
-    - name: Performance Report Reference
-      url: /analytics/performance-report-reference.html
-    - name: Reviewing Player Events in Google Analytics
-      url: /analytics/reviewing-player-event-data-google-analytics.html
-    - name: Viewing Analytics Data in Google Analytics
-      url: /analytics/viewing-analytics-data.html
+    - name: Using the Analytics Module
+      url: 
+      docs:
+        - name: Getting Started with the Analytics Module
+          url: /analytics/getting-started-analytics-module.html
+        - name: Analytics Module UI Glossary
+          url: /analytics/analytics-module-ui-glossary.html
+        - name: How to Search for Videos
+          url: /analytics/how-search-videos-analytics-module.html
+        - name: 'FAQ: Analytics Module'
+          url: /analytics/faq-analytics-module.html 
+    - name: Analytics Reports
+      url: 
+      docs:
+        - name: Analytics Report Reference
+          url: /analytics/analytics-report-reference.html
+        - name: Creating Custom Analytics Reports
+          url: /analytics/creating-custom-analytics-reports.html
+        - name: Engagement Report Reference
+          url: /analytics/engagement-report-reference.html
+        - name: Managing Scheduled Reports
+          url: /analytics/managing-scheduled-reports.html
+        - name: Performance Report Reference
+          url: /analytics/performance-report-reference.html
+    - name: General Information
+      url: 
+      docs:
+        - name: Beacon Analytics Business Metrics
+          url: /analytics/analytics-business-metrics.html
+        - name: Calculating Video Engagement Score
+          url: /analytics/calculating-video-engagement-score.html
+        - name: Exporting Data
+          url: /analytics/exporting-data-analytics-module.html
+    - name: Third-Party Analytics
+      url: 
+      docs:
+        - name: Google Analytics Self Configuration
+          url: /analytics/ga-self-configuration.html
+        - name: Reviewing Player Events in Google Analytics
+          url: /analytics/reviewing-player-event-data-google-analytics.html
+        - name: Viewing Analytics Data in Google Analytics
+          url: /analytics/viewing-analytics-data.html
 - section:
   name: Administering Accounts
   url: /admin/index.html
