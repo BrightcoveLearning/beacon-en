@@ -9,6 +9,24 @@ description: Learn how to use video analytics to check the performance and engag
   <br/>
   <section class="bcls-section">
     <h2 id="Topics_in_this_section">Topics</h2>
+      <section class="card-wrapper">
+    {% for item in site.data.navigation %}
+    {% if item.name == page.title %}
+    {% for subsection in item.docs %}
+    <section class="bcls-card-small" onclick="window.location.href='{{subsection.url}}'">
+      <div class="card-content">
+        <h2>{{ subsection.name }}</h2>
+        <ul>
+          {% for doc in subsection.docs %}
+          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+  </section>
     <table width="100%" border="0">
       <tbody>
         <tr>
