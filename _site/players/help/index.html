@@ -33,6 +33,62 @@
     <section class="bcls-section">
         <p>The Players module allows you to create and manage video players.</p>
 
+        <h3>Players list</h3>
+        <ul>
+          <li><strong>Name</strong> - Click the player name link to edit the player details. The player ID appears below the player name.</li>
+          <li><strong>Updated</strong> - Most recent updated date and time</li>
+          <li><strong>Version</strong> - Player version</li>
+          <li><strong>Status</strong> - Player status
+            <ul>
+              <li><img alt="" src="/assets/images/players/node14049-cone-icon.png" /> - Indicates that changes have been made to the player but the changes have not been published</li>
+              <li><img alt="" src="/assets/images/players/node14049-check-icon.png" /> - Indicates that the player is activated and all changes made to the player have been published</li>
+              <li><img alt="" src="/assets/images/players/node14049-red-circle-icon.png" /> - Indicates that the player is inactive</li>
+            </ul>
+          </li>
+        </ul>
+
+        <details class="details-item">
+          <summary>Player summary</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist">
+              <li>Select a player name to see the summary on the right of the players list. The information includes:
+                <ul>
+                  <li>Player name - Click the player name link to edit the player details.</li>
+                  <li><strong>Created</strong> - Player creation date</li>
+                  <li>Click <span class="button-blue">Player Preview</span> to see a preview of your player in a modal window</li>
+                  <li>Click <span class="button-blue">Embed Code & URL</span> to copy either the <strong>Preview Player</strong> or the <strong>Published Player</strong> embed code to test your player changes in your HTML page</li>
+                  <li><strong>Player ID</strong> - Player unique identifier</li>
+                  <li><strong>Name</strong> - Player name</li>
+                  <li><strong>Description</strong> - Player short description</li>
+                  <li><strong>Status</strong> - Player status
+                    <ul>
+                      <li><img alt="" src="/assets/images/players/node14049-cone-icon.png" /> - Indicates that changes have been made to the player but the changes have not been published</li>
+                      <li><span class="button-blue">Active</span> - Indicates that the player is activated and all changes made to the player have been published</li>
+                      <li><img alt="" src="/assets/images/players/node14049-red-circle-icon.png" /> - Indicates that the player is inactive</li>
+                    </ul>
+                  </li>
+                  <li><strong>Published State</strong> - Whether the player has been published with the latest changes</li>
+                </ul>
+              </li>
+            </ol>  
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Search Players</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist">
+              <li>In <span class="button-gray"><i class="button-icon" data-feather="search"></i>Search Players</span>, start typing to search for players in your account. The following fields are searched:
+                <ul>
+                  <li>Player name</li>
+                  <li>Player ID</li>
+                  <li>Short description</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+        </details>
+
         <details class="details-item">
           <summary>Create player</summary>
           <section class="bcls-section">
@@ -47,37 +103,32 @@
         </details>
 
         <details class="details-item">
-          <summary>Search users</summary>
+          <summary>Duplicate player</summary>
           <section class="bcls-section">
             <ol class="bcls-tasklist">
-              <li>In <span class="button-gray"><i class="button-icon" data-feather="search"></i>Find user</span>, start typing either the email address or the name of the user you want to search for. You should see a list of users that match.</li>
-              <li>Select a user from the search results list.</li>
-              <li>The details page will open for the selected user.</li>
-              <li>When you return to the list page, the viewed user will be added to the list.</li>
+              <li>Select the player that you want to duplicate.</li>
+              <li>Click <span class="button-blue">Duplicate</span>.</li>
+              <li>Enter the <strong>Name</strong> and <strong>Short Description</strong> for the new player.</li>
+              <li>Click <span class="button-blue">Save</span>.</li> 
             </ol>
           </section>
         </details>
 
         <details class="details-item">
-          <summary>Users list</summary>
+          <summary>Delete player</summary>
           <section class="bcls-section">
-            <ul>
-              <li><strong>E-mail</strong> - Email address for the user
-                <ul>
-                  <li>To view user details and update, click on an <strong>E-mail</strong> link.</li>
-                  <li>Click the <strong>Back to Users</strong> panel to return.</li>
-                </ul>
-              </li>
-              <li><strong>Name</strong> - The display name for the user</li>
-            </ul>
-            <aside class="bcls-aside bcls-aside--information">Note: You will only see the users that you have searched for and selected.</aside>
+            <ol class="bcls-tasklist">
+              <li>Select the player that you want to delete.</li>
+              <li>Click <span class="button-blue">Delete</span>.</li>
+              <li>In the delete confirmation dialog, click <span class="button-blue">Delete</span>.</li> 
+            </ol>
           </section>
-        </details>
+        </details> 
     
   </section>
 
   <section class="bcls-section">
-    <h3><a href="https://beacon-help.support.brightcove.com/registered-users/working-with-registered-users.html#Users_list" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></h3>
+    <h3><a href="https://beacon-help.support.brightcove.com/players/getting-started-players-module.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></h3>
   </section>
 </article>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
