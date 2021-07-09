@@ -29,7 +29,7 @@ parent: Cloud Playout
       <li>Configure your channel to loop your program.</li>
       <li>Optimize playout by device.</li>
       <li>Drag and drop to re-order the program schedule at any moment, even in Running state.</li>
-      <li>Push a channel to your owned and operated properties via Brightcove Live and Beacon.</li>
+      <!-- <li>Push a channel to your owned and operated properties via Brightcove Live, an Amazon S3 bucket, or a 3rd party destination via RTMP output.</li> -->
       <li>API to retrieve the EPG (electronic program guide) for a channel</li>
     </ul>
   </section>
@@ -48,7 +48,12 @@ parent: Cloud Playout
     <h2 id="limitations">Limitations</h2>
     <p>The following assumptions and limitations apply.</p>
     <ul>
-      <li> Your videos must be ingested or re-transcoded using a Dynamic Delivery profile and must have an MP4 rendition</li>
+      <li>Your videos must be ingested or re-transcoded using a Dynamic Delivery profile and must have an MP4 rendition
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/mp4-in-ingest-profile.png" alt="Ingest Profiles with MP4">
+          <figcaption class="bcls-caption--image">Ingest Profiles with MP4</figcaption>
+        </figure>
+      </li>
       <li>The maximum input bitrate and resolution supported for Cloud Playout is 20MBPS/1080p. This applies both to VOD content and live inputs.</li>
       <li>Brightcove recommends using videos with at least a 2 minute duration to ensure a correct transition between videos and electronic program guide accuracy</li>
       <li>Captions (text tracks) added to videos currently will not display in Cloud Playout channels. Support for captions will be added in a future release.</li>
