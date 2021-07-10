@@ -4,7 +4,6 @@
 - section:
   name: Getting Started
   url: /getting-started/index.html
-  icon: '<img class="bcls-icon" src="/assets/images/feather/play.svg">'
   docs:
     - name: App Design Best Practices
       url: /getting-started/design-best-practices.html
@@ -17,7 +16,6 @@
 - section:
   name: Managing Media
   url: /media/index.html
-  icon: '<img class="bcls-icon" src="/assets/images/feather/film.svg">'
   docs:
     - name: Adding an Application ID
       url: /media/adding-application-id-player-embed-code.html
@@ -99,7 +97,6 @@
       url: /media/working-remote-asset-videos.html
 - section:
   name: Managing Pages
-  icon: '<img class="bcls-icon" src="/assets/images/feather/send.svg">'
   url: '/pages/index.html'
   docs:
     - name: Getting Started with the Layout Module
@@ -126,7 +123,6 @@
       url: /channels/streaming-vods-to-a-channel.html
 - section:
   name: Using Cloud Playout
-  icon: '<img class="bcls-icon" src="/assets/images/feather/cloud-lightning.svg">'
   url: /cloud-playout/index.html
   docs:
     - name: 'Overview: Cloud Playout'
@@ -278,7 +274,6 @@
 - section:
   name: Administering Accounts
   url: /admin/index.html
-  icon: '<i data-feather="tool"></i>'
   docs:
     - name: Configuring Language Settings
       url: /admin/configuring-language-settings.html
@@ -315,13 +310,11 @@
 - section:
   name: Registered Users
   url: /registered-users/index.html
-  icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
   docs:
     - name: Working with Registered Users
       url: /registered-users/working-with-registered-users.html
 - section:
   name: 'Publishing Apps'
-  icon: '<img class="bcls-icon" src="/assets/images/feather/send.svg">'
   url: '/publishing-apps/index.html'
   docs:
     - name: 'General Information'
@@ -433,7 +426,6 @@
 - section:
   name: Styling & Appearance
   url: /styling/index.html
-  icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
   docs:
     - name: Branding Brightcove Beacon Apps
       url: /styling/branding-beacon-apps.html
@@ -442,14 +434,12 @@
 - section:
   name: Live Events
   url: /live/index.html
-  icon: '<img class="bcls-icon" src="/assets/images/feather/user.svg">'
   docs:
     - name: Streaming a Live Event
       url: /live/streaming-live-event.html
 - section:
   name: General Information
   url: /general/index.html
-  icon: '<i data-feather="info"></i>'
   docs:
     - name: Glossary
       url: /general/glossary.html
@@ -478,7 +468,6 @@
 - section:
   name: 'Support'
   url: '/support/index.html'
-  icon: '<i data-feather="help-circle"></i>'
   docs:
     - name: 'Viewing the Brightcove System Status Page'
       url: '/support/viewing-brightcove-system-status-page.html'
