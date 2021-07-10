@@ -103,29 +103,7 @@ parent: Cloud Playout
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-playlist-created.png" /></figure>
     <p>We strongly recommend that you make any changes to the channel in the Cloud Playout module, and <strong>do not edit the generated playlist in any way</strong>.</p>
   </section>
-  <section class="bcls-section">
-    <h2 id="Get_information_for_the_Beacon_Channel">Get information for the Beacon Channel</h2>
-    <p>Before you leave Beacon Studio and go to Beacon Classic, you will want to capture information that you will need in setting up your Beacon channel. See <a href="/channels/creating-a-channel.html">Creating a Beacon Channel</a> to see how information about the Cloud Playout channel is entered.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Go to the channel details page by clicking on the channel in the channel list.</li>
-      <li>If you have not already done so, click <span class="button-red-text-border"><i data-feather="play" class="button-icon"></i> Activate</span> to activate the channel. See <a href="/using-brightcove-beacon/cloud-playout/using-channel-actions.html">Using Channel Actions</a> for more details.</li>
-      <li>After the channel has activated, use the main navigation to go to the <strong>Media</strong> module.</li>
-      <li>
-        At the top of the video list, you should see a new live video that was created for your Cloud Playout channel:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/cloud-playout/video-id-and-channel-id.png" alt="Video for Cloud Playout">
-          <figcaption class="bcls-caption--image">Video for Cloud Playout</figcaption>
-        </figure>
-      </li>
-      <li>Save both the <strong>video id</strong> and the <strong>channel id</strong> (the long alphanumeric string that follows <strong>cloud-playout:</strong> in the Tags).</li>
-    </ol>
-    <p>Note that the channel id is also available in the Channel Details in the Cloud Playout module:
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/cloud-playout/channel-id.png" alt="Channel ID">
-      <figcaption class="bcls-caption--image">Channel ID</figcaption>
-    </figure>
-    </p>
-  </section>
+  
   <section class="bcls-section">
     <h2 id="getting_the_rtmp_ingest_point">Getting the RTMP ingest point</h2>
     <aside class="bcls-aside bcls-aside--information language-editable">This section only applies if you are including live events in your channel.</aside>
@@ -188,10 +166,12 @@ parent: Cloud Playout
     <h2 id="Related_topics">Related topics</h2>
     <ul>
       <li><a href="/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
-      <li><a href="/channels/creating-a-channel.html">Creating a Beacon Channel</a></li>
+      <li><a href="/cloud-playout/publish-channel-beacon.html">Publishing a Cloud Playout Channel</a></li>
+      <li><a href="/cloud-playout/cloud-playout-add-content.html">Adding Content to a Channel</a></li>
+      <li><a href="/cloud-playout/adding-bumpers-to-vod.html">Adding Bumpers to a Channel Videos</a></li>
+      <li><a href="/cloud-playout/static-image-overlays.html">Adding Static Image Overlays</a></li>
       <li><a href="/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
       <li><a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
-      <li><a href="/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
       <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
       <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API Reference</a></li>

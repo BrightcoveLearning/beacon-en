@@ -178,20 +178,22 @@
       url: /cloud-playout/cloud-playout-stream-vod.html
     - name: Adding Content to a Cloud Playout Channel
       url: /cloud-playout/cloud-playout-add-content.html
-    - name: Static Image Overlays
+    - name: Adding Static Image Overlays
       url: /cloud-playout/static-image-overlays.html
-    - name: Using Channel Actions
-      url: /cloud-playout/using-channel-actions.html
     - name: Adding Bumpers to Cloud Playout
       url: /cloud-playout/adding-bumpers-to-vod.html
     - name: Monetizing Cloud Playout
       url: /cloud-playout/enabling-server-side-ads.html
     - name: Adding Mid-Roll Ads to a Channel
       url: /cloud-playout/mid-roll-ad-insertion.html
+    - name: Publishing a Cloud Playout Channel
+      url: /cloud-playout/publish-channel-beacon.html
+    - name: Using Channel Actions
+      url: /cloud-playout/using-channel-actions.html
     - name: Viewing Channel Output and Analytics
       url: /cloud-playout/viewing-channel-output-and-analytics.html
-    - name: Generating the Channel Embed Code
-      url: /cloud-playout/generating-channel-embed-code.html
+#    - name: Generating the Channel Embed Code
+#      url: /cloud-playout/generating-channel-embed-code.html
 - section:
   name: Monetizing Content
   url: /monetization/index.html
