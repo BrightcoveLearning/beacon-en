@@ -1165,7 +1165,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <figcaption class="bcls-caption--image">Ingest Profiles with MP4</figcaption>
         </figure>
       </li>
-      <li>The maximum input bitrate and resolution supported for Cloud Playout is 20MBPS/1080p for VOD and 10MBPS/1080p for live inputs.</li>
+      <li>For channels to work in Beacon, you need to <strong>specify Brightcove Live as the destination</strong>.</li>
+      <li>The maximum input bitrate and resolution supported for Cloud Playout is 20MBPS/1080p for VOD and live inputs.</li>
       <li>Brightcove recommends using videos with at least a 2 minute duration to ensure a correct transition between videos and electronic program guide accuracy</li>
       <li>Captions (text tracks) added to videos currently will not display in Cloud Playout channels. Support for captions will be added in a future release.</li>
       <li>The minimum length for Live events is 5 minutes.</li>
@@ -1182,6 +1183,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <figcaption class="bcls-caption--image">Live Settings for SSAI Channel</figcaption>
         </figure>
       </li>
+      <li>Currently, channels enabled for SSAI cannot include live events.</li>
     </ul>
   </section>
   <section class="bcls-section">

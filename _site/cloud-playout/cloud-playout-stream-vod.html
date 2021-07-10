@@ -1121,12 +1121,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>The  Cloud Playout module enables broadcasters and media publishers to use a collection of VOD videos and live streams and then stream them as a linear channel. The channel can be streamed to Brightcove Live, Amazon S3 or a specified RTMP URL.</p>
+    <p>The Cloud Playout module enables broadcasters and media publishers to use a collection of VOD videos and live streams and then stream them as a linear channel. The channel can be streamed to Brightcove Live, Amazon S3 or a specified RTMP URL.</p>
     <p>See <a href="/channels/creating-a-channel.html">Creating a Beacon Channel</a> to see how you add a Cloud Playout channel to your Beacon app.</p>
-		<figure class="bcls-figure">
-			<img class="bcls-image" src="/assets/images/cloud-playout/cloud-playout-in-navigaton.png" alt="Go to Cloud Playout">
-			<figcaption class="bcls-caption--image">Creating a Cloud Playout Channel</figcaption>
-		</figure>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/cloud-playout-in-navigaton.png" alt="Go to Cloud Playout">
+      <figcaption class="bcls-caption--image">Creating a Cloud Playout Channel</figcaption>
+    </figure>
     <p>To access the Cloud Playout module, click <strong>Cloud Playout</strong> in the navigation menu. A list of all Cloud Playout channels that have been created will be displayed (if any).</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="playout channel list" src="/assets/images/cloud-playout/playout-channel-list.png" /></figure>
     <p>The page will display the following information:</p>
@@ -1148,13 +1148,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li><strong>STOPPING</strong> - Channel streaming is stopping</li>
           <li><strong>IDLE</strong> - Channel successfully ran and has been stopped</li>
           <li><strong>DELETING</strong> - Channel is being deleted</li>
-          <li><strong>ERROR</strong> - An error occurred while creating or streaming the channel</li>
+          <li><strong>ERROR</strong> - An error occurred while creating or activating the channel</li>
         </ul>
       </li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="channel">Creating a  channel</h2>
+    <h2 id="channel">Creating a channel</h2>
     <p>To create a new Cloud Playout channel, follow these steps. </p>
     <ol class="bcls-tasklist-restart" style="--s:1">
       <li>Click <strong>Cloud Playout</strong> in the navigation header.</li>
@@ -1181,7 +1181,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </ul>
       </li>
       <li>If you will be using Live inputs, set <strong>Live Input</strong> to On, and enter a Slate URL, unless you are going to use the default Brightcove MP4 for you slate. The slate MP4 will play whenever Live input is stopped because the encoder is stopped or some technical issue blocks the live stream. <strong>Note that <strong>the Slate URL must be a static URL that is always available</strong> (short-lived CDN URLs are not allowed).</strong></li>
-      <li>Enter the channel <strong>Destination</strong> details. Cloud Playout  supports 2 outputs at the same time. For example, you can output HLS into an S3 Bucket and an RTMP feed to a Brightcove Live Channel or a 3rd party ingestion point. Note that combining <strong>Brightcove Live Event</strong> and <strong>RTMP</strong> as simultaneous destinations is not supported.
+      <li>Enter the channel <strong>Destination</strong> details. For channels to work in Beacon apps, you must select <strong>Brightcove Live Event</strong> as the destination.
         <ul>
           <li><strong>Optimize Display for</strong> - Controls the bitrate and dimensions for the output
             <ul>
@@ -1192,15 +1192,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li><strong>Output Region</strong> - The region where the channel will be created. Brightcove recommends selecting a region geographically closest to where the majority of your audience is expected.</li>
           <li><strong>Output to</strong> - Select an output method for the channel
             <ul>
-              <li><strong>Brightcove Live Event</strong> - Create or use a previously created Brightcove Live  Channel. When creating a new channel, the region of the channel will be optimized based upon the <strong>Output Region</strong> that was selected.</li>
-              <li><strong>RTMP</strong> - Select to output the stream to an RTMP or RTP ingestion point. RTP is not available for third party ingestion points; you can use it only when <strong>Ad Insertion</strong> and <strong>Brightcove Live Event</strong> is enabled. When selected, an <strong>RTMP URL</strong> field will appear - enter the RTMP input URL for your live streaming service.</li>
-              <li><strong>Amazon S3 Bucket </strong>- Select to push an HLS output to an Amazon S3 bucket. You will be required to enter Bucket Name, Region, Access Key and Secret Key. The bucket should be public and writeable.</li>
+              <li><strong>Brightcove Live Event</strong> - Create or use a previously created Brightcove Live Channel. When creating a new channel, the region of the channel will be optimized based upon the <strong>Output Region</strong> that was selected.</li>
+              <li><strong>RTMP</strong> - this destination is <strong>not compatible with Beacon.</strong></li>
+              <li><strong>Amazon S3 Bucket </strong> - You can select this destination <strong>in addition to Brightcove Live Event, but not as the only destination</strong>. This option will push an HLS output to an Amazon S3 bucket. You will be required to enter Bucket Name, Region, Access Key and Secret Key. The bucket should be public and writeable.</li>
             </ul>
-            <aside class="bcls-aside bcls-aside--information">Note that outputting to <strong>Brightcove Live Event</strong> will automatically generate live hours for your account, which are billable. There is no addition charge for using Cloud Playout, but normal charges for live streaming hours apply. Outputting to RTMP or Amazon S3 do not generate billable live hours:
-              <figure class="bcls-figure">
-                <img class="bcls-image" src="/assets/images/cloud-playout/cloud-playout-live-hours.png" alt="Billable/Non-Billable Outputs">
-                <figcaption class="bcls-caption--image">Billable/Non-Billable Outputs</figcaption>
-              </figure>
+            <aside class="bcls-aside bcls-aside--information">Note that outputting to <strong>Brightcove Live Event</strong> will automatically generate live hours for your account, which are billable. There is no addition charge for using Cloud Playout, but normal charges for live streaming hours apply.
             </aside>
           </li>
         </ul>
@@ -1209,8 +1205,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="add_videos">Adding content to a channel</h2>
-		<p>See <a href="/cloud-playout/cloud-playout-add-content.html">Adding Content to a Cloud Playout Channel</a> for information on how to add VOD content, playlists, and live events to your channel.</p>
+    <h2 id="add_content">Adding content to a channel</h2>
+    <p>See <a href="/cloud-playout/cloud-playout-add-content.html">Adding Content to a Cloud Playout Channel</a> for information on how to add VOD content, playlists, and live events to your channel.</p>
     <p>Also see <a href="/cloud-playout/adding-bumpers-to-vod.html">Adding Bumpers to Content</a> for adding bumpers to VOD or live event items.</p>
     <p>After videos and live events have been added to a channel, click <strong>Activate</strong> to activate the channel. A channel must be activated before streaming can begin. See the <a href="/cloud-playout/using-channel-actions.html">Using channel actions</a> for more information.</p>
     <aside class="bcls-aside bcls-aside--information">Note: To change the order of the videos in a program, click on a video and drag it to a new position.</aside>
@@ -1218,31 +1214,32 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-playlist-created.png" /></figure>
     <p>We strongly recommend that you make any changes to the channel in the Cloud Playout module, and <strong>do not edit the generated playlist in any way</strong>.</p>
   </section>
-	<section class="bcls-section">
-		<h2 id="Get_information_for_the_Beacon_Channel">Get information for the Beacon Channel</h2>
-		<p>Before you leave Video Cloud and go to Beacon, you will want to capture information that you will need in setting up your Beacon channel. See <a href="/channels/creating-a-channel.html">Creating a Beacon Channel</a> to see how information about the Cloud Playout channel is entered.</p>
-		<ol class="bcls-tasklist-restart">
-			<li>Go to the channel details page by clicking on the channel in the channel list.</li>
-			<li>If you have not already done so, click <span class="button-red-text-border"><i data-feather="play" class="button-icon"></i> Activate</span> to activate the channel. See <a href="/using-brightcove-beacon/cloud-playout/using-channel-actions.html">Using Channel Actions</a> for more details.</li>
-			<li>After the channel has activated, use the main navigation to go to the <strong>Media</strong> module.</li>
-			<li>
-				At the top of the video list, you should see a new live video that was created for your Cloud Playout channel:
-				<figure class="bcls-figure">
-					<img class="bcls-image" src="/assets/images/cloud-playout/video-id-and-channel-id.png" alt="Video for Cloud Playout">
-					<figcaption class="bcls-caption--image">Video for Cloud Playout</figcaption>
-				</figure>
-			</li>
-			<li>Save both the <strong>video id</strong> and the <strong>channel id</strong> (the long alphanumeric string that follows <strong>cloud-playout:</strong> in the Tags).</li>
-		</ol>
-		<p>Note that the channel id is also available in the Channel Details in the Cloud Playout module:
-			<figure class="bcls-figure">
-				<img class="bcls-image" src="/assets/images/cloud-playout/channel-id.png" alt="Channel ID">
-				<figcaption class="bcls-caption--image">Channel ID</figcaption>
-			</figure>
-		</p>
-	</section>
+  <section class="bcls-section">
+    <h2 id="Get_information_for_the_Beacon_Channel">Get information for the Beacon Channel</h2>
+    <p>Before you leave Beacon Studio and go to Beacon Classic, you will want to capture information that you will need in setting up your Beacon channel. See <a href="/channels/creating-a-channel.html">Creating a Beacon Channel</a> to see how information about the Cloud Playout channel is entered.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Go to the channel details page by clicking on the channel in the channel list.</li>
+      <li>If you have not already done so, click <span class="button-red-text-border"><i data-feather="play" class="button-icon"></i> Activate</span> to activate the channel. See <a href="/using-brightcove-beacon/cloud-playout/using-channel-actions.html">Using Channel Actions</a> for more details.</li>
+      <li>After the channel has activated, use the main navigation to go to the <strong>Media</strong> module.</li>
+      <li>
+        At the top of the video list, you should see a new live video that was created for your Cloud Playout channel:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/video-id-and-channel-id.png" alt="Video for Cloud Playout">
+          <figcaption class="bcls-caption--image">Video for Cloud Playout</figcaption>
+        </figure>
+      </li>
+      <li>Save both the <strong>video id</strong> and the <strong>channel id</strong> (the long alphanumeric string that follows <strong>cloud-playout:</strong> in the Tags).</li>
+    </ol>
+    <p>Note that the channel id is also available in the Channel Details in the Cloud Playout module:
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/channel-id.png" alt="Channel ID">
+      <figcaption class="bcls-caption--image">Channel ID</figcaption>
+    </figure>
+    </p>
+  </section>
   <section class="bcls-section">
     <h2 id="getting_the_rtmp_ingest_point">Getting the RTMP ingest point</h2>
+    <aside class="bcls-aside bcls-aside--information language-editable">This section only applies if you are including live events in your channel.</aside>
     <p>For your live encoder, you will need the RTMP ingest point for your channel. You can find it in the <strong>:Channel Settings</strong>:</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-rtmp-ingest-point.png" alt="Ingest Point">
@@ -1268,8 +1265,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click the channel name to open the channel details.</li>
       <li>Click <img src="/assets/images/cloud-playout/cloudplayout-edit-button.png" class="ui-image" alt="edit button"></li>
       <li>Make the appropriate edits in the dialog and then click <img src="/assets/images/cloud-playout/cloudplayout-update-channel.png" alt="update channel" class="ui-image"></li>
-  </ol>
-        <p>Note that the Destination properties cannot be edited once a channel has been created.</p>
+    </ol>
+    <p>Note that the Destination properties cannot be edited once a channel has been created.</p>
     <h3>For a running channel</h3>
     <p>To edit a running channel: </p>
     <ol class="bcls-tasklist-restart">
@@ -1277,27 +1274,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click <img src="/assets/images/cloud-playout/cloudplayout-settings.png" alt="settings" class="ui-image"></li>
       <li>Click <img src="/assets/images/cloud-playout/cloudplayout-edit-button.png" class="ui-image" alt="edit button"></li>
       <li>The channel settings dialog will open - some options that can't be changed will not be available.</li>
-      <li>Make changes and click  <img src="/assets/images/cloud-playout/cloudplayout-update-channel.png" alt="update channel" class="ui-image"></li>
-  </ol>
+      <li>Make changes and click <img src="/assets/images/cloud-playout/cloudplayout-update-channel.png" alt="update channel" class="ui-image"></li>
+    </ol>
   </section>
   <section class="bcls-section">
     <h2 id="looping">Creating a looping program</h2>
-    <p>To create a program that loops, when creating the channel, set the <strong>Loop Playout Content</strong> setting  to <strong>On</strong>. As videos are added to the program, the program listing will update to display the series of videos with associated start/end times to fill the entire channel scheduled time. When you change the duration of a live event, the duration of events that have already passed will remain unchanged, but any future plays of the event will use the new duration.</p>
+    <p>To create a program that loops, when creating the channel, set the <strong>Loop Playout Content</strong> setting to <strong>On</strong>. As videos are added to the program, the program listing will update to display the series of videos with associated start/end times to fill the entire channel scheduled time. When you change the duration of a live event, the duration of events that have already passed will remain unchanged, but any future plays of the event will use the new duration.</p>
     <p>In the example below, the channel includes VOD and live events in a loop.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/cloudplayout-looping-channel.png" /></figure>
   </section>
-  
+
   <section class="bcls-section">
     <h2 id="epg">Working with an electronic program guide</h2>
-		<p>Brightcove generates the EPG for Cloud Playout channels and Beacon will handle that for you.</p>
+    <p>Brightcove generates the EPG for Cloud Playout channels and Beacon will handle that for you.</p>
     <p>If you want to see the program data for the EPG, an API is available to retrieve the EPG. For more information see the <a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a> topic.</p>
   </section>
 
   <section class="bcls-section">
     <h2 id="deleting_a_channel">Deleting a channel</h2>
-    <p>To delete a  Cloud Playout channel, click the checkbox next to the channel name and then click <strong>Delete</strong>.</p>
+    <p>To delete a Cloud Playout channel, click the checkbox next to the channel name and then click <strong>Delete</strong>.</p>
   </section>
-  
+
   <section class="bcls-section">
     <h2 id="Related_topics">Related topics</h2>
     <ul>
@@ -1313,7 +1310,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ul>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
