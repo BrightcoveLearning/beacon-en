@@ -9,7 +9,7 @@ parent: Cloud Playout
   <section class="bcls-section">
 		<h2 id="Introduction">Introduction</h2>
 		<p>Depending on how you configured your Cloud Playout channel, you can add content of various kinds. VOD content and playlists can be added to any channel. In addition, you can add live events if you configured the channel to support that. The following sections provide steps for adding each kind of content.</p>
-		<aside class="bcls-aside bcls-aside--information">Note that you can also <a href="/cloud-playout/adding-bumpers-to-vod.html">add bumpers</a> to your channel, and <a href="/cloud-playout/enabling-server-side-ads.html">server-side ads</a>, if the channel was configured for that. See those topics for details on how to do that.</aside>
+		<aside class="bcls-aside bcls-aside--information">Note that you can also <a href="/cloud-playout/adding-bumpers-to-vod.html">add bumpers</a> and <a href="/cloud-playout/static-image-overlays.html">static image overlays</a> to your channel, and also <a href="/cloud-playout/enabling-server-side-ads.html">server-side ads</a>, if the channel was configured for that. See those topics for details on how to do that.</aside>
 	</section>
   
   <section class="bcls-section">
@@ -24,7 +24,7 @@ parent: Cloud Playout
     <ol class="bcls-tasklist-restart" style="--s:1">
       <li>Click <span class="button-blue"><i data-feather="plus"></i> Add Videos</span> (If you are on the channel list page, click the  channel name to open the channel settings page and then click <span class="button-blue"><i data-feather="plus"></i> Add Videos</span>).
       </li>
-      <li>Click the checkbox next to the videos you want to add to the channel.
+      <li>Click the checkbox next to the videos you want to add to the channel. Note that only videos with MP4 renditions (required for Cloud Playout) will appear.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select videos" src="/assets/images/cloud-playout/playout-select-videos.png" /></figure>
       </li>
       <li>Click <span class="button-blue">Add Videos</span>)</li>
@@ -50,6 +50,13 @@ parent: Cloud Playout
 			<li>If the imported playlist contains a Live event, an identical new Live event with same name, description & duration will be created. This is because a Live event always shares an 1:1 relationship with the channel.</li>
 			<li>The videos in the playlist will be added <strong>to the end</strong> of the current channel program.</li>
 			<li>You can add VOD content as well as playlists, and duplicates are allowed.</li>
+      <li>
+        Only videos in the playlist with MP4 renditions will be added to the channel. If the playlist contains no videos with MP4 renditions, you will see an error message when you attempt to import it:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/playlist-import-error.png" alt="Playlist Import Error">
+          <figcaption class="bcls-caption--image">Playlist Import Error</figcaption>
+        </figure>
+      </li>
 			<li>There is a validation check on the total asset limit (100). If the import will exceed 100 asset limit, the import will fail.</li>
 			<li>
 				<aside class="bcls-aside bcls-aside--information">Note: If Live input is not enabled for the channel, you can still import a playlist that includes Live events in it by choosing to exclude the Live events from import.</aside>
