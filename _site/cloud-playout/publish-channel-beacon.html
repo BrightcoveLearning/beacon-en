@@ -1129,10 +1129,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         At the top of the video list, you should see a new live video that was created for your Cloud Playout channel:
         <figure class="bcls-figure">
+          <img class="bcls-image" src="/" alt="Video List">
+          <figcaption class="bcls-caption--image">Video List</figcaption>
+        </figure>
+        <p>Note that it will be a Live video with no associated image.</p>
+      </li>
+      <li>Click on the video name to open the details.</li>
+        <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/cloud-playout/video-id-and-channel-id.png" alt="Video for Cloud Playout">
           <figcaption class="bcls-caption--image">Video for Cloud Playout</figcaption>
         </figure>
-      </li>
       <li>Save both the <strong>video id</strong> and the <strong>channel id</strong> (the long alphanumeric string that follows <strong>cloud-playout:</strong> in the Tags).</li>
     </ol>
     <p>Note that the channel id is also available in the Channel Details in the Cloud Playout module:
@@ -1242,8 +1248,45 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id=""></h2>
-    <p></p>
+    <h2 id="Add_channel_to_playlist">Add the channel to a playlist</h2>
+    <p>Because Beacon pages use <strong>playlists</strong> for content, you need to add your Cloud Playout channel to a playlist. The playlist can contain other videos, but typically it will contain only the channel so that it comprises the page contents.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Go to the Media module in Beacon Studio</li>
+      <li>
+        Click <strong>Add New Playlist</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/publish-create-playlist.png" alt="Add New Playlist">
+          <figcaption class="bcls-caption--image">Create New Playlist</figcaption>
+        </figure>
+      </li>
+      <li>
+        In the Create Playlist dialog, enter a <strong>name</strong> for the playlist and select the <strong>Manual</strong> type. You can also add a reference id and description, and have it show up in the sidebar if you wish.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/publish-create-playlist-dialog.png" alt="New Playlist Dialog">
+          <figcaption class="bcls-caption--image">Create Playlist Dialog</figcaption>
+        </figure>
+      </li>
+      <li>Click <span class="button-blue">Save</span> to save the playlist</li>
+      <li>Go the list of videos and click the name the video associated with your channel to open the video details.</li>
+      <li>
+        Click the <strong>Add to</strong> dropdown and select <strong>Add to Playlist</strong>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/publish-add-to-playlist.png" alt="Add To Playlist">
+          <figcaption class="bcls-caption--image">Add To Playlist</figcaption>
+        </figure>
+      </li>
+      <li>
+        In the Add to Playlist dialog, select the playlist you created for the channel and click <span class="button-blue">Add</span>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/publish-create-playlist-dialog.png" alt="Add to Playlist Dialog">
+          <figcaption class="bcls-caption--image">Add to Playlist Dialog</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Add_channel_to_page"></h2>
+    <p>The last step in putting your Cloud Playout channel into your Beacon app is the simplest one: all you need to do is add your playlist containing the channel video to page. See <a href="/pages/managing-playlists-on-pages.html">Managing Playlists on Pages</a> for details.</p>
   </section>
 </article>
 <!-- complete bootstrap layout -->
