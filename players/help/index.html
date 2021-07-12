@@ -7,19 +7,23 @@ layout: help
     <section class="bcls-section">
         <p>The Players module allows you to create and manage video players.</p>
 
-        <h3>Players list</h3>
-        <ul>
-          <li><strong>Name</strong> - Click the player name link to edit the player details. The player ID appears below the player name.</li>
-          <li><strong>Updated</strong> - Most recent updated date and time</li>
-          <li><strong>Version</strong> - Player version</li>
-          <li><strong>Status</strong> - Player status
+        <details class="details-item">
+          <summary>Players list</summary>
+          <section class="bcls-section">
             <ul>
-              <li><img alt="" src="/assets/images/players/node14049-cone-icon.png" /> - Indicates that changes have been made to the player but the changes have not been published</li>
-              <li><img alt="" src="/assets/images/players/node14049-check-icon.png" /> - Indicates that the player is activated and all changes made to the player have been published</li>
-              <li><img alt="" src="/assets/images/players/node14049-red-circle-icon.png" /> - Indicates that the player is inactive</li>
+              <li><strong>Name</strong> - Click the player name link to edit the player details. The player ID appears below the player name.</li>
+              <li><strong>Updated</strong> - Most recent updated date and time</li>
+              <li><strong>Version</strong> - Player version</li>
+              <li><strong>Status</strong> - Player status
+                <ul>
+                  <li><img alt="" src="/assets/images/players/node14049-cone-icon.png" /> - Indicates that changes have been made to the player but the changes have not been published</li>
+                  <li><img alt="" src="/assets/images/players/node14049-check-icon.png" /> - Indicates that the player is activated and all changes made to the player have been published</li>
+                  <li><img alt="" src="/assets/images/players/node14049-red-circle-icon.png" /> - Indicates that the player is inactive</li>
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
+          </section>
+        </details>
 
         <details class="details-item">
           <summary>Player summary</summary>
@@ -36,12 +40,16 @@ layout: help
                   <li><strong>Description</strong> - Player short description</li>
                   <li><strong>Status</strong> - Player status
                     <ul>
-                      <li><img alt="" src="/assets/images/players/node14049-cone-icon.png" /> - Indicates that changes have been made to the player but the changes have not been published</li>
-                      <li><span class="button-blue">Active</span> - Indicates that the player is activated and all changes made to the player have been published</li>
-                      <li><img alt="" src="/assets/images/players/node14049-red-circle-icon.png" /> - Indicates that the player is inactive</li>
+                      <li><span class="button-blue">Active</span> - The player is active and ready to use</li>
+                      <li><span class="button-red">Inactive</span> - The player is deactivated</li>
                     </ul>
                   </li>
-                  <li><strong>Published State</strong> - Whether the player has been published with the latest changes</li>
+                  <li><strong>Published State</strong> - Player published state
+                    <ul>
+                      <li><strong>Published</strong> - The player is published and has no unpublished changes</li>
+                      <li><strong>You have unpublished changes</strong> - You've made changes to the player; users will not see them until you publish the player</li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
             </ol>  
@@ -92,11 +100,11 @@ layout: help
           <summary>Delete player</summary>
           <section class="bcls-section">
             <ol class="bcls-tasklist">
-              <li>Select the player that you want to delete.</li>
-              <li>Click <span class="button-blue">Delete</span>.</li>
-              <li>In the delete confirmation dialog, click <span class="button-blue">Delete</span>.</li> 
+              <li>Select the player/players that you want to delete.</li>
+              <li>Click <span class="button-red-text">Delete</span>.</li>
+              <li>In the <strong>Delete Players</strong> dialog, confirm by clicking <span class="button-red-text">Delete</span>.</li> 
             </ol>
-          </section>
+          </section> 
         </details> 
     
   </section>
