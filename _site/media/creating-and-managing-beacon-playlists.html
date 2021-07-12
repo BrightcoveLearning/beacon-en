@@ -1154,68 +1154,28 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>Select the <strong>Playlist type</strong>, <strong>Beacon manual playlist</strong> or <strong>Beacon smart playlist</strong>.</li>
       <li>Click <strong>Create playlist</strong>.</li>
-      <li>Review the playlist <strong>Overview</strong> settings.</li>
-      <li>(Optional) Configure the playlist <strong>Availability</strong> settings. For information, see <a href="configuring-playlist-availability.html">Configuring Playlist Availability</a>.</li>
+      <li>The <strong>Overview</strong> tab can be used to edit the overview settings:
+        <ul>
+          <li><strong>Name</strong> - Playlist name</li>
+          <li><strong>Title</strong> - Playlist title, this value is displayed in Beacon apps</li>
+          <li><strong>Description</strong> - Playlist description</li>
+        </ul>
+      </li>
+      <li>Click the <strong>Availability</strong> link to configure the availability settings. See <a href="configuring-playlist-availability.html">Configuring Playlist Availability</a> for information.</li>
     </ol>
     <div class="BCL-subsection">
       <h3>Working with Smart playlists</h3>
-      <p>If you are creating a Smart playlist, the following settings can also be configured.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-new-smart-playlist.png" /></figure>
-      <ul>
-        <li><strong>Tags</strong> - Tags are used to define the videos that will appear in the playlist. The <strong>Tags</strong> dropdown provides these options:
-          <ul>
-            <li><strong>contains one or more</strong> - Include videos that have one or more of the tags listed</li>
-            <li><strong>contains all</strong> - Require that all the videos in the playlist have all the tags that are listed</li>
-          </ul>
-          <p>In the tags text field, enter one or more tags (separated by commas) that will be used to define the playlist.</p>
-        </li>
-        <li><strong>Play Order</strong> - Controls the order in which videos in the playlist are played. The following options are available.
-          <table class="bcls-table">
-            <thead class="bcls-table__head">
-              <tr>
-                <th width="35%">Play Order</th>
-                <th width="65%">Description</th>
-              </tr>
-            </thead>
-            <tbody class="bcls-table__body">
-              <tr>
-                <td>Activated Date (Oldest First)</td>
-                <td>Based on the date the video was activated, oldest videos first</td>
-              </tr>
-              <tr>
-                <td>Activated Date (Newest First)</td>
-                <td>Based on the date the video was activated, newest videos first</td>
-              </tr>
-              <tr>
-                <td>Video Name (A - Z)</td>
-                <td>Alphabetical by video name</td>
-              </tr>
-              <tr>
-                <td>Total Plays</td>
-                <td>Based on the total video plays</td>
-              </tr>
-              <tr>
-                <td>Trailing Week Plays</td>
-                <td>Based on the trailing week total video plays<sup><strong><a href="#1">[1]</a></strong></sup></td>
-              </tr>
-              <tr>
-                <td>Start Date (Oldest First)</td>
-                <td>Based on the date the video was scheduled to start, oldest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
-              </tr>
-              <tr>
-                <td>Start Date (Newest First)</td>
-                <td>Based on the date the video was scheduled to start, newest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>Notes</p>
-          <ul>
-            <li id="1"><sup><strong>[1]</strong></sup> Note that the trailing week plays data maintained in the video metadata may be up to 2 days old, and so the videos you get may not match what you see if you look at video views over the past 7 days on the Analytics module.</li>
-          </ul>
-        </li>
-        <li><strong>Limit Number of Videos</strong> - Enter the maximum number of videos that should be in the playlist.</li>
-      </ul>
-    </div>
+      <p>If you are creating a Smart playlist, the <strong>Smart</strong> link is used to configure the parameters for the playlist. Parameters are used to determine which assets will be automatically added to the playlist.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-smart-settings.png" /></figure>
+      <p>To configure the parameters for the playlist, follow these steps:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Select a <strong>Parameter</strong> from the dropdown list.</li>
+        <li>Enter values for the parameter.</li>
+        <li>Click <strong>Add a parameter</strong> to add additional parameters.</li>
+        <li>Click <strong>Apply</strong> to update the playlist.</li>
+      </ol>
+      The following example will add all assets where the <strong>Director</strong> is <strong>Bob Bailey</strong> or the asset is tagged <strong>birds</strong>.</div>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-parameter-example.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="addmanual">Adding assets to a manual playlist</h2>
