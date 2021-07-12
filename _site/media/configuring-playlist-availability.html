@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to create and manage Beacon playlists in Beacon Studio.">
+  <meta name="description" content="In this topic you will learn how to configure the availability properties for playlists.">
   
-  <title>Creating and Managing Beacon Playlists</title>
+  <title>Configuring Playlist Availability</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -65,7 +65,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     <li class="breadcrumb-item"><a href="/media/">Managing Media</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Creating and Managing Beacon Playlists</li>
+    <li class="breadcrumb-item active" aria-current="page">Configuring Playlist Availability</li>
   </ol>
 </nav>
 
@@ -1115,165 +1115,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Creating and Managing Beacon Playlists</h1>
-  <summary>In this topic you will learn how to create and manage Beacon playlists in Beacon Studio.</summary>
+  <h1>Configuring Playlist Availability</h1>
+  <summary>In this topic you will learn how to configure the availability properties for playlists.</summary>
   <section class="bcls-section">
-    <p>A playlist is a collection of videos that are grouped together in a particular order for playback in a player. The Media module makes it easy to create Beacon playlists and add videos to a playlist. After you've created a playlist, you can add it to a page to appear in a Beacon app. </p>
-    <aside class="bcls-aside bcls-aside--information">Note: For information on creating and managing Video Cloud  playlists, see <a href="/media/creating-and-managing-playlists.html">Creating and Managing Video Cloud Playlists</a>.</aside>
-  </section>
-  <section class="bcls-section">
-    <h2 id="types">Types of Beacon playlists</h2>
-    <p>There are two types of playlists:</p>
+    <p>Video availability details can be used to restrict access to a videos based upon date, locations and devices. To view and edit the availability details for a video, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong> module.</li>
+      <li>Click <strong>All videos</strong> in the panel navigation.</li>
+      <li>Click on a video title to open the video details page.</li>
+      <li>Click the <strong>Availability</strong> tab.</li>
+    </ol>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/video-availability-tab.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Note: Availability settings are only available for videos with a <strong>Video Type</strong> of <strong>Movie</strong> or <strong>Episode</strong>.</aside>
+    <p>The availability settings are controlled using rule sets. All videos must have at least one rule set. Rule sets are created to control access to a video based upon:</p>
     <ul>
-      <li><strong>Manual</strong> - With a manual playlist, you assign specific videos to the playlist and re-order them manually.</li>
-      <li><strong>Smart</strong> - With a smart playlist, the list of videos in the playlist is constructed automatically, based on video tags or other video properties. Smart playlists are dynamic and automatically update based upon the videos in your media library and the rules that define the playlist.</li>
+      <li>Start/end dates</li>
+      <li>Locations</li>
+      <li>Devices</li>
+      <li>Monetization</li>
     </ul>
-    <p>A maximum of 100 videos can be added to a playlist (both Manual and Smart). There is no limit to the number of playlists that can be created. The videos that are initially loaded into a playlist in the player is determined by the type of playlist:</p>
-    <ul>
-      <li><strong>Manual Playlists</strong> - Videos are loaded into the playlist based upon the order of the videos in the manual playlist</li>
-      <li><strong>Smart Playlists</strong> - Videos are loaded into the playlist based upon the <strong>Play Order</strong> playlist setting</li>
-    </ul>
-    <p>For information on programmatically retrieving additional videos into a playlist, see the <a href="https://player.support.brightcove.com/code-samples/brightcove-player-sample-playback-api-paging.html">Playback API Paging</a> player sample.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="create">Creating a playlist</h2>
-    <p>To create a playlist, open the <strong>Media</strong> module and follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the panel navigation, click <strong>Create playlist</strong>. The Create a playlist dialog will open.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-create-panel.png" /></figure>
-      </li>
-      <li>Enter a <strong>Playlist Name</strong> using the following guidelines.
-        <ul>
-          <li>Name is limited to 255 characters</li>
-          <li>Illegal character: /</li>
-        </ul>
-      </li>
-      <li>Select the <strong>Playlist type</strong>, <strong>Beacon manual playlist</strong> or <strong>Beacon smart playlist</strong>.</li>
-      <li>Click <strong>Create playlist</strong>.</li>
-    </ol>
-    <div class="BCL-subsection">
-      <h3>Working with Smart playlists</h3>
-      <p>If you are creating a Smart playlist, the following settings can also be configured.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-new-smart-playlist.png" /></figure>
-      <ul>
-        <li><strong>Tags</strong> - Tags are used to define the videos that will appear in the playlist. The <strong>Tags</strong> dropdown provides these options:
-          <ul>
-            <li><strong>contains one or more</strong> - Include videos that have one or more of the tags listed</li>
-            <li><strong>contains all</strong> - Require that all the videos in the playlist have all the tags that are listed</li>
-          </ul>
-          <p>In the tags text field, enter one or more tags (separated by commas) that will be used to define the playlist.</p>
-        </li>
-        <li><strong>Play Order</strong> - Controls the order in which videos in the playlist are played. The following options are available.
-          <table class="bcls-table">
-            <thead class="bcls-table__head">
-              <tr>
-                <th width="35%">Play Order</th>
-                <th width="65%">Description</th>
-              </tr>
-            </thead>
-            <tbody class="bcls-table__body">
-              <tr>
-                <td>Activated Date (Oldest First)</td>
-                <td>Based on the date the video was activated, oldest videos first</td>
-              </tr>
-              <tr>
-                <td>Activated Date (Newest First)</td>
-                <td>Based on the date the video was activated, newest videos first</td>
-              </tr>
-              <tr>
-                <td>Video Name (A - Z)</td>
-                <td>Alphabetical by video name</td>
-              </tr>
-              <tr>
-                <td>Total Plays</td>
-                <td>Based on the total video plays</td>
-              </tr>
-              <tr>
-                <td>Trailing Week Plays</td>
-                <td>Based on the trailing week total video plays<sup><strong><a href="#1">[1]</a></strong></sup></td>
-              </tr>
-              <tr>
-                <td>Start Date (Oldest First)</td>
-                <td>Based on the date the video was scheduled to start, oldest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
-              </tr>
-              <tr>
-                <td>Start Date (Newest First)</td>
-                <td>Based on the date the video was scheduled to start, newest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>Notes</p>
-          <ul>
-            <li id="1"><sup><strong>[1]</strong></sup> Note that the trailing week plays data maintained in the video metadata may be up to 2 days old, and so the videos you get may not match what you see if you look at video views over the past 7 days on the Analytics module.</li>
-          </ul>
-        </li>
-        <li><strong>Limit Number of Videos</strong> - Enter the maximum number of videos that should be in the playlist.</li>
-      </ul>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="addmanual">Adding assets to a manual playlist</h2>
-    <p>To add assets to a manual playlist, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <strong>All Beacon playlists</strong> in the panel navigation.</li>
-      <li>Locate the playlist and click the playlist name link.</li>
-      <li>Click <strong>Add content</strong>.</li>
-      <li>Links at the top of the dialog can be used to view the different asset types. Click on the link for the asset type to add.</li>
-      <li>Select the items to add and then click <strong>Add</strong>.</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="order">Changing the order of videos in a playlist</h2>
-    <p>To change the order of the videos in a playlist, follow the steps based upon the type of playlist you are working with.</p>
-    <div class="BCL-subsection">
-      <h3>Changing the order of videos in a manual playlist</h3>
-      <ol class="bcls-tasklist-restart">
-        <li>Click <strong>All Beacon playlists</strong> in the panel navigation</li>
-        <li>Locate the playlist and click the playlist name link. </li>
-        <li>The list of videos in the playlist will appear.</li>
-        <li><span class="bcls-aside bcls-aside--information">Edit the <strong> Order</strong> field to change to location of the asset in the list.</span></li>
-      </ol>
-    </div>
-    <div class="BCL-subsection">
-      <h3>Changing the order of videos in a smart playlist</h3>
-      <ol class="bcls-tasklist-restart">
-        <li>Click the <strong>All Playlists</strong> heading in the side navigation, locate the playlist and click the playlist name link and then click <strong>Edit Settings</strong>.</li>
-        <li>Select a new <strong>Play Order</strong> for the playlist.</li>
-        <li>Click <strong>Save</strong>.</li>
-      </ol>
-      <p>Smart playlists are created dynamically when the player is loaded from the available video information and so the order should always reflect current state. However, the player always gets its info via the Playback API, which uses data cached for up to 20 min. Playlists may take that long to refresh and may be behind what the CMS API would show.</p>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="edit">Editing playlist settings</h2>
-    <p>To edit the settings for a manual or smart playlist, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click the <strong>All Beacon playlists</strong> heading in the panel navigation, locate the playlist, click the playlist name link and then click <strong>Edit Settings</strong>.</li>
-      <li>Edit the playlist settings and then click <strong>Save</strong>.</li>
-    </ol>
-    <aside class="bcls-aside bcls-aside--information">Note: It is <strong>not</strong> possible to convert a manual playlist to a smart playlist or vice-versa.</aside>
-  </section>
-  <section class="bcls-section">
-    <h2 id="delete">Deleting a playlist</h2>
-    <p>To delete a playlist, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <strong>All Beacon playlists</strong> to display a list of all the playlists.</li>
-      <li>Click the checkbox next to the playlist to delete.</li>
-      <li>Click the delete button (<img alt="" src="/assets/images/media/playlist-delete-icon.png" />).</li>
-      <li>Click <strong>Delete </strong> to confirm the deletion.</li>
-    </ol>
-    <p>If the playlist is displayed in the side navigation panel, you can click on the playlist and then click the down arrow next to the playlist and click<strong> Delete</strong>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="remove">Removing assets from a manual playlist</h2>
-    <p>To remove an asset from a manual playlist, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <strong>All Beacon playlists</strong> in the panel navigation.</li>
-      <li>Locate the playlist and click the playlist name link.</li>
-      <li>Click the checkbox next to the asset to remove.</li>
-      <li>Click <strong>Remove from playlist</strong>.</li>
-    </ol>
-  </section>
+    For information on creating and managing rule sets, see <a href="creating-managing-rule-sets.html">Creating and Managing Rule Sets</a>. </section>
 </article>
 
 <!-- complete bootstrap layout -->
