@@ -1,7 +1,7 @@
 ---
 title: "Using Multiple Languages"
 description: "In this topic, you will learn how to manage multiple languages for Brightcove Beacon. The multi-language capabilities of Brightcove Beacon apps provide you with the ability to present your content and apps in the native language of your viewers. Your viewers are able to select their language to interact with your content and apps."
-parent: "using-brightcove-beacon"
+parent: "General"
 layout: "staging"
 ---
 <h1>{{ page.title }}</h1>
@@ -14,8 +14,8 @@ layout: "staging"
     <ul>
       <li><a href="#Choose_the_languages_for_your_apps">Choose the languages for your apps</a>: Explains the process of choosing the language(s) for your app.</li>
       <li><a href="#What_is_translated">What is translated?</a>: Explains what parts of the apps can be translated. Also details what is automatically translated for you and what you have to translate.</li>
-      <li><a href="How_your_viewers_choose_a_language">How your viewers choose a language for the app</a>: Demonstrates three ways your viewers can change the language in which they are using your Brightcove Beacon apps.</li>
-      <li><a href="How_your_viewers_select_a_video_asset_language">How your viewers select a video asset language</a>: Shows how your viewers can select the language of a video assets, given the translated version of the video is provided.</li>
+      <li><a href="#How_your_viewers_choose_a_language">How your viewers choose a language for the app</a>: Demonstrates three ways your viewers can change the language in which they are using your Brightcove Beacon apps.</li>
+      <li><a href="#How_your_viewers_select_a_video_asset_language">How your viewers select a video asset language</a>: Shows how your viewers can select the language of a video assets, given the translated version of the video is provided.</li>
       <li>The following table list the items for which details can be translated. Each section provides instructions and screenshots on how you can provide multi-language assets for videos, pages, series, etc.
         <table class="bcls-table">
           <thead class="bcls-table__head">
@@ -76,15 +76,15 @@ layout: "staging"
     <h3>UI translations</h3>
     <p>Standard pages, like the <strong>Settings</strong> page are provided in the languages you specify. For instance, here is the <strong>Settings</strong> page in both English and German:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/settings-english-german.png" alt="settings english german">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/settings-english-german.png" alt="settings english german">
     </figure>
     <h3>Non-standard page UI translations</h3>
     <p>You use Beacon Classic UI to translate non-Brightcove Beacon UI elements. For instance, the following screenshots show the UI for adding translated page names and movie information:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/pages-languages.png" alt="page languages">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/pages-languages.png" alt="page languages">
     </figure>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/movies-languages.png" alt="movie languages">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/movies-languages.png" alt="movie languages">
     </figure>
   </section>
 
@@ -99,7 +99,7 @@ layout: "staging"
     <h3>Change the language in the app</h3>
     <p>Viewers can choose the language in the Brightcove Beacon app itself. The following shows the process the viewer would follow using the <strong>Settings</strong> page to change the app language from English to German:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/change-lanaguage.png" alt="change languages">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/change-lanaguage.png" alt="change languages">
     </figure>
 
     <h3>Set the preferred language in the browser</h3>
@@ -107,13 +107,13 @@ layout: "staging"
     <aside class="bcls-aside bcls-aside--information language-editable">Note: If a language is set in the actual Brightcove Beacon app, that will override browser settings.</aside>
     <p>All popular browsers have a way to set the preferred language. As an example, this is how in Chrome the setting is done in the <strong>Advanced</strong> section of the <strong>Settings</strong> option:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/browser-choose-language.png" alt="browser choose language">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/browser-choose-language.png" alt="browser choose language">
     </figure>
 
     <h3>Set the language on your device</h3>
     <p>For instance, on an iPhone go to <strong>Settings → General → Language & Region</strong></p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/iphone-change-language.png" alt="iphone change language">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/iphone-change-language.png" alt="iphone change language">
     </figure>
     <aside class="bcls-aside bcls-aside--information language-editable">Note: If a language is set in the actual Brightcove Beacon app, that will override device settings.</aside>
   </section>
@@ -122,61 +122,52 @@ layout: "staging"
     <h2 id="How_your_viewers_select_a_video_asset_language">How your viewers select a video asset language</h2>
     <p> In addition to languages available in the apps, you might have multi-lingual captions and audio tracks available for your video assets. If the video does have multiple languages available, the viewer selects the desired language during video playback. A gear icon is available during playback, and clicking that icon displays a dialog and the viewer can choose the language for subtitles and/or audio track, as shown here:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/select-language-in-video.png" alt="select language in video">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/select-language-in-video.png" alt="select language in video">
     </figure>
   </section>
 
   <section class="bcls-section">
-    <h2 id="Videos">Videos</h2>
+    <h2 id="Videos">Localizing Video Information</h2>
     <p>There are many items you can localize around videos. Details for each are provided here:</p>
     <h3>Define video metadata languages</h3>
     <p>The basic process for localizing video metadata is:</p>
     <ul>
-      <li>Configure the desired language in Studio's <strong>Admin</strong> module.</li>
+      <li>Configure the desired language in Beacons Studio's <strong>Admin</strong> module.</li>
       <li>In the video properties page, select the language for which you want to enter localized metadata.</li>
       <li>Enter the localized metadata.</li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information language-editable">
-      <p>For further information on using multi-lingual metadata see the <a href="https://studio.support.brightcove.com/media/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a> document.</p>
-      <p>For further information on using multi-lingual metadata see the <a href="/media/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a> document.</p>
-    </aside>
-    <p>The first step for using multi-lingual metadata is selecting the language in which you want metadata, shown here:</p>
-    <!-- Beacon Classic -->
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-metadata-vc-admin-language.png" alt="metadata languages">
-    </figure>
-    <!-- Beacon Studio -->
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/metadata-languages.png" alt="metadata languages">
-    </figure>
+    <aside class="bcls-aside bcls-aside--information language-editable">For further information on using multi-lingual metadata see the <a href="/media/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a> document.</aside>
+    <p>The first step for using multi-lingual metadata is selecting the language in which you want metadata in Beacon Studio by navigating to <strong>Admin → Language Settings</strong>. You first add the language then save it, as shown here:</p>
+    <ol class="bcls-tasklist">
+      <li>Add the language
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-metadata-vc-admin-language.png" alt="metadata languages">
+        </figure>
+      </li>
+      <li>Save the language
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/using-multiple-languages/metadata-languages.png" alt="metadata languages">
+        </figure>
+      </li>
+    </ol>
     <h3>Video metadata</h3>
-    <!-- Beacon Classic -->
-    <p>To actual enter the metadata, first select the language then edit the metadata</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-metadata-vc-choose-language.png" alt="video metadata select language">
-    </figure>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-metadata-vc-edit.png" alt="video metadata">
-    </figure>
-
-    <!-- Beacon Studio -->
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-metadata-select-language.png" alt="video metadata select language">
-    </figure>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-metadata.png" alt="video metadata">
-    </figure>
-
+    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click on the video to which you wish to add multi-lingual metadata. To actually enter the metadata go the <strong>Video Information</strong> section then select the language and finally enter the metadata.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Select the language
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-metadata-select-language.png" alt="video metadata select language">
+        </figure>
+      </li>
+      <li>Enter the metadata
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-metadata.png" alt="video metadata">
+        </figure>
+      </li>
+    </ol>
     <h3>Video images</h3>
     <p>You can supply different images for your video content. To do so go to the video's properties page in Studio. First select the language then upload the images.</p>
-    <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-images-vc.png" alt="video images">
-    </figure>
-    <!-- Beacon Studio -->
-
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-images.png" alt="video images">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-images.png" alt="video images">
     </figure>
 
     <h3>Video subtitles/captions</h3>
@@ -185,28 +176,28 @@ layout: "staging"
     <!-- Beacon Classic -->
 
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-subtitles-choose-language.png" alt="video subtitles choose language">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-subtitles-choose-language.png" alt="video subtitles choose language">
     </figure>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-subtitles.png" alt="video subtitles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-subtitles.png" alt="video subtitles">
     </figure>
     <!-- Beacon Studio -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-subtitles-choose-language.png" alt="video subtitles choose language">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-subtitles-choose-language.png" alt="video subtitles choose language">
     </figure>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/video-subtitles.png" alt="video subtitles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-subtitles.png" alt="video subtitles">
     </figure>
     <h3>Audio tracks</h3>
     <p>You can have the audio track in different languages for your video content. To do so go to the video's properties page in Studio. Users choose the audio track during video playback.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">For complete details see the <a href="https://beacon-help.support.brightcove.com/media/adding-audio-tracks-videos.html">Adding Audio Tracks to Videos</a> document.</aside>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/audio-tracks.png" alt="add audio tracks">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/audio-tracks.png" alt="add audio tracks">
     </figure>
     <!-- Beacon Studio -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/audio-tracks.png" alt="add audio tracks">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/audio-tracks.png" alt="add audio tracks">
     </figure>
   </section>
 
@@ -216,16 +207,16 @@ layout: "staging"
     <h3>Page Titles</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/page-titles.png" alt="page titles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/page-titles.png" alt="page titles">
     </figure>
     <!-- Beacon Studio -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/page-titles-la.png" alt="page titles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/page-titles-la.png" alt="page titles">
     </figure>
     <h3>Page images</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/page-images.png" alt="page images">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/page-images.png" alt="page images">
     </figure>
     <!-- Beacon Studio -->
     Not possible in Beacon Studio
@@ -240,11 +231,11 @@ layout: "staging"
     <h3>Playlist titles</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/playlist-titles.png" alt="playlist titles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/playlist-titles.png" alt="playlist titles">
     </figure>
     <!-- Beacon Studio -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/playlist-titles-la.png" alt="playlist titles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/playlist-titles-la.png" alt="playlist titles">
     </figure>
   </section>
 
@@ -254,20 +245,20 @@ layout: "staging"
     <h3>Series titles</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/series-titles.png" alt="series titles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/series-titles.png" alt="series titles">
     </figure>
     <!-- Beacon Studio -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/series-titles-la.png" alt="series titles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/series-titles-la.png" alt="series titles">
     </figure>
     <h3>Series images</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/series-images.png" alt="series images">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/series-images.png" alt="series images">
     </figure>
     <!-- Beacon Studio -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/series-images-la.png" alt="series images">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/series-images-la.png" alt="series images">
     </figure>
   </section>
 
@@ -277,7 +268,7 @@ layout: "staging"
     <h3>Channel titles</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/channel-titles.png" alt="channel titles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/channel-titles.png" alt="channel titles">
     </figure>
     <!-- Beacon Studio -->
     Not possible in Beacon Studio
@@ -287,7 +278,7 @@ layout: "staging"
     <h3>Channel images</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/channel-images.png" alt="channel images">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/channel-images.png" alt="channel images">
     </figure>
     <!-- Beacon Studio -->
     Not possible in Beacon Studio
@@ -302,7 +293,7 @@ layout: "staging"
     <h3>Event titles</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/event-titles.png" alt="event titles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/event-titles.png" alt="event titles">
     </figure>
     <!-- Beacon Studio -->
     Not possible in Beacon Studio
@@ -312,7 +303,7 @@ layout: "staging"
     <h3>Event images</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/event-images.png" alt="event images">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/event-images.png" alt="event images">
     </figure>
     <!-- Beacon Studio -->
     Not possible in Beacon Studio
@@ -327,7 +318,7 @@ layout: "staging"
     <h3>Subscription titles</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/subscription-titles.png" alt="subscription titles">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/subscription-titles.png" alt="subscription titles">
     </figure>
     <!-- Beacon Studio -->
     Not possible in Beacon Studio
@@ -337,7 +328,7 @@ layout: "staging"
     <h3>Subscription images</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/subscription-images.png" alt="subscription images">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/subscription-images.png" alt="subscription images">
     </figure>
     <!-- Beacon Studio -->
     Not possible in Beacon Studio
@@ -347,7 +338,7 @@ layout: "staging"
     <h3>Subscription prices</h3>
     <!-- Beacon Classic -->
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/using-bcb/using-multiple-languages/subscription-prices.png" alt="subscription prices">
+      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/subscription-prices.png" alt="subscription prices">
     </figure>
     <!-- Beacon Studio -->
     Not possible in Beacon Studio
