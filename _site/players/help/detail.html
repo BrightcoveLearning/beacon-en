@@ -298,17 +298,39 @@
           <summary>Advertising</summary>
           <p>Configure a player to to support client-side and/or server-side advertising.</p>
           <section class="bcls-section">
+            <aside class="bcls-aside bcls-aside--tip">When you enable both client-side and server-side ads, ad failover is automatically turned on. This means when Brightcove Player detects an ad blocker in the browser, the player requests server-side ads. Otherwise, it uses client-side ads.</aside>
             <ul>
-              <li><strong>Player End Screen</strong> - Choose an end screen option:
+              <li><strong>Enable Client-Side (IMA)</strong> - Configure client-side advertising for a player
                 <ul>
-                  <li><strong>None</strong> - No end screen will be displayed</li>
-                  <li><strong>Social</strong> - Display the social sharing dialog when video ends</li>
-                  <li><strong>Custom </strong> - Display a custom end screen when video ends
-                    <ol>
-                      <li>Add custom HTML to display additional text or images above the replay and sharing icon.</li>
-                      <li>Click <span class="button-blue">Save</span></li>
-                    </ol>
+                  <li><strong>Ad Tag</strong> - Enter your ad tag URL; for testing, select <strong>Insert sample Ad Tag</strong></li>
+                  <li><strong>Request Ads</strong> - Set when ads are requested
+                    <ul>
+                      <li><strong>On load</strong> - Ads are requested immediately when the player loads (normally the best experience for DFP / VPAID)</li>
+                      <li><strong>On play</strong> - The first ad request is delayed until playback is initiated</li>
+                      <li><strong>On demand</strong> - All ad requests are initiated programmatically using the <code translate="No">player.ima3.adrequest()</code> method</li>
+                    </ul> 
                   </li>
+                  <li><strong>VPAID Mode</strong> - VPAID Mode is used to enable VPAID 2 support in IMA ads
+                    <ul>
+                      <li><strong>Enabled</strong> - Play VPAID ads in an iframe with a different domain</li>
+                      <li><strong>Insecure</strong> - Play VPAID ads in an iframe with the same domain</li>
+                      <li><strong>Disabled</strong> - VPAID ads throw an error</li>
+                    </ul>
+                  </li>
+                  <li><strong>Timeout</strong> - The maximum amount of time to wait, in milliseconds, for an ad to initialize before playback</li>
+                  <li><strong>Hard timeouts</strong> - Prevents slow loading ads from appearing; unchecking this option could result in a slow loading ad interrupting video playback</li>
+                  <li><strong>Maximum Number of Redirects</strong> - Set the maximum number of redirects before subsequent redirects are denied, and the ad load is aborted; the number of redirects directly affects latency and user experience</li>
+                  <li><strong>Plugin Version</strong> - Select the IMA plugin version to use</li> 
+                  <li>Click <span class="button-blue">Save</span></li>
+                </ul>
+              </li> 
+              <li><strong>Enable Server-Side (SSAI)</strong> - Configure server-side advertising for a player
+                <aside class="bcls-aside bcls-aside--information">The server-side advertising option will only appear if your account has been enabled for server-side ads.</aside>
+                <aside class="bcls-aside bcls-aside--information">To get accurate ad impressions, change your settings in the <strong>Playback</strong> section to <strong>do not preload</strong>.</aside>
+                <ul>
+                  <li><strong>Select Configuration</strong> - Select an ad configuration to associate with this player</li>
+                  <li><strong>Enable ad information overlays</strong> - Enables the player to display overlays over your ads; this includes <strong>Learn More</strong> and ad count down overlays</li>
+                  <li>Click <span class="button-blue">Save</span></li> 
                 </ul>
               </li> 
             </ul>
