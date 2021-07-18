@@ -1,0 +1,55 @@
+---
+title: Using Channel Actions
+description: In this topic you will learn how to use channel actions to activate, play, or stop a Cloud Playout channel.
+parent: Cloud Playout
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="actions">Using channel actions</h2>
+    <p>Depending on the status of the channel, various channel action buttons will be available on the channel settings page. Access the channel action buttons by clicking on the channel name to view the channel details. The following channel action buttons are available:</p>
+    <ul>
+      <li><img src="/assets/images/cloud-playout/cloudplayout-activate-button.png" alt="activate" class="ui-image"> - Activating a channel makes it available for streaming. You must add videos and/or live events to the channel and click <img src="/assets/images/cloud-playout/cloudplayout-save-button.png" alt="save" class="ui-image"> before the Activate button will appear.</li>
+      <li><img src="/assets/images/cloud-playout/cloudplayout-play-now-button.png" alt="play now" class="ui-image"> - Click <strong>Play Now</strong> to start streaming the channel. This option is only available for channels that have an upcoming start time. The channel will start at the scheduled start time automatically.</li>
+      <li><img src="/assets/images/cloud-playout/playout-stop-now.png" alt="stop now" class="ui-image"> - Click <strong>Stop Now</strong> to stop a running channel. This will stop the channel and end the live stream. If the channel is looping, and has an end date/time, the channel will stop at that time automatically. This option gives you a way to stop it early.</li>
+    </ul>
+  </section>
+	<section class="bcls-section">
+		<h2 id="Resource_deallocation_on_channel_stop">Resource de-allocation on channel stop</h2>
+		<p>The following happens when you stop a channel:</p>
+		<ol>
+			<li>A Cloud Playout channel when stopped will enter in to a <strong>DRAFT</strong> state which will enable users to modify the channel settings again.</li>
+			<li>This will also clear-up the chained BC Live events if there are any.</li>
+			<li>The channel will have to be <strong>Activated</strong> again so that the resources will get allocated and the channel put into a <strong>SCHEDULED</strong> state.</li>
+			<li>If the Cloud Playout channel is enabled for a Live streams, it will show a <strong>static entry point for RTMP ingest</strong> that will remain static throughout the lifetime of the channel irrespective of how many times the channel is stopped and started again.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/cloud-playout/static-entry-point-for-rtmp-ingest.png" alt="Static Entry Point for RTMP Ingest">
+					<figcaption class="bcls-caption--image">Static Entry Point for RTMP Ingest</figcaption>
+				</figure>
+				<p>This entry point will be able to start accepting input once the channel starts up and is running.</p>
+			</li>
+			<li>If Cloud Playout is not able to provide a static RTMP ingest point due to an internal issue, we will attempt to show an IP-address-based ingest point. If this happens, we recommend that you check regularly for a change in the RTMP ingest point for the channel.</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">Note: After activating the channel, it takes an average of 1-2 minutes for Cloud Playout to publish the new IP address for the static ingest point. So, if a channel is started immediately after activation within 1-2 minutes, and the Live Event happens to be the first asset in the channel’s playlist, then there is a possibility that the ingest point will be unresolvable. It will become resolvable as soon as the IP address for static ingest point is published.</aside>
+			</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">Note: In a case where the channel ran with Live Input for the first run and stopped, and you then turn off the Live Input for the channel, the existing program might still have Live events that will fail. If you decide to disable live streams for the channel after stopping it, you should remove any live events from the channel content before restarting it.</aside>
+			</li>
+		</ol>
+	</section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Related topics</h2>
+    <ul>
+      <li><a href="/channels/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+      <li><a href="/channels/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+      <li><a href="/channels/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+      <li><a href="/channels/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+			<li><a href="/channels/cloud-playout/mid-roll-ad-insertion.html">Adding Mid-Roll Ads to a Channel</a></li>
+      <li><a href="/channels/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API Reference</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Channel API Reference</a></li>
+    </ul>
+  </section>
+</article>

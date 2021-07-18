@@ -1,0 +1,346 @@
+---
+title: Creating an Electronic Program Guide (EPG)
+description: In this topic, you will learn how to create an Electronic Program Guide (EPG) for Brightcove Beacon.
+parent: Managing Channels
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <aside class="bcls-aside bcls-aside--information">NOTE: In this topic, all of the steps are performed in Beacon Classic.</aside>
+  <section class="bcls-section">
+    <h2 id="overview">Overview</h2>
+    <p>
+      An Electronic Program Guide (EPG) displays scheduling information for
+      past, current and upcoming broadcast programming available on each of your
+      Brightcove Beacon channels.
+    </p>
+    <aside class="bcls-aside bcls-aside--information">Note that if you are using a <a href="/channels/cloud-playout/cloud-playout-overview.html">Cloud Playout Channel</a> as the source for your Beacon channel, Brightcove will create the EPG automatically. The rest of the information in this topic applies only if you are <strong>not</strong> using a Cloud Playout channel.</aside>
+
+    <p>For information on creating channels in Brightcove Beacon, please visit the <a href="https://beacon.support.brightcove.com/channels/creating-a-channel.html" target="_blank">Creating a Channel</a> documentation.</p>
+
+    <p>
+      This document will teach you how to structure your XML file and upload it
+      as an EPG to Brightcove Beacon.
+    </p>
+    <p>A high-level view of the process is:</p>
+    <ol>
+      <li>
+        Create an XML file with your channel information which meets the EPG
+        schema.
+      </li>
+      <li>Drop the XML file in the S3 bucket supplied by Brightcove.</li>
+      <li>
+        After the steps above are completed, the file will automatically be
+        ingested into Brightcove Beacon. The information will be displayed in
+        the <strong>Channels</strong> section of Brightcove Beacon.
+      </li>
+    </ol>
+    <p>
+      The rest of this document will provide details for each of the steps
+      above.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="information_epg">Required information for EPG</h2>
+    <ul>
+      <li>
+        An XML file with the channel information: This file can be created
+        manually or automatically.
+      </li>
+      <li>The S3 bucket <strong>Username</strong> and <strong>Password</strong> credentials <em>provided by Brghtcove</em>.</li>
+      <li>
+        An S3 account (bucket name and URL path) <em>provided by Brightcove</em>. The
+        actual location for the EPG file.
+      </li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="xml_structure">XML File Structure</h2>
+    <p>
+      To generate an EPG for Brightcove Beacon, you will need to create and
+      upload an XML file to the S3 bucket with all the metadata information of
+      your channels such as video titles, descriptions, and duration.
+    </p>
+    <p>Here is an example of the XML Structure:</p>
+    <pre class="line-numbers">
+<code class="language-xml" translate="No">&lt;RiGHTvEPG xmlns=&quot;http://www.orca.tv/RiGHTv/7.0/EPG&quot; 
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+version=&quot;1.0&quot; language=&quot;en&quot; xsi:schemaLocation=&quot;http://www.orca.tv/RiGHTv/7.0/EPG 
+RiGHTvEPG.xsd&quot;&gt;    
+  &lt;ChannelsList&gt;
+    &lt;channel id=&quot;your-channel-id&quot;&gt;
+      &lt;program id=&quot;3394&quot; time=&quot;2020-04-22T01:25:00Z&quot; duration=&quot;PT01H45M&quot; 
+      delete=&quot;false&quot; pvrEnabled=&quot;false&quot; stovEnabled=&quot;false&quot; catchUpEnabled=&quot;false&quot;&gt;
+        &lt;title&gt;Video Title&lt;/title&gt;
+        &lt;description&gt;
+        &lt;![CDATA[
+        Description of your video asset.
+        ]]&gt;
+        &lt;/description&gt;
+      &lt;/program&gt;
+    &lt;/channel&gt;
+  &lt;/ChannelsList&gt;
+&lt;/RiGHTvEPG&gt;</code></pre>
+
+    <p>For the head of the XML file you can use the following code:</p>
+    <pre class="line-numbers">
+<code class="language-xml" translate="No">&lt;RiGHTvEPG xmlns=&quot;http://www.orca.tv/RiGHTv/7.0/EPG&quot; 
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+  version=&quot;1.0&quot; language=&quot;en&quot; xsi:schemaLocation=&quot;http://www.orca.tv/RiGHTv/7.0/EPG 
+  RiGHTvEPG.xsd&quot;&gt;</code>
+  </pre>
+    <p>
+      The <em>RiGHTvEPG.xsd</em> file contains an <em>XML Schema</em> that
+      describes the structure of the XML document, and the file is hosted by
+      Brightcove. You can validate your XML using the XSD file schema in an
+      <a href="https://www.freeformatter.com/xml-validator-xsd.html" target="_blank">XML validator</a>.
+    </p>
+
+    <p>Validation Schema RiGHTvEPG.xsd file (a link to download the schema follows the listing):</p>
+    <pre class="line-numbers">
+  <code class="language-xml" translate="No">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.orca.tv/RiGHTv/7.0/EPG" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;xs:element name="RiGHTvEPG"&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="ChannelsList"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="channel"&gt;
+                  &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                      &lt;xs:element name="program" maxOccurs="unbounded" minOccurs="1"&gt;
+                        &lt;xs:complexType&gt;
+                          &lt;xs:sequence&gt;
+                            &lt;xs:element name="title"&gt;
+                              &lt;xs:simpleType&gt;
+                                &lt;xs:restriction base="xs:string"&gt;
+                                  &lt;xs:minLength value="1"/&gt;
+                                &lt;/xs:restriction&gt;
+                              &lt;/xs:simpleType&gt;
+                            &lt;/xs:element&gt;
+                            &lt;xs:element type="xs:string" name="description"/&gt;
+                          &lt;/xs:sequence&gt;
+                          &lt;xs:attribute type="xs:int" name="id" use="optional"/&gt;
+                          &lt;xs:attribute type="xs:dateTime" name="time" use="required" /&gt;
+                          &lt;xs:attribute type="xs:duration" name="duration" use="required"/&gt;
+                          &lt;xs:attribute type="xs:string" name="delete" use="optional"/&gt;
+                          &lt;xs:attribute type="xs:string" name="pvrEnabled" use="optional"/&gt;
+                          &lt;xs:attribute type="xs:string" name="stovEnabled" use="optional"/&gt;
+                          &lt;xs:attribute type="xs:string" name="catchUpEnabled" use="optional"/&gt;
+                        &lt;/xs:complexType&gt;
+                      &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;xs:attribute type="xs:string" name="id" use="required"/&gt;
+                  &lt;/xs:complexType&gt;
+                &lt;/xs:element&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+        &lt;xs:attribute type="xs:float" name="version"/&gt;
+        &lt;xs:attribute type="xs:string" name="language"/&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:schema&gt;</code>
+</pre>
+    <p>You can also download the validation file from here:
+      <a href="/assets/files-to-download/RiGHTvEPG.xsd" download>
+        RiGHTvEPG.xsd
+      </a>
+    </p>
+    <p>The following are important XML tags and metadata:</p>
+
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><strong>channel id</strong></td>
+          <td>Unique identifier for your channel</td>
+          <td>id=“channel2”</td>
+        </tr>
+        <tr>
+          <td><strong>program id</strong></td>
+          <td>Unique identifier for your program video asset</td>
+          <td>id=“3344”</td>
+        </tr>
+        <tr>
+          <td><strong>time</strong></td>
+          <td>
+            The scheduled transmission time for your video; the times should be
+            in UTC format, and all will be converted to the local time of each
+            location that displays your content
+          </td>
+          <td>time=“2020-04-22T01:25:00Z”</td>
+        </tr>
+        <tr>
+          <td><strong>delete</strong></td>
+          <td>Required for EPG format, please always set to false</td>
+          <td>delete="false"</td>
+        </tr>
+        <tr>
+          <td><strong>pvrEnabled</strong></td>
+          <td>Required for EPG format, please always set to false</td>
+          <td>pvrEnabled="false"</td>
+        </tr>
+        <tr>
+          <td><strong>stovEnabled</strong></td>
+          <td>Required for EPG format, please always set to false</td>
+          <td>stovEnabled="false"</td>
+        </tr>
+        <tr>
+          <td><strong>catchUpEnabled</strong></td>
+          <td>Required for EPG format, please always set to false</td>
+          <td>catchUpEnabled="false"</td>
+        </tr>
+        <tr>
+          <td><strong>duration</strong></td>
+          <td>
+            The duration of your video event; the duration format is defined
+            following the
+            <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601 standard</a>
+          </td>
+          <td>
+            duration=“PT01H45M” In this format the (PT) represents the Period
+            Time of 1 hour (H) and 45 minutes (M)
+          </td>
+        </tr>
+        <tr>
+          <td><strong>title</strong></td>
+          <td>The title of your video event</td>
+          <td>&lt;title&gt;Your video title&lt;/title&gt;</td>
+        </tr>
+        <tr>
+          <td><strong>description</strong></td>
+          <td>The description of your video event</td>
+          <td>
+            &lt;description&gt; &lt;![CDATA[ The video description goes here
+            ]]&gt; &lt;/description&gt;
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+    <aside class="bcls-aside bcls-aside--information">
+      <ul>
+        <li>
+          The XML file should have the programming metadata for the time
+          duration you choose. For example, add the schedule times of seven days
+          before, and seven days after the day the file was uploaded.
+        </li>
+        <li>
+          It is up to every client to define how often to replace the
+          information and upload a new XML file to the S3 bucket. Example:
+          daily, weekly, etc.
+        </li>
+      </ul>
+    </aside>
+    <p>
+      Once your XML file is ready, you can upload it to the S3 bucket and credentials that Brightcove provided you with an FTP client or an automated script.
+    </p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="fetching-xml">Fetching the XML File in Brightcove Beacon</h2>
+    <p>
+      After uploading the XML to the S3 bucket, you will need to fetch the file
+      if you want to immediately get the new schedules reflected into your
+      Brightcove Beacon app. To do this perform the following steps:
+    </p>
+    <aside class="bcls-aside bcls-aside--information">
+      Remember, these steps need only be performed if you want to immediately
+      fetch your new EPG. The EPG file will also be on a set schedule for
+      ingestion.
+    </aside>
+
+    <ol class="bcls-tasklist">
+      <li>Log in to Beacon Classic.</li>
+      <li>
+        Click on the Tools (wrench) button in the upper right of the screen.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/epg/fetch-xml.png" />
+        </figure>
+      </li>
+      <li>Select the <strong>Ingestion</strong> tab.</li>
+      <li>Click on the <strong>Fetch XML from Folder</strong> button.</li>
+      <li>
+        Select the <strong>Cache</strong> tab from the left menu.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/epg/clear-cache.png" />
+        </figure>
+      </li>
+      <li>
+        Click in the <strong>Cache Purge</strong> button to clear the cache.
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="reviewing-schedule">Reviewing the Schedule in Brightcove Beacon</h2>
+    <p>
+      In this section, you will be able to review if your EPG was set correctly
+      on the Brightcove Beacon channel’s schedule.
+    </p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>In Beacon Classic, click the <strong>Channels</strong> tab.</li>
+      <li>
+        In the left menu, click in the <strong>EPG</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/epg/1-epg-section.png" />
+        </figure>
+      </li>
+      <li>
+        In the <strong>Schedule</strong> section, you will see all your
+        available channels.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/epg/2-available-channels.png" />
+        </figure>
+      </li>
+      <li>
+        Click the blue button with the arrow to display all the schedules that
+        were submitted by the XML file for the selected channel.
+        <aside class="bcls-aside bcls-aside--information">
+          All the dates and times are presented in the UTC format.
+        </aside>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/epg/4-schedule-info.png" />
+        </figure>
+      </li>
+      <li>
+        Note the <strong>Start Time</strong> and <strong>End Time</strong> dates
+        are in UTC time.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/epg/5-start-times.png" />
+        </figure>
+      </li>
+      <li>
+        To see the channel information in a Brightcove Beacon app, in the menu
+        click in the <strong>Program Guide</strong> tab.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/epg/6-program-guide.png" />
+        </figure>
+      </li>
+      <li>Here you will be able to review the EPG of your channels.</li>
+      <li>
+        If there are any empty spaces in your XML programming schedule, the
+        Brightcove Beacon system will fill those empty spaces with a label in
+        the channel schedule.
+      </li>
+      <li>
+        To choose the EPG schedule for another day, select the day of your
+        preference on the menu.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/channels/epg/7-day-preference.png" />
+        </figure>
+      </li>
+    </ol>
+  </section>
+</article>

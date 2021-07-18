@@ -1,0 +1,93 @@
+---
+title: 'Overview: Cloud Playout'
+description: This topic provides an overview of Cloud Playout, which allows you to compile and schedule a combination of videos-on-demand and live feeds as a live linear channel.
+parent: Cloud Playout
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>Brightcove Cloud Playout is a Studio module that enables you to program a scheduled playout of items from your VOD catalogue, combined with live feeds, and stream it as a Linear Channel all with the reliability and scalability of Brightcove Live.</p>
+		<p>You can then use the Cloud Playout channel as a Beacon Channel by entering information about it in creating a <a href="/using-brightcove-beacon/creating-a-channel.html">Beacon Channel</a>. One major advantage to using Cloud Playout channels is that you will not need to find and integrate a 3rd party EPG provider, since an EPG service is built into Cloud Playout.</p>
+    <p>Cloud Playout offers a powerful, end-to-end solution for channels of scheduled programming, including:</p>
+    <ul>
+      <li>24x7 Linear Channels</li>
+      <li>Pop-Up / Virtual Channels</li>
+      <li>Simulated Live Events</li>
+    </ul>
+    <p>Cloud Playout helps you increase audience engagement and create new revenue opportunities through a broadcast-like, Live TV experience leveraging pre-recorded content. Use existing VOD assets and add live events (optionally) to create scheduled live channels.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Features">Features</h2>
+    <p>Features of Cloud Playout include:</p>
+    <ul>
+      <li>Import VOD assets from your Video Cloud Media library.</li>
+      <li>Switch between VOD assets and scheduled live feeds.</li>
+      <li>React in real time to last minute schedule changes in an easy, quick, and reliable manner.</li>
+      <li>Monetize your channel content with server-side ad insertion (SSAI).</li>
+      <li>Configure your channel to loop your program.</li>
+      <li>Optimize playout by device.</li>
+      <li>Drag and drop to re-order the program schedule at any moment, even in Running state.</li>
+      <!-- <li>Push a channel to your owned and operated properties via Brightcove Live, an Amazon S3 bucket, or a 3rd party destination via RTMP output.</li> -->
+      <li>API to retrieve the EPG (electronic program guide) for a channel</li>
+    </ul>
+  </section>
+	<section class="bcls-section">
+		<h2 id="workflow_overview">Workflow overview</h2>
+		<p>There are four parts to creating a Cloud Playout channel and adding it to your Beacon app:</p>
+		<ol class="bcls-tasklist-restart">
+			<li>In <strong>Beacon Studio</strong>, create the channel.</li>
+			<li>In <strong>Beacon Classic</strong>, create a new Beacon channel that uses the Cloud Playout channel as its source.</li>
+      <li>In <strong>Beacon Studio</strong>, add the channel to a playlist.</li>
+      <li>In <strong>Beacon Studio</strong>, add the playlist to page.</li>
+		</ol>
+		<p>These tasks are detailed in the <a href="#Related_topics">Related topics</a></p>
+	</section>
+  <section class="bcls-section">
+    <h2 id="limitations">Limitations</h2>
+    <p>The following assumptions and limitations apply.</p>
+    <ul>
+      <li>Your videos must be ingested or re-transcoded using a Dynamic Delivery profile and <strong>must have an MP4 rendition</strong>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/mp4-in-ingest-profile.png" alt="Ingest Profiles with MP4">
+          <figcaption class="bcls-caption--image">Ingest Profiles with MP4</figcaption>
+        </figure>
+      </li>
+      <li>For channels to work in Beacon, you need to <strong>specify Brightcove Live as the destination</strong>.</li>
+      <li>The maximum input bitrate and resolution supported for Cloud Playout is 20MBPS/1080p for VOD and live inputs.</li>
+      <li>Brightcove recommends using videos with at least a 2 minute duration to ensure a correct transition between videos and electronic program guide accuracy</li>
+      <li>Captions (text tracks) added to videos currently will not display in Cloud Playout channels. Support for captions will be added in a future release.</li>
+      <li>The minimum length for Live events is 5 minutes.</li>
+      <li>Every Live Event in Cloud Playout shares an 1:1 relation with a Video Cloud remote asset. This remote asset cannot be re-used in other channels. If the live event is removed from the channel, the associated remote asset will be automatically deleted. When a channel is deleted, any associated remote assets will also be deleted automatically.</li>
+      <li>Videos <strong>shared</strong> to the account from another account currently cannot be added to a Cloud Playout channel.</li>
+      <li>When a live event is currently playing, but no active feed is available, the slate content will be played in a loop until the live feed resumes or the event ends. There will be a delay of approximately 30 seconds before the slate MP4 starts playing.</li>
+      <!--<li><strong>Input Looper : if the asset URL is duplicated, then input looper rely on order for switching; if the order is changes during the course of the switching , then subsequent N+1 switch it attempt to create would rely on the order. </strong></li>-->
+      <li>If the Video Cloud account is configured for geo-restriction, then the channel <strong>Output Region</strong> should be created in a  region compatible with the Video Cloud geo-restriction policy.</li>
+      <li>For the best experience, Brightcove recommends using the Google Chrome browser.</li>
+      <li>
+        For SSAI-enabled channels, the destination must be set to an ad-enabled RTP live event:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/advanced-options-for-live-job.png" alt="Live Settings for SSAI Channel">
+          <figcaption class="bcls-caption--image">Live Settings for SSAI Channel</figcaption>
+        </figure>
+      </li>
+      <li>Currently, channels enabled for SSAI cannot include live events.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Related topics</h2>
+    <ul>
+      <li><a href="/channels/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+      <li><a href="/channels/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
+      <li><a href="/channels/cloud-playout/static-image-overlays.html">Static Image Overlays</a></li>
+      <li><a href="/channels/cloud-playout/adding-bumpers-to-vod.html">Adding Bumpers to Cloud Playout</a></li>
+      <li><a href="/channels/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+      <li><a href="/channels/cloud-playout/generating-channel-embed-code.html">Generating the Channel Embed Code</a></li>
+      <li><a href="/channels/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Overview: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API Reference</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Channel API Reference</a></li>
+    </ul>
+  </section>
+</article>

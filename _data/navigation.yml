@@ -117,38 +117,40 @@
   name: Managing Channels
   url: '/channels/index.html'
   docs:
-    - name: Creating a Beacon Channel
-      url: /channels/creating-a-channel.html
-    - name: Creating an EPG
-      url: /channels/electronic-program-guides.html
-    - name: Streaming VODs to a Channel
-      url: /channels/streaming-vods-to-a-channel.html
-- section:
-  name: Using Cloud Playout
-  url: /cloud-playout/index.html
-  docs:
-    - name: 'Overview: Cloud Playout'
-      url: /cloud-playout/cloud-playout-overview.html
-    - name: Creating a Cloud Playout Channel
-      url: /cloud-playout/cloud-playout-stream-vod.html
-    - name: Adding Content to a Cloud Playout Channel
-      url: /cloud-playout/cloud-playout-add-content.html
-    - name: Adding Static Image Overlays
-      url: /cloud-playout/static-image-overlays.html
-    - name: Adding Bumpers to Cloud Playout
-      url: /cloud-playout/adding-bumpers-to-vod.html
-    - name: Monetizing Cloud Playout
-      url: /cloud-playout/enabling-server-side-ads.html
-    - name: Adding Mid-Roll Ads to a Channel
-      url: /cloud-playout/mid-roll-ad-insertion.html
-    - name: Publishing a Cloud Playout Channel
-      url: /cloud-playout/publish-channel-beacon.html
-    - name: Using Channel Actions
-      url: /cloud-playout/using-channel-actions.html
-    - name: Viewing Channel Output and Analytics
-      url: /cloud-playout/viewing-channel-output-and-analytics.html
-#    - name: Generating the Channel Embed Code
-#      url: /cloud-playout/generating-channel-embed-code.html
+    - name: Beacon Channels
+      url: /channels/beacon-channels/index.html
+      docs:
+      - name: Creating a Beacon Channel
+        url: /channels/beacon-channels/creating-a-channel.html
+      - name: Creating an EPG
+        url: /channels/beacon-channels/electronic-program-guides.html
+      - name: Streaming VODs to a Channel
+        url: /channels/beacon-channels/streaming-vods-to-a-channel.html
+    - name: Cloud Playout Channels
+      url: /channels/cloud-playout/index.html
+      docs:
+        - name: 'Overview: Cloud Playout'
+          url: /channels/cloud-playout/cloud-playout-overview.html
+        - name: Creating a Cloud Playout Channel
+          url: /channels/cloud-playout/cloud-playout-stream-vod.html
+        - name: Adding Content to a Cloud Playout Channel
+          url: /channels/cloud-playout/cloud-playout-add-content.html
+        - name: Adding Static Image Overlays
+          url: /channels/cloud-playout/static-image-overlays.html
+        - name: Adding Bumpers to Cloud Playout
+          url: /channels/cloud-playout/adding-bumpers-to-vod.html
+        - name: Monetizing Cloud Playout
+          url: /channels/cloud-playout/enabling-server-side-ads.html
+        - name: Adding Mid-Roll Ads to a Channel
+          url: /channels/cloud-playout/mid-roll-ad-insertion.html
+        - name: Publishing a Cloud Playout Channel
+          url: /channels/cloud-playout/publish-channel-beacon.html
+        - name: Using Channel Actions
+          url: /channels/cloud-playout/using-channel-actions.html
+        - name: Viewing Channel Output and Analytics
+          url: /channels/cloud-playout/viewing-channel-output-and-analytics.html
+    #    - name: Generating the Channel Embed Code
+    #      url: /channels/cloud-playout/generating-channel-embed-code.html
 - section:
   name: Managing Players
   url: /players/index.html
