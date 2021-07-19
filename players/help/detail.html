@@ -370,10 +370,10 @@ layout: help
 
         <details class="details-item">
           <summary>Google Analytics</summary>
-          <p>Configure a player to use Google Analytics event tracking. This allows events and custom dimensions to be sent to a Google Analytics account for reporting purposes.</p>
+          <p>Configure a player to use Google Analytics event tracking. This allows events and custom dimensions to be sent to your Google Analytics account for reporting purposes.</p>
           <section class="bcls-section">
             <ol class="bcls-tasklist-restart">
-              <li>Check <strong>Enable Google Analytics</strong>.
+              <li>Check <strong>Enable Google Analytics</strong>.</li>
               <li>Click <span class="button-blue">Sign In to Google Account</span>.</li> 
               <li>Sign in to your Google account with your credentials.</li>
               <li>Click <strong>Allow</strong> to let Brightcove access your Google account.</li>
@@ -381,8 +381,45 @@ layout: help
               <li>Select the <strong>Events for Tracking</strong>.</li>
               <li>Click <span class="button-blue">Save</span>.</li>
             </ol>
-            <aside class="bcls-aside bcls-aside--tip">Make sure to publish the changes to the player.</aside>
+            <aside class="bcls-aside bcls-aside--tip">Make sure to publish changes to the player.</aside>
             <p><a href="https://beacon-help.support.brightcove.com/players/configuring-google-analytics-event-tracking.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Adobe Analytics</summary>
+          <p>Configure a player to use Adobe Analytics event tracking. This allows tracking data to be sent to your Adobe Analytics account for reporting purposes.</p>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist-restart">
+              <li>
+                <p>Log in to your Adobe Analytics account, and create Custom Success events.</p>
+                <p>Every Brightcove event that will be tracked must be created as a Custom Success Event in Adobe Analytics.</p>
+              </li>
+              <li>
+                <p>In Adobe Analytics, create Traffic Variables.</p>
+                <p>Every Brightcove parameter that will be recorded must be created as a Traffic Variable.</p>
+              </li>
+              <li>Return to Video Cloud Studio.</li>
+              <li>Check <strong>Enable Adobe Analytics</strong>.</li>
+              <li>Enter your Adobe account information.
+                <ul>
+                  <li><strong>Report Suite ID</strong></li>
+                  <li><strong>Marketing Cloud Organization ID</strong></li>
+                  <li><strong>Tracking Server</strong></li>
+                  <li><strong>CNAME Enabled</strong></li>
+                  <li><strong>Visitor Namespace</strong></li>
+                </ul>
+              </li>
+              <li>For each event you want to track, enter the Adobe Analytics event ID into the corresponding Brightcove event field.</li>
+              <li>
+                <p>For each parameter you want to capture, enter the Adobe Analytics parameter number into the corresponding Brightcove parameter field.</p>
+                <p>Use the <code translate="No">propX</code> format where <code translate="No">X</code> corresponds to the <strong>Property #</strong> in Adobe Analytics.</p>
+                <p>Example: <strong>Property # 1</strong> would have a value of <code translate="No">prop1</code>.</p>
+              </li>
+              <li>Click <span class="button-blue">Save</span>.</li>
+            </ol>
+            <aside class="bcls-aside bcls-aside--tip">Make sure to publish changes to the player.</aside>
+            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-adobe-analytics-event-tracking.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
           </section>
         </details>
    
