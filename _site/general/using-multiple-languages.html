@@ -1205,13 +1205,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/settings-english-german.png" alt="settings english german">
     </figure>
     <h3>Non-standard page UI translations</h3>
-    <p>You use Beacon Classic UI to translate non-Brightcove Beacon UI elements. For instance, the following screenshots show the UI for adding translated page names and movie information:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/pages-languages.png" alt="page languages">
-    </figure>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/movies-languages.png" alt="movie languages">
-    </figure>
+    <p>You use Beacon Studio to localize video data you enter. The following shows the two steps, choosing the language and changing the data, to update video metadata:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Select the language
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-metadata-select-language.png" alt="video metadata select language">
+        </figure>
+      </li>
+      <li>Enter the metadata
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-metadata.png" alt="video metadata">
+        </figure>
+      </li>
+    </ol>
   </section>
 
   <section class="bcls-section">
@@ -1277,7 +1283,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ol>
     <h3>Video metadata</h3>
-    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add multi-lingual metadata. To actually enter the metadata navigate to <strong>Overview → Video Information</strong> then select the language and finally enter the metadata.</p>
+    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add multi-lingual metadata. To actually enter the metadata, navigate to <strong>Overview → Video Information</strong> then select the language and finally enter the metadata.</p>
     <ol class="bcls-tasklist-restart">
       <li>Select the language
         <figure class="bcls-figure">
@@ -1291,13 +1297,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ol>
     <h3>Video images</h3>
-    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add localized images. To actually supply the localized images navigate to <strong>Images</strong> then select the language and finally upload the images.</p>
+    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add localized images. To actually supply the localized images, click the <strong>Images</strong> tab then select the language and finally upload the images.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-images.png" alt="video images">
     </figure>
 
     <h3>Video subtitles/captions</h3>
-    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add multi-lingual subtitles/captions. To actually supply the subtitles/captions navigate to <strong>Video and Tracks → Text Tracks</strong>, click <strong>Edit</strong> then complete the form.</p>
+    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add multi-lingual subtitles/captions. To actually supply the subtitles/captions, click the <strong>Video and Tracks</strong> tab, then click <strong>Edit</strong>, and finally complete the form.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">For complete details see the <a href="/media/adding-captions-videos.html">Adding Captions to Videos</a> document.</aside>
     <ol class="bcls-tasklist-restart">
       <li>Select the language
@@ -1375,7 +1381,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Playlists">Localizing Playlist Information</h2>
     <aside class="bcls-aside bcls-aside--warning language-editable">This task must be completed in Beacon Classic.</aside>
-    <p>Playlists can only have their titles localized. In Beacon Classic UI, navigate to the <strong>Playlists</strong> section and click the playlist title you wish to alter. Finally click the <strong>Textual Data</strong> tab to enter localized playlist names. Go to the <strong>Textual Data</strong> tab to alter the titles.</p>
+    <p>Playlists can only have their titles localized. In Beacon Classic UI, navigate to the <strong>Playlists</strong> section and click the playlist title you wish to alter. Go to the <strong>Textual Data</strong> tab to alter the titles.</p>
     <h3>Playlist titles</h3>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/playlist-titles.png" alt="playlist titles">
@@ -1429,8 +1435,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </figure>
   </section>
 
-</article>
+  <section class="bcls-section">
+    <h2 id="section-name">Using an API</h2>
+    <p>It is possible to update Video Cloud videos using an API. The Video Cloud assets when ingested into Brightcove Beacon turn into movies and episodes can be programmatically updated. The data changed in the <a href="#Videos">Localizing Video Information</a> section above can be changed using the CMS API. See the <a href="https://apis.support.brightcove.com/cms/index.html">CMS API index page</a> for further information.</p>
+  </section>
 
+</article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
