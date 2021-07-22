@@ -9,9 +9,10 @@
       }
     },
     "channel": {
-      "children": 
-      "*": {
-        "url": "https://beacon-help.support.brightcove.com/channels/cloud-playout/help/channel.html"
+      "children": {
+        "*": {
+          "url": "https://beacon-help.support.brightcove.com/channels/cloud-playout/help/channel.html"
+        }
       }
     }
   }
