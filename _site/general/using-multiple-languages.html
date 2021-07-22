@@ -1134,11 +1134,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Introduction">Introduction</h2>
     <p>This document contains the following sections:</p>
     <ul>
-      <li><a href="#Choose_the_languages_for_your_apps">Choose the languages for your apps</a>: Explains the process of choosing the language(s) for your app.</li>
+      <li><a href="#Choose_the_languages_for_your_apps">Choose the languages for your apps</a>: Explains the process of choosing the language(s) you wish to use in your Brightcove Beacon apps.</li>
       <li><a href="#What_is_translated">What is translated?</a>: Explains what parts of the apps can be translated. Also details what is automatically translated for you and what you have to translate.</li>
       <li><a href="#How_your_viewers_choose_a_language">How your viewers choose a language for the app</a>: Demonstrates three ways your viewers can change the language in which they are using your Brightcove Beacon apps.</li>
-      <li><a href="#How_your_viewers_select_a_video_asset_language">How your viewers select a video asset language</a>: Shows how your viewers can select the language of a video assets, given the translated version of the video is provided.</li>
-      <li>The following table list the items for which details can be translated. Each section provides instructions and screenshots on how you can provide multi-language assets for videos, pages, series, etc.
+      <li><a href="#How_your_viewers_select_a_video_asset_language">How your viewers select a video asset language</a>: Shows how your viewers can select the language of video assets, given the translated version of the video is provided.</li>
+      <li>The following table list the items for which details can be translated. Each linked section provides instructions and screenshots on how you can provide multi-language assets for videos, pages, series, etc.
         <table class="bcls-table">
           <thead class="bcls-table__head">
             <tr>
@@ -1165,7 +1165,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><a href="#Seasons">Seasons</a></td>
-              <td>Series titles and images</td>
+              <td>Season titles and images</td>
             </tr>
             <tr>
               <td><a href="#Channels">Channels</a></td>
@@ -1187,9 +1187,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Choose_the_languages_for_your_apps">Choose the languages for your apps</h2>
-    <p>During the pre-sales process you declared your intent to translate your apps into multiple languages. The possibilities for translation include the app fields and content metadata.</p>
-    <p>App translations are accomplished by requesting the translation of the app fields in your app experience. Content translations are the metadata that you enter into the CMS. It includes text data like titles and descriptions and images that contain text.</p>
-    <p>Defining the languages you wish to use in your Brightcove Beacon apps is part of the onboarding process. Past the onboarding process, if you choose to start using multiple languages, or wish to add languages for which translations exist, please contact your Brightcove support person. For new language translations please contact Brightcove support.</p>
+    <p>During the pre-sales process you chose to translate your apps into multiple languages. The possibilities for translation include the app fields and content metadata.</p>
+    <p>App translations are accomplished by requesting the translation of the app fields in your app experience. Content translations are the metadata that you enter into the CMS. It includes text data like titles and descriptions and localized images.</p>
+    <p>Defining the languages you wish to use in your Brightcove Beacon apps is part of the onboarding process. Past the onboarding process, if you choose to start using multiple languages, or wish to add languages for which translations exist, please contact your Brightcove support person. For language translations that do not yet exist for Brightcove Beacon, please contact Brightcove support.</p>
   </section>
 
   <section class="bcls-section">
@@ -1197,7 +1197,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>There are two parts of the apps that are/can be translated, they are:</p>
     <ul>
       <li>Translations of the field names, buttons and descriptions in the apps can be provided by you or can be translated by Brightcove for you.</li>
-      <li>Translations of items you define, for instance page names or video metadata, and images are entered into Brightcove Beacon by you.</li>
+      <li>Translations of items you define, for instance page names or video metadata, and images that are entered into Brightcove Beacon by you.</li>
     </ul>
     <h3>UI translations</h3>
     <p>Standard pages, like the <strong>Settings</strong> page are provided in the languages you specify. For instance, here is the <strong>Settings</strong> page in both English and German:</p>
@@ -1205,13 +1205,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/settings-english-german.png" alt="settings english german">
     </figure>
     <h3>Non-standard page UI translations</h3>
-    <p>You use Beacon Classic UI to translate non-Brightcove Beacon UI elements. For instance, the following screenshots show the UI for adding translated page names and movie information:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/pages-languages.png" alt="page languages">
-    </figure>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/using-multiple-languages/movies-languages.png" alt="movie languages">
-    </figure>
+    <p>You use Beacon Studio to localize video data you enter. The following shows the two steps, choosing the language and changing the data, to update video metadata:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Select the language
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-metadata-select-language.png" alt="video metadata select language">
+        </figure>
+      </li>
+      <li>Enter the metadata
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-metadata.png" alt="video metadata">
+        </figure>
+      </li>
+    </ol>
   </section>
 
   <section class="bcls-section">
@@ -1231,13 +1237,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3>Set the preferred language in the browser</h3>
     <p>If a viewer sets a preferred language in a browser, and that language is supported in the Brightcove Beacon app, the app will automatically use that language. The viewer would not have to set the language in the <strong>Settings</strong> standard page.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">Note: If a language is set in the actual Brightcove Beacon app, that will override browser settings.</aside>
-    <p>All popular browsers have a way to set the preferred language. As an example, this is how in Chrome the setting is done in the <strong>Advanced</strong> section of the <strong>Settings</strong> option:</p>
+    <p>All popular browsers have a way to set the preferred language. As an example, in Chrome the setting is changed in the <strong>Advanced</strong> section of the <strong>Settings</strong> option:</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/browser-choose-language.png" alt="browser choose language">
     </figure>
 
     <h3>Set the language on your device</h3>
-    <p>For instance, on an iPhone go to <strong>Settings → General → Language & Region</strong></p>
+    <p>If your viewers are using the Brightcove Beacon apps on mobile devices, they can change the device language. For instance, on an iPhone go to <strong>Settings → General → Language & Region</strong></p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/iphone-change-language.png" alt="iphone change language">
     </figure>
@@ -1246,7 +1252,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="How_your_viewers_select_a_video_asset_language">How your viewers select a video asset language</h2>
-    <p> In addition to languages available in the apps, you might have multi-lingual captions and audio tracks available for your video assets. If the video does have multiple languages available, the viewer selects the desired language during video playback. A gear icon is available during playback, and clicking that icon displays a dialog and the viewer can choose the language for subtitles and/or audio track, as shown here:</p>
+    <p> In addition to languages available in the apps, you might have multi-lingual captions and/or audio tracks available for your video assets. If the video does have multiple languages available, the viewer selects the desired language during video playback. A gear icon is available during playback, and clicking that icon displays a dialog and the viewer can choose the language for subtitles and/or audio track, as shown here:</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/select-language-in-video.png" alt="select language in video">
     </figure>
@@ -1277,7 +1283,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ol>
     <h3>Video metadata</h3>
-    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add multi-lingual metadata. To actually enter the metadata navigate to <strong>Overview → Video Information</strong> then select the language and finally enter the metadata.</p>
+    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add multi-lingual metadata. To actually enter the metadata, navigate to <strong>Overview → Video Information</strong> then select the language and finally enter the metadata.</p>
     <ol class="bcls-tasklist-restart">
       <li>Select the language
         <figure class="bcls-figure">
@@ -1291,13 +1297,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ol>
     <h3>Video images</h3>
-    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add localized images. To actually supply the localized images navigate to <strong>Images</strong> then select the language and finally upload the images.</p>
+    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add localized images. To actually supply the localized images, click the <strong>Images</strong> tab then select the language and finally upload the images.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-images.png" alt="video images">
     </figure>
 
     <h3>Video subtitles/captions</h3>
-    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add multi-lingual subtitles/captions. To actually supply the subtitles/captions navigate to <strong>Video and Tracks → Text Tracks</strong>, click <strong>Edit</strong> then complete the form.</p>
+    <p>This task is performed in Beacon Studio. Go the the <strong>Media</strong> module then click the video title to which you wish to add multi-lingual subtitles/captions. To actually supply the subtitles/captions, click the <strong>Video and Tracks</strong> tab, then click <strong>Edit</strong>, and finally complete the form.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">For complete details see the <a href="/media/adding-captions-videos.html">Adding Captions to Videos</a> document.</aside>
     <ol class="bcls-tasklist-restart">
       <li>Select the language
@@ -1305,7 +1311,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-subtitles-choose-language.png" alt="video subtitles choose language">
         </figure>
       </li>
-      <li>Complete the form for the new ubtitles/captions
+      <li>Complete the form for the new subtitles/captions
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/using-multiple-languages/video-subtitles.png" alt="video subtitles">
         </figure>
@@ -1375,7 +1381,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Playlists">Localizing Playlist Information</h2>
     <aside class="bcls-aside bcls-aside--warning language-editable">This task must be completed in Beacon Classic.</aside>
-    <p>Playlists can only have their titles localized. In Beacon Classic UI, navigate to the <strong>Playlists</strong> section and click the playlist title you wish to alter. Finally click the <strong>Textual Data</strong> tab to enter localized playlist names.</p>
+    <p>Playlists can only have their titles localized. In Beacon Classic UI, navigate to the <strong>Playlists</strong> section and click the playlist title you wish to alter. Go to the <strong>Textual Data</strong> tab to alter the titles.</p>
     <h3>Playlist titles</h3>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/playlist-titles.png" alt="playlist titles">
@@ -1385,7 +1391,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Channels">Localizing Channel information</h2>
     <aside class="bcls-aside bcls-aside--warning language-editable">This task must be completed in Beacon Classic.</aside>
-    <p>Channels can have their titles and associated images localized. In Beacon Classic UI, navigate to <strong>Channels</strong> and click on the channel you wish to alter.</p>
+    <p>Channels can have their titles and associated images localized. In Beacon Classic UI, navigate to <strong>Channels</strong> and click on the channel you wish to alter. Go to the <strong>Textual Data</strong> tab to alter the titles and the <strong>Non-Textual Data</strong> tab to alter the images.</p>
     <h3>Channel titles</h3>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/channel-titles.png" alt="channel titles">
@@ -1399,7 +1405,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Events">Localizing Event information</h2>
     <aside class="bcls-aside bcls-aside--warning language-editable">This task must be completed in Beacon Classic.</aside>
-    <p>Events can have their titles and associated images localized. In Beacon Classic UI, navigate to <strong>Events</strong> and click on the event you wish to alter.</p>
+    <p>Events can have their titles and associated images localized. In Beacon Classic UI, navigate to <strong>Events</strong> and click on the event you wish to alter. Go to the <strong>Textual Data</strong> tab to alter the titles and the <strong>Non-Textual Data</strong> tab to alter the images.</p>
     <h3>Event titles</h3>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/event-titles.png" alt="event titles">
@@ -1413,7 +1419,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Subscriptions">Localizing subscription information</h2>
     <aside class="bcls-aside bcls-aside--warning language-editable">This task must be completed in Beacon Classic.</aside>
-    <p>Subscriptions can have their titles, images and prices localized. In Beacon Classic UI, navigate to <strong>Commerce → SVOD/AuthVOD Plans</strong> and click on the subscription you wish to alter.</p>
+    <p>Subscriptions can have their titles, images and prices localized. In Beacon Classic UI, navigate to <strong>Commerce → SVOD/AuthVOD Plans</strong> and click on the subscription you wish to alter. Go to the <strong>Textual Data</strong> tab to alter the titles, the <strong>Non-Textual Data</strong> tab to alter the images and the <strong>Package</strong> tab to alter the prices.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">For further information on using subscriptions see the <a href="/monetization/creating-subscription-package.html">Creating a Subscription Package</a> and <a href="/monetization/using-subscription-package.html">Using a Subscription Package</a> documents.</aside>
     <h3>Subscription titles</h3>
     <figure class="bcls-figure">
@@ -1427,6 +1433,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/using-multiple-languages/subscription-prices.png" alt="subscription prices">
     </figure>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="section-name">Using an API</h2>
+    <p>It is possible to update Video Cloud videos using an API. The Video Cloud assets when ingested into Brightcove Beacon turn into movies and episodes can be programmatically updated. The data changed in the <a href="#Videos">Localizing Video Information</a> section above can be changed using the CMS API. See the <a href="https://apis.support.brightcove.com/cms/index.html">CMS API index page</a> for further information.</p>
   </section>
 
 </article>
@@ -1455,7 +1466,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 19 Jul 2021
+  Page last updated on 21 Jul 2021
 </div>
 
 
