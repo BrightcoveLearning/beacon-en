@@ -36,17 +36,14 @@
         <details class="details-item">
           <summary>Report time zone</summary>
           <section class="bcls-section">
-            <ul>
-              <li>Data in custom reports is based on the account's reporting time zone; to configure your time zone:
-                <ol class="bcls-tasklist-restart">
-                  <li>In Video Cloud Studio, expand the <strong>Admin</strong> dropdown.</li>
-                  <li>Select <strong>Account Settings</strong>.</li>
-                  <li>Set your <strong>Current Time Zone</strong>.</li>
-                  <li>Click <span class="button-blue">Save</span>.</li>
-                </ol>
-                <aside class="bcls-aside bcls-aside--information">Changing the reporting time zone only affects data going forward, and changes are not applied retroactively.</aside>
-              </li>
-            </ul>
+            <p>Data in custom reports is based on the account's reporting time zone; to configure your time zone:</p>
+            <ol class="bcls-tasklist-restart">
+              <li>In Video Cloud Studio, expand the <strong>Admin</strong> dropdown.</li>
+              <li>Select <strong>Account Settings</strong>.</li>
+              <li>Set your <strong>Current Time Zone</strong>.</li>
+              <li>Click <span class="button-blue">Save</span>.</li>
+            </ol>
+            <aside class="bcls-aside bcls-aside--information">Changing the reporting time zone only affects data going forward, and changes are not applied retroactively.</aside>
             <p><a href="https://beacon-help.support.brightcove.com/analytics/creating-custom-analytics-reports.html#timezone" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
           </section>
         </details>
@@ -77,44 +74,106 @@
                   </li>
                 </ul>
               </li>
-              
-
-
-              <li>Select <strong>Show title and description</strong> to display the video title and description on the player</li>
-              <li><strong>Play Button Shape</strong> - Controls the shape of the play button:
+              <li><strong>Data Groups</strong> - Data Groups determine the data fields included in the report
                 <ul>
-                  <li>Circle</li>
-                  <li>Square</li>
-                  <li>Rectangle</li>
+                  <li>Data Fields that appear are based upon the data groups you select</li>
+                  <li>You can select multiple data groups but some combinations are not valid</li>
+                  <li>At least one Data Group must be selected</li>
                 </ul>
               </li>
-              <li><strong>Play Button Position</strong> - Controls the location of the play button within the player:
+              <li><strong>Data Fields</strong> - When you select a Data Group, the Data Fields that can be returned are selectable
                 <ul>
-                  <li>Center</li>
-                  <li>Top Left</li>
-                  <li>Top Right</li>
+                  <li>Grayed-out fields cannot be returned for the selected Data Group</li>
                 </ul>
               </li>
-              <li><strong>Color Theme</strong> - Controls the colors used in the player including the play/pause buttons, elapsed time, volume, captions, full screen and sharing icons.
-              </li>
-              <li><strong>Logo Overlay</strong> - Add an image on top of the player:
-                <ul>
-                  <li><strong>On</strong> - Upload an image and position it:
-                    <ul>
-                      <li>Bottom Right</li>
-                      <li>Bottom Left</li>
-                      <li>Top Right</li>
-                    </ul>
-                  </li>
-                  <li><strong>Off</strong> - No image</li>
-                </ul>
-              </li>
+            
               
               <li>Click <span class="button-blue">Save</span> to save your changes</li> 
             </ul>
             <p><a href="https://beacon-help.support.brightcove.com/analytics/creating-custom-analytics-reports.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
           </section>
         </details>
+
+        <details class="details-item">
+          <summary>Add report filters</summary>
+          <section class="bcls-section">
+            <p>Filters can be added to limit the amount of data returned.</p>
+            <ul>
+              <li>When using multiple filters, an AND operation will be used</li>
+              <li>A filter will only display in your report if you have selected its matching data group
+                <ul>
+                  <li>For example, if you want to filter on <strong>Video Tag</strong>, you must select the <strong>Video</strong> dimension</li>
+                </ul>
+              </li>
+            </ul>
+            <p>You can filter on the following:</p>
+            <ul>
+              <li><strong>Video</strong> - One or more active video IDs in the account</li>
+              <li><strong>Video Tag</strong> - One or more video tags</li>
+              <li><strong>Custom Fields</strong> - One or more custom fields in the account</li>
+              <li><strong>Player</strong> - Enter one or more player IDs, separated by a comma</li>
+              <li><strong>Source Type</strong></li>
+              <li><strong>Device Type</strong></li>
+              <li><strong>Device OS</strong></li>
+              <li><strong>Device Manufacturer</strong></li>
+              <li><strong>Browser Type</strong></li>
+              <li><strong>Search Terms</strong></li>
+              <li><strong>Country</strong></li>
+              <li><strong>Destination Domain</strong></li>
+              <li><strong>Search Terms</strong></li>
+            </ul>
+            <p><a href="https://beacon-help.support.brightcove.com/analytics/creating-custom-analytics-reports.html#filter" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Preview Report</summary>
+          <section class="bcls-section">
+            <p>The data displayed in the report preview is sample data, not actual data from your Video Cloud account.</p>
+            <ul>
+              <li>The <strong>Preview Report</strong> section shows the data columns selected, populated with sample data</li>
+              <li>Click <img class="ui-image" alt="Delete icon" src="/assets/images/admin/help/delete-icon.png" /> to delete the associated data item</li>
+              <li>The sort order of the preview has no effect on the sort order of the downloaded report</li>
+              <li>You can use a spreadsheet application to sort the downloaded data</li>
+            </ul>
+           
+            <p><a href="https://beacon-help.support.brightcove.com/analytics/creating-custom-analytics-reports.html#preview" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Configure and Deliver Report</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>Report Name</strong> - Start by giving the report a meaningful name</li>
+              <li><strong>Format</strong> 
+                <ul>
+                  <li><strong>CSV</strong> - Comma-separated values </li>
+                  <li><strong>XLSX</strong> - Microsoft Excel</li>
+                </ul>
+              </li>
+              <li><strong>Email me when my report is ready</strong> - Get an email notification to yourself when the report is complete</li>
+              <li><strong>Notify others</strong> - Enter email addresses separated by a comma</li>
+              <li>In the Brighcove email, the link to download the report is valid for 90 days</li>
+              
+              <li>For one-time reports, 
+                <ul>
+                  <li>Click <span class="button-blue">Request Report</span></li>
+                  <li>The report will be downloaded when it is complete</li>
+                </ul>
+              </li>
+              <li>For recurring reports, 
+                <ul>
+                  <li>Click <span class="button-blue">Schedule Report</span></li>
+                  <li>The report will be queued and run when the data is ready</li>
+                </ul>
+              </li>
+            </ul>
+            <li>To see all scheduled reports, click <span class="button-blue">Scheduled Reports</span> in the left navigation</li>
+           
+            <p><a href="https://beacon-help.support.brightcove.com/analytics/creating-custom-analytics-reports.html#options" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+          </section>
+        </details> 
    
   </section>
 </article>
