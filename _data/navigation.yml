@@ -428,6 +428,36 @@
     - name: Using Reference IDs
       url: /publish-videos/using-reference-ids.html
 - section:
+  name: Social Sharing
+  url: /social/index.html
+  docs:
+    - name: Creating Publishing Destinations
+      url: /social/creating-social-media-publishing-destinations.html
+    - name: Creating a Video Clip
+      url: /social/creating-video-clip-using-brightcove-social.html
+    - name: Getting Started with Social
+      url: /social/getting-started-brightcove-social.html
+    - name: Publishing Videos to Social Media
+      url: /social/publishing-videos-social-media-platforms.html
+    - name: 'Quick Start: Social API'
+      url: /social/quick-start-social-api.html
+    - name: Reviewing Social Analytics
+      url: /social/reviewing-social-analytics.html
+    - name: Reviewing Social Engagement Analytics
+      url: /social/reviewing-social-engagement-analytics.html
+    - name: Reviewing Social Views Analytics
+      url: /social/reviewing-social-views-analytics.html
+    - name: Setting the Privacy Status for a Video
+      url: /social/setting-privacy-status-video.html
+    - name: 'Social API: Error Reference'
+      url: /social/social-api-error-reference.html
+    - name: Social API Reference
+      url: /social/reference.html
+    - name: Using Auto Sync
+      url: /social/using-auto-sync-synchronize-videos-social-media-accounts.html
+    - name: Viewing Published Videos
+      url: /social/viewing-videos-published-social-media.html
+- section:
   name: Styling & Appearance
   url: /styling/index.html
   docs:

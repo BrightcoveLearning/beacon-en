@@ -1,0 +1,61 @@
+---
+title: Setting the Privacy Status for a Video
+description: This topic describes how you can set the privacy status for videos that are distributed  to YouTube using Brightcove Social.
+parent: Social Sharing
+---
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>When you create a YouTube publishing destination, one of the default properties that can be set is the YouTube privacy setting. By default, there are three options, <strong>Public</strong>, <strong>Private</strong> and <strong>Unlisted</strong>. When videos are published to YouTube, the privacy setting for all videos will be set to the selected setting.</p>
+    <p>You may have a cases where the YouTube privacy setting for each video should be different. In this case, a custom field associated with the video can be used to control the privacy setting allowing each video to have a different privacy setting. When the video is published to YouTube using Brightcove Social, the privacy setting will be set to the value specified by the custom field value.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="customfield">Creating the custom field</h2>
+    <aside class="bcls-aside bcls-aside--information">Note: Custom fields are available only to Professional and Enterprise accounts.</aside>
+    <p>Start by adding a custom field to your account, <strong>yt_privacy_status</strong> of type <strong>List</strong>. For information on adding custom fields to an account see <a href="/admin/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a>. Setting the value of this custom field controls the YouTube video privacy setting:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th scope="col"><strong>yt_privacy_status</strong></th>
+          <th scope="col">YouTube Video Privacy Setting</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>private</td>
+          <td>private</td>
+        </tr>
+        <tr>
+          <td>public</td>
+          <td>public</td>
+        </tr>
+        <tr>
+          <td>unlisted</td>
+          <td>unlisted</td>
+        </tr>
+        <tr>
+          <td>value is null or unset</td>
+          <td>public</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="BCL-aside">Tip: By using a <strong>List</strong> type for the custom field, users will be able to select the status using a dropdown list vs. having to type a value in.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-custom-field.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="assign">Assigning a value to the custom field</h2>
+    <p>Once the custom field has been added, the value can be set using the Media module.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-set-status.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="youtube">Editing the publishing destination</h2>
+    <p>Edit the YouTube publishing destination and set the <strong>Privacy Setting</strong> default to <strong>Use YT_Privacy_Status Custom Field</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-visibility-default.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="publish">Publishing the video</h2>
+    <p>When a video is selected and the YouTube destination is selected, it will have the privacy status that was set using the custom field.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-video-visibility.png" /></figure>
+  </section>
+</article>

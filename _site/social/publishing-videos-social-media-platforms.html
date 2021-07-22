@@ -1,0 +1,1679 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic you will learn how to publish videos to social media using Brightcove Social.">
+  
+  <title>Publishing Videos to Social Media Platforms</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
+  <script src="/assets/js/sajari-head.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> Contact Support</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><i data-feather="cloud"></i> System Status</a></span>
+    <br>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
+      
+      
+      <li class="breadcrumb-item"><a href="/social/">Social</a></li>
+      
+      
+      
+      <li class="breadcrumb-item active" aria-current="page">Publishing Videos to Social Media Platforms</li>
+      
+      
+    </nav>
+  </header>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Other Brightcove Docs</option>
+					
+						
+							<option value="https://support.brightcove.com">Documentation Home</option>
+						
+					
+						
+							<option value="">-- VIDEO CLOUD --</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+						
+					
+						
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
+						
+					
+						
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
+						
+					
+						
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
+						
+					
+						
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
+						
+					
+						
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
+						
+					
+						
+							<option value="">-- VIDEO ESSENTIALS --</option>
+						
+					
+						
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon</option>
+						
+					
+						
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+						
+					
+						
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+						
+					
+						
+							<option value="">-- VIDEO CLOUD ADD-ONS --</option>
+						
+					
+						
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
+						
+					
+						
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
+						
+					
+						
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+						
+					
+						
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+						
+					
+				</select>
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Home</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/getting-started/design-best-practices.html">App Design Best Practices</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/app-design-considerations.html">App Design Considerations</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/learning-guide-bc-beacon.html">Brightcove Beacon Learning Guide</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/implementation-phases.html">Implementation Phases</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/media/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Managing Media</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/media/adding-application-id-player-embed-code.html">Adding an Application ID</a></li>
+                  
+                
+                  
+                    <li><a href="/media/adding-audio-tracks-videos.html">Adding Audio Tracks to Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/media/adding-captions-videos.html">Adding Captions to Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/media/adding-chapters-video.html">Adding Chapters to a Video</a></li>
+                  
+                
+                  
+                    <li><a href="/media/capturing-poster-and-thumbnail-images.html">Capturing Poster and Thumbnail Images</a></li>
+                  
+                
+                  
+                    <li><a href="/media/choosing-correct-embed-code.html">Choosing the Correct Embed Code</a></li>
+                  
+                
+                  
+                    <li><a href="/media/configuring-playlist-availability.html">Configuring Playlist Availability</a></li>
+                  
+                
+                  
+                    <li><a href="/media/configuring-season-availability.html">Configuring Season Availability</a></li>
+                  
+                
+                  
+                    <li><a href="/media/configuring-series-availability.html">Configuring Series Availability</a></li>
+                  
+                
+                  
+                    <li><a href="/media/configuring-video-availability.html">Configuring Video Availability</a></li>
+                  
+                
+                  
+                    <li><a href="/media/creating-and-managing-playlists.html">Creating and Managing Playlists</a></li>
+                  
+                
+                  
+                    <li><a href="/media/creating-managing-rule-sets.html">Creating and Managing Rule Sets</a></li>
+                  
+                
+                  
+                    <li><a href="/media/creating-series-seasons-episodes.html">Creating Series, Seasons & Episodes</a></li>
+                  
+                
+                  
+                    <li><a href="/media/downloading-videos.html">Downloading Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/media/editing-series-details.html">Editing Series Details</a></li>
+                  
+                
+                  
+                    <li><a href="/media/editing-video-details.html">Editing Video Details</a></li>
+                  
+                
+                  
+                    <li><a href="/media/editing-video-details-using-quick-edit.html">Editing Details using Quick Edit</a></li>
+                  
+                
+                  
+                    <li><a href="/media/editing-series-details.html">Editing Series Details</a></li>
+                  
+                
+                  
+                    <li><a href="/media/exporting-video-data.html">Exporting Video Data</a></li>
+                  
+                
+                  
+                    <li><a href="/media/getting-started-media-module.html">Getting Started with the Media Module</a></li>
+                  
+                
+                  
+                    <li><a href="/media/increasing-quality-poster-and-thumbnail-images.html">Increasing the Quality of Poster Images</a></li>
+                  
+                
+                  
+                    <li><a href="/media/introduction-playlists.html">Introduction to Playlists</a></li>
+                  
+                
+                  
+                    <li><a href="/media/managing-series.html">Managing Series</a></li>
+                  
+                
+                  
+                    <li><a href="/media/managing-videos.html">Managing Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/media/organizing-videos-using-folders.html">Organizing Videos Using Folders</a></li>
+                  
+                
+                  
+                    <li><a href="/media/overview-adding-captions-video.html">Overview: Adding Captions to a Video</a></li>
+                  
+                
+                  
+                    <li><a href="/media/publishing-videos-and-playlists.html">Publishing Videos and Playlists</a></li>
+                  
+                
+                  
+                    <li><a href="/media/replacing-video-source-file.html">Replacing a Video Source File</a></li>
+                  
+                
+                  
+                    <li><a href="/media/retranscoding-videos.html">Retranscoding Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/media/searching-videos-and-playlist.html">Searching Videos and Playlists</a></li>
+                  
+                
+                  
+                    <li><a href="/media/setting-required-fields-videos.html">Setting Required Fields</a></li>
+                  
+                
+                  
+                    <li><a href="/media/sharing-videos-other-accounts.html">Sharing Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/media/styling-captions.html">Styling Captions</a></li>
+                  
+                
+                  
+                    <li><a href="/media/uploading-videos.html">Uploading Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/media/uploading-video-images.html">Uploading Video Images</a></li>
+                  
+                
+                  
+                    <li><a href="/media/uploading-videos-remote-urls.html">Uploading Videos Remote URLs</a></li>
+                  
+                
+                  
+                    <li><a href="/media/working-360deg-videos.html">Working with 360° Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/media/working-cue-points.html">Working with Cue Points</a></li>
+                  
+                
+                  
+                    <li><a href="/media/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a></li>
+                  
+                
+                  
+                    <li><a href="/media/working-remote-asset-videos.html">Working with Remote Asset Videos</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/pages/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Managing Pages</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/pages/getting-started-layout-module.html">Getting Started with the Layout Module</a></li>
+                  
+                
+                  
+                    <li><a href="/pages/configuring-page-availability.html">Configuring Page Availability</a></li>
+                  
+                
+                  
+                    <li><a href="/pages/creating-managing-pages.html">Creating and Managing Pages</a></li>
+                  
+                
+                  
+                    <li><a href="/pages/managing-playlists-on-pages.html">Managing Playlists on Pages</a></li>
+                  
+                
+                  
+                    <li><a href="/pages/page-details-overview.html">Page Details Overview</a></li>
+                  
+                
+                  
+                    <li><a href="/pages/using-page-layouts.html">Using Page Layouts</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/channels/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Managing Channels</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/channels/beacon-channels/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Beacon Channels</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/channels/beacon-channels/creating-a-channel.html">Creating a Beacon Channel</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/beacon-channels/electronic-program-guides.html">Creating an EPG</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/beacon-channels/streaming-vods-to-a-channel.html">Streaming VODs to a Channel</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/channels/cloud-playout/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Cloud Playout Channels</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/channels/cloud-playout/cloud-playout-overview.html">Overview: Cloud Playout</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/cloud-playout-add-content.html">Adding Content to a Cloud Playout Channel</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/static-image-overlays.html">Adding Static Image Overlays</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/adding-bumpers-to-vod.html">Adding Bumpers to Cloud Playout</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/enabling-server-side-ads.html">Monetizing Cloud Playout</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/mid-roll-ad-insertion.html">Adding Mid-Roll Ads to a Channel</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/publish-channel-beacon.html">Publishing a Cloud Playout Channel</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/using-channel-actions.html">Using Channel Actions</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/players/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Managing Players</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Adding Thumbnail Seeking</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuring a Player Overlay</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-playlist-endscreen-using-plugin.html">Configuring a Playlist Endscreen</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-adobe-analytics-event-tracking.html">Configuring Adobe Analytics Event Tracking</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-google-analytics-event-tracking.html">Configuring Google Analytics Event Tracking</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-player-advertising-using-players-module.html">Configuring Player Advertising</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-player-content-restrictions.html">Configuring Player Content Restrictions</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-player-controls.html">Configuring Player Controls</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-player-endscreen.html">Configuring the Player Endscreen</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-player-localization.html">Configuring Player Localization</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-player-playback-properties.html">Configuring Player Playback Properties</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-player-plugins.html">Configuring Player Plugins</a></li>
+                  
+                
+                  
+                    <li><a href="/players/configuring-social-properties-player.html">Configuring the Social Properties</a></li>
+                  
+                
+                  
+                    <li><a href="/players/generating-player-embed-code.html">Generating Player Embed Code</a></li>
+                  
+                
+                  
+                    <li><a href="/players/getting-started-players-module.html">Getting Started with the Players Module</a></li>
+                  
+                
+                  
+                    <li><a href="/players/setting-player-information-properties.html">Setting Player Information Properties</a></li>
+                  
+                
+                  
+                    <li><a href="/players/setting-player-properties.html">Setting Player Properties</a></li>
+                  
+                
+                  
+                    <li><a href="/players/setting-player-update-mode-and-version.html">Setting the Player Update Mode</a></li>
+                  
+                
+                  
+                    <li><a href="/players/styling-players.html">Styling Players</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/monetization/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Monetizing Content</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/monetization/advertisement.html">Creating an Advertisement</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/creating-stripe-account.html">Creating a Stripe Account</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/creating-subscription-package.html">Creating a Subscription Package</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/promo-codes.html">Creating Promo Coupons</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/vc-custom-fields.html">Custom Fields for Monetization</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/implementing-authvod.html">Implementing AuthVOD</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/live-ssai.html">Implementing Live SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/vod-ssai.html">Implementing VOD SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/monetization-options.html">Understanding Monetization Options</a></li>
+                  
+                
+                  
+                    <li><a href="/monetization/using-subscription-package.html">Using a Subscription Package</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/beacon-web-store/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Beacon Web Store</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/beacon-web-store/beacon-webstore-overview.html">Overview: Brightcove Beacon Web Store</a></li>
+                  
+                
+                  
+                    <li><a href="/beacon-web-store/integration-details.html">Integrating with the Beacon Web Store</a></li>
+                  
+                
+                  
+                    <li><a href="/beacon-web-store/beacon-store-webhook-reference.html">Beacon Store Webhook Reference</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Reviewing Analytics</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Using the Analytics Module</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/analytics/getting-started-analytics-module.html">Getting Started with the Analytics Module</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/analytics-module-ui-glossary.html">Analytics Module UI Glossary</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/how-search-videos-analytics-module.html">How to Search for Videos</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/faq-analytics-module.html">FAQ: Analytics Module</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Analytics Reports</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/analytics/analytics-report-reference.html">Analytics Report Reference</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/creating-custom-analytics-reports.html">Creating Custom Analytics Reports</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/engagement-report-reference.html">Engagement Report Reference</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/managing-scheduled-reports.html">Managing Scheduled Reports</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/performance-report-reference.html">Performance Report Reference</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;General Information</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/analytics/analytics-business-metrics.html">Beacon Analytics Business Metrics</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/calculating-video-engagement-score.html">Calculating Video Engagement Score</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/exporting-data-analytics-module.html">Exporting Data</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Third-Party Analytics</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/analytics/ga-self-configuration.html">Google Analytics Self Configuration</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Reviewing Player Events in Google Analytics</a></li>
+                          
+                        
+                          
+                            <li><a href="/analytics/viewing-analytics-data.html">Viewing Analytics Data in Google Analytics</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/admin/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Administering Accounts</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/admin/configuring-language-settings.html">Configuring Language Settings</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-ingest-profiles-context-aware-encoding.html">Creating Ingest Profiles for Context Aware Encoding</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/creating-ingest-profiles-dynamic-delivery.html">Creating Ingest Profiles for Dynamic Delivery</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/ingest-profiles-best-practices.html">Ingest Profiles Best Practices</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-account-information.html">Managing Account Information</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-account-settings.html">Managing Account Settings</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-api-authentication-credentials.html">Managing API Authentication Credentials</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-ingest-profiles.html">Managing Ingest Profiles</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-profile-information.html">Managing Profile Information</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-users.html">Managing Users</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles (DD & CAE)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Standard Ingest Profiles (Legacy)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/viewing-billing-information.html">Viewing Billing Information</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/registered-users/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Registered Users</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/registered-users/working-with-registered-users.html">Working with Registered Users</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/publishing-apps/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Publishing Apps</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/publishing-apps/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;General Information</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/publishing-apps/general/common-required-info.html">Common Required Information for Submitting Apps</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/general/device-apps-validation-guide.html">Device Apps Validation Guide</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/general/in-app-subscription-resources.html">In-App Subscription Resources</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/publishing-apps/android/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Android</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/publishing-apps/android/submitting-to-android.html">Submitting New Apps to the Android Store</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/android/updating-android-apps-to-bcb.html">Updating Android Apps to Brightcove Beacon</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/android/adding-subscriptions-in-android.html">Adding Subscriptions to Android</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/android/improving-relevance-android.html">Improving Search Relevance in the Android Play Store</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/android/installing-android-test-build.html">Installing an Android Test Build</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/android/managing-google-subscriptions-1.html">Managing Google Subscriptions Part 1</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/android/managing-google-subscriptions-2.html">Managing Google Subscriptions Part 2</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/publishing-apps/fire-tv/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Fire TV</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/publishing-apps/fire-tv/installing-fire-tv-test-build.html">Installing a Fire TV Test Build</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/fire-tv/submitting-to-amazon.html">Submitting to the Amazon Store</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/publishing-apps/ios-tvos/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;iOS/tvOS</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/publishing-apps/ios-tvos/installing-ios-test-build.html">Installing an iOS/tvOS Test Build</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/ios-tvos/submitting-to-apple.html">Submitting to the Apple Store</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/publishing-apps/roku/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Roku</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/publishing-apps/roku/configuring-inchannel-products.html">Configuring In-Channel Products in Roku</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/roku/installing-roku-test-build.html">Installing a Roku Test Build</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/roku/submitting-to-roku.html">Submitting to the Roku Store</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/publishing-apps/samsung/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Samsung</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/publishing-apps/samsung/samsung-partner.html">Becoming a Samsung Partner</a></li>
+                          
+                        
+                          
+                            <li><a href="/publishing-apps/samsung/submitting-to-samsung.html">Submitting to the Samsung Store</a></li>
+                          
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/publish-videos/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Publishing Videos & Players</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/publish-videos/adding-3play-media-interactive-transcript-video.html">Adding a 3Play Media Interactive Transcript</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/adding-application-id-player-embed-code.html">Adding an Application ID to the Embed Code</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/adding-brightcove-player-facebook-fan-page.html">Adding a Player to a Facebook Fan Page</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/changing-video-player-without-changing-embed-code.html">Changing a Video in a Player</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/choosing-correct-embed-code.html">Choosing the Correct Embed Code</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/creating-and-publishing-high-quality-screencasts.html">Creating and Publishing High Quality Screencasts</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/deep-linking.html">Deep Linking</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/driving-video-views-through-email.html">Driving Video Views Through Email</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/dynamically-assigning-videos-player.html">Dynamically Assigning Videos to a Player</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/embedding-brightcove-player-google-sites-page.html">Embedding a Player on a Google Sites Page</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/publishing-brightcove-player-wordpress-page.html">Publishing a Player in a Wordpress Page</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/publishing-brightcove-players-facebook-instant-articles.html">Publishing Players in Facebook Instant Articles</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/publishing-brightcove-players-joomla.html">Publishing Players in Joomla</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/publishing-video-email.html">Publishing a Video to Email</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/step-step-using-players-module-create-and-publish-player.html">Step-by-Step:  Creating and Publishing a Player</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/using-multiple-players-one-page.html">Using Multiple Players on One Page</a></li>
+                  
+                
+                  
+                    <li><a href="/publish-videos/using-reference-ids.html">Using Reference IDs</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/social/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Social Sharing</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/social/creating-social-media-publishing-destinations.html">Creating Publishing Destinations</a></li>
+                  
+                
+                  
+                    <li><a href="/social/creating-video-clip-using-brightcove-social.html">Creating a Video Clip</a></li>
+                  
+                
+                  
+                    <li><a href="/social/getting-started-brightcove-social.html">Getting Started with Social</a></li>
+                  
+                
+                  
+                    <li><a href="/social/publishing-videos-social-media-platforms.html">Publishing Videos to Social Media</a></li>
+                  
+                
+                  
+                    <li><a href="/social/quick-start-social-api.html">Quick Start: Social API</a></li>
+                  
+                
+                  
+                    <li><a href="/social/reviewing-social-analytics.html">Reviewing Social Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/social/reviewing-social-engagement-analytics.html">Reviewing Social Engagement Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/social/reviewing-social-views-analytics.html">Reviewing Social Views Analytics</a></li>
+                  
+                
+                  
+                    <li><a href="/social/setting-privacy-status-video.html">Setting the Privacy Status for a Video</a></li>
+                  
+                
+                  
+                    <li><a href="/social/social-api-error-reference.html">Social API: Error Reference</a></li>
+                  
+                
+                  
+                    <li><a href="/social/reference.html">Social API Reference</a></li>
+                  
+                
+                  
+                    <li><a href="/social/using-auto-sync-synchronize-videos-social-media-accounts.html">Using Auto Sync</a></li>
+                  
+                
+                  
+                    <li><a href="/social/viewing-videos-published-social-media.html">Viewing Published Videos</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/styling/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Styling & Appearance</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/styling/branding-beacon-apps.html">Branding Brightcove Beacon Apps</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/image-requirements.html">Image Specifications</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/live/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Live Events</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/live/streaming-live-event.html">Streaming a Live Event</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;General Information</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/general/glossary.html">Glossary</a></li>
+                  
+                
+                  
+                    <li><a href="/general/known-issues.html">Known Issues</a></li>
+                  
+                
+                  
+                    <li><a href="/general/overview-context-aware-encoding.html">Overview of Context Aware Encoding</a></li>
+                  
+                
+                  
+                    <li><a href="/general/overview-dynamic-delivery.html">Overview of Dynamic Delivery</a></li>
+                  
+                
+                  
+                    <li><a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Supported Video and Audio Formats</a></li>
+                  
+                
+                  
+                    <li><a href="/general/beacon-studio-or-classic.html">When to Use Beacon Studio and/or Beacon Classic</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/training/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Training</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/placeholder.html">Placeholder Page</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/release-notes/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Release Notes</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/product-updates.html">Beacon Studio Release Notes</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Support</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+                  
+                
+                  
+                    <li><a href="/support/reset-support-portal-password.html">Reset Your Support Portal Password</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+
+
+<article class="bcls-article">
+  <h1>Publishing Videos to Social Media Platforms</h1>
+  <summary>In this topic you will learn how to publish videos to social media using Brightcove Social.</summary>
+  <section class="bcls-section">
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5018055033001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>Brightcove Social allows you to easily publish videos in your Video Cloud account out to YouTube, Facebook and Twitter. Before you can publish videos, you must create publishing destinations for the social accounts you wish to publish videos to. For information on creating publishing destinations, see <a href="/social/creating-social-media-publishing-destinations.html">Creating Social Media Publishing Destinations</a>.</p>
+    <p>Note that using Auto Sync and manually publishing videos using the Social module are independent operations. Auto Sync is not aware of which videos have been manually published using the Social module. If a video is tagged in a way that causes Auto Sync to publish it to one of your social destinations, it will do that regardless if that video has previously been manually published using the Social module.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="rules">Determining the rendition to publish</h2>
+    <p>In order to distribute videos to a social platform, videos should have at least one MP4 rendition or a video master available. Videos uploaded using one of the Brightcove provided, standard ingest profiles will save a master by default. For more information on archiving masters, see the <a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a> document.</p>
+    <p>When distributing videos to a social platform, Brightcove Social will attempt to distribute the highest quality rendition that meets the rules applied by the individual social platform. If the rendition sent to the social platform is rejected, there is no attempt to send another rendition.</p>
+    <p>The rules to rank videos are as follows:</p>
+    <ul>
+      <li>MP4 assets are better than any other video container. No attempt is made to order the other types of video containers.</li>
+      <li>If the video containers are of equivalent quality, the video with the higher encoding rate is considered better.</li>
+      <li>If the encoding rates are of equivalent quality, the video with the higher resolution is considered better. Note that because not all renditions of a video necessarily have the same aspect ratio, we compare videos based on a computed 'compound' proxy for the resolution by using the product of the height and the width of the respective videos.</li>
+    </ul>
+    <p>Note that if one of the video assets is lacking any of the above information necessary to make the comparison, that video is considered 'worse' than the video that has all of the necessary information.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="publish">Publishing videos to social media</h2>
+    <p>Once you have <a href="/social/creating-social-media-publishing-destinations.html">created publishing destinations</a>, follow these steps to publish videos to social media.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open Brightcove Social.</li>
+      <li>Click <strong>Videos</strong> in the left navigation. A list of videos in your Video Cloud account will display. Videos that haven't been published to a social media account will display a <strong>Status</strong> of <strong>Never Published</strong>. Videos that have been published will display <strong>Check Status</strong>. Click the link to see the publishing status of the video on the social media destinations.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-video-list.png" /></figure>
+      </li>
+      <li>Click on a video to publish and then click <strong>Publish</strong>.
+        <aside class="bcls-aside bcls-aside--information">Note: Videos that are DRM enabled will display a lock icon in the video thumbnail. DRM enabled videos that were ingested using a Dynamic Delivery ingest profile can be published, however, they can't be downloaded or have clips created. These buttons will be disabled when a DRM enabled video is selected.</aside>
+      </li>
+      <li>Select the destination(s) to publish the video to. You can also click <strong>Add New Destination</strong> to <a href="/social/creating-social-media-publishing-destinations.html">create a new destination</a>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-publish-preview.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Note: Destinations with an error will display an error icon (<img alt="" src="/assets/images/social/node16344-error-icon.png" />) next to the name. Select the destination and then click <strong>Reconnect</strong> to resolve the issue.</aside>
+      </li>
+      <li>Review the video metadata properties for each destination. The video properties will differ depending on the social media platform you are publishing to. For more information, see the sections for each social media platform:
+        <ul>
+          <li><a href="#youtube">YouTube</a></li>
+          <li><a href="#facebook">Facebook</a></li>
+          <li><a href="#twitter">Twitter</a></li>
+        </ul>
+      </li>
+      <li>Click the <strong>Publish to Destination</strong> button to publish the videos. Monitor the distribution status by clicking <strong>Published</strong> in the left navigation. For information on viewing the status of publishing streams, see <a href="/social/viewing-videos-published-social-media.html">Viewing Your Social Media Publishing Streams</a>.</li>
+    </ol>
+    <p>Publishing videos using the Publish button is a one-time publishing operation. Videos published using this method will not receive any metadata updates from the Social module after the initial upload.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="youtube">Setting video properties for YouTube</h2>
+    <p>By default, videos that are up to 15 minutes long can be uploaded to YouTube. For information on uploading longer videos, see <a href="/general/enabling-longer-videos-youtube.html">Enabling Longer Videos In YouTube</a>. After a video is published to YouTube, any updates to the source video in Studio will not update on the YouTube side.</p>
+    <p>When choosing a YouTube destination, the following video properties can be configured:</p>
+    <ul>
+      <li><a href="#ytthumb">Thumbnail Source</a></li>
+      <li><a href="#ytpostinfo">Post Info</a></li>
+      <li><a href="#ytschedule">Schedule</a></li>
+      <li><a href="#ytcaptions">Captions</a></li>
+      <li><a href="#ytvisibility">Visibility</a></li>
+      <li><a href="#ytlicense">License</a></li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information"> Notes:
+      <ul>
+        <li><a href="creating-social-media-publishing-destinations.html#youtube_defaults">Default video properties for YouTube</a> can be set by editing the destination.</li>
+        <li>The YouTube API doesn't support disabling comments via their current API so there is no option to disable comments in the Social UI.</li>
+        <li>Avoid special characters in the name and description of the video: using "&lt;" or "&gt;" are known to cause failure, but other special characters may cause problems as well.</li>
+      </ul>
+    </aside>
+    <div id="ytthumb" class="BCL-subsection">
+      <h3>Configuring the thumbnail source</h3>
+      <p>When posting to YouTube, the video thumbnail source can be set to:</p>
+      <ul>
+        <li><strong>YouTube</strong> - YouTube will select a thumbnail</li>
+        <li><strong>Video Cloud</strong> - Use the Video Cloud thumbnail image as the YouTube thumbnail</li>
+        <li><strong>Custom Image</strong> - Browse and select a custom thumbnail image to use</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-thumb.png" /></figure>
+      <p>Checking <strong>Use for all destinations</strong> will use this thumbnail for all destinations currently being published to.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: Before you can post custom video thumbnails from Brightcove Social to YouTube, your YouTube account must be verified. For information on verifying your YouTube account, see <a href="https://www.youtube.com/verify">this link</a>.</aside>
+      <aside class="bcls-aside bcls-aside--information">Note: Updates to thumbnail images in Studio will not update the thumbnail image on the YouTube side.</aside>
+    </div>
+    <div id="ytpostinfo" class="BCL-subsection">
+      <h3>Configuring the Post Info properties</h3>
+      <p>Click on the <strong>POST INFO Info</strong> link. The following YouTube video properties can be set:</p>
+      <ul>
+        <li><strong>Title</strong> - Title of the video (defaults to Video Cloud title). YouTube supports up to 100 characters.</li>
+        <li><strong>Description</strong> - Description of the video (defaults to Video Cloud short description). YouTube supports up to 5000 characters.</li>
+        <li><strong>YouTube Category</strong> - Content category for the video</li>
+        <li><strong>Tags</strong> - Tags for the video (defaults to Video Cloud tags). There's no specific tag count limit; you can use max 30 characters per tag, and the text field accepts up to 500 characters.</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">A few things to note about the character limit for tags:
+        <ol>
+          <li>The property value is a list, and commas between items in the list count toward the 500 character limit.</li>
+          <li>If a tag contains a space, the API server handles the tag value as though it were wrapped in quotation marks, and the quotation marks count toward the character limit. So if you have a tag such as <code translate="No">late news</code>, this is treated as <code translate="No">"late news"</code> and counts as 11 characters (including the quotation marks).</li>
+          <li>If you exceed the character limit on tags, no error will be reported in the Social module. To verify that videos were shared successfully, click <strong>Published</strong> in the left navigation, check on YouTube or get the status using the <a href="/social/overview-social-api.html">Social API</a>.</li>
+        </ol>
+      </aside>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-post-info.png" /></figure>
+    </div>
+    <div id="ytschedule" class="BCL-subsection">
+      <h3>Configuring the Schedule properties</h3>
+      <p>Click on the <strong>SCHEDULE</strong> link and select a schedule setting:</p>
+      <ul>
+        <li><strong>Publish Immediately</strong> - To publish the video immediately</li>
+        <li><strong>Schedule Publish Date</strong> - To choose a publish date and time for the video.</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-schedule-info.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">Note: The schedule date and time are sent to YouTube only once, when the video is sent to YouTube. If the schedule date and/or time needs to be changed, they must be changed in YouTube. The Social module will not update any schedule dates or times after the initial sync to YouTube.</aside>
+      <aside class="bcls-aside bcls-aside--information">Note: To have the <a href="#ytvisibility">video visibility</a> set to <strong>Unlisted</strong> or <strong>Private</strong>, set the <strong>Schedule</strong> option to <strong>Publish Immediately</strong> and set the <strong>Visibility</strong> option to <strong>Unlisted</strong> or <strong>Private</strong>.</aside>
+    </div>
+    <div id="ytcaptions" class="BCL-subsection">
+      <h3>Configuring the Captions properties</h3>
+      <p>Click on the <strong>CAPTIONS</strong> link. Select the source for the captions:</p>
+      <ul>
+        <li><strong>Use Video Cloud captions</strong> - Uses the captions associated with the video. For information on working with captions in Video Cloud, see <a href="/media/overview-adding-captions-video.html">Overview: Adding Captions to a Video</a>.</li>
+        <li><strong>No captions</strong> - No captions will be sent to YouTube</li>
+        <li><strong>Upload captions</strong> - Click <strong>Upload captions</strong> and browse and select a captions file. The captions file should be in .VTT or .SRT format. Select the caption <strong>Language</strong>, add a <strong>Label</strong> and select the <strong>Format</strong>. Click <strong>Add Caption File</strong>.</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-captions-info.png" /></figure>
+    </div>
+    <aside class="bcls-aside bcls-aside--information">Videos with Closed Captions can be clipped via Social, but the resulting clipped video will not have captions. You will need to upload new captions to the clipped video, and Social will use those when publishing.</aside>
+    <div id="ytvisibility" class="BCL-subsection">
+      <h3>Configuring the Visibility properties</h3>
+      <p>Click on the <strong>VISIBILITY</strong> link and select a Privacy setting for the video. The following Privacy settings are available:</p>
+      <ul>
+        <li><strong>Public</strong> - Anyone can view the video</li>
+        <li><strong>Unlisted</strong> - Anyone who has the link to the video can view it</li>
+        <li><strong>Private</strong> - Video can only be seen by you and the users you select</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">Note: With YouTube destinations, it is possible to dynamically assign the privacy setting using a custom field associated with the video. For information, see <a href="/social/setting-privacy-status-video.html">Setting the Privacy Status for a Video</a>.</aside>
+      <p>There is also a setting to <strong>Notify subscribers when video is posted to YouTube</strong>. If checked, your subscribers will see your videos in their Subscriptions feed and may receive a notification that the video was uploaded.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-privacy-info.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">Note: For more information on the YouTube Privacy settings, see the <a href="https://support.google.com/youtube/answer/157177">YouTube documentation</a>.</aside>
+    </div>
+    <div id="ytlicense" class="BCL-subsection">
+      <h3>Configuring the License properties</h3>
+      <p>Click on the <strong>LICENSE</strong> link and select a License and Rights Ownership setting for the video. The following settings are available:</p>
+      <ul>
+        <li>Standard YouTube License</li>
+        <li>Creative Commons - Attribution</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-license-info.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">Note: For more information on YouTube License and Rights Ownership, see the <a href="https://support.google.com/youtube/answer/2797468">YouTube documentation</a>.</aside>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="facebook">Setting video properties for Facebook</h2>
+    <p>When choosing a Facebook destination, the following video properties can be configured:</p>
+    <ul>
+      <li><a href="#fbthumb">Thumbnail</a></li>
+      <li><a href="#fbpostinfo">Post Info</a></li>
+      <li><a href="#fbschedule">Schedule</a></li>
+      <li><a href="#fbcaptions">Captions</a></li>
+      <li><a href="#fbtarget">Target</a></li>
+      <li><a href="#fbmonetize">Monetize</a></li>
+      <li><a href="#fbrights">Rights</a></li>
+      <li><a href="#fbdistribution">Distribution</a></li>
+      <li><a href="#fbtracking">Tracking</a></li>
+    </ul>
+    <p>After a video is published to Facebook, any updates to the source video in Studio will not update on the Facebook side.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: <a href="creating-social-media-publishing-destinations.html#facebook_defaults">Default video properties for Facebook</a> can be set by editing the destination.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: Facebook does not allow .gif images. If your video is using a .gif for the thumbnail image, the publish to Facebook will fail.</aside>
+    <div id="fbthumb" class="BCL-subsection">
+      <h3>Configuring the thumbnail source</h3>
+      <p>When posting to Facebook, the video thumbnail source can be set to:</p>
+      <ul>
+        <li><strong>Facebook</strong> - Facebook will select a thumbnail</li>
+        <li><strong>Video Cloud</strong> - Use the Video Cloud thumbnail image as the Facebook thumbnail</li>
+        <li><strong>Custom Image</strong> - Browse and select a custom thumbnail image to use</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-thumb.png" /></figure>
+      <p>Checking <strong>Use for all destinations</strong> will use this thumbnail for all destinations currently being published to.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: Updates to thumbnail images in Studio will not update the thumbnail image on the Facebook side.</aside>
+    </div>
+    <div id="fbpostinfo" class="BCL-subsection">
+      <h3>Configuring the Post Info properties</h3>
+      <p>Click on the <strong>POST INFO</strong> link. The following Facebook video properties can be set:</p>
+      <ul>
+        <li><strong>Title</strong> - Title of the video (defaults to Video Cloud title). Facebook will truncate after 65 characters</li>
+        <li><strong>Status Message</strong> - Description of the video (defaults to Video Cloud short description). Note that Facebook has disabled their search API, therefore, it's not possible for us to auto complete a Facebook mention.</li>
+        <li><strong>Tags</strong> - Select a Facebook tag from the list. Note that Facebook manages the tags. The Social module must comply with them so Social checks the list when typing into the <strong>Tags</strong> field.</li>
+        <li><strong>Facebook Category</strong> - Content category for the video</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-post-info.png" /></figure>
+    </div>
+    <div id="fbschedule" class="BCL-subsection">
+      <h3>Configuring the Schedule properties</h3>
+      <p>Click on the <strong>SCHEDULE</strong> link. Select <strong>Publish Immediately</strong> to publish the video immediately or select <strong>Schedule Publish Date</strong> and select a <strong>Publish Date &amp; Time</strong>. You can also set that <strong>Posts Never Expire</strong> or select <strong>Schedule Expiration </strong> and then select a <strong>Expiration Date and Time</strong>. A<strong> Time Zone</strong> can also be selected.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-schedule-info.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">Note: The schedule date and time are sent to Facebook only once, when the video is sent to Facebook. If the schedule date and/or time needs to be changed, they must be changed in Facebook. The Social module will not update any schedule dates or times after the initial sync to Facebook.</aside>
+    </div>
+    <div id="fbcaptions" class="BCL-subsection">
+      <h3>Configuring the Captions properties</h3>
+      <p>Click on the <strong>CAPTIONS</strong> link. Select the source for the captions:</p>
+      <ul>
+        <li><strong>Use Video Cloud captions</strong> - Uses the captions associated with the video. For information on working with captions in Video Cloud, see <a href="/media/overview-adding-captions-video.html">Overview: Adding Captions to a Video</a>.
+          <p>For captions Facebook requires a <code translate="No">language</code>, which Social populates from the <code translate="No">language</code> on the text track, and a <code translate="No">name</code>, which Social populates from the <code translate="No">label</code> on the text track.</p>
+          <p>Be aware that the <code translate="No">name</code> will be visible to viewers in the Facebook player via the 'Setting' menu and the 'Closed Captions' menu. We recommend that text track labels be set to something that will be meaningful to viewers. (For example, Labeling captions in different languages in those languages.)</p>
+        </li>
+        <li><strong>No captions</strong> - No captions will be sent to YouTube</li>
+        <li><strong>Upload captions</strong> - Click <strong>Upload captions</strong> and browse and select a captions file. The captions file should be in .VTT or .SRT format. Select the caption <strong>Language</strong> and <strong>Format</strong>. Click <strong>Add Caption File</strong>.</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">Note: Facebook requires that the caption language include a country in addition to the language. e.g., en-US or en-UK. A language code of just a country code (i.e. 'us') will fail when syncing.</aside>
+      <aside class="bcls-aside bcls-aside--information">Videos with Closed Captions can be clipped via Social, but the resulting clipped video will not have captions. You will need to upload new captions to the clipped video, and Social will use those when publishing.</aside>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-captions-info.png" /></figure>
+    </div>
+    <div id="fbtarget" class="BCL-subsection">
+      <h3>Configuring the Target properties</h3>
+      <p>Click on the <strong>TARGET</strong> link to set where the video can be seen. The following options are available:</p>
+      <ul>
+        <li><strong>Audience Optimization Interests</strong> - Add tags to describe the interests of people who are most likely to enjoy your post. For more information, see the <a href="https://www.facebook.com/facebookmedia/get-started/interest-targeting">Facebook documentation</a>.</li>
+        <li><strong>Location Restrictions</strong> - Add countries to include or exclude from seeing the post</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-targeting-info.png" /></figure>
+    </div>
+    <div id="fbmonetize" class="BCL-subsection">
+      <h3>Configuring the Monetize properties</h3>
+      <p>Click on the<strong> MONETIZE </strong>link. The following properties can be set:</p>
+      <ul>
+        <li><strong>Who is your business partner for posts to this destination?</strong> - Add a business partner for branded content posts. As you type, a list of matching businesses will appear. For information on Facebook branded content, see the <a href="https://www.facebook.com/facebookmedia/solutions/branded-content">Facebook documentation</a>.</li>
+        <li><strong>Allow business partner to boost posts</strong></li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-monetize-info.png" /></figure>
+    </div>
+    <div id="fbrights" class="BCL-subsection">
+      <h3>Configuring the Rights properties</h3>
+      <aside class="bcls-aside bcls-aside--information">Note: Your Facebook account must have access to the Facebook Rights Manager for the Rights option to appear.</aside>
+      <p>Click on the<strong> RIGHTS </strong>link. The following properties can be set:</p>
+      <ul>
+        <li><strong>Detect Matching Content</strong> - Check to enable Facebook rights management. For information, see the <a href="https://rightsmanager.fb.com">Facebook documentation</a>.</li>
+        <li><strong>Specify Ownership</strong> - Specify copyright ownership on video, audio, or both</li>
+        <li><strong>Country Selection</strong> - Select <strong>Worldwide</strong>, <strong>Include Countries</strong> or <strong>Exclude Countries</strong>. If include or exclude is selected, then add the <strong>Location Restrictions</strong>.</li>
+        <li><strong>Apply Match Rule</strong> - Select a rule. The <strong>Match Rule</strong> determines what automatic actions happen when people upload matched videos. Match Rules are managed inside of Facebook.</li>
+        <li><strong>Grant Permission</strong> - Authorize certain people or Pages or Instagram accounts to have permission to post videos matching your content.</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-rights-info.png" /></figure>
+    </div>
+    <div id="fbdistribution" class="BCL-subsection">
+      <h3>Configuring the Distribution properties</h3>
+      <p>Click on the <strong>DISTRIBUTION</strong> link to set where the video can be seen. The following<strong> Custom Distribution and Moderation </strong>options are available:</p>
+      <ul>
+        <li><strong>Show in News Feed</strong> - Shows video in News Feed</li>
+        <li><strong>Allow Embedding</strong> - Allow video embeds on third-party sites</li>
+        <li><strong>Add as Secret Video</strong> - Videos will be accessible only via a direct URL and are not searchable for people on Facebook
+          <ul>
+            <li><strong>Turn off Reactions, Comments and Shares</strong> - Disallows likes and comments</li>
+          </ul>
+        </li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-distribution.png" /></figure>
+    </div>
+    <div id="fbtracking" class="BCL-subsection">
+      <h3>Configuring the Tracking properties</h3>
+      <p>Click on the <strong>TRACKING</strong> link to assign a universal ID to track the video across systems. The following <strong>Universal ID</strong> options are available:</p>
+      <ul>
+        <li>Leave Blank</li>
+        <li>Use Video ID from Video Cloud</li>
+        <li>Use Reference ID from Video Cloud, if present</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-tracking.png" /></figure>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="twitter">Setting video properties for Twitter</h2>
+    <p>When choosing a Twitter destination, the following properties can be configured:</p>
+    <ul>
+      <li><a href="#twpostinfo">Post Info</a></li>
+    </ul>
+    <p class="BCL-aside">After a video is published to Twitter, any updates to the source video in Studio will not update on the Twitter side.</p>
+    <aside class="bcls-aside bcls-aside--information">Note:<a href="creating-social-media-publishing-destinations.html#twitter_defaults"> Default video properties for Twitter</a> can be set by editing the destination.</aside>
+    <div id="twpostinfo" class="BCL-subsection">
+      <h3>Configuring the Post Info properties</h3>
+      <p>Click on the <strong>POST INFO</strong> link and enter the <strong>Tweet</strong> content. Note that @mentions will be converted to #hashtags when being sent to Twitter. For more information, see the blog post, <a href="https://www.brightcove.com/en/blog/2018/11/deprecation-twitter-mentions-brightcove-social">Deprecation of Twitter @mentions in Brightcove Social</a>.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-twitter-tweet.png" /></figure>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="clip">Creating a clip</h2>
+    <p>Brightcove Social provides the ability to create video clips from existing videos in your Video Cloud account. Clips can be used as short, teaser videos that can be posted to social media. To create a clip, click <strong>Create Clip</strong>. For information on creating a clip, see <a href="/social/creating-video-clip-using-brightcove-social.html">Creating a Video Clip Using Brightcove Social</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="download">Downloading videos</h2>
+    <p>Brightcove Social provides the ability to copy the video URL or download a video source file. When downloading, the highest quality MP4 rendition will be downloaded. If there are no MP4 renditions, the <strong>Download</strong> link will be disabled.</p>
+    <p>It is important to understand that URLs for renditions and images are not fixed. Brightcove reconfigures the storage of media assets from time to time and when this happens, URLs for specific assets will change. If you are relying on hard-coded URLs to these assets, the links may break at some point. The best way to prevent links to media from breaking is to retrieve them from Video Cloud at runtime using the CMS API.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: You cannot download videos that have DRM enabled (lock appears in the video thumbnail). If you select a DRM enabled video, the <strong>Download</strong> button will be disabled.</aside>
+    <p>Follow these steps to download a video.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open Brightcove Social.</li>
+      <li>Click <strong>Videos</strong> in the left navigation. A list of videos in your Video Cloud account will display.</li>
+      <li>Click on the video to download and then click <strong>Download</strong>.</li>
+      <li>Copy the video URL or click the link to open the video in your browser. <span class="bcl-aside">Right click the video to save the source file locally.</span>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-download-info1.png" /></figure>
+      </li>
+      <li>Click <strong>Done</strong>.</li>
+    </ol>
+    <p>The intention of the download link is to allow you to download the file or to use the URL as a value that can be provided to a social platform’s uploader module (for platforms that support upload from an URL). The URL is not intended to be a long-lived, publicly-accessible URL that you would paste into a public social platform post.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewvc">Viewing videos in the Media module</h2>
+    <p>Videos on the Videos page can be viewed in the Media module by clicking on a video and then clicking <strong>View in Media</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-view-in-vc.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="status">Viewing the published locations</h2>
+    <p>Videos that have been attempted to be published to social media will display <strong>Check Status</strong> in the Status column.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-status1.png" /></figure>
+    <p>Clicking the <strong>Check Status</strong> link will display a list of social destinations that the video was published to and the status of the publish.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-published-locations1.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="360">Publishing 360° videos</h2>
+    <p>Both YouTube, Facebook and the Brightcove Player support 360° video playback. When a 360° video is published to YouTube or Facebook using Brightcove Social, the video will playback in 360° mode. Note that there may be a delay while the 360° effect is processing. Before uploading 360° videos to Video Cloud, there are some things you must do. For information on working with 360° videos, see <a href="/general/working-360deg-videos.html">Working with 360° Videos</a>. Once your video has been uploaded, the process to publish 360° videos is the same as regular videos.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Playback of 360° videos is limited to certain browsers.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: When using the Social module to sync a 360° video, the ingest profile used to ingest the video must be configured to save the master file or the video won't sync in 360.</aside>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+<!-- <nav id="more_resources">
+  <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
+  <ul style="list-style: none;">
+    <li><a href="https://beacon-help.support.brightcove.com" target="_blank"><img src="/assets/images/feather/search.svg" alt="Search" >Search Brightcove Beacon Documentation <i data-feather="external-link"></i></a></li>
+    <li><a href="/#" target="_blank"><img src="/assets/images/feather/file-text.svg" alt="Release Notes">View Release Notes <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+    <li><a href="https://status.brightcove.com" target="_blank"><img src="/assets/images/feather/info.svg" alt="System Status"> System Status <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+    <li><a href="https://supportportal.brightcove.com/s/login/" target="_blank"><img src="/assets/images/feather/message-circle.svg" alt="Contact Support"> Contact Support <img src="/assets/images/feather/external-link-blue.svg" alt="External Link"class="external-link-icon"></a></li>
+  </ul>
+</nav> -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div id="last_updated" class="last-updated">
+  Page last updated on 22 Jul 2021
+</div>
+
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="https://support.brightcove.com/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  <script src="/assets/js/local.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+    <link rel="stylesheet" href="/assets/css/local.css" />
+		<script>
+			feather.replace()
+		</script>
+</body>
+
+</html>
