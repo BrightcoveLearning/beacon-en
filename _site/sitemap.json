@@ -330,12 +330,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/monetization/configuring-server-side-ad-settings.html",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/configuring-server-side-ad-settings.html",
       "oldURL": "/configuring-server-side-ad-settings"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/configuring-server-side-ad-settings.html",
+      "newURL": "https://beacon-help.support.brightcove.com/monetization/configuring-server-side-ad-settings.html",
       "oldURL": "/configuring-server-side-ad-settings"
   },
 
@@ -475,8 +475,8 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/general/creating-stripe-account.html",
-      "oldURL": "/creating-stripe-account"
+      "newURL": "https://beacon-help.support.brightcove.com/social/creating-social-media-publishing-destinations.html",
+      "oldURL": "/creating-social-media-publishing-destinations"
   },
 
   {
@@ -485,8 +485,18 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/general/creating-stripe-account.html",
+      "oldURL": "/creating-stripe-account"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/monetization/creating-subscription-package.html",
       "oldURL": "/creating-subscription-package"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/creating-video-clip-using-brightcove-social.html",
+      "oldURL": "/creating-video-clip-using-brightcove-social"
   },
 
   {
@@ -642,6 +652,11 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/analytics/getting-started-analytics-module.html",
       "oldURL": "/getting-started-analytics-module"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/getting-started-brightcove-social.html",
+      "oldURL": "/getting-started-brightcove-social"
   },
 
   {
@@ -810,12 +825,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/monetization/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/getting-started/",
+      "newURL": "https://beacon-help.support.brightcove.com/channels/beacon-channels/",
       "oldURL": "/index"
   },
 
@@ -825,7 +835,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/support/",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/help/",
       "oldURL": "/index"
   },
 
@@ -835,12 +845,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/dashboard/help/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/registered-users/",
+      "newURL": "https://beacon-help.support.brightcove.com/admin/",
       "oldURL": "/index"
   },
 
@@ -850,7 +855,27 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/dashboard/help/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/registered-users/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/general/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
       "oldURL": "/index"
   },
 
@@ -860,12 +885,27 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/fire-tv/",
+      "newURL": "https://beacon-help.support.brightcove.com/getting-started/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/ios-tvos/",
+      "newURL": "https://beacon-help.support.brightcove.com/media/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/training/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/support/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/players/",
       "oldURL": "/index"
   },
 
@@ -880,12 +920,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/media/",
+      "newURL": "https://beacon-help.support.brightcove.com/players/help/",
       "oldURL": "/index"
   },
 
@@ -900,27 +935,62 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/",
+      "newURL": "https://beacon-help.support.brightcove.com/general/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/players/help/",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/fire-tv/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/players/",
+      "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/analytics/",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/ios-tvos/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/training/",
+      "newURL": "https://beacon-help.support.brightcove.com/beacon-web-store/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/pages/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/channels/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/android/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/monetization/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/channels/cloud-playout/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/publish-videos/",
       "oldURL": "/index"
   },
 
@@ -930,7 +1000,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/howto/",
+      "newURL": "https://beacon-help.support.brightcove.com/channels/cloud-playout/help/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/analytics/",
       "oldURL": "/index"
   },
 
@@ -945,42 +1020,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/help/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/panasonic/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/channels/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/publish-videos/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/channels/cloud-playout/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/channels/cloud-playout/help/",
       "oldURL": "/index"
   },
 
@@ -990,27 +1030,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/beacon-web-store/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/channels/beacon-channels/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/pages/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/admin/help/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/general/",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/panasonic/",
       "oldURL": "/index"
   },
 
@@ -1185,12 +1205,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/organizing-videos-using-folders.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html",
       "oldURL": "/organizing-videos-using-folders"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/howto/organizing-videos-using-folders.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/organizing-videos-using-folders.html",
       "oldURL": "/organizing-videos-using-folders"
   },
 
@@ -1207,6 +1227,11 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/general/overview-dynamic-delivery.html",
       "oldURL": "/overview-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/overview-social-api.html",
+      "oldURL": "/overview-social-api"
   },
 
   {
@@ -1335,6 +1360,21 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/social/publishing-videos-social-media-platforms.html",
+      "oldURL": "/publishing-videos-social-media-platforms"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/quick-start-social-api.html",
+      "oldURL": "/quick-start-social-api"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/admin/help/ingest-profiles/renditions-list.html",
       "oldURL": "/renditions-list"
   },
@@ -1357,6 +1397,21 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/analytics/reviewing-player-event-data-google-analytics.html",
       "oldURL": "/reviewing-player-event-data-google-analytics"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/reviewing-social-analytics.html",
+      "oldURL": "/reviewing-social-analytics"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/reviewing-social-engagement-analytics.html",
+      "oldURL": "/reviewing-social-engagement-analytics"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/reviewing-social-views-analytics.html",
+      "oldURL": "/reviewing-social-views-analytics"
   },
 
   {
@@ -1395,6 +1450,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/social/setting-privacy-status-video.html",
+      "oldURL": "/setting-privacy-status-video"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/media/setting-required-fields-videos.html",
       "oldURL": "/setting-required-fields-videos"
   },
@@ -1427,6 +1487,11 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/admin/help/ingest-profiles/simple-editor.html",
       "oldURL": "/simple-editor"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/social-api-error-reference.html",
+      "oldURL": "/social-api-error-reference"
   },
 
   {
@@ -1570,6 +1635,11 @@
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/social/using-auto-sync-synchronize-videos-social-media-accounts.html",
+      "oldURL": "/using-auto-sync-synchronize-videos-social-media-accounts"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/channels/cloud-playout/using-channel-actions.html",
       "oldURL": "/using-channel-actions"
   },
@@ -1632,6 +1702,11 @@
   {
       "newURL": "https://beacon-help.support.brightcove.com/channels/cloud-playout/viewing-channel-output-and-analytics.html",
       "oldURL": "/viewing-channel-output-and-analytics"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/social/viewing-videos-published-social-media.html",
+      "oldURL": "/viewing-videos-published-social-media"
   },
 
   {
