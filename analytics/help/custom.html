@@ -5,21 +5,55 @@ layout: help
 <h1>Custom Reports</h1>
 <article class="bcls-article">
     <section class="bcls-section">
-        <p>Create custom reports that show the analytics data and metrics that you want for a period of time.</p>
+        <p>Create custom analytics reports that show selected data and metrics for a period of time.</p>
    
         <details class="details-item">
-          <summary>Custom</summary>
+          <summary>Report time zone</summary>
           <section class="bcls-section">
-            <!-- <p>Create custom reports that show the analytics data and metrics that you want for a period of time.</p> -->
             <ul>
-              <li><strong>Playlist Type</strong> - Set how the playlist is displayed
-                <ul>
-                  <li><strong>Horizontal Playlist</strong> - Player will display a horizontal playlist</li>
-                  <li><strong>Vertical Playlist</strong> - Player will display a vertical playlist</li>
-                  <li><strong>Hidden Playlist</strong> - The playlist will be hidden</li>
-                </ul>
-                <aside class="bcls-aside bcls-aside--information">Any changes made to a player may take up to 5 minutes to appear in published players.</aside>
+              <li>Data in custom reports is based on the account's reporting time zone; to configure your time zone:
+                <ol class="bcls-tasklist-restart">
+                  <li>In Video Cloud Studio, expand the <strong>Admin</strong> dropdown.</li>
+                  <li>Select <strong>Account Settings</strong>.</li>
+                  <li>Set your <strong>Current Time Zone</strong>.</li>
+                  <li>Click <span class="button-blue">Save</span>.</li>
+                </ol>
+                <aside class="bcls-aside bcls-aside--information">Changing the reporting time zone only affects data going forward, and changes are not applied retroactively.</aside>
               </li>
+            </ul>
+            <p><a href="https://beacon-help.support.brightcove.com/analytics/creating-custom-analytics-reports.html#timezone" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Report data</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>Include Accounts</strong> - Include data from the current Video Cloud account or select multiple accounts</li>
+              <li><strong>Report Type</strong> 
+                <ul>
+                  <li><strong>One-time</strong> - Report is run once, immediately
+                    <ul>
+                      <li><strong>Date Range</strong> - For one-time reports, specify the time period for analytics data</li>
+                    </ul>
+                  </li>
+                  <li><strong>Recurring</strong> - Report can be scheduled to run on a daily, weekly or monthly basis
+                    <ul>
+                      <li><strong>Frequency</strong> 
+                        <ul>
+                          <li><strong>Daily</strong> - Report covers an entire day</li>
+                          <li><strong>Weekly</strong> - Report covers an entire week, defined as Monday through Sunday</li>
+                          <li><strong>Monthly</strong> - Reports covers an entire month</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <aside class="bcls-aside bcls-aside--information">Recurring reports are executed after analytics reconciliation, usually 3 to 5 days after the end of a reporting period.</aside>
+                  </li>
+                </ul>
+              </li>
+              
+
+
               <li>Select <strong>Show title and description</strong> to display the video title and description on the player</li>
               <li><strong>Play Button Shape</strong> - Controls the shape of the play button:
                 <ul>
