@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="This topic provides an overview of the Beacon Studio interface and modules. Beacon Studio allows you to manage your media assets and create app pages.">
   
-  <title>Managing Profile Information</title>
+  <title>Getting Started with Beacon Studio</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -60,11 +60,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
       
       
-      <li class="breadcrumb-item"><a href="/admin/">Admin</a></li>
+      <li class="breadcrumb-item"><a href="/getting-started/">Getting started</a></li>
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Managing Profile Information</li>
+      <li class="breadcrumb-item active" aria-current="page">Getting Started with Beacon Studio</li>
       
       
     </nav>
@@ -1174,38 +1174,90 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Managing Profile Information</h1>
-  <summary>In this topic you will learn how to view and edit your profile information.</summary>
-  <section class="bcls-section">
-    <p>Beacon Studio users can use the Profile Information page to view and change their own personal account information.</p>
-    <p>To access the Profile Information page:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Login in to Beacon Studio.</li>
-      <li>In  the primary navigation, click the profile image. The account selector list will display.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Profile information link" src="/assets/images/admin/profile-my-profile.png" /></figure>
-      </li>
-      <li>Click <strong>My Profile.</strong></li>
-    </ol>
+  <h1>Getting Started with Beacon Studio</h1>
+  <summary>This topic provides an overview of the Beacon Studio interface and modules. Beacon Studio allows you to manage your media assets and create app pages.</summary>
+  <section class="bcls-section"> 
+    <script src="https://solutions.brightcove.com/jcao/AppMeasurement.js"></script><script src="https://solutions.brightcove.com/jcao/VisitorAPI.js"></script>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1691957866331564395">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>To access Beacon Studio, navigate to: <a href="https://studio.brightcove.com">https://studio.brightcove.com</a>. Sign in with your email address and password. The home page provides the ability to:</p>
+    <ul>
+      <li><a href="#settings">Manage Beacon settings</a></li>
+      <li><a href="#account">Select an account and view the user profile</a></li>
+      <li><a href="#modules">Access Beacon modules</a></li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/getting-started/studio-home.png" /></figure>
+    <p> You can have a maximum of 5 sessions at any time. A session is initiated any time you log in  with the same email address. Once a 6th session is started, the oldest session is invalidated. The Beacon Studio session timeout is 24 hours.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="Editing_profile_information">Editing profile information</h2>
-    <p>Any of the fields in the Profile Information section can be edited. Click <strong>Save Changes</strong> to save the changes.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/profile-edit.png" /></figure>
-    <p>Notes on editing:</p>
+    <h2 id="settings">Managing settings</h2>
+    <p>The Beacon Studio settings menu can be accessed from the <strong>ADMIN</strong> menu. The  ADMIN menu provides access to:</p>
     <ul>
-      <li>You can't change your email address. If you need to change your email address, a  account with the correct address needs to be created. The primary account administrator can do this.</li>
-      <li>You can change your password but you must verify your current password</li>
-      <li>Passwords need to be no shorter than 8 letters and contain at least one number and one letter</li>
-      <li>The time zone that you set here is used when you schedule the activation date and time for a video. You can schedule the activation start and end date for a video by navigating to the <strong>Media</strong> page, selecting the details for a video and then editing the <a href="/media/editing-video-details.html#availability">Availability</a> section.</li>
-      <li>You can use the Language dropdown to select the Studio language:
-        <ul>
-          <li>English</li>
-          <li>Spanish (Spain)</li>
-          <li>Japanese</li>
-        </ul>
-      </li>
+      <li><a href="/admin/managing-account-settings.html#account_info">Account Information</a> - View information about the current Video Cloud account</li>
+      <li><a href="/admin/managing-users.html">User Management</a> - Manage the users who are authorized to use Video Cloud Studio</li>
+      <li><a href="/admin/managing-account-settings.html#account_settings">Account Settings</a> - Configure general account settings</li>
+      <li><a href="/admin/managing-account-settings.html#upload">Upload Settings</a> - Provides options to customize the Upload module</li>
+      <li><a href="/admin/managing-ingest-profiles.html">Ingest Profiles</a> - Manage the ingest profiles in your Video Cloud account</li>
+      <li><a href="/admin/managing-account-settings.html#fields">Video Fields</a> - Mark standard video fields as required and also view, create, and modify custom metadata fields for the account</li>
+      <li><a href="/admin/configuring-language-settings.html">Language Settings</a> - Configure support for  additional metadata languages</li>
+      <li><a href="../admin/managing-playback-rights.html">Playback Rights</a> - Configure playback rights</li>
+      <li><a href="/admin/managing-media-sharing-settings.html">Media Sharing</a> - Share videos to other accounts</li>
+      <li><a href="../admin/configuring-server-side-ad-settings.html">Server-Side Ad Settings</a> - Configure server-side ad settings</li>
+      <li><a href="/admin/managing-account-settings.html#player">Player Settings</a> - Provides the option of using basic user name and password authentication for access to the Player Management and Delivery System APIs</li>
+      <li><a href="https://live.support.brightcove.com/live-module/zoom-live-integration.html">Integrations</a> - Integrate Zoom meetings into Brightcove Live</li>
+      <li><a href="https://live.support.brightcove.com/admin/managing-live-settings.html">Live Settings</a> - Manage the settings used by the Live module</li>
+      <li><a href="/admin/managing-api-authentication-credentials.html">API Authentication</a> - Create and manage API credentials</li>
+      <li><a href="/admin/viewing-billing-information.html">Billing</a> - View billing information for the account</li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information">Note: If you are an Administrator, you can use the <a href="/admin/managing-users.html">Managing Users</a> page in Studio to change a user's  role.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: You must be an account administrator to have access to the ADMIN menu.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="account">Selecting an account</h2>
+    <p>If you have access to multiple Brightcove accounts, the  account selector can be used to select the Video Cloud account you want to access. To switch accounts, click on your <strong> account - name</strong> in the bottom left corner of Beacon Studio. The current account is bolded.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/getting-started/studio-select-account.png" /></figure>
+    <p>Click the <strong>My Profile</strong> link to update your user information and password. For more information, see <a href="/admin/managing-profile-information.html">Managing Profile Information</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="modules">Accessing modules</h2>
+    <p>The Beacon Studio primary navigation provides access to the Studio modules. When the <strong>Dashboard</strong> is displayed, the module names will display in the primary navigation. For all other modules, only the module icon will be displayed.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/getting-started/studio-primary-nav.png" /></figure>
+    <p>Note that the modules that display are based upon your Brightcove Beacon subscription and user profile.</p>
+    <ul>
+      <li class=/analytics/getting-started-analytics-module.html"language-editable"><a href="/media/getting-started-media-module.html">Media</a> - Upload videos, edit video details, create season and series</li>
+      <li class=/analytics/getting-started-analytics-module.html&quot;language-editable&quot;>Layout - </li>
+      <li class=/analytics/getting-started-analytics-module.html&quot;language-editable&quot;><a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Live</a> - Create and stream live events</li>
+      <li class=/analytics/getting-started-analytics-module.html&quot;language-editable&quot;><a href="/cloud-playout/cloud-playout-overview.html">Cloud Playout</a> - Create live linear channels for videos</li>
+      <li><a href="/analytics/getting-started-analytics-module.html">Analytics</a> - View analytics on video and player performance</li>
+      <li><a href="https://social.support.brightcove.com/get-started/getting-started-brightcove-social.html">Social</a> - Distribute videos to social media accounts</li>
+      <li><a href="/players/getting-started-players-module.html">Players</a> - Create and style players and generate publishing code for players</li>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Registered Users</a> - Create live linear channels for videos</li>
+      <li>Admin - </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="dashboard">Viewing the dashboard</h2>
+    <p>The Video Cloud Studio home page displays the Video Cloud dashboard. The dashboard contains a series of "cards" which provide high level metrics on the videos in your account. The following cards are available:</p>
+    <ul>
+      <li><strong>Video Views</strong> - Displays number of video views per day for the time period selected. Clicking the <strong>See Video View Details</strong> link will open the Performance Report where you can view video performance.</li>
+      <li><strong>Account Summary</strong> - Displays total number of videos and players in the account and the number of recently created and updated videos. Clicking on a number will open the Media or Players module.</li>
+      <li><strong>Device Type</strong> - Displays type of devices used to watch videos for the time period selected. Clicking the <strong>See Video Views by Device Type</strong> link will open the Performance Report where you can view video performance by device type.</li>
+      <li><strong>What's New?</strong> - Displays Video Cloud product updates. For a complete list of updates, see the <a href="/release-notes/video-cloud-studio-release-notes.html">Video Cloud Studio Release Notes</a>.</li>
+      <li><strong>Top Trending Videos</strong> - Displays videos with the most views for the time period selected. Clicking the card title link will open the Performance Report where you can view video performance.</li>
+      <li><strong>Viewing Regions</strong> - Displays viewer locations for the time period selected. Clicking <strong>See Video Views by Country</strong> will open the Performance Report where you can view video views by country.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="localization">Localization</h2>
+    <p>The Video Cloud Studio language can be changed by changing the language in your profile. The following languages are supported:</p>
+    <ul>
+      <li>English</li>
+      <li>Spanish (Spain)</li>
+      <li>Japanese</li>
+      <li>French (France)</li>
+      <li>Chinese (Traditional)</li>
+      <li>Korean</li>
+    </ul>
+    <p>For more information, see <a href="/admin/managing-profile-information.html">Managing Profile Information</a>.</p>
   </section>
 </article>
 
@@ -1234,7 +1286,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 25 Mar 2021
+  Page last updated on 26 Jul 2021
 </div>
 
 
