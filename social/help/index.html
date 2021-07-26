@@ -1,24 +1,61 @@
 ---
-title: Social
+title: Published
 layout: help
 ---
-<h1>Social</h1> 
+<h1>Published</h1> 
 <article class="bcls-article">
     <section class="bcls-section">
-        <p>The Players module allows you to create and manage video players.</p>
+        <p>This section displays a list of videos scheduled and published using Brightcove Social.</p>
+        <p>With Auto Sync, you may see multiple entries for the same video:</p>
+        <ul>
+          <li>One for initial sync</li>
+          <li>Additional for video metadata syncs</li>
+        </ul>
+        <p>Click the video name link to see video details in the <strong>Media</strong> module.</p>
+        <p>Click the social media link to see the social platform page.</p> 
 
         <details class="details-item">
-          <summary>Players list</summary>
+          <summary>List data</summary>
           <section class="bcls-section">
+            <p>For each published video, you will see the following data:</p>
             <ul>
-              <li><strong>Name</strong> - Click the player name link to edit the player details. The player ID appears below the player name.</li>
-              <li><strong>Updated</strong> - Most recent updated date and time</li>
-              <li><strong>Version</strong> - Player version</li>
-              <li><strong>Status</strong> - Player status
+              <li>Status</li>
+              <li>Time of the event</li>
+              <li>Video thumbnail</li>
+              <li>Video name and short description</li>
+              <li>Link to social media account and site where the video was published</li>
+            </ul>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Publish videos</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist">
+              <li>Click <span class="button-blue">Choose Videos to Publish</span></li>
+              <li>This takes you to the <strong>Videos</strong> section.</li>
+              <li>From there, you can select and publish videos.</li>
+            </ol> 
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Filter by status</summary>
+          <section class="bcls-section">
+            <p>Filter the list by status:</p>
+            <ul>
+              <li><strong>All Status Types</strong> - Display all status types</li>
+              <li><strong>Deleted</strong> - Display videos that have been published and deleted from a social platform</li>
+              <li><strong>Error</strong> - Display posts that resulted in an error</li>
+              <li><strong>Hidden</strong> - Display posts where the video is private, unlisted or expired on social media</li>
+              <li><strong>Processing</strong> - Display videos that are in the process of being posted to a social platform</li>
+              <li><strong>Published</strong> - Display videos that were successfully posted to a social platform</li>
+              <li><strong>Scheduled</strong> - Display videos that are scheduled to be posted to a social platform</li>
+              <li><strong>Synced</strong> - Display videos that were synced with Auto Sync</li>
+              <li><strong>Abandoned</strong> - Display videos that were Auto Synced out to a social platform and then either
                 <ul>
-                  <li><img alt="" src="/assets/images/players/node14049-cone-icon.png" /> - Indicates that changes have been made to the player but the changes have not been published</li>
-                  <li><img alt="" src="/assets/images/players/node14049-check-icon.png" /> - Indicates that the player is activated and all changes made to the player have been published</li>
-                  <li><img alt="" src="/assets/images/players/node14049-red-circle-icon.png" /> - Indicates that the player is inactive</li>
+                  <li>Deleted from Video Cloud without deleting on the social platform; Auto Sync was configured to take no action when a video is deleted</li>
+                  <li>Untagged so that it doesn’t match the Auto Sync any more without deleting on the social platform; Auto Sync was configured to take no action when video metadata changes</li>
                 </ul>
               </li>
             </ul>
@@ -26,90 +63,37 @@ layout: help
         </details>
 
         <details class="details-item">
-          <summary>Player summary</summary>
+          <summary>Filter by destination</summary>
           <section class="bcls-section">
-            <ol class="bcls-tasklist">
-              <li>Select a player name to see the summary on the right of the players list. The information includes:
-                <ul>
-                  <li>Player name - Click the player name link to edit the player details.</li>
-                  <li><strong>Created</strong> - Player creation date</li>
-                  <li>Click <span class="button-blue">Player Preview</span> to see a preview of your player in a modal window</li>
-                  <li>Click <span class="button-blue">Embed Code & URL</span> to copy either the <strong>Preview Player</strong> or the <strong>Published Player</strong> embed code to test your player changes in your HTML page</li>
-                  <li><strong>Player ID</strong> - Player unique identifier</li>
-                  <li><strong>Name</strong> - Player name</li>
-                  <li><strong>Description</strong> - Player short description</li>
-                  <li><strong>Status</strong> - Player status
-                    <ul>
-                      <li><span class="button-blue">Active</span> - The player is active and ready to use</li>
-                      <li><span class="button-red">Inactive</span> - The player is deactivated</li>
-                    </ul>
-                  </li>
-                  <li><strong>Published State</strong> - Player published state
-                    <ul>
-                      <li><strong>Published</strong> - The player is published and has no unpublished changes</li>
-                      <li><strong>You have unpublished changes</strong> - You've made changes to the player; users will not see them until you publish the player</li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ol>  
+            <p>Filter the list by social platform destination:</p>
+            <ul>
+              <li><strong>All Destinations</strong> - Display videos published to all social platforms</li>
+              <li><strong>Facebook</strong> - Display videos published to Facebook</li>
+              <li><strong>Twitter</strong> - Display videos published to Twitter</li>
+              <li><strong>YouTube</strong> - Display videos published to YouTube</li>
+            </ul>
           </section>
         </details>
 
         <details class="details-item">
-          <summary>Search Players</summary>
+          <summary>Search videos</summary>
           <section class="bcls-section">
-            <ol class="bcls-tasklist">
-              <li>In <span class="button-gray"><i class="button-icon" data-feather="search"></i>Search Players</span>, start typing to search for players in your account. The following fields are searched:
-                <ul>
-                  <li>Player name</li>
-                  <li>Player ID</li>
-                  <li>Short description</li>
-                </ul>
-              </li>
-            </ol>
+            <p>Use the search field to find videos in your account; the following fields are searched:</p>
+            <ul>
+              <li>Video ID</li>
+              <li>Name</li>
+              <li>Short description</li>
+              <li>Long description</li>
+              <li>Tags</li>
+              <li>Reference ID</li>
+              <li>Custom fields</li>
+            </ul>
           </section>
         </details>
-
-        <details class="details-item">
-          <summary>Create player</summary>
-          <section class="bcls-section">
-            <ol class="bcls-tasklist">
-              <li>Click <span class="button-blue">New Player</span>.</li>
-              <li>Enter the <strong>Name</strong> for your player.</li>
-              <li>Enter a <strong>Short Description</strong> for your player.</li>
-              <li>Click <span class="button-blue">Save</span>.</li> 
-            </ol>
-            <aside class="bcls-aside bcls-aside--information">When you create a new player, it is built using the latest player version as published by Brightcove.</aside>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Duplicate player</summary>
-          <section class="bcls-section">
-            <ol class="bcls-tasklist">
-              <li>Select the player that you want to duplicate.</li>
-              <li>Click <span class="button-blue">Duplicate</span>.</li>
-              <li>Enter the <strong>Name</strong> and <strong>Short Description</strong> for the new player.</li>
-              <li>Click <span class="button-blue">Save</span>.</li> 
-            </ol>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Delete player</summary>
-          <section class="bcls-section">
-            <ol class="bcls-tasklist">
-              <li>Select the player/players that you want to delete.</li>
-              <li>Click <span class="button-red-text">Delete</span>.</li>
-              <li>In the <strong>Delete Players</strong> dialog, confirm by clicking <span class="button-red-text">Delete</span>.</li> 
-            </ol>
-          </section> 
-        </details> 
     
   </section>
 
   <section class="bcls-section">
-    <h3><a href="https://beacon-help.support.brightcove.com/players/getting-started-players-module.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></h3>
+    <h3><a href="https://beacon-help.support.brightcove.com/social/viewing-videos-published-social-media.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></h3>
   </section>
 </article>
