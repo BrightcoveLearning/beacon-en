@@ -102,8 +102,68 @@ layout: help
             <p>Facebook does not allow .gif images. If your video is using a .gif for the thumbnail image, the publish to Facebook will fail.</p>
             <p><strong>Video thumbnail source</strong></p>
             <ul>
-              <li><strong>YouTube</strong> - YouTube will select a thumbnail</li>
-              
+              <li><strong>Facebook</strong> - Facebook will select a thumbnail</li>
+              <li><strong>Video Cloud </strong> - Use the Video Cloud thumbnail image as the Facebook thumbnail</li>
+              <li><strong>Custom Image</strong> - Browse and select a custom thumbnail image to use</li>
+            </ul>
+            <p>Checking <strong>Use for all destinations</strong> will use this thumbnail for all destinations currently being published to.</p>
+            <aside class="bcls-aside bcls-aside--information">Updates to thumbnail images in Studio will not update the thumbnail image on the Facebook side.</aside>
+            <p><strong>Post Info properties</strong></p>
+            <ul>
+              <li><strong>Title</strong> - Title of the video (defaults to Video Cloud title); Facebook will truncate after 65 characters</li>
+              <li><strong>Description</strong> - Description of the video (defaults to Video Cloud short description)</li>
+              <li><strong>Tags</strong> - Select a Facebook tag from the list; Note that Facebook manages the tags</li>
+              <li><strong>Facebook Category</strong> - Content category for the video</li>
+            </ul>
+            <p><strong>Schedule properties</strong></p>
+            <ul>
+              <li><strong>Publish Immediately</strong> - To publish the video immediately</li>
+              <li><strong>Schedule Publish Date</strong> - To choose a publish date and time for the video</li>
+            </ul>
+            <aside class="bcls-aside bcls-aside--information">The schedule date and time are sent to Facebook only once, when the video is sent to Facebook. If the schedule date and/or time needs to be changed, they must be changed in Facebook.</aside>
+            <p><strong>Captions properties</strong></p>
+            <ul>
+              <li><strong>Use Video Cloud captions</strong> - Use captions associated with the video in Video Cloud</li>
+              <li><strong>No captions</strong> - No captions will be sent to Facebook</li>
+              <li><strong>Upload captions</strong> - Select a captions file, which should be in .VTT or .SRT format</li>
+            </ul>
+            <aside class="bcls-aside bcls-aside--information">Facebook requires that the caption language include a country in addition to the language. e.g., en-US or en-UK.</aside>
+            <aside class="bcls-aside bcls-aside--information">Videos with closed captions clipped using Social will not have captions. You will need to upload new captions to the clipped video.</aside>
+            <p><strong>Target properties</strong></p>
+            <ul>
+              <li><strong>Audience Optimization Interests</strong> - Add tags to describe the interests of people who are most likely to enjoy your post</li>
+              <li><strong>Location Restrictions</strong> - Add countries to include or exclude from seeing the post</li>
+            </ul>
+            <p><strong>Monetize properties</strong></p>
+            <ul>
+              <li><strong>Who is your business partner for posts to this destination?</strong> - Add a business partner for branded content posts; As you type, a list of matching businesses will appear</li>
+              <li><strong>Allow business partner to boost posts</strong></li>
+            </ul>
+            <p><strong>Rights properties</strong></p>
+            <aside class="bcls-aside bcls-aside--information">Your Facebook account must have access to the Facebook Rights Manager for the Rights option to appear.</aside>
+            <ul>
+              <li><strong>Detect Matching Content</strong> - Check to enable Facebook rights management</li>
+              <li><strong>Specify Ownership</strong> - Specify copyright ownership on video, audio, or both</li>
+              <li><strong>Country Selection</strong> - Select <strong>Worldwide</strong>, <strong>Include Countries</strong> or <strong>Exclude Countries</strong></li>
+              <li><strong>Apply Match Rule</strong> - Determines the automatic actions to happen when people upload matched videos; Match Rules are managed inside of Facebook</li>
+              <li><strong>Grant Permission</strong> - Authorize certain people or Pages or Instagram accounts to have permission to post videos matching your content</li>
+            </ul> 
+            
+
+
+
+
+            <p><strong>Visibility properties</strong></p>
+            <ul>
+              <li><strong>Public</strong> - Anyone can view the video</li>
+              <li><strong>Unlisted</strong> - Anyone who has the link to the video can view it</li>
+              <li><strong>Private</strong> - Video can only be seen by you and the users you select</li>
+            </ul>
+            <p>Selecting <strong>Notify subscribers when video is posted to YouTube</strong> may send a notification to your subscribers that the video was uploaded</p>
+            <p><strong>License properties</strong></p>
+            <ul>
+              <li><strong>Standard YouTube License</strong></li>
+              <li><strong>Creative Commons - Attribution</strong></li>
             </ul>
             
 
