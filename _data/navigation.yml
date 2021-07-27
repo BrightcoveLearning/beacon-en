@@ -122,12 +122,12 @@
     - name: Beacon Channels
       url: /channels/beacon-channels/index.html
       docs:
-      - name: Creating a Beacon Channel
-        url: /channels/beacon-channels/creating-a-channel.html
-      - name: Creating an EPG
-        url: /channels/beacon-channels/electronic-program-guides.html
-      - name: Streaming VODs to a Channel
-        url: /channels/beacon-channels/streaming-vods-to-a-channel.html
+        - name: Creating a Beacon Channel
+          url: /channels/beacon-channels/creating-a-channel.html
+        - name: Creating an EPG
+          url: /channels/beacon-channels/electronic-program-guides.html
+        - name: Streaming VODs to a Channel
+          url: /channels/beacon-channels/streaming-vods-to-a-channel.html
     - name: Cloud Playout Channels
       url: /channels/cloud-playout/index.html
       docs:
@@ -245,7 +245,7 @@
         - name: How to Search for Videos
           url: /analytics/how-search-videos-analytics-module.html
         - name: 'FAQ: Analytics Module'
-          url: /analytics/faq-analytics-module.html 
+          url: /analytics/faq-analytics-module.html
     - name: Analytics Reports
       url: /analytics/index.html
       docs:
@@ -483,6 +483,8 @@
       url: /general/supported-video-and-audio-formats-codecs-and-containers.html
     - name: When to Use Beacon Studio and/or Beacon Classic
       url: /general/beacon-studio-or-classic.html
+    - name: Using Multiple Languages
+      url: /general/using-multiple-languages.html
 - section:
   name: Training
   url: /training/index.html
