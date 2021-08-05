@@ -471,14 +471,16 @@
   name: General Information
   url: /general/index.html
   docs:
-    - name: Glossary
-      url: /general/glossary.html
+    - name: DRM Output Protection Settings
+      url: /general/drm-output-protection-settings.html
     - name: Known Issues
       url: /general/known-issues.html
     - name: Overview of Context Aware Encoding
       url: /general/overview-context-aware-encoding.html
     - name: Overview of Dynamic Delivery
       url: /general/overview-dynamic-delivery.html
+    - name: Protecting Videos with HLS Encryption
+      url: /general/protecting-videos-hls-encryption.html
     - name: Supported Video and Audio Formats
       url: /general/supported-video-and-audio-formats-codecs-and-containers.html
     - name: When to Use Beacon Studio and/or Beacon Classic
