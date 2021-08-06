@@ -1,0 +1,70 @@
+---
+title: Protecting Videos with HLS Encryption
+description: This topic describes how to protect your videos playing on desktop and mobile devices with the Video Cloud HLS encryption feature. Video Cloud HLS encryption must be enabled for your account if you wish to use it - contact your Account Manager for more information. Note that once enabled for the account all videos ingested after that will use HLSe.
+parent: General Information
+---
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="what">What is Video Cloud HLS encryption?</h2>
+    <p>When using HTTP Live Streaming Encryption (HLSe) the content is encrypted with the AES 128 standard, and the manifest contains a link to a key that allows the decryption of the HLS content. This alone is not providing complete security, since once the key is obtained, the content can be easily decrypted and redistributed. There are few mechanisms in place that allow protection of the key, such as serving it over HTTPs, or different token authentication models. HLSe does secure the content against most standard users trying to get the content, but is not considered DRM level content protection. Video Cloud supports HLS encryption in Brightcove players. For more information on Brightcove Player support, see <a href="https://player.support.brightcove.com/references/brightcove-player-system-requirements.html">Brightcove Player System Requirements</a>. Also check out the <a href="#limitations">limitations</a> section below.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="how">How does Video Cloud Enterprise protect your content using HLS encryption?</h2>
+    <p>Apple HTTP Live Streaming (HLS), independent of encryption, is a video serving protocol that uses different bit rates. Video Cloud supports creating multiple renditions that switch intelligently between renditions as network bandwidth changes and as service fluctuates. HLS essentially breaks a video into a sequence of small file downloads, each loading one short chunk, or segment, of the video at a time over HTTP.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Apple requires HLS for long-form videos, that is, videos greater than 5 Mb, or longer than 10 minutes. In order to play videos longer than approximately 10 minutes on iOS devices, regardless of encryption, you must create HLS renditions.</aside>
+    <p>Video Cloud supports encryption of video renditions for Apple HLS so that publishers can protect long form video content delivered to devices via HLS. Video Cloud HLS encryption protects content by adding AES to our standard HLS solution. When implementing encryption for Apple HLS, Video Cloud both encrypts each of the small file segments of the video and securely delivers the files that handle rendition selection.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="features">Supported Features</h2>
+    <p>In addition to utilizing the AES specification for encrypting electronic data, Video Cloud HLS encryption further protects content in the following manner:</p>
+    <ul>
+      <li>Each segment file is encrypted</li>
+      <li>The HLS manifest (.m3u8 file) delivered by Video Cloud contains links to the keys for each segment</li>
+      <li>By default, keys are rotated every 10 minutes; you can specify the <code translate="No">encryption_key_rotation_period</code> in custom ingest profiles.</li>
+      <li>To add encryption to your HLS renditions for accounts enabled for <a href="/general/overview-dynamic-delivery.html">Dynamic Delivery</a>, simply submit a request to Brightcove Support to enable HLSe for the account. (For accounts already enabled for HLSe, if your account is enabled for Dynamic Delivery, encryption will continue to be applied to all HLS renditions.)</li>
+      <li>To add encryption to your HLS renditions in accounts using the legacy ingest system (non-Dynamic Delivery), add the <code translate="No">encryption_method</code> and <code translate="No">encryption_key_rotation_period</code> fields to each of the HLS renditions defined in your ingestion profile:
+        <pre class="line-numbers">
+<code class="language-json" translate="No">{
+  "media_type": "video",
+  "reference_id": "ts0",
+  "format": "ts",
+  "type": "segmented",
+  "audio_codec": "aac",
+  "audio_bitrate": 64,
+  "video_codec": "h264",
+  <span class="bcls-highlight">"encryption_method": "aes-128",</span>
+  <span class="bcls-highlight">"encryption_key_rotation_period": 10,</span>
+  "video_bitrate": 450,
+  "decoder_bitrate_cap": 771,
+  "decoder_buffer_size": 1028,
+  "keyframe_rate": 0.5,
+  "max_frame_rate": 30,
+  "width": 480,
+  "height": 270,
+  "h264_profile": "baseline"
+</code></pre>
+      </li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Note: Video encryption is not by itself a strong form of content protection. If content security is critical for your organization, you should employ <a href="https://player.support.brightcove.com/content-protection/overview-content-protection.html">DRM protection</a>. Contact your Account Manager for details about bundling HLS encryption and DRM protection so that you can secure your content wherever it plays.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="after">What happens after HLS encryption implementation</h2>
+    <p>Video Cloud HLS encryption delivers secure multiple bitrate encoding wherein each rendition and each segment of each rendition is protected in multiple ways. HLS encrypted videos are available for play on desktop and mobile devices when the first rendition of a video is uploaded and encrypted. Once implemented, all videos uploaded thereafter will be protected using HLS encryption. Video Cloud HLS encryption adds no detectable change to playback of videos on devices. Video Cloud HLS encryption only affects the HLS renditions of a video file, it has no impact on MP4 renditions.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="limitations">Limitations</h2>
+    <ul>
+      <li>HLS encryption applies to all non-DRM HLS renditions in your account. If you have promotional or other videos you want to deliver without encryption, you can upload them to a different Video Cloud account without HLS encryption enabled.</li>
+      <li>For videos ingested using the legacy ingest system, Video Cloud does not support encrypting HLS renditions uploaded to Video Cloud before the implementation of HLS encryption. Previously uploaded HLS content remains unencrypted. You must <a href="/media/retranscoding-videos.html">retranscode videos</a> uploaded before HLS encryption to protect them. This does <strong>not</strong> apply to videos ingested using the Dynamic Delivery system.</li>
+      <li>Video Cloud does not show an indicator to identify HLS encrypted videos in the Media module.</li>
+      <li>If a user plays an HLS encrypted video on an Apple device and then attempts to replay it after the TTL has expired, playback will fail to start, and will not provide an alert message to the user.</li>
+      <li>When using the Brightcove Player, HLS playback is not supported on IE8 or IE9. These devices will fall back to MP4.</li>
+      <li>HLSe is supported in the <a href="https://sdks.support.brightcove.com/getting-started/brightcove-native-player-sdks.html">Android SDK</a> and will be supported on older versions with the VisualOn component. HLSe should also work on 4.x with the HTML5 player. For more information on the support of HLSe on Android devices, see <a href="http://developer.android.com/guide/appendix/media-formats.html">Android Supported Media Formats</a>.</li>
+      <li>For HTML5 players, HLSe support is completely determined by the underlying OS/device.</li>
+      <li>If you elect to terminate Video Cloud HLS encryption, encryption will be removed from all videos in the account - no re-transcoding is required.</li>
+      <li>Currently, HLSe content is not supported with offline playback using the Brightcove Native SDK for Android, iOS or tvOS.</li>
+    </ul>
+  </section>
+</article>
