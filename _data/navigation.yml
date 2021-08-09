@@ -19,6 +19,19 @@
   name: Learn the Basics
   url: '/basics/index.html'
   docs:
+    - name: Layout
+      url: /basics/layout/index.html
+      docs:
+        - name: Archiving Pages
+          url: /basics/layout/archiving-pages.html
+        - name: Configuring a Page Schedule
+          url: /basics/layout/availability-date.html
+        - name: Configuring Device Availability
+          url: /basics/layout/availability-device.html
+        - name: Configuring Location Availability
+          url: /basics/layout/availability-location.html
+        - name: Creating a Page
+          url: /basics/layout/creating-page.html
     - name: Media
       url: /basics/media/index.html
       docs:
