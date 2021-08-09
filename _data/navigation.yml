@@ -61,6 +61,11 @@
           url: /basics/media/uploading-video-images.html
         - name: Uploading Videos
           url: /basics/media/uploading-videos.html
+    - name: Administration
+      url: /basics/admin/index.html
+      docs:
+        - name: Add Users to an Account
+          url: /basics/admin/adding-user-account.html
 - section:
   name: Managing Media
   url: /media/index.html
