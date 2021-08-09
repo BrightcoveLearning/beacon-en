@@ -16,6 +16,57 @@
     - name: Getting Started with Beacon Studio
       url: /getting-started/getting-started-beacon-studio.html
 - section:
+  name: Learn the Basics
+  url: '/basics/index.html'
+  docs:
+    - name: Layout
+      url: /basics/layout/index.html
+      docs:
+        - name: Archiving Pages
+          url: /basics/layout/archiving-pages.html
+        - name: Configuring a Page Schedule
+          url: /basics/layout/availability-date.html
+        - name: Configuring Device Availability
+          url: /basics/layout/availability-device.html
+        - name: Configuring Location Availability
+          url: /basics/layout/availability-location.html
+        - name: Creating a Page
+          url: /basics/layout/creating-page.html
+    - name: Media
+      url: /basics/media/index.html
+      docs:
+        - name: Activating Videos
+          url: /basics/media/activating-and-deactivating-video.html
+        - name: Adding an Episode to a Season
+          url: /basics/media/adding-episode-season.html
+        - name: Capturing Video Poster Images
+          url: /basics/media/capturing-video-poster-thumbnail-images.html
+        - name: Creating a Manual Playlist
+          url: /basics/media/creating-manual-playlist.html
+        - name: Creating a Season
+          url: /basics/media/creating-season.html
+        - name: Creating a Series
+          url: /basics/media/creating-series.html
+        - name: Creating a Smart Playlist
+          url: /basics/media/creating-smart-playlist.html
+        - name: Editing Basic Video Details
+          url: /basics/media/editing-basic-video-details.html
+        - name: Editing Multiple Videos
+          url: /basics/media/editing-video-details-multiple-videos.html
+        - name: Using Folders
+          url: /basics/media/organizing-videos-using-folders.html
+        - name: Publishing Videos
+          url: /basics/media/publishing-single-video-web.html
+        - name: Uploading Video Images
+          url: /basics/media/uploading-video-images.html
+        - name: Uploading Videos
+          url: /basics/media/uploading-videos.html
+    - name: Administration
+      url: /basics/admin/index.html
+      docs:
+        - name: Add Users to an Account
+          url: /basics/admin/adding-user-account.html
+- section:
   name: Managing Media
   url: /media/index.html
   docs:
