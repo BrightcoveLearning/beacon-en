@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="This topic will show you how you can add a Brightcove Player to a Facebook fan page.">
+  <meta name="description" content="In this topic you will learn how to create a Brightcove Player that supports playlists.">
   
-  <title>Adding a Brightcove Player to a Facebook Fan Page</title>
+  <title>Video Cloud Basics: Creating a Playlist Player</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -60,11 +60,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
       
       
-      <li class="breadcrumb-item"><a href="/publish-videos/">Publish videos</a></li>
+      <li class="breadcrumb-item"><a href="/basics/">Basics</a></li>
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Adding a Brightcove Player to a Facebook Fan Page</li>
+      <li class="breadcrumb-item"><a href="/basics/publish-videos/">Publish videos</a></li>
+      
+      
+      
+      <li class="breadcrumb-item active" aria-current="page">Video Cloud Basics: Creating a Playlist Player</li>
       
       
     </nav>
@@ -1296,62 +1300,44 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Adding a Brightcove Player to a Facebook Fan Page</h1>
-  <summary>This topic will show you how you can add a Brightcove Player to a Facebook fan page.</summary>
+  <h1>Video Cloud Basics: Creating a Playlist Player</h1>
+  <summary>In this topic you will learn how to create a Brightcove Player that supports playlists.</summary>
   <section class="bcls-section">
-    <p>The example below shows a player embedded on a Facebook fan page.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node8303-FB-player-example.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="install">Installing the Static HTML application</h2>
-    <p>The process outlined below uses an application you add to your Facebook account. This application will create a tab on your Facebook page where you can then paste in static HTML that is displayed on that tab. Note that there are many other applications available that provide this functionality. The steps below assume you have a Facebook Fan Page. If not, you can go <a target="_blank" href="https://www.facebook.com/pages">here</a> to create one.</p>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="6038933457001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <h3>Steps</h3>
     <ol class="bcls-tasklist-restart">
-      <li>Add the "Static HTML: iFrame tabs" application as a tab on your Fan Page. To add this application, go to <a href="https://apps.facebook.com/static_html_plus">https://apps.facebook.com/static_html_plus</a>. Follow the instructions to install the app to your account.</li>
-      <li>After you install the application, you should see a <strong>Welcome</strong> tab on your fan page. Click the <strong>Welcome</strong> tab.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node8303-welcome-tab.png" /></figure>
+      <li>Open the <strong>Players</strong> module.</li>
+      <li>Click <strong>New Player</strong>.</li>
+      <li>Enter a <strong>Name</strong> and <strong>Short Description</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/node18817-new-player.png" /></figure>
       </li>
-      <li>Click <strong>Set up tab</strong>. This will open up an editor where you can paste in HTML.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node8303-html-editor.png" /></figure>
+      <li>Click <strong>Save</strong>.</li>
+      <li>Click on the player name to open the player properties.</li>
+      <li>Select a <strong>Player Type</strong> of <strong>Playlist</strong> and click <strong>Save</strong>.</li>
+      <li>Click <strong>Styling</strong> in the left navigation menu.</li>
+      <li>Select a <strong>Playlist Type</strong>:
+        <ul>
+          <li><strong>Playlist (Vertical)</strong> - Playlist displays on the right side of the player.</li>
+          <li><strong>Playlist (Horizontal)</strong> - Playlist displays on the bottom of the player.</li>
+          <li><strong>Playlist (Hidden)</strong> - No playlist is displayed.</li>
+        </ul>
       </li>
-      <li>In Beacon Studio, copy the Standard (iframe) embed code for the player you want to add to your Facebook Fan Page.</li>
-      <li>Paste in the embed code into the Static HTML editor.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node8303-pub-code.png" /></figure>
+      <li>When a <strong>Player Type</strong> of <strong>Playlist</strong> is selected, additional <strong>Playback</strong> properties can be configured. Click <strong>Playback</strong> in the left navigation menu:
+        <ul>
+          <li><strong>Randomize play order</strong> - Videos will be played in a random order</li>
+          <li><strong>Play video when selected</strong> - Clicking a thumbnail in the playlist menu will cause the video to play when loaded, even if the previous video in the player was paused</li>
+          <li><strong>Continuous play mode</strong> - Videos will advance automatically and repeat indefinitely</li>
+          <li><strong>Video Countdown</strong> - Only enabled when <strong>Continuous play mode</strong> is checked
+            <ul>
+              <li><strong>Up next card (auto advance)</strong> - An up next card is displayed in the player</li>
+              <li><strong>Up next endscreen (countdown)</strong> - An end screen countdown is displayed in the player</li>
+            </ul>
+          </li>
+        </ul>
       </li>
-      <li>Click <strong>Preview </strong> to verify that your player displays correctly.</li>
-      <li>If the preview was correct, click <strong>Save &amp; Publish</strong> to save your changes.</li>
-      <li>To view the player, open your Facebook page and click the <strong>Welcome</strong> tab.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node8303-player-on-page.png" /></figure>
-      </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="tabname">Changing the Name of the Tab</h2>
-    <p>You can change the name of the <strong>Welcome</strong> tab to something more descriptive by following the steps below.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Log in to your Facebook account.</li>
-      <li>Open your Facebook page where you added the player.</li>
-      <li>Click the <strong>Settings</strong> link at the top of the page.</li>
-      <li>Click <strong>Edit Page</strong> in the left navigation.</li>
-      <li>Locate the <strong>Welcome</strong> tab and click <strong>Settings</strong>.</li>
-      <li>Click <strong>Edit Settings</strong>.</li>
-      <li>A dialog will open that will let you rename the tab. There are also options to remove it and change the icon associated with the tab. Enter a new name for the tab.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node8303-edit-tab-dialog.png" /></figure>
-      </li>
-      <li>Click <strong>Save</strong> and then <strong>OK</strong>.</li>
-      <li>Click <strong>Save</strong>. Note that the Facebook Settings UI will still display a tab name of <strong>Welcome</strong> but the new name will appear when you view the page.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node8303-fb-tabs.png" /></figure>
-      </li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="editcode">Editing the HTML code</h2>
-    <p>If you need to edit the HTML code that is associated with the tab, follow these steps.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Log in to your Facebook account and go to your page.</li>
-      <li>Click on the tab that represents your video page and then click <strong>Edit tab</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node8303-edit-tab.png" /></figure>
-      </li>
-      <li>Click the HTML as appropriate. Click <strong>Save &amp; Publish</strong> when done.</li>
+      <li>Click <strong>Save</strong> to save changes.</li>
+      <li>To publish the changes to the player, click <strong>Publish &amp; Embed</strong> and then <strong>Publish Changes</strong>.</li>
     </ol>
   </section>
 </article>
@@ -1381,7 +1367,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 10 Aug 2021
+  Page last updated on 24 May 2021
 </div>
 
 
