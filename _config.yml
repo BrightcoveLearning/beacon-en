@@ -43,7 +43,7 @@ defaults:
       path: ''
       type: 'pages'
     values:
-      layout: 'staging'
+      layout: 'page'
 # plugins
 plugins:
   - jekyll-last-modified-at
