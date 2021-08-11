@@ -18,6 +18,12 @@ parent: "General Information"
 
   <section class="bcls-section">
     <h2 id="Generated_apps">Generated apps</h2>
+    <h3>General</h3>
+    <ul>
+      <li>Client-Side Ad Insertion (CSAI) is NOT supported.</li>
+      <li>DVR functionality is NOT supported.</li>
+    </ul>
+
     <h3>Stream limitations and rapid switching between videos</h3>
     <ul>
       <li>If a viewer switches quickly between videos it is possible the error shown here may be displayed:
@@ -31,11 +37,75 @@ parent: "General Information"
     <h3>Parental controls</h3>
     <ul>
       <li>All content is displayed to end users (in lists, carousels, etc), but when trying to play the video the parental pin will be requested. </li>
+      <li>Multiple age classifications are NOT supported.</li>
     </ul>
 
     <h3>Mobile web</h3>
     <ul>
-      <li>Mobile web has limited support. On devices with a width under 375px a message is displayed to install the appropriate native Brightcove Beacon app.</li>
+      <li>Mobile web has limited support. On devices with a width under 365px a message is displayed to install the appropriate native Brightcove Beacon app.</li>
     </ul>
   </section>
+
+  <section class="bcls-section">
+    <h2 id="Native_SDKs">Native SDK offline playback</h2>
+    <h3>General</h3>
+    <h4>Advertising</h4>
+    <p>Neither client-side nor server-side advertising is supported with offline playback.</p>
+
+    <h4>HLSe</h4>
+    <p>HLSe content is not supported with offline playback using the Brightcove Native SDK for Android, iOS or tvOS.</p>
+
+    <h4>Low power mode</h4>
+    <p>Low power mode on devices may affect certain features, including downloading. For more information, see the following:</p>
+    <ul>
+      <li><a href="https://developer.android.com/about/versions/pie/power">Power management Android 9 (API level 28)</a></li>
+      <li><a href="https://support.apple.com/en-us/HT205234">Low power mode on your iPhone</a></li>
+      <li><a href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/LowPowerMode.html">React to Low Power Mode on iPhones</a></li>
+    </ul>
+
+    <h4>Shared videos</h4>
+    <p>Shared videos can be downloaded for offline viewing only if the original video can be. The property is inherited from the original video and cannot be changed for shared video only.</p>
+
+    <h4>Audio-only</h4>
+    <p>The Native SDKs support audio-only content with Offline Playback. You control what viewers see, whether it is a poster image or a custom screen.</p>
+    <p>
+      The Native SDK for Android requires a <code translate="No">VideoView</code>, and the Native SDK for iOS requires a <code translate="No">UIView</code>. Because of this, background audio is not supported. This means that audio will not keep playing when a user sends the app to the background.
+    </p>
+
+    <h4>Android: App deletion</h4>
+    <p>When the app is deleted, all downloaded content is removed. This is true as long as the default storage location is not overridden.</p>
+
+    <h4>iOS: AirPlay</h4>
+    <p>As a security feature, you cannot stream an offline HLS video to an AirPlay device for playback. This is confirmed by Apple to be an <code translate="No">AVFoundation</code> limitation.</p>
+    <h3>Native SDK for iOS</h3>
+    <ul>
+      <li>With iOS 12, setting the <code translate="No">kBCOVOfflineVideoManagerDisplayNameKey</code> field value with multibyte characters may cause a download error. This is because multibyte characters are encoded as longer string values, and iOS restricts the string length to 255bytes. This problem has been reported to Apple.</li>
+      <li>With iOS 12, the <code translate="No">didProgress</code> event may stop firing when your app is resumed from background to foreground while downloading. You will notice that the downloading status is no longer updated. This problem has been reported to Apple.</li>
+      <li>When playback is attempted for the same offline video two times in a row, the user may experience unexpected network activity. The <code translate="No">AVPlayer</code> may switch to playing the online version of the video. A bug report has been submitted to Apple. For work-around steps, see the <a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md#playing-the-same-offline-video-twice">Playing the Same Offline Video Twice</a> section of the reference document.</li>
+      <li>If your app is targeting iOS 11.0 - 11.2, we don't recommend concurrent downloads because pause and resume behavior is unreliable with multiple simultaneous downloads. The problem has been fixed with iOS 11.3.</li>
+    </ul>
+    <h3>Native SDK for Android</h3>
+    <ul>
+      <li>To add support for downloading when the device is locked, either by going to sleep or with the power button, add the following permission to your <strong>AndroidManifest.xml</strong> file :
+        <pre><code class="language-XXXX" translate="No">&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;</code></pre>
+      </li>
+      <li>With Android 8.0 and above, it is possible to manage power settings when the app is moved to the background. This can cause the downloading process to stop if the device is disconnected from a power source. In most cases, when the app is brought back to the foreground, the download will continue. It is important to note that power management can be OS and vendor specific. Therefore, the Brightcove Native SDK for Android will not attempt to manage or override settings related to power management.</li>
+      <li>
+        When using Widevine Modular with Android 8.0.0 (and 8.1.0 on some devices), you may notice that a rental license is already expired when you acquire it. This is a known issue with the Widevine Modular CDM, and can not be addressed in either the Brightcove Android SDK or ExoPlayer. Although this issue is not reproducible for most devices using Android 8.1.0, there is no workaround for those devices using Android 8.0.0 or 8.1.0, where it does occur.</li>
+      <li>Observed only with Android 5.x devices: When releasing the Widevine license by calling the <code translate="No">OfflineLicenseManager.releaseLicense </code> method, a <code translate="No">MediaDrmStateException </code> error is thrown.</li>
+      <li>
+        <p>In the <a href="https://github.com/BrightcoveOS/android-player-samples/tree/master/brightcove-exoplayer/OfflinePlaybackSampleApp">OfflinePlaybackSampleApp</a>, there are two Widevine license expiration periods.</p>
+
+        <ul>
+          <li><code translate="No">absoluteExpiration</code> is an expiration date of the license to start playback of downloaded video</li>
+          <li><code translate="No">playDuration</code> is how long the video can be played</li>
+        </ul>
+
+        <p>When <code translate="No">playDuration</code> becomes less than 60 seconds, the Widevine CDM handles the license as expired and throws a <strong>Failed to get key request</strong> error. Playback will not start with this Widevine license exception.</p>
+
+        <p>With the Brightcove Native SDK for Android v6.1.0+, you can try calling <code translate="No">AbstractOfflineCatalog.requestRentalLicense(Video, Date, long, EventListener)</code> or <code translate="No">AbstractOfflineCatalog.requestPurchaseLicense(Video, EventListener)</code> to retrieve a new license. Note: The device must be online to acquire a new license.</p>
+      </li>
+    </ul>
+  </section>
+
 </article>
