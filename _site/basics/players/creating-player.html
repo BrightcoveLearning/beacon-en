@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to publish a playlist to the web.">
+  <meta name="description" content="In this topic you will learn how to create a Brightcove Player using the Players module.">
   
-  <title>Video Cloud Basics: Publishing a Playlist to the Web</title>
+  <title>How To: Create a Player</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,7 +38,7 @@
 
 <header>
   <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
 <!-- GTranslate: https://gtranslate.io/ -->
 <select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
 
@@ -48,31 +48,105 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 /* ]]> */
 </script>
 
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Other Brightcove Docs</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentation Home</option>
+        
+      
+        
+          <option value="">-- VIDEO CLOUD --</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
+        
+      
+        
+          <option value="">-- VIDEO ESSENTIALS --</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+        
+      
+        
+          <option value="">-- VIDEO CLOUD ADD-ONS --</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+        
+      
+    </select>
 
 
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com"><i data-feather="help-circle"></i> Contact Support</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><i data-feather="cloud"></i> System Status</a></span>
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
     <br>
     
   </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
-      
-      
-      <li class="breadcrumb-item"><a href="/basics/">Basics</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/basics/publish-videos/">Publish videos</a></li>
-      
-      
-      
-      <li class="breadcrumb-item active" aria-current="page">Video Cloud Basics: Publishing a Playlist to the Web</li>
-      
-      
-    </nav>
-  </header>
+</header>
+<!-- <img id="back_button" src="/assets/images/feather/arrow-left.svg" alt="Back" style="opacity: .2;cursor: not-allowed;"> -->
+<nav id="breadcrumbs" aria-label="breadcrumb">
+  <ol class="breadcrumb arr-right">
+    
+    <li class="breadcrumb-item"><a href="/index-howto.html">Beacon Help</a></li>
+    
+    
+    
+    <li class="breadcrumb-item"><a href="/basics/players/">Players</a></li>
+    
+    
+    <li class="breadcrumb-item active" aria-current="page">How To: Create a Player</li>
+    
+  </ol>
+</nav>
+<!-- <img id="forward_button" src="/assets/images/feather/chevron-right.svg" alt="Forward" style="opacity: .2;cursor: not-allowed;"> -->
 
 <div class="container">
     <div class="row">
@@ -1300,32 +1374,24 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Video Cloud Basics: Publishing a Playlist to the Web</h1>
-  <summary>In this topic you will learn how to publish a playlist to the web.</summary>
+  <h1>How To: Create a Player</h1>
+  <summary>In this topic you will learn how to create a Brightcove Player using the Players module.</summary>
   <section class="bcls-section">
-    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="6039051214001">&nbsp;</div>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="6037729683001">&nbsp;</div>
     <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
-    <h3>Prerequisites</h3>
-    <ul>
-      <li>You have <a href="/basics/video-cloud-basics-uploading-videos.html">uploaded videos</a> to your Video Cloud account</li>
-      <li>You have created a <a href="/basics/video-cloud-basics-creating-manual-playlist.html">Manual</a> or <a href="/basics/video-cloud-basics-creating-smart-playlist.html">Smart</a> playlist</li>
-    </ul>
     <h3>Steps</h3>
     <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Media</strong> module.</li>
-      <li>Select a playlist to publish:
-        <ul>
-          <li>If the playlist appears in the side navigation, click it and then click <strong>Publish Playlist</strong></li>
-          <li>Click <strong>All Playlists</strong> in the left navigation menu, select a playlist and then click <strong>Publish &amp; Embed &gt; Publish to Web</strong></li>
-        </ul>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="icon color" src="/assets/images/basics/publish-videos/node18819-publish-playlist.png" /></figure>
+      <li>In Video Cloud Studio, click <strong>Players</strong> to open the <strong>Players</strong> module.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/players/node18807-select-players.png" /></figure>
       </li>
-      <li>In the <strong>Select Player</strong> dropdown list, select a player to use.</li>
-      <li>Click the <strong>URL</strong> below the preview player to open it in a new browser tab. Confirm that the playlist appears and that the videos can be played.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/publish-videos/node18819-playlist-preview.png" /></figure>
+      <li>Click <strong>New Player</strong>.</li>
+      <li>Enter a <strong>Name</strong> and <strong>Short Description</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/players/node18807-name-desc.png" /></figure>
       </li>
-      <li>Copy the embed code and paste it into your webpage.</li>
+      <li>Click <strong>Save</strong>.</li>
     </ol>
+    <p>To view the player properties page, click on a player name.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/basics/players/node18807-player-props.png" /></figure>
   </section>
 </article>
 
@@ -1354,7 +1420,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 10 Aug 2021
+  Page last updated on 11 Aug 2021
 </div>
 
 
