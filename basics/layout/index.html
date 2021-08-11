@@ -10,19 +10,11 @@ grandparent: Learn the Basics
   <section>
     <h2 id="Topics_in_this_section">Topics</h2>
     <ul>
-      {% for item in site.data.navigation %}
-      {% if item.name == page.title %}
-      {% for entry in item.docs %}
-      <li><a href="{{ entry.url }}">{{ entry.name }}</a> {% if entry.docs %}
-        <ul>
-          {% for subentry in entry.docs %}
-          <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>
-          {% endfor %}
-        </ul>
-        {% endif %} </li>
-      {% endfor %}
-      {% endif %}
-      {% endfor %}
+      <li><a href="archiving-pages.html">Archiving Pages</a></li>
+      <li><a href="availability-date.html">Configuring the Page Schedule</a></li>
+      <li><a href="availability-device.html">Configuring Device Availability</a></li>
+      <li><a href="availability-location.html">Configuring Location Availability</a></li>
+      <li><a href="creating-page.html">Creating a Page</a></li>
     </ul>
   </section>
 </article>
