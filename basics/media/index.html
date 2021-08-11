@@ -6,25 +6,23 @@ grandparent: Learn the Basics
 <article class="bcls-article">
   <h1>How To: Manage Media</h1>
   <summary>Learn the basic skills needed to manage the videos, series and seasons in your account.</summary>
-      <section class="bcls-section">
+  <section class="bcls-section">
     <h2 id="Topics_in_this_section">Topics</h2>
-      <section class="card-wrapper">
-    {% for item in site.data.navigation %}
-    {% if item.name == page.title %}
-    {% for subsection in item.docs %}
-    <section class="bcls-card-small" onclick="window.location.href='{{subsection.url}}'">
-      <div class="card-content">
-        <h2>{{ subsection.name }}</h2>
-        <ul  class="bcls-topic-list">
-          {% for doc in subsection.docs %}
-          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
-    {% endfor %}
-    {% endif %}
-    {% endfor %}
-  </section>
+    <section class="card-wrapper"> {% for item in site.data.navigation %}
+      {% if item.name == page.title %}
+      {% for subsection in item.docs %}
+      <section class="bcls-card-small" onclick="window.location.href='{{subsection.url}}'">
+        <div class="card-content">
+          <h2>{{ subsection.name }}</h2>
+          <ul  class="bcls-topic-list">
+            {% for doc in subsection.docs %}
+            <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+      {% endfor %}
+      {% endif %}
+      {% endfor %} </section>
   </section>
 </article>
