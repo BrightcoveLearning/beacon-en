@@ -1,6 +1,6 @@
 ---
 title: "How To: Manage Players"
-description: "Learn the basic skills needed to create players and manage players using Beacon Studio."
+description: "Learn the basic skills needed to create and manage players using Beacon Studio."
 parent: Players
 grandparent: Learn the Basics
 layout: howto
@@ -8,20 +8,25 @@ layout: howto
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
-
-  <section class="bcls-section">
-    <ul>
-      <li><a href="/basics/layout/archiving-pages.html">Archive a Page</a></li>
-      <li><a href="/basics/layout/availability-date.html">Configure the Page Schedule</a></li>
-      <li><a href="/basics/layout/availability-device.html">Configure Device Availability</a></li>
-      <li><a href="/basics/layout/availability-location.html">Configure Location Availability</a></li>
-      <li><a href="/basics/layout/creating-page.html">Create a Page</a></li>
-    </ul>
+<section class="bcls-section">
+    <h2 id="Topics_in_this_section">Topics</h2>
+      <section class="card-wrapper">
+    {% for item in site.data.navigation %}
+    {% if item.name == page.title %}
+    {% for subsection in item.docs %}
+    <section class="bcls-card-small" onclick="window.location.href='{{subsection.url}}'">
+      <div class="card-content">
+        <h2>{{ subsection.name }}</h2>
+        <ul  class="bcls-topic-list">
+          {% for doc in subsection.docs %}
+          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
   </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/index.html">Managing Pages</a></li>
-    </ul>
   </section>
 </article>
