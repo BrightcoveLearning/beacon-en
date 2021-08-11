@@ -1,0 +1,226 @@
+---
+title: Creating a Playlist
+description: 'In this topic, you will learn how to create a playlist using the Playlists tab
+in Brightcove Beacon.'
+parent: Using Brightcove Beacon
+---
+
+<style>
+  .imageWithText {
+    width: auto;
+    vertical-align: text-bottom;
+    height: 1.5em;
+  }
+</style>
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <aside class="bcls-aside bcls-aside--information">NOTE: In this topic, all of the steps are performed in Beacon Classic.</aside>
+
+  <section class="bcls-section">
+    <h2 id="Overview">Overview</h2>
+    <p>
+      Playlists are a collection of videos and other entities that are created one of two ways for Brightcove Beacon: </p>
+    <ol>
+      <li>
+        Imported into Brightcove Beacon from your Video Cloud library. In this case, the items in the playlist will ONLY be videos.
+      </li>
+      <li>
+        Created in Brightcove Beacon using the <strong>Playlists</strong> tab. When creating the playlist in Brightcove Beacon, you can use the videos imported from Video Cloud (movies / episodes), and in addition you can also add series, seasons, channels and live events. This method is the focus of this document.
+      </li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--warning">Note the following:
+      <ul>
+        <li>Brightcove recommends playlists that contain only videos should be created in Video Cloud.</li>
+        <li>Not all the functionality shown in the <strong>Playlists</strong> tab is usable at this time. It is made clear in this document what form items you should complete.</li>
+      </ul>
+    </aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Basic_Data">Basic Data section</h2>
+    <p>To create a playlist in Brightcove Beacon, follow these steps:</p>
+    <ol class="bcls-tasklist">
+      <li>Login to Brightcove Beacon.</li>
+      <li>In the top navigation, select <strong>Playlists</strong>.</li>
+      <li>
+        <p>Click the <strong>Add new playlist</strong> button.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/media/creating-beacon-playlists/playlist-button.png" alt="Playlist button" />
+          <figcaption class="bcls-caption--image">Playlist button</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          From the <strong>Basic Data</strong> tab, you will define the name and display type of playlist, then add content. Note that most of the functionality in this section is not usable at this time. Of course, the steps below will only address the usable items.
+        </p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/media/creating-beacon-playlists/not-usable-basic-data.png" alt="Basic Data" />
+          <figcaption class="bcls-caption--image">Basic Data</figcaption>
+        </figure>
+      </li>
+      <li>
+        In the <strong>Name</strong> field, add an internal system name for your playlist. This is also the name used for analytics. Note that you will add the viewable title for the playlist in a later step.
+        <aside class="bcls-aside bcls-aside--tip"> It is a recommended best practice to somehow designate the playlists created in Brightcove Beacon vs. Video Cloud. For instance, simply place an asterisk (<strong>*</strong>) in front of playlist name when the playlist is created in Brightcove Beacon. Of course, it does not have to be an asterisk, but choose some notation so that when it comes time to update a playlist you know to go to Brightcove Beacon <strong>Playlists</strong> tab or Video Cloud Studio to make alterations.
+        </aside>
+      </li>
+      <li>
+        Select a layout from <strong>View All Playlist Layout</strong>. This is the layout used when viewers click the <strong>View All</strong> button in the apps. As a best practice choose a grid of some kind.
+      </li>
+      <li>
+        To begin the process of adding content to your playlist, click the <strong>Assets</strong> tab. You see you have six asset types to choose from.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/media/creating-beacon-playlists/asset-types.png" alt="Basic Data" />
+          <figcaption class="bcls-caption--image">Asset Types</figcaption>
+        </figure>
+        <aside class="bcls-aside bcls-aside--information"> You are now at the point where you see playlist options, those being <strong>Movies</strong>, <strong>Series</strong>, <strong>Seasons</strong>, <strong>Events</strong> and <strong>Channels</strong>, that you cannot choose in Video Cloud Studio. These types are NOT accessible in Video Cloud Studio, so you must create the playlist in Brightcove Beacon.
+        </aside>
+      </li>
+      <li>
+        To select the desired asset, click first on the asset type, then click the
+        <img class="imageWithText" src="/assets/images/media/creating-beacon-playlists/plus-action.png" alt="plus button" />
+        next to the actual asset.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Textual_Data">Textual Data</h2>
+    <p>
+      The <strong>Textual Data</strong> section allows you to add displayable text for your playlist.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>Select the <strong>Textual Data</strong> tab.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/media/creating-beacon-playlists/textual-data.png" alt="Textual Data" />
+          <figcaption class="bcls-caption--image">Textual Data</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>
+          Add values for the following fields: </p>
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Title</td>
+              <td>Yes</td>
+              <td>The displayed title for your playlist.</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>Not applicable</td>
+              <td>This field is not currently used.</td>
+            </tr>
+            <tr>
+              <td>Subtitle</td>
+              <td>Not applicable</td>
+              <td>This field is not currently used.</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Non_Textual_Data">Non-Textual Data</h2>
+    <p>
+      The <strong>Non-Textual Data</strong> tab is not functional at this time.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Tags">Tags</h2>
+    <p>The <strong>Tags</strong> tab is not functional at this time.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Rights_and_Scheduling">Rights & Scheduling</h2>
+    <p>
+      The <strong>Rights & Scheduling</strong> section is where you set the publish status and availability.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>Select the <strong>Rights & Scheduling</strong> tab.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/media/creating-beacon-playlists/rights-and-scheduling.png" alt="Rights & Scheduling" />
+          <figcaption class="bcls-caption--image"> Rights & Scheduling
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        Be sure the <strong>Status</strong> is set to <strong>Published</strong> for your playlists.
+      </li>
+      <li>
+        For the <strong>Availability Details</strong>, use the following as a guide to complete the information: <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Rights Type</td>
+              <td>Yes</td>
+              <td>Select <strong>Free</strong>.</td>
+            </tr>
+            <tr>
+              <td>Start Time</td>
+              <td>Yes</td>
+              <td>Schedule a starting time for your playlist.</td>
+            </tr>
+            <tr>
+              <td>End Time</td>
+              <td>Yes</td>
+              <td>Schedule an end time for your playlist.</td>
+            </tr>
+            <tr>
+              <td>Max Streams</td>
+              <td>N/A</td>
+              <td>Not functional at this time.</td>
+            </tr>
+            <tr>
+              <td>Devices to publish</td>
+              <td>Yes</td>
+              <td>
+                Add the devices you wish to publish to. Select the <strong>Select/ Unselect All Devices</strong> to see a list of available devices.
+              </td>
+            </tr>
+            <tr>
+              <td>Permitted locations</td>
+              <td>Yes</td>
+              <td>
+                <p>Select the locations where you want to stream your content, if no restrictions enter <em>World</em>.</p>
+                <aside class="bcls-aside bcls-aside--information">
+                  <p>If you don't specify at least 1 permitted location, then you may see this message from your app:</p>
+                  <figure class="bcls-figure">
+                    <img class="bcls-image" src="/assets/images/media/creating-beacon-playlists/no-content.jpg" alt="No content" />
+                  </figure>
+                </aside>
+              </td>
+            </tr>
+            <tr>
+              <td>Denied locations</td>
+              <td>No</td>
+              <td>
+                Select the locations where you DO NOT want to stream your content.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <aside class="bcls-aside bcls-aside--tip"> To add or edit geographic locations, navigate to <strong>Settings</strong> and then <strong>Locations</strong>.
+        </aside>
+      </li>
+      <li>
+        Be sure to click the <strong>Create New Playlist</strong> button to save your work.
+      </li>
+    </ol>
+  </section>
+</article>
