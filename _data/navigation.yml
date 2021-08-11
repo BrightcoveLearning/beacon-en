@@ -57,12 +57,23 @@
           url: /basics/media/editing-video-details-multiple-videos.html
         - name: Using Folders
           url: /basics/media/organizing-videos-using-folders.html
+        - name: Publishing Playlists
+          url: /basics/media/publishing-playlist-web.html
         - name: Publishing Videos
           url: /basics/media/publishing-single-video-web.html
         - name: Uploading Video Images
           url: /basics/media/uploading-video-images.html
         - name: Uploading Videos
           url: /basics/media/uploading-videos.html
+    - name: Players
+      url: /basics/players/index.html
+      docs:
+        - name: Create a Player
+          url: /basics/players/creating-player.html
+        - name: Creating a Playlist Player
+          url: /basics/players/creating-playlist-player.html
+        - name: Styling Players
+          url: /basics/players/styling-player.html
     - name: Administration
       url: /basics/admin/index.html
       docs:
