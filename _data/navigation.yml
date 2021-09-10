@@ -330,6 +330,8 @@
     - name: General Information
       url: /analytics/index.html
       docs:
+        - name: Analytics Overview
+          url: /analytics/analytics-overview.html
         - name: Beacon Analytics Business Metrics
           url: /analytics/analytics-business-metrics.html
         - name: Calculating Video Engagement Score
