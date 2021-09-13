@@ -267,34 +267,40 @@
   name: Monetizing Content
   url: /monetization/index.html
   docs:
-    - name: Beacon Apps Ad Targeting
-      url: /monetization/beacon-apps-ad-targeting.html
-    - name: Creating an Advertisement
-      url: /monetization/advertisement.html
-    - name: Configuring Server-Side Ad Settings
-      url: /monetization/configuring-server-side-ad-settings.html
-    - name: Creating a Stripe Account
-      url: /monetization/creating-stripe-account.html
-    - name: Creating an SVOD Plan
-      url: /monetization/creating-svod-plan.html
-    - name: Creating Promo Coupons
-      url: /monetization/promo-codes.html
-    - name: Custom Fields for Monetization
-      url: /monetization/vc-custom-fields.html
-    - name: Implementing AuthVOD
-      url: /monetization/implementing-authvod.html
-    - name: Implementing Live SSAI
-      url: /monetization/live-ssai.html
-    - name: Implementing VOD SSAI
-      url: /monetization/vod-ssai.html
-    - name: Receiving In-App Purchase Notifications
-      url: /monetization/receive-iap-notifications.html
-    - name: Resources for Monetization
-      url: /monetization/resources.html
-    - name: Understanding Monetization Options
-      url: /monetization/monetization-options.html
-    - name: Using an SVOD Plan
-      url: /monetization/using-svod-plan.html
+    - name: General
+      url: '/monetization/general/index.html'
+      docs:
+        - name: Creating a Stripe Account
+          url: /monetization/general/creating-stripe-account.html
+        - name: Creating an SVOD Plan
+          url: /monetization/general/creating-svod-plan.html
+        - name: Creating Promo Coupons
+          url: /monetization/general/promo-codes.html
+        - name: Custom Fields for Monetization
+          url: /monetization/general/vc-custom-fields.html
+        - name: Implementing AuthVOD
+          url: /monetization/general/implementing-authvod.html
+        - name: Receiving In-App Purchase Notifications
+          url: /monetization/general/receive-iap-notifications.html
+        - name: Resources for Monetization
+          url: /monetization/general/resources.html
+        - name: Understanding Monetization Options
+          url: /monetization/general/monetization-options.html
+        - name: Using an SVOD Plan
+          url: /monetization/general/using-svod-plan.html
+    - name: SSAI
+      url: '/monetization/ssai/index.html'
+      docs:
+        - name: 'Creating an Advertisement'
+          url: '/monetization/ssai/advertisement.html'
+        - name: 'Configuring Server-Side Ad Settings'
+          url: '/monetization/ssai/configuring-server-side-ad-settings.html'
+        - name: 'Implementing Live SSAI'
+          url: '/monetization/ssai/live-ssai.html'
+        - name: Implementing VOD SSAI
+          url: '/monetization/ssai/vod-ssai.html'
+        - name: 'Beacon Apps Ad Targeting'
+          url: '/monetization/ssai/beacon-apps-ad-targeting.html'
 - section:
   name: 'Beacon Web Store'
   url: '/beacon-web-store/index.html'

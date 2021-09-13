@@ -1,31 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Beacon Apps Ad targeting allows Beacon customers to send important device-level and user-specific information from the customer’s Beacon apps to their ad server or ad provider." />
-
-  <title>Beacon Apps Ad Targeting</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-<link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic, you will learn the requirements for implementing an endpoint to receive in-app purchase notifications.">
+  
+  <title>Receiving In-App Purchase Notifications</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   
-  <script src="/assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
-  <link rel="stylesheet" href="/assets/css/local.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
+
 <body class="body">
+
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
@@ -54,7 +64,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Beacon Apps Ad Targeting</li>
+      <li class="breadcrumb-item"><a href="/monetization/general/">General</a></li>
+      
+      
+      
+      <li class="breadcrumb-item active" aria-current="page">Receiving In-App Purchase Notifications</li>
       
       
     </nav>
@@ -682,59 +696,77 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               <ul class="sidenav-submenu" style="display:none;">
                 
                   
-                    <li><a href="/monetization/beacon-apps-ad-targeting.html">Beacon Apps Ad Targeting</a></li>
+                    <li class="submenu-header">
+                      <a href="/monetization/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;General</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/monetization/general/creating-stripe-account.html">Creating a Stripe Account</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/creating-svod-plan.html">Creating an SVOD Plan</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/promo-codes.html">Creating Promo Coupons</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/vc-custom-fields.html">Custom Fields for Monetization</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/implementing-authvod.html">Implementing AuthVOD</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/receive-iap-notifications.html">Receiving In-App Purchase Notifications</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/resources.html">Resources for Monetization</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/monetization-options.html">Understanding Monetization Options</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/using-svod-plan.html">Using an SVOD Plan</a></li>
+                          
+                        
+                      </ul>
+                    </li>
                   
                 
                   
-                    <li><a href="/monetization/advertisement.html">Creating an Advertisement</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/creating-stripe-account.html">Creating a Stripe Account</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/creating-svod-plan.html">Creating an SVOD Plan</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/promo-codes.html">Creating Promo Coupons</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/vc-custom-fields.html">Custom Fields for Monetization</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/implementing-authvod.html">Implementing AuthVOD</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/live-ssai.html">Implementing Live SSAI</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/vod-ssai.html">Implementing VOD SSAI</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/receive-iap-notifications.html">Receiving In-App Purchase Notifications</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/resources.html">Resources for Monetization</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/monetization-options.html">Understanding Monetization Options</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/using-svod-plan.html">Using an SVOD Plan</a></li>
+                    <li class="submenu-header">
+                      <a href="/monetization/ssai/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;SSAI</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/monetization/ssai/advertisement.html">Creating an Advertisement</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/ssai/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/ssai/live-ssai.html">Implementing Live SSAI</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/ssai/vod-ssai.html">Implementing VOD SSAI</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/ssai/beacon-apps-ad-targeting.html">Beacon Apps Ad Targeting</a></li>
+                          
+                        
+                      </ul>
+                    </li>
                   
                 
               </ul>
@@ -1342,310 +1374,182 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Beacon Apps Ad Targeting</h1>
+<h1>Receiving In-App Purchase Notifications</h1>
 <article class="bcls-article">
-  <summary>Beacon Apps Ad targeting allows Beacon customers to send important device-level and user-specific information from the customer’s Beacon apps to their ad server or ad provider.</summary>
+  <summary>In this topic, you will learn the requirements for implementing an endpoint to receive in-app purchase notifications.</summary>
+
   <section class="bcls-section">
-    <h2 id="introduction">Introduction</h2>
-    <p>Client-side information is passed from the apps to SSAI, and then SSAI includes this data in the customer’s VAST tag, which then allows customers to target ads based on this data. The purpose of this is to increase the value of customers’ ad inventory, therefore increasing ad revenue for their business.</p>
-    <p>Within Studio and Beacon CMS, you can set up how this data is passed to their ad server or ad provider.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="key_benefits">Benefits</h2>
-    <h3>Improved ad targeting</h3>
+    <h2 id="Overview">Overview</h2>
+    <p>Consider when an in-app purchase is done through a Brightcove Beacon app. The app communicates with one of the platform stores, like the Apple App Store, to complete the purchase. By default the supplier of the video content, and possibly other merchandise, purchased is not notified. It is necessary for the provider of the video content and/or merchandise to setup an endpoint so Brightcove Beacon can notify the provider a purchase was completed.</p>
+    <p>For clarification, this example demonstrates the flow of the purchase to notification. The fictional company, Acme Symphony. has implemented an endpoint. A viewer using a Brightcove Beacon app on iOS makes a purchase. A high-level take on the workflow is as follows:</p>
     <ul>
-      <li><strong>User Session ID:</strong> Brightcove generates a session ID on each device when a user opens the app. This allows you to frequency-cap ads to that session, exclude competitive ads from being served together, and sequentially rotate ads in that session. These targeting capabilities are both necessary for direct-sold and programmatic ads.</li>
-      <li><strong>More data for programmatic ads:</strong> Mobile apps and CTV apps don’t support cookies, which is the dominant method for user/device-based ad targeting on the web. By including params like Device ID, you can pass this valuable information to programmatic ad buyers, which will then enhance their ad targeting capabilities, leading to greater CPMs.</li>
+      <li>A viewer purchases a subscription for access to videos of past symphonies, and tickets for the upcoming summer season of live concerts.</li>
+      <li>The Beacon app completes the purchase through the Apple App Store.</li>
+      <li>The Beacon app notifies Beacon of the purchase.</li>
+      <li>The Beacon entitlement subsystem grants the viewer access to all video assets in the purchased subscription.</li>
+      <li>A notification is sent to Acme Symphony's endpoint.</li>
+      <li>Acme Symphony knows of the purchase and sends tickets to the purchaser, and subscription purchase is reflected in Acme Symphony's store front.</li>
     </ul>
-    <h3>Support for Ad Inventory split</h3>
-    <p>For apps that run on Amazon, Roku, and Samsung (in the US), you are required to do a 70/30 split of ad inventory/revenue with the platform. This means Brightcove Beacon customers monetize 70% of the ad inventory and the platform gets the remaining 30% of the ad inventory. With this enhanced ad targeting, you can use one ad tag across all of their apps and pass the device params to your ad server. Inside your ad server, you will implement the business logic that splits the ad inventory by device. The platforms also require passing LAT - Limited Ad Targeting - for Ad Inventory Split, which is a parameter we are now sending to your ad server.</p>
-    <h3>User Privacy improvements</h3>
+    <p>The rest of the document clarifies the technical implementation and provides specifics for implementing your endpoint.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="How_notifications_are_implemented">How notifications are implemented</h2>
+    <p>Here is a high-level diagram of the process:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/monetization/receive-iap-notifications/beacon-in-app-purchase-v3.png" alt="overview beacon in app purchase">
+    </figure>
+    <p>Clarification details for the diagram:</p>
     <ul>
-      <li>LAT “Limited Ad Targeting” - allows users of Beacon apps to opt out of ad targeting based on user behavior.</li>
-      <li>Users have the ability to reset the unique Device ID that we assign to the device at any time.</li>
+      <li>Amazon Simple Notification Service (Amazon SNS) is a managed service that provides message delivery from publishers to subscribers. For full details see Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">SNS Developer Guide</a>.</li>
+      <li>After the notification is received by you, the Brightcove Beacon user, the actions will vary. In the example, since tickets were purchased the tickets would need to be sent. So once the notification is received, your business rules will determine what must occur.</li>
+      <li>The endpoint implementation approach is entirely your decision. The decision will most likely be guided by backend technologies used and skills of your software engineers.</li>
     </ul>
   </section>
+
   <section class="bcls-section">
-    <h2 id="targeting_information">Targeting information</h2>
-    <p>You can target ads based on the information in the table below.</p>
+    <h2 id="Notification_usage_guidelines">Notification usage guidelines</h2>
+    <p>The following specify usage guidelines for notifications:</p>
+    <ul>
+      <li>Notifications of in-app purchases from following stores is supported:
+        <ul>
+          <li>Apple App Store (iOS and AppleTV)</li>
+          <li>Google Play (Android and Android TV)</li>
+          <li>Roku Channel Store</li>
+          <li>Amazon Appstore (FireTV)</li>
+          <li>Stripe (Web and Samsung TV)</li>
+        </ul>
+      </li>
+      <li>Beacon will report all purchase related events, including the following actions on subscriptions:
+        <ul>
+          <li>New</li>
+          <li>Renewals</li>
+          <li>Cancellations</li>
+          <li>Pauses</li>
+          <li>Holds</li>
+          <li>Resumes</li>
+        </ul>
+      </li>
+      <li>Enough information is provided in the notification so the seller's external system is able to apply entitlements and/or prevent purchases of the same asset (subscription) if already purchased through Beacon or native stores.</li>
+      <li>Purchase events are delivered to external stores within 5 min after receiving notification from source stores.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="API_endpoint_specifications">API endpoint specifications</h2>
+    <p>After successfully processing a subscription in the Beacon system, Beacon will deliver an SNS topic message to a configured API endpoint specific for a particular customer.</p>
+    <p>Following are the requirements for the external end point:</p>
+    <ul>
+      <li>The API endpoint must be compatible with AWS SNS integration. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-http-https-endpoint-as-subscriber.html">Fanout to HTTP/S endpoints</a> document for more details. This document contains a link to an implementation of an endpoint that processes Amazon SNS HTTP POST requests, written as a Java servlet.</li>
+      <li>The API endpoint will go through a subscription confirmation step. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.confirm.html">Confirm the subscription</a> document for more details.</li>
+      <li>The API endpoint will need to unescape the JSON in the message field of the notification. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-and-json-formats.html">Parsing message formats</a> document for more details.</li>
+      <li>The API endpoint must verify the signature and provenance of the message. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-verify-signature-of-message.html">Verifying the signatures of Amazon SNS messages</a> document for more details.</li>
+    </ul>
+    <p>To be able to recover from errors, it is possible to re-send all purchases for a user (filtering any non active notifications). The store's external API endpoint is responsible for re-processing all messages, even if those were previously consumed.</p>
+    <aside class="bcls-aside bcls-aside--warning language-editable">It is possible to generate an infinite loop of notifications. For instance, Beacon sends the IAP notification to the end point, the receiver creates a user and sends a <em>create entitlement</em> message to Beacon, which in turn sends an IAP notification to the receiver, and an infinite loop is started. When implementing your endpoint you must be sure not to allow this to happen.</aside>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="JSON_payload_specifications">JSON payload specifications</h2>
+    <p>The JSON payload that is sent to the external store end point can include following fields:</p>
     <table class="bcls-table">
-      <caption class="bcls-caption--table">Targeting Information</caption>
       <thead class="bcls-table__head">
         <tr>
-          <th>Type of Information</th>
-          <th>Variable Name</th>
-          <th>Value Macro</th>
-          <th>Values</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Possible Values</th>
+          <th>Notes</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>Platform</td>
-          <td><code translate="no">platform</code></td>
-          <td><strong>PLATFORM</strong></td>
-          <td><code translate="No">iOS</code>, <code translate="No">Android</code>, <code translate="No">Roku</code>, <code translate="No">AppleTV</code>, <code translate="No">Web</code>, <code translate="No">STV</code></td>
-        </tr>
-        <tr>
-          <td>OS version</td>
-          <td><code translate="no">os</code></td>
-          <td><strong>OS</strong></td>
-          <td>device os version (for example, <code translate="No">iOS 14</code>)</td>
-        </tr>
-        <tr>
-          <td>Device model</td>
-          <td><code translate="no">model</code></td>
-          <td><strong>MODEL</strong></td>
-          <td>device model. Browser version used for web apps</td>
-        </tr>
-        <tr>
-          <td>Manufacturer</td>
-          <td><code translate="no">mfgr</code></td>
-          <td><strong>MFGR</strong></td>
-          <td>device manufacturer; browser name used for web apps</td>
-        </tr>
-        <tr>
-          <td>Language</td>
-          <td><code translate="no">lang</code></td>
-          <td><strong>LOCALE</strong></td>
-          <td>Language code set in the App (that comes from CMS)</td>
-        </tr>
-        <tr>
-          <td>User session</td>
-          <td><code translate="no">sid</code></td>
-          <td><strong>SID</strong></td>
-          <td>Every time that app launches we want to have a unique integer created that is stored in memory and not persisted</td>
-        </tr>
-        <tr>
-          <td>Unique Device ID</td>
-          <td><code translate="no">rdid</code></td>
-          <td><strong>RDID</strong></td>
-          <td>Resettable device ID (TIFA = Samsung, rida = Roku, adid = Android, etc) - if limited ad targeting is set on the App, then the id should be all zeros (not possible to identify the user/device). This item is not applicable to the web.</td>
-        </tr>
-        <tr>
-          <td>Is the user allowing tracking</td>
-          <td><code translate="no">is_lat</code></td>
-          <td><strong>IS_LAT</strong></td>
-          <td>0 if user has not opted to limit targeting, 1 if limiting ad targeting. This item is not applicable to the web.</td>
-        </tr>
-        <tr>
-          <td>device type</td>
-          <td><code translate="no">idtype</code></td>
-          <td><strong>IDTYPE</strong></td>
+          <td>notification_type</td>
+          <td>String</td>
+          <td>Always</td>
+          <td><strong>new</strong>, <strong>renew</strong>, <strong>cancel</strong>, <strong>pause</strong>, <strong>hold</strong>, <strong>resume</strong></td>
           <td>
-            <ul>
-              <li>adid: Android</li>
-              <li>afai: Amazon</li>
-              <li>tvOS: AppleTV (tvOS)</li>
-              <li>idfa: Apple phones (iOS)</li>
-              <li>rida: Roku</li>
-              <li>tifa: Samsung</li>
-              <li>vida: Vizio</li>
-              <li>msai: Xbox</li>
-            </ul>
+            <li><strong>new</strong> - Issued for a new subscription</li>
+            <li><strong>renew</strong> - Used to renew an existing subscription (extend the subscription)</li>
+            <li><strong>cancel</strong> - Cancel an existing purchase</li>
+            <li><strong>hold</strong> - Subscription was put on hold due to non payment</li>
+            <li><strong>pause</strong> - Subscription is paused by user</li>
+            <li><strong>resume</strong> - Subscription transition from hold or pause to continue</li>
           </td>
         </tr>
         <tr>
-          <td>App identifier</td>
-          <td><code translate="no">app_id</code></td>
-          <td><strong>APP_ID</strong></td>
-          <td>This should be the App bundle name</td>
+          <td>external_user_id</td>
+          <td>String</td>
+          <td>Always</td>
+          <td></td>
+          <td>This is the id that is commonly used by Beacon and the external store to identify the user</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>Always</td>
+          <td></td>
+          <td>Unique identifier for the transaction. When a cancellation is done, this ID should be used to cancel the subscription or individual purchase. When a subscription is renewed, resumed, paused or put on hold, this ID is used to find the specific subscription that is affected.</td>
+        </tr>
+        <tr>
+          <td>start_date</td>
+          <td>integer</td>
+          <td>Yes with the exception of cancellation notifications</td>
+          <td></td>
+          <td>The date when the purchase is in effect and entitlements to user should start</td>
+        </tr>
+        <tr>
+          <td>end_date</td>
+          <td>integer</td>
+          <td>Required for these notification types: new, renew, cancel and resume</td>
+          <td></td>
+          <td>The date when the purchase is no longer in effect and entitlements to the user should end. For cancellation requests, the <code>end_date</code> defines when the user loses access to the content.</td>
+        </tr>
+        <tr>
+          <td>original_store</td>
+          <td>String</td>
+          <td>Always</td>
+          <td><strong>Apple Store</strong>, <strong>Google Play</strong>, <strong>Amazon Store</strong>, <strong>Stripe</strong>, <strong>Roku Store</strong>, <strong>Evergent</strong>, <strong>Beacon Store</strong></td>
+          <td>The original store where the purchase was done</td>
+        </tr>
+        <tr>
+          <td>sku</td>
+          <td>String</td>
+          <td>Always</td>
+          <td></td>
+          <td>Identifies the item that was purchased. This is the identifier used in the source store.</td>
+        </tr>
+        <tr>
+          <td>package_name</td>
+          <td>String</td>
+          <td>Always</td>
+          <td></td>
+          <td>The name of the SVOD or TVOD package</td>
+        </tr>
+        <tr>
+          <td>notification_date</td>
+          <td>integer</td>
+          <td>Always</td>
+          <td></td>
+          <td>Timestamp of dispatching the event from Beacon to the external store system</td>
+        </tr>
+        <tr>
+          <td>cancellation_date</td>
+          <td>integer</td>
+          <td>Required when notification type is cancel</td>
+          <td></td>
+          <td>Used for a cancel request and specifies the Timestamp of when the user/store cancelled the subscription</td>
+        </tr>
+        <tr>
+          <td>trial_end_date</td>
+          <td>integer</td>
+          <td>Optional (applicable only to new subscriptions)</td>
+          <td></td>
+          <td>If present, means that there is a trial. For new subscriptions it is possible that a trial end date is same as <code>end_date</code> (use case where stores sends one notification for trial and a second one for when the real subscription starts).</td>
         </tr>
       </tbody>
     </table>
-    <h3>Notes</h3>
-    <ul>
-      <li>This feature works across all platforms/devices iOS, Apple TV, Android, Roku, Fire TV, Web, and Smart TVs.</li>
-      <li>Beacon Apps Ad targeting can be used with both VOD SSAI and Live SSAI.</li>
-    </ul>
   </section>
-  <!--   <section class="bcls-section">
-    <h2 id="Implementation">Implementation</h2>
-    <p>Below is a list of <strong>value macros</strong> that will be passed to the app, which will then substitute the real values before sending to the ad server. They are <strong>NOT</strong> configurable.</p>
-    <table class="bcls-table">
-      <caption class="bcls-caption--table">Value Macros</caption>
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Macro</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td translate="no" style="font-weight:bold">PLATFORM</td>
-          <td>The appropriate beacon platform: iOS, AppleTV, Android, Roku, Web, STV</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">OS</td>
-          <td>full qualified OS (including version) - example iOS 14</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">MFGR</td>
-          <td>the Manufacturer of the device; (Web - user's browser)</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">MODEL</td>
-          <td>Device Model; (Web - browser version)</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">APP_ID</td>
-          <td>Application id (for example bundle ID); Web: app domain</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">LOCALE</td>
-          <td>ISO 639-1 (2-letter) language code followed by an underscore and a ISO 3166-1 (2-letter) country code (example en_us) - language set in the app</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">RDID</td>
-          <td>Resettable device ID (<code translate="no">tifa</code>: Samsung, <code translate="no">rida</code>: Roku, <code translate="no">adid</code>: Android, etc. - see <a href="#Device_identifiers">Device identifiers</a> below for more values) - if <strong>limited ad targeting</strong> is set on the App, then the id should be all zeros (meaning not possible to identify the user/device)</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">IDTYPE</td>
-          <td>Type resettable ID (<code translate="no">tifa</code>: Samsung, <code translate="no">rida</code>: Roku, <code translate="no">adid</code>: Android, etc. - see <a href="#Device_identifiers">Device identifiers</a> below for more values)</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">IS_LAT</td>
-          <td>Flag that tells if limited ad targeting is selected by user: <code translate="no">0</code> if user has not opted to limit targeting, <code translate="no">1</code> if limiting ad targeting</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">SID</td>
-          <td>Unique session identifier (reset every time the app starts). Not dependent on user sign in / Sign up. Switching from foreground to background status does not change this ID.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h4 id="Device_identifiers">Device identifiers</h4>
-    <ul>
-      <li>adid: Android</li>
-      <li>afai: Amazon</li>
-      <li>tvOS: AppleTV (tvOS)</li>
-      <li>idfa: Apple phones (iOS)</li>
-      <li>rida: Roku</li>
-      <li>tifa: Samsung</li>
-      <li>vida: Vizio</li>
-      <li>msai: Xbox</li>
-    </ul>
-  </section>
- -->
-  
-  <section class="bcls-section">
-    <h2 id="Implement_the_client_side_params">Implement the client side params</h2>
-    <p>Whether you are using ad targeting with VOD or Live, you need to build the query string which will be used with both. Use the following guidelines when building your query string:</p>
-    <ul>
-      <li>The client side parameters will be passed to the ad server when requesting ads.</li>
-      <li>Client side parameters can be passed in the Playback APIs (provided in the VMAP/Manifest entry point). Those will be available to the SSAI infrastructure in the form of <code translate="no">{{url.xxx}}</code> macros where the <code>xxx</code> corresponds to the parameter key.</li>
-      <li>Paste in your ad tag, <strong>appending your query string of ad targeting params</strong>:
-        <pre class="line-numbers"><code class="language-html" translate="No">variablename1={VALUEMACRO1}&variablename2={VALUEMACRO2}& ...</code></pre>
-      </li>
-      <li>Example:
-        <pre class="line-numbers"><code class="language-html" translate="No">plarform={PLATFORM}&os={OS}&appid={APP_ID}&did={RDID}&dt={IDTYPE}&lat={IS_LAT}&sid={SID}</code></pre>
-      </li>
-      <!-- <li></li> -->
-    </ul>
-    <p>Be sure to have your desired ad targeting query string built as you will need it in the implementation steps below.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="VOD_steps">VOD steps</h2>
-    <h3>Video Cloud steps - VOD</h3>
-    <ol class="bcls-tasklist-restart">
-      <li>In Video Cloud Studio, navigate to <strong>Admin → Server-Side Ad Settings</strong>. (For full details see the <a href="/monetization/vod-ssai.html">Implementing VOD SSAI</a> document.)</li>
-      <li>
-        From the <span class="blue-button">Create Ad Configuration</span> dropdown, select <strong>VOD</strong>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/create-vod-ad-config.png" alt="Create VOD Ad Config">
-          <figcaption class="bcls-caption--image">Create VOD Ad Config</figcaption>
-        </figure>
-      </li>
-      <li>Add a name for the ad config.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ssai-config-vod.png" alt="SSAI Configuration VOD">
-          <figcaption class="bcls-caption--image">SSAI Configuration VOD</figcaption>
-        </figure>
-      </li>
-      <li>Select your ad response - VMAP or VAST is recommended. If you use VAST, you will need to add cuepoints to the videos to specify where ad breaks should appear.</li>
-      <li>Paste in your ad tag, <strong>appending your query string of ad targeting params</strong>.</li>
-      <li>Click <strong>Save</strong>.</li>
-      <li>Find your new ad configuration in the table and copy your ad config ID. You will need this value for the Beacon advertising configuration.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
-          <figcaption class="bcls-caption--image">Copy ad config ID</figcaption>
-        </figure>
-      </li>
-    </ol>
-
-    <h3>Beacon steps - VOD</h3>
-    <ol class="bcls-tasklist">
-      <li>Open the Beacon Classic UI and navigate to the <strong>Advertisement</strong> tab.</li>
-      <li>
-        Click <span class="button-teal">Add New Configuration</span>.
-      </li>
-      <li>Name the Ad Configuration.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/advertising-config-vod.png" alt="Beacon Ad Configuration">
-          <figcaption class="bcls-caption--image">Beacon Ad Configuration VOD</figcaption>
-        </figure>
-      </li>
-      <li>For the <strong>Provider</strong> select <strong>Brightcove SSAI</strong>.</li>
-      <li>Paste in the ad targeting URL built from the section above.</li>
-      <li>Paste in the <strong>SSAI ad config ID</strong> copied in the steps just above into <strong>VOD Ad Config ID</strong>.</li>
-      <li>Click <span class="button-teal">Create New Advertisement</span>.</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Live_steps">Live steps</h2>
-    <h3>Video Cloud steps - Live</h3>
-    <ol class="bcls-tasklist-restart">
-      <li>In Video Cloud Studio, navigate to <strong>Admin → Server-Side Ad Settings</strong>. (For full details see the <a href="/monetization/vod-ssai.html">Implementing VOD SSAI</a> document.)</li>
-      <li>
-        From the <span class="blue-button">Create Ad Configuration</span> dropdown, select <strong>Live</strong>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/create-live-ad-config.png" alt="Create Live Ad Config">
-          <figcaption class="bcls-caption--image">Create Live Ad Config</figcaption>
-        </figure>
-      </li>
-      <li>Add a name for the ad config</li>
-      <figure class="bcls-figure">
-        <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ssai-config-live.png" alt="SSAI Configuration Live">
-        <figcaption class="bcls-caption--image">SSAI Configuration Live</figcaption>
-      </figure>
-      <li>Select <strong>VAST</strong> your ad response</li>
-      <li>
-        Paste in your ad tag, <strong>appending your query string of ad targeting params</strong>.
-      </li>
-      <li>Click <strong>Save</strong>.</li>
-      <li>Find your new ad configuration in the table and copy your ad config ID. You will need this value for the Beacon advertising configuration.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
-          <figcaption class="bcls-caption--image">Copy ad config ID</figcaption>
-        </figure>
-      </li>
-    </ol>
-    <h3>Beacon steps - Live</h3>
-    <ol class="bcls-tasklist-restart">
-      <li>
-        Open the Beacon Classic UI and go the <strong>Advertisement</strong> tab.
-      </li>
-      <li>
-        Click <span class="button-teal">Add New Configuration</span>.
-      </li>
-      <li>Name the Ad Configuration.</li>
-      <figure class="bcls-figure">
-        <img class="bcls-image" src="/assets/images/monetization/ad-targeting/advertising-config-live.png" alt="Beacon Ad Configuration Live">
-        <figcaption class="bcls-caption--image">Beacon Ad Configuration Live</figcaption>
-      </figure>
-      <li>For the <strong>Provider</strong> select <strong>Brightcove SSAI</strong></li>
-      <li>Paste in the ad targeting URL built from the section above.</li>
-      <li>Paste in the <strong>SSAI ad config ID</strong> copied in the steps just above into <strong>VOD Ad Config ID</strong>.</li>
-      <li>Click <span class="button-teal">Create New Advertisement</span>.</li>
-    </ol>
-  </section>
-  <!-- <section class="bcls-section">
-    <h2 id="Limitations">Limitations</h2>
-    <ul>
-      <li>There currently isn’t a way to handle Device ID on the web so we are not passing that information to SSAI. We are still defining how we will handle it, and the doc will be updated once Device ID for the web is implemented.</li>
-    </ul>
-  </section> -->
-  
 </article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
@@ -1672,7 +1576,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 13 Sep 2021
+  Page last updated on 02 Sep 2021
 </div>
 
 
