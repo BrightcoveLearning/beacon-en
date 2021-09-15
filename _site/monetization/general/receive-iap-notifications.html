@@ -1,31 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="In this topic you will learn how to manage and create Live and VOD server-side ad configurations." />
-
-  <title>Configuring Server-Side Ad Settings</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-<link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic, you will learn the requirements for implementing an endpoint to receive in-app purchase notifications.">
+  
+  <title>Receiving In-App Purchase Notifications</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   
-  <script src="/assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
-  <link rel="stylesheet" href="/assets/css/local.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
+
 <body class="body">
+
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
@@ -54,7 +64,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Configuring Server-Side Ad Settings</li>
+      <li class="breadcrumb-item"><a href="/monetization/general/">General</a></li>
+      
+      
+      
+      <li class="breadcrumb-item active" aria-current="page">Receiving In-App Purchase Notifications</li>
       
       
     </nav>
@@ -682,59 +696,77 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               <ul class="sidenav-submenu" style="display:none;">
                 
                   
-                    <li><a href="/monetization/beacon-apps-ad-targeting.html">Beacon Apps Ad Targeting</a></li>
+                    <li class="submenu-header">
+                      <a href="/monetization/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;General</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/monetization/general/creating-stripe-account.html">Creating a Stripe Account</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/creating-svod-plan.html">Creating an SVOD Plan</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/promo-codes.html">Creating Promo Coupons</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/vc-custom-fields.html">Custom Fields for Monetization</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/implementing-authvod.html">Implementing AuthVOD</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/receive-iap-notifications.html">Receiving In-App Purchase Notifications</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/resources.html">Resources for Monetization</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/monetization-options.html">Understanding Monetization Options</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/using-svod-plan.html">Using an SVOD Plan</a></li>
+                          
+                        
+                      </ul>
+                    </li>
                   
                 
                   
-                    <li><a href="/monetization/advertisement.html">Creating an Advertisement</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/creating-stripe-account.html">Creating a Stripe Account</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/creating-svod-plan.html">Creating an SVOD Plan</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/promo-codes.html">Creating Promo Coupons</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/vc-custom-fields.html">Custom Fields for Monetization</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/implementing-authvod.html">Implementing AuthVOD</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/live-ssai.html">Implementing Live SSAI</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/vod-ssai.html">Implementing VOD SSAI</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/receive-iap-notifications.html">Receiving In-App Purchase Notifications</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/resources.html">Resources for Monetization</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/monetization-options.html">Understanding Monetization Options</a></li>
-                  
-                
-                  
-                    <li><a href="/monetization/using-svod-plan.html">Using an SVOD Plan</a></li>
+                    <li class="submenu-header">
+                      <a href="/monetization/ssai/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;SSAI</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                          
+                            <li><a href="/monetization/ssai/advertisement.html">Creating an Advertisement</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/ssai/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/ssai/live-ssai.html">Implementing Live SSAI</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/ssai/vod-ssai.html">Implementing VOD SSAI</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/ssai/beacon-apps-ad-targeting.html">Beacon Apps Ad Targeting</a></li>
+                          
+                        
+                      </ul>
+                    </li>
                   
                 
               </ul>
@@ -1346,130 +1378,181 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<!--
- This content appears on:
- https://beacon.support.brightcove.com/using-brightcove-beacon/configuring-server-side-ad-settings.html
-  https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html 
-  If you update in one place, you MUST update it in all!
- -->
-<h1>Configuring Server-Side Ad Settings</h1>
+<h1>Receiving In-App Purchase Notifications</h1>
 <article class="bcls-article">
-  <summary>In this topic you will learn how to manage and create Live and VOD server-side ad configurations.</summary>
+  <summary>In this topic, you will learn the requirements for implementing an endpoint to receive in-app purchase notifications.</summary>
+
   <section class="bcls-section">
-    <p>
-      Ad configurations define various aspects of ad playback, including ad calls, timing, beacons and other ad configuration options. The Server-Side Ad Settings define the ads that can be requested during video on demand (VOD) videos and during live events. Server-side ads take advantage of Brightcove's Server-Side Ad Insertion (SSAI) technology and provide these main features:
-    </p>
+    <h2 id="Overview">Overview</h2>
+    <p>Consider when an in-app purchase is done through a Brightcove Beacon app. The app communicates with one of the platform stores, like the Apple App Store, to complete the purchase. By default the supplier of the video content, and possibly other merchandise, purchased is not notified. It is necessary for the provider of the video content and/or merchandise to setup an endpoint so Brightcove Beacon can notify the provider a purchase was completed.</p>
+    <p>For clarification, this example demonstrates the flow of the purchase to notification. The fictional company, Acme Symphony. has implemented an endpoint. A viewer using a Brightcove Beacon app on iOS makes a purchase. A high-level take on the workflow is as follows:</p>
     <ul>
-      <li>
-        Since ads are stitched into the on-demand or live video stream on the server side, they are not affected by ad blockers </li>
-      <li>
-        For live events, ads are inserted at cue points sent from your encoder or you can create an instant cue point using the <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html#ad">Live module Control Room</a>
-      </li>
-      <li>You can configure fill slates to fill any unused ad time</li>
+      <li>A viewer purchases a subscription for access to videos of past symphonies, and tickets for the upcoming summer season of live concerts.</li>
+      <li>The Beacon app completes the purchase through the Apple App Store.</li>
+      <li>The Beacon app notifies Beacon of the purchase.</li>
+      <li>The Beacon entitlement subsystem grants the viewer access to all video assets in the purchased subscription.</li>
+      <li>A notification is sent to Acme Symphony's endpoint.</li>
+      <li>Acme Symphony knows of the purchase and sends tickets to the purchaser, and subscription purchase is reflected in Acme Symphony's store front.</li>
     </ul>
-    <p>
-      To learn more about server-side advertising, see <a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing Server-Side Ads with the Brightcove Player</a>.
-    </p>
-    <aside class="bcls-aside bcls-aside--information"> Note:
-      <ul>
-        <li>
-          Before you can use SSAI, your Video Cloud account needs to be configured for Dynamic Delivery and enabled for SSAI. Contact your account manager for details.
-        </li>
-        <li>VMAP for Brightcove Live SSAI is not currently supported.</li>
-        <li>Although there is no prefetch functionality for SSAI ads, we delegate the ad position logic to the ad provider. Dynamic Delivery makes all the add calls up front. If we get an ad from the ad provider and it is transcoded in our system we will insert it into the stream.</li>
-      </ul>
-    </aside>
-    <p>
-      The Server-Side Ad Settings page is used to manage the Live and VOD ad configurations. Note that to access the Server-Side Ad Settings page, you must be a user with the Administrator role.
-    </p>
-    <p>To access the Server-Side Ad Settings page:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Log in to Beacon Studio.</li>
-      <li>
-        From the primary navigation, click <strong>ADMIN</strong> and then<strong> Server-Side Ad Settings</strong>.A list of all ad configurations will be displayed.
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="https://general.support.brightcove.com/assets/images/admin/node18748-list-of-ad-configs.png" />
-        </figure>
-      </li>
-    </ol>
-    <p>
-      To create a new ad configuration, click
-      <strong>Create Ad Configuration</strong> and then click the specific type of ad to create:
-    </p>
-    <ul>
-      <li><a href="#vod">Video on Demand (VOD)</a></li>
-      <li><a href="#live">Live</a></li>
-    </ul>
+    <p>The rest of the document clarifies the technical implementation and provides specifics for implementing your endpoint.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="How_notifications_are_implemented">How notifications are implemented</h2>
+    <p>Here is a high-level diagram of the process:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" src="https://general.support.brightcove.com/assets/images/admin/node18748-create-ad.png" />
+      <img class="bcls-image" src="/assets/images/monetization/receive-iap-notifications/beacon-in-app-purchase-v3.png" alt="overview beacon in app purchase">
     </figure>
+    <p>Clarification details for the diagram:</p>
+    <ul>
+      <li>Amazon Simple Notification Service (Amazon SNS) is a managed service that provides message delivery from publishers to subscribers. For full details see Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">SNS Developer Guide</a>.</li>
+      <li>After the notification is received by you, the Brightcove Beacon user, the actions will vary. In the example, since tickets were purchased the tickets would need to be sent. So once the notification is received, your business rules will determine what must occur.</li>
+      <li>The endpoint implementation approach is entirely your decision. The decision will most likely be guided by backend technologies used and skills of your software engineers.</li>
+    </ul>
   </section>
+
   <section class="bcls-section">
-    <h2 id="vod">Creating a Video On Demand ad configuration</h2>
-    <aside class="bcls-aside bcls-aside--information"> Note: Server-side ad configurations can also be managed using the Server-Side Ad Insertion API. For information, see the <a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html">Video Cloud SSAI Ad Config API</a>
-      topic.
-    </aside>
-    <p>To add a Video On Demand (VOD) ad configuration, follow these steps.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>
-        On the Server-Side Ad Settings page, click <strong>Create Ad Configuration &gt; VOD</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="https://general.support.brightcove.com/assets/images/admin/node18748-create-vod-ad.png" />
-        </figure>
-      </li>
-      <li>Enter a <strong>Name</strong>.</li>
-      <li>
-        Select the <strong>Ad Server Response</strong>: <ul>
-          <li>DFP Ad Rules</li>
-          <li>DFP VMAP</li>
-          <li>Smart XML</li>
-          <li>VAST 3.0</li>
+    <h2 id="Notification_usage_guidelines">Notification usage guidelines</h2>
+    <p>The following specify usage guidelines for notifications:</p>
+    <ul>
+      <li>Notifications of in-app purchases from following stores is supported:
+        <ul>
+          <li>Apple App Store (iOS and AppleTV)</li>
+          <li>Google Play (Android and Android TV)</li>
+          <li>Roku Channel Store</li>
+          <li>Amazon Appstore (FireTV)</li>
+          <li>Stripe (Web and Samsung TV)</li>
         </ul>
       </li>
-      <li>Enter the<strong> Ad Tag</strong>.</li>
-      <li>
-        Check <strong>Disable server-side beacons</strong> to disable server-side beacons. When disabled, SSAI will not fire any beacons server-side and will include all beacons in the VMAP output.
-      </li>
-      <li>Click <strong>Save</strong>.</li>
-    </ol>
-    <p>
-      To edit an ad configuration, click the ad name, make the changes and then click <strong>Save</strong>. To delete an ad config, check the box next to the ad and then click <strong>Delete</strong>. To duplicate an ad config, check the box next to the ad and then click <strong>Duplicate</strong>.
-    </p>
-    <p>
-      Once VOD ad configurations have been created, open the Players module and click on a player to view the properties. When the <strong>Enable Server-Side (SSAI)</strong> advertising property is enabled, an ad configuration can be selected. For information on configuring player advertising, see
-      <a href="https://studio.support.brightcove.com/players/configuring-player-advertising-using-players-module.html">Configuring Player Advertising using the Players Module (external link)</a>.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="live">Creating a Live ad configuration</h2>
-    <aside class="bcls-aside bcls-aside--information"> Note: Server-side Live ad configurations can also be managed using the Live API. For information, see
-      <a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Create_an_ad_configuration">Brightcove Live API: Server-Side Ad Insertion (SSAI)</a>.
-    </aside>
-    <p>To add a Live ad configuration, follow these steps.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>
-        On the Server-Side Ad Settings page, click <strong>Create Ad Configuration &gt; Live</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="https://general.support.brightcove.com/assets/images/admin/node18748-create-live-ad.png" />
-        </figure>
-      </li>
-      <li>Enter a <strong>Name</strong>.</li>
-      <li>
-        Select the <strong>Ad Server Response</strong>: <ul>
-          <li>VAST</li>
-          <li>DFP (Ad Rules)</li>
-          <li>Smart XML</li>
+      <li>Beacon will report all purchase related events, including the following actions on subscriptions:
+        <ul>
+          <li>New</li>
+          <li>Renewals</li>
+          <li>Cancellations</li>
+          <li>Pauses</li>
+          <li>Holds</li>
+          <li>Resumes</li>
         </ul>
       </li>
-      <li>Enter the<strong> Ad Tag</strong>.</li>
-      <li>Click <strong>Save</strong>.</li>
-    </ol>
-    <p>
-      To edit an ad configuration, click the ad name, make the changes and then click <strong>Save</strong>. To delete an ad config, check the box next to the ad and then click <strong>Delete</strong>. To duplicate an ad config, check the box next to the ad and then click <strong>Duplicate</strong>.
-    </p>
-    <p>
-      Once Live ad configurations have been created, when an event is created with the <strong>Enable Server-Side Ad Insertion (SSAI)</strong> property enabled, an ad configuration can be selected in the Control Room. For information on creating live events, see <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Creating and Managing Live Events using the Live Module</a>.
-    </p>
+      <li>Enough information is provided in the notification so the seller's external system is able to apply entitlements and/or prevent purchases of the same asset (subscription) if already purchased through Beacon or native stores.</li>
+      <li>Purchase events are delivered to external stores within 5 min after receiving notification from source stores.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="API_endpoint_specifications">API endpoint specifications</h2>
+    <p>After successfully processing a subscription in the Beacon system, Beacon will deliver an SNS topic message to a configured API endpoint specific for a particular customer.</p>
+    <p>Following are the requirements for the external end point:</p>
+    <ul>
+      <li>The API endpoint must be compatible with AWS SNS integration. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-http-https-endpoint-as-subscriber.html">Fanout to HTTP/S endpoints</a> document for more details. This document contains a link to an implementation of an endpoint that processes Amazon SNS HTTP POST requests, written as a Java servlet.</li>
+      <li>The API endpoint will go through a subscription confirmation step. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.confirm.html">Confirm the subscription</a> document for more details.</li>
+      <li>The API endpoint will need to unescape the JSON in the message field of the notification. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-and-json-formats.html">Parsing message formats</a> document for more details.</li>
+      <li>The API endpoint must verify the signature and provenance of the message. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-verify-signature-of-message.html">Verifying the signatures of Amazon SNS messages</a> document for more details.</li>
+    </ul>
+    <p>To be able to recover from errors, it is possible to re-send all purchases for a user (filtering any non active notifications). The store's external API endpoint is responsible for re-processing all messages, even if those were previously consumed.</p>
+    <aside class="bcls-aside bcls-aside--warning language-editable">It is possible to generate an infinite loop of notifications. For instance, Beacon sends the IAP notification to the end point, the receiver creates a user and sends a <em>create entitlement</em> message to Beacon, which in turn sends an IAP notification to the receiver, and an infinite loop is started. When implementing your endpoint you must be sure not to allow this to happen.</aside>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="JSON_payload_specifications">JSON payload specifications</h2>
+    <p>The JSON payload that is sent to the external store end point can include following fields:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Possible Values</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>notification_type</td>
+          <td>String</td>
+          <td>Always</td>
+          <td><strong>new</strong>, <strong>renew</strong>, <strong>cancel</strong>, <strong>pause</strong>, <strong>hold</strong>, <strong>resume</strong></td>
+          <td>
+            <li><strong>new</strong> - Issued for a new subscription</li>
+            <li><strong>renew</strong> - Used to renew an existing subscription (extend the subscription)</li>
+            <li><strong>cancel</strong> - Cancel an existing purchase</li>
+            <li><strong>hold</strong> - Subscription was put on hold due to non payment</li>
+            <li><strong>pause</strong> - Subscription is paused by user</li>
+            <li><strong>resume</strong> - Subscription transition from hold or pause to continue</li>
+          </td>
+        </tr>
+        <tr>
+          <td>external_user_id</td>
+          <td>String</td>
+          <td>Always</td>
+          <td></td>
+          <td>This is the id that is commonly used by Beacon and the external store to identify the user</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>Always</td>
+          <td></td>
+          <td>Unique identifier for the transaction. When a cancellation is done, this ID should be used to cancel the subscription or individual purchase. When a subscription is renewed, resumed, paused or put on hold, this ID is used to find the specific subscription that is affected.</td>
+        </tr>
+        <tr>
+          <td>start_date</td>
+          <td>integer</td>
+          <td>Yes with the exception of cancellation notifications</td>
+          <td></td>
+          <td>The date when the purchase is in effect and entitlements to user should start</td>
+        </tr>
+        <tr>
+          <td>end_date</td>
+          <td>integer</td>
+          <td>Required for these notification types: new, renew, cancel and resume</td>
+          <td></td>
+          <td>The date when the purchase is no longer in effect and entitlements to the user should end. For cancellation requests, the <code>end_date</code> defines when the user loses access to the content.</td>
+        </tr>
+        <tr>
+          <td>original_store</td>
+          <td>String</td>
+          <td>Always</td>
+          <td><strong>Apple Store</strong>, <strong>Google Play</strong>, <strong>Amazon Store</strong>, <strong>Stripe</strong>, <strong>Roku Store</strong>, <strong>Evergent</strong>, <strong>Beacon Store</strong></td>
+          <td>The original store where the purchase was done</td>
+        </tr>
+        <tr>
+          <td>sku</td>
+          <td>String</td>
+          <td>Always</td>
+          <td></td>
+          <td>Identifies the item that was purchased. This is the identifier used in the source store.</td>
+        </tr>
+        <tr>
+          <td>package_name</td>
+          <td>String</td>
+          <td>Always</td>
+          <td></td>
+          <td>The name of the SVOD or TVOD package</td>
+        </tr>
+        <tr>
+          <td>notification_date</td>
+          <td>integer</td>
+          <td>Always</td>
+          <td></td>
+          <td>Timestamp of dispatching the event from Beacon to the external store system</td>
+        </tr>
+        <tr>
+          <td>cancellation_date</td>
+          <td>integer</td>
+          <td>Required when notification type is cancel</td>
+          <td></td>
+          <td>Used for a cancel request and specifies the Timestamp of when the user/store cancelled the subscription</td>
+        </tr>
+        <tr>
+          <td>trial_end_date</td>
+          <td>integer</td>
+          <td>Optional (applicable only to new subscriptions)</td>
+          <td></td>
+          <td>If present, means that there is a trial. For new subscriptions it is possible that a trial end date is same as <code>end_date</code> (use case where stores sends one notification for trial and a second one for when the real subscription starts).</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </article>
 <!-- complete bootstrap layout -->
@@ -1497,7 +1580,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 26 May 2021
+  Page last updated on 15 Sep 2021
 </div>
 
 
