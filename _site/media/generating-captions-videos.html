@@ -1372,15 +1372,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Automatically Generating Captions for Videos</h1>
   <summary>In this topic you will learn how to automatically generate video captions.</summary>
   <section class="bcls-section">
-    <p>Video Cloud Studio provides the ability to automatically generate video captions for newly uploaded or existing videos. After the caption files are generated, they are automatically configured as part of the video's text tracks properties. Brightcove recommends <a href="#review">reviewing the generated captions</a> for accuracy. </p>
+    <p>Beacon Studio provides the ability to automatically generate video captions for newly uploaded or existing videos. After the caption files are generated, they are automatically configured as part of the video's text tracks properties. Brightcove recommends <a href="#review">reviewing the generated captions</a> for accuracy. </p>
     <p>If you are using a third-party to generate caption files, see <a href="adding-captions-videos.html">Adding Captions to Videos</a> for information on how to associate caption files with videos.</p>
     <aside class="bcls-aside bcls-aside--information">Note: Please contact your Brightcove Account Manager to have this feature enabled.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="upload">Generating captions when uploading videos</h2>
-    <p>The Upload module provides an option to generate caption files when videos are uploaded. Captions can only be generated for videos that are transcoded using a Context Aware or Dynamic Delivery ingest profile. To generate a caption file during upload, follow these steps.</p>
+    <p>If your account is enabled, there is an option to generate caption files when videos are uploaded. Captions can only be generated for videos that are transcoded using a Context Aware or Dynamic Delivery ingest profile. To generate a caption file during upload, follow these steps.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Upload</strong> in the navigation header to open the Upload module.</li>
+      <li>Open the Media module and click <strong>Upload</strong> at the top of the page or click <strong>Upload Videos</strong> at the bottom of the left navigation. The Upload module will open in a new browser tab.</li>
       <li>Enable the <strong>Auto captioning</strong> option, the <strong>Automatic captioning settings </strong>dialog will open.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/gen-captions-settings.png" /></figure>
       </li>
@@ -1395,6 +1395,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist-restart">
       <li>Click <strong>Media</strong> in the navigation header to open the Media module.</li>
       <li>Click the link for the video you want to edit to open the video properties.</li>
+      <li>Click <strong>Video and Tracks</strong> in the left navigation.</li>
       <li>Locate the <strong>Text Tracks</strong> section and click <strong>Edit</strong>.</li>
       <li>Select the <strong>Auto caption</strong> option.</li>
       <li>Select the <strong>Language</strong> spoken in the video. If a <strong>Language</strong> is not selected, the video language is auto-detected. Selecting a language will improve the caption file generation time and may improve overall accuracy.</li>
