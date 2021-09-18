@@ -1434,7 +1434,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <ul>
           <li><strong>Loop Playout Content</strong> - If <strong>On</strong>, the program will be played in a loop and the <strong>End Date/Time</strong> will be enabled. The program can still be modified at any time and the changes will be reflected in the current program and the loops to follow. See the <a href="#looping">Creating a looping program</a> section below.</li>
           <li><strong>Ad Insertion</strong> - If on, allows ads to be displayed during channel playback. If this option is selected, Live inputs are not allowed, and you can only output to a <strong>Brightcove Live Event</strong> or <strong>Amazon S3 Bucket</strong>. See <a href="/channels/cloud-playout/enabling-server-side-ads.html">Monetizing Content</a>.</li>
-          <li><strong>Start Date/Time</strong> - Time when the channel will start playing out. The start time for all assets will be calculated by adding their duration to this start time. This time can be updated only when the channel is not in running state.</li>
+          <li>
+            <strong>Start Date/Time</strong> - Time when the channel will start playing out. The start time for all assets will be calculated by adding their duration to this start time. This time can be updated only when the channel is not in running state.
+            <aside class="bcls-aside bcls-aside--warning language-editable">Note: it takes 1-2 minutes for the initial startup of a channel, so if the start is time-sensitive, schedule it for 2 minutes before the time you want to initiate playback.</aside>
+          </li>
           <li><strong>End Date/Time</strong> - If no value is entered and <strong>Loop Playout Content</strong> is not selected, the stream will end once the playout is complete. If <strong>Loop Playout Content</strong> is selected and there is no <strong>End Date/Time</strong>, the playout will be streamed until the channel is stopped. This time can be updated at any time.</li>
         </ul>
       </li>
