@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="In this topic, you will learn about the different page layouts, how they appear in your apps and how they fit into the page creation process." />
+  <meta name="description" content="In this topic, you will learn how to submit your device app to the Android store." />
 
-  <title>Using Page Layouts</title>
+  <title>Submitting New Apps to the Android Store</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -50,11 +50,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
       
       
-      <li class="breadcrumb-item"><a href="/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/publishing-apps/">Publishing apps</a></li>
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Using Page Layouts</li>
+      <li class="breadcrumb-item"><a href="/publishing-apps/android/">Android</a></li>
+      
+      
+      
+      <li class="breadcrumb-item active" aria-current="page">Submitting New Apps to the Android Store</li>
       
       
     </nav>
@@ -1368,147 +1372,352 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Using Page Layouts</h1>
+<h1>Submitting New Apps to the Android Store</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn about the different page layouts, how they appear in your apps and how they fit into the page creation process.</summary>
-
+  <summary>In this topic, you will learn how to submit your device app to the Android store.</summary>
   <section class="bcls-section">
-    <h2 id="Unsupported_layouts">Unsupported layouts</h2>
-    <p>This topic describes all the layouts that are supported in Beacon Studio. Note that Beacon Classic had some additional layouts that are now deprecated. These layouts cannot be viewed or edited in Beacon Studio.</p>
-    <p>If you try to open an existing layout in Beacon Studio, and see this message:</p>
-    <blockquote style="padding: 2em;border: 1px #999 solid;"><strong>
-      Unsupported layout<br><br>
-      Your current layout cannot be edited in this tool. Contact support to make changes. 
-    </strong></blockquote>
-    <p>you will need to <a href="https://supportportal.brightcove.com">contact Support</a> to get help in updating the layout.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Page_creation_process">Page creation process</h2>
-    <p>When creating a page you are first asked to enter a title for the page, then asked to choose a page layout:</p>
+    <aside class="bcls-aside bcls-aside--information"> If you are seeking information on how to update an existing app to a Brightcove Beacon app, see the
+      <a href="/publishing-apps/android/updating-android-apps-to-bcb.html">Updating Android Apps to Brightcove Beacon </a>
+      document.
+    </aside>
+    <h2 id="Introduction">Introduction</h2>
+    <p>
+      This document will assist you in submitting your Brightcove Beacon app to the Google Play Store. The first three sections of this document, not including this one, list information/assets you will need when you begin to complete the submission process.
+    </p>
+    <p>
+      Following those lists is step-by-step guidance in the submission process.
+      After you create your account you will proceed to the dashboard where you will supply information for the submission. The dashboard appears as follows, and the areas in which you will need to enter information are highlighted in yellow:
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-page-layouts/page-types-create-page.png" alt="">
+      <img class="bcls-image" src="/assets/images/publishing-apps/android/dashboard.png" alt="dashboard" />
     </figure>
-    <p>This document will focus on the page layouts, their functionality and appearance. For information on the entire page creation process see the <a href="/layout/creating-managing-pages.html">Creating and Managing Pages</a> document.</p>
+    </p>
   </section>
-
   <section class="bcls-section">
-    <h2 id="Formatting_playlists">Formatting playlists</h2>
-    <p>You have flexibility when placing playlists on a page. If you click the three ellipsis (three dots) next to the playlist name</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-page-layouts/three-dots-to-edit.png" alt="three dots to edit">
-    </figure>
-    <p>you bring up the playlist settings dialog. Several playlist manipulation options are presenter here.</p>
-    <p>When you click <span class="button-blue">More layout options</span> you see the playlist layout dialog, where more playlist manipulation options are offered.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-page-layouts/playlist-layout-options.png" alt="playlist layout options">
-    </figure>
-    <p>Not every playlist on every page layout offers all options. Restrictions will be listed where appropriate for each page layout.</p>
-    <p>For complete details on managing and configuring playlists, see the <a href="/layout/managing-playlists-on-pages.html">Managing Playlists on Pages</a> document.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Playlist_Grid">Playlist Grid</h2>
-    <p>Note the following about the <strong>Playlist Grid</strong> page layout:</p>
+    <h2 id="Android_Mobile_&_Android_TV">Android Mobile & Android TV</h2>
+    <p>
+      The following information/assets will be required whether you are submitting for Android Mobile or Android TV.
+    </p>
     <ul>
       <li>
-        The <strong>Playlist Grid</strong> displays one or more playlists in grids, meaning thumbnails for all the videos in the playlist will appear on the page. If multiple playlists are selected the playlists names will appear as tabs at the top of the app page, as shown here:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/layout/using-page-layouts/playlist-grid-wide.png" alt="grid page">
-        </figure>
-      </li>
-      <li>Note that if only one playlist is displayed no playlist name will appear. In this case, you would want to be sure the page name reflected the content of the playlist.</li>
-      <li>
-        The page layout is responsive. The following screenshot shows the same page previously shown, but at a narrower browser width. Note the the thumbnails are only four across whereas in the wider browser they were five across.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/layout/using-page-layouts/playlist-grid-narrow.png" alt="narrower grid">
-        </figure>
+        Store Overview:
+        <a href="https://developer.android.com/distribute"> https://developer.android.com/distribute </a>
       </li>
       <li>
-        If the number of playlists added to the page makes the playlist name tabs wider than space available, an arrow is added to the right side of the tab list to provide a way to see all the tabs, as shown here:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/layout/using-page-layouts/many-tabs.png" alt="arrow for tabs">
-        </figure>
-        Once you reach the end, the arrow appears on the left side.
+        Developer Program Overview:
+        <a href="https://developers.google.com/"> https://developers.google.com/
+        </a>
+      </li>
+      <li>
+        Familiarize yourself with the extensive <strong>To Do</strong> list: <a href="https://developer.android.com/distribute/best-practices/launch/launch-checklist">Launch checklist</a> </li>
+      <li>
+        Store details:
+        <a href="https://play.google.com/apps/publish/signup/"> https://play.google.com/apps/publish/signup/ </a>
+        (requires Google Play Developer Program - Membership, $25 one time)
+      </li>
+      <li>Suggested lead time for approval: One week</li>
+      <li>You need to setup device app logins for QA in store</li>
+      <li>
+        Be sure your TV app meets Google's
+        <a href="https://developer.android.com/docs/quality-guidelines/tv-app-quality">TV app quality</a> standards.
+      </li>
+      <li>
+        A signing key must be created which will be used to sign the app. The following information is required to create the signing key: <ul>
+          <li>Password</li>
+          <li>First and Last name</li>
+          <li>Name of Organizational unit</li>
+          <li>Name of Organization</li>
+          <li>Name of City / Locality</li>
+          <li>Name of State / Province</li>
+          <li>Two-letter country code for this unit</li>
+        </ul>
+        NOTE: The signing key for mobile and TV apps MUST be the same if they are sharing a store listing using multiple APKs.
       </li>
     </ul>
   </section>
-
   <section class="bcls-section">
-    <h2 id="Hero_Autoplay_Channel">Hero (Autoplay Channel)</h2>
-    <p>Note the following about the <strong>Hero (Autoplay Channel)</strong> page layout:</p>
+    <h2 id="Required_information_for_Android_Mobile"> Required information for Android Mobile </h2>
+    <p>
+      These are specific requirements for Android Mobile on top of the joint requirements listed above.
+    </p>
     <ul>
-      <li>Feature a channel as fullscreen, autoplaying video. Play the following video to see the behavior.
-        <iframe src="https://players.brightcove.net/1752604059001/default_default/index.html?videoId=1700212308193411817" allowfullscreen="" allow="encrypted-media" width="790" height="400"></iframe>
+      <li>App Title - 50 characters</li>
+      <li>Short Description - 80 characters</li>
+      <li>Full description - 4000 characters</li>
+      <li>
+        Note : All of this metadata should be translated to all languages if available.
       </li>
-      <li>Additional playlists display as carousels.</li>
-      <li>Valid video content for the playlist with channel are:
+      <li>App ID - example - com.myco.tvcable</li>
+      <li>Keystore to sign the package</li>
+      <li>Application type</li>
+      <li>Category</li>
+      <li>
+        Screenshots (see Google's
+        <a href="https://support.google.com/googleplay/android-developer/answer/1078870">Graphic assets, screenshots, & video</a> document for more info)
         <ul>
-          <li>A Brightcove Beacon channel</li>
-          <li>A Cloud Playout channel created in Studio</li>
+          <li>Standard - English (UK) - en-GB</li>
+          <li>
+            JPEG or 24-bit PNG (no alpha). Minimum page length: 320px. Maximum page length: 3840px.
+          </li>
+          <li>
+            You must upload at least one 7-inch screenshot and one 10-inch screenshot to allow your app to appear in the <strong>Developed to tablets</strong> list in the Play Store. If you have previously uploaded screenshots, move them to the appropriate area below.
+          </li>
         </ul>
       </li>
-      <li>The page is responsive. The playing video reduces in size and the carousels' thumbnails shrink in size and fewer are displayed.</li>
-      <li>No layout changes are allowed on the autoplay channel.</li>
-      <li>There is a fallback feature that can be confusing if you are not aware of it. If for some reason the featured autoplay playlist cannot play, the first playlist in the normal list of playlist will be "promoted" into the autoplay position. The following diagram further clarifies the feature:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/layout/using-page-layouts/hero-autoplay.png" alt="hero autoplay fallback">
-        </figure>
+      <li>
+        High resolution icon
+        <ul>
+          <li>Standard - English (UK) - en-GB</li>
+          <li>512 x 512</li>
+          <li>32-bit PNG (with alpha)</li>
+        </ul>
+      </li>
+      <li>
+        Feature Graphic
+        <ul>
+          <li>Standard - English (UK) - en-GB</li>
+          <li>1024b x 500h</li>
+          <li>JPG or 24-bit PNG (no alpha)</li>
+        </ul>
+      </li>
+      <li>
+        Logo Icon
+        <ul>
+          <li>192 x192 app icon (one square and one round)</li>
+          <li>Client to set up App logins for QA in store</li>
+        </ul>
       </li>
     </ul>
   </section>
-
   <section class="bcls-section">
-    <h2 id="Hero_Featured_Playlist">Hero (Featured Playlist)</h2>
-    <p>Note the following about the <strong>Hero (Featured Playlist)</strong> page layout:</p>
+    <h2 id="Required_information_for_Android_TV"> Required information for Android TV
+    </h2>
+    <p>
+      These are specific requirements for Android TV on top of the joint requirements listed above.
+    </p>
     <ul>
-      <li>The featured playlist appears at the top of the page with its thumbnails larger within a carousel than other playlists' thumbnails on the page, as shown here:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/layout/using-page-layouts/hero-playlist-wide.png" alt="hero playlist wide">
-        </figure>
+      <li>APK package created with a generated signature</li>
+      <li>Title</li>
+      <li>Short Description</li>
+      <li>Full Description</li>
+      <li>
+        Screenshots
+        <ul>
+          <li>JPEG or 24-bit PNG (no alpha). Up to 8 can be uploaded</li>
+          <li>1280x720</li>
+        </ul>
       </li>
-      <li>As seen in the screenshot just above, additional playlists added to the page display below the featured playlist in carousels, using smaller thumbnails.</li>
-      <li>The page layout is responsive. The following screenshot shows the same page previously shown, but at a narrower browser width. Note the the thumbnails are only two across for the featured playlist whereas in the wider browser they were three across.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/layout/using-page-layouts/hero-playlist-narrow.png" alt="hero playlist narrow">
-        </figure>
+      <li>
+        Hi-res icon
+        <ul>
+          <li>512 x 512</li>
+          <li>32-bit PNG (with alpha)</li>
+        </ul>
       </li>
-      <li>In the featured playlist, you do not have the option to display the thumbnails in portrait orientation.</li>
+      <li>
+        Banner
+        <ul>
+          <li>320 x 180</li>
+          <li>24-bit PNG</li>
+        </ul>
+      </li>
+      <li>
+        IC_launcher
+        <ul>
+          <li>256 x256</li>
+          <li>24-bit PNG</li>
+        </ul>
+      </li>
+      <li>
+        Feature Graphic
+        <ul>
+          <li>1024w x 500h</li>
+          <li>JPG or 24-bit PNG (no alpha)</li>
+        </ul>
+      </li>
+      <li>Client to set up App logins for QA in store</li>
     </ul>
   </section>
-
   <section class="bcls-section">
-    <h2 id="Hero_Image">Hero (Image)</h2>
-    <p>Note the following about the <strong>Hero (Image)</strong> page layout:</p>
-    <ul>
-      <li>The hero image appears mostly visible with added playlists overlaying the image near the bottom of the app page, as shown here:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/layout/using-page-layouts/hero-image.png" alt="hero image">
+    <h2 id="Getting_started_in_the_dashboard"> Getting started in the dashboard
+    </h2>
+    <ol class="bcls-tasklist">
+      <li>
+        Browse to the
+        <a href="https://play.google.com/apps/publish/signup/">Google Play Console sign up page</a> and create your account. This will include paying a $25 fee. After completing the sign up process you will see the <strong>Google Play Console</strong>: <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/welcome.png" alt="create application" />
         </figure>
       </li>
-      <li>Additional playlists display as carousels.</li>
-      <li>The page is responsive. The hero image reduces in size and the carousels' thumbnails shrink in size and fewer are displayed.</li>
-    </ul>
+      <li>Click the <strong>Create app</strong> button.</li>
+      <li>
+        Provide the <strong>App name</strong> and select a <strong>Default language</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/name-language.png" alt="name and language page" />
+        </figure>
+      </li>
+      <li>
+        Select whether the  app will be <strong>Free</strong> or <strong>Paid</strong>. You can edit this option until you publish the app.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/free-paid.png" alt="free or paid option" />
+        </figure>
+      </li>
+      <li>Check the <strong>Declarations</strong> associated with developer policies, terms of service, and export laws.</li>
+      <li>
+        Click the <strong>Create app</strong> button. You will be moved into the <strong>Dashboard</strong> section.
+      </li>
+    </ol>
   </section>
-
   <section class="bcls-section">
-    <h2 id="Carousels">Carousels</h2>
-    <p>Note the following about the <strong>Carousels</strong> page layout:</p>
-    <ul>
-      <li>A new carousels is added for each playlist placed on the page, as shown here:
+    <h2 id="Complete_Store_listing_information"> Complete <em>Store listing</em> information </h2>
+    <p>
+      The <strong>Store listing</strong> section is rather lengthy. The different sections will be shown in different steps.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Enter the <strong>Short description</strong> and <strong>Full description</strong>.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/layout/using-page-layouts/carousels.png" alt="carousels">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/store-listing-details.png" alt="store listing details" />
         </figure>
       </li>
-      <li>A chevron <img src="/assets/images/layout/using-page-layouts/chevron.png" alt="chevron"> appears at either end of carousel for navigation to all the videos in the playlist.</li>
-      <li>The page is responsive. Here is a narrower view of the page, and also one of the playlist is shown using portrait orientation thumbnails:
+      <li>
+        Supply the graphic assets as requested in the form. You do NOT need to enter images for <em>WEAR OS</em>.
+        <aside class="bcls-aside bcls-aside--tip"> The <em>TV Banner</em> and
+          <em>Daydream 360 degree stereoscopic image</em> and not important for Brightcove Beacon. The YouTube promo video needed only if you will use YouTube to promote your app.
+        </aside>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/layout/using-page-layouts/carousels-with-portrait.png" alt="carousels with portrait">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/store-listing-graphic-assets.png" alt="store listing graphic assets" />
         </figure>
       </li>
-    </ul>
+      <li>
+        Complete the <strong>Categorization</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/store-listing-categorization.png" alt="store listing categorization" />
+        </figure>
+      </li>
+      <li>
+        Complete the <strong>Contact details</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/store-listing-contact-details.png" alt="store listing contact details" />
+        </figure>
+      </li>
+      <li>Click the <strong>SAVE DRAFT</strong> button.</li>
+    </ol>
   </section>
-
+  <section class="bcls-section">
+    <h2 id="Complete_App_releases_information"> Complete <em>App releases</em> information </h2>
+    <p>
+      In this <strong>App releases</strong> section, you will create a <strong>Closed track</strong> to allow testing of your app before it goes live. The closed track lets you choose a number of people to test your app.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Click the <strong>App releases</strong> link in the left navigation.
+      </li>
+      <li>
+        Click the <strong>CREATE CLOSED TRACK</strong> link, highlighted in yellow below.
+        <aside class="bcls-aside bcls-aside--tip"> After testing and you are ready to publish your app, you use the <strong>App releases</strong> section again, but select <strong>Production track</strong> to upload the app you are going to push live.
+        </aside>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/app-releases.png" alt="app releases" />
+        </figure>
+      </li>
+      <li>
+        Enter a name for your closed track.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/app-releases-create-track.png" alt="create track" />
+        </figure>
+      </li>
+      <li>Click the <strong>CREATE TRACK</strong> button.</li>
+      <li>
+        To create the track you will need to perform the following tasks: <ol type="A">
+          <li>Upload the APK (which was supplied to you by Brightcove)</li>
+          <li>Provide a release name, for example <em>2.1</em>.</li>
+          <li>
+            Provide release notes, in as many languages as you are supporting.
+          </li>
+          <li>Save or review the supplied information.</li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/app-releases-apks.png" alt="submit apk" />
+        </figure>
+      </li>
+      <!-- <li>???????????HOW TO DISTRIBUTE???????????????</li> -->
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Complete_Content_rating_information"> Complete <em>Content rating</em> information </h2>
+    <p>
+      Move into the <strong>Content rating</strong> section by using the left navigation. In this section you complete a questionnaire, and based on your responses a rating will be assigned to your app and its content. For complete information see the
+      <a href="https://support.google.com/googleplay/android-developer/answer/188189">Content ratings for apps & games</a> document.
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/publishing-apps/android/content-rating.png" alt="content rating" />
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Complete_App_content_information"> Complete <em>App content</em> information </h2>
+    <p>
+      Move into the <strong>App content</strong> section by using the left navigation. In this section you provide information about: </p>
+    <ul>
+      <li>Your desired privacy policy</li>
+      <li>If advertisements will be used in your content</li>
+      <li>If there are restricted parts of your app</li>
+      <li>The target audience of your app</li>
+    </ul>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/publishing-apps/android/app-content.png" alt="app content" />
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Complete_Pricing_distribution_information"> Complete <em>Pricing & distribution</em> information </h2>
+    <p>In this section you provide information about:</p>
+    <ul>
+      <li>If the app is free or not</li>
+      <li>Geo-restrictions</li>
+      <li>Android devices on which the app will function</li>
+      <li>Consent of how the app will be handled by Google</li>
+    </ul>
+    <p>
+      The <strong>Pricing & distribution</strong> section is rather lengthy. The different sections will be shown in different steps.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Click the <strong>Pricing and distribution</strong> link in the left navigation.
+      </li>
+      <li>
+        Click the correct button to determine if your app will be free or not.
+        Note that this is free to install the app or not. If you are going to gain revenue by advertisements or subscriptions, and not a per install fee, click <strong>FREE</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/pricing-distribution.png" alt="pricing distribution" />
+        </figure>
+      </li>
+      <li>
+        Configure the <strong>Countries</strong> section to reflect any geo-restrictions you have, or don't have.
+      </li>
+      <li>
+        You do not have to do anything in the <strong>Device categories</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/pd-device-categories.png" alt="device categories" />
+        </figure>
+      </li>
+      <li>
+        You do not have to do anything in the <strong>User programs</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/pd-user-programs.png" alt="user programs" />
+        </figure>
+      </li>
+      <li>
+        Read the appropriate information for each question in the <strong>Consent</strong> section and check or uncheck the boxes.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/pd-consent.png" alt="consent" />
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Adding_subscriptions">Adding subscriptions</h2>
+    <p>
+      If you are adding subscriptions to your Android app, please see the <a href="/publishing-apps/android/adding-subscriptions-in-android.html">Adding Subscriptions to Android</a> document for complete instructions.
+    </p>
+  </section>
 </article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
@@ -1535,7 +1744,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 20 Sep 2021
+  Page last updated on 22 Sep 2021
 </div>
 
 
