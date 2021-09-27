@@ -1373,12 +1373,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <summary>In this topic you will learn how to automatically generate video captions.</summary>
   <section class="bcls-section">
     <p>Beacon Studio provides the ability to automatically generate video captions for newly uploaded or existing videos. After the caption files are generated, they are automatically configured as part of the video's text tracks properties. Brightcove recommends <a href="#review">reviewing the generated captions</a> for accuracy. </p>
+    <p>In order to generate captions, the following are required:</p>
+    <ul>
+      <li>The videos must have been transcoded using a Context Aware or Dynamic Delivery ingest profile</li>
+      <li>A video master file must be available. Videos uploaded using one of the Brightcove provided, standard ingest profiles will save a master by default. For more information on archiving masters, see the <a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a> document.</li>
+    </ul>
     <p>If you are using a third-party to generate caption files, see <a href="adding-captions-videos.html">Adding Captions to Videos</a> for information on how to associate caption files with videos.</p>
     <aside class="bcls-aside bcls-aside--information">Note: Please contact your Brightcove Account Manager to have this feature enabled.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="upload">Generating captions when uploading videos</h2>
-    <p>If your account is enabled, there is an option to generate caption files when videos are uploaded. Captions can only be generated for videos that are transcoded using a Context Aware or Dynamic Delivery ingest profile. To generate a caption file during upload, follow these steps.</p>
+    <p>If your account is enabled, there is an option to generate caption files when videos are uploaded. To generate a caption file during upload, follow these steps.</p>
     <ol class="bcls-tasklist-restart">
       <li>Open the Media module and click <strong>Upload</strong> at the top of the page or click <strong>Upload Videos</strong> at the bottom of the left navigation. The Upload module will open in a new browser tab.</li>
       <li>Enable the <strong>Auto captioning</strong> option, the <strong>Automatic captioning settings </strong>dialog will open.
@@ -1391,7 +1396,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="existing">Generating captions for an existing video</h2>
-    <p>The Media module provides the option to generate  caption files for existing videos in your account. Captions can only be generated for videos that were transcoded using a Context Aware or Dynamic Delivery ingest profile. To generate a caption file for an existing video, follow these steps.</p>
+    <p>The Media module provides the option to generate  caption files for existing videos in your account. To generate a caption file for an existing video, follow these steps.</p>
     <ol class="bcls-tasklist-restart">
       <li>Click <strong>Media</strong> in the navigation header to open the Media module.</li>
       <li>Click the link for the video you want to edit to open the video properties.</li>
@@ -1409,7 +1414,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="multiple">Generating captions for multiple videos</h2>
-    <p>The Media module also provides the option to generate  caption files for multiple videos at once. Captions can only be generated for videos that were transcoded using a Context Aware or Dynamic Delivery ingest profile. A maximum of 100 videos can be captioned at once. To generate a caption files for multiple videos, follow these steps.</p>
+    <p>The Media module also provides the option to generate  caption files for multiple videos at once.  A maximum of 100 videos can be captioned at once. To generate a caption files for multiple videos, follow these steps.</p>
     <ol class="bcls-tasklist-restart">
       <li>Click <strong>Media</strong> in the navigation header to open the Media module.</li>
       <li>Select the check box next to the videos  you want to generate captions for.</li>
