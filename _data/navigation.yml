@@ -557,6 +557,8 @@
   name: General Information
   url: /general/index.html
   docs:
+    - name: Authentication Using OAuth
+      url: /general/authentication-using-oauth.html
     - name: DRM Output Protection Settings
       url: /general/drm-output-protection-settings.html
     - name: Known Issues
