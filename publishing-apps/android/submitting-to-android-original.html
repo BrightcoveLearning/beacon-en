@@ -1,0 +1,348 @@
+---
+title: 'Submitting New Apps to the Android Store'
+description: 'In this topic, you will learn how to submit your device app to the Android store.'
+parent: 'android'
+grandparent: 'publishing-apps'
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--information">
+      <ul>
+        <li>Note that it can take up to 24 hours for changes to be reflected in your account.</li>
+        <li>If you are seeking information on how to update an existing app to a Brightcove Beacon app, see the <a href="/creating-your-apps/android/updating-android-apps-to-bcb.html">Updating Android Apps to Brightcove Beacon </a> document.</li>
+      </ul>
+    </aside>
+    <h2 id="Introduction">Introduction</h2>
+    <p>
+      This document will assist you in submitting your Brightcove Beacon app to the Google Play Store. The first three sections of this document, not including this one, list information/assets you will need when you begin to complete the submission process.
+    </p>
+    <p>
+      Following those lists is step-by-step guidance in the submission process.
+      After you create your account you will proceed to the dashboard where you will supply information for the submission. The dashboard appears as follows, and the areas in which you will need to enter information are highlighted in yellow:
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/publishing-apps/android/dashboard.png" alt="dashboard" />
+    </figure>
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Android_Mobile_&_Android_TV">Android Mobile & Android TV</h2>
+    <p>
+      The following information/assets will be required whether you are submitting for Android Mobile or Android TV.
+    </p>
+    <ul>
+      <li>
+        Store Overview:
+        <a href="https://developer.android.com/distribute"> https://developer.android.com/distribute </a>
+      </li>
+      <li>
+        Developer Program Overview:
+        <a href="https://developers.google.com/"> https://developers.google.com/
+        </a>
+      </li>
+      <li>
+        Familiarize yourself with the extensive <strong>To Do</strong> list: <a href="https://developer.android.com/distribute/best-practices/launch/launch-checklist">Launch checklist</a> </li>
+      <li>
+        Store details:
+        <a href="https://play.google.com/apps/publish/signup/"> https://play.google.com/apps/publish/signup/ </a>
+        (requires Google Play Developer Program - Membership, $25 one time)
+      </li>
+      <li>Suggested lead time for approval: One week</li>
+      <li>You need to setup device app logins for QA in store</li>
+      <li>
+        Be sure your TV app meets Google's
+        <a href="https://developer.android.com/docs/quality-guidelines/tv-app-quality">TV app quality</a> standards.
+      </li>
+      <li>
+        A signing key must be created which will be used to sign the app. The following information is required to create the signing key: <ul>
+          <li>Password</li>
+          <li>First and Last name</li>
+          <li>Name of Organizational unit</li>
+          <li>Name of Organization</li>
+          <li>Name of City / Locality</li>
+          <li>Name of State / Province</li>
+          <li>Two-letter country code for this unit</li>
+        </ul>
+        NOTE: The signing key for mobile and TV apps MUST be the same if they are sharing a store listing using multiple APKs.
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Required_information_for_Android_Mobile"> Required information for Android Mobile </h2>
+    <p>
+      These are specific requirements for Android Mobile on top of the joint requirements listed above.
+    </p>
+    <ul>
+      <li>App Title - 50 characters</li>
+      <li>Short Description - 80 characters</li>
+      <li>Full description - 4000 characters</li>
+      <li>
+        Note : All of this metadata should be translated to all languages if available.
+      </li>
+      <li>App ID - example - com.myco.tvcable</li>
+      <li>Keystore to sign the package</li>
+      <li>Application type</li>
+      <li>Category</li>
+      <li>
+        Screenshots (see Google's
+        <a href="https://support.google.com/googleplay/android-developer/answer/1078870">Graphic assets, screenshots, & video</a> document for more info)
+        <ul>
+          <li>Standard - English (UK) - en-GB</li>
+          <li>
+            JPEG or 24-bit PNG (no alpha). Minimum page length: 320px. Maximum page length: 3840px.
+          </li>
+          <li>
+            You must upload at least one 7-inch screenshot and one 10-inch screenshot to allow your app to appear in the <strong>Developed to tablets</strong> list in the Play Store. If you have previously uploaded screenshots, move them to the appropriate area below.
+          </li>
+        </ul>
+      </li>
+      <li>
+        High resolution icon
+        <ul>
+          <li>Standard - English (UK) - en-GB</li>
+          <li>512 x 512</li>
+          <li>32-bit PNG (with alpha)</li>
+        </ul>
+      </li>
+      <li>
+        Feature Graphic
+        <ul>
+          <li>Standard - English (UK) - en-GB</li>
+          <li>1024b x 500h</li>
+          <li>JPG or 24-bit PNG (no alpha)</li>
+        </ul>
+      </li>
+      <li>
+        Logo Icon
+        <ul>
+          <li>192 x192 app icon (one square and one round)</li>
+          <li>Client to set up App logins for QA in store</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Required_information_for_Android_TV"> Required information for Android TV
+    </h2>
+    <p>
+      These are specific requirements for Android TV on top of the joint requirements listed above.
+    </p>
+    <ul>
+      <li>APK package created with a generated signature</li>
+      <li>Title</li>
+      <li>Short Description</li>
+      <li>Full Description</li>
+      <li>
+        Screenshots
+        <ul>
+          <li>JPEG or 24-bit PNG (no alpha). Up to 8 can be uploaded</li>
+          <li>1280x720</li>
+        </ul>
+      </li>
+      <li>
+        Hi-res icon
+        <ul>
+          <li>512 x 512</li>
+          <li>32-bit PNG (with alpha)</li>
+        </ul>
+      </li>
+      <li>
+        Banner
+        <ul>
+          <li>320 x 180</li>
+          <li>24-bit PNG</li>
+        </ul>
+      </li>
+      <li>
+        IC_launcher
+        <ul>
+          <li>256 x256</li>
+          <li>24-bit PNG</li>
+        </ul>
+      </li>
+      <li>
+        Feature Graphic
+        <ul>
+          <li>1024w x 500h</li>
+          <li>JPG or 24-bit PNG (no alpha)</li>
+        </ul>
+      </li>
+      <li>Client to set up App logins for QA in store</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Getting_started_in_the_dashboard"> Getting started in the dashboard
+    </h2>
+    <ol class="bcls-tasklist">
+      <li>
+        Browse to the
+        <a href="https://play.google.com/apps/publish/signup/">Google Play Console sign up page</a> and create your account. This will include paying a $25 fee. After completing the sign up process you will see the <strong>Google Play Console</strong>: <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/welcome.png" alt="create application" />
+        </figure>
+      </li>
+      <li>Click the <strong>CREATE APPLICATION</strong> button.</li>
+      <li>
+        Supply the <strong>Default language</strong> and app <strong>Title</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/language-title.png" alt="language title page" />
+        </figure>
+      </li>
+      <li>
+        Click the <strong>Create</strong> button. You will be moved into the <strong>Store listing</strong> section.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Complete_Store_listing_information"> Complete <em>Store listing</em> information </h2>
+    <p>
+      The <strong>Store listing</strong> section is rather lengthy. The different sections will be shown in different steps.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Enter the <strong>Short description</strong> and <strong>Full description</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/store-listing-details.png" alt="store listing details" />
+        </figure>
+      </li>
+      <li>
+        Supply the graphic assets as requested in the form. You do NOT need to enter images for <em>WEAR OS</em>.
+        <aside class="bcls-aside bcls-aside--tip"> The <em>TV Banner</em> and
+          <em>Daydream 360 degree stereoscopic image</em> and not important for Brightcove Beacon. The YouTube promo video needed only if you will use YouTube to promote your app.
+        </aside>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/store-listing-graphic-assets.png" alt="store listing graphic assets" />
+        </figure>
+      </li>
+      <li>
+        Complete the <strong>Categorization</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/store-listing-categorization.png" alt="store listing categorization" />
+        </figure>
+      </li>
+      <li>
+        Complete the <strong>Contact details</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/store-listing-contact-details.png" alt="store listing contact details" />
+        </figure>
+      </li>
+      <li>Click the <strong>SAVE DRAFT</strong> button.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Complete_App_releases_information"> Complete <em>App releases</em> information </h2>
+    <p>
+      In this <strong>App releases</strong> section, you will create a <strong>Closed track</strong> to allow testing of your app before it goes live. The closed track lets you choose a number of people to test your app.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Click the <strong>App releases</strong> link in the left navigation.
+      </li>
+      <li>
+        Click the <strong>CREATE CLOSED TRACK</strong> link, highlighted in yellow below.
+        <aside class="bcls-aside bcls-aside--tip"> After testing and you are ready to publish your app, you use the <strong>App releases</strong> section again, but select <strong>Production track</strong> to upload the app you are going to push live.
+        </aside>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/app-releases.png" alt="app releases" />
+        </figure>
+      </li>
+      <li>
+        Enter a name for your closed track.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/app-releases-create-track.png" alt="create track" />
+        </figure>
+      </li>
+      <li>Click the <strong>CREATE TRACK</strong> button.</li>
+      <li>
+        To create the track you will need to perform the following tasks: <ol type="A">
+          <li>Upload the APK (which was supplied to you by Brightcove)</li>
+          <li>Provide a release name, for example <em>2.1</em>.</li>
+          <li>
+            Provide release notes, in as many languages as you are supporting.
+          </li>
+          <li>Save or review the supplied information.</li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/app-releases-apks.png" alt="submit apk" />
+        </figure>
+      </li>
+      <!-- <li>???????????HOW TO DISTRIBUTE???????????????</li> -->
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Complete_Content_rating_information"> Complete <em>Content rating</em> information </h2>
+    <p>
+      Move into the <strong>Content rating</strong> section by using the left navigation. In this section you complete a questionnaire, and based on your responses a rating will be assigned to your app and its content. For complete information see the
+      <a href="https://support.google.com/googleplay/android-developer/answer/188189">Content ratings for apps & games</a> document.
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/publishing-apps/android/content-rating.png" alt="content rating" />
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Complete_App_content_information"> Complete <em>App content</em> information </h2>
+    <p>
+      Move into the <strong>App content</strong> section by using the left navigation. In this section you provide information about: </p>
+    <ul>
+      <li>Your desired privacy policy</li>
+      <li>If advertisements will be used in your content</li>
+      <li>If there are restricted parts of your app</li>
+      <li>The target audience of your app</li>
+    </ul>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/publishing-apps/android/app-content.png" alt="app content" />
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Complete_Pricing_distribution_information"> Complete <em>Pricing & distribution</em> information </h2>
+    <p>In this section you provide information about:</p>
+    <ul>
+      <li>If the app is free or not</li>
+      <li>Geo-restrictions</li>
+      <li>Android devices on which the app will function</li>
+      <li>Consent of how the app will be handled by Google</li>
+    </ul>
+    <p>
+      The <strong>Pricing & distribution</strong> section is rather lengthy. The different sections will be shown in different steps.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Click the <strong>Pricing and distribution</strong> link in the left navigation.
+      </li>
+      <li>
+        Click the correct button to determine if your app will be free or not.
+        Note that this is free to install the app or not. If you are going to gain revenue by advertisements or subscriptions, and not a per install fee, click <strong>FREE</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/pricing-distribution.png" alt="pricing distribution" />
+        </figure>
+      </li>
+      <li>
+        Configure the <strong>Countries</strong> section to reflect any geo-restrictions you have, or don't have.
+      </li>
+      <li>
+        You do not have to do anything in the <strong>Device categories</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/pd-device-categories.png" alt="device categories" />
+        </figure>
+      </li>
+      <li>
+        You do not have to do anything in the <strong>User programs</strong> section.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/pd-user-programs.png" alt="user programs" />
+        </figure>
+      </li>
+      <li>
+        Read the appropriate information for each question in the <strong>Consent</strong> section and check or uncheck the boxes.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publishing-apps/android/pd-consent.png" alt="consent" />
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Adding_subscriptions">Adding subscriptions</h2>
+    <p>
+      If you are adding subscriptions to your Android app, please see the <a href="/publishing-apps/android/adding-subscriptions-in-android.html">Adding Subscriptions to Android</a> document for complete instructions.
+    </p>
+  </section>
+</article>
