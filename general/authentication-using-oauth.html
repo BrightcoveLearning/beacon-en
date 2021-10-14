@@ -2,8 +2,8 @@
 title: "Authentication Using OAuth"
 description: "In this topic, you will learn how to configure the integration of Brightcove Beacon with an OIDC provider. Auth0 is used as an example OIDC provider."
 parent: "Using Brightcove Beacon"
-layout: "staging"
 ---
+
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
@@ -275,7 +275,11 @@ layout: "staging"
       <li>Place this value in the <strong>Has Audience</strong> form field.</li>
     </ol>
     <h3>Confirming correct implementation</h3>
-    <p>Once the OIDC provider is integrated correctly with Brightcove Beacon, the OIDC provider's tool will authenticate users to the Beacon apps.</p>
+    <p>Once the OIDC provider is integrated correctly with Brightcove Beacon, the OIDC provider's tool will authenticate users to the Beacon apps. For instance, here is the OAuth implementation login screen from a Brightcove testing account:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/general/authentication-using-oauth/bc-example-login.png" alt="bc example login">
+    </figure>
+    <p>Note that this login screen looks completely different than the default Beacon login screen.</p>
   </section>
 
 </article>
