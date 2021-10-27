@@ -12,6 +12,7 @@ parent: Reviewing Analytics
     <ul>
       <li><strong>Video Views</strong> - The number of times a video started playing, recorded when the stream is started (does not include rewind or replay); it is not a measure of individual viewers; for videos with pre-roll ads, a view is not recorded until the video starts to play</li>
       <li><strong>Video Impressions</strong> - Number of times a video was loaded and ready for interaction</li>
+      <li><strong>Play Requests</strong> - The number of times playback was requested either by a user pressing the play button or an auto-play event</li>
       <li><strong>Play Rate</strong> - The percentage of videos that were loaded that were actually played (video views / video impressions)</li>
       <li><strong>Viewed Minutes</strong> - Number of minutes the video was watched</li>
       <li><strong>Engagement Score</strong> - The average percent watched per video view (calculated by adding all the percentage watched divided by the number of video views)</li>
@@ -60,6 +61,7 @@ parent: Reviewing Analytics
     <ul>
       <li><strong>Video Views</strong> - The number of times a video started playing, recorded when the stream is started (does not include rewind or replay); it is not a measure of individual viewers</li>
       <li><strong>Video Impressions</strong> - The number of times the video was loaded into a player and ready for interaction</li>
+      <li><strong>Play Requests</strong> - The number of times playback was requested either by a user pressing the play button or an auto-play event</li>
       <li><strong>Play Rate</strong> - The percentage of users that played the video after it was loaded (Video Views divided by Video Impressions)</li>
       <li><strong>Viewed Minutes</strong> - Total number of minutes the video was viewed</li>
       <li><strong>Engagement Score</strong> - The average percent watched per video view (calculated by adding all the percentage watched divided by the number of Video Views)</li>
@@ -216,7 +218,7 @@ parent: Reviewing Analytics
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add filter" src="/assets/images/analytics/node10104-add-filter.png" /></figure>
       </li>
       <li>The data can be filtered by <strong>tags</strong>, <strong>custom fields</strong>, <strong>countries</strong> and <strong>device types</strong>. Configure the filter criteria using the filter panel. The following example will apply the filter:
-<ul>
+        <ul>
           <li>Tag = <strong>on demand training</strong> AND</li>
           <li>Custom field <strong>Product</strong> = <strong>Video Cloud</strong> AND</li>
           <li>Countries = <strong>United States</strong></li>
@@ -264,6 +266,6 @@ parent: Reviewing Analytics
     </ul>
     <p>Having all of the data in the original format from the API allows you to manipulate the data in ways other than what is provided in the UI.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Export Data" src="/assets/images/analytics/node10104-export.png" /></figure>
-    <p>Note that the reports support print-friendly style sheets so printing a report or saving to PDF will generate a printer-friendly page.</p>
+    <p>The export buttons above the graph will export the graph data. The export buttons above the table will export the table data. Note that the reports support print-friendly style sheets so printing a report or saving to PDF will generate a printer-friendly page.</p>
   </section>
 </article>
