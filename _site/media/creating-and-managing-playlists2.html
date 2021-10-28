@@ -1,31 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Beacon ad targeting allows your Beacon apps to send important device-level and user-specific information to your ad server or ad provider." />
-
-  <title>Beacon Apps Ad Targeting</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-<link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic you will learn how to create and manage playlists in  Beacon Studio.">
+  
+  <title>Creating and Managing Playlists</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   
-  <script src="/assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
-  <link rel="stylesheet" href="/assets/css/local.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
+
 <body class="body">
+
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
@@ -50,15 +60,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
       
       
-      <li class="breadcrumb-item"><a href="/monetization/">Monetization</a></li>
+      <li class="breadcrumb-item"><a href="/media/">Media</a></li>
       
       
       
-      <li class="breadcrumb-item"><a href="/monetization/ssai/">Ssai</a></li>
-      
-      
-      
-      <li class="breadcrumb-item active" aria-current="page">Beacon Apps Ad Targeting</li>
+      <li class="breadcrumb-item active" aria-current="page">Creating and Managing Playlists</li>
       
       
     </nav>
@@ -1376,467 +1382,218 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Beacon Apps Ad Targeting</h1>
 <article class="bcls-article">
-  <summary>Beacon ad targeting allows your Beacon apps to send important device-level and user-specific information to your ad server or ad provider.</summary>
-  
+  <h1>Creating and Managing Playlists</h1>
+  <summary>In this topic you will learn how to create and manage playlists in  Beacon Studio.</summary>
   <section class="bcls-section">
-    <h2 id="introduction">Introduction</h2>
-    <p>The purpose of ad targeting is to increase the value of your ad inventory, therefore increasing ad revenue for your business.</p>
-    <p>Ad targeting allows you to target ads based on the clients' data. The process of how client-side data is passed from the Beacon apps to SSAI (Server Side Ad Insertion)is implemented as follows:</p>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="6038250741001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="6040424098001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>Need to add to this doc:</p>
+    <p>A maximum of 1,000 videos can be added to a playlist (both Manual and Smart). </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>A playlist is a collection of related videos or other media assets (i.e. seasons, live events, etc) that are grouped together in a particular order for playback in a player. The Media module makes it easy to create playlists and add assets to a playlist. After playlists have been created, you can:</p>
     <ul>
-      <li>Ad targeting variables are use in a Beacon Classic ad configuration setup. Example:
-        <pre class="line-numbers"><code class="language-html" translate="No">platform={PLATFORM}</code></pre>
-      </li>
-      <li>The Beacon app passes the ad targeting variables to Brightcove playback infrastructure with values gathered from from the particular app platform. The values are substituted for the variables. Example:
-        <pre class="line-numbers"><code class="language-html" translate="No">platform=iOS</code></pre>
-      </li>
-      <li>The playback infrastructure then in turn passes the targeting information to SSAI via {{url.xxx}} ad macros. Example:
-        <pre class="line-numbers"><code class="language-html" translate="No">platform={{url.platform}}</code></pre>
-      </li>
-      <li>SSAI then requests ads from your ad server using a VAST tag using the client side information. Example:
-        <pre class="line-numbers"><code class="language-html" translate="No">platform=iOS</code></pre>
-      </li>
+      <li>Publish a playlist to a player to display on a web page - <span class="BCL-objective">For information, see <a href="/publish-videos/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists with the Media Module</a></span></li>
+      <li>Add playlists to pages used in Beacon apps - <span class="BCL-objective">For information, see <a href="/layout/managing-playlists-on-pages.html">Managing Playlists on Pages</a></span></li>
     </ul>
-    <p>Further details and exact configuration steps follow later in this document.</p>
+    <p><span class="BCL-objective">For general information about playlists, including best practices and tips for using them effectively, see <a href="/media/introduction-playlists.html">Introduction to Playlists</a>.</span></p>
   </section>
   <section class="bcls-section">
-    <h2 id="key_benefits">Benefits</h2>
-    <h3>Improved ad targeting</h3>
+    <h2 id="types">Types of playlists</h2>
+    <p>There are two types of playlists:</p>
     <ul>
-      <li><strong>User Session ID</strong>: Brightcove generates a session ID on each device when a user opens the app. This allows you to frequency-cap ads to that session, exclude competitive ads from being served together, and sequentially rotate ads in that session. These targeting capabilities are both necessary for direct-sold and programmatic ads.</li>
-      <li><strong>More data for programmatic ads</strong>: Mobile apps and CTV apps don’t support cookies, which is the dominant method for user/device-based ad targeting on the web. By including parameters like Device ID, you can pass this valuable information to programmatic ad buyers, which then enhances your ad targeting capabilities, leading to greater CPMs.</li>
+      <li><strong>Manual</strong> - With a manual playlist, you assign specific videos or media assets to the playlist and re-order them manually</li>
+      <li><strong>Smart</strong> - With a smart playlist, the videos or media assets in the playlist are constructed automatically, based on  tags or other metadata associated with the asset. Smart playlists are dynamic and automatically update based upon the assets in your media library and the rules that define the playlist.</li>
     </ul>
-    <h3>Support for Ad Inventory split</h3>
-    <p>For apps that run on Amazon, Roku, and Samsung (in the US), you are required to do a 70/30 split of ad inventory/revenue with the platform. This means Brightcove Beacon customers monetize 70% of the ad inventory and the platform gets the remaining 30% of the ad inventory. With this enhanced ad targeting, you can use one ad tag across all of your apps and pass the device parameters to your ad server. Inside your ad server, implement the business logic that splits the ad inventory by device. The platforms also require passing Limited Ad Targeting (LAT) for Ad Inventory Split, which is a parameter Brightcove is now sending to your ad server.</p>
-    <h3>User privacy considerations</h3>
+    <p>There is no limit to the number of playlists that can be created. The assets that are initially loaded into a playlist in the player is determined by the type of playlist:</p>
     <ul>
-      <li>LAT (<em>Limited Ad Targeting</em>) allows users of Beacon apps to opt out of ad targeting based on user behavior.</li>
-      <li>Users have the ability to reset the unique Device ID that we assign to the device at any time.</li>
-      <li>iOS apps follow Apple's <a href="https://developer.apple.com/documentation/apptrackingtransparency">App Tracking Transparency</a> framework.</li>
+      <li><strong>Manual Playlists</strong> - Assets are loaded into the playlist based upon the order of the items in the  playlist</li>
+      <li><strong>Smart Playlists</strong> - Assets are loaded into the playlist based upon the <strong>Play Order</strong> playlist setting </li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="Overview">Overview</h2>
-    <p>Initially setup SSAI (Server Side Ad Insertion) in Video Cloud Studio. This configuration is used by Beacon web apps. Then in Beacon Classic, setup an <em>Advertisement Configuration</em> that links to the Video Cloud SSAI configuration and permits ad targeting. Here are more details:</p>
-    <ul>
-      <li>Configure SSAI in Video Cloud Studio
+    <h2 id="create">Creating a playlist</h2>
+    <p>To create a playlist, open the Media module and follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the side navigation panel, click <strong>Create playlist</strong>. The <strong>Create a playlist</strong> dialog will open.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-create-panel2.png" /></figure>
+      </li>
+      <li>Enter a <strong>Playlist name</strong>.</li>
+      <li>Click on a <strong>Playlist type</strong>.</li>
+      <li>Click <strong>Create playlist</strong>. The panel will close and reopen. For smart playlists, configure the <a href="#smart-props">smart playlist parameters</a>.</li>
+      <li>Click the <strong>Overview</strong> tab.</li>
+      <li>Configure the overview settings as needed.
         <ul>
-          <li>The ad tag you provide in this setup will include:
-            <ul>
-              <li>The base URL for your ad server.</li>
-              <li>URL parameters needed by your ad server.</li>
-              <li>An example ad tag used in the Video Cloud setup would follow this format:
-                <pre class="line-numbers"><code class="language-html" translate="No">https://ads.brightcove.com/ads?tech=dfpadrules&dur=15</code></pre>
-              </li>
-            </ul>
+          <li><strong>Name</strong> - playlist name</li>
+          <li><strong>Reference ID</strong> - A unique ID assigned by a publisher to a playlist</li>
+          <li><strong>Description</strong> - Playlist description</li>
+          <li><strong>Show Playlist in Sidebar</strong> - If checked, the playlist will appear in the sidebar
+            <aside class="bcls-aside bcls-aside--information">Note: A maximum of 100 playlists can appear in the sidebar.</aside>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-new-smart-playlist-overview.png" /></figure>
           </li>
-          <li>If client-side ad macros are used, they are only valid for Beacon web apps. All other app platforms use ad targeting. If ad macros are used, they simply are ignored for all non-web apps.</li>
-          <li>See the <a href="/monetization/ssai/vod-ssai.html">Implementing VOD SSAI</a>, <a href="/monetization/ssai/live-ssai.html">Implementing Live SSAI</a> and <a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing Server-Side Ads with Brightcove Player</a> documents for more information on setting up SSAI.</li>
-          <!-- <li>Client-side macros for the web are expanded by the player. Please follow the documentation at <a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#Client_side_macros">https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#Client_side_macros</a> to setup client-side macros. If support is needed for client-side macros, that should be logged through Brightcove support for Brightcove Player.</li> -->
-          <li>When finished with the SSAI configuration, copy the ID for that ad configuration which will be used in the Beacon setup.</li>
         </ul>
       </li>
-      <li>Create an Advertisement Configuration in Beacon Classic</li>
-      <ul>
-        <li>You supply the ID of the SSAI configuration created in Video Cloud Studio when creating the Beacon Ad Configuration. This associates the ad configuration with your ad platform.</li>
-        <li>In the Beacon Ad Configuration you supply only the ad targeting variables query string. This is required here as the particular platform's app must gather the client side data at this point so it can be used later when the playback infrastructure makes a request to SSAI.</li>
-        <li>Ten ad targeting variables are available for use, detailed in the next section of this document.</li>
-        <li>The ad targeting variables are used by all apps, with the exception of web apps do NOT use <code>RDID</code>, <code>IDTYPE</code>, <code>APP_ID</code> and <code>IS_LAT</code>. The ad targeting variables are detailed in the next section of this document.</li>
-      </ul>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="ad_targeting_information">Ad Targeting information</h2>
-    <p>You can target ads based on the information in the table below:</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">The <em>Variable Name</em> column is using <a href="https://support.google.com/admanager/answer/10660756?hl=en&ref_topic=10684636">Google Ad Manager parameter names</a>. The variable names you use must be those required by your ad platform. For instance, you can see Spring Serve's parameter names in their <a href="https://springserve.atlassian.net/wiki/spaces/SSD/pages/1573158912/Macros">Macros</a> document.</aside>
-    <table class="bcls-table">
-      <caption class="bcls-caption--table">Targeting Information</caption>
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Type of Information</th>
-          <th>Variable Name<br>(See note just above table)</th>
-          <th>Value Macro</th>
-          <th>Values</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>Platform</td>
-          <td><code translate="no">platform</code></td>
-          <td><strong>{PLATFORM}</strong></td>
-          <td><code translate="No">iOS</code>, <code translate="No">Android</code>, <code translate="No">Roku</code>, <code translate="No">AppleTV</code>, <code translate="No">Web</code>, <code translate="No">STV</code></td>
-        </tr>
-        <tr>
-          <td>OS version</td>
-          <td><code translate="no">os</code></td>
-          <td><strong>{OS}</strong></td>
-          <td>Device os version (for example, <code translate="No">iOS 14</code>)</td>
-        </tr>
-        <tr>
-          <td>Device model</td>
-          <td><code translate="no">model</code></td>
-          <td><strong>{MODEL}</strong></td>
-          <td>Device model; browser version used for web apps</td>
-        </tr>
-        <tr>
-          <td>Manufacturer</td>
-          <td><code translate="no">mfgr</code></td>
-          <td><strong>{MFGR}</strong></td>
-          <td>Device manufacturer; browser name used for web apps</td>
-        </tr>
-        <tr>
-          <td>Language</td>
-          <td><code translate="no">lang</code></td>
-          <td><strong>{LOCALE}</strong></td>
-          <td>Language code set in the App (that comes from CMS)</td>
-        </tr>
-        <tr>
-          <td>User session</td>
-          <td><code translate="no">sid</code></td>
-          <td><strong>{SID}</strong></td>
-          <td>Every time that app launches we want to have a unique integer created that is stored in memory and not persisted</td>
-        </tr>
-        <tr>
-          <td>Unique Device ID</td>
-          <td><code translate="no">rdid</code></td>
-          <td><strong>{RDID}</strong></td>
-          <td>Resettable device ID (TIFA = Samsung, rida = Roku, adid = Android, etc) - if limited ad targeting is set on the App, then the id should be all zeros (not possible to identify the user/device). This item is not applicable to the web.</td>
-        </tr>
-        <tr>
-          <td>Is the user allowing tracking</td>
-          <td><code translate="no">is_lat</code></td>
-          <td><strong>{IS_LAT}</strong></td>
-          <td>0 if user has not opted to limit targeting, 1 if limiting ad targeting. This item is not applicable to the web.</td>
-        </tr>
-        <tr>
-          <td>device type</td>
-          <td><code translate="no">idtype</code></td>
-          <td><strong>{IDTYPE}</strong></td>
-          <td>
-            <ul>
-              <li>adid: Android</li>
-              <li>afai: Amazon</li>
-              <li>tvOS: AppleTV (tvOS)</li>
-              <li>idfa: Apple phones (iOS)</li>
-              <li>rida: Roku</li>
-              <li>tifa: Samsung</li>
-              <li>vida: Vizio</li>
-              <li>msai: Xbox</li>
-            </ul>
-            This item is not applicable to the web.
-          </td>
-        </tr>
-        <tr>
-          <td>App identifier</td>
-          <td><code translate="no">app_id</code></td>
-          <td><strong>{APP_ID}</strong></td>
-          <td>This should be the App bundle name. This item is not applicable to the web.</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3>Notes</h3>
-    <ul>
-      <li>This feature works across all platforms/devices iOS, Apple TV, Android, Roku, Fire TV, Web, and Smart TVs.</li>
-      <li>Beacon apps ad targeting can be used with both VOD SSAI and Live SSAI. The details of implementation are shown below.</li>
-    </ul>
-  </section>
-  <!--   <section class="bcls-section">
-    <h2 id="Implementation">Implementation</h2>
-    <p>Below is a list of <strong>value macros</strong> that will be passed to the app, which will then substitute the real values before sending to the ad server. They are <strong>NOT</strong> configurable.</p>
-    <table class="bcls-table">
-      <caption class="bcls-caption--table">Value Macros</caption>
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Macro</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td translate="no" style="font-weight:bold">PLATFORM</td>
-          <td>The appropriate beacon platform: iOS, AppleTV, Android, Roku, Web, STV</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">OS</td>
-          <td>full qualified OS (including version) - example iOS 14</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">MFGR</td>
-          <td>the Manufacturer of the device; (Web - user's browser)</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">MODEL</td>
-          <td>Device Model; (Web - browser version)</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">APP_ID</td>
-          <td>Application id (for example bundle ID); Web: app domain</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">LOCALE</td>
-          <td>ISO 639-1 (2-letter) language code followed by an underscore and a ISO 3166-1 (2-letter) country code (example en_us) - language set in the app</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">RDID</td>
-          <td>Resettable device ID (<code translate="no">tifa</code>: Samsung, <code translate="no">rida</code>: Roku, <code translate="no">adid</code>: Android, etc. - see <a href="#Device_identifiers">Device identifiers</a> below for more values) - if <strong>limited ad targeting</strong> is set on the App, then the id should be all zeros (meaning not possible to identify the user/device)</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">IDTYPE</td>
-          <td>Type resettable ID (<code translate="no">tifa</code>: Samsung, <code translate="no">rida</code>: Roku, <code translate="no">adid</code>: Android, etc. - see <a href="#Device_identifiers">Device identifiers</a> below for more values)</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">IS_LAT</td>
-          <td>Flag that tells if limited ad targeting is selected by user: <code translate="no">0</code> if user has not opted to limit targeting, <code translate="no">1</code> if limiting ad targeting</td>
-        </tr>
-        <tr>
-          <td translate="no" style="font-weight:bold">SID</td>
-          <td>Unique session identifier (reset every time the app starts). Not dependent on user sign in / Sign up. Switching from foreground to background status does not change this ID.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h4 id="Device_identifiers">Device identifiers</h4>
-    <ul>
-      <li>adid: Android</li>
-      <li>afai: Amazon</li>
-      <li>tvOS: AppleTV (tvOS)</li>
-      <li>idfa: Apple phones (iOS)</li>
-      <li>rida: Roku</li>
-      <li>tifa: Samsung</li>
-      <li>vida: Vizio</li>
-      <li>msai: Xbox</li>
-    </ul>
-  </section>
- -->
-  <section class="bcls-section">
-    <h2 id="Build_your_ad_targeting_query_string">Build your ad targeting parameters</h2>
-    <p>Whether you are using ad targeting with VOD or Live, you need to build the query string which will be used with both. Use the following guidelines when building your ad targeting query string:</p>
-    <ul>
-      <li>The client side parameters will be passed to the ad server when requesting ads.</li>
-      <!-- <li>Client side parameters can be passed in the Playback APIs (provided in the VMAP/Manifest entry point). Those will be available to the SSAI infrastructure in the form of <code translate="no">{{url.xxx}}</code> macros where the <code>xxx</code> corresponds to the parameter key.
-      </li> -->
-      <li>Build your ad targeting parameters query string using this general format.</strong>:
-        <pre class="line-numbers"><code class="language-html" translate="No">variablename1={VALUEMACRO1}&variablename2={VALUEMACRO2}& ...</code></pre>
-      </li>
-      <li>Example:
-        <pre class="line-numbers"><code class="language-html" translate="No">platform={PLATFORM}&os={OS}&app_id={APP_ID}&rdid={RDID}</code></pre>
-      </li>
-      <!--       <li>Beacon apps for all platforms, with the exception of web apps, will simply remove the curly braces when requesting manifest and VMAP URLs with client-side macros, for example:
-        <pre class="line-numbers"><code class="language-html" translate="No">https://bolt-prefix/blah.vmap?pageVar.whatever={pageVar.whatever}</code></pre>
-        <p>will be requested as</p>
-        <pre class="line-numbers"><code class="language-html" translate="No">https://bolt-prefix/blah.vmap?pageVar.whatever=pageVar.whatever</code></pre>
-      </li> -->
-    </ul>
-    <p>Be sure to have your desired ad targeting query string built as you will need it in the implementation steps below in the two sections where you configure an <em>Ad Configuration</em> in Beacon Classic.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Building_the_ad_tag">Building the ad tag</h2>
-    <p>For the two sections below where you create an ad configuration in Video Cloud Studio, you need to combine your ad tag for your ad server and a modified version of your ad targeting variables query string.</p>
-    <p>For the instructions below, the ad server tag from the <em>Overview</em> section are used:
-    <pre class="line-numbers"><code class="language-html" translate="No">https://ads.brightcove.com/ads?tech=dfpadrules&dur=15</code></pre>
-    </p>
-    <p>For the instructions below, Beacon ad targeting variables from the <em>Build your ad targeting parameters</em> section are used:
-    <pre class="line-numbers"><code class="language-html" translate="No">platform={PLATFORM}&os={OS}&app_id={APP_ID}&rdid={RDID}</code></pre>
-    </p>
-    <h4 id="VOD_SSAI_ad_tag_creation">VOD SSAI ad tag creation</h4>
-    <p>To build the proper ad tag for the VOD SSAI creation in Video Cloud Studio follow these steps:</p>
-    <ol>
-      <li>In your ad targeting variables, make all the single braces into <strong>double</strong> braces and change the macro values to lowercase.
-        <pre class="line-numbers"><code class="language-html" translate="No">platform={{platform}}&os={{os}}&app_id={{app_id}}&rdid={{rdid}}</code></pre>
-      </li>
-      <li>Add <code>url.</code> in front of each value in the double curly braces.
-        <pre class="line-numbers"><code class="language-html" translate="No">platform={{url.platform}}&os={{url.os}}&app_id={{url.app_id}}&rdid={{url.rdid}}</code></pre>
-      </li>
-      <li>Use your ad tag and append the altered ad targeting variable query string, adding <code>&</code> (ampersand) in front of the ad targeting query string:
-        <pre class="line-numbers"><code class="language-html" translate="No">https://ads.brightcove.com/ads?tech=dfpadrules&dur=15&platform={{url.platform}}&os={{url.os}}&app_id={{url.app_id}}&rdid={{url.rdid}}</code></pre>
-      </li>
     </ol>
-    <p>The different parts of the ad tag are detailed in the following table:
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Ad tag section</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td><code>https://ads.brightcove.com/ads?tech=dfpadrules&dur=15</code></td>
-          <td>Base URL of ad server and standard query parameters</td>
-        </tr>
-        <!--         <tr>
-          <td><code>&document.referrer={{document.referrer}}</code></td>
-          <td>Ad macro</td>
-        </tr>
- -->
-        <tr>
-          <td><code>&platform={{url.platform}}&os={{url.os}}<br>&app_id={{url.app_id}}&rdid={{url.rdid}}</code></td>
-          <td>Beacon ad targeting variables</td>
-        </tr>
-      </tbody>
-    </table>
-    </p>
-    <p>This newly created ad tag will be used in the <a href="#VOD_steps">VOD Steps</a> section below.</p>
-    <h4 id="Live_SSAI_ad_tag_creation">Live SSAI ad tag creation</h4>
-    <p>To build the proper ad tag for the Live SSAI creation in Video Cloud Studio follow these steps:</p>
-    <ol>
-      <li>In your ad targeting variables, make all the single braces into <strong>double</strong> braces and change the macro values to lowercase.
-        <pre class="line-numbers"><code class="language-html" translate="No">platform={{platform}}&os={{os}}&app_id={{app_id}}&rdid={{rdid}}</code></pre>
-      </li>
-      <!--       <li>Remove the variable name and equals sign <code>=</code> in front of each ad targeting variable.
-        <pre class="line-numbers"><code class="language-html" translate="No">platform={{url.PLATFORM}}&os={{url.OS}}&app_id={{url.APP_ID}}&rdid={{url.RDID}}</code></pre>
-      </li> -->
-      <li>Use your ad tag and append the altered ad targeting variable query string, adding <code>&</code> (ampersand) in front of the ad targeting query string:
-        <pre class="line-numbers"><code class="language-html" translate="No">https://ads.brightcove.com/ads?tech=dfpadrules&dur=15&platform={{platform}}&os={{os}}&app_id={{app_id}}&rdid={{rdid}}</code></pre>
-      </li>
-    </ol>
-    <p>The different parts of the ad tag are detailed in the following table:
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Ad tag section</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td><code>https://ads.brightcove.com/ads?tech=dfpadrules&dur=15</code></td>
-          <td>Base URL of ad server and standard query parameters</td>
-        </tr>
-        <!--         <tr>
-          <td><code>&document.referrer={{document.referrer}}</code></td>
-          <td>Ad macros</td>
-        </tr> -->
-        <tr>
-          <td><code>&platform={{platform}}&os={os}}<br>&app_id={{app_id}}&rdid={{rdid}}</code></td>
-          <td>Beacon ad targeting variables</td>
-        </tr>
-      </tbody>
-    </table>
-    </p>
-
-    <p>This newly created ad tag will be used in the <a href="#Live_steps">Live steps</a> section below.</p>
   </section>
-
   <section class="bcls-section">
-    <h2 id="VOD_steps">VOD steps</h2>
-    <h3>Video Cloud steps - VOD</h3>
+    <h2 id="smart-props">Configuring Video Cloud smart playlist settings</h2>
+    <p>If you are creating a Smart playlist, click the <strong>Smart</strong> tab to configure the following settings.</p>
+    <ul>
+      <li><strong>Play Order</strong> - Controls the order in which videos in the playlist are played. The following options are available.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th width="35%">Play Order</th>
+              <th width="65%">Description</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Activated Date (Oldest First)</td>
+              <td>Based on the date the video was activated, oldest videos first</td>
+            </tr>
+            <tr>
+              <td>Activated Date (Newest First)</td>
+              <td>Based on the date the video was activated, newest videos first</td>
+            </tr>
+            <tr>
+              <td>Video Name (A - Z)</td>
+              <td>Alphabetical by video name</td>
+            </tr>
+            <tr>
+              <td>Total Plays</td>
+              <td>Based on the total video plays</td>
+            </tr>
+            <tr>
+              <td>Trailing Week Plays</td>
+              <td>Based on the trailing week total video plays. Note that the trailing week plays data maintained in the video metadata may be up to 2 days old so the videos you get may not match what you see if you look at video views over the past 7 days in the Analytics module.</td>
+            </tr>
+            <tr>
+              <td>Start Date (Oldest First)</td>
+              <td>Based on the date the video was scheduled to start, oldest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
+            </tr>
+            <tr>
+              <td>Start Date (Newest First)</td>
+              <td>Based on the date the video was scheduled to start, newest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><strong>Limit Number of Videos</strong> - Enter the maximum number of videos that should be in the playlist (default is 100, maximum is 1,000)</li>
+    </ul>
+    <h3>Smart playlist parameters</h3>
+    <p>The <strong>Parameters</strong> section is used to define which videos will appear in the playlist. The following parameters are supported.</p>
+    <ul>
+      <li><strong>Tags</strong> - Video tags are used to define the videos that will appear in the playlist. Enter one or more tags (separated by commas). The <strong>Tags</strong> dropdown provides these options:
+        <ul>
+          <li><strong>Match any</strong> - Include videos that have one or more of the tags listed</li>
+          <li><strong>Match all</strong> - Require that all the videos in the playlist have all the tags that are listed</li>
+        </ul>
+      </li>
+      <li><strong>Name</strong> - The video name is used to define the videos that will appear in the playlist. Enter a video name to search for.</li>
+      <li><strong>Description</strong> - The video's short and long description are used to define the videos that will appear in the playlist. Enter a description to search for.</li>
+      <li><strong>Custom field </strong> - The video's custom fields are used to define the videos that will appear in the playlist.
+        Select a custom field from the dropdown list and then select/enter a custom field value.</li>
+    </ul>
+    <p>The <strong>Name</strong>, <strong>Description</strong> and <strong>Custom field</strong> options support these options:</p>
+    <ul>
+      <li><strong>Text to include </strong>- Include videos that have the name in the short or long description fields</li>
+      <li><strong>Text to exclude </strong>- Exclude videos that have the name in the short or long description fields</li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-new-smart-playlist1.png" /></figure>
+    <h3>Using multiple parameters</h3>
+    <p>Multiple parameters can be entered by clicking <strong>Add a parameter</strong> and then entering an additional parameter. By default, multiple parameters will be evaluated using an <strong>OR</strong> operation. To change how multiple parameters are evaluated, click the selector icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-icon-parameters.png" />) next to the <strong>Parameters</strong> heading.</p>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-combine-parameters.png" /></figure>
+    </p>
+    <p>In the following example, all videos that are tagged <strong>birds</strong> or <strong>animals</strong> or have a <strong>Subject</strong> custom field value of <strong>Animals</strong> will be added to the playlist.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-parameter-example.png" /></figure>
+    <p>Click <strong>Apply</strong> to save the changes. </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="addmanual">Adding videos to a manual playlist</h2>
+    <p>To add videos to a manual playlist, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>In Video Cloud Studio, navigate to <strong>Admin → Server-Side Ad Settings</strong>. (For full details see the <a href="/monetization/ssai/vod-ssai.html">Implementing VOD SSAI</a> document.)</li>
-      <li>
-        From the <span class="blue-button">Create Ad Configuration</span> dropdown, select <strong>VOD</strong>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/create-vod-ad-config.png" alt="Create VOD Ad Config">
-          <figcaption class="bcls-caption--image">Create VOD Ad Config</figcaption>
-        </figure>
+      <li>Check the boxes next to the videos that should be added to the playlist.</li>
+      <li>Click <strong>More &gt; Add to Playlist</strong> at the top of the page.</li>
+      <li>Select the playlist to add the videos to.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-add-videos-manual-playlist.png" /></figure>
       </li>
-      <li>Complete the following:
-        <ol type="a">
-          <li>Add a name for the ad config.</li>
-          <li>Select your ad response, <strong>VMAP</strong> or <strong>VAST</strong> is recommended. If you use VAST, add cuepoints to the videos to specify where ad breaks should appear.</li>
-          <li>Paste in your ad tag in the format detailed in the <a href="#VOD_SSAI_ad_tag_creation">VOD SSAI ad tag creation</a> section above. </li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ssai-config-vod.png" alt="SSAI Configuration VOD">
-          <figcaption class="bcls-caption--image">SSAI Configuration VOD</figcaption>
-        </figure>
-      </li>
-
-      <li>Click <strong>Save</strong>.</li>
-      <li>Find your new ad configuration in the table and copy your ad config ID. You will need this value for the Beacon advertising configuration in the next section.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
-          <figcaption class="bcls-caption--image">Copy ad config ID</figcaption>
-        </figure>
-      </li>
-    </ol>
-
-    <h3>Beacon steps - VOD</h3>
-    <ol class="bcls-tasklist">
-      <li>Open Beacon Classic and navigate to the <strong>Advertisement</strong> tab.</li>
-      <li>
-        Click <span class="button-teal">Add New Configuration</span>.
-      </li>
-      <li>Complete the following:
-        <ol type="a">
-          <li>Name the Ad Configuration.</li>
-          <li>For the <strong>Provider</strong>, select <strong>Brightcove SSAI</strong>.</li>
-          <li>Paste in the ad targeting parameters query string built in the <a href="#Build_your_ad_targeting_query_string">Build your ad targeting parameters</a> section above. Note that it is NOT proceeded by <strong>&</strong>.</li>
-          <li>Paste in the <strong>SSAI ad config ID</strong> copied in the steps just above into <strong>VOD Ad Config ID</strong>.</li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ad-config-vod.png" alt="Beacon Ad Configuration">
-          <figcaption class="bcls-caption--image">Beacon Ad Configuration VOD</figcaption>
-        </figure>
-      </li>
-      <li>Click <span class="button-teal">Create New Advertisement</span>.</li>
+      <li>Click<strong> Add</strong>. Videos added to a manual playlist will be added to the top of the playlist.</li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="Live_steps">Live steps</h2>
-    <h3>Video Cloud steps - Live</h3>
-    <ol class="bcls-tasklist-restart">
-      <li>In Video Cloud Studio, navigate to <strong>Admin → Server-Side Ad Settings</strong>. (For full details see the <a href="/monetization/ssai/live-ssai.html">Implementing Live SSAI</a> document.)</li>
-      <li>
-        From the <strong>Create Ad Configuration</strong> dropdown, select <strong>Live</strong>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/create-live-ad-config.png" alt="Create Live Ad Config">
-          <figcaption class="bcls-caption--image">Create Live Ad Config</figcaption>
-        </figure>
-      </li>
-      <li>Complete the following:
-        <ol type="a">
-          <li>Add a name for the ad configuration.</li>
-          <li>Select <strong>VAST</strong> for your ad response.</li>
-          <li>Paste in your ad tag in the format detailed in the <a href="#Live_SSAI_ad_tag_creation">Live SSAI ad tag creation</a> section above.</li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ssai-config-live.png" alt="SSAI Configuration Live">
-          <figcaption class="bcls-caption--image">SSAI Configuration Live</figcaption>
-        </figure>
-      </li>
-      <li>Click <strong>Save</strong>.</li>
-      <li>Find your new ad configuration in the table and copy your ad config ID. You will need this value for the Beacon advertising configuration in the next section.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
-          <figcaption class="bcls-caption--image">Copy ad config ID</figcaption>
-        </figure>
-      </li>
-    </ol>
-    <h3>Beacon steps - Live</h3>
-    <ol class="bcls-tasklist-restart">
-      <li>
-        Open Beacon Classic and go the <strong>Advertisement</strong> tab.
-      </li>
-      <li>
-        Click <span class="button-teal">Add New Configuration</span>.
-      </li>
-      <li>Complete the following:
-        <ol type="a">
-          <li>Name the Ad Configuration.</li>
-          <li>For the <strong>Provider</strong>, select <strong>Brightcove SSAI</strong>.</li>
-          <li>Paste in the ad targeting parameters query string built in the <a href="#Build_your_ad_targeting_query_string">Build your ad targeting parameters</a> section above. Note that it is NOT proceeded by <strong>&</strong>.</li>
-          <li>Paste in the <strong>SSAI ad config ID</strong> copied in the steps just above into <strong>Live Ad Config ID</strong>.</li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ad-config-live.png" alt="Beacon Ad Configuration Live">
-          <figcaption class="bcls-caption--image">Beacon Ad Configuration Live</figcaption>
-        </figure>
-      </li>
-      <li>Click <span class="button-teal">Create New Advertisement</span>.</li>
-    </ol>
+    <h2 id="order">Changing the order of videos in a playlist</h2>
+    <p>To change the order of the videos in a playlist, follow the steps based upon the type of playlist you are working with.</p>
+    <div class="BCL-subsection">
+      <h3>Changing the order of videos in a manual playlist</h3>
+      <ol class="bcls-tasklist-restart">
+        <li>Open the playlist using one of these methods:
+          <ul>
+            <li>Click on the playlist name in the side navigation panel</li>
+            <li>Click <strong>All Playlists</strong> in the side navigation panel, locate the playlist and click the playlist name link.</li>
+          </ul>
+        </li>
+        <li>The list of videos in the playlist will appear.</li>
+        <li>Click on a video and drag it to its new location in the order. The dark line indicates the new  position.</li>
+      </ol>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-edit-manual-playlist-order.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">Note: You can also change the video order by editing the <strong>Play Order</strong> field.</aside>
+      <aside class="bcls-aside bcls-aside--information">Re-ordering by drag and drop does <strong>not</strong> work in IE11 or Edge, but you can re-order the items by editing the numbers in the <strong>Play Order</strong> field.</aside>
+    </div>
+    <div class="BCL-subsection">
+      <h3>Changing the order of videos in a smart playlist</h3>
+      <ol class="bcls-tasklist-restart">
+        <li>If the playlist is displayed in the sidebar, click on the playlist and then click the down arrow next to the playlist and click<strong> Edit Settings</strong>.</li>
+        <li>If the playlist is not displayed in the sidebar, click the <strong>All Playlists</strong> heading in the side navigation, locate the playlist, click the playlist name link and then click <strong>Edit Settings</strong>.</li>
+        <li>Select a new <strong>Play Order</strong> for the playlist.</li>
+        <li>Click <strong>Save</strong>.</li>
+      </ol>
+      <p>Smart playlists are created dynamically when the player is loaded from the available video information so the order should always reflect current state. However, the player always gets its info via the Playback API which uses data cached for up to 20 min. Playlists may take that long to refresh and may be behind what the <span translate="No">CMS API</span> would show.</p>
+    </div>
   </section>
-  <!-- <section class="bcls-section">
-    <h2 id="Limitations">Limitations</h2>
-    <ul>
-      <li>There currently isn’t a way to handle Device ID on the web so we are not passing that information to SSAI. We are still defining how we will handle it, and the doc will be updated once Device ID for the web is implemented.</li>
-    </ul>
-  </section> -->
-  
+  <section class="bcls-section">
+    <h2 id="edit">Editing playlist settings</h2>
+    <p>To edit the settings for a manual or smart playlist, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>If the playlist is displayed in the sidebar, click on the playlist and then click the down arrow next to the playlist and click<strong> Edit Settings</strong>.</li>
+      <li>If the playlist is not displayed in the sidebar, click the <strong>All playlists</strong> heading in the side navigation, locate the playlist and click the playlist name link and then click <strong>Edit Settings</strong>.</li>
+      <li>Edit the playlist settings and then click <strong>Apply</strong>.</li>
+    </ol>
+    <p>If the playlist is displayed in the side navigation panel, you can click on the playlist and then click the down arrow next to the playlist and click<strong> Edit Settings</strong>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete">Deleting a playlist</h2>
+    <p>To delete a playlist, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>All playlists</strong> to display a list of all the playlists.</li>
+      <li>Click the checkbox next to the playlist to delete.</li>
+      <li>Click the delete button (<img alt="" src="/assets/images/media/node15152-delete-icon.png" />).</li>
+      <li>Click <strong>Delete Playlist</strong> to confirm the deletion.</li>
+    </ol>
+    <p>If the playlist is displayed in the side navigation panel, you can click on the playlist and then click the down arrow next to the playlist and click<strong> Delete</strong>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="remove">Removing videos from a manual playlist</h2>
+    <p>To remove a video from a manual playlist, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the manual playlist using one of these methods:
+        <ul>
+          <li>Click on the playlist name in the side navigation panel</li>
+          <li>Click <strong>All playlists</strong> in the side navigation panel, locate the playlist and click the playlist name link.</li>
+        </ul>
+      </li>
+      <li>The list of videos in the playlist will appear.</li>
+      <li>Click the checkbox next to the video(s) to delete.</li>
+      <li>Click <strong>Remove from Playlist</strong>.</li>
+    </ol>
+    <p>You can also remove a video from a manual playlist by editing the video properties. In the <strong>Categorization</strong> section, delete the playlist  from the <strong>Manual Playlists</strong> section.</p>
+  </section>
 </article>
+
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
