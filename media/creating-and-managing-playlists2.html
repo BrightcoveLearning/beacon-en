@@ -45,24 +45,63 @@ layout: staging
       </li>
       <li>Enter a <strong>Playlist name</strong>.</li>
       <li>Click on a <strong>Playlist type</strong>.</li>
-      <li>Click <strong>Create playlist</strong>. The panel will close and reopen. For smart playlists, configure the <a href="#smart-props">smart playlist parameters</a>.</li>
-      <li>Click the <strong>Overview</strong> tab.</li>
-      <li>Configure the <strong>Overview</strong> settings as needed.
-<ul>
-          <li><strong>Name</strong> - playlist name</li>
-          <li><strong>Reference ID</strong> - A unique ID assigned by a publisher to a playlist</li>
-          <li><strong>Description</strong> - Playlist description</li>
-          <li><strong>Show Playlist in Sidebar</strong> - If checked, the playlist will appear in the sidebar
-            <aside class="bcls-aside bcls-aside--information">Note: A maximum of 100 playlists can appear in the sidebar.</aside>
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-new-smart-playlist-overview.png" /></figure>
-          </li>
-        </ul>
+      <li>Click <strong>Create playlist</strong>. The panel will close and reopen.</li>
+      <li>Click the <strong>Overview</strong> tab and configure the <strong>Overview</strong> settings as needed.
+        <ul>
+    <li><strong>Language View</strong> (Beacon only) - Select a language to enter Overview settings in a localized language</li>
+    <li><strong>Name</strong> - Playlist name</li>
+    <li><strong>Title</strong> (Beacon only) - Playlist title displayed in Beacon apps</li>
+    <li><strong>Reference ID</strong> (Video Cloud only) - A unique ID assigned by a publisher to a playlist</li>
+    <li><strong>Description</strong> - Playlist description</li>
+    <li><strong>Show Playlist in Sidebar</strong> (Video Cloud only) - If checked, the playlist will appear in the sidebar
+      <aside class="bcls-aside bcls-aside--information">Note: A maximum of 100 playlists can appear in the sidebar.</aside>
       </li>
-        <li>Configure the <strong>Availability</strong> settings (Beacon playlists only).</li>
+    </ul>
+      </li>
+        <li>The playlist panel will contain other settings that can be configured based upon the type of playlist:
+          <ul>
+            <li>Smart (Beacon playlists only)</li>
+            <li><strong><a href="#availability">Availability</a></strong>  (Beacon playlists only)</li>
+          </ul>
+        </li>
     </ol>
   </section>
+    <section class="bcls-section">
+    <h2 id="beacon-smart-props">Configuring Beacon smart playlist settings</h2>
+    <p>If you are creating a Beacon smart playlist, click the <strong>Smart</strong> tab to configure the following settings.The <strong>Parameters</strong> section is used to define which assets will appear in the playlist. The following parameters are supported.</p>
+    <ul>
+      <li><strong>Actors, Directors, Writers, Singers, Music composers, Song Writers</strong> - The value of one of these fields is used to define the videos in the playlist</li>
+      <li><strong>Tags</strong> - Tags are used to define the videos that will appear in the playlist. Enter one or more tags (separated by commas).
+      </li>
+      <li><strong>Genres</strong> - </li>
+      <li><strong>Content type</strong> - </li>
+      <li><strong>Title</strong> - The video title is used to define the videos that will appear in the playlist. Enter a title to search for.
+          <ul>
+      <li><strong>Text to include </strong>- Include videos with the entered title </li>
+      <li><strong>Text to exclude </strong>- Exclude videos with the entered title</li>
+    </ul>
+      </li>
+    </ul>
+    <p>All of the parameters (except Content type and  title) support these options:</p>
+    <ul>
+          <li><strong>Match all</strong> - Require that all the videos in the playlist have all the tags that are listed</li>
+          <li><strong>Exclude</strong> - Exclude videos with the entered tags</li>
+        </ul>
+    <h3>Using multiple parameters</h3>
+    <p>Multiple parameters can be entered by clicking <strong>Add a parameter</strong> and then entering an additional parameter. By default, multiple parameters will be evaluated using an <strong>OR</strong> operation. To change how multiple parameters are evaluated, click the selector icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-icon-parameters.png" />) next to the <strong>Parameters</strong> heading.</p>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-combine-parameters.png" /></figure>
+    </p>
+    <p>In the following example, all videos that are tagged <strong>birds</strong> or <strong>animals</strong> or have a <strong>Subject</strong> custom field value of <strong>Animals</strong> will be added to the playlist.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15152-parameter-example.png" /></figure>
+    <p>Click <strong>Apply</strong> to save the changes. </p>
+  </section>
+    <section class="bcls-section">
+    <h2 id="availability">Configuring Beacon playlist availability</h2>
+    <p>asdasdasdasda</p>
+  </section>
   <section class="bcls-section">
-    <h2 id="smart-props">Configuring Video Cloud smart playlist settings</h2>
+    <h2 id="vc-smart-props">Configuring Video Cloud smart playlist settings</h2>
     <p>If you are creating a Smart playlist, click the <strong>Smart</strong> tab to configure the following settings.</p>
     <ul>
       <li><strong>Play Order</strong> - Controls the order in which videos in the playlist are played. The following options are available.
