@@ -26,10 +26,15 @@ layout: staging
       <li><strong>Manual</strong> - With a manual playlist, you assign specific videos or media assets to the playlist and re-order them manually</li>
       <li><strong>Smart</strong> - With a smart playlist, the videos or media assets in the playlist are constructed automatically, based on  tags or other metadata associated with the asset. Smart playlists are dynamic and automatically update based upon the assets in your media library and the rules that define the playlist.</li>
     </ul>
-    <p>There is no limit to the number of playlists that can be created. The assets that are initially loaded into a playlist in the player is determined by the type of playlist:</p>
+    <p>There are Video Cloud and Beacon variations of both playlist types.</p>
     <ul>
-      <li><strong>Manual Playlists</strong> - Assets are loaded into the playlist based upon the order of the items in the  playlist</li>
-      <li><strong>Smart Playlists</strong> - Assets are loaded into the playlist based upon the <strong>Play Order</strong> playlist setting </li>
+      <li> <strong>Video Cloud playlists</strong> - Can <strong>only</strong> contain videos</li>
+      <li> <strong>Beacon playlists</strong> - Can contain videos and other entities (i.e. live events, series, seasons, etc.). </li>
+    </ul>
+    <p>Brightcove recommends that playlists that contain only videos be created as Video Cloud playlists even though Beacon playlists can contain only videos. There is no limit to the number of playlists that can be created. The assets that are initially loaded into a playlist in the player is determined by the type of playlist:</p>
+    <ul>
+      <li><strong>Manual </strong> - Assets are loaded into the playlist based upon the order of the items in the  playlist</li>
+      <li><strong>Smart </strong> - Assets are loaded into the playlist based upon the <strong>Play Order</strong> playlist setting </li>
     </ul>
   </section>
   <section class="bcls-section">
@@ -64,7 +69,7 @@ layout: staging
   </section>
   <section class="bcls-section">
     <h2 id="beacon-smart-props">Configuring Beacon smart playlist settings</h2>
-    <p>If you are creating a Beacon smart playlist, click the <strong>Smart</strong> tab to configure the smart playlist settings.The <strong>Parameters</strong> section is used to define which assets will appear in the playlist. The following parameters are supported.</p>
+    <p>If you are creating a Beacon smart playlist, click the <strong>Smart</strong> tab to configure the smart playlist settings. The <strong>Parameters</strong> section is used to define which assets will appear in the playlist. The following parameters are supported.</p>
     <ul>
       <li><strong>Actors, Directors, Writers, Singers, Music composers, Song Writers</strong> - The value of one of these fields is used to define the videos in the playlist</li>
       <li><strong>Tags</strong> - Tags are used to define the videos that will appear in the playlist. Enter one or more tags (separated by commas). </li>
