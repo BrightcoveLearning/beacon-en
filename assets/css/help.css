@@ -372,6 +372,7 @@ details[open] {
 	color: rgb(8, 8, 140);
 	background-color: rgb(255, 255, 255);
   border: 1px rgb(229,230,230) solid;
+  border-radius: 1px;
 }
 .button-red {
 	color: rgb(255, 255, 255);
