@@ -364,6 +364,11 @@ details[open] {
 	color: rgb(13, 44, 189);
 	background-color: rgb(255, 255, 255);
 }
+.button-blue-text-bordered {
+	color: rgb(13, 44, 189);
+	background-color: rgb(255, 255, 255);
+  border: 1px rgb(234,235,235) solid;
+}
 .button-red {
 	color: rgb(255, 255, 255);
 	background-color: rgb(211, 61, 0);
