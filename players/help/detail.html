@@ -1,113 +1,169 @@
 ---
-title: Player Detail
+title: Player Details
 layout: help
 ---
-<h1>Player Detail</h1>
+<h1>Player Details</h1>
 <article class="bcls-article">
-    <section class="bcls-section">
-        <p>View and set player details, including player information, styling, playback, advertising, and more.</p>
-   
-        <details class="details-item">
-          <summary>Player Information</summary>
-          <section class="bcls-section">
-            <p>Use the player information properties to set the player name, sizing, aspect ratio, dimensions, update mode and player version.</p>
+  <section class="bcls-section">
+    <p>The Player Details page consists of</p>
+    <ul>
+      <li><a href="#toolbar">Toolbar Buttons</a></li>
+      <li><a href="#details">Player Details</a></li>
+    </ul>
+  </section>
+  <hr/>
+  <section id="toolbar" class="bcls-section">
+    <h3>Toolbar Buttons</h3>
+    <details>
+      <summary>Delete the player</summary>
+      <section class="bcls-section">
+        <ol class="bcls-tasklist-restart">
+          <li>Click <span class="button-red-text">Delete</span>.</li>
+        </ol>
+      </section>
+    </details>
+    <details>
+      <summary>Activate / Deactivate the player</summary>
+      <section class="bcls-section">
+        <p>Players that are activated can play videos.Players that are deactivated cannot play videos.</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Click <span class="button-blue-text-bordered">Activate</span> or <span class="button-blue-text-bordered">Deactivate</span>.</li>
+        </ol>
+      </section>
+    </details>
+    <details>
+      <summary>Revert changes</summary>
+      <section class="bcls-section">
+        <p>Reverting changes will discard all unpublished changes made to a player. To revert changes to a player:</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Click <span class="button-blue-text-bordered"><i class="button-icon" data-feather="camera"></i>Revert changes</span>.</li>
+          <li>Click <span class="button-red">Discard Changes</span>.</li>
+        </ol>
+      </section>
+    </details>
+    <details>
+      <summary>Preview the player</summary>
+      <section class="bcls-section">
+        <p>Preview player changes before they are published. To preview a player, click <span class="button-blue-text-bordered">Preview</span>. The preview dialog will provide:</p>
+        <ul>
+          <li>Preview URL</li>
+          <li>Standard and Advanced player embed code</li>
+        </ul>
+        <p>Note that the preview URL and embed code should not be used on production sites.</p>
+      </section>
+    </details>
+    <details>
+      <summary>Publish &amp; Embed</summary>
+      <section class="bcls-section">
+        <p>The <strong>Publish &amp; Embed</strong> button is used to publish the player and to generate the player embed code and URL for the published player. To publish a player and get the embed code:</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Click <span class="button-blue">Publish &amp; Embed</span>.</li>
+          <li>Click <span class="button-blue">Publish Changes</span>.</li>
+        </ol>
+      </section>
+    </details>
+  </section>
+  <hr/>
+  <section id="details" class="bcls-section">
+    <h3>Player Details</h3>
+    <p>View and set player details, including player information, styling, playback, advertising, and more.</p>
+    <details class="details-item">
+      <summary>Player Information</summary>
+      <section class="bcls-section">
+        <p>Use the player information properties to set the player name, sizing, aspect ratio, dimensions, update mode and player version.</p>
+        <ul>
+          <li><strong>Player ID</strong> - Player unique identifier</li>
+          <li><strong>Name</strong> - Internal player name</li>
+          <li><strong>Player Type</strong> - Determines if the player will display a single video or support a playlist
             <ul>
-              <li><strong>Player ID</strong> - Player unique identifier</li>
-              <li><strong>Name</strong> - Internal player name</li>
-              <li><strong>Player Type</strong> - Determines if the player will display a single video or support a playlist
-                <ul>
-                  <li><strong>Single Video</strong> - The player will display a single video</li>
-                  <li><strong>Playlist</strong> - The player will support playlists
-                    <aside class="bcls-aside bcls-aside--information">Selecting <strong>Playlist</strong> will enable some additional properties in the <strong>Styling</strong> and <strong>Playback</strong> sections.</aside>
-                  </li>
-                </ul>
+              <li><strong>Single Video</strong> - The player will display a single video</li>
+              <li><strong>Playlist</strong> - The player will support playlists
+                <aside class="bcls-aside bcls-aside--information">Selecting <strong>Playlist</strong> will enable some additional properties in the <strong>Styling</strong> and <strong>Playback</strong> sections.</aside>
               </li>
-              <li><strong>Short Description</strong> - An internal description for your player</li>
-              <li><strong>Sizing</strong> - Set the player size
-                <ul>
-                  <li><strong>Responsive</strong> - The player size will adjust automatically based upon the browser size</li>
-                  <li><strong>Fixed</strong> - The player size is based upon the width and height parameters</li>
-                </ul>
-              </li>
-              <li><strong>Aspect Ratio</strong> - The ratio of the player's width to its height
-                <ul>
-                  <li><strong>1:1, 3:2, 4:3, 16:9, 21:9 or 9:16</strong> - When selected, enter the player width and the height is generated</li>
-                  <li><strong>Custom</strong> - Enter values for both player width and height</li>
-                </ul>
-              </li>
-              <li><strong>Player Dimensions</strong> - Control the width and height of the player; associated with aspect ratio
-              </li>
-              <li><strong>Update Mode</strong> - Control when the player is updated
-                <ul>
-                  <li><strong>Automatic</strong>
-                    <ul>
-                      <li>Default</li>
-                      <li>Player is updated when Brightcove releases a new version of the player</li>
-                    </ul>
-                  </li>
-                  <li><strong>Manual</strong>
-                    <ul>
-                      <li>Not recommended - you may miss bug fixes and enhancements</li>
-                      <li>Lock a player to a version</li>
-                      <li>Player is not automatically updated</li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><strong>Player Version</strong> - Related to <strong>Update Mode</strong>. For details, see the <a href="https://beacon-help.support.brightcove.com/players/setting-player-update-mode-and-version.html" target="_blank">Setting the Player Update Mode and Version <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a> document 
-              </li>
-              <li><strong>Published Player Version</strong> - The current version of this player</li>
-              <li><strong>Localization</strong> - Localize the player interface elements to appear in various languages 
-                <ul>
-                  <li>Default is English</li>
-                  <li>Include the language(s) you wish to use for player localization</li>
-                </ul>
-              </li>
-              <li>Click <span class="button-blue">Save</span> to save your changes</li> 
             </ul>
-
-            <p><a href="https://beacon-help.support.brightcove.com/players/setting-player-information-properties.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Styling</summary>
-          <section class="bcls-section">
-            <p>Configure some basic styling options for a player.</p>
-          <aside class="bcls-aside bcls-aside--information">To see playlist styling options, do the following:
+          </li>
+          <li><strong>Short Description</strong> - An internal description for your player</li>
+          <li><strong>Sizing</strong> - Set the player size
             <ul>
-              <li>In the left navigation, select <strong>Player Information</strong></li>
-              <li>For the <strong>Player Type</strong>, select <strong>Playlist</strong></li>
-              <li>Click <span class="button-blue">Save</span></li>
+              <li><strong>Responsive</strong> - The player size will adjust automatically based upon the browser size</li>
+              <li><strong>Fixed</strong> - The player size is based upon the width and height parameters</li>
             </ul>
-          </aside>
+          </li>
+          <li><strong>Aspect Ratio</strong> - The ratio of the player's width to its height
             <ul>
-              <li><strong>Playlist Type</strong> - Set how the playlist is displayed
+              <li><strong>1:1, 3:2, 4:3, 16:9, 21:9 or 9:16</strong> - When selected, enter the player width and the height is generated</li>
+              <li><strong>Custom</strong> - Enter values for both player width and height</li>
+            </ul>
+          </li>
+          <li><strong>Player Dimensions</strong> - Control the width and height of the player; associated with aspect ratio </li>
+          <li><strong>Update Mode</strong> - Control when the player is updated
+            <ul>
+              <li><strong>Automatic</strong>
                 <ul>
-                  <li><strong>Horizontal Playlist</strong> - Player will display a horizontal playlist</li>
-                  <li><strong>Vertical Playlist</strong> - Player will display a vertical playlist</li>
-                  <li><strong>Hidden Playlist</strong> - The playlist will be hidden</li>
-                </ul>
-                <aside class="bcls-aside bcls-aside--information">Any changes made to a player may take up to 5 minutes to appear in published players.</aside>
-              </li>
-              <li>Select <strong>Show title and description</strong> to display the video title and description on the player</li>
-              <li><strong>Play Button Shape</strong> - Controls the shape of the play button:
-                <ul>
-                  <li>Circle</li>
-                  <li>Square</li>
-                  <li>Rectangle</li>
+                  <li>Default</li>
+                  <li>Player is updated when Brightcove releases a new version of the player</li>
                 </ul>
               </li>
-              <li><strong>Play Button Position</strong> - Controls the location of the play button within the player:
+              <li><strong>Manual</strong>
                 <ul>
-                  <li>Center</li>
-                  <li>Top Left</li>
-                  <li>Top Right</li>
+                  <li>Not recommended - you may miss bug fixes and enhancements</li>
+                  <li>Lock a player to a version</li>
+                  <li>Player is not automatically updated</li>
                 </ul>
               </li>
-              <li><strong>Color Theme</strong> - Controls the colors used in the player including the play/pause buttons, elapsed time, volume, captions, full screen and sharing icons. </li>
-              <li>&nbsp;<strong>Revert back to older player default theme</strong> - Select to have a pinkish color play button and progress bar</li>
-<li><strong>Logo Overlay</strong> - Add an image on top of the player:
+            </ul>
+          </li>
+          <li><strong>Player Version</strong> - Related to <strong>Update Mode</strong>. For details, see the <a href="https://beacon-help.support.brightcove.com/players/setting-player-update-mode-and-version.html" target="_blank">Setting the Player Update Mode and Version <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a> document </li>
+          <li><strong>Published Player Version</strong> - The current version of this player</li>
+          <li><strong>Localization</strong> - Localize the player interface elements to appear in various languages
+            <ul>
+              <li>Default is English</li>
+              <li>Include the language(s) you wish to use for player localization</li>
+            </ul>
+          </li>
+          <li>Click <span class="button-blue">Save</span> to save your changes</li>
+        </ul>
+        <p><a href="https://beacon-help.support.brightcove.com/players/setting-player-information-properties.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Styling</summary>
+      <section class="bcls-section">
+        <p>Configure some basic styling options for a player.</p>
+        <aside class="bcls-aside bcls-aside--information">To see playlist styling options, do the following:
+          <ul>
+            <li>In the left navigation, select <strong>Player Information</strong></li>
+            <li>For the <strong>Player Type</strong>, select <strong>Playlist</strong></li>
+            <li>Click <span class="button-blue">Save</span></li>
+          </ul>
+        </aside>
+        <ul>
+          <li><strong>Playlist Type</strong> - Set how the playlist is displayed
+            <ul>
+              <li><strong>Horizontal Playlist</strong> - Player will display a horizontal playlist</li>
+              <li><strong>Vertical Playlist</strong> - Player will display a vertical playlist</li>
+              <li><strong>Hidden Playlist</strong> - The playlist will be hidden</li>
+            </ul>
+            <aside class="bcls-aside bcls-aside--information">Any changes made to a player may take up to 5 minutes to appear in published players.</aside>
+          </li>
+          <li>Select <strong>Show title and description</strong> to display the video title and description on the player</li>
+          <li><strong>Play Button Shape</strong> - Controls the shape of the play button:
+            <ul>
+              <li>Circle</li>
+              <li>Square</li>
+              <li>Rectangle</li>
+            </ul>
+          </li>
+          <li><strong>Play Button Position</strong> - Controls the location of the play button within the player:
+            <ul>
+              <li>Center</li>
+              <li>Top Left</li>
+              <li>Top Right</li>
+            </ul>
+          </li>
+          <li><strong>Color Theme</strong> - Controls the colors used in the player including the play/pause buttons, elapsed time, volume, captions, full screen and sharing icons. </li>
+          <li>&nbsp;<strong>Revert back to older player default theme</strong> - Select to have a pinkish color play button and progress bar</li>
+          <li><strong>Logo Overlay</strong> - Add an image on top of the player:
             <ul>
               <li><strong>On</strong> - Upload an image and position it:
                 <ul>
@@ -118,310 +174,295 @@ layout: help
               </li>
               <li><strong>Off</strong> - No image</li>
             </ul>
-            </li>
-              
-              <li>Click <span class="button-blue">Save</span> to save your changes</li> 
-            </ul>
-            <p><a href="https://beacon-help.support.brightcove.com/players/styling-players.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Playback</summary>
-          <section class="bcls-section">
-            <p>Set video playback properties for a player.</p>
-            <aside class="bcls-aside bcls-aside--information">To see playlist playback options, do the following:
-              <ul>
-                <li>In the left navigation, select <strong>Player Information</strong></li>
-                <li>For the <strong>Player Type</strong>, select <strong>Playlist</strong></li>
-                <li>Click <span class="button-blue">Save</span></li>
-              </ul>
-            </aside>
+          </li>
+          <li>Click <span class="button-blue">Save</span> to save your changes</li>
+        </ul>
+        <p><a href="https://beacon-help.support.brightcove.com/players/styling-players.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Playback</summary>
+      <section class="bcls-section">
+        <p>Set video playback properties for a player.</p>
+        <aside class="bcls-aside bcls-aside--information">To see playlist playback options, do the following:
+          <ul>
+            <li>In the left navigation, select <strong>Player Information</strong></li>
+            <li>For the <strong>Player Type</strong>, select <strong>Playlist</strong></li>
+            <li>Click <span class="button-blue">Save</span></li>
+          </ul>
+        </aside>
+        <ul>
+          <li><strong>Auto-Play Video on Player Load</strong> - Start playing a video when the player is loaded
             <ul>
-              <li><strong>Auto-Play Video on Player Load</strong> - Start playing a video when the player is loaded
+              <li>Auto-play may function differently depending on the browser</li>
+              <li>For details, see the <a href="https://player.support.brightcove.com/playback/autoplay-considerations.html" target="_blank">Autoplay Considerations <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a> document</li>
+            </ul>
+          </li>
+          <li><strong>Play Muted</strong> - Allows you to mute video playback</li>
+          <li><strong>Preload Video Before Playback</strong> - Controls whether the player will preload video content before the user initiates playback
+            <ul>
+              <li><strong>Preload Video (fastest)</strong> - The entire video file is downloaded, even if never watched. This will increase bandwidth consumption, but videos play immediately</li>
+              <li><strong>Preload Metadata</strong> - Default: only video metadata is preloaded</li>
+              <li><strong>Do not preload</strong> - None of the video is preloaded</li>
+              <li>For details, see the <a href="https://player.support.brightcove.com/publish/available-options-advanced-page-embed-code.html#preload_details" target="_blank">preload details <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a> section</li>
+            </ul>
+          </li>
+          <li><strong>Enable DRM</strong> - enables the player to play DRM-protected content</li>
+          <li>Playlist properties - Additional properties when a <strong>Player Type</strong> of <strong>Playlist</strong> is selected in the <strong>Player Information</strong> section:
+            <ul>
+              <li><strong>Randomize play order</strong> - Videos are played in a random order</li>
+              <li><strong>Play video when selected</strong> - Play a video when selected from a playlist, even if the previous video was paused</li>
+              <li><strong>Continuous play mode</strong> - Videos advance automatically and repeat indefinitely</li>
+              <li><strong>Video Countdown</strong> - Enabled when <strong>Continuous play mode</strong> is checked
                 <ul>
-                  <li>Auto-play may function differently depending on the browser</li>
-                  <li>For details, see the <a href="https://player.support.brightcove.com/playback/autoplay-considerations.html" target="_blank">Autoplay Considerations <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a> document</li>
-                </ul>
-              </li>
-              <li><strong>Play Muted</strong> - Allows you to mute video playback</li>
-              <li><strong>Preload Video Before Playback</strong> - Controls whether the player will preload video content before the user initiates playback
-                <ul>
-                  <li><strong>Preload Video (fastest)</strong> - The entire video file is downloaded, even if never watched. This will increase bandwidth consumption, but videos play immediately</li>
-                  <li><strong>Preload Metadata</strong> - Default: only video metadata is preloaded</li>
-                  <li><strong>Do not preload</strong> - None of the video is preloaded</li>
-                  <li>For details, see the <a href="https://player.support.brightcove.com/publish/available-options-advanced-page-embed-code.html#preload_details" target="_blank">preload details <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a> section</li>
-                </ul>
-              </li>
-              <li><strong>Enable DRM</strong> - enables the player to play DRM-protected content</li>
-              <li>Playlist properties - Additional properties when a <strong>Player Type</strong> of <strong>Playlist</strong> is selected in the <strong>Player Information</strong> section:
-                <ul>
-                  <li><strong>Randomize play order</strong> - Videos are played in a random order</li>
-                  <li><strong>Play video when selected</strong> - Play a video when selected from a playlist, even if the previous video was paused</li>
-                  <li><strong>Continuous play mode</strong> - Videos advance automatically and repeat indefinitely</li>
-                  <li><strong>Video Countdown</strong> - Enabled when <strong>Continuous play mode</strong> is checked
-                    <ul>
-                      <li><strong>Up next card (auto advance)</strong> - An up next card is displayed in the player</li>
-                      <li><strong>Up next endscreen (countdown)</strong> - An end screen countdown is displayed in the player</li>
-                    </ul>
-                  </li>    
+                  <li><strong>Up next card (auto advance)</strong> - An up next card is displayed in the player</li>
+                  <li><strong>Up next endscreen (countdown)</strong> - An end screen countdown is displayed in the player</li>
                 </ul>
               </li>
             </ul>
-            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-playback-properties.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Controls</summary>
-          <section class="bcls-section">
-            <p>Configure the player control bar.</p>
+          </li>
+        </ul>
+        <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-playback-properties.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Controls</summary>
+      <section class="bcls-section">
+        <p>Configure the player control bar.</p>
+        <ul>
+          <li><strong>Quality Selector</strong> - Allows the user to manually select a different rendition while the video is playing
             <ul>
-              <li><strong>Quality Selector</strong> - Allows the user to manually select a different rendition while the video is playing
-                <ul>
-                  <li><strong>Show Resolution (e.g., 720p) </strong> - Renditions will be displayed by lines of horizontal resolution</li>
-                  <li><strong>Show HD/SD</strong> - The player uses bitrate information to determine if a rendition is HD or SD</li>
-                </ul>
-              </li>
-              <li><strong>Playback Rates</strong> - Allows the user to manually select a different playback rate</li>
-              <li><strong>Fullscreen</strong> - Enables the fullscreen control to resize the player to fill the entire display</li>
-              <li><strong>Vertical Volume Slider</strong> - Displays the volume slider vertically</li>
-              <li><strong>Thumbnail Seeking</strong> - Enables the display of video thumbnails over the progress bar</li>
-              <li><strong>Skip to next video (playlist)</strong> - Enables the skip control to allow users to advance to the next video in the playlist</li> 
+              <li><strong>Show Resolution (e.g., 720p) </strong> - Renditions will be displayed by lines of horizontal resolution</li>
+              <li><strong>Show HD/SD</strong> - The player uses bitrate information to determine if a rendition is HD or SD</li>
             </ul>
-            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-controls.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Social</summary>
-          <section class="bcls-section">
-            <p>Configure social sharing properties for a player.</p>
-            <ul>
-              <li><strong>Enable Sharing</strong> - When enabled, a share icon will appear; select the social media sites that the video can be shared to</li>
-              <li><strong>Display Player Embed Code</strong> - When social sharing options are displayed, allows the user to copy the player embed code</li>
-              <li><strong>Display Player Direct Link</strong> - When social sharing options are displayed, allows the user to copy a link to the page where the player is embedded</li>
-            </ul>
-            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-social-properties-player.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Plugins</summary>
-          <section class="bcls-section">
-            <p>Add player plugins, stylesheets and/or scripts to a Brightcove Player.</p>
-            <ul>
-              <li>Add a plugin:
-                <ol class="bcls-tasklist-restart">
-                  <li>Click the <strong>Plugins</strong> link.</li>
-                  <li>Click <span class="button-blue">Add a Plugin</span> and click a plugin type:
-                    <ul>
-                      <li><strong>Custom Plugin</strong> - Add a plugin developed by you or a third party</li>
-                      <li><strong>Brightcove Plugin</strong> - Add a plugin developed and provided by Brightcove</li>
-                    </ul>
-                  </li>
-                  <li>To edit any of the plugin properties, click on the plugin name. To delete the plugin, click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"></li>
-                </ol>
-              </li> 
-              <li>Add a stylesheet:
-                <ol class="bcls-tasklist-restart">
-                  <li>Click the <strong>Stylesheets</strong> link.</li>
-                  <li>Click <span class="button-blue">Add a Stylesheet</span>.</li>
-                  <li>Add your CSS URL.</li>
-                  <li>Click <span class="button-blue">Save</span></li>
-                  <li>To edit the file path, click on the file name. To delete the file, click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"></li>
-                </ol>
-              </li>
-              <li>Add a script:
-                <ol class="bcls-tasklist-restart">
-                  <li>Click the <strong>Scripts</strong> link.</li>
-                  <li>Click <span class="button-blue">Add a Script</span>.</li>
-                  <li>Add your JavaScript URL.</li>
-                  <li>Click <span class="button-blue">Save</span></li>
-                  <li>To edit the file path, click on the file name. To delete the file, click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"></li>
-                </ol>
-              </li> 
-            </ul>
-            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-plugins.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>End Screens</summary>
-          <section class="bcls-section">
-            <p>Configure a player to display an end screen when the video ends.</p>
-            <ul>
-              <li><strong>Player End Screen</strong> - Choose an end screen option:
-                <ul>
-                  <li><strong>None</strong> - No end screen will be displayed</li>
-                  <li><strong>Social</strong> - Display the social sharing dialog when video ends</li>
-                  <li><strong>Custom </strong> - Display a custom end screen when video ends
-                    <ol class="bcls-tasklist-restart">
-                      <li>Add custom HTML to display additional text or images above the replay and sharing icon.</li>
-                      <li>Click <span class="button-blue">Save</span></li>
-                    </ol>
-                  </li>
-                </ul>
-              </li> 
-            </ul>
-            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-endscreen.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Advertising</summary>
-          <section class="bcls-section">
-            <p>Configure a player to to support client-side and/or server-side advertising.</p>
-            <aside class="bcls-aside bcls-aside--tip">When you enable both client-side and server-side ads, ad failover is automatically turned on. This means when Brightcove Player detects an ad blocker in the browser, the player requests server-side ads. Otherwise, it uses client-side ads.</aside>
-            <ul>
-              <li><strong>Enable Client-Side (IMA)</strong> - Configure client-side advertising for a player
-                <ul>
-                  <li><strong>Ad Tag</strong> - Enter your ad tag URL; for testing, select <strong>Insert sample Ad Tag</strong></li>
-                  <li><strong>Request Ads</strong> - Set when ads are requested
-                    <ul>
-                      <li><strong>On load</strong> - Ads are requested immediately when the player loads (normally the best experience for DFP / VPAID)</li>
-                      <li><strong>On play</strong> - The first ad request is delayed until playback is initiated</li>
-                      <li><strong>On demand</strong> - All ad requests are initiated programmatically using the <code translate="No">player.ima3.adrequest()</code> method</li>
-                    </ul> 
-                  </li>
-                  <li><strong>VPAID Mode</strong> - VPAID Mode is used to enable VPAID 2 support in IMA ads
-                    <ul>
-                      <li><strong>Enabled</strong> - Play VPAID ads in an iframe with a different domain</li>
-                      <li><strong>Insecure</strong> - Play VPAID ads in an iframe with the same domain</li>
-                      <li><strong>Disabled</strong> - VPAID ads throw an error</li>
-                    </ul>
-                  </li>
-                  <li><strong>Timeout</strong> - The maximum amount of time to wait, in milliseconds, for an ad to initialize before playback</li>
-                  <li><strong>Hard timeouts</strong> - Prevents slow loading ads from appearing; unchecking this option could result in a slow loading ad interrupting video playback</li>
-                  <li><strong>Maximum Number of Redirects</strong> - Set the maximum number of redirects before subsequent redirects are denied, and the ad load is aborted; the number of redirects directly affects latency and user experience</li>
-                  <li><strong>Plugin Version</strong> - Select the IMA plugin version to use</li> 
-                  <li>Click <span class="button-blue">Save</span></li>
-                </ul>
-              </li> 
-              <li><strong>Enable Server-Side (SSAI)</strong> - Configure server-side advertising for a player
-                <aside class="bcls-aside bcls-aside--information">The server-side advertising option will only appear if your account has been enabled for server-side ads.</aside>
-                <aside class="bcls-aside bcls-aside--information">To get accurate ad impressions, change your settings in the <strong>Playback</strong> section to <strong>do not preload</strong>.</aside>
-                <ul>
-                  <li><strong>Select Configuration</strong> - Select an ad configuration to associate with this player</li>
-                  <li><strong>Enable ad information overlays</strong> - Enables the player to display overlays over your ads; this includes <strong>Learn More</strong> and ad count down overlays</li>
-                  <li>Click <span class="button-blue">Save</span></li> 
-                </ul>
-              </li> 
-            </ul>
-            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-advertising-using-players-module.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Content Restriction</summary>
-          <section class="bcls-section">
-            <p>Configure a player to restrict playback to specific domains, and allow/block viewing from specific countries.</p>
-            <aside class="bcls-aside bcls-aside--tip">Domain Restriction is available to all accounts. Geo Restriction is only available to Enterprise and Professional accounts.</aside>
-            <ul>
-              <li><strong>Allowed Domains</strong> - Enter one or more domain URLs to restrict a player's availability to these domains
-                <ul>
-                  <li>You must use complete URLs without wildcards</li>
-                  <li>URLs must not end with a <code translate="No">/</code> </li>
-                  <li>Only domains, not specific paths, are supported. For example:
-                    <ul>
-                      <li>Yes: <code translate="No">https://www.brightcove.com</code></li>
-                      <li>No: <code translate="No">https://www.brightcove.com/documentation</code></li>
-                    </ul>
-                  </li>
-                  <li>Click <span class="button-blue">Save</span></li>
-                </ul>
-              </li>
-              <li><strong>Geo Filtering</strong> - control which countries can, and cannot, use a player
-                <ol class="bcls-tasklist-restart">
-                  <li>Select one:
-                    <ul>
-                      <li><strong>Unrestricted</strong></li>
-                      <li><strong>Allow viewing from the following countries</strong></li>
-                      <li><strong>Prevent viewing from the following countries</strong></li>
-                    </ul>
-                  </li>
-                  <li>Enter the country names. As you type, the country list will be filtered.</li>
-                  <li>Click on a country and press enter to add it.</li>
-                  <li>Click <span class="button-blue">Save</span>.</li>
-                </ol>
-              </li>
-            </ul>
-            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-content-restrictions.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Campaign</summary>
-          <section class="bcls-section">
-            <p>Brightcove Campaign provides a set of tools to help marketers with their lead generation process.</p>
-            
-            <p><a href="https://campaign.support.brightcove.com/" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>JSON Editor</summary>
-          <section class="bcls-section">
-            <p>The JSON Editor allows advanced users to manage player configurations using name/value pairs.</p>
-            
-            <p><a href="https://apis.support.brightcove.com/player-management/guides/player-configuration-guide.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details> 
-
-        <details class="details-item">
-          <summary>Google Analytics</summary>
-          <section class="bcls-section">
-            <p>Configure a player to use Google Analytics event tracking. This allows events and custom dimensions to be sent to your Google Analytics account for reporting purposes.</p>
+          </li>
+          <li><strong>Playback Rates</strong> - Allows the user to manually select a different playback rate</li>
+          <li><strong>Fullscreen</strong> - Enables the fullscreen control to resize the player to fill the entire display</li>
+          <li><strong>Vertical Volume Slider</strong> - Displays the volume slider vertically</li>
+          <li><strong>Thumbnail Seeking</strong> - Enables the display of video thumbnails over the progress bar</li>
+          <li><strong>Skip to next video (playlist)</strong> - Enables the skip control to allow users to advance to the next video in the playlist</li>
+        </ul>
+        <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-controls.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Social</summary>
+      <section class="bcls-section">
+        <p>Configure social sharing properties for a player.</p>
+        <ul>
+          <li><strong>Enable Sharing</strong> - When enabled, a share icon will appear; select the social media sites that the video can be shared to</li>
+          <li><strong>Display Player Embed Code</strong> - When social sharing options are displayed, allows the user to copy the player embed code</li>
+          <li><strong>Display Player Direct Link</strong> - When social sharing options are displayed, allows the user to copy a link to the page where the player is embedded</li>
+        </ul>
+        <p><a href="https://beacon-help.support.brightcove.com/players/configuring-social-properties-player.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Plugins</summary>
+      <section class="bcls-section">
+        <p>Add player plugins, stylesheets and/or scripts to a Brightcove Player.</p>
+        <ul>
+          <li>Add a plugin:
             <ol class="bcls-tasklist-restart">
-              <li>Check <strong>Enable Google Analytics</strong>.</li>
-              <li>Click <span class="button-blue">Sign In to Google Account</span>.</li> 
-              <li>Sign in to your Google account with your credentials.</li>
-              <li>Click <strong>Allow</strong> to let Brightcove access your Google account.</li>
-              <li>Use the <strong>Select Account</strong> dropdown to select the Google account to send tracking data to.</li>
-              <li>Select the <strong>Events for Tracking</strong>.</li>
+              <li>Click the <strong>Plugins</strong> link.</li>
+              <li>Click <span class="button-blue">Add a Plugin</span> and click a plugin type:
+                <ul>
+                  <li><strong>Custom Plugin</strong> - Add a plugin developed by you or a third party</li>
+                  <li><strong>Brightcove Plugin</strong> - Add a plugin developed and provided by Brightcove</li>
+                </ul>
+              </li>
+              <li>To edit any of the plugin properties, click on the plugin name. To delete the plugin, click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"></li>
+            </ol>
+          </li>
+          <li>Add a stylesheet:
+            <ol class="bcls-tasklist-restart">
+              <li>Click the <strong>Stylesheets</strong> link.</li>
+              <li>Click <span class="button-blue">Add a Stylesheet</span>.</li>
+              <li>Add your CSS URL.</li>
+              <li>Click <span class="button-blue">Save</span></li>
+              <li>To edit the file path, click on the file name. To delete the file, click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"></li>
+            </ol>
+          </li>
+          <li>Add a script:
+            <ol class="bcls-tasklist-restart">
+              <li>Click the <strong>Scripts</strong> link.</li>
+              <li>Click <span class="button-blue">Add a Script</span>.</li>
+              <li>Add your JavaScript URL.</li>
+              <li>Click <span class="button-blue">Save</span></li>
+              <li>To edit the file path, click on the file name. To delete the file, click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"></li>
+            </ol>
+          </li>
+        </ul>
+        <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-plugins.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>End Screens</summary>
+      <section class="bcls-section">
+        <p>Configure a player to display an end screen when the video ends.</p>
+        <ul>
+          <li><strong>Player End Screen</strong> - Choose an end screen option:
+            <ul>
+              <li><strong>None</strong> - No end screen will be displayed</li>
+              <li><strong>Social</strong> - Display the social sharing dialog when video ends</li>
+              <li><strong>Custom </strong> - Display a custom end screen when video ends
+                <ol class="bcls-tasklist-restart">
+                  <li>Add custom HTML to display additional text or images above the replay and sharing icon.</li>
+                  <li>Click <span class="button-blue">Save</span></li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-endscreen.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Advertising</summary>
+      <section class="bcls-section">
+        <p>Configure a player to to support client-side and/or server-side advertising.</p>
+        <aside class="bcls-aside bcls-aside--tip">When you enable both client-side and server-side ads, ad failover is automatically turned on. This means when Brightcove Player detects an ad blocker in the browser, the player requests server-side ads. Otherwise, it uses client-side ads.</aside>
+        <ul>
+          <li><strong>Enable Client-Side (IMA)</strong> - Configure client-side advertising for a player
+            <ul>
+              <li><strong>Ad Tag</strong> - Enter your ad tag URL; for testing, select <strong>Insert sample Ad Tag</strong></li>
+              <li><strong>Request Ads</strong> - Set when ads are requested
+                <ul>
+                  <li><strong>On load</strong> - Ads are requested immediately when the player loads (normally the best experience for DFP / VPAID)</li>
+                  <li><strong>On play</strong> - The first ad request is delayed until playback is initiated</li>
+                  <li><strong>On demand</strong> - All ad requests are initiated programmatically using the <code translate="No">player.ima3.adrequest()</code> method</li>
+                </ul>
+              </li>
+              <li><strong>VPAID Mode</strong> - VPAID Mode is used to enable VPAID 2 support in IMA ads
+                <ul>
+                  <li><strong>Enabled</strong> - Play VPAID ads in an iframe with a different domain</li>
+                  <li><strong>Insecure</strong> - Play VPAID ads in an iframe with the same domain</li>
+                  <li><strong>Disabled</strong> - VPAID ads throw an error</li>
+                </ul>
+              </li>
+              <li><strong>Timeout</strong> - The maximum amount of time to wait, in milliseconds, for an ad to initialize before playback</li>
+              <li><strong>Hard timeouts</strong> - Prevents slow loading ads from appearing; unchecking this option could result in a slow loading ad interrupting video playback</li>
+              <li><strong>Maximum Number of Redirects</strong> - Set the maximum number of redirects before subsequent redirects are denied, and the ad load is aborted; the number of redirects directly affects latency and user experience</li>
+              <li><strong>Plugin Version</strong> - Select the IMA plugin version to use</li>
+              <li>Click <span class="button-blue">Save</span></li>
+            </ul>
+          </li>
+          <li><strong>Enable Server-Side (SSAI)</strong> - Configure server-side advertising for a player
+            <aside class="bcls-aside bcls-aside--information">The server-side advertising option will only appear if your account has been enabled for server-side ads.</aside>
+            <aside class="bcls-aside bcls-aside--information">To get accurate ad impressions, change your settings in the <strong>Playback</strong> section to <strong>do not preload</strong>.</aside>
+            <ul>
+              <li><strong>Select Configuration</strong> - Select an ad configuration to associate with this player</li>
+              <li><strong>Enable ad information overlays</strong> - Enables the player to display overlays over your ads; this includes <strong>Learn More</strong> and ad count down overlays</li>
+              <li>Click <span class="button-blue">Save</span></li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-advertising-using-players-module.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Content Restriction</summary>
+      <section class="bcls-section">
+        <p>Configure a player to restrict playback to specific domains, and allow/block viewing from specific countries.</p>
+        <aside class="bcls-aside bcls-aside--tip">Domain Restriction is available to all accounts. Geo Restriction is only available to Enterprise and Professional accounts.</aside>
+        <ul>
+          <li><strong>Allowed Domains</strong> - Enter one or more domain URLs to restrict a player's availability to these domains
+            <ul>
+              <li>You must use complete URLs without wildcards</li>
+              <li>URLs must not end with a <code translate="No">/</code> </li>
+              <li>Only domains, not specific paths, are supported. For example:
+                <ul>
+                  <li>Yes: <code translate="No">https://www.brightcove.com</code></li>
+                  <li>No: <code translate="No">https://www.brightcove.com/documentation</code></li>
+                </ul>
+              </li>
+              <li>Click <span class="button-blue">Save</span></li>
+            </ul>
+          </li>
+          <li><strong>Geo Filtering</strong> - control which countries can, and cannot, use a player
+            <ol class="bcls-tasklist-restart">
+              <li>Select one:
+                <ul>
+                  <li><strong>Unrestricted</strong></li>
+                  <li><strong>Allow viewing from the following countries</strong></li>
+                  <li><strong>Prevent viewing from the following countries</strong></li>
+                </ul>
+              </li>
+              <li>Enter the country names. As you type, the country list will be filtered.</li>
+              <li>Click on a country and press enter to add it.</li>
               <li>Click <span class="button-blue">Save</span>.</li>
             </ol>
-            <aside class="bcls-aside bcls-aside--tip">Make sure to publish changes to the player.</aside>
-            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-google-analytics-event-tracking.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-
-        <details class="details-item">
-          <summary>Adobe Analytics</summary> 
-          <section class="bcls-section">
-            <p>Configure a player to use Adobe Analytics event tracking. This allows tracking data to be sent to your Adobe Analytics account for reporting purposes.</p>
-            <ol class="bcls-tasklist-restart">
-              <li>
-                <p>Log in to your Adobe Analytics account, and create Custom Success events.</p>
-                <p>Every Brightcove event that will be tracked must be created as a Custom Success Event in Adobe Analytics.</p>
-              </li>
-              <li>
-                <p>In Adobe Analytics, create Traffic Variables.</p>
-                <p>Every Brightcove parameter that will be recorded must be created as a Traffic Variable.</p>
-              </li>
-              <li>Return to Beacon Studio.</li>
-              <li>Check <strong>Enable Adobe Analytics</strong>.</li>
-              <li>Enter your Adobe account information.
-                <ul>
-                  <li><strong>Report Suite ID</strong></li>
-                  <li><strong>Marketing Cloud Organization ID</strong></li>
-                  <li><strong>Tracking Server</strong></li>
-                  <li><strong>CNAME Enabled</strong></li>
-                  <li><strong>Visitor Namespace</strong></li>
-                </ul>
-              </li>
-              <li>For each event you want to track, enter the Adobe Analytics event ID into the corresponding Brightcove event field.</li>
-              <li>
-                <p>For each parameter you want to capture, enter the Adobe Analytics parameter number into the corresponding Brightcove parameter field.</p>
-                <p>Use the <code translate="No">propX</code> format where <code translate="No">X</code> corresponds to the <strong>Property #</strong> in Adobe Analytics.</p>
-                <p>Example: <strong>Property # 1</strong> would have a value of <code translate="No">prop1</code>.</p>
-              </li>
-              <li>Click <span class="button-blue">Save</span>.</li>
-            </ol>
-            <aside class="bcls-aside bcls-aside--tip">Make sure to publish changes to the player.</aside>
-            <p><a href="https://beacon-help.support.brightcove.com/players/configuring-adobe-analytics-event-tracking.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
-          </section>
-        </details>
-   
+          </li>
+        </ul>
+        <p><a href="https://beacon-help.support.brightcove.com/players/configuring-player-content-restrictions.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Campaign</summary>
+      <section class="bcls-section">
+        <p>Brightcove Campaign provides a set of tools to help marketers with their lead generation process.</p>
+        <p><a href="https://campaign.support.brightcove.com/" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>JSON Editor</summary>
+      <section class="bcls-section">
+        <p>The JSON Editor allows advanced users to manage player configurations using name/value pairs.</p>
+        <p><a href="https://apis.support.brightcove.com/player-management/guides/player-configuration-guide.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Google Analytics</summary>
+      <section class="bcls-section">
+        <p>Configure a player to use Google Analytics event tracking. This allows events and custom dimensions to be sent to your Google Analytics account for reporting purposes.</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Check <strong>Enable Google Analytics</strong>.</li>
+          <li>Click <span class="button-blue">Sign In to Google Account</span>.</li>
+          <li>Sign in to your Google account with your credentials.</li>
+          <li>Click <strong>Allow</strong> to let Brightcove access your Google account.</li>
+          <li>Use the <strong>Select Account</strong> dropdown to select the Google account to send tracking data to.</li>
+          <li>Select the <strong>Events for Tracking</strong>.</li>
+          <li>Click <span class="button-blue">Save</span>.</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--tip">Make sure to publish changes to the player.</aside>
+        <p><a href="https://beacon-help.support.brightcove.com/players/configuring-google-analytics-event-tracking.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Adobe Analytics</summary>
+      <section class="bcls-section">
+        <p>Configure a player to use Adobe Analytics event tracking. This allows tracking data to be sent to your Adobe Analytics account for reporting purposes.</p>
+        <ol class="bcls-tasklist-restart">
+          <li>
+            <p>Log in to your Adobe Analytics account, and create Custom Success events.</p>
+            <p>Every Brightcove event that will be tracked must be created as a Custom Success Event in Adobe Analytics.</p>
+          </li>
+          <li>
+            <p>In Adobe Analytics, create Traffic Variables.</p>
+            <p>Every Brightcove parameter that will be recorded must be created as a Traffic Variable.</p>
+          </li>
+          <li>Return to Beacon Studio.</li>
+          <li>Check <strong>Enable Adobe Analytics</strong>.</li>
+          <li>Enter your Adobe account information.
+            <ul>
+              <li><strong>Report Suite ID</strong></li>
+              <li><strong>Marketing Cloud Organization ID</strong></li>
+              <li><strong>Tracking Server</strong></li>
+              <li><strong>CNAME Enabled</strong></li>
+              <li><strong>Visitor Namespace</strong></li>
+            </ul>
+          </li>
+          <li>For each event you want to track, enter the Adobe Analytics event ID into the corresponding Brightcove event field.</li>
+          <li>
+            <p>For each parameter you want to capture, enter the Adobe Analytics parameter number into the corresponding Brightcove parameter field.</p>
+            <p>Use the <code translate="No">propX</code> format where <code translate="No">X</code> corresponds to the <strong>Property #</strong> in Adobe Analytics.</p>
+            <p>Example: <strong>Property # 1</strong> would have a value of <code translate="No">prop1</code>.</p>
+          </li>
+          <li>Click <span class="button-blue">Save</span>.</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--tip">Make sure to publish changes to the player.</aside>
+        <p><a href="https://beacon-help.support.brightcove.com/players/configuring-adobe-analytics-event-tracking.html" target="_blank">Learn more <img src="/assets/images/feather/external-link-blue.svg" alt="external link" style="width: .8rem;"></a></p>
+      </section>
+    </details>
   </section>
 </article>
