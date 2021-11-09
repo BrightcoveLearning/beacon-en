@@ -7,8 +7,16 @@ parent: Managing Players
   <h1>{{ page.title }}</h1>
   <summary>{{ page.description }}</summary>
   <section class="bcls-section">
-    <p>To configure or edit player settings, open the Players module and click on a player name. To edit the player properties, click an item in the left navigation menu.</p>
-    <p>The following player properties can be configured:</p>
+    <p>To configure or edit player settings, open the Players module and click on a player name. The player properties page will open. Buttons at the top of the  page provide the ability to:</p>
+    <ul>
+      <li><a href="#delete">Delete a player</a></li>
+      <li><a href="#activate">Activate/Deactivate a player</a></li>
+      <li><a href="#revert">Revert changes</a></li>
+      <li><a href="#preview">Preview a player</a></li>
+      <li><a href="#publish">Publish and copy the embed code for a player</a></li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/player-props-buttons.png" /></figure>
+    <p>To edit the player properties, click an item in the left navigation menu. The following player properties can be configured:</p>
     <ul>
       <li><a href="#playerinfo">Player Information</a></li>
       <li><a href="#styling">Styling</a></li>
@@ -24,6 +32,48 @@ parent: Managing Players
       <li><a href="#json">JSON Editor</a></li>
     </ul>
     <aside class="bcls-aside bcls-aside--information">Note: Any changes made to a player may take up to 5 minutes to appear in published players.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete">Deleting a player</h2>
+    <p>Deleting a player removes it from your account and cannot be undone. To delete a player:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>Delete</strong>.</li>
+      <li>Confirm the deletion by clicking <strong>Delete</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="activate">Activating/Deactivating a player</h2>
+    <p>Players that are activated can play  videos. Deactivated players cannot play videos. To activate/deactivate a player:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>Activate</strong> or <strong>Deactivate</strong>.</li>
+      <li>Confirm the activation or deactivation.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="revert">Reverting changes</h2>
+    <p>The Players module provides the ability to revert player changes. Reverting changes will  discard all unpublished changes made to a player. To revert changes to a player:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>Revert changes</strong>.</li>
+      <li>Confirm the action by clicking <strong>Discard Changes</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="preview">Previewing a player</h2>
+    <p>The Players module provides the ability to  preview player changes before they are published. This gives you the ability to see the changes in action before publishing the player out to a production site. To preview a player, click <strong>Preview</strong>. The preview dialog will provide:</p>
+    <ul>
+      <li>Preview URL</li>
+      <li>Standard and Advanced player embed code</li>
+    </ul>
+    Note that the preview URL and embed code should not be used on production sites.</section>
+  <section class="bcls-section">
+    <h2 id="publish">Publishing and getting the embed code for a player</h2>
+    <p>The <strong>Publish &amp; Embed</strong> button is used to publish the player and to generate the player embed code and URL for the published player. To publish a player and get the embed code:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click<strong> Publish &amp; Embed</strong>.</li>
+      <li>Click <strong>Publish Changes</strong>.</li>
+    </ol>
+    <p>Once a player is published, changes will be reflected in all instances of that particular player. It may take a few minutes for changes to appear in published players.</p>
+    <p>Standard (iframe) and advanced (in-page) embed code is provided. For information on the differences between the preview player and published player and on generating the embed code for a player, see <a href="/players/generating-player-embed-code.html">Generating Player Embed&nbsp;Code</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="playerinfo">Player Information</h2>
