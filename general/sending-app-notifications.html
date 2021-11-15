@@ -1,0 +1,175 @@
+---
+title: "Sending App Notifications"
+description: "In this topic, you will learn how to use Firebase to send notifications to iOS and Android apps."
+parent: "Using Brightcove Beacon"
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="Introduction">Introductions</h2>
+    <p>For iOS and Android apps you can send notifications using Google Firebase. This document will walk you through the process. The configuration of the iOS and/or Android apps to enable this functionality is done by Brightcove.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="section-name">Sending a notification</h2>
+    <p>The implementation tasks to send a notification are detailed in the remainder of this document. Those steps are:</p>
+    <ol>
+      <li><a href="#Configure_the_notification">Configure the notification</a></li>
+      <li><a href="#Define_the_target">Define the target</a></li>
+      <li><a href="#Schedule_when_the_notification_will_be_sent">Schedule when the notification will be sent</a></li>
+      <li><a href="#Add_options_for_the_video_asset_to_which_the_notification_is_linked">Add options for the video asset to which the notification is linked</a></li>
+    </ol>
+    <p>Example notifications follow:</p>
+    <ul>
+      <li><strong>iOS</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/sending-app-notifications/notification-ios.png" alt="iOS">
+        </figure>
+      </li>
+      <li><strong>Android Closed</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/sending-app-notifications/notification-android-closed.png" alt="notification android closed">
+        </figure>
+      </li>
+      <li><strong>Android Expanded</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/sending-app-notifications/notification-android-expanded.png" alt="notification android expanded">
+        </figure>
+      </li>
+    </ul>
+    <h3 id="Configure_the_notification">Configure the notification</h3>
+    <p>If this section you define the content in the notification.</p>
+    <ol class="bcls-tasklist">
+      <li>Navigate to the <a href="https://console.firebase.google.com/u/0/">Firebase Console</a> and select your project.</li>
+      <li>In the left navigation select:
+        <ol type="a">
+          <li>Engage</li>
+          <li>Cloud Messaging</li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/sending-app-notifications/navigation-main-left.png" alt="navigation">
+        </figure>
+      </li>
+    </ol>
+    <ol class="bcls-tasklist">
+      <li>Click <strong>Send your first message</strong>.</li>
+      <li>Supply the <strong>Notification title</strong> and <strong>Notification text</strong>. Note that you can see a preview on the bottom right of the screen.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/sending-app-notifications/notification.png" alt="notification">
+        </figure>
+      </li>
+      <li>Add an optional notification image, if desired. <em>Note that this feature is only supported by Android apps.</em>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/sending-app-notifications/notification-image.png" alt="notification image">
+        </figure>
+      </li>
+      <li>Add an optional notification name, if desired.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/sending-app-notifications/notification-name.png" alt="notification name">
+        </figure>
+      </li>
+      <li>Click <strong>Next</strong>.</li>
+    </ol>
+  </section>
+  <h3 id="Define_the_target">Define the target</h3>
+  <p>When you define the target you configure which app(s) should receive the notification and also define any further restrictions on whom should receive the notification.</p>
+  <ol class="bcls-tasklist">
+    <li>Select the app or apps to which you wish to send the notification. <em>Note that to add another app you need to click the <strong>Target another app</strong> button, which is disabled currently in the screenshot.</em>
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/general/sending-app-notifications/target.png" alt="target">
+      </figure>
+      <aside class="bcls-aside bcls-aside--tip">Remember, you must add a <em>Target</em> <strong>per platform</strong>.</aside>
+    </li>
+    <li>Add any filters for each app to which you are sending the notification by clicking the <strong>and</strong> button.
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/general/sending-app-notifications/target-restrictions.png" alt="target restrictions">
+      </figure>
+      <aside class="bcls-aside bcls-aside--tip">A common use case of adding a filter is limiting the notification by app version. This is useful to let users know that there is a new version available of the app available (with a potential new fix/feature).</aside>
+    </li>
+    <li>Click <strong>Next</strong>.</li>
+  </ol>
+  <h3 id="Schedule_when_the_notification_will_be_sent">Schedule when the notification will be sent</h3>
+  <p>You have the option to send the notification immediately or have it sent repeatedly.</p>
+  <ol class="bcls-tasklist">
+    <li>Choose when you will send the notification.
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/general/sending-app-notifications/scheduling.png" alt="scheduling">
+      </figure>
+      <aside class="bcls-aside bcls-aside--information">Do not choose the send now option until you have configured the video asset to which the notification links. This process is detailed in the next section.</aside>
+    </li>
+  </ol>
+  <h3 id="Add_options_for_the_video_asset_to_which_the_notification_is_linked">Add options for the video asset to which the notification is linked</h3>
+  <p>You will often link to a video asset that will be displayed when the viewer clicks a link in your notification. The video asset is defined in the <strong>Addition options</strong> section. The options from which you can choose are defined in this table:</p>
+  <table class="bcls-table">
+    <thead class="bcls-table__head">
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+        <th>Data Type</th>
+      </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+      <tr>
+        <td>action</td>
+        <td>show_asset</td>
+        <td>The actual string <em>show_asset</em></td>
+      </tr>
+      <tr>
+        <td>asset_type</td>
+        <td>
+          <ul>
+            <li>episode</li>
+            <li>season</li>
+            <li>tvshow</li>
+            <li>movie</li>
+            <li>event</li>
+          </ul>
+        </td>
+        <td>One of the strings from the possible value list</td>
+      </tr>
+      <tr>
+        <td>asset_id</td>
+        <td>asset_id</td>
+        <td>Numeric value retrieved from Beacon Classic</td>
+      </tr>
+      <tr>
+        <td>season_id</td>
+        <td>season_id</td>
+        <td>Numeric value retrieved from Beacon Classic</td>
+      </tr>
+      <tr>
+        <td>series_id</td>
+        <td>series_id</td>
+        <td>Numeric value retrieved from Beacon Classic</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <p>To find the IDs of the video assets, in Beacon Classic select the asset, season for series for which you need the ID. The ID will be part of the name information, as highlighted in the screenshots below.</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/general/sending-app-notifications/asset-id.png" alt="get asset IDs">
+  </figure>
+  <ol class="bcls-tasklist">
+    <li>Complete the additional options for the video asset to which you wish to link. An example is shown here:
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/general/sending-app-notifications/additional-options.png" alt="additional options">
+      </figure>
+    </li>
+    <li>Finalize the process by clicking <strong>Review</strong>, confirm the information in the <em>Review message</em> dialog, then click <strong>Publish</strong>.</li>
+  </ol>
+  <p>Note the following:</p>
+  <ul>
+    <li>The <strong>season_id</strong> and <strong>series_id</strong> are optional and only used in the case when <strong>asset_type</strong> is <strong>episode</strong>.</li>
+    <li>The <strong>series_id</strong> is also used if the <strong>asset_type</strong> is <strong>season</strong>.</li>
+    <li>If you have the <em>Explore</em> option disabled and user has not authenticated, when the the app opens from a notification and the user authenticates the details page for the video asset is displayed to the user.</li>
+    <li>When a asset is opened from a push notification, the workflow is the same as opening an asset from a carousel regarding:
+      <ul>
+        <li>Entitlements checks and buttons displayed</li>
+        <li>Continuous Play (applicable when the asset in the notification is a series/seasons)</li>
+      </ul>
+    </li>
+
+  </ul>
+</article>
