@@ -1386,7 +1386,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <aside class="bcls-aside bcls-aside--information language-editable">Note that the Configurable column refers to options <em>beyond</em> setting page availability via schedule, devices and/or locations.</aside>
     <p>Core pages provide you with options you wish to provide your viewers. You can </p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -1401,19 +1400,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td>Exit</td>
           <td>Functionality for viewers to log out of the app</td>
-          <td></td>
+          <td>Availability only</td>
           <td>Non-web platforms only</td>
         </tr>
         <tr>
           <td>Favorites</td>
           <td>Display videos viewer has marked as a favorite</td>
-          <td>Yes</td>
+          <td><a href="#Favorites">Yes</a></td>
           <td></td>
         </tr>
         <tr>
           <td>Live TV</td>
           <td>Display a live tv channel</td>
-          <td>No</td>
+          <td>Availability only</td>
           <td></td>
         </tr>
         <tr>
@@ -1467,20 +1466,41 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </tbody>
     </table>
   </section>
-
   <section class="bcls-section">
     <h2 id="Favorites">Favorites</h2>
-    <p>When configuring the <em>Favorites</em> core page the first decision to make is if you want all videos marked as a favorite organized by asset type. If yes, the asset types will be listed across the top of the favorites. If no, all the favorites will be grouped together. The following screenshots show first the organized by asset type layout then the not grouped layout.</p>
+    <p>When configuring the <em>Favorites</em> core page the first decision to make is if you want all videos marked as a favorite organized by asset type. If yes, the asset types will be listed across the top of the favorites as clickable links to show only a specific asset type. If no, all the favorites will be grouped together. The following screenshots show first the organized by asset type layout and then the not grouped layout.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/layout/using-core-pages/favorites-by-asset-type.png" alt="favorites by asset type">
     </figure>
-    <br>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/layout/using-core-pages/favorites-not-organized.png" alt="favorites not grouped">
     </figure>
-    <p>If you choose to organize by asset type, you can then set for each type if the thumbnails shown should be shown as landscape or portrait <strong>and</strong> if the video title should be displayed. If you do not group, you still have those display configuration options, but all thumbnails will follow the selected configuration.</p>
+    <p>Other configuration options are:</p>
+    <ul>
+      <li>If you choose to organize by asset type, you can then set for each type if the thumbnails shown should be shown as landscape or portrait <strong>and</strong> if the video title should be displayed.</li>
+      <li>If you do not group, you still have those display configuration options, but all thumbnails will follow the selected configuration.</li>
+      <li>If you choose the portrait thumbnails you can also choose if the title position, if displayed, should be inside or outside the thumbnail.</li>
+      <li>As with all core pages, you can also configure the <em>Favorites</em> page's availability.</li>
+    </ul>
   </section>
 
+  <section class="bcls-section">
+    <h2 id="Recently_Watched">Recently Watched</h2>
+    <p>When configuring the <em>Recently Watched</em> core page the first decision to make is if you want all videos that match recently watched criteria by asset type. If yes, the asset types will be listed across the top of the recently watched as clickable links to show only a specific asset type. If no, all recently watched videos will be grouped together. The following screenshots show first the organized by asset type layout and then the not grouped layout.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/layout/using-core-pages/recently-by-asset-type.png" alt="recently watched by asset type">
+    </figure>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/layout/using-core-pages/recently-not-organized.png" alt="recently watched not grouped">
+    </figure>
+    <p>Other configuration options are:</p>
+    <ul>
+      <li>If you choose to organize by asset type, you can then set for each type if the thumbnails shown should be shown as landscape or portrait <strong>and</strong> if the video title should be displayed.</li>
+      <li>If you do not group, you still have those display configuration options, but all thumbnails will follow the selected configuration.</li>
+      <li>If you choose the portrait thumbnails you can also choose if the title position, if displayed, should be inside or outside the thumbnail.</li>
+      <li>As with all core pages, you can also configure the <em>Recently Watched</em> page's availability.</li>
+    </ul>
+  </section>
 
 
 </article>
