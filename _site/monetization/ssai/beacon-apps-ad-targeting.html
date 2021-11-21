@@ -1542,12 +1542,46 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>{APP_ID}</strong></td>
           <td>This should be the App bundle name. This item is not applicable to the web.</td>
         </tr>
+        <tr>
+          <td>GDPR Consent</td>
+          <td><code translate="no">GDPR</code></td>
+          <td><strong>{GDPR}</strong></td>
+          <td>1 - do not allow personalized ads<br>0 - allows personalized ads</td>
+        </tr>
+        <tr>
+          <td>CCPA Consent</td>
+          <td><code translate="no">CCPA</code></td>
+          <td><strong>CCPA</strong></td>
+          <td>1 - do not allow personalized ads<br>0 - allows personalized ads</td>
+        </tr>
+        <tr>
+          <td>GDPR Consent String</td>
+          <td><code translate="no">GDPR_CONSENT</code></td>
+          <td><strong>{GDPR_CONSENT}</strong></td>
+          <td>TCF 2.0 Consent string from CMP</td>
+        </tr>
       </tbody>
     </table>
     <h3>Notes</h3>
     <ul>
       <li>This feature works across all platforms/devices iOS, Apple TV, Android, Roku, Fire TV, Web, and Smart TVs.</li>
       <li>Beacon apps ad targeting can be used with both VOD SSAI and Live SSAI. The details of implementation are shown below.</li>
+      <li><strong>Ad Tag Signals</strong>: Pass the user consent string to SSAI, so that SSAI can include their response in the VAST tag that is sent to the customer's ad server.
+        <ul>
+          <li>Google Ad Manager requirements
+            <ul>
+              <li><a href="https://support.google.com/admanager/answer/7678538">GDPR</a> - You must either specifically set <code>npa=1</code> or include simply <code>npa</code> (without a set value) to tag the request as non-personalized. Ad requests either missing this parameter, or set to <code>npa=0</code>, default to personalized ads.</li>
+              <li><a href="https://support.google.com/admanager/answer/9598414?hl=en&ref_topic=28145">CCPA</a> - You must either specifically set <code>rdp=1</code> or include simply <code>rdp</code> (without a set value) to restrict data processing. Ad requests either missing this parameter or set to <code>rdp=0</code>, will not restrict, unless the Restrict Data Processing network setting is enabled.</li>
+            </ul>
+          </li>
+          <li><a href="https://springserve.atlassian.net/wiki/spaces/SSD/pages/1573158912/Macros">Springserve</a>
+            <ul>
+              <li>GDPR - A consent string passed from various Consent Management Platforms (CMP's). Also accept numeric value for CTV consent. Value is <code>“gdpr_consent=”</code>.</li>
+              <li>CCPA - A mandatory string for all publishers in which they must pass the privacy consent for users from California. Value is<code> “us_privacy=”</code>.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
   </section>
   <!--   <section class="bcls-section">
@@ -1625,7 +1659,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>The client side parameters will be passed to the ad server when requesting ads.</li>
       <!-- <li>Client side parameters can be passed in the Playback APIs (provided in the VMAP/Manifest entry point). Those will be available to the SSAI infrastructure in the form of <code translate="no">{{url.xxx}}</code> macros where the <code>xxx</code> corresponds to the parameter key.
       </li> -->
-      <li>Build your ad targeting parameters query string using this general format.</strong>:
+      <li>Build your ad targeting parameters query string using this general format.:
         <pre class="line-numbers"><code class="language-html" translate="No">variablename1={VALUEMACRO1}&variablename2={VALUEMACRO2}& ...</code></pre>
       </li>
       <li>Example:
