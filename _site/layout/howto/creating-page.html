@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="In this topic, you will learn how to use and configure Brightcove Beacon core pages." />
+  <meta name="description" content="" />
 
-  <title>Using Core Pages</title>
+  <title>How To: Create a Page</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -54,7 +54,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Using Core Pages</li>
+      <li class="breadcrumb-item"><a href="/layout/howto/">Howto</a></li>
+      
+      
+      
+      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
       
       
     </nav>
@@ -1380,232 +1384,39 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Using Core Pages</h1>
+<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use and configure Brightcove Beacon core pages.</summary>
-
   <section class="bcls-section">
-    <h2 id="Introduction">Introduction</h2>
-    <p>Core pages provide:</p>
-    <ul>
-      <li>Functionality for viewers to configure, and view information about, their app instance.</li>
-      <li>Basic services like sign in, exit, logout and search.</li>
-      <li>Past activities like recently watched, purchases, downloads and videos marked as a favorite.</li>
-      <li></li>
-      <li></li>
-    </ul>
-    the Beacon app and provide information to the viewer about
-    <aside class="bcls-aside bcls-aside--information language-editable">For <strong>all</strong> core pages you can edit the actual name of the page (in all languages supported) and its availability. This information is provided in the following table. For core pages that you can configure <em>beyond</em> to two features, there is a link in the table which will take you to configuration details.</aside>
-    <p>Core pages provide you with options you wish to provide your viewers. You can:</p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Name</th>
-          <th>Function</th>
-          <th>Configurable</th>
-          <th>Comments</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>Downloads</td>
-          <td>Displays downloaded videos</td>
-          <td>Name and availability only</td>
-          <td>Only available for mobile and tablet devices</td>
-        </tr>
-        <tr>
-          <td>Live TV</td>
-          <td>Displays a live tv channel</td>
-          <td>Name and availability only</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Exit</td>
-          <td>Provides functionality for viewers to exit the app without killing the session, as a sign out would do.</td>
-          <td>Name and availability only</td>
-          <td>Required for some Smart TV platforms</td>
-        </tr>
-        <tr>
-          <td>Favorites</td>
-          <td>Displays videos viewer has marked as a favorite</td>
-          <td><a href="#Favorites">Yes</a></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Live TV</td>
-          <td>Displays a live tv channel</td>
-          <td>Name and availability only</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Logout</td>
-          <td>Provides functionality for viewers to log out of the app</td>
-          <td>Name and availability only</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>My List</td>
-          <td>Displays <em>Recently Watched</em>, <em>Purchases</em> and <em>Favorites</em> on a single page</td>
-          <td><a href="#My_List">Yes</a></td>
-          <td>Buttons let viewers choose which group of videos to display</td>
-        </tr>
-        <tr>
-          <td>Program Guide</td>
-          <td>Displays your Electronic Program Guide (EPG)</td>
-          <td><a href="#Program_Guide">Yes</a></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Purchases</td>
-          <td>Displays purchased videos</td>
-          <td><a href="#Purchases">Yes</a></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Recently Watched</td>
-          <td>Displays videos that have been recently watched</td>
-          <td><a href="#Recently_Watched">Yes</a></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Redirect</td>
-          <td>Provides functionality to redirect viewing a Beacon app page to a web page</td>
-          <td>Name, availability and page to which you wish to redirect</td>
-          <td>Web apps only</td>
-        </tr>
-        <tr>
-          <td>Search</td>
-          <td>Provides functionality for viewers to search for specific videos</td>
-          <td><a href="#Search">Yes</a></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Search</td>
-          <td>Provides functionality for viewers to search for specific videos</td>
-          <td><a href="#Search">Yes</a></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Settings</td>
-          <td>Provides functionality for viewers to configure, and view information about, the app</td>
-          <td>Name and availability only</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Sign in</td>
-          <td>Provides functionality for viewers to sign into the Brightcove Beacon App</td>
-          <td><a href="#Sign_in">Yes</a></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Sign up</td>
-          <td>Provides functionality for viewers to register for Brightcove Beacon App</td>
-          <td>Name and availability only</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Layout</strong> module.</li>
+      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
+      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
+      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
+        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/basics/layout/pages-layout.png" /></figure>
+      </li>
+      <li>Click <span class="button-blue">Create</span>.</li>
+      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/basics/layout/pages-choose-playlist.png" alt="choose playlist">
+        </figure>
+      </li>
+      <li>Select one or more playlists (note some layouts only accept one playlist) to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview.
+      </li>
+      <li>Click <strong>X</strong> to close playlists panel.</li>
+      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
+      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
+    </ol>
+    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
+    </p>
   </section>
-
   <section class="bcls-section">
-    <h2 id="Favorites">Favorites</h2>
-    <p>When configuring the <em>Favorites</em> core page the first decision to make is if you want all videos marked as a favorite organized by asset type. If yes, the asset types will be listed across the top of the favorites as clickable links to show only a specific asset type. If no, all the favorites will be grouped together. The following screenshots show first the organized by asset type layout and then the not grouped layout.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/favorites-by-asset-type.png" alt="favorites by asset type">
-    </figure>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/favorites-not-organized.png" alt="favorites not grouped">
-    </figure>
-    <p>Other configuration options are:</p>
+    <h3>Related</h3>
     <ul>
-      <li>If you choose to organize by asset type, you can then set for each type if the thumbnails shown should be shown as landscape or portrait <strong>and</strong> if the video title should be displayed.</li>
-      <li>If you do not group, you still have those display configuration options, but all thumbnails will follow the selected configuration.</li>
-      <li>If you choose the portrait thumbnails you can also choose if the title position, if displayed, should be inside or outside the thumbnail.</li>
-      <li>As with all core pages, you can also configure the <em>Favorites</em> page's name and availability.</li>
+      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
     </ul>
   </section>
-
-  <section class="bcls-section">
-    <h2 id="My_List">My List</h2>
-    <p>The <em>My List</em> page provides the viewer with a single page from which they can select to see <em>Recently Watched</em>, <em>Purchases</em> or <em>Favorites</em> videos. Within the <em>My List</em> page configuration each grouping of videos is configurable as described in this section.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/my-list.png" alt="my list">
-    </figure>
-    <p>As with all core pages, you can also configure the <em>Sign in</em> page's name and availability.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Program_Guide">Program Guide</h2>
-    <p>The <em>Program Guide</em> page displays your live TV schedule. You can configure the following:</p>
-    <ul>
-      <li>Genres display</li>
-      <li>Number of days forward to display: <em>5</em> or <em>10</em></li>
-      <li>Number of days backward to display: <em>0</em> or <em>5</em></li>
-    </ul>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/program-guide.png" alt="program guide">
-    </figure>
-    <p>As with all core pages, you can also configure the <em>Program Guide</em> page's name and availability.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Purchases">Purchases</h2>
-    <p>When configuring the <em>Purchases</em> core page the first decision to make is if you want all videos purchases organized by asset type. If yes, the asset types will be listed across the top of the purchases as clickable links to show only a specific asset type. If no, all the purchases will be grouped together. The following screenshots show first the organized by asset type layout and then the not grouped layout.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/purchases-by-asset-type.png" alt="purchases by asset type">
-    </figure>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/purchases-not-organized.png" alt="purchases not grouped">
-    </figure>
-    <p>Other configuration options are:</p>
-    <ul>
-      <li>If you choose to organize by asset type, you can then set for each type if the thumbnails shown should be shown as landscape or portrait <strong>and</strong> if the video title should be displayed.</li>
-      <li>If you do not group, you still have those display configuration options, but all thumbnails will follow the selected configuration.</li>
-      <li>If you choose the portrait thumbnails you can also choose if the title position, if displayed, should be inside or outside the thumbnail.</li>
-      <li>As with all core pages, you can also configure the <em>Purchases</em> page's name and availability.</li>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Recently_Watched">Recently Watched</h2>
-    <p>When configuring the <em>Recently Watched</em> core page the first decision to make is if you want all videos that match recently watched criteria by asset type. If yes, the asset types will be listed across the top of the recently watched as clickable links to show only a specific asset type. If no, all recently watched videos will be grouped together. The following screenshots show first the organized by asset type layout and then the not grouped layout.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/recently-by-asset-type.png" alt="recently watched by asset type">
-    </figure>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/recently-not-organized.png" alt="recently watched not grouped">
-    </figure>
-    <p>Other configuration options are:</p>
-    <ul>
-      <li>If you choose to organize by asset type, you can then set for each type if the thumbnails shown should be shown as landscape or portrait <strong>and</strong> if the video title should be displayed.</li>
-      <li>If you do not group, you still have those display configuration options, but all thumbnails will follow the selected configuration.</li>
-      <li>If you choose the portrait thumbnails you can also choose if the title position, if displayed, should be inside or outside the thumbnail.</li>
-      <li>As with all core pages, you can also configure the <em>Recently Watched</em> page's name and availability.</li>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Search">Search</h2>
-    <p></p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/search-by-asset-type.png" alt="search by asset type">
-    </figure>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/search-not-organized.png" alt="search not grouped">
-    </figure>
-    <p>As with all core pages, you can also configure the <em>Search</em> page's name and availability.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Sign_in">Sign in</h2>
-    <p>For the <em>Sign in</em> page you choose if the viewers should see, or not see, a link to the sign up flow on the sign in page. </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/layout/using-core-pages/login.png" alt="login">
-    </figure>
-    <p>As with all core pages, you can also configure the <em>Sign in</em> page's name and availability.</p>
-  </section>
-
-
 </article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
@@ -1632,7 +1443,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Nov 2021
+  Page last updated on 09 Aug 2021
 </div>
 
 
