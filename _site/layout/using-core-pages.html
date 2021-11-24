@@ -1380,6 +1380,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
+<!-- <style>
+  .imageBox {
+    position: static;
+    visibility: hidden;
+    border: solid 5px #DDD;
+    padding: 5px;
+  }
+</style> -->
+
 <h1>Using Core Pages</h1>
 <article class="bcls-article">
   <summary>In this topic, you will learn how to use and configure Brightcove Beacon core pages.</summary>
@@ -1394,7 +1403,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Display live tv and EPG (electronic program guide) schedules.</li>
     </ul>
     <p>A subset of all the core pages are added to every Beacon instance, and others added through onboarding and as needs arise.</p>
-    <aside class="bcls-aside bcls-aside--information language-editable">For <strong>all</strong> core pages you can edit the actual name of the page (in all supported languages) and the pages availability. This information is provided in the following table. For core pages that you can configure <em>beyond</em> to two features, there is a link in the table which will take you to configuration details.</aside>
+    <aside class="bcls-aside bcls-aside--information language-editable">For <strong>all</strong> core pages you can edit the actual name of the page (in all supported languages) and the page's availability. This is reflected in the following table's <em>Confugurable</em> column. For core pages that you can configure <em>beyond</em> those two features, there is a link in the table which will take you to configuration details.</aside>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -1407,19 +1416,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <tbody class="bcls-table__body">
         <tr>
           <td>Downloads</td>
+          <!-- <td>
+            <a href="#" onMouseOver="ShowPicture('Style',1, '/assets/images/layout/using-page-layouts/image-downloads.png')" onMouseOut="ShowPicture('Style',0)">Downloads</a>
+            <div class="imageBox" id="Style">
+              <img src="" />
+            </div>
+          </td> -->
           <td>Displays downloaded videos</td>
           <td>Name and availability only</td>
           <td>Only available for mobile and tablet devices</td>
         </tr>
         <tr>
-          <td>Live TV</td>
-          <td>Displays a linear channel</td>
-          <td>Name and availability only</td>
-          <td></td>
-        </tr>
-        <tr>
           <td>Exit</td>
-          <td>Provides functionality for viewers to exit the app without killing the session, as a sign out would do.</td>
+          <!-- <td>
+            <a href="#" onMouseOver="ShowPicture('Style',1, '/assets/images/layout/using-page-layouts/image-exit.png')" onMouseOut="ShowPicture('Style',0)">Exit</a>
+            <div class="imageBox" id="Style">
+              <img src="" />
+            </div>
+          </td> -->
+
+          <td>Provides functionality for viewers to exit the app without killing the session, as a log out would do.</td>
           <td>Name and availability only</td>
           <td>Required for Smart TV platforms and Roku</td>
         </tr>
@@ -1431,7 +1447,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
         <tr>
           <td>Live TV</td>
-          <td>Displays a live tv channel</td>
+          <!--           <td>
+            <a href="#" onMouseOver="ShowPicture('Style',1, '/assets/images/layout/using-page-layouts/image-livetv.png')" onMouseOut="ShowPicture('Style',0)">Live TV</a>
+            <div class="imageBox" id="Style">
+              <img src="" />
+            </div>
+          </td>
+ -->
+          <td>Displays a linear channel</td>
           <td>Name and availability only</td>
           <td></td>
         </tr>
@@ -1478,12 +1501,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td></td>
         </tr>
         <tr>
-          <td>Search</td>
-          <td>Provides functionality for viewers to search for specific videos</td>
-          <td><a href="#Search">Yes</a></td>
-          <td></td>
-        </tr>
-        <tr>
           <td>Settings</td>
           <td>Provides functionality for viewers to configure, and view information about, the app</td>
           <td>Name and availability only</td>
@@ -1506,8 +1523,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Favorites">Favorites</h2>
-    <p>When configuring the <em>Favorites</em> core page the first decision to make is if you want all videos marked as a favorite organized by asset type. If yes, the asset types will be listed across the top of the favorites as clickable links to show only a specific asset type. If no, all the favorites will be grouped together. The following screenshots show first the organized by asset type layout and then the not grouped layout.</p>
+    <h2 id="Favorites">Configuring Favorites</h2>
+    <p>When configuring the <em>Favorites</em> core page the first decision to make is if you want all videos marked as a favorite organized by asset type. If yes, the asset types will be listed across the top of the favorites as clickable links to show only a specific asset type. If no, all the favorites will be grouped together. The following screenshots show first the organized by asset type layout and then the non-grouped layout.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/layout/using-core-pages/favorites-by-asset-type.png" alt="favorites by asset type">
     </figure>
@@ -1524,7 +1541,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="My_List">My List</h2>
+    <h2 id="My_List">Configuring My List</h2>
     <p>The <em>My List</em> page provides the viewer with a single page from which they can select to see <em>Recently Watched</em>, <em>Purchases</em> or <em>Favorites</em> videos. Within the <em>My List</em> page configuration each grouping of videos is configurable as described in this section.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/layout/using-core-pages/my-list.png" alt="my list">
@@ -1533,7 +1550,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Program_Guide">Program Guide</h2>
+    <h2 id="Program_Guide">Configuring Program Guide</h2>
     <p>The <em>Program Guide</em> page displays your live TV schedule. You can configure the following:</p>
     <ul>
       <li>Genres display</li>
@@ -1547,7 +1564,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Purchases">Purchases</h2>
+    <h2 id="Purchases">Configuring Purchases</h2>
     <p>When configuring the <em>Purchases</em> core page the first decision to make is if you want all videos purchases organized by asset type. If yes, the asset types will be listed across the top of the purchases as clickable links to show only a specific asset type. If no, all the purchases will be grouped together. The following screenshots show first the organized by asset type layout and then the not grouped layout.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/layout/using-core-pages/purchases-by-asset-type.png" alt="purchases by asset type">
@@ -1565,7 +1582,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Recently_Watched">Recently Watched</h2>
+    <h2 id="Recently_Watched">Configuring Recently Watched</h2>
     <p>When configuring the <em>Recently Watched</em> core page the first decision to make is if you want all videos that match recently watched criteria by asset type. If yes, the asset types will be listed across the top of the recently watched as clickable links to show only a specific asset type. If no, all recently watched videos will be grouped together. The following screenshots show first the organized by asset type layout and then the not grouped layout.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/layout/using-core-pages/recently-by-asset-type.png" alt="recently watched by asset type">
@@ -1583,8 +1600,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Search">Search</h2>
-    <p></p>
+    <h2 id="Search">Configuring Search</h2>
+    <p>When configuring the <em>Search</em> core page the first decision to make is if you want all <em>Movies</em> that match the search criteria grouped by asset type. If yes, the asset types will be listed under <strong>Movies</strong> as clickable links to show only a specific asset type. If no, all the returned videos will be grouped together. The following screenshots show first the organized by asset type layout and then the not grouped layout.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/layout/using-core-pages/search-by-asset-type.png" alt="search by asset type">
     </figure>
@@ -1595,16 +1612,34 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Sign_in">Sign in</h2>
+    <h2 id="Sign_in">Configuring Sign in</h2>
     <p>For the <em>Sign in</em> page you choose if the viewers should see, or not see, a link to the sign up flow on the sign in page. </p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/layout/using-core-pages/login.png" alt="login">
     </figure>
     <p>As with all core pages, you can also configure the <em>Sign in</em> page's name and availability.</p>
   </section>
-
-
 </article>
+
+<!-- <script>
+  function getCursorXY(e) {
+    var xpos = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft),
+      ypos = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+    return ypos;
+  }
+
+  function ShowPicture(id, show, img) {
+    getCursorXY
+    if (show == "1") {
+      style.top = ypos + 20 + 'px';
+      document.getElementById(id).style.visibility = "visible"
+      document.getElementById(id).childNodes[1].src = img;
+    }
+    else if (show == "0") {
+      document.getElementById(id).style.visibility = "hidden"
+    }
+  }
+</script> -->
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
@@ -1630,7 +1665,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Nov 2021
+  Page last updated on 24 Nov 2021
 </div>
 
 
