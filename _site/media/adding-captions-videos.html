@@ -1448,12 +1448,12 @@ you can accomplish using it.
       <li>Click the video title link.</li>
       <li>Click the <strong>Video and Tracks</strong> tab and locate the <strong>Text Tracks</strong> section.</li>
       <li>Click <strong>Edit</strong> or double-click in the section.</li>
-      <li>Select if the text track file will be uploaded to Video Cloud or hosted on an external URL.
+      <li>Select if the text track file will be uploaded to Beacon or hosted on an external URL.
         <ul>
-          <li><strong>File Upload</strong> - Click <strong>Browse</strong> and select the text track file from the file system. The file will be uploaded to Video Cloud.</li>
-          <li><strong>URL Upload</strong> - Enter the public URL where the text track file resides and then click <strong>Upload</strong>. The file will be uploaded to Video Cloud.</li>
+          <li><strong>File Upload</strong> - Click <strong>Browse</strong> and select the text track file from the file system. The file will be uploaded to Beacon.</li>
+          <li><strong>URL Upload</strong> - Enter the public URL where the text track file resides and then click <strong>Upload</strong>. The file will be uploaded to Beacon.</li>
           <li><strong>Remote URL</strong> - Enter the public URL where the text track file resides. The URL must be less than 250 characters. Captions will be loaded from the remote URL.
-            <aside class="bcls-aside bcls-aside--information">Note: If you are hosting captions files on your own server, make sure the file is located at a URL that can be accessed by the Brightcove player. The server hosting the captions file should also have Cross-Origin Resource Sharing (CORS) enabled. You can read more about CORS <a href="https://general.support.brightcove.com/developer/concepts-cors.html">here</a>.</aside>
+            <aside class="bcls-aside bcls-aside--information">Note: If you are hosting captions files on your own server, make sure the file is located at a URL that can be accessed by the Brightcove Player. The server hosting the captions file should also have Cross-Origin Resource Sharing (CORS) enabled. You can read more about CORS <a href="https://general.support.brightcove.com/developer/concepts-cors.html">here</a>.</aside>
           </li>
           <li><strong>Auto caption</strong> - Select this option to have caption files generated for the video.</li>
         </ul>
@@ -1469,12 +1469,9 @@ you can accomplish using it.
           <li><strong>Chapters</strong> - Intended to help the user navigate through the video</li>
           <li><strong>Metadata</strong> - Information and content about the video which isn’t intended to be displayed to the viewer by default (though you may wish to do so using JavaScript)</li>
         </ul>
+                  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Edit Mime Type" src="/assets/images/media/captions-english.png" /></figure>
       </li>
-      <li>Enter the <strong>MIME Type</strong> for the text track file. Selecting <strong>default</strong> will display the captions when the video is played (Brightcove Players 6.x and newer).
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Edit Mime Type" src="/assets/images/media/captions-english.png" /></figure>
-        <aside class="bcls-aside bcls-aside--information">Note that if you are uploading SRT or DFXP captions, you will not be able to edit the MIME Type.</aside>
-      </li>
-      <li>Check <strong>Default (Auto Display)</strong> to make the track the default. Most browsers will attempt to display the default text track first but language and accessibility settings may override the default setting. </li>
+      <li>If the video was ingested using a <strong>Legacy</strong> ingest profile, a <strong>Default</strong> option will appear. Check <strong>Default (Auto Display)</strong> to make the track the default. Most browsers will attempt to display the default text track first but language and accessibility settings may override the default setting. </li>
       <li>Click <strong>Add Text Track</strong> to save the text track information.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/captions-added.png" /></figure>
       </li>
@@ -1537,7 +1534,7 @@ you can accomplish using it.
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 14 Oct 2021
+  Page last updated on 29 Nov 2021
 </div>
 
 

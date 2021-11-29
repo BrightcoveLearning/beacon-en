@@ -1439,9 +1439,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <div class="video-cloud-only">
       <p>The WebVTT file can be associated with a video in any of three ways:</p>
       <ol>
-        <li>Add the URL for the WebVTT file in the <a href="/media/adding-captions-videos.html">Text Track properties for the video in Studio</a> - be sure the access the Advanced Settings and set the <code translate="no">Kind</code> to <code translate="no">Chapters</code>:
+        <li>Add the URL for the WebVTT file in the <a href="/media/adding-captions-videos.html">Text Track properties for the video in Studio</a> - be sure to set the <code translate="no">Kind</code> to <code translate="no">Chapters</code>:
           <figure class="bcls-figure"><img class="bcls-image" alt="studio text track settings" src="/assets/images/media/chapters-text-tracks-studio.png" /></figure>
-          <aside class="bcls-aside bcls-aside--information">Note that the <code translate="no">default</code> value is not per track, but set to <code translate="no">true</code> for all tracks of the same language (<code translate="no">srclang</code>)</aside>
         </li>
         <li>Upload the WebVTT file using the <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Ingesting WebVTT Files</a> document in the Dynamic Ingest API information.</li>
         <li>Reference the WebVTT file URL in a <code translate="no">&lt;track&gt;</code> tag to the in-page embed code:
@@ -1470,7 +1469,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               &lt;/video-js&gt;
             &lt;script src="https://players.brightcove.net/3676484086001/df134dc9-c997-4464-a69c-e36acf59aef7_default/index.min.js"&gt;&lt;/script&gt;</code></pre>
     </div>
-    <aside class="bcls-aside bcls-aside--information">Note: If you are hosting captions files on your own server, make sure the file is located at a URL that can be accessed by the Brightcove player. The server hosting the captions file should also have Cross-Origin Resource Sharing (CORS) enabled. You can read more about CORS <a href="https://general.support.brightcove.com/developer/concepts-cors.html">here</a>.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: If you are hosting captions files on your own server, make sure the file is located at a URL that can be accessed by the Brightcove layer. The server hosting the captions file should also have Cross-Origin Resource Sharing (CORS) enabled. You can read more about CORS <a href="https://general.support.brightcove.com/developer/concepts-cors.html">here</a>.</aside>
     <p>The following graphic shows how the chapters menu in the player is generated from the webVTT file:</p>
     <figure class="bcls-figure"><img class="bcls-image" alt="player-vtt-interaction" src="/assets/images/media/chapters-video-player-vc.png" /></figure>
     <!-- <figure class="bcls-figure"><img class="bcls-image" alt="player-vtt-interaction" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/chaptered-video/chapters-with-lowercase.png" /></figure> --></section>
@@ -1507,7 +1506,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 24 Jun 2021
+  Page last updated on 29 Nov 2021
 </div>
 
 
