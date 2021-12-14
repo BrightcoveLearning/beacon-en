@@ -1384,6 +1384,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
+<link rel="stylesheet" href="/assets/css/zoom-image.css">
+
 <h1>Branding Brightcove Beacon Apps</h1>
 <article class="bcls-article">
   <summary>In this topic, you will learn how you can use your logo, color palette and imagery to brand your Brightcove Beacon apps.</summary>
@@ -1409,6 +1411,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>etc.</li>
     </ul>
     <p>The default icons shown on the mockups are used.</p>
+    <p>Further usage information:</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">Click to zoom in and out on the image.</aside>
+    <!-- Image Zoom HTML -->
+    <img class="thumbnail" id="myImg" src="/assets/images/styling/branding-beacon-apps/Logos.png" alt="logos" width="850" height="442">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
   </section>
 
   <section class="bcls-section">
@@ -1421,6 +1432,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Brightcove Beacon only supports solid colors. Please provide the colors in hexadecimal code.</li>
       <li>White is NOT supported as a background color.</li>
     </ul>
+    <p>Further information:</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">Click to zoom in and out on the image.</aside>
+    <!-- Image Zoom HTML -->
+    <img class="thumbnail" id="myImg" src="/assets/images/styling/branding-beacon-apps/color-palette.png" alt="color palette" width="850" height="442">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <img class="modal-content" id="img02">
+      <div id="caption"></div>
+    </div>
 
   </section>
 
@@ -1442,6 +1462,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
 </article>
+
+<script src="/assets/js/zoom-image.js"></script>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
