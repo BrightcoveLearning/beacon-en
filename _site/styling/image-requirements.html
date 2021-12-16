@@ -1387,20 +1387,57 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <h1>Images and Their Specifications</h1>
 <article class="bcls-article">
   <summary>In this topic, you will learn of the images required for your Brightcove Beacon Experience. Also detailed are the required image sizes, aspect ratios, etc.</summary>
-  <aside class="bcls-aside bcls-aside--information">NOTE: In this topic, some of the steps are performed in Beacon Classic.</aside>
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>For you Brightcove Beacon apps there are five images that could be used. You can find the image information when you click on a video and then from the details page click the <strong>Images</strong> link. You will see the following, but of course using your images:</p>
+    <p>For you Brightcove Beacon apps there are five video images that can be used. You can find the image information when you click on a video and then from the details page click the <strong>Images</strong> link. You will see the following, but of course using your images:</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/styling/image-requirements/all-images-in-studio.png" alt="all images in studio">
     </figure>
+
+    <p>There are hundreds of permutations of where the different images can be used. This is because there are:</p>
+    <ul>
+      <li>Multiple platforms: Web, mobile, tablet, smart TV</li>
+      <li>Multiple entities: Movies, series, seasons, episode, playlists, etc., each which have images associated with them.</li>
+      <li>Multiple screens: Movie details, VOD player, favorites, recently watched, etc.</li>
+      <li>Multiple layouts for each screen: For example, there are four movie detail layouts</li>
+      <li>Different image ratios needed for different layouts: For example, a featured, wide banner carousel uses a different image ratio than a normal carousel.</li>
+    </ul>
+    <p>All those factors influence the image used, hence leading to the multitude of options where a specific image could be used.</p>
+    <p>The following provides a small insight on how images are used by showing four examples from a web app.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>The Video Cloud Poster used in Movie Details Layout G
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/styling/image-requirements/movie-details-g.png" alt="movie details g">
+        </figure>
+      </li>
+      <li>A cropped version of the Beacon Landscape used in Movie Layout F
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/styling/image-requirements/movie-details-f.png" alt="movie details f">
+        </figure>
+      </li>
+      <li>The Video Cloud Poster used in a related list.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/styling/image-requirements/crow-heceta-in-list.png" alt="related thumbnail">
+        </figure>
+      </li>
+      <li>The Beacon Ultrawide used in a featured, wide banner carousel.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/styling/image-requirements/wide-banner.png" alt="wide banner">
+        </figure>
+        Note that this is the only time the Beacon Ultrawide image is used.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Image_specifications">Image specifications</h2>
+
     <p>Following are details about each of the images:</p>
     <ul>
       <li><strong>Poster</strong>
         <ul>
           <li>Created automatically by Beacon Studio</li>
-          <li>Change by creating a new image meeting the requirements shown below and uploading it by hovering over the image and clicking <img class=”ui-image” src="/assets/images/common/upload-image.png" alt="upload image"></li>
+          <li>Change by creating a new image meeting the requirements shown below and uploading it by hovering over the image and clicking <img class="ui-image" src="/assets/images/common/upload-image.png" alt="upload image"></li>
           <li>Use <strong>JPG</strong> or <strong>PNG</strong></li>
           <li>Minimum 640px wide</li>
           <li>Aspect ratio should match video, generally 16:9 or 4:3</li>
@@ -1413,7 +1450,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li><strong>Thumbnail</strong>: <ul>
           <li>Created automatically by Beacon Studio</li>
-          <li>Change by creating a new image meeting the requirements shown below and uploading it by hovering over the image and clicking <img class=”ui-image” src="/assets/images/common/upload-image.png" alt="upload image"></li>
+          <li>Change by creating a new image meeting the requirements shown below and uploading it by hovering over the image and clicking <img class="ui-image" src="/assets/images/common/upload-image.png" alt="upload image"></li>
           <li>Use <strong>JPG</strong> or <strong>PNG</strong></li>
           <li>Minimum 160px wide</li>
           <li>Aspect ratio should match video, generally 16:9 or 4:3</li>
@@ -1644,7 +1681,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 24 May 2021
+  Page last updated on 16 Dec 2021
 </div>
 
 
