@@ -4,26 +4,29 @@ description: 'Documents to help you create and manage Beacon and Cloud Playout c
 parent: 'Managing Channels'
 ---
 
+<h1>{{ page.title }}</h1>
 <article class="bcls-article">
-  <h1>{{ page.title }}</h1>
   <summary>{{ page.description }}</summary>
-  <section>
-    <h2 id="Topics_in_this_section">Topics</h2>
-    <ul>
-      {% for item in site.data.navigation %}
-      {% if item.name == page.title %}
+  <section class="bcls-section" id="page_wrapper">
+    {% for item in site.data.navigation %}
+    {% if item.name == page.title %}
+    <section class="flex-container">
       {% for entry in item.docs %}
-      <li><a href="{{ entry.url }}">{{ entry.name }}</a> {% if entry.docs %}
-        <ul>
-          {% for subentry in entry.docs %}
-          <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>
+      <div>
+        {% if entry.docs %}
+        <h3><a href="{{ entry.url }}">{{ entry.name }}</a></h3>
+        <ul class="landing-page-item">
+          {% for subdoc in entry.docs %}
+          <li><a href="{{ subdoc.url }}">{{ subdoc.name }}</a></li>
           {% endfor %}
         </ul>
+        {% else %}
+        <div><a href="{{ entry.url }}">{{ entry.name }}</a></div>
         {% endif %}
-      </li>
+      </div>
       {% endfor %}
-      {% endif %}
-      {% endfor %}
-    </ul>
+    </section>
+    {% endif %}
+    {% endfor %}
   </section>
 </article>
