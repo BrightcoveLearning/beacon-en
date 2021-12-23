@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "8df2a31d-ef43-4303-8d2f-4372e434ea47",
+		"name": "MRSS OTT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST ott syndications",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Series catalog\", \n    \"type\" : \"umcCatalogCsv\", \n    \"asset_type_filter\" : [ \"series\" ], \n    \"cms_account_id\" : \"{{cms_account_id}}\",\n    \"filename\": \"catalog_series.csv\"\n}"
+				},
+				"url": {
+					"raw": "https://{{host}}/v1/accounts/{{account_id}}/mrss/ott-syndications",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"{{account_id}}",
+						"mrss",
+						"ott-syndications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ott syndications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/v1/accounts/{{account_id}}/mrss/ott-syndications",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"{{account_id}}",
+						"mrss",
+						"ott-syndications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ott syndication",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/v1/accounts/{{account_id}}/mrss/ott-syndications/{{syndication_id}}",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"{{account_id}}",
+						"mrss",
+						"ott-syndications",
+						"{{syndication_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH ott syndication",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filename\": \"catalog_series.csv\"\n}"
+				},
+				"url": {
+					"raw": "https://{{host}}/v1/accounts/{{account_id}}/mrss/ott-syndications/{{syndication_id}}",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"{{account_id}}",
+						"mrss",
+						"ott-syndications",
+						"{{syndication_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT ott syndication",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"{{syndication_id}}\",\n    \"name\": \"Series catalog\",\n    \"type\": \"umcCatalogCsv\",\n    \"asset_type_filter\": [\n        \"series\"\n    ],\n    \"filename\": \"catalog_series.csv\",\n    \"cms_account_id\": \"{{cms_account_id}}\"\n}"
+				},
+				"url": {
+					"raw": "https://{{host}}/v1/accounts/{{account_id}}/mrss/ott-syndications/{{syndication_id}}",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"{{account_id}}",
+						"mrss",
+						"ott-syndications",
+						"{{syndication_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE ott syndication",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/v1/accounts/{{account_id}}/mrss/ott-syndications/SYND_ID",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"{{account_id}}",
+						"mrss",
+						"ott-syndications",
+						"SYND_ID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST ott async job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Weekly feed\", \n    \"syndications\": [\"{{syndication_id}}\"]\n}"
+				},
+				"url": {
+					"raw": "https://{{host}}/v1/accounts/{{account_id}}/mrss/ott-async-jobs",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"{{account_id}}",
+						"mrss",
+						"ott-async-jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ott async jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/v1/accounts/{{account_id}}/mrss/ott-async-jobs",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"{{account_id}}",
+						"mrss",
+						"ott-async-jobs"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "QA MRSS",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://oauth.qa.brightcove.com/v3/access_token?grant_type=client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "accessToken",
+				"value": "AG7xitxzHzhWvqzIjTn9hAkS41TiZBQYGVX9nsBpgdjT3rcVQtLJfzHdS2UfJO4VNSIcdQxjVN2QVpMsr-04QieVo1cxaKnt4b6wbcTKBoNwZVYa1-2C4r6Lp1evCmhgnCJt0E-1Q6uLToh5_wXq3hT0QAiiDAbC_mZNpXBCTAHwjv4_D59DJLC1DW2ycmXDI_wXob_LR1rbAJY5SPyHe5HR1fGbD9XtLU7Dk_Xgj4jFTSgpH2kj09K3dwfrsJroGz63O2Ic8Wnf-MWWns_Y_uZMxF_xutnRPsiXKy163tkT_-oUy-MikvfJNysdw51gWvBRyrhVrReCMgccI5NgMyv54kUowapIiA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
