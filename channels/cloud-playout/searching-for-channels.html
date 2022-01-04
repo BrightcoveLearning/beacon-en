@@ -1,0 +1,77 @@
+---
+title: Searching for Channels
+description: This topic explains how to search for Cloud Playout channels using the Cloud Playout module.
+parent: Cloud PLayout
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>If you create many Cloud Playout channels, you will likely find it useful to search for the one(s) you want to work on at the moment. Cloud Playout provides a robust mechanism for searching for channels using either the Studio module or the <a href="https://apis.support.brightcove.com/cloud-playout-apis/guides/search-channels-api.html">Channels API</a>.</p>
+    <p>This topic covers searching for channels using Studio.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Studio_basic_search">Studio: basic search</h2>
+    <p>The simplest way to search for a channel is to enter text to search on in the search box above the channel list:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/search-box.png" alt="Basic Search">
+      <figcaption class="bcls-caption--image">Basic Search</figcaption>
+    </figure>
+    <p>The term(s) you enter will be matched against the channel name, id, and description. You can also use <strong>Advanced Search</strong> to add additional filters to the search, as explained in the next section.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Studio-advanced-search">Studio: advanced search</h2>
+    <p>Clicking the <strong>Advanced Search</strong> link below the search box will open a panel with advanced search options:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/search-advanced.png" alt="Advanced Search Panel">
+      <figcaption class="bcls-caption--image">Advanced Search Panel</figcaption>
+    </figure>
+    <h3>State</h3>
+    <p>The <strong>State</strong> field is a multi-select input field that allows to filter out channels that are not in the selected state(s) from the search results:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/search-state.png" alt="State Filter">
+      <figcaption class="bcls-caption--image">State Filter</figcaption>
+    </figure>
+    <h3>Region</h3>
+    <p>The <strong>Region</strong> field is a multi-select input field that allows to filter out channels that do not have the selected region(s) as their destinations from the search results:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/search-region.png" alt="Region Filter">
+      <figcaption class="bcls-caption--image">Region Filter</figcaption>
+    </figure>
+    <h3>Text To Include</h3>
+    <p>The <strong>Text To Include</strong> field allows you to choose the channel name, description, or id (or all, which is the default) as the text to match the search term(s) in the search box against.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/search-text-to-include.png" alt="Text To Include Filter">
+      <figcaption class="bcls-caption--image">Text To Include Filter</figcaption>
+    </figure>
+    <h3>Channel Flags and Outputs</h3>
+    <p>The <strong>Channel Flags</strong> allow you to filter search results based on whether or not the channel has looping, SSAI, Live Events, and/or Dynamic Overlays enabled or not. When you select one of the filters, it will be entered in the query as <code translate="no">true</code>. If you want to filter by the flag set to <code translate="no">false</code> you will need to edit the filter in the search query manually:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/search-channel-flags.png" alt="Channel Flag Filter in Query">
+      <figcaption class="bcls-caption--image">Channel Flag Filter in Query</figcaption>
+    </figure>
+    <p>The <strong>Outputs</strong> filter allows you to filter results based on the output destination:</p>
+    <figure class="bcls-figure">
+      <img src="/assets/images/cloud-playout/search-channel-flags2.png" alt="Channel Flags and Outputs" class="bcls-image">
+      <figcaption class="bcls-caption--image">Channel Flags and Outputs</figcaption>
+    </figure>
+    <aside class="bcls-aside--information">Remember that SSAI-enabled channels are always output to RTP, and cannot be output to RTMP, so (for example) setting the SSAI filter (to <code translate="no">true</code>) and the RTMP filter would result in no search results.</aside>
+    <h3>Starts At and Created At</h3>
+    <p>The <strong>Starts At</strong> and <strong>Created At</strong> filters allow you select date/time ranges to return only channels for which the creation date or the start date falls within that range:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/search-starts-created-at.png" alt="Starts At/Created At Filters">
+      <figcaption class="bcls-caption--image">Starts At/Created At Filters</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Notes">Notes</h2>
+    <ul>
+      <li>When the common search_text box is manually cleared then all the channels will be fetched.</li>
+      <li>When search results are being displayed a link above the channels title called <strong>Back to channels</strong> is available - clicking it loads the default channels list page.</li>
+      <li>Clicking the <strong>Clear All</strong> link at the bottom of the Advanced Search panel will clear all filters.</li>
+      <li>When all of the advanced search inputs are empty and an advanced search is performed, it will fetch all the channels.</li>
+    </ul>
+  </section>
+</article>

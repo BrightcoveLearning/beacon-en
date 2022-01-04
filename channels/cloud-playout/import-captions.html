@@ -1,0 +1,45 @@
+---
+title: Import Captions
+description: This topic covers importing captions for VOD assets and live events into your Cloud Playout channel.
+parent: Cloud Playout
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>Captions are helpful for viewers with hearing impairments, and may be required if your channel adheres to accessibility requirements.</p>
+    <p>Cloud Playout can pass through the embedded 608/708 closed captions from VoD (and a Live fallback slate) and Live events and make the captions available across all outputs (Brightcove Live (SSAI/non-SSAI) , 3rd party RTMP and S3+HLS). </p>
+    <aside class="bcls-aside bcls-aside--information language-editable">Closed captions are added to VOD MP4 renditions when text tracks are ingested using the <code translate="No">embed_closed_caption</code> option. See <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Ingesting WebVTT Files</a></aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Importing_captions">Importing captions</h2>
+    <p>To import captions into your Cloud Playout channel, you must enable that option when you create the channel:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/captions-option-new-channel.png" alt="Create Channel with Captions">
+      <figcaption class="bcls-caption--image">Create Channel with Captions</figcaption>
+    </figure>
+    <p>This option is enabled by default. If you decided you want to remove the captions from the channel, you can edit the channel configuration and disable the option - but this change can only be made while the channel is in DRAFT state.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="How_Cloud_Playout_handles_captions">How_Cloud_Playout_handles_captions</h2>
+    <ul>
+      <li>Only one language track is supported on VoD MP4 renditions.</li>
+      <li>If a live stream contains embedded multi language channels or both 608 and 708 channels, everything will be passed through downstream.</li>
+      <li>For S3+HLS output only the first language channel is considered for the output, so only one VTT output is generated even though the input may contain more than one caption channels.</li>
+    </ul>
+    <p>The diagram below summarizes how Cloud Playout handles captions for different channel types, asset types, and destinations:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/import-captions-design.png" alt="Summary of Caption Handling">
+      <figcaption class="bcls-caption--image">Summary of Caption Handling</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Notes">Notes</h2>
+    <ul>
+      <li>The Brightcove Player does not render the language codes in the captions menu (it will just render thecCaption service name such as CC1, CC3 for 608 captions or cc1_708, cc3_708 for 708 captions).</li>
+      <li>If Live events in the channel program are supplied with multi-lingual captions is mixed with VOD assets that support only single language captions, then everything that is sent through to the Cloud Playout channel is just passed through to the destination.</li>
+    </ul>
+  </section>
+</article>
