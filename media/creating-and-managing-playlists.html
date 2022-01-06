@@ -10,8 +10,8 @@ layout: staging
   <section class="bcls-section">
     <p>A playlist is a collection of related videos or other media assets (i.e. seasons, live events, etc) that are grouped together in a particular order for playback in a player. The Media module makes it easy to create playlists and add assets to a playlist. After playlists have been created, you can:</p>
     <ul>
-      <li>Publish a playlist to a player to display on a web page - <span class="BCL-objective">For information, see <a href="/publish-videos/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists with the Media Module</a></span></li>
       <li>Add playlists to pages used in Beacon apps - <span class="BCL-objective">For information, see <a href="/layout/managing-playlists-on-pages.html">Managing Playlists on Pages</a></span></li>
+      <li>Publish a playlist to a player to display on a web page - <span class="BCL-objective">For information, see <a href="/publish-videos/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists with the Media Module</a></span></li>
     </ul>
     <p><span class="BCL-objective">For general information about playlists, including best practices and tips for using them effectively, see <a href="/media/introduction-playlists.html">Introduction to Playlists</a>.</span></p>
   </section>
@@ -34,6 +34,26 @@ layout: staging
     </ul>
   </section>
   <section class="bcls-section">
+    <h2 id="view">Viewing all  playlists</h2>
+    <p>To view all the playlists in the account, in the side navigation panel, click <strong>All Video Cloud playlists</strong> or <strong>All Beacon playlists</strong>. For Video Cloud playlists, the page will display:</p>
+    <ul>
+      <li><strong>Playlist name</strong> - Name of the playlist</li>
+      <li><strong>Reference ID</strong> - Reference ID for the playlist</li>
+      <li><strong>Parameters</strong> - Parameters used to create the playlist (smart playlists only)</li>
+      <li><strong>Updated date</strong> - Date the playlist was last updated</li>
+      <li><strong>Video Count</strong> - Number of videos in the playlist</li>
+    </ul>
+    <p>For Beacon playlists, the page will display:</p>
+    <ul>
+      <li><strong>Playlist name</strong> - Name of the playlist</li>
+      <li><strong>Status</strong> - Published (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-green-eye.png" />) or unpublished (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-red-eye.png" />)</li>
+      <li><strong>Media count</strong> - Number of assets in the playlist</li>
+      <li><strong>Media Type</strong> - Types of media in the playlist</li>
+      <li><strong>Parameters</strong> - Parameters used to create the playlist (smart playlists only)</li>
+      <li><strong>Updated date</strong> - Date the playlist was last updated</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
     <h2 id="create">Creating a playlist</h2>
     <p>To create a playlist, open the Media module and follow these steps:</p>
     <ol class="bcls-tasklist-restart">
@@ -47,10 +67,10 @@ layout: staging
         <ul>
           <li><strong>Language View</strong> (Beacon only) - Select a language to enter Overview settings in a localized language</li>
           <li><strong>Name</strong> - Playlist name</li>
-          <li><strong>Title</strong> (Beacon only) - Playlist title displayed in Beacon apps</li>
-          <li><strong>Reference ID</strong> (Video Cloud only) - A unique ID assigned by a publisher to a playlist</li>
+          <li><strong>Title</strong> (Beacon playlists only) - Playlist title displayed in Beacon apps</li>
+          <li><strong>Reference ID</strong> (Video Cloud playlists only) - A unique ID assigned by a publisher to a playlist</li>
           <li><strong>Description</strong> - Playlist description</li>
-          <li><strong>Show Playlist in Sidebar</strong> (Video Cloud only) - If checked, the playlist will appear in the sidebar
+          <li><strong>Show Playlist in Sidebar</strong> (Video Cloud playlists only) - If checked, the playlist will appear in the sidebar
             <aside class="bcls-aside bcls-aside--information">Note: A maximum of 100 playlists can appear in the sidebar.</aside>
           </li>
         </ul>
@@ -99,7 +119,9 @@ layout: staging
       <li>In the side navigation panel, click <strong>All Beacon playlists</strong>.</li>
       <li>Click on a playlist name to open the playlist details.</li>
       <li>Click <strong>Add content</strong>.</li>
-      <li>Click on assets to select them. Click on the tabs at the top of the dialog to filter by content type. The search field can be used to search for assets.</li>
+      <li>Click on assets to select them. Click on the tabs at the top of the dialog to filter by content type. The search field can be used to search for assets.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-beacon-manual-add-content.png" /></figure>
+      </li>
       <li>Click<strong> Add</strong>. Videos added to a manual playlist will be added to the end of the playlist.</li>
     </ol>
   </section>
@@ -179,8 +201,11 @@ layout: staging
       </li>
       <li><strong>Name</strong> - The video name is used to define the videos that will appear in the playlist. Enter a video name to search for.</li>
       <li><strong>Description</strong> - The video's short and long description are used to define the videos that will appear in the playlist. Enter a description to search for.</li>
-      <li><strong>Custom field </strong> - The video's custom fields are used to define the videos that will appear in the playlist.
+      <li><strong>Custom fields </strong> - The video's custom fields are used to define the videos that will appear in the playlist.
         Select a custom field from the dropdown list and then select/enter a custom field value.</li>
+      <li><strong>Updated date</strong> - Date the video was updated</li>
+      <li><strong>Created date</strong> - Date the video was created</li>
+      <li><strong>Last activated date</strong> - Date the video was last activated</li>
     </ul>
     <p>The <strong>Name</strong>, <strong>Description</strong> and <strong>Custom field</strong> options support these options:</p>
     <ul>
@@ -201,6 +226,7 @@ layout: staging
     <h2 id="addmanual">Adding videos to a Video Cloud manual playlist</h2>
     <p>To add videos to a manual playlist, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
+      <li>In the side navigation panel, click <strong>All videos</strong>.</li>
       <li>Check the boxes next to the videos that should be added to the playlist.</li>
       <li>Click <strong>More &gt; Add to Playlist</strong> at the top of the page.</li>
       <li>Select the playlist to add the videos to.
@@ -270,9 +296,9 @@ layout: staging
           <li>Click <strong>All Video Cloud playlists</strong> or <strong>All Beacon playlists</strong> in the side navigation panel, locate the playlist and click on the playlist name.</li>
         </ul>
       </li>
-      <li>The list of videos in the playlist will appear.</li>
+      <li>Confirm that the list of videos in the playlist  appears.</li>
       <li>Click the checkbox next to the asset(s) to remove.</li>
-      <li>Click <strong>Remove from Playlist</strong>.</li>
+      <li>Click <strong>Remove Videos &gt; Remove from playlist</strong>.</li>
     </ol>
     <p>You can also remove a video from a manual playlist by editing the video properties. In the <strong>Categorization</strong> section, delete the playlist  from the <strong>Manual Playlists</strong> section.</p>
   </section>
