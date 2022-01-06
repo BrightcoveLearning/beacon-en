@@ -1465,10 +1465,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <ul>
           <li><strong>Language View</strong> (Beacon only) - Select a language to enter Overview settings in a localized language</li>
           <li><strong>Name</strong> - Playlist name</li>
-          <li><strong>Title</strong> (Beacon only) - Playlist title displayed in Beacon apps</li>
-          <li><strong>Reference ID</strong> (Video Cloud only) - A unique ID assigned by a publisher to a playlist</li>
+          <li><strong>Title</strong> (Beacon playlists only) - Playlist title displayed in Beacon apps</li>
+          <li><strong>Reference ID</strong> (Video Cloud playlists only) - A unique ID assigned by a publisher to a playlist</li>
           <li><strong>Description</strong> - Playlist description</li>
-          <li><strong>Show Playlist in Sidebar</strong> (Video Cloud only) - If checked, the playlist will appear in the sidebar
+          <li><strong>Show Playlist in Sidebar</strong> (Video Cloud playlists only) - If checked, the playlist will appear in the sidebar
             <aside class="bcls-aside bcls-aside--information">Note: A maximum of 100 playlists can appear in the sidebar.</aside>
           </li>
         </ul>
@@ -1597,8 +1597,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li><strong>Name</strong> - The video name is used to define the videos that will appear in the playlist. Enter a video name to search for.</li>
       <li><strong>Description</strong> - The video's short and long description are used to define the videos that will appear in the playlist. Enter a description to search for.</li>
-      <li><strong>Custom field </strong> - The video's custom fields are used to define the videos that will appear in the playlist.
+      <li><strong>Custom fields </strong> - The video's custom fields are used to define the videos that will appear in the playlist.
         Select a custom field from the dropdown list and then select/enter a custom field value.</li>
+      <li><strong>Updated date</strong> - Date the video was updated</li>
+      <li><strong>Created date</strong> - Date the video was created</li>
+      <li><strong>Last activated date</strong> - Date the video was last activated</li>
     </ul>
     <p>The <strong>Name</strong>, <strong>Description</strong> and <strong>Custom field</strong> options support these options:</p>
     <ul>
@@ -1619,6 +1622,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="addmanual">Adding videos to a Video Cloud manual playlist</h2>
     <p>To add videos to a manual playlist, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
+      <li>In the side navigation panel, click <strong>All videos</strong>.</li>
       <li>Check the boxes next to the videos that should be added to the playlist.</li>
       <li>Click <strong>More &gt; Add to Playlist</strong> at the top of the page.</li>
       <li>Select the playlist to add the videos to.
@@ -1688,9 +1692,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li>Click <strong>All Video Cloud playlists</strong> or <strong>All Beacon playlists</strong> in the side navigation panel, locate the playlist and click on the playlist name.</li>
         </ul>
       </li>
-      <li>The list of videos in the playlist will appear.</li>
+      <li>Confirm that the list of videos in the playlist  appears.</li>
       <li>Click the checkbox next to the asset(s) to remove.</li>
-      <li>Click <strong>Remove from Playlist</strong>.</li>
+      <li>Click <strong>Remove Videos &gt; Remove from playlist</strong>.</li>
     </ol>
     <p>You can also remove a video from a manual playlist by editing the video properties. In the <strong>Categorization</strong> section, delete the playlist  from the <strong>Manual Playlists</strong> section.</p>
   </section>
