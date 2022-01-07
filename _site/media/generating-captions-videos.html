@@ -1400,7 +1400,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>In order to generate captions, the following are required:</p>
     <ul>
       <li>The videos must have been transcoded using a Context Aware or Dynamic Delivery ingest profile</li>
-      <li>A video master file must be available. Videos uploaded using one of the Brightcove provided, standard ingest profiles will save a master by default. For more information on archiving masters, see the <a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a> document. If a video master file is not available, it is still possible to generate captions  from audio tracks using the <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/requesting-auto-captions.html">Dynamic Ingest API</a>.</li>
+      <li>The minimum length of a video to generate auto captions is:
+        <ul>
+          <li>5 seconds, if the language is specified</li>
+          <li>15 seconds, if the language is auto-detected</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Beacon uses the follow process to determine the source that will be used to generate the captions.</p>
+    <ul>
+      <li>If the video has default audio track, that will be used as the captions source file (supported by default in the Media module)</li>
+      <li>If the video has no default audio track but a master/mezzanine file exists, that will be used as the  source file (supported by default in the Media module)</li>
+      <li>If the video has no default audio track or master/mezzanine files, but audio tracks are specified in the Dynamic Ingest call, the specified audio track will be used  (not yet supported in the Media module)</li>
+      <li>If the video has no default audio track, no master/mezzanine files, and no audio track is specified, captions cannot be generated</li>
     </ul>
     <p>If you are using a third-party to generate caption files, see <a href="adding-captions-videos.html">Adding Captions to Videos</a> for information on how to associate caption files with videos.</p>
     <aside class="bcls-aside bcls-aside--information">Note: Please contact your Brightcove Account Manager to have this feature enabled.</aside>
