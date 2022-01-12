@@ -1397,16 +1397,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <summary>In this topic, you will learn how to implement OneTrust Cookie Compliance with Brightcove Beacon.</summary>
 
   <section class="bcls-section">
-    <h2 id="section-name">Introduction</h2>
+    <h2 id="Introduction">Introduction</h2>
     <p>This document is an introduction to get you started with OneTrust cookie compliance. For complete details see the <a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance">Cookie Compliance</a> section of documentation at OneTrust.</p>
   </section>
 
   <section class="bcls-section">
-    <h2 id="section-name">section-title</h2>
-    <p></p>
+    <h2 id="Create_a_template">Create a template</h2>
+    <p>The template defines how your banner and preferences dialog appear to your users. In the following steps you will copy a template supplied by Brightcove and customize it for your needs.</p>
     <ol class="bcls-tasklist">
       <li>Log in to your OneTrust account.</li>
-      <li>From the <strong>Welcome</strong> page, click the <strong>Cooke Compliance</strong> option.
+      <li>From the <em>Welcome</em> page, click the <strong>Cooke Compliance</strong> option.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/onetrust-index.png" alt="onetrust index page">
         </figure>
@@ -1431,12 +1431,46 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/name-template.png" alt="name template">
         </figure>
       </li>
-      <li>Check to be sure the <strong>Template Details</strong> page opens to the <strong>Banner</strong> tab.
+      <li>The <em>Template Details</em> page opens to the <em>Banner</em> tab. Click <strong>Preference Center</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/details-banner-tab.png" alt="/details banner tab">
         </figure>
       </li>
-      <li>You can customize the sections of your template. Watch the following video (less than 2 minutes) to get an intrduction to the process.
+      <li>In the <em>Preferences Center</em>:
+        <ol type="a">
+          <li>Open the <strong>Styling</strong> options</li>
+          <li>Enable <strong>Override Banner Styling</strong></li>
+          <li>Upload a new logo</li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/upload-new-logo.png" alt="upload new logo">
+        </figure>
+      </li>
+      <li>Note that the logo is updated in the preview.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/logo-updated.png" alt="logo updated">
+        </figure>
+      </li>
+      <li>Click <strong>Save Template</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/save-template.png" alt="Save template">
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Style_the_template">Style the template</h2>
+    <p>In addition to adding a logo, you can customize the sections of your template. Watch the following video (less than 2 minutes) to get an introduction to the process.</p>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1721594044471954993">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Create_geolocation_rules">Create geolocation rules</h2>
+    <p></p>
+    <ol class="bcls-tasklist-restart">
+      <li>
         <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1721594044471954993">&nbsp;</div>
         <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
       </li>
@@ -1480,6 +1514,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li></li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Assign_geolocation_rules_to_domains">Assign geolocation rules to domains</h2>
+    <p></p>
+    <ol class="bcls-tasklist">
       <li>For the Geolocation Rule Group you created, click the ellipses icon and select <strong>Assign to Domains</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-group-assign-to-domains.png" alt="rule group assign to domains">
@@ -1492,14 +1533,20 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li></li>
       <li></li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Create and copy scripts">Create and copy scripts</h2>
+    <ol class="bcls-tasklist--restart">
       <li>From the Cookie Compliance index page:
-        <ul>
+        <ol type="a">
           <li>In the left navigation, click <strong>Scripts</strong>.</li>
           <li>Click the domain where your Cookie Banner will be implemented.</li>
           <figure class="bcls-figure">
             <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/scripts-index.png" alt="scripts index">
           </figure>
-        </ul>
+        </ol>
       </li>
       <li>In the details screen for your domain, click <strong>Publish Test</strong>.
         <figure class="bcls-figure">
@@ -1526,19 +1573,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/test-scripts.png" alt="test scripts">
         </figure>
       </li>
-      <li>Click <strong>Copy Scripts</strong>.</li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>Click <strong>Copy Scripts</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/copy-scripts-by-download.png" alt="copy scripts">
+        </figure>
+      </li>
+      <li>Provide the scripts to the CMS and web team for proper deployment.</li>
     </ol>
   </section>
-
-
-
 
 </article>
 <!-- complete bootstrap layout -->
