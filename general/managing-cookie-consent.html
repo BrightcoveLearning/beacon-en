@@ -47,8 +47,16 @@ parent: "General Information"
       </li>
       <li>Assign geolocation rules to the domains from which your Beacon app are served.</li>
       <li>Generate the scripts that provide the actual cookie compliance in your Beacon app.</li>
-      <li>Supply the scripts to ??????????????? for implementation.</li>
+      <li>Supply the scripts to your web team for implementation.</li>
     </ul>
+    <p>The major sections following in this document lead you step by step through the implementation steps.</p>
+    <h3>Implementation architecture</h3>
+    <p>The following gives a look "under the hood" of how OneTrust Cookie Compliance integrates with you Beacon app.</p>
+    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script id</em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the api/settings endpoint.</p>
+    <p>Here is an architecture diagram of the implementation:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/architecture-diagram.png" alt="architecture diagram">
+    </figure>
   </section>
 
 
