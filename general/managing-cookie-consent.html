@@ -28,14 +28,14 @@ parent: "General Information"
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/one-trust-banner.png" alt="one trust banner">
     </figure>
-    <p>When a viewer clicks on the <strong>Customize Settings</strong> link in the banner a <strong>Preference Center</strong> dialog appears. This allows your viewers to customize how cookies behave their app:</p>
+    <p>When a viewer clicks on the <strong>Customize Settings</strong> link in the banner, a <strong>Preference Center</strong> dialog appears. This allows your viewers to customize how cookies behave in their app:</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/one-trust-preference-center.png" alt="one trust preference center">
     </figure>
-    <p>As part of the implementation process you will have the option to customize the look of both the banner and preference center.</p>
+    <p>As part of the implementation process you will have the option to customize the text displayed in, and the look of, both the banner and preference center.</p>
     <h3>Overview of implementation process</h3>
     <p>There are a number of steps to complete to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
-    <ul>
+    <ol>
       <li>Create templates that define your banner and preference center functionality and look. You will copy templates supplied by Brightcove as the foundation for your templates.</li>
       <li>Create a geolocation rule group, which will act as a container for geolocation rules.</li>
       <li>Create three geolocation rules that:
@@ -45,14 +45,14 @@ parent: "General Information"
           <li>Define other specifications, like how often reconsent will need to be done.</li>
         </ul>
       </li>
-      <li>Assign geolocation rules to the domains from which your Beacon app are served.</li>
+      <li>Assign geolocation rules to the domains from which your Beacon app is served.</li>
       <li>Generate the scripts that provide the actual cookie compliance in your Beacon app.</li>
       <li>Supply the scripts to your web team for implementation.</li>
-    </ul>
-    <p>The major sections following in this document lead you step by step through the implementation steps.</p>
+    </ol>
+    <p>The major sections following in this document lead you step by step through the implementation process.</p>
     <h3>Implementation architecture</h3>
-    <p>The following gives a look "under the hood" of how OneTrust Cookie Compliance integrates with you Beacon app.</p>
-    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script id</em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the api/settings endpoint.</p>
+    <p>The following gives a look "under the hood" of how OneTrust Cookie Compliance integrates with your Beacon app.</p>
+    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script <strong>id</strong></em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the <strong>api/settings</strong> endpoint.</p>
     <p>Here is an architecture diagram of the implementation:</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/architecture-diagram.png" alt="architecture diagram">
@@ -62,7 +62,7 @@ parent: "General Information"
 
   <section class="bcls-section">
     <h2 id="Create_a_template">Create a template</h2>
-    <p>The template defines how your banner and preferences dialog appear to your users. In the following steps you will copy a template supplied by Brightcove and customize it for your needs.</p>
+    <p>A template defines how your banner and preferences dialog appear to your users. In the following steps you will copy a template supplied by Brightcove and customize it for your needs.</p>
     <ol class="bcls-tasklist">
       <li>Log in to your OneTrust account.</li>
       <li>From the <em>Welcome</em> page, click the <strong>Cooke Compliance</strong> option.
@@ -85,7 +85,7 @@ parent: "General Information"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/copy-template.png" alt="copy template">
         </figure>
       </li>
-      <li>Provide a name for your template and click <strong>Copy Template</strong>. You might have several templates, so meaningful names are important, like <strong>Web-[CustomerName]-CCPA</strong>.
+      <li>Provide a name for your template, select your organization, and click <strong>Copy Template</strong>. You might have several templates, so meaningful names are important, like <strong>Web-[YourCompanyName]-CCPA</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/name-template.png" alt="name template">
         </figure>
@@ -95,7 +95,7 @@ parent: "General Information"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/details-banner-tab.png" alt="/details banner tab">
         </figure>
       </li>
-      <li>In the <em>Preferences Center</em>:
+      <li>In the <em>Preference Center</em>:
         <ol type="a">
           <li>Open the <strong>Styling</strong> options</li>
           <li>Enable <strong>Override Banner Styling</strong></li>
@@ -127,13 +127,13 @@ parent: "General Information"
 
   <section class="bcls-section">
     <h2 id="Create_geolocation_rules">Create geolocation rules</h2>
-    <p></p>
+    <p>Creating geolocation rules first requires that you create a geolocation rule group. The group will act as a container for the rules you create. The actual geolocation rules define cookie compliance behaviors you wish for different geographic regions.</p>
     <ol class="bcls-tasklist-restart">
       <li>
         <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1721594044471954993">&nbsp;</div>
         <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
       </li>
-      <li>To start the process, create a new rule by:
+      <li>To start the process, create a new rule group by:
         <ol type="a">
           <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
           <li>Click <strong>Create New</strong>.
@@ -149,13 +149,12 @@ parent: "General Information"
         </figure>
       </li>
       <li>Click <strong>Create</strong>.</li>
-      <li>From the rule group details page, click <strong>Add Rule</strong>.
+      <li>To create your first actual geolocation rule, from the rule group details page, click <strong>Add Rule</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-add-rule.png" alt="geo add rule">
         </figure>
       </li>
-      <li></li>
-      <li>
+      <li>You will now create the rule that uses your CCPA template whose name will be <strong>CCPA for USA</strong>. Complete the form as shown in the screenshot:
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rule-ccpa-for-usa.png" alt="geo rule ccpa for usa">
         </figure>
