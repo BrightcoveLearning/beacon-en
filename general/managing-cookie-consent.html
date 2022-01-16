@@ -156,6 +156,7 @@ layout: "staging"
         </figure>
       </li>
       <li>You will now create the CCPA rule. The following table provides settings you need to make to be compatible with Beacon. Other changes can be made based on regulations for your targeted geographies.
+        <aside class="bcls-aside bcls-aside--tip language-editable">As with templates, you may not need all the rules based on locations your Beacon app is targeting.</aside>
         <table class="bcls-table">
           <thead class="bcls-table__head">
             <tr>
@@ -166,62 +167,104 @@ layout: "staging"
           <tbody class="bcls-table__body">
             <tr>
               <td>Rule Name</td>
-              <td></td>
+              <td>Provide a name</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Regions</td>
+              <td>For CCPA, you would most likely want to include <em>California</em>, then any other desired regions.</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Template</td>
+              <td>Choose the template created that was based on the Brightcove supplied <strong>Beacon web app template GDPR TCF 2</strong>.</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Cookie Categories</td>
+              <td>Opt-out</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Capture Records of Consent</td>
+              <td>Enabled</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
+              <td>Advanced Analytics</td>
+              <td>Strictly Necessary Cookies</td>
             </tr>
           </tbody>
         </table>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rule-ccpa-for-usa.png" alt="geo rule ccpa for usa">
-        </figure>
+      <li>Create the GDPR rule. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Form element</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Rule Name</td>
+              <td>Provide a name</td>
+            </tr>
+            <tr>
+              <td>Regions</td>
+              <td>For GDPR, you would most likely want to include <em>Eu</em> and <em>United Kingdom</em>, then any other desired regions.</td>
+            </tr>
+            <tr>
+              <td>Template</td>
+              <td>Choose the template created that was based on the Brightcove supplied <strong>Beacon web app template CCPA</strong>.</td>
+            </tr>
+            <tr>
+              <td>Cookie Categories</td>
+              <td>Opt-in</td>
+            </tr>
+            <tr>
+              <td>Capture Records of Consent</td>
+              <td>Enabled</td>
+            </tr>
+            <tr>
+              <td>Advanced Analytics</td>
+              <td>Strictly Necessary Cookies</td>
+            </tr>
+          </tbody>
+        </table>
       </li>
-      <li>Click <strong>Save</strong>.</li>
-      <li>You will now create the rule, give it the name <strong>EU TCF 2.0</strong>, that uses your GDPR template. Complete the form as shown in the screenshot:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rule-gdpr-for-eu-uk.png" alt="geo rule gdpr for eu uk">
-        </figure>
+      <li>You may wish to create a rule that can be applied to regions NOT selected for the CCPA or GDPR rules. It might be applied to all other regions, and because of this you might want to name this rule <strong>Global</strong>. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Form element</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Rule Name</td>
+              <td>Provide a name</td>
+            </tr>
+            <tr>
+              <td>Regions</td>
+              <td>If this rule create for all regions not previously selected, do not enter any regions</td>
+            </tr>
+            <tr>
+              <td>Template</td>
+              <td>A template must be selected, but which template is based on regulations in targeted regions.</td>
+            </tr>
+            <tr>
+            <tr>
+              <td>Capture Records of Consent</td>
+              <td>Enabled</td>
+            </tr>
+            <tr>
+              <td>Advanced Analytics</td>
+              <td>Strictly Necessary Cookies</td>
+            </tr>
+            <tr>
+              <td>Checkbox: Use this consent model if site visitor's IP address is unknown</td>
+              <td>Consider this option if this rule acting in a global capacity.</td>
+            </tr>
+          </tbody>
+        </table>
       </li>
-      <li>You will now create another rule, give it the name <strong>Global</strong>, that uses your GDPR template. In this template no regions are defined, so it will be used wherever the other two templates are not used. Complete the form as shown in the screenshot (note that the checkbox the follows the form IS checked for the Global template whereas it was not for the other two templates):
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rule-global.png" alt="geo rule global">
-        </figure>
-      </li>
-      <li>Click <strong>Save</strong>.</li>
+      <li></li>
     </ol>
   </section>
 
