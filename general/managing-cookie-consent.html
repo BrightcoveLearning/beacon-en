@@ -2,22 +2,74 @@
 title: "Managing Cookie Consent Using OneTrust"
 description: "In this topic, you will learn how to implement OneTrust Cookie Compliance with Brightcove Beacon."
 parent: "General Information"
+layout: "staging"
 ---
+
 <h1>{{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
 
-  <section class="bcls-section">
-    <h2 id="section-name">Introduction</h2>
-    <p>This document is an introduction to get you started with OneTrust cookie compliance. For complete details see the <a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance">Cookie Compliance</a> section of documentation at OneTrust.</p>
-  </section>
 
   <section class="bcls-section">
-    <h2 id="section-name">section-title</h2>
-    <p></p>
+    <h2 id="Introduction">Introduction</h2>
+    <p>Cookies are used to store data on a visitor's computer or mobile device. Cookies are commonly used and sometimes critical to a website's functionality. Problems can occur as cookies can be used to store large amounts of data, store personal data and track online activity so advertisers can target ads. Because of the negatives that are associated with cookies, regulations have evolved around them. The two most common are:</p>
+    <ul>
+      <li>California Consumer Privacy Act (CCPA)</li>
+      <li>General Data Protection Regulation (GDPR) used in the EU and United Kingdom</li>
+    </ul>
+    <p>This document is an introduction to get you started using OneTrust's Cookie Compliance tool with Brightcove Beacon. Brightcove recommends using OneTrust for your Beacon cookie compliance needs.</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">
+      <p>For further general information on cookies, regulation rules and cookie compliance see OneTrust's <a href="https://www.cookiepro.com/knowledgebase/">CookiePro Knowledge Base</a> document. For complete details on OneTrust's tools see the <a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance">Cookie Compliance</a> section of documentation at OneTrust.</p>
+    </aside>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="How_it_works">How it works</h2>
+    <p>The end result of setting up OneTrust Cookie Compliance is that a banner will appear in the Beacon App for geographic locations you choose. Here is an example of what the banner could look like (taken from OneTrust's site):</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/one-trust-banner.png" alt="one trust banner">
+    </figure>
+    <p>When a viewer clicks on the <strong>Customize Settings</strong> link in the banner, a <strong>Preference Center</strong> dialog appears. This allows your viewers to customize how cookies behave in their app:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/one-trust-preference-center.png" alt="one trust preference center">
+    </figure>
+    <p>As part of the implementation process you will have the option to customize the text displayed in, and the look of, both the banner and preference center.</p>
+    <h3>Overview of implementation process</h3>
+    <p>There are a number of steps to complete to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
+    <ol>
+      <li>Create templates that define your banner and preference center functionality and upload your logo for each template created. You will copy templates supplied by Brightcove as the foundation for your templates.</li>
+      <li>Create a geolocation rule group, which will act as a container for geolocation rules.</li>
+      <li>Create three geolocation rules that:
+        <ul>
+          <li>Define the regions in which the cookie compliance will be used.</li>
+          <li>Define the template to be used with the geolocation rule.</li>
+          <li>Define other specifications, like how often re-consent will need to be done.</li>
+        </ul>
+      </li>
+      <li>Assign geolocation rules to the domains from which your Beacon app is served.</li>
+      <li>Generate the scripts that provide the actual cookie compliance in your Beacon app.</li>
+      <li>Supply the scripts to your web team for implementation.</li>
+    </ol>
+    <p>The major sections following in this document lead you step by step through the implementation process.</p>
+    <h3>Implementation architecture</h3>
+    <p>The following gives a look "under the hood" of how OneTrust Cookie Compliance integrates with your Beacon app.</p>
+    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script <strong>id</strong></em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the <strong>api/settings</strong> endpoint.</p>
+    <p>Here is an architecture diagram of the implementation:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/architecture-diagram.png" alt="architecture diagram">
+    </figure>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="Create_a_template">Create two templates</h2>
+    <p>A template defines how your banner and preferences dialog appear to your users. In the following steps you will copy a template supplied by Brightcove and customize it for your needs, once for CCPA and once for GDPR.</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">You may not need both templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating both templates.</aside>
+
     <ol class="bcls-tasklist">
       <li>Log in to your OneTrust account.</li>
-      <li>From the <strong>Welcome</strong> page, click the <strong>Cooke Compliance</strong> option.
+      <li>From the <em>Welcome</em> page, click the <strong>Cookie Compliance</strong> option.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/onetrust-index.png" alt="onetrust index page">
         </figure>
@@ -27,7 +79,7 @@ parent: "General Information"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/click-templates.png" alt="click templates">
         </figure>
       </li>
-      <li>Choose the template you wish to copy for your template and click the ellipses icon on the far right.
+      <li>Choose <strong>Beacon web app template CCPA</strong> to copy and click the ellipses icon on the far right. You will base your CCPA template off of this Brightcove supplied template.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/click-ellipses.png" alt="click ellipses">
         </figure>
@@ -37,21 +89,52 @@ parent: "General Information"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/copy-template.png" alt="copy template">
         </figure>
       </li>
-      <li>Provide a name for your template and click <strong>Copy Template</strong>. You might have several templates, so meaningful names are important, like <strong>Web-[CustomerName]-CCPA</strong>.
+      <li>Provide a name for your template, select your organization, and click <strong>Copy Template</strong>. You might have several templates, so meaningful names are important, like <strong>Web-[YourCompanyName]-CCPA</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/name-template.png" alt="name template">
         </figure>
       </li>
-      <li>Check to be sure the <strong>Template Details</strong> page opens to the <strong>Banner</strong> tab.
+      <li>The <em>Template Details</em> page opens to the <em>Banner</em> tab. Click <strong>Preference Center</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/details-banner-tab.png" alt="/details banner tab">
         </figure>
       </li>
-      <li>You can customize the sections of your template. Watch the following video (less than 2 minutes) to get an intrduction to the process.
-        <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1721594044471954993">&nbsp;</div>
-        <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+      <li>In the <em>Preference Center</em>:
+        <ol type="a">
+          <li>Open the <strong>Styling</strong> options</li>
+          <li>Enable <strong>Override Banner Styling</strong></li>
+          <li>Upload a new logo</li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/upload-new-logo.png" alt="upload new logo">
+        </figure>
+        <aside class="bcls-aside bcls-aside--warning language-editable">There is no need to make any other styling changes here as the banner and preference center will automatically be styled based on the design of your Beacon app.</aside>
       </li>
-      <li>To start the process, create a new rule by:
+      <li>Note that the logo is updated in the preview.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/logo-updated.png" alt="logo updated">
+        </figure>
+      </li>
+      <li>Click <strong>Save Template</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/save-template.png" alt="Save template">
+        </figure>
+      </li>
+      <li>Now create another template:
+        <ul>
+          <li>Copy the <strong>Beacon web app template GDPR TCF 2</strong> template.</li>
+          <li>Suggested naming convention for your template is <strong>Web-[YourCompanyName]-GDPR</strong>.</li>
+          <li>Update the logo.</li>
+        </ul>
+    </ol>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="Create_geolocation_rules">Create geolocation rules</h2>
+    <p>Creating geolocation rules first requires that you create a geolocation rule group. The group will act as a container for the rules you create. The actual geolocation rules define cookie compliance behaviors you wish for different geographic regions.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>To start the process, create a new rule group by:
         <ol type="a">
           <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
           <li>Click <strong>Create New</strong>.
@@ -67,31 +150,87 @@ parent: "General Information"
         </figure>
       </li>
       <li>Click <strong>Create</strong>.</li>
-      <li>From the rule group details page, click <strong>Add Rule</strong>.
+      <li>To create your first actual geolocation rule, from the rule group details page, click <strong>Add Rule</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-add-rule.png" alt="geo add rule">
         </figure>
       </li>
-      <li></li>
-      <li>
+      <li>You will now create the CCPA rule. The following table provides settings you need to make to be compatible with Beacon. Other changes can be made based on regulations for your targeted geographies.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Form element</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Rule Name</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rule-ccpa-for-usa.png" alt="geo rule ccpa for usa">
         </figure>
       </li>
       <li>Click <strong>Save</strong>.</li>
-      <li>
+      <li>You will now create the rule, give it the name <strong>EU TCF 2.0</strong>, that uses your GDPR template. Complete the form as shown in the screenshot:
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rule-gdpr-for-eu-uk.png" alt="geo rule gdpr for eu uk">
         </figure>
       </li>
-      <li></li>
-      <li>
+      <li>You will now create another rule, give it the name <strong>Global</strong>, that uses your GDPR template. In this template no regions are defined, so it will be used wherever the other two templates are not used. Complete the form as shown in the screenshot (note that the checkbox the follows the form IS checked for the Global template whereas it was not for the other two templates):
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rule-global.png" alt="geo rule global">
         </figure>
       </li>
-      <li></li>
-      <li>For the Geolocation Rule Group you created, click the ellipses icon and select <strong>Assign to Domains</strong>.
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Assign_geolocation_rules_to_domains">Assign geolocation rules to domains</h2>
+    <p></p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
+      <li>For the <em>Geolocation Rule Group</em> you created, click the ellipses icon and select <strong>Assign to Domains</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-group-assign-to-domains.png" alt="rule group assign to domains">
         </figure>
@@ -101,16 +240,20 @@ parent: "General Information"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-group-assign-to-domains-confirm.png" alt="rule group assign to domains confirm">
         </figure>
       </li>
-      <li></li>
-      <li></li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Create and copy scripts">Create and copy scripts</h2>
+    <ol class="bcls-tasklist--restart">
       <li>From the Cookie Compliance index page:
-        <ul>
+        <ol type="a">
           <li>In the left navigation, click <strong>Scripts</strong>.</li>
-          <li>Click the domain where your Cookie Banner will be implemented.</li>
+          <li>Click the domain where your cookie compliance will be implemented.</li>
           <figure class="bcls-figure">
             <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/scripts-index.png" alt="scripts index">
           </figure>
-        </ul>
+        </ol>
       </li>
       <li>In the details screen for your domain, click <strong>Publish Test</strong>.
         <figure class="bcls-figure">
@@ -137,18 +280,13 @@ parent: "General Information"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/test-scripts.png" alt="test scripts">
         </figure>
       </li>
-      <li>Click <strong>Copy Scripts</strong>.</li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>Click <strong>Copy Scripts</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/copy-scripts-by-download.png" alt="copy scripts">
+        </figure>
+      </li>
+      <li>Provide the scripts to the CMS and web team for proper deployment.</li>
     </ol>
   </section>
-
-
-
 
 </article>
