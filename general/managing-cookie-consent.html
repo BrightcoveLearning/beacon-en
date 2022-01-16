@@ -65,6 +65,8 @@ layout: "staging"
   <section class="bcls-section">
     <h2 id="Create_a_template">Create two templates</h2>
     <p>A template defines how your banner and preferences dialog appear to your users. In the following steps you will copy a template supplied by Brightcove and customize it for your needs, once for CCPA and once for GDPR.</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">You may not need both templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating both templates.</aside>
+
     <ol class="bcls-tasklist">
       <li>Log in to your OneTrust account.</li>
       <li>From the <em>Welcome</em> page, click the <strong>Cookie Compliance</strong> option.
@@ -77,7 +79,7 @@ layout: "staging"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/click-templates.png" alt="click templates">
         </figure>
       </li>
-      <li>Choose the template you wish to copy for your template and click the ellipses icon on the far right.
+      <li>Choose <strong>Beacon web app template CCPA</strong> to copy and click the ellipses icon on the far right. You will base your CCPA template off of this Brightcove supplied template.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/click-ellipses.png" alt="click ellipses">
         </figure>
@@ -106,6 +108,7 @@ layout: "staging"
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/upload-new-logo.png" alt="upload new logo">
         </figure>
+        <aside class="bcls-aside bcls-aside--warning language-editable">There is no need to make any other styling changes here as they will be overridden by settings made in your Beacon app configuration.</aside>
       </li>
       <li>Note that the logo is updated in the preview.
         <figure class="bcls-figure">
@@ -120,8 +123,8 @@ layout: "staging"
       <li>Now create another template:
         <ul>
           <li>Copy the <strong>Beacon web app template GDPR TCF 2</strong> template.</li>
-          <li>Name your template <strong>Web-[YourCompanyName]-GDPR</strong></li>
-          <li>Update the logo</li>
+          <li>Suggested naming convention for your template is <strong>Web-[YourCompanyName]-GDPR</strong>.</li>
+          <li>Update the logo.</li>
         </ul>
     </ol>
   </section>
