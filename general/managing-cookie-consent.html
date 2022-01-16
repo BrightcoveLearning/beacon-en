@@ -38,7 +38,7 @@ layout: "staging"
     <h3>Overview of implementation process</h3>
     <p>There are a number of steps to complete to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
     <ol>
-      <li>Create templates that define your banner and preference center functionality and look. You will copy templates supplied by Brightcove as the foundation for your templates.</li>
+      <li>Create templates that define your banner and preference center functionality and upload your logo for each template created. You will copy templates supplied by Brightcove as the foundation for your templates.</li>
       <li>Create a geolocation rule group, which will act as a container for geolocation rules.</li>
       <li>Create three geolocation rules that:
         <ul>
@@ -108,7 +108,7 @@ layout: "staging"
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/upload-new-logo.png" alt="upload new logo">
         </figure>
-        <aside class="bcls-aside bcls-aside--warning language-editable">There is no need to make any other styling changes here as they will be overridden by settings made in your Beacon app configuration.</aside>
+        <aside class="bcls-aside bcls-aside--warning language-editable">There is no need to make any other styling changes here as the banner and preference center will automatically be styled based on the design of your Beacon app.</aside>
       </li>
       <li>Note that the logo is updated in the preview.
         <figure class="bcls-figure">
@@ -129,13 +129,6 @@ layout: "staging"
     </ol>
   </section>
 
-
-  <section class="bcls-section">
-    <h2 id="Style_the_template">Style the template</h2>
-    <p>In addition to adding a logo, you can customize the sections of your template. Watch the following video (less than 2 minutes) to get an introduction to the process.</p>
-    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1721594044471954993">&nbsp;</div>
-    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
-  </section>
 
   <section class="bcls-section">
     <h2 id="Create_geolocation_rules">Create geolocation rules</h2>
@@ -162,7 +155,57 @@ layout: "staging"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-add-rule.png" alt="geo add rule">
         </figure>
       </li>
-      <li>You will now create the rule, give it the name <strong>CCPA for USA</strong>, that uses your CCPA template. Complete the form as shown in the screenshot:
+      <li>You will now create the CCPA rule. The following table provides settings you need to make to be compatible with Beacon. Other changes can be made based on regulations for your targeted geographies.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Form element</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Rule Name</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rule-ccpa-for-usa.png" alt="geo rule ccpa for usa">
         </figure>
