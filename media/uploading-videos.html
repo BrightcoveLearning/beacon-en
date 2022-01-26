@@ -24,6 +24,16 @@ description: This topic provides an overview of the Upload module which is used 
     <p>The video renditions that are created are based upon the ingest profile that is selected. For specific details on the Brightcove supplied ingest profiles, see <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles for Dynamic Delivery and Context Aware Encoding</a>.</p>
     <p>The image dimensions for the poster and thumbnail images are based upon the image dimensions specified in the ingest profile.</p>
     <aside class="bcls-aside bcls-aside--information">Note: For information on creating additional ingest profiles, or setting a default profile for your account, see <a href="/admin/managing-ingest-profiles.html">Managing Ingest Profiles</a>.</aside>
+      <h3 id="mp4">Do I need MP4 renditions?</h3>
+    <p>There are several reasons why you might want to choose an ingest profile that creates MP4 renditions:</p>
+    <ul>
+      <li><strong>Sharing using the Social module</strong> - The Social module  requires that an MP4 rendition be available to share to social media. An MP4 rendition is also required to download a video using the Social module.</li>
+      <li><strong>Downloading videos</strong> - If viewers will have the ability to <a href="downloading-videos.html">download videos</a> using a  download link on a webpage, download from a <a href="https://gallery.support.brightcove.com/experiences/portal/downloading-videos-portal-experience.html">Gallery Portal</a> or <a href="https://gallery.support.brightcove.com/experiences/inpage/configuring-video-downloads-page-experience.html">In-Page experience</a> or download by using an RSS feed, you should create MP4 renditions.</li>
+      <li><strong>Closed captions</strong> - (CEA 608/708) closed captions for accessibility <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">can only be added</a> to MP4 renditions. You  can <a href="adding-captions-videos.html">add text track captions</a> to HLS/DASH renditions but these do not meet legal accessibility standards.</li>
+      <li><strong>Cloud Playout module</strong> - In order to be <a href="/channels/cloud-playout/cloud-playout-add-content.html">added to  Cloud Playout channels</a>, videos must have at least one MP4 rendition.</li>
+      <li><strong>Streaming to Legacy Devices</strong> - Older devices such as Android 4.x and prior require MP4 renditions for streaming via progressive download.</li>
+    </ul>
+    <p>If any of these use cases are important to you, Brightcove recommends selecting an ingest profile that generates one or more MP4 renditions.</p>
   </section>
   <section class="bcls-section">
     <h2 id="captions">Automatically generating captions</h2>
