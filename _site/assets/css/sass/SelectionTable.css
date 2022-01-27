@@ -4,7 +4,7 @@ Error: File to import not found or unreadable: ~@brightcove/studio-colors/dist/c
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base
-        on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/SelectionTable.sass
+        on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/SelectionTable.sass
 
 1: @import '~@brightcove/studio-colors/dist/colors.sass'
 2: 
@@ -14,7 +14,7 @@ Error: File to import not found or unreadable: ~@brightcove/studio-colors/dist/c
 6: .selectionTable
 
 Backtrace:
-/Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/SelectionTable.sass:1
+/Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/SelectionTable.sass:1
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:44:in `import'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -51,4 +51,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ~@brightcove/studio-colors/dist/colors.sass.\A        Load paths:\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/SelectionTable.sass\A \A 1: @import '~@brightcove/studio-colors/dist/colors.sass'\A 2: \A 3: $checkBoxSizeLarge: (22rem / 15)\A 4: $tablePadding: 10px\A 5: \A 6: .selectionTable"; }
+  content: "Error: File to import not found or unreadable: ~@brightcove/studio-colors/dist/colors.sass.\A        Load paths:\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/SelectionTable.sass\A \A 1: @import '~@brightcove/studio-colors/dist/colors.sass'\A 2: \A 3: $checkBoxSizeLarge: (22rem / 15)\A 4: $tablePadding: 10px\A 5: \A 6: .selectionTable"; }
