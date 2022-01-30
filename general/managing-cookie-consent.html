@@ -39,7 +39,7 @@ layout: "staging"
     <h3>Overview of implementation process</h3>
     <p>There are a number of steps to complete to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
     <ol>
-      <li>Create templates that define your banner and preference center functionality and upload your logo for each template created. You will copy templates supplied by Brightcove as the foundation for your templates.</li>
+      <li>Create templates that define your banner and preference center functionality and upload your logo for each template created.</li>
       <li>Create a geolocation rule group, which will act as a container for geolocation rules.</li>
       <li>Create three geolocation rules that:
         <ul>
@@ -50,16 +50,9 @@ layout: "staging"
       </li>
       <li>Assign geolocation rules to the domains from which your Beacon app is served.</li>
       <li>Generate the scripts that provide the actual cookie compliance in your Beacon app.</li>
-      <li>Supply the scripts to your web team for implementation.</li>
+      <li>Supply the scripts to Brightcove's OTT Delivery Team for implementation.</li>
     </ol>
     <p>The major sections following in this document lead you step by step through the implementation process.</p>
-    <h3>Implementation architecture</h3>
-    <p>The following gives a look "under the hood" of how OneTrust Cookie Compliance integrates with your Beacon app.</p>
-    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script <strong>id</strong></em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the <strong>api/settings</strong> endpoint.</p>
-    <p>Here is an architecture diagram of the implementation:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/architecture-diagram.png" alt="architecture diagram">
-    </figure>
   </section>
 
 
@@ -96,21 +89,6 @@ layout: "staging"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/name-the-template.png" alt="name the template">
         </figure>
       </li>
-      <!--       <li>Choose <strong>Beacon web app template CCPA</strong> to copy and click the ellipses icon on the far right. You will base your CCPA template off of this Brightcove supplied template.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/click-ellipses.png" alt="click ellipses">
-        </figure>
-      </li>
-      <li>From the menu that appears, click <strong>Copy Template</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/copy-template.png" alt="copy template">
-        </figure>
-      </li> 
-      <li>Provide a name for your template, select your organization, and click <strong>Copy Template</strong>. You might have several templates, so meaningful names are important, like <strong>Web-[YourCompanyName]-CCPA</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/name-template.png" alt="name template">
-        </figure>
-      </li> -->
       <li>The <em>Template Details</em> page opens to the <em>Banner</em> tab. Click <strong>Preference Center</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/details-banner-tab.png" alt="/details banner tab">
@@ -395,5 +373,22 @@ layout: "staging"
       <li>Provide the scripts to Brightcove's OTT Delivery Team for proper deployment.</li>
     </ol>
   </section>
+
+  <section class="bcls-section">
+    <h2 id="What_data_is_collected">What data is collected?</h2>
+    <p></p>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="Implementation_architecture">Implementation architecture</h2>
+    <p>The following gives a look "under the hood" of how OneTrust Cookie Compliance integrates with your Beacon app.</p>
+    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script <strong>id</strong></em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the <strong>api/settings</strong> endpoint.</p>
+    <p>Here is an architecture diagram of the implementation:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/architecture-diagram.png" alt="architecture diagram">
+    </figure>
+  </section>
+
 
 </article>
