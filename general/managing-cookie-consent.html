@@ -22,11 +22,18 @@ layout: "staging"
     <aside class="bcls-aside bcls-aside--tip language-editable">
       <p>For further general information on cookies, regulation rules and cookie compliance see OneTrust's <a href="https://www.cookiepro.com/knowledgebase/">CookiePro Knowledge Base</a> document. For complete details on OneTrust's tools see the <a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance">Cookie Compliance</a> section of documentation at OneTrust.</p>
     </aside>
+    <p>This main sections in this document are:</p>
+    <ul>
+      <li>How OneTrust Cookie Compliance works</li>
+      <li>Implementation steps (comprised of four sections)</li>
+      <li>What data is collected?</li>
+      <li>Implementation architecture</li>
+    </ul>
   </section>
 
 
   <section class="bcls-section">
-    <h2 id="How_it_works">How it works</h2>
+    <h2 id="How_it_works">How OneTrust Cookie Compliance works</h2>
     <p>The end result of setting up OneTrust Cookie Compliance is that a banner will appear in the Beacon App for geographic locations you choose. Here is an example of what the banner could look like (taken from OneTrust's site):</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/one-trust-banner.png" alt="one trust banner">
@@ -57,7 +64,7 @@ layout: "staging"
 
 
   <section class="bcls-section">
-    <h2 id="Create_a_template">Create two templates</h2>
+    <h2 id="Create_two_templates">Create two templates</h2>
     <p>A template defines how your banner and preferences dialog appear to your users. In the following steps you will copy a template supplied by Brightcove and customize it for your needs, once for CCPA and once for GDPR.</p>
     <aside class="bcls-aside bcls-aside--tip language-editable">You may not need both templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating both templates.</aside>
 
