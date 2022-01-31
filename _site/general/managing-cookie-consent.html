@@ -1410,14 +1410,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
     <aside class="bcls-aside bcls-aside--warning language-editable">The first step in an implementation of cookie compliance is checking with your legal team and determine rules and regulations for all geographies you are targeting with your content.</aside>
-    <p>Cookies are used to store data on a visitor's computer or mobile device. Cookies are commonly used and sometimes critical to a website's functionality. Problems can occur as cookies can be used to store large amounts of data, store personal data and track online activity so advertisers can target ads. Because of the negatives that are associated with cookies, regulations have evolved around them. The two most common are:</p>
+    <p>Cookies are used to store data on a visitor's computer or mobile device. Cookies are commonly used and sometimes critical to a website's functionality. Cookies can be used to store large amounts of data, store personal data and track online activity so advertisers can target ads. Because of the negatives that are associated with cookies, regulations have evolved around them. The two most common are:</p>
     <ul>
       <li>California Consumer Privacy Act (CCPA)</li>
       <li>General Data Protection Regulation (GDPR) used in the EU and United Kingdom</li>
     </ul>
     <p>This document is an introduction to get you started using OneTrust's Cookie Compliance tool with Brightcove Beacon. Brightcove recommends using OneTrust for your Beacon cookie compliance needs.</p>
     <aside class="bcls-aside bcls-aside--tip language-editable">
-      <p>For further general information on cookies, regulation rules and cookie compliance see OneTrust's <a href="https://www.cookiepro.com/knowledgebase/">CookiePro Knowledge Base</a> document. For complete details on OneTrust's tools see the <a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance">Cookie Compliance</a> section of documentation at OneTrust.</p>
+      <p>For further general information on cookies, regulation, rules and cookie compliance see OneTrust's <a href="https://www.cookiepro.com/knowledgebase/">CookiePro Knowledge Base</a> document. For complete details on OneTrust's tools see the <a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance">Cookie Compliance</a> section of the documentation at OneTrust.</p>
     </aside>
     <p>This main sections in this document are:</p>
     <ul>
@@ -1439,7 +1439,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/one-trust-preference-center.png" alt="one trust preference center">
     </figure>
-    <p>As part of the implementation process you will have the option to customize the text displayed in, and the look of, both the banner and preference center.</p>
+    <p>As part of the implementation process, you will have the option to customize the text displayed in, and the look of, both the banner and preference center.</p>
     <h3>Overview of implementation process</h3>
     <p>There are a number of steps to complete to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
     <ol>
@@ -1462,7 +1462,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Create_two_templates">Create two templates</h2>
-    <p>A template defines how your banner and preferences dialog appear to your users. In the following steps you will copy a template supplied by Brightcove and customize it for your needs, once for CCPA and once for GDPR.</p>
+    <p>A template defines how your banner and preferences dialog appear, and function, for your users. In the following steps you will create two templates, one for CCPA and one for GDPR.</p>
     <aside class="bcls-aside bcls-aside--tip language-editable">You may not need both templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating both templates.</aside>
 
     <ol class="bcls-tasklist">
@@ -1520,13 +1520,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>Click <strong>Add New</strong> to start creation of your second template.</li>
-      <li>Select the <strong>IAB Transparency and Consent Framework 2.0</strong> for the Framework.
+      <li>Select the <strong>IAB Transparency and Consent Framework 2.0</strong> for the <em>Framework</em>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/new-iab-framework.png" alt="new iab framework">
         </figure>
       </li>
       <li>Click <strong>Next</strong>.</li>
-      <li>Read the IAB information then click <strong>I Agree</strong>.
+      <li>Read the <em>IAB TCF</em> information then click <strong>I Agree</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/iab-agree.png" alt="IAB Agree">
         </figure>
@@ -1535,7 +1535,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/gdpr-form.png" alt="gdpr form">
         </figure>
-        <aside class="bcls-aside bcls-aside--information language-editable">Note that using <strong>GDPR</strong> in the template name as IAB standards are GDPR compliant.</aside>
+        <aside class="bcls-aside bcls-aside--information language-editable">Note that using <strong>GDPR</strong> in the template name makes sense as IAB standards are GDPR compliant.</aside>
       </li>
       <li>Supply your company's logo for the banner, as shown in steps 8-10 above.</li>
       <li>While still in the <em>Preference Center</em>, open the <strong>Advanced Configuration</strong> options.
@@ -1568,7 +1568,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <div style="padding-top: 63%;"><iframe src="https://players.brightcove.net/1752604059001/default_default/index.html?videoId=1723375706636721528" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div>
         </div>
       </li>
-      <li>Check your configuration by comparing your results to the following:
+      <li>Check your configuration by comparing your results to the following, making corrections as needed:
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/adv-config-changes.png" alt="advanced b configuration changes">
         </figure>
@@ -1622,7 +1622,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td>Template</td>
-              <td>Choose the template created that was based on the Brightcove supplied <strong>Beacon web app template GDPR TCF 2</strong>.</td>
+              <td>Choose the template created that was based on the CCPA framework.</td>
             </tr>
             <tr>
               <td>Cookie Categories</td>
@@ -1658,7 +1658,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td>Template</td>
-              <td>Choose the template created that was based on the Brightcove supplied <strong>Beacon web app template CCPA</strong>.</td>
+              <td>Choose the template created that was based on the IAB framework.</td>
             </tr>
             <tr>
               <td>Cookie Categories</td>
@@ -1749,16 +1749,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/publish-test.png" alt="publish test">
         </figure>
       </li>
-      <li>in the <em>Test Website</em> dialog:
-        <ul>
+      <li>In the <em>Test Website</em> dialog:
+        <ol type="a">
           <li>Set the script version to <strong>6.29.0</strong>.</li>
           <li>Click <strong>Confirm</strong>.</li>
-        </ul>
+        </ol>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/test-website-confirm.png" alt="test website confirm">
         </figure>
       </li>
-      <li>Ensure the settings are those in the following screenshot, the click <strong>Publish Test Scripts</strong>.
+      <li>Ensure the settings are those in the following screenshot, then click <strong>Publish Test Scripts</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/publish-test-scripts-dialog.png" alt="publish test scripts dialog">
         </figure>
@@ -1813,7 +1813,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
         <tr>
           <td>App information (name, version, errors)</td>
-          <td>Reports on versions used, aggregated errors for proactive corrections, </td>
+          <td>Reports on versions used, aggregated errors for proactive corrections, etc.</td>
         </tr>
         <tr>
           <td>User navigation and use patterns</td>
@@ -1826,7 +1826,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </tbody>
     </table>
     <h3>Standards body purpose definitions</h3>
-    <p>These purposes are very thoroughly defined in the IAB Europe Transparency & Consent Framework v2.0. The definitions can be found in <a href="https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/#Appendix_A_Purposes_and_Features_Definitions">Appendix A: Purposes and Features Definitions</a> of the <em>IAB Europe Transparency & Consent Framework Policies</em> document.</p>
+    <p>The purposes for cookie data collection are very thoroughly defined in the <em>IAB Europe Transparency & Consent Framework v2.0</em>. The definitions can be found in <a href="https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/#Appendix_A_Purposes_and_Features_Definitions">Appendix A: Purposes and Features Definitions</a> of the <em>IAB Europe Transparency & Consent Framework Policies</em> document.</p>
     <p>The IAB Europe Transparency & Consent Framework v2.0 defines 10 purposes. The following table displays those used by Beacon.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -1864,7 +1864,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Implementation_architecture">Implementation architecture</h2>
     <p>The following gives a look "under the hood" of how OneTrust Cookie Compliance integrates with your Beacon app.</p>
-    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script <strong>id</strong></em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the <strong>api/settings</strong> endpoint.</p>
+    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> (generated in the steps above) that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script <strong>id</strong></em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the <strong>api/settings</strong> endpoint. The actual implementation is performed by Brightcove's OTT Delivery Team.</p>
     <p>Here is an architecture diagram of the implementation:</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/architecture-diagram.png" alt="architecture diagram">
