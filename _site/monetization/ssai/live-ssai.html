@@ -1406,7 +1406,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       Brightcove Beacon supports Server-Side Ad Insertion (SSAI) in Live events so server-side ads can be requested and displayed during a Live stream. Note: if you are using redundancy with SSAI, you must insert ads into all jobs in the group at the same time.
     </p>
     <p>A high-level view of the process is:</p>
-    <ol>
+    <ol class="bcls-tasklist">
       <li>Create an Ad Configuration in Video Cloud Studio.</li>
       <li>Create a fill slate for your Live event.</li>
       <li>Create a Live event with SSAI enabled.</li>
@@ -1477,6 +1477,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>Enter the <strong>Ad Tag (server URL)</strong>.</li>
       <li>Click the <strong>Save</strong> button.</li>
+      <li id="Ad_Configuration_ID">
+        Copy the value of your Ad Configuration ID. You will use this in a <a href="#Live_Ad_Config_ID">later step</a>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="Ad configuration ID" src="/assets/images/monetization/live-ssai/ad-config-id.png" /> 
+        </figure>
+      </li>
     </ol>
   </section>
   <section class="bcls-section">
@@ -1603,11 +1609,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>
-        After selecting your <strong>Available Player</strong> and <strong>Ad Configuration</strong>, a new Player URL will be generated. Copy the selected part of the URL as shown in the image, starting from the word <strong>live</strong>. Example: <strong>live.xxxxxxx</strong>
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/live-ssai/13-player-url.png" />
-        </figure>
+        After selecting your <strong>Available Player</strong> and <strong>Ad Configuration</strong>, a new Player URL will be generated.
       </li>
+      <!-- <li>
+        Copy the selected part of the URL as shown
+        in the image, starting from the word <strong>live</strong>. Example: <strong>live.xxxxxxx</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/13-player-url.png" />
+        </figure>
+      </li> -->
+    
       <li>Log in to Beacon Classic.</li>
       <li>
         In Beacon Classic, in the upper menu, click the <strong>Advertisement</strong> tab.
@@ -1622,14 +1633,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         Check to be sure you are seeing the
         <strong>New Advertisement</strong> form.
         <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/live-ssai/15-newadconfig-settings.png" />
+          <img class="bcls-image--no-border" alt="" src="/assets/images/monetization/live-ssai/15-newadconfig-settings copy.png" />
         </figure>
       </li>
       <li>Give your new advertisement configuration a <strong>Name</strong>.</li>
-      <li>
-        In the <strong>Live Ad Config ID:</strong>, paste the <strong>Player URL ID</strong> you just copied from the Live Platform, for example: <strong>live.xxxxx</strong>.
-      </li>
       <li>From the <strong>Provider</strong> menu select <strong>Brightcove SSAI</strong>.</li>
+      <li id="Live_Ad_Config_ID">
+        In the <strong>Live Ad Config ID</strong>, paste your <strong>Ad Configuration ID</strong> that you created in a <a href="#Ad_Configuration_ID">previous step</a>.
+      </li>
       <li>Click in the <strong>Create New Advertisement</strong> button.</li>
       <li>
         Click on the upper menu <strong>Events</strong> tab and create or select your Live event. For more information in how to create a Brightcove Beacon Live Event, please see the

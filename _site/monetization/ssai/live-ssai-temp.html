@@ -1,41 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to implement OneTrust Cookie Compliance with Brightcove Beacon.">
-  
-  <title>Managing Cookie Consent Using OneTrust</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="In this topic, you will learn how to manage and create Live server-side ad configurations in Brightcove Beacon." />
+
+  <title>Implementing Live SSAI temp</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
   
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
-<script translate="no">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-2728311-17');
-</script>
+  <script src="/assets/js/site/google-analytics.js"></script>
   <script src="/assets/js/sajari-head.js"></script>
-	<script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="/assets/css/local.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-
 <body class="body">
-
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
@@ -60,11 +50,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
       
       
-      <li class="breadcrumb-item"><a href="/general/">General</a></li>
+      <li class="breadcrumb-item"><a href="/monetization/">Monetization</a></li>
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Managing Cookie Consent Using OneTrust</li>
+      <li class="breadcrumb-item"><a href="/monetization/ssai/">Ssai</a></li>
+      
+      
+      
+      <li class="breadcrumb-item active" aria-current="page">Implementing Live SSAI temp</li>
       
       
     </nav>
@@ -1402,477 +1396,344 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Managing Cookie Consent Using OneTrust</h1>
+<h1>Implementing Live SSAI temp</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to implement OneTrust Cookie Compliance with Brightcove Beacon.</summary>
-
-
-  <section class="bcls-section">
-    <h2 id="Introduction">Introduction</h2>
-    <aside class="bcls-aside bcls-aside--warning language-editable">The first step in an implementation of cookie compliance is checking with your legal team and determine rules and regulations for all geographies you are targeting with your content.</aside>
-    <p>Cookies are used to store data on a visitor's computer or mobile device. Cookies are commonly used and sometimes critical to a website's functionality. Cookies can be used to store large amounts of data, store personal data and track online activity so advertisers can target ads. Because of the negatives that are associated with cookies, regulations have evolved around them. The two most common are:</p>
-    <ul>
-      <li>California Consumer Privacy Act (CCPA)</li>
-      <li>General Data Protection Regulation (GDPR) used in the EU and United Kingdom</li>
-    </ul>
-    <p>This document is an introduction to get you started using OneTrust's Cookie Compliance tool with Brightcove Beacon. Brightcove recommends using OneTrust for your Beacon cookie compliance needs.</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">
-      <p>For further general information on cookies, regulation, rules and cookie compliance see OneTrust's <a href="https://www.cookiepro.com/knowledgebase/">CookiePro Knowledge Base</a> document. For complete details on OneTrust's tools see the <a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance">Cookie Compliance</a> section of the documentation at OneTrust.</p>
-    </aside>
-    <p>This main sections in this document are:</p>
-    <ul>
-      <li>How OneTrust Cookie Compliance works</li>
-      <li>Implementation steps (comprised of four sections)</li>
-      <li>What data is collected?</li>
-      <li>Implementation architecture</li>
-    </ul>
-  </section>
-
+  <summary>In this topic, you will learn how to manage and create Live server-side ad configurations in Brightcove Beacon.</summary>
 
   <section class="bcls-section">
-    <h2 id="How_it_works">How OneTrust Cookie Compliance works</h2>
-    <p>The end result of setting up OneTrust Cookie Compliance is that a banner will appear in the Beacon App for geographic locations you choose. Here is an example of what the banner could look like (taken from OneTrust's site):</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/one-trust-banner.png" alt="one trust banner">
-    </figure>
-    <p>When a viewer clicks on the <strong>Customize Settings</strong> link in the banner, a <strong>Preference Center</strong> dialog appears. This allows your viewers to customize how cookies behave in their app:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/one-trust-preference-center.png" alt="one trust preference center">
-    </figure>
-    <p>As part of the implementation process, you will have the option to customize the text displayed in, and the look of, both the banner and preference center.</p>
-    <h3>Overview of implementation process</h3>
-    <p>There are a number of steps to complete to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
-    <ol>
-      <li>Create templates that define your banner and preference center functionality and upload your logo for each template created.</li>
-      <li>Create a geolocation rule group, which will act as a container for geolocation rules.</li>
-      <li>Create three geolocation rules that:
-        <ul>
-          <li>Define the regions in which the cookie compliance will be used.</li>
-          <li>Define the template to be used with the geolocation rule.</li>
-          <li>Define other specifications, like how often re-consent will need to be done.</li>
-        </ul>
-      </li>
-      <li>Assign geolocation rules to the domains from which your Beacon app is served.</li>
-      <li>Generate the scripts that provide the actual cookie compliance in your Beacon app.</li>
-      <li>Supply the scripts to Brightcove's OTT Delivery Team for implementation.</li>
-    </ol>
-    <p>The major sections following in this document lead you step by step through the implementation process.</p>
-  </section>
+    <h2 id="overview">Overview</h2>
 
-
-  <section class="bcls-section">
-    <h2 id="Create_two_templates">Create two templates</h2>
-    <p>A template defines how your banner and preferences dialog appear, and function, for your users. In the following steps you will create two templates, one for CCPA and one for GDPR.</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">You may not need both templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating both templates.</aside>
-
+    <p>
+      Brightcove Beacon supports Server-Side Ad Insertion (SSAI) in Live events so server-side ads can be requested and displayed during a Live stream. Note: if you are using redundancy with SSAI, you must insert ads into all jobs in the group at the same time. 
+    </p>
+    <p>A high-level view of the process is:</p>
     <ol class="bcls-tasklist">
-      <li>Log in to your OneTrust account.</li>
-      <li>From the <em>Welcome</em> page, click the <strong>Cookie Compliance</strong> option.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/onetrust-index.png" alt="onetrust index page">
-        </figure>
-      </li>
-      <li>In the left navigation, click <strong>Templates</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/click-templates.png" alt="click templates">
-        </figure>
-      </li>
-      <li>Click <strong>Add New</strong>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/add-new-template.png" alt="add new template">
-        </figure>
-      </li>
-      <li>Select the <strong>CCPA Template (California)</strong> for the <strong>Framework</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/select-ccpa-template.png" alt="select ccpa template">
-        </figure>
-      </li>
-      <li>Click <strong>Next</strong>.</li>
-      <li>Complete the form then click <strong>Create</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/name-the-template.png" alt="name the template">
-        </figure>
-      </li>
-      <li>The <em>Template Details</em> page opens to the <em>Banner</em> tab. Click <strong>Preference Center</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/details-banner-tab.png" alt="/details banner tab">
-        </figure>
-      </li>
-      <li>In the <em>Preference Center</em>:
-        <ol type="a">
-          <li>Open the <strong>Styling</strong> options</li>
-          <li>Enable <strong>Override Banner Styling</strong></li>
-          <li>Upload a new logo</li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/upload-new-logo.png" alt="upload new logo">
-        </figure>
-        <aside class="bcls-aside bcls-aside--warning language-editable">There is no need to make any other styling changes here as the banner and preference center will automatically be styled based on the design of your Beacon app.</aside>
-      </li>
-      <li>Note that the logo is updated in the preview.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/logo-updated.png" alt="logo updated">
-        </figure>
-      </li>
-      <li>Click <strong>Save Template</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/save-template.png" alt="Save template">
-        </figure>
-      </li>
-      <li>Click <strong>Add New</strong> to start creation of your second template.</li>
-      <li>Select the <strong>IAB Transparency and Consent Framework 2.0</strong> for the <em>Framework</em>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/new-iab-framework.png" alt="new iab framework">
-        </figure>
-      </li>
-      <li>Click <strong>Next</strong>.</li>
-      <li>Read the <em>IAB TCF</em> information then click <strong>I Agree</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/iab-agree.png" alt="IAB Agree">
-        </figure>
-      </li>
-      <li>Complete the form then click <strong>Create</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/gdpr-form.png" alt="gdpr form">
-        </figure>
-        <aside class="bcls-aside bcls-aside--information language-editable">Note that using <strong>GDPR</strong> in the template name makes sense as IAB standards are GDPR compliant.</aside>
-      </li>
-      <li>Supply your company's logo for the banner, as shown in steps 8-10 above.</li>
-      <li>While still in the <em>Preference Center</em>, open the <strong>Advanced Configuration</strong> options.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/advanced-configuration.png" alt="advanced configuration">
-        </figure>
-      </li>
-      <li>A number of changes must be made here for use with Brightcove Beacon. The changes are listed, then a video follows showing the process how to implement those changes.
-        <ol>
-          <li>Move <strong>Social Media Cookies</strong> to the <strong>Strictly Necessary Cookies</strong> subgroup.</li>
-          <li>Move <strong>Targeting Cookies</strong> to the <strong>Strictly Necessary Cookies</strong> subgroup.</li>
-          <li>Move <strong>Functional Cookies</strong> to the <strong>Strictly Necessary Cookies</strong> subgroup.</li>
-          <li>Move <strong>Performance Cookies</strong> to the <strong>Strictly Necessary Cookies</strong> subgroup.</li>
-          <li>From the <strong>Personalised ads and content, ad and content measurement, audience insights and product development</strong> group, perform the following:
-            <ol type="a">
-              <li>Remove <strong>Create a personalised content profile</strong> as a subgroup, then choose <strong>Disable IAB Purpose</strong>.</li>
-              <li>Remove <strong>Select personalised content</strong> as a subgroup, then choose <strong>Disable IAB Purpose</strong>.</li>
-              <li>Remove <strong>Measure content performance</strong> as a subgroup, but do NOT disable.</li>
-              <li>Remove <strong>Apply market research to generate audience insights</strong> as a subgroup, then choose <strong>Disable IAB Purpose</strong>.</li>
-              <li>Remove <strong>Develop and improve products</strong> as a subgroup, then choose <strong>Disable IAB Purpose</strong>.</li>
-            </ol>
-          </li>
-          <li>For <strong>Use precise geolocation data</strong>, choose <strong>Disable IAB Purpose</strong>.</li>
-          <li>For <strong>Actively scan device characteristics for identification</strong>, choose <strong>Disable IAB Purpose</strong>.</li>
-          <li>For <strong>Match and combine offline data sources</strong>, choose <strong>Disable IAB Purpose</strong>.</li>
-          <li>For <strong>Link different devices</strong>, choose <strong>Disable IAB Purpose</strong>.</li>
-          <li>For <strong>Receive and use automatically-sent device characteristics for identification</strong>, choose <strong>Disable IAB Purpose</strong></li>
-        </ol>
-        <div style="position: relative; display: block; max-width: 1728px;">
-          <div style="padding-top: 63%;"><iframe src="https://players.brightcove.net/1752604059001/default_default/index.html?videoId=1723375706636721528" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div>
-        </div>
-      </li>
-      <li>Check your configuration by comparing your results to the following, making corrections as needed:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/adv-config-changes.png" alt="advanced b configuration changes">
-        </figure>
-      </li>
-      <li>Click <strong>Save Template</strong>.</li>
+      <li>Create an Ad Configuration in Studio.</li>
+      <li>Create a fill slate for your Live event.</li>
+      <li>Create a Live event with SSAI enabled.</li>
+      <li>Publish the Live event to Brightcove Beacon.</li>
     </ol>
-  </section>
+    <aside class="bcls-aside bcls-aside--information">
+      This document is complementary to the
+      <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Streaming a Live Event</a>
+      documentation to guide you into add SSAI to your live events. For detailed information on how to create an event, please see the section on
+      <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#create" target="_blank">Creating a live event in Brightcove Beacon</a>.
+    </aside>
 
-  <section class="bcls-section">
-    <h2 id="Create_geolocation_rules">Create geolocation rules</h2>
-    <p>Creating geolocation rules first requires that you create a geolocation rule group. The group will act as a container for the rules you create. The actual geolocation rules define cookie compliance behaviors you wish for different geographic regions.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>To start the process, create a new rule group by:
-        <ol type="a">
-          <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
-          <li>Click <strong>Create New</strong>.
-            <figure class="bcls-figure">
-              <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rules-index.png" alt="geo rules index">
-            </figure>
-          </li>
-        </ol>
-      </li>
-      <li>In the <strong>Create New Rule Group</strong> dialog, supply a group name, organization and description.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/create-rule-group.png" alt="create rule group">
-        </figure>
-      </li>
-      <li>Click <strong>Create</strong>.</li>
-      <li>To create your first actual geolocation rule, from the rule group details page, click <strong>Add Rule</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-add-rule.png" alt="geo add rule">
-        </figure>
-      </li>
-      <li>You will now create the CCPA rule. The following table provides settings you need to make to be compatible with Beacon. Other changes can be made based on regulations for your targeted geographies.
-        <aside class="bcls-aside bcls-aside--tip language-editable">As with templates, you may not need all the rules based on locations your Beacon app is targeting.</aside>
-        <table class="bcls-table">
-          <thead class="bcls-table__head">
-            <tr>
-              <th>Form element</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody class="bcls-table__body">
-            <tr>
-              <td>Rule Name</td>
-              <td>Provide a name</td>
-            </tr>
-            <tr>
-              <td>Regions</td>
-              <td>For CCPA, you would most likely want to include <em>California</em>, then any other desired regions.</td>
-            </tr>
-            <tr>
-              <td>Template</td>
-              <td>Choose the template created that was based on the CCPA framework.</td>
-            </tr>
-            <tr>
-              <td>Cookie Categories</td>
-              <td>Opt-out</td>
-            </tr>
-            <tr>
-              <td>Capture Records of Consent</td>
-              <td>Enabled</td>
-            </tr>
-            <tr>
-              <td>Advanced Analytics</td>
-              <td>Strictly Necessary Cookies</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>Create the GDPR rule. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
-        <table class="bcls-table">
-          <thead class="bcls-table__head">
-            <tr>
-              <th>Form element</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody class="bcls-table__body">
-            <tr>
-              <td>Rule Name</td>
-              <td>Provide a name</td>
-            </tr>
-            <tr>
-              <td>Regions</td>
-              <td>For GDPR, you would most likely want to include <em>Eu</em> and <em>United Kingdom</em>, then any other desired regions.</td>
-            </tr>
-            <tr>
-              <td>Template</td>
-              <td>Choose the template created that was based on the IAB framework.</td>
-            </tr>
-            <tr>
-              <td>Cookie Categories</td>
-              <td>Opt-in</td>
-            </tr>
-            <tr>
-              <td>Capture Records of Consent</td>
-              <td>Enabled</td>
-            </tr>
-            <tr>
-              <td>Advanced Analytics</td>
-              <td>Strictly Necessary Cookies</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>You may wish to create a rule that can be applied to regions NOT selected for the CCPA or GDPR rules. It might be applied to all other regions, and because of this you might want to name this rule <strong>Global</strong>. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
-        <table class="bcls-table">
-          <thead class="bcls-table__head">
-            <tr>
-              <th>Form element</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody class="bcls-table__body">
-            <tr>
-              <td>Rule Name</td>
-              <td>Provide a name</td>
-            </tr>
-            <tr>
-              <td>Regions</td>
-              <td>If this rule create for all regions not previously selected, do not enter any regions</td>
-            </tr>
-            <tr>
-              <td>Template</td>
-              <td>A template must be selected, but which template is based on regulations in targeted regions.</td>
-            </tr>
-            <tr>
-              <td>Capture Records of Consent</td>
-              <td>Enabled</td>
-            </tr>
-            <tr>
-              <td>Advanced Analytics</td>
-              <td>Strictly Necessary Cookies</td>
-            </tr>
-            <tr>
-              <td>Checkbox: Use this consent model if site visitor's IP address is unknown</td>
-              <td>Consider this option if this rule acting in a global capacity.</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Assign_geolocation_rules_to_domains">Assign geolocation rules to domains</h2>
-    <p></p>
-    <ol class="bcls-tasklist-restart">
-      <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
-      <li>For the <em>Geolocation Rule Group</em> you created, click the ellipses icon and select <strong>Assign to Domains</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-group-assign-to-domains.png" alt="rule group assign to domains">
-        </figure>
-      </li>
-      <li>Select the appropriate domains, then click <strong>Assign</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-group-assign-to-domains-confirm.png" alt="rule group assign to domains confirm">
-        </figure>
-      </li>
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Create and copy scripts">Create and copy scripts</h2>
-    <ol class="bcls-tasklist--restart">
-      <li>From the Cookie Compliance index page:
-        <ol type="a">
-          <li>In the left navigation, click <strong>Scripts</strong>.</li>
-          <li>Click the domain where your cookie compliance will be implemented.</li>
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/scripts-index.png" alt="scripts index">
-          </figure>
-        </ol>
-      </li>
-      <li>In the details screen for your domain, click <strong>Publish Test</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/publish-test.png" alt="publish test">
-        </figure>
-      </li>
-      <li>In the <em>Test Website</em> dialog:
-        <ol type="a">
-          <li>Set the script version to <strong>6.29.0</strong>.</li>
-          <li>Click <strong>Confirm</strong>.</li>
-        </ol>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/test-website-confirm.png" alt="test website confirm">
-        </figure>
-      </li>
-      <li>Ensure the settings are those in the following screenshot, then click <strong>Publish Test Scripts</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/publish-test-scripts-dialog.png" alt="publish test scripts dialog">
-        </figure>
-      </li>
-      <li>If a <em>Live Preview</em> dialog displays, click <strong>Cancel</strong>.</li>
-      <li>Click the <strong>Test Scripts</strong> tab.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/test-scripts.png" alt="test scripts">
-        </figure>
-      </li>
-      <li>Click <strong>Copy Scripts</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/copy-scripts-by-download.png" alt="copy scripts">
-        </figure>
-      </li>
-      <li>Provide the scripts to Brightcove's OTT Delivery Team for proper deployment.</li>
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="What_data_is_collected">What data is collected?</h2>
-    <p>Data is collected for the these main purposes:</p>
+    <p>SSAI provides these main features during Live events:</p>
     <ul>
-      <li>App behavior</li>
-      <li>Analytics</li>
-      <li>Ad targeting</li>
+      <li>
+        Since ads are stitched into the Live video stream on the server-side, they are not affected by ad blockers.
+      </li>
+      <li>
+        Ads are inserted at cue points sent from your encoder or you can create an instant cue point using the Live module Control Room.
+      </li>
+      <li>
+        You can configure
+        <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html#fill_slate" target="_blank">fill slates</a>
+        to fill any unused ad time.
+      </li>
     </ul>
-    <p>The steps above configured your system to address these general purposes:</p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Data</th>
-          <th>Use(s)</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>Geo-filtering</td>
-          <td>Location services</td>
-        </tr>
-        <tr>
-          <td>Device information (model, type, OS version)</td>
-          <td>Login, trace actions, analytics, record favorites, etc.</td>
-        </tr>
-        <tr>
-          <td>Ad targeting</td>
-          <td>Specified ads</td>
-        </tr>
-        <tr>
-          <td>Locale</td>
-          <td>Number and date formatting, currencies</td>
-        </tr>
-        <tr>
-          <td>App information (name, version, errors)</td>
-          <td>Reports on versions used, aggregated errors for proactive corrections, etc.</td>
-        </tr>
-        <tr>
-          <td>User navigation and use patterns</td>
-          <td>Google analytics (navigation patterns), sign ups, count search, page opens, etc.</td>
-        </tr>
-        <tr>
-          <td>Local storage</td>
-          <td>Persist credentials and login info, user application state, user settings, etc.</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3>Standards body purpose definitions</h3>
-    <p>The purposes for cookie data collection are very thoroughly defined in the <em>IAB Europe Transparency & Consent Framework v2.0</em>. The definitions can be found in <a href="https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/#Appendix_A_Purposes_and_Features_Definitions">Appendix A: Purposes and Features Definitions</a> of the <em>IAB Europe Transparency & Consent Framework Policies</em> document.</p>
-    <p>The IAB Europe Transparency & Consent Framework v2.0 defines 10 purposes. The following table displays those used by Beacon.</p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Purpose</th>
-          <th>Name</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>1</td>
-          <td>Store and/or access information on a device</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Create a personalised ads profile</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Select personalised ads</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>Measure ad performance</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>Measure content performance</td>
-        </tr>
-      </tbody>
-    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configuring-ssai">Configuring Server-Side Ad Settings</h2>
+    <p>
+      Here you will create an SSAI Ad Configuration to be used as your set of ads that will be displayed in your Brightcove Beacon Live event.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>Log in to Studio.</li>
+      <li>
+        In the navigation header, click <strong>ADMIN</strong> and select <strong>Server-Side Ad Settings</strong>. A list of all ad configurations will be displayed.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/1-studio-ssai-settings.png" />
+        </figure>
+      </li>
+      <li>
+        To create a new ad configuration, click the
+        <strong>Create Ad Configuration</strong> button.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/2-create-ad-configuration.png" />
+        </figure>
+        <aside class="bcls-aside bcls-aside--information">
+          Server-side Live ad configurations can also be managed using the Live API. For information, see
+          <a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Create_an_ad_configuration" target="_blank"
+            >Brightcove Live API: Server-Side Ad Insertion (SSAI)</a
+          >.
+        </aside>
+      </li>
+      <li>
+        From the dropdown, select <strong>Live</strong> as a type.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/3-ad-config-live.png" />
+        </figure>
+      </li>
+      <li>
+        Check to be sure you are seeing the
+        <strong>Server-Side Ad Settings</strong> form.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/4-ad-config-form.png" />
+        </figure>
+      </li>
+      <li>Give your ad configuration a <strong>Name</strong>.</li>
+      <li>
+        Select the <strong>Ad Server Response</strong>:
+        <ul>
+          <li><strong>VAST</strong></li>
+          <li><strong>DFP (Ad Rules)</strong></li>
+          <li><strong>Smart XML</strong></li>
+        </ul>
+        <aside class="bcls-aside bcls-aside--information">
+          Please check with your ad operations manager for the correct value to select.
+        </aside>
+      </li>
+      <li>Enter the <strong>Ad Tag (server URL)</strong>.</li>
+      <li>Click the <strong>Save</strong> button.</li>
+      <li id="Ad_Configuration_ID">
+        Copy the value of your Ad Configuration ID. You will use this in a <a href="#Live_Ad_Config_ID">later step</a>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="Ad configuration ID" src="/assets/images/using-bcb/live-ssai/ad-config-id.png" />
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configuring-slate">Configuring a Fill Slate</h2>
+    <p>
+      Fill slates are videos that will be displayed when there are gaps in a Live stream ad break that cannot be filled with a dynamically-served ad. If the requested ad is shorter
+      than the Ad break time, the fill slate will be displayed so viewers don't see a blank player.
+    </p>
+    <aside class="bcls-aside bcls-aside--information">
+      You should configure at least one fill slate before requesting a server-side ad.
+    </aside>
+    <p>To add a fill slate, follow these steps:</p>
+    <ol class="bcls-tasklist">
+      <li>
+        Click the <strong>ADMIN</strong> > <strong>Live Settings</strong> link in the Studio header.
+        <aside class="bcls-aside bcls-aside--information">
+          You must be an account administrator to access the
+          <strong>ADMIN</strong> menu.
+        </aside>
+      </li>
+      <li>
+        Click <strong>+ Add Fill Slate</strong>. You should be seeing the following form:
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/5-fill-slate.png" />
+        </figure>
+      </li>
+      <li>Enter a <strong>Name</strong> for your fill slate.</li>
+      <li>Enter the <strong>Source URL</strong> for the slate.</li>
+      <li>Click <strong>Save</strong>. The ingestion process for the slate will begin.</li>
+    </ol>
+    <p>To delete a fill slate, click the delete button (<img alt="" src="/assets/images/using-bcb/live-ssai/node18588-delete-icon.png" />) next to the fill slate.</p>
   </section>
 
-
   <section class="bcls-section">
-    <h2 id="Implementation_architecture">Implementation architecture</h2>
-    <p>The following gives a look "under the hood" of how OneTrust Cookie Compliance integrates with your Beacon app.</p>
-    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> (generated in the steps above) that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script <strong>id</strong></em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the <strong>api/settings</strong> endpoint. The actual implementation is performed by Brightcove's OTT Delivery Team.</p>
-    <p>Here is an architecture diagram of the implementation:</p>
+    <h2 id="creating-live-ssai">Creating a Live event that supports SSAI</h2>
+    <p>
+      In order for a live event to use SSAI (Server-side Ad Insertion), the
+      <strong>Enable Server-Side Ad Insertion (SSAI)</strong> setting must be selected when the event is created, and a previously created fill slate should be chosen for playback.
+    </p>
+    <p>
+      Follow these steps to create an Event that supports SSAI ads in Brightcove Beacon:
+    </p>
+    <ol class="bcls-tasklist">
+      <li>Open the <strong>Live</strong> module in Studio.</li>
+      <li>From the <strong>Manage Events</strong> page, click <strong>Create Event</strong>.</li>
+      <li>
+        Enter your event details. For complete information on creating a live event using the Live module, please see
+        <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html" target="_blank">
+          Creating and Managing Live Events using the Live Module</a
+        >.
+      </li>
+      <li>Click <strong>ADVANCED OPTIONS</strong> to expand the advanced options.</li>
+      <li>Check <strong>Enable Server-Side Ad Insertion (SSAI)</strong>. This will enable server-side ad insertion.</li>
+      <li>
+        Select a <strong>Fill Slate</strong>. The fill slate will be displayed when there are gaps in a live stream ad break that cannot be filled with a dynamically-served ad.
+      </li>
+      <li>
+        When the <strong>Ad Audio</strong> setting is checked, the audio levels on ads will be normalized based on the adjustment that is set. This can be used as a way to help
+        make sure ads aren’t significantly louder than the content. Brightcove recommends selecting this option.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="450" height="700" src="/assets/images/using-bcb/live-ssai/6-ssai-check.png" />
+        </figure>
+      </li>
+      <li>Click <strong>Create Event</strong></li>
+      <li>
+        The <strong>Control Room</strong> page will open with details about the Live event including the <strong>Streaming Endpoint (RTMP URL)</strong> and
+        <strong>Stream Name</strong>. These values will be used by the encoder.
+      </li>
+      <li>
+        Configure your encoder and start the Live stream.
+        <aside class="bcls-aside bcls-aside--information">
+          To start streaming in the Live platform, you will need an Encoder, for information on how to use an encoder please read the following the documentation:
+          <p>
+            <a href="https://live.support.brightcove.com/get-started/step-step-using-live-module-telestream-wirecast.html" target="_blank"
+              >Step-by-Step: Using the Live Module with Telestream Wirecast</a
+            >
+          </p>
+          <p>
+            <a href="https://live.support.brightcove.com/get-started/step-step-using-live-module-open-broadcaster-software-obs.html" target="_blank"
+              >Step-by-Step: Using the Live Module with Open Broadcaster Software (OBS)</a
+            >
+          </p>
+        </aside>
+      </li>
+      <li>
+        By default, the <strong>Control Room</strong> preview player shows the ad-free stream. Ads will not be shown in the <strong>Control Room</strong> unless a Live ad
+        configuration is selected. Use the dropdown below to the player to select an ad configuration.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/7-select-ad-config.png" />
+        </figure>
+      </li>
+      <li>
+        (Optional) Click the plus button (<img alt="" src="/assets/images/using-bcb/live-ssai/node18753-plus-icon.png" />) to select an additional ad configuration. Doing this will
+        add another preview player on the <strong>Control Room</strong> page.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/8-two-preview-players.png" />
+        </figure>
+        <p>
+          Click the volume button below the preview player to control which player audio stream is active.
+        </p>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="creating-live-ssai">Requesting an ad</h2>
+    <p>
+      Follow these steps to request an ad in the Live
+      <strong>Control Room</strong>:
+    </p>
+    <ol class="bcls-tasklist">
+      <li>
+        Click <strong>Goto Ad</strong> and from the dropdown choose the length of your desired ad break.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="350" height="500" src="/assets/images/using-bcb/live-ssai/9-gotoad.png" />
+        </figure>
+      </li>
+      <li>
+        Click <strong>Insert</strong> to insert an ad break into the live stream. If the ad doesn't fill the entire ad break time, the fill slate (being selected when the event was
+        created) will be displayed.
+      </li>
+    </ol>
+    <p>
+      Ads will be seen in the <strong>Control Room</strong> preview player and in players that are published using the Live module. This example shows 2 ads being displayed in the
+      <strong>Control Room</strong>.
+    </p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/architecture-diagram.png" alt="architecture diagram">
+      <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/10-adsplayer.png" />
     </figure>
   </section>
-
-
+  <section class="bcls-section">
+    <h2 id="requesting-ssai">Publishing a Live event in Brightcove Beacon</h2>
+    <p>
+      To publish your Live event with server-side ads in Brightcove Beacon, follow these steps:
+    </p>
+    <ol class="bcls-tasklist">
+      <li>In the Live <strong>Control Room</strong> click <strong>Publish and Embed</strong> in the left navigation.</li>
+      <li>
+        Select <strong>Player Configuration</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/11-controlroom.png" />
+        </figure>
+      </li>
+      <li>In the <strong>Live Player Options</strong> select an <strong>Available Player</strong>.</li>
+      <li>
+        Select your <strong>Ad Configuration</strong> previously created in the <strong>Server-Side Ad Settings</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/12-select-player.png" />
+        </figure>
+      </li>
+      <li>
+        After selecting your <strong>Available Player</strong> and <strong>Ad Configuration</strong>, a new Player URL will be generated.
+      </li>
+      <!-- <li>
+        Copy the selected part of the URL as shown
+        in the image, starting from the word <strong>live</strong>. Example: <strong>live.xxxxxxx</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/13-player-url.png" />
+        </figure>
+      </li> -->
+      <li>Go to the Brightcove Beacon Platform.</li>
+      <li>
+        In Brightcove Beacon, in the upper menu, click the
+        <strong>Advertisement</strong> tab.
+      </li>
+      <li>
+        Click the <strong>Add New Configuration</strong> button.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/14-newadconfig.png" />
+        </figure>
+      </li>
+      <li>
+        Check to be sure you are seeing the
+        <strong>New Advertisement</strong> form.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="New Advertisement form" src="/assets/images/using-bcb/live-ssai/15-newadconfig-settings.png" />
+        </figure>
+      </li>
+      <li>Give your new advertisement configuration a <strong>Name</strong>.</li>
+      <li id="Live_Ad_Config_ID">
+        In the <strong>Live Ad Config ID</strong>, paste your <strong>Ad Configuration ID</strong> that you created in a <a href="#Ad_Configuration_ID">previous step</a>.
+      </li>
+      <li>From the <strong>Provider</strong> menu select <strong>Brightcove SSAI</strong>.</li>
+      <li>Click the <strong>Create New Advertisement</strong> button.</li>
+      <li>
+        Click the upper menu <strong>Events</strong> tab and create or select your Live event. For more information in how to create a Brightcove Beacon Live Event, please see
+        the
+        <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Streaming a Live Event</a>
+        document.
+        <aside class="bcls-aside bcls-aside--information">
+          For the Live event to stream successfully in Brightcove Beacon, the
+          <strong>Job ID</strong> and <strong>Stream Video ID</strong> must match the IDs of the current Live event.
+        </aside>
+      </li>
+      <li>
+        In you Brightcove Beacon Live Event click the
+        <strong>Rights & Scheduling</strong> tab.
+      </li>
+      <li>
+        In the <strong>Rights Type</strong> dropdown menu, select <strong>Advertising - AVOD</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/16-ad-avod.png" />
+        </figure>
+      </li>
+      <li>
+        In the <strong>Advertisement Configuration</strong> bottom menu, select your previously created advertisement configuration.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/17-ad-configuration.png" />
+        </figure>
+      </li>
+      <li>Click the <strong>Update Event</strong> button.</li>
+      <li>
+        Click on the <strong>Tools</strong> (wrench) button in the upper right of the screen. Then clear the cache.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/18-clear-cache.png" />
+        </figure>
+      </li>
+      <li>
+        Open your Brightcove Beacon App and select your event (the event names and pictures on the image are for example purposes only).
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="400" height="700" src="/assets/images/using-bcb/live-ssai/19-app-event.png" />
+        </figure>
+      </li>
+      <li>
+        In your Brightcove Beacon app, click on the
+        <strong>Play</strong> button. You should now be able to see your Live event streaming, with ads inserted by SSAI from Video Cloud.
+      </li>
+    </ol>
+    <p>
+      Once your event ends, you can save all or part of it as a clip that becomes a video asset in Video Cloud or a playable stream that can be shown in Brightcove Beacon. The Ads
+      of the Live event will not be saved, but the cue points from where the ads were transmitted will be registered so that you can add new ads in a later VOD of your recorded
+      Live event.
+    </p>
+    <p>
+      For more information on how to create a clip, please see the
+      <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#Clip" target="_blank">Creating a Clip from your Live event</a>
+      section from the <em>Streaming a Live Event</em> document.
+    </p>
+  </section>
 </article>
+
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
