@@ -1,0 +1,228 @@
+---
+title: Forensic Watermarking with Beacon Apps
+description: In this topic, you will learn how to implement Forensic Watermarking with Beacon apps.
+parent: Developer Topics
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+		<p>Brightcove has partnered with <a href="https://dtv.nagra.com/nexguard-forensic-watermarking">NAGRA</a> to provide Forensic Watermarking with Beacon apps to help protect premium content from piracy and unauthorized content sharing. With this feature, customers will be able to identify the source of a content leak and take appropriate action.</p>
+    <p>The following diagram shows an overview:</p>
+    <ul>
+      <li><strong>Content preparation</strong> 
+        <ul>
+          <li>The Forensic Watermark is an invisible watermark embedded into the video during transcoding using Nagra’s SDK</li>
+          <li>Ingestion creates 2 VOD renditions, one with watermark A and another with watermark B; both renditions are part of the same title in Video Cloud</li>
+        </ul>
+      </li>
+      <li><strong>Delivery</strong>
+        <ul>
+          <li>When playing the content, the Forensic Watermark token is provided to the player, then included in the URL used to request content from the CDN</li>
+          <li>The CDN interprets the token and delivers the video with the correct sequence of A/B segments to the viewer</li>
+        </ul>
+      </li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Overview diagram" src="/assets/images/protecting-content/forensic-watermarking/overview-diagram.svg" />
+      <figcaption class="bcls-caption--image">Forensic watermarking overview</figcaption>
+      </figure>
+  </section>
+
+  <section class="bcls-section">
+		<h2 id="Requirements">Requirements</h2>
+    <p>The following requirements are needed to support this feature:</p>
+		<ul>
+			<li>Beacon apps need to use OIDC authentication</li>
+			<li>Only available for VOD assets</li>
+      <li>MP4 renditions will not be generated for watermarked videos</li>
+		</ul>
+	</section>
+
+  <section class="bcls-section">
+    <h2 id="Setup">Setup</h2>
+    <p>The following setup is needed to support Brightcove's Forensic Watermarking solution:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Customer Video Cloud account:
+        <ul>
+          <li>Make sure the customer's account is enabled for Dynamic Delivery.</li>
+          <li>Open a <a href="https://supportportal.brightcove.com">customer support ticket</a> to enable the customer's account for Forensic Watermarking; This is a paid add-on to Video Cloud.</li>
+        </ul>
+      </li>
+      <li>The customer will get their License Key from <a href="https://dtv.nagra.com/nexguard-forensic-watermarking">NAGRA</a>.</li>
+      <li>The customer will generate a public-private key pair which will be used by the Forensic Watermarking Token (WMT) and decrypted by the CDN. For examples, see the section below.</li>
+      <li>The customer will use the script provided by NAGRA to generate a Forensic Watermarking Token (WMT). 
+        <aside class="bcls-aside bcls-aside--information">The customer is responsible for storing the generated tokens and keeping track of the associated users.</aside>
+      </li>
+      <li>From the customer, request the name of the claim that will pass the Watermarking Token (WMT) to the apps. Share this claim with the Beacon team, so that they can configure it in the Beacon Master CMS.</li>
+      
+    </ol>
+    <h3>Generate a public-private key pair</h3>
+    <p>
+      There are many ways to generate the public-private key pair. Here are some examples:
+    </p>
+    <h4>
+      Example bash script:
+    </h4>
+    <aside class="bcls-aside bcls-aside--information">Note that the script below uses the <strong>jq</strong> package for parsing JSON. If you do not have jq installed see the <a href="https://github.com/stedolan/jq/wiki/Installation">installation instructions</a>.</aside>
+    <p>
+      Example script to generate the key pair:
+    </p>
+<pre class="line-numbers"><code class="language-bash" translate="No">#!/bin/bash
+set -euo pipefail
+
+NAME=${1:-}
+test -z "${NAME:-}" &amp;&amp; NAME="brightcove-forensic-watermarking-key-$(date +%s)"
+mkdir "$NAME"
+
+PRIVATE_PEM="./$NAME/private.pem"
+PUBLIC_PEM="./$NAME/public.pem"
+PUBLIC_TXT="./$NAME/public_key.txt"
+
+ssh-keygen -t rsa -b 2048 -m PEM -f "$PRIVATE_PEM" -q -N ""
+openssl rsa -in "$PRIVATE_PEM" -pubout -outform PEM -out "$PUBLIC_PEM" 2&gt;/dev/null
+openssl rsa -in "$PRIVATE_PEM" -pubout -outform DER | base64 &gt; "$PUBLIC_TXT"
+
+rm "$PRIVATE_PEM".pub
+
+echo "Public key to saved in $PUBLIC_TXT"
+</code></pre>
+    <p>
+      Run the script:
+    </p>
+    <pre><code class="language-bash" translate="No">$ bash keygen.sh
+</code></pre>
+
+    <details id="Example_using_Go">
+      <summary>Example using <span translate="No">Go</span></summary>
+      <p>
+        Example using the <span translate="No">Go</span> programming language to generate the key pair:
+      </p>
+      <aside class="bcls-aside bcls-aside--tip">If you are new to <span translate="No">Go</span>, see the <a href="https://golang.org/">The <span translate="No">Go</span> Programming Language</a> homepage.</aside>
+<pre class="line-numbers"><code class="language-bash" translate="No">package main
+  
+  import (
+    "crypto/rand"
+    "crypto/rsa"
+    "crypto/x509"
+    "encoding/base64"
+    "encoding/pem"
+    "flag"
+    "fmt"
+    "io/ioutil"
+    "os"
+    "path"
+    "strconv"
+    "time"
+  )
+  
+  func main() {
+    var out string
+  
+    flag.StringVar(&amp;out, "output-dir", "", "Output directory to write files into")
+    flag.Parse()
+  
+    if out == "" {
+      out = "rsa-key_" + strconv.FormatInt(time.Now().Unix(), 10)
+    }
+  
+    if err := os.MkdirAll(out, os.ModePerm); err != nil {
+      panic(err.Error())
+    }
+  
+    priv, err := rsa.GenerateKey(rand.Reader, 2048)
+    if err != nil {
+      panic(err.Error())
+    }
+  
+    privBytes := x509.MarshalPKCS1PrivateKey(priv)
+  
+    pubBytes, err := x509.MarshalPKIXPublicKey(priv.Public())
+    if err != nil {
+      panic(err.Error())
+    }
+  
+    privOut, err := os.OpenFile(path.Join(out, "private.pem"), os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0600)
+    if err != nil {
+      panic(err.Error())
+    }
+  
+    if err := pem.Encode(privOut, &amp;pem.Block{Type: "RSA PRIVATE KEY", Bytes: privBytes}); err != nil {
+      panic(err.Error())
+    }
+  
+    pubOut, err := os.OpenFile(path.Join(out, "public.pem"), os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0600)
+    if err != nil {
+      panic(err.Error())
+    }
+  
+    if err := pem.Encode(pubOut, &amp;pem.Block{Type: "PUBLIC KEY", Bytes: pubBytes}); err != nil {
+      panic(err.Error())
+    }
+  
+    var pubEnc = base64.StdEncoding.EncodeToString(pubBytes)
+  
+    var pubEncOut = path.Join(out, "public_key.txt")
+    if err := ioutil.WriteFile(pubEncOut, []byte(pubEnc+"\n"), 0600); err != nil {
+      panic(err.Error())
+    }
+  
+    fmt.Println("Public key saved in " + pubEncOut)
+  }
+  </code></pre>
+    </details>
+    <br>
+
+    <details id="Example_using_node_js">
+      <summary>Example using node.js</summary>
+      <p>
+        Example using node.js to generate the key pair:
+      </p>
+      <aside class="bcls-aside bcls-aside--tip">This script example requires node version 11 or later.</aside>
+  <pre class="line-numbers"><code class="language-javascript" translate="No">var crypto = require("crypto");
+  var fs = require("fs");
+  
+  var now = Math.floor(new Date() / 1000);
+  var dir = "rsa-key_" + now;
+  fs.mkdirSync(dir);
+  
+  crypto.generateKeyPair(
+    "rsa",
+    {modulusLength: 2048},
+    (err, publicKey, privateKey) =&gt; {
+      fs.writeFile(
+        dir + "/public.pem",
+        publicKey.export({ type: "spki", format: "pem" }),
+        err =&gt; {}
+      );
+      fs.writeFile(
+        dir + "/public_key.txt",
+        publicKey.export({ type: "spki", format: "der" }).toString("base64") +
+          "\n",
+        err =&gt; {}
+      );
+      fs.writeFile(
+        dir + "/private.pem",
+        privateKey.export({ type: "pkcs1", format: "pem" }),
+        err =&gt; {}
+      );
+    }
+  );
+  
+  console.log("Public key saved in " + dir + "/public_key.txt");</code></pre>
+    </details>
+  </section>
+
+  <!-- <section class="bcls-section">
+		<h2 id="Analytics_reports">Analytics reports</h2>
+    <p>Analytics reports on viewers for forensic watermarked videos are available via the Analytics API only.</p>
+		<p>For details, see the <a href="https://apis.support.brightcove.com/general/overview-forensic-watermarking.html#Analytics_reports">Overview: Forensic Watermarking</a> document.</p>
+	</section> -->
+
+  <section class="bcls-section">
+		<h2 id="Supported_features_and_limitations">Supported features and limitations</h2>
+		<p>For a list of supported features and limitations when using Forensic Watermarking, see the <a href="https://apis.support.brightcove.com/general/overview-forensic-watermarking.html#supported_features">Overview: Forensic Watermarking</a> document.</p>
+	</section>
+  
+</article>

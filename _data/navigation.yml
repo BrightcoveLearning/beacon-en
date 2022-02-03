@@ -18,7 +18,7 @@
     - name: App Design Considerations
       url: /getting-started/app-design-considerations.html
 - section:
-  name: Learn the Basics
+  name: Learning the Basics
   url: '/basics/index.html'
   docs:
     - name: Layout
@@ -374,43 +374,15 @@
         - name: Viewing Analytics Data in Google Analytics
           url: /analytics/viewing-analytics-data-google.html
 - section:
-  name: Administering Accounts
-  url: /admin/index.html
+  name: Protecting Content
+  url: /protecting-content/index.html
   docs:
-    - name: Configuring Language Settings
-      url: /admin/configuring-language-settings.html
-    - name: Configuring Server-Side Ad Settings
-      url: /admin/configuring-server-side-ad-settings.html
-    - name: Creating Custom Metadata Fields
-      url: /admin/creating-custom-metadata-fields.html
-    - name: Creating Ingest Profiles for Context Aware Encoding
-      url: /admin/creating-ingest-profiles-context-aware-encoding.html
-    - name: Creating Ingest Profiles for Dynamic Delivery
-      url: /admin/creating-ingest-profiles-dynamic-delivery.html
-    - name: Ingest Profiles Best Practices
-      url: /admin/ingest-profiles-best-practices.html
-    - name: Managing Account Information
-      url: /admin/managing-account-information.html
-    - name: Managing Account Settings
-      url: /admin/managing-account-settings.html
-    - name: Managing API Authentication Credentials
-      url: /admin/managing-api-authentication-credentials.html
-    - name: Managing Ingest Profiles
-      url: /admin/managing-ingest-profiles.html
-    - name: Managing Media Sharing Settings
-      url: /admin/managing-media-sharing-settings.html
-    - name: Managing Profile Information
-      url: /admin/managing-profile-information.html
-    - name: Managing Users
-      url: /admin/managing-users.html
-    - name: 'Standard Ingest Profiles (DD & CAE)'
-      url: /admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
-- section:
-  name: Registered Users
-  url: /registered-users/index.html
-  docs:
-    - name: Working with Registered Users
-      url: /registered-users/working-with-registered-users.html
+    - name: DRM Output Protection Settings
+      url: /general/drm-output-protection-settings.html
+    - name: Forensic Watermarking
+      url: /protecting-content/forensic-watermarking-with-beacon.html
+    - name: Protecting Videos with HLS Encryption
+      url: /general/protecting-videos-hls-encryption.html
 - section:
   name: 'Publishing Apps'
   url: '/publishing-apps/index.html'
@@ -524,6 +496,12 @@
     - name: Using Reference IDs
       url: /publish-videos/using-reference-ids.html
 - section:
+  name: Registered Users
+  url: /registered-users/index.html
+  docs:
+    - name: Working with Registered Users
+      url: /registered-users/working-with-registered-users.html
+- section:
   name: Social Sharing
   url: /social/index.html
   docs:
@@ -562,13 +540,43 @@
     - name: Streaming a Live Event
       url: /live/streaming-live-event.html
 - section:
+  name: Administering Accounts
+  url: /admin/index.html
+  docs:
+    - name: Configuring Language Settings
+      url: /admin/configuring-language-settings.html
+    - name: Configuring Server-Side Ad Settings
+      url: /admin/configuring-server-side-ad-settings.html
+    - name: Creating Custom Metadata Fields
+      url: /admin/creating-custom-metadata-fields.html
+    - name: Creating Ingest Profiles for Context Aware Encoding
+      url: /admin/creating-ingest-profiles-context-aware-encoding.html
+    - name: Creating Ingest Profiles for Dynamic Delivery
+      url: /admin/creating-ingest-profiles-dynamic-delivery.html
+    - name: Ingest Profiles Best Practices
+      url: /admin/ingest-profiles-best-practices.html
+    - name: Managing Account Information
+      url: /admin/managing-account-information.html
+    - name: Managing Account Settings
+      url: /admin/managing-account-settings.html
+    - name: Managing API Authentication Credentials
+      url: /admin/managing-api-authentication-credentials.html
+    - name: Managing Ingest Profiles
+      url: /admin/managing-ingest-profiles.html
+    - name: Managing Media Sharing Settings
+      url: /admin/managing-media-sharing-settings.html
+    - name: Managing Profile Information
+      url: /admin/managing-profile-information.html
+    - name: Managing Users
+      url: /admin/managing-users.html
+    - name: 'Standard Ingest Profiles (DD & CAE)'
+      url: /admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
+- section:
   name: General Information
   url: /general/index.html
   docs:
     - name: Authentication Using OAuth
       url: /general/authentication-using-oauth.html
-    - name: DRM Output Protection Settings
-      url: /general/drm-output-protection-settings.html
     - name: Known Issues
       url: /general/known-issues.html
     - name: Login Durations
@@ -577,8 +585,6 @@
       url: /general/overview-context-aware-encoding.html
     - name: Overview of Dynamic Delivery
       url: /general/overview-dynamic-delivery.html
-    - name: Protecting Videos with HLS Encryption
-      url: /general/protecting-videos-hls-encryption.html
     - name: Related Content
       url: /general/related-content.html
     - name: Supported Video and Audio Formats

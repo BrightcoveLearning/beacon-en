@@ -1,0 +1,22 @@
+---
+title: Protecting Content
+parent: Home
+description: Learn how to protect your video content from unauthorized viewing.
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <h2>Topics</h2>
+  <section>
+    {% for item in site.data.navigation %}
+      {% if item.name == page.title %}
+        {% for doc in item.docs %}
+        <ul>
+          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+        </ul>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </section>
+</article>
