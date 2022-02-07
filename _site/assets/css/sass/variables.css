@@ -4,7 +4,7 @@ Error: File to import not found or unreadable: ~studio-colors/dist/colors.
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base
-        on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/variables.sass
+        on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/variables.sass
 
 1: @import '~studio-colors/dist/colors'
 2: 
@@ -14,7 +14,7 @@ Error: File to import not found or unreadable: ~studio-colors/dist/colors.
 6: $menu-z-index: $modal-z-index + 1000
 
 Backtrace:
-/Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/variables.sass:1
+/Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/variables.sass:1
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:44:in `import'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -51,4 +51,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ~studio-colors/dist/colors.\A        Load paths:\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/variables.sass\A \A 1: @import '~studio-colors/dist/colors'\A 2: \A 3: $header-z-index: 10000 // from StudioModule\A 4: $modal-z-index: $header-z-index + 10\A 5: $toaster-z-index: $modal-z-index + 100\A 6: $menu-z-index: $modal-z-index + 1000"; }
+  content: "Error: File to import not found or unreadable: ~studio-colors/dist/colors.\A        Load paths:\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/variables.sass\A \A 1: @import '~studio-colors/dist/colors'\A 2: \A 3: $header-z-index: 10000 // from StudioModule\A 4: $modal-z-index: $header-z-index + 10\A 5: $toaster-z-index: $modal-z-index + 100\A 6: $menu-z-index: $modal-z-index + 1000"; }

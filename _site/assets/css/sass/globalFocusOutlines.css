@@ -4,9 +4,9 @@ Error: File to import not found or unreadable: ~studio-colors/dist/colors.
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base
-        on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/variables.sass
-        from line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/base.sass
-        from line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/globalFocusOutlines.sass
+        on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/variables.sass
+        from line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/base.sass
+        from line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/globalFocusOutlines.sass
 
 1: @import 'base.sass'
 2: 
@@ -16,9 +16,9 @@ Error: File to import not found or unreadable: ~studio-colors/dist/colors.
 6: 
 
 Backtrace:
-/Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/variables.sass:1
-/Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/base.sass:1
-/Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/globalFocusOutlines.sass:1
+/Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/variables.sass:1
+/Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/base.sass:1
+/Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/globalFocusOutlines.sass:1
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:44:in `import'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -81,4 +81,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ~studio-colors/dist/colors.\A        Load paths:\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/variables.sass\A         from line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/base.sass\A         from line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/globalFocusOutlines.sass\A \A 1: @import 'base.sass'\A 2: \A 3: \:global\A 4:   *\A 5:     outline-color: $teal-light\A 6: "; }
+  content: "Error: File to import not found or unreadable: ~studio-colors/dist/colors.\A        Load paths:\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/variables.sass\A         from line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/base.sass\A         from line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/globalFocusOutlines.sass\A \A 1: @import 'base.sass'\A 2: \A 3: \:global\A 4:   *\A 5:     outline-color: $teal-light\A 6: "; }

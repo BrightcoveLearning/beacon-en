@@ -4,7 +4,7 @@ Error: File to import not found or unreadable: ~styles/base.sass.
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat
          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base
-        on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/globals.sass
+        on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/globals.sass
 
 1: @import '~styles/base.sass'
 2: @import url('https://fonts.googleapis.com/css?family=Lato:400,700')
@@ -14,7 +14,7 @@ Error: File to import not found or unreadable: ~styles/base.sass.
 6:   *::after,
 
 Backtrace:
-/Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/globals.sass:1
+/Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/globals.sass:1
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:44:in `import'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.7.4/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -51,4 +51,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ~styles/base.sass.\A        Load paths:\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/_site/assets/css/sass/globals.sass\A \A 1: @import '~styles/base.sass'\A 2: @import url('https://fonts.googleapis.com/css?family=Lato:400,700')\A 3: \A 4: \:global\A 5:   *,\A 6:   *::after,"; }
+  content: "Error: File to import not found or unreadable: ~styles/base.sass.\A        Load paths:\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          /Applications/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 1 of /Users/sahumada/Documents/GitHub/beacon-en/assets/css/sass/globals.sass\A \A 1: @import '~styles/base.sass'\A 2: @import url('https://fonts.googleapis.com/css?family=Lato:400,700')\A 3: \A 4: \:global\A 5:   *,\A 6:   *::after,"; }
