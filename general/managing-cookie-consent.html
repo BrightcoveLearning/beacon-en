@@ -45,6 +45,7 @@ parent: "General Information"
     <h3>Overview of implementation process</h3>
     <p>There are a number of steps to complete to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
     <ol>
+      <li>Define from where your apps will be served.</li>
       <li>Create templates that define your banner and preference center functionality and upload your logo for each template created.</li>
       <li>Create a geolocation rule group, which will act as a container for geolocation rules.</li>
       <li>Create three geolocation rules that:
@@ -326,7 +327,7 @@ parent: "General Information"
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-group-assign-to-domains.png" alt="rule group assign to domains">
         </figure>
       </li>
-      <li>Select the appropriate domains, then click <strong>Assign</strong>.
+      <li>Select the appropriate domains, then click <strong>Assign</strong>. These domains should match the URLs supplied by your DNS provider.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-group-assign-to-domains-confirm.png" alt="rule group assign to domains confirm">
         </figure>
