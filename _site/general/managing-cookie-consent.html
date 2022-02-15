@@ -1448,10 +1448,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/one-trust-preference-center.png" alt="one trust preference center">
     </figure>
-    <p>As part of the implementation process, you will have the option to customize the text displayed in, and the look of, both the banner and preference center.</p>
+
     <h3>Overview of implementation process</h3>
     <p>There are a number of steps to complete to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
     <ol>
+      <li>Define the domain from where your apps will be served.</li>
       <li>Create templates that define your banner and preference center functionality and upload your logo for each template created.</li>
       <li>Create a geolocation rule group, which will act as a container for geolocation rules.</li>
       <li>Create three geolocation rules that:
@@ -1470,10 +1471,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
   <section class="bcls-section">
-    <h2 id="Create_two_templates">Create two templates</h2>
-    <p>A template defines how your banner and preferences dialog appear, and function, for your users. In the following steps you will create two templates, one for CCPA and one for GDPR.</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">You may not need both templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating both templates.</aside>
-
+    <h2 id="Define_app_domain">Define app domain</h2>
+    <p>Later in the implementation process, you need to use the domain(s) from which your apps are served. The steps in this section define that.</p>
     <ol class="bcls-tasklist">
       <li>Log in to your OneTrust account.</li>
       <li>From the <em>Welcome</em> page, click the <strong>Cookie Compliance</strong> option.
@@ -1481,6 +1480,29 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/onetrust-index.png" alt="onetrust index page">
         </figure>
       </li>
+      <li>To start the process:
+        <ol type="a">
+          <li>In the left navigation, click <strong>Websites</strong></li>
+          <li>Click <strong>Add Website</strong></li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/add-website.png" alt="click add website">
+        </figure>
+      </li>
+      <li>Enter the <em>Website URL</em> from where your app will be served, which is supplied by your DNS provider. Enter the <em>Organization</em>, then click <strong>Scan Only</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/scan-website.png" alt="scan website">
+        </figure>
+      </li>
+      <li>You will be returned to the <em>COOKIE COMPLIANCE</em> configuration page.</li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Create_two_templates">Create two templates</h2>
+    <p>A template defines how your banner and preferences dialog appear, and function, for your users. In the following steps you will create two templates, one for CCPA and one for GDPR.</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">You may not need both templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating both templates.</aside>
+    <ol class="bcls-tasklist">
       <li>In the left navigation, click <strong>Templates</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/click-templates.png" alt="click templates">
@@ -1733,7 +1755,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-group-assign-to-domains.png" alt="rule group assign to domains">
         </figure>
       </li>
-      <li>Select the appropriate domains, then click <strong>Assign</strong>.
+      <li>Select the appropriate domains, then click <strong>Assign</strong>. These domains should match the URLs supplied by your DNS provider.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-group-assign-to-domains-confirm.png" alt="rule group assign to domains confirm">
         </figure>
@@ -1869,18 +1891,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </table>
   </section>
 
-
-  <section class="bcls-section">
-    <h2 id="Implementation_architecture">Implementation architecture</h2>
-    <p>The following gives a look "under the hood" of how OneTrust Cookie Compliance integrates with your Beacon app.</p>
-    <p>The key to integrating OneTrust into your Beacon web app is the <strong>data-domain-script</strong> (generated in the steps above) that is used to tie each domain name with the SDK that will perform all the functionalities OneTrust provides. In a nutshell, the <strong>data-domain-script</strong> is used to identify each domain name that is using the SDK. Your Beacon web app needs to know the <em>data-domain-script <strong>id</strong></em> assigned to a certain customer(domain name). Beacon Classic provides the <em>data-domain-script id</em> into the <strong>privacy_management_platform</strong> field by hitting the <strong>api/settings</strong> endpoint. The actual implementation is performed by Brightcove's OTT Delivery Team.</p>
-    <p>Here is an architecture diagram of the implementation:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/architecture-diagram.png" alt="architecture diagram">
-    </figure>
-  </section>
-
-
 </article>
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
@@ -1907,7 +1917,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 07 Feb 2022
+  Page last updated on 14 Feb 2022
 </div>
 
 
