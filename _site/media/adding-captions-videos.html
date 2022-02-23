@@ -1480,6 +1480,7 @@ you can accomplish using it.
           <li><strong>File Upload</strong> - Click <strong>Browse</strong> and select the text track file from the file system. The file will be uploaded to Beacon.</li>
           <li><strong>URL Upload</strong> - Enter the public URL where the text track file resides and then click <strong>Upload</strong>. The file will be uploaded to Beacon.</li>
           <li><strong>Remote URL</strong> - Enter the public URL where the text track file resides. The URL must be less than 250 characters. Captions will be loaded from the remote URL.
+            <aside class="bcls-aside bcls-aside--information">Note: Using a remote URL is not supported when using Server-Side Ad Insertion (SSAI).</aside>
             <aside class="bcls-aside bcls-aside--information">Note: If you are hosting captions files on your own server, make sure the file is located at a URL that can be accessed by the Brightcove Player. The server hosting the captions file should also have Cross-Origin Resource Sharing (CORS) enabled. You can read more about CORS <a href="https://general.support.brightcove.com/developer/concepts-cors.html">here</a>.</aside>
           </li>
           <li><strong>Auto caption</strong> - Select this option to have caption files generated for the video.</li>
@@ -1495,13 +1496,14 @@ you can accomplish using it.
           <li><strong>Descriptions</strong> - Intended to be a separate text file that describes the video through a screen reader</li>
           <li><strong>Chapters</strong> - Intended to help the user navigate through the video</li>
           <li><strong>Metadata</strong> - Information and content about the video which isn’t intended to be displayed to the viewer by default (though you may wish to do so using JavaScript)</li>
-      </ul></li>
-        <li>Select a <strong>Status</strong>:
-<ul>
+        </ul>
+      </li>
+      <li>Select a <strong>Status</strong>:
+        <ul>
           <li><strong>Publish</strong> - Text track will appear in players</li>
           <li><strong>Draft</strong> - Text track will not appear in players</li>
-          </ul>
-                  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Edit Mime Type" src="/assets/images/media/captions-english.png" /></figure>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Edit Mime Type" src="/assets/images/media/captions-english.png" /></figure>
       </li>
       <li>Click <strong>Add Text Track</strong> to save the text track information.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/captions-added.png" /></figure>
@@ -1514,7 +1516,7 @@ you can accomplish using it.
     <aside class="bcls-aside bcls-aside--information">Note that the <code translate="no">default</code> value is not per track, but set to <code translate="no">true</code> for all tracks of the same language (<code translate="no">srclang</code>)</aside>
     <p>When a player with associated captions is published, a <strong>CC</strong> button will appear on the player chrome. Click the <strong>CC</strong> button to select a caption language and display the captions.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/captions-cc-button.png" /></figure>
-    <aside class="bcls-aside bcls-aside--information"><strong>Note:</strong> The <strong>Caption(CC)/Subtitles icon depends on the player's language</strong>. Brightcove strongly advises users not to change this because it is an intentional design choice to present a localized UI.</aside> 
+    <aside class="bcls-aside bcls-aside--information"><strong>Note:</strong> The <strong>Caption(CC)/Subtitles icon depends on the player's language</strong>. Brightcove strongly advises users not to change this because it is an intentional design choice to present a localized UI.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="edit_captions">Edit caption properties</h2>
