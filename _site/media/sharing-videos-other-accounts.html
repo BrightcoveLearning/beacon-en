@@ -1428,18 +1428,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="limitations">Media sharing limitations</h2>
     <ul>
-      <li>
-        <p>Sharing videos that have been secured using DRM is <strong>not</strong> supported. Sharing videos from an account that is not DRM-enabled to an account that is DRM-enabled is supported, but the shared videos will <strong>not</strong> be packaged for DRM.</p>
+      <li>Sharing videos that have been secured using DRM is <strong>not</strong> supported. Sharing videos from an account that is not DRM-enabled to an account that is DRM-enabled is supported, but the shared videos will <strong>not</strong> be packaged for DRM.
       </li>
-      <li>
-        <p>Sharing will fail for live videos created using the "Convert live stream to VOD" option. It will work for videos made by clipping live streams.</p>
-      </li>
-      <li>
-        <p>Shared videos can be downloaded for offline viewing only if the original video can be. The property is inherited from the original video and cannot be changed for shared video only.</p>
-      </li>
-      <li>
-        When playing a shared video with SSAI, SSAI Macro replacement will use the metadata from the parent video instead of the child Video.  SSAI will also skip the ad lookup if the parent video is marked as <code translate="no">Advertising='Free'</code>, even if the child video is labeled as <code translate="no">Ad Supported</code>.
-      </li>
+      <li>Sharing will fail for live videos created using the "Convert live stream to VOD" option. It will work for videos made by clipping live streams.</li>
+      <li>When using the Live module to create a live event/channel, the video object that is created  cannot be shared to another account. As a work around, create a remote asset and manually add in the manifest URL from the Live module.      </li>
+      <li>Shared videos can be downloaded for offline viewing only if the original video can be. The property is inherited from the original video and cannot be changed for shared video only.</li>
+      <li>When playing a shared video with SSAI, SSAI Macro replacement will use the metadata from the parent video instead of the child Video.  SSAI will also skip the ad lookup if the parent video is marked as <code translate="no">Advertising='Free'</code>, even if the child video is labeled as <code translate="no">Ad Supported</code>.</li>
     </ul>
   </section>
   <section class="bcls-section">
