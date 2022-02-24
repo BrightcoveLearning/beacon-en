@@ -600,6 +600,30 @@
     - name: Using Multiple Languages
       url: /general/using-multiple-languages.html
 - section:
+  name: Beacon Plugins
+  url: /ott-plugins/index.html
+  docs:
+    - name: 'Learning Guide: Beacon Plugins'
+      url: /ott-plugins/learning-guide-beacon-plugins.html
+    - name: Use JavaScript Modules for Plugins
+      url: /ott-plugins/javascript-modules-beacon-plugins.html
+    - name: Dispatch & Handle Events in Plugins
+      url: /ott-plugins/dispatching-handling-events.html
+    - name: Creating a Custom Page
+      url: /ott-plugins/custom-page.html
+    - name: Implement Buttons and Event Handlers
+      url: /ott-plugins/buttons-and-events.html
+    - name: Implement Custom Sections
+      url: /ott-plugins/custom-divs.html
+    - name: Implement the Side Panel
+      url: /ott-plugins/side-panel.html
+    - name: Implement User Events
+      url: /ott-plugins/user-events.html
+    - name: Storing Data in a Separate Module
+      url: /ott-plugins/data-module.html
+    - name: Working with Page Events
+      url: /ott-plugins/working-with-page-events.html
+- section:
   name: Training
   url: /training/index.html
   docs:
