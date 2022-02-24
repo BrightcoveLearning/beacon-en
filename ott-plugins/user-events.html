@@ -1,0 +1,241 @@
+---
+title: "Implementing User Events"
+description: "In this topic, you will learn how to implement the user events using a plugin in your Brightcove Beacon
+web apps."
+parent: "OTT Plugins"
+layout: "staging"
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--information language-editable">This document is one part of the Beacon Plugins document collection. Since Beacon Plugins are implemented using JavaScript and CSS, the target audience for this document is developers with some experience with both of those technologies. To learn more about Beacon Plugins see the <a href="/ott-plugins/index.html">Beacon Plugins documentation home page</a>.</aside>
+    <h2 id="Introduction">Introduction</h2>
+    <p>The Beacon web apps allow you to add some of your customizations. For example, your plugin code can listen to
+      user events and process custom code based on your requirements.</p>
+    <p>The user events are triggered by user interactions with the Beacon app each time a user sign in, register, or
+      sign out.</p>
+    <h3>Use cases</h3>
+    <p>The following are appropriate use cases for the user events.</p>
+    <ul>
+      <li>With the help of the user events, you can retrieve claims of the account tokens.</li>
+      <li>You can also use the user events to save login or registration data so your user can log into other
+        applications such as PigeonHole.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="events">Events</h2>
+    <p>The following events can be used in your plugin code to control the user events.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Event</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><code>userDidSignIn</code></td>
+          <td>
+            Called when the sign in process is complete with success.
+          </td>
+        </tr>
+        <tr>
+          <td><code>userDidRegister</code></td>
+          <td>Called when the register process is complete with success.</td>
+        </tr>
+        <tr>
+          <td><code>userDidSignOut</code></td>
+          <td>Called before the logout request is done to Beacon APIs.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Event_data">Event data</h2>
+    <p>When listening to user events, you can display the event data which is available for use in your custom code.
+      Here is the example of this data:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Data element</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><code>account_token</code></td>
+          <td>
+            String
+          </td>
+        </tr>
+        <tr>
+          <td><code>user_name</code></td>
+          <td>String</td>
+        </tr>
+        <tr>
+          <td><code>user_email</code></td>
+          <td>String</td>
+        </tr>
+        <tr>
+          <td><code>claims</code></td>
+          <td>Object</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Using_the_user_events">Using the user events</h2>
+    <p>There are three types of user events in your Beacon application that you can use. User events are implemented
+      to retrieve users' data when signing in, registering, or signing out.</p>
+    <h3>User did sign in</h3>
+    <p>
+      The following image shows an example of the workflow for the
+      <code>userDidSignIn</code> event:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" width='700' src="/assets/images/ott-plugins/user-events/User Did Sign In.svg" alt="Add carousel layout">
+      <figcaption class="bcls-caption--image">User did sign in workflow.</figcaption>
+    </figure>
+    <p>
+      The following image shows an example of the data retrieved with the
+      <code>userDidSignIn</code> event:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" width="450" src="/assets/images/ott-plugins/user-events/userDidSignIn.png" alt="Add carousel layout">
+      <figcaption class="bcls-caption--image">User did sign in event.</figcaption>
+    </figure>
+    <h3>User did register</h3>
+    <p>
+      The following image shows an example of the workflow for the
+      <code>userDidRegister</code> event:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" width='700' src="/assets/images/ott-plugins/user-events/User Did Register.svg" alt="Add carousel layout">
+      <figcaption class="bcls-caption--image">User did register workflow.</figcaption>
+    </figure>
+    <p>The following image shows an example of the data retrieved with the
+      <code>userDidRegister</code> event:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" width="450" src="/assets/images/ott-plugins/user-events/userDidRegister.png" alt="Add carousel layout">
+      <figcaption class="bcls-caption--image">User did register event</figcaption>
+    </figure>
+    <h3>User did sign out</h3>
+    <p>
+      The following image shows an example of the workflow for the
+      <code>userDidSignOut</code> event:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" width='700' src="/assets/images/ott-plugins/user-events/User Did Sign Out.svg" alt="Add carousel layout">
+      <figcaption class="bcls-caption--image">User did sign out workflow.</figcaption>
+    </figure>
+    <p>The following image shows an example of the data retrieved with the
+      <code>userDidSignOut</code> event:
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" width="450" src="/assets/images/ott-plugins/user-events/userDidSignOut.png" alt="Add carousel layout">
+      <figcaption class="bcls-caption--image">User did sign out event</figcaption>
+    </figure>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Module_implementation">Module implementation</h2>
+    <p>The following shows how the user events are implemented using JavaScript modules. Of course, you may
+      implement your JavaScript in the manner of your choice. Further details on this module implementation can be
+      found in the <a href="">Implementing Beacon Plugin Code Using Modules</a> document.</p>
+    <!-- <p>The following code contains these functions. A brief descriptions is provided for each:</p> -->
+    <h3><code>index.js</code></h3>
+    <p>Below is the JavaScript code used for the user events example:</p>
+    <!-- <ul>
+                <li><code>populateMidPageDiv</code>: This function creates a paragraph inside the
+                    <code>&lt;div&gt;</code> and places some information text.</li>
+            </ul> -->
+    <pre class="line-numbers"><code class="language-javascript" translate="No">window.addEventListener("message", (event) => {
+    switch (event.data.event) {
+        case <span class="bcls-highlight">'userDidSignIn'</span>:
+            console.log(event.data)
+        break;
+       
+        case <span class="bcls-highlight">'userDidRegister'</span>:
+            console.log(event.data)
+        break;
+        
+        case <span class="bcls-highlight">'userDidSignOut'</span>:
+            console.log(event.data)
+        break;
+    }
+});</code></pre>
+    <!-- <table class="bcls-table">
+                <thead class="bcls-table__head">
+                    <tr>
+                        <th>ID Selector</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody class="bcls-table__body">
+                    <tr>
+                        <td><code>populateMidPageDiv()</code></td>
+                        <td>
+                            This function creates an HTML <code>&lt;p&gt;</code> tag, and then add text to be
+                                displayed on <code>beacon_details_mid_page_section</code> section.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>clearMidPageDiv()</code></td>
+                        <td>
+                            This function clears the elements inside the <code>beacon_details_mid_page_section</code>
+                            section.
+                        </td>
+                    </tr>
+                </tbody>
+            </table> -->
+
+    <!-- <h3><code>index.js</code></h3>
+            <p>Below is the JavaScript code used for <code>userDidRegister</code> event example:</p>
+            <pre class="line-numbers"><code class="language-javascript" translate="No">window.addEventListener("message", (event) => {
+    switch (event.data.event) {
+        case 'userDidRegister':
+            console.log(event.data)
+        break;
+    }
+});</code></pre> -->
+    <!-- <table class="bcls-table">
+    <thead class="bcls-table__head">
+        <tr>
+            <th>ID Selector</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+        <tr>
+            <td><code>populateAppOverflowDiv()</code></td>
+            <td>
+                This function creates an HTML <code>&lt;p&gt;</code> tag, and then add text to be
+                    displayed on <code>beacon-web-app-overflow</code> section.
+            </td>
+        </tr>
+        <tr>
+            <td><code>clearAppOverflowDiv()</code></td>
+            <td>
+                This function clears the elements inside the <code>beacon-web-app-overflow</code>
+                section.
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+    <!-- <h3><code>index.js</code></h3>
+            <p>Below is the JavaScript code used for <code>userDidSignOut</code> event example:</p>
+            <pre class="line-numbers"><code class="language-javascript" translate="No">window.addEventListener("message", (event) => {
+    switch (event.data.event) {
+        case 'userDidSignOut':
+            console.log(event.data)
+        break;
+    }
+});</code></pre> -->
+  </section>
+</article>

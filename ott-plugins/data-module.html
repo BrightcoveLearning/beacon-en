@@ -1,0 +1,56 @@
+---
+title: "Storing Data in a Separate Module"
+description: "In this topic, you will learn how to store the data for your plugins in a separate module."
+parent: "OTT Plugins"
+layout: "staging"
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--information language-editable">This document is one part of the Beacon Plugins document collection. Since Beacon Plugins are implemented using JavaScript and CSS, the target audience for this document is developers with some experience with both of those technologies. To learn more about Beacon Plugins see the <a href="/ott-plugins/index.html">Beacon Plugins documentation home page</a>.</aside>
+    <h2 id="Introduction">Introduction</h2>
+    <p>It is not an uncommon programming practice to separate the data from the presentation and program execution. You can do this using JavaScript modules. This document will show how to create a variable in a <em>data</em> module then use it in your plugin implementation code.</p>
+    <p>The basic implementation steps are:</p>
+    <ul>
+      <li>Create a data module and store in variables the data you wish to use in your plugin implementation.</li>
+      <li>In an element module, accept the data as a parameter for a function that displays or utilizes the data as your wish.</li>
+      <li>In your controller, pass the data as a parameter when calling the function that displays or utilizes the data.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Examining_the_code">Examining the code</h2>
+    <p>The use case shown in the following code examples is creating the HTML as a variable in the data module then passing it to a custom page to be displayed. For line-by-line details on the actual code used see the <a href="/ott-plugins/custom-page.html">Creating a Custom Page</a> document. The emphasis in this document is to see how the data is created and distributed for use.</p>
+    <p>The first code block shows the contents of the data module. A single variable is created and exported for use by the controller. Of course multiple data variables may be created in the data module.</p>
+    <pre class="line-numbers"><code class="language-javascript" translate="No">var pageContent = &apos;&lt;h2&gt; This is content in the &lt;em&gt;custom page&lt;/em&gt; passed as a parameter from a data file&lt;/h2&gt;&lt;br&gt;&apos;
+  + &apos;&lt;p&gt;You can build your HTML in many ways and the page can contain the content you choose. You are NOT limited to the page types shown in the page layout UI.&lt;/p&gt;&lt;br&gt;&apos;
+  + &apos;&lt;p&gt;Even use images!&lt;/p&gt;&apos;
+  + &apos;&lt;img src=&quot;https://solutions.brightcove.com/bcls/beacon-plugins/yachats-far.png&quot;&gt;&apos;;
+  
+export { pageContent };</code></pre>
+
+    <p>This code shows how the custom page element's module will display the data. In this case it gets the <code>&lt;div&gt;</code> element designated for the custom page's HTML and then places that HTML into the <code>&lt;div&gt;</code>.</p>
+
+    <pre class="line-numbers"><code class="language-javascript" translate="No">const populateCustomPage = (pageContent) => {
+
+  var customPageArea = document.getElementById('custom_page_area');
+  customPageArea.insertAdjacentHTML('afterbegin', pageContent);
+
+};
+
+export { populateCustomPage };</code></pre>
+
+    <p>The last task is for the controller to utilize the data by passing it to the function to display the data. The variable defined in the data module is imported, along with the function that displays the content. In this use case, the code checks to see if the page just loaded is the created custom page, and if yes calls the function to display the data while passing the data variable to the function.</p>
+    <pre class="line-numbers"><code class="language-javascript" translate="No">import { <span class="bcls-highlight">pageContent</span> } from './data.js';
+import { populateCustomPage } from './custom-page-module.js';
+...
+case 'onBeaconPageLoad':
+  if (event.data.data.slug == '24849-custom-for-plugin') {
+    populateCustomPage(<span class="bcls-highlight">pageContent</span>);
+  }
+break;</code></pre>
+  </section>
+
+</article>

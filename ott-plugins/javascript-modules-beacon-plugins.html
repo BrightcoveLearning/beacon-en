@@ -1,0 +1,168 @@
+---
+title: "Using JavaScript Modules for Beacon Plugins"
+description: "In this topic, you will learn how JavaScript modules can be used in the code implementation of Beacon Plugins."
+parent: "OTT Plugins"
+layout: "staging"
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--information language-editable">This document is one part of the Beacon Plugins document collection. Since Beacon Plugins are implemented using JavaScript and CSS, the target audience for this document is developers with some experience with both of those technologies. To learn more about Beacon Plugins see the <a href="/ott-plugins/index.html">Beacon Plugins documentation home page</a>.</aside>
+    <h2 id="Introduction">Introduction</h2>
+    <p>Beacon plugins are implemented with JavaScript and CSS. Anytime you are using code you want to consider code organization. In the <a href="/ott-plugins/learning-guide-beacon-plugins.html">Learning Guide: Beacon Plugins</a> document, you learned plugins are implemented by loading one JavaScript file into your Beacon web app. That single file, named <strong>index.js</strong>, could hold all your Beacon plugin JavaScript code, but this would lead to poor coding practices. Also, there are a myriad of other JavaScript frameworks from which you could choose. For a balance between poor practices and complexity, the documents around Beacon plugins use JavaScript modules for code organization.</p>
+    <p>Basically, the <strong>index.js</strong> acts as a "controller" and the actual implementation details for each plugin element are in a JavaScript module file. Like a "traffic police officer" directs where cars should go, the controller directs program execution. In the case of JavaScript modules, the "traffic cop" is basically importing modules and directing which modules should be called when and what data should be passed to the modules. The idea of a controller very common in programming practice and, of course, you may choose your favorite JavaScript framework.</p>
+    <p>Example code samples can be download from the <a href="https://github.com/BrightcoveLearning/ott-plugins-example-code">ott-plugins-example-code</a> GitHub repo.</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">Event dispatching and handling code is used in the examples below. The document <a href="/ott-plugins/dispatching-handling-events.html">Dispatching and Handling Events in Beacon Plugins</a> explains the details of events in Beacon plugins, and is considered a pre-requisite to this document.</aside>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="The_modules">The modules</h2>
+    <p>It is consider good coding practices to:</p>
+    <ul>
+      <li>Not duplicate code</li>
+      <li>Make your code as reusable as possible</li>
+    </ul>
+    <p>Using modules help accomplish both of these tasks. First, let's take a look at the basic syntax of how modules are structured in the examples shown in these docs:</p>
+
+    <pre class="line-numbers"><code class="language-javascript" translate="No">const function1 = () => { 
+  code;
+  code;
+  code;
+  code;
+};
+  
+const function2 = () => {
+  code;
+  code;
+  code;
+  code;
+};
+
+const function3 = () => {
+  code;
+  code;
+  code;
+  code;
+};
+  
+export { function1, function2, functions3 };</code></pre>
+    <p>You see three functions defined as constants using arrow notation. These functions performs tasks like:</p>
+    <ul>
+      <li>Add a button</li>
+      <li>Open the side panel</li>
+      <li>Place content in a custom div</li>
+      <li>Contain the code for a button click handler</li>
+    </ul>
+    <p>The functions are imported into the controller, which is the file <strong>index.js</strong> for Beacon plugins , then used as necessary.</p>
+    <p>Here is a simple module that contains a function that creates a button.</p>
+    <pre class="line-numbers"><code class="language-javascript" translate="No">const addCustomButtonDetails = () => {
+    
+  window.postMessage({
+    event: 'detailsPageAddCustomButton',
+    data: {
+      title: 'Test Button',
+      font_awesome_icon: 'fa fa-info-circle',
+      element_id: 'TEST_BTN_ID'
+    }
+  }, window.location.origin);
+  
+};
+  
+export { addCustomButtonDetails };</code></pre>
+    <p>This functions properly, but is not reusable. You need a different function for every button you wish to create. To make the function reusable parameters are used:</p>
+    <pre class="line-numbers"><code class="language-javascript" translate="No">const addCustomButtonDetails = (pTitle, pIcon, pID) => {
+  
+  window.postMessage({
+    event: 'detailsPageAddCustomButton',
+    data: {
+      title: pTitle,
+      font_awesome_icon: pIcon,
+      element_id: pID
+    }
+  }, window.location.origin);
+
+};
+
+export { addCustomButtonDetails };</code></pre>
+    <p>If there are buttons, there should be click handlers. A function is added to the module that is called on a button click, and simply pops up an alert with the name of the button in it. Actually handling the event is left to the controller</p>
+    <pre class="line-numbers"><code class="language-javascript" translate="No">const addCustomButtonDetails = (pTitle, pIcon, pID) => {
+      
+  window.postMessage({
+    event: 'detailsPageAddCustomButton',
+    data: {
+      title: pTitle,
+      font_awesome_icon: pIcon,
+      element_id: pID
+    }
+  }, window.location.origin);
+
+};
+
+<span class="bcls-highlight">const handleButtonClick = (buttonString) => {
+
+  alert('Button clicked: ' + buttonString);
+
+};</span>
+
+export { addCustomButtonDetails, handleButtonClick };</code></pre>
+    <p>Now it is time to move on to see how the functions can be used.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="The_controller">The <strong>index.js</strong> controller</h2>
+    <p>The <strong>index.js</strong> file is setup to be the centralized event handler and "direct traffic" from there. In this example the following happens:</p>
+    <ul>
+      <li>Line 1: The functions from the module are imported</li>
+      <li>Lines 3-8: Standard Beacon plugin event handler syntax</li>
+      <li>Line 9: A <code>switch-case</code> statement directs execution to the correct code</li>
+      <li>Lines 10-13: Adds two buttons to the web app when the <code>onBeaconPageLoad</code> event is handled</li>
+      <li>Lines 15-22: On the <code>detailsPageExternalButtonWasClicked</code> event, the <code>handleButtonClick()</code> function is called; the <code>if</code> statements are used to pass the correct parameter value to the function</li>
+    </ul>
+
+    <pre class="line-numbers"><code class="language-javascript" translate="No">import { addCustomButtonDetails, handleButtonClick } from './button-demo-module.js';
+    
+window.addEventListener("message", (event) => {
+  const originsAllowed = [
+    'https://yourapplocation.com',
+    'https://yourapplocation.com'
+  ];
+  if (originsAllowed.includes(event.origin)) {
+    switch (event.data.event) {
+      case 'onBeaconPageLoad':
+        addCustomButtonDetails('Download', 'fa fa-info-circle', 'download-button');
+        addCustomButtonDetails('Location', 'fa fa-info-circle', 'location-button');
+        break;
+
+      case 'detailsPageExternalButtonWasClicked':
+        if (event.data.data.element_id == 'download-button') {
+         handleButtonClick('Download');
+        };
+        if (event.data.data.element_id == 'location-button') {
+          handleButtonClick('Location');
+        };
+        break;
+    }
+
+  }
+},
+false
+);</code></pre>
+    <p>Here is the plugin in action:</p>
+    <div style="position: relative; display: block; max-width: 960px;">
+      <div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/1752604059001/default_default/index.html?videoId=1723783757463121178" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div>
+    </div>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Summary">Summary</h2>
+    <p>You have seen one simple example of a module used to implement a feature of Beacon plugins, buttons. Please consider the following when you implement Beacon plugins:</p>
+    <ul>
+      <li>Using modules is one way to implement plugin code, but it is not the only way. Although Brightcove does not recommend this approach, you may find that it works for your use cases.</li>
+      <li>There are degrees of code reuse and levels of abstraction. You may wish to use more or less than what you find in the Brightcove plugin examples.</li>
+      <li>The example modules do NOT cover every possible need for every plugin implementor. The examples provide a basis on which you can develop code for your use cases.</li>
+    </ul>
+  </section>
+
+</article>

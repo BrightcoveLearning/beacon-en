@@ -1,0 +1,135 @@
+---
+title: "Creating a Custom Page"
+description: "In this topic, you will learn how to use a JavaScript plugin to create a custom page in your Beacon web app."
+parent: "OTT Plugins"
+layout: "staging"
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--information language-editable">This document is one part of the Beacon Plugins document collection. Since Beacon Plugins are implemented using JavaScript and CSS, the target audience for this document is developers with some experience with both of those technologies. To learn more about Beacon Plugins see the <a href="/ott-plugins/index.html">Beacon Plugins documentation home page</a>.</aside>
+    <h2 id="Introduction">Introduction</h2>
+    <p>With JavaScript plugin code, you can add free-form pages to your Beacon web app by using the <em>Custom Pages</em> element. To create and populate the page with content, you will:</p>
+    <ol class="bcls-tasklist">
+      <li>Create the page in Beacon Classic.</li>
+      <li>Use an <code>if</code> statement to check if the loaded page is your custom page. The condition of the <code>if</code> statement uses the name (slug as it is referred to) of the page.</li>
+      <li>Populate and style the page as desired.</li>
+    </ol>
+    <p>Here is a very simple custom page with the page name <strong>Plugin Custom</strong> with some textual content and one image. The font color and background color are set through the <code>index.css</code> file.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/ott-plugins/custom-pages/page-in-app.png" alt="">
+    </figure>
+    <h3>Use cases</h3>
+    <p>The use cases for a custom page are numerous, but basically, anytime you want to have a page that is not one of the page types you can choose in the UI, you can use a custom page. For instance:</p>
+    <ul>
+      <li>A Beacon app centered around a conference uses a custom page to display the schedule of conference attendees.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Creating_the_custom_page">Creating the custom page</h2>
+    <p>First, you must create the custom page in Beacon Classic. </p>
+    <ol class="bcls-tasklist-restart">
+      <li>In Beacon Classic:
+        <ol type="a">
+          <li>In the top navigation click <strong>Pages</strong>.</li>
+          <li>Click <strong>Add new page</strong>.</li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/ott-plugins/custom-pages/add-new-page-button.png" alt="add new page">
+        </figure>
+      </li>
+      <li>Complete the <em>Basic Data</em> form. For the <em>Navigation Type</em>, you must choose <strong>custom-screen</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/ott-plugins/custom-pages/ui-basic-data.png" alt="basic data">
+        </figure>
+      </li>
+      <li>Complete the rest of the information on the other tabs as you have done for other pages.</li>
+      <li>After you save your page, be sure to record the slug of your created page. Slugs are highlighted in this screenshot:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/ott-plugins/custom-pages/ui-slugs.png" alt="slugs">
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Events">Events</h2>
+    <p>The key event action taken when using custom pages is listening for <code>onBeaconPageLoad</code>. The reason is that you want to listen for that event, then check to see if the page loaded is your custom page. If it is, populate the page with your content. The code below shows the implementation of that logic.</p>
+    <pre class="line-numbers"><code class="language-javascript" translate="No">window.addEventListener("message", (event) => {
+  const originsAllowed = [
+    'https://beacon-web.ott.us-east-1.qa.deploys.brightcove.com'
+  ];
+  if (originsAllowed.includes(event.origin)) {
+    if (event.data.event == 'onBeaconPageLoad') {
+      <span class="bcls-highlight">if (event.data.data.slug == '24849-custom-for-plugin')</span> {
+        populateCustomPage(pageContent);
+      }
+    }
+  }
+},
+  false
+);</code></pre>
+    <p>In this case, <code>populateCustomPage()</code> is a user defined function. This function is detailed in the next section.</p>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="Adding_HTML_content">Adding HTML content</h2>
+    <p>The custom page is populated with HTML. The question then becomes, how should the content be generated? There are numerous approaches, two of which are:</p>
+    <ul>
+      <li>Build your HTML as a long, concatenated string, then assign it to the page.</li>
+      <li>Use a templating engine built for dynamically generating HTML, like <a href="https://handlebarsjs.com/">handlebars.js</a>. For alternatives to <em>handlebars.js</em> search for <em>JavaScript templating engines</em>.</li>
+    </ul>
+
+    <p>In this document and other examples in the <em>Beacon Plugins</em> documentation on this site, the first approach is taken. This works fine for the simple, short examples shown, but for more complex HTML of greater length a templating engine would most likely be a better fit.</p>
+    <p>Once you decide how to build your HTML, the next question is how to place it in the custom page? The key to answering this question is the <code>custom_page_area</code> selector. A <code>&lt;div&gt;</code> is created on the custom page as a target for your HTML.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/ott-plugins/custom-pages/console-div.png" alt="div in console">
+    </figure>
+
+    <p>The example at the start of this document shows a custom page with some text and an image. Here is the code that generated that page:</p>
+    <pre class="line-numbers"><code class="language-javascript" translate="No">var customPageArea = document.getElementById(&apos;custom_page_area&apos;),
+  pageContent = &apos;&lt;h2&gt; This is content in the &lt;em&gt;custom page&lt;/em&gt; passed as a parameter from a data file&lt;/h2&gt;&lt;br&gt;&apos;
+    + &apos;&lt;p&gt;You can build your HTML in many ways and the page can contain the content you choose. You are NOT limited to the page types shown in the page layout UI.&lt;/p&gt;&lt;br&gt;&apos;
+    + &apos;&lt;p&gt;Even use images!&lt;/p&gt;&apos;
+    + &apos;&lt;img src=&quot;https://solutions.brightcove.com/bcls/beacon-plugins/yachats-far.png&quot;&gt;&apos;;
+customPageArea.insertAdjacentHTML(&apos;afterbegin&apos;, pageContent);</code></pre>
+    <p>An explanation of the code follows:</p>
+    <ul>
+      <li>Line 1: Assign a variable the element (which in this case is a <code>&lt;div&gt;</code>) which has an ID of <code>custom_page_area</code>.</li>
+      <li>Lines 2-5: Assign a variable the desired HTML where each line of HTML is a separate string concatenated to the other HTML using the JavaScript concatenation operator (a plus sign). You could also just have all the HTML on a single line, but you cannot use separate lines without the string concatenation.</li>
+      <li>Line 6: Assign the HTML to the retrieved <code>&lt;div&gt;</code> using the <code>insertAdjacentHTML()</code> method.</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--tip language-editable">The <code>insertAdjacentHTML()</code> method is used because it does not reparse the element it is being used on, and thus it does not corrupt the existing elements inside that element. This avoids the extra step of serialization, making it much faster than direct <code>innerHTML</code> manipulation.</aside>
+    <h3>Styling the HTML</h3>
+    <p>If you wish to style the HTML, you can place the style in the <strong>index.css</strong> file. For instance, the page shown at the top of this document uses this CSS:</p>
+    <pre class="line-numbers"><code class="language-css" translate="No">#custom_page_area {
+  margin-left: 15px;
+  color: darkblue;
+  background-color: beige;
+}</code></pre>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="Module_implementation">Module implementation</h2>
+    <p>The following module shows a very simple way to build your HTML and place it in your custom page. This module could also be used to implement your <em>handlebars.js</em> templates to build more sophisticated pages.</p>
+    <pre class="line-numbers"><code class="language-javascript" translate="No">const populateCustomPage = () =&gt; {
+    
+  var customPageArea = document.getElementById(&apos;custom_page_area&apos;),
+    pageContent = &apos;&lt;h2&gt; This is content in the &lt;em&gt;custom page&lt;/em&gt; passed as a parameter from a data file&lt;/h2&gt;&lt;br&gt;&apos;
+      + &apos;&lt;p&gt;You can build your HTML in many ways and the page can contain the content you choose. You are NOT limited to the page types shown in the page layout UI.&lt;/p&gt;&lt;br&gt;&apos;
+      + &apos;&lt;p&gt;Even use images!&lt;/p&gt;&apos;
+      + &apos;&lt;img src=&quot;https://solutions.brightcove.com/bcls/beacon-plugins/yachats-far.png&quot;&gt;&apos;;
+  customPageArea.insertAdjacentHTML(&apos;afterbegin&apos;, pageContent);
+    
+};
+    
+export { populateCustomPage };</code></pre>
+  </section>
+
+
+</article>
