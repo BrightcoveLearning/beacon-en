@@ -1,31 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="In this topic you will learn how to automatically generate video captions." />
-
-  <title>Automatically Generating Captions for Videos</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-<link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic, you will learn how to create and send notifications to the users of your Brightcove Beacon apps.">
+  
+  <title>Sending Beacon App Notifications</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   
-  <script src="/assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
-  <link rel="stylesheet" href="/assets/css/local.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
+
 <body class="body">
+
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
@@ -50,11 +60,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
       
       
-      <li class="breadcrumb-item"><a href="/media/">Media</a></li>
+      <li class="breadcrumb-item"><a href="/registered-users/">Registered users</a></li>
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Automatically Generating Captions for Videos</li>
+      <li class="breadcrumb-item active" aria-current="page">Sending Beacon App Notifications</li>
       
       
     </nav>
@@ -1462,144 +1472,322 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
+<h1>Sending Beacon App Notifications</h1>
 <article class="bcls-article">
-  <h1>Automatically Generating Captions for Videos</h1>
-  <summary>In this topic you will learn how to automatically generate video captions.</summary>
+  <summary>In this topic, you will learn how to create and send notifications to the users of your Brightcove Beacon apps.</summary>
+
   <section class="bcls-section">
-    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1710999192206152489">&nbsp;</div>
-    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
-    <p>Beacon Studio provides the ability to automatically generate video captions for newly uploaded or existing videos. After the caption files are generated, they are automatically configured as part of the video's text tracks properties. Brightcove recommends <a href="#review">reviewing the generated captions</a> for accuracy. Processing time to generate the captions will vary but  it generally takes about 1.5x the length of the video to generate  captions for a video. </p>
-    <p>In order to generate captions, the following are required:</p>
+    <h2 id="Introduction">Introduction</h2>
+    <p>A registered user is someone who has created an account with your Brightcove Beacon app. This can be a free account or a paid subscription.</p>
+    <p>When a registered user has a question or a problem with their account, you can quickly look them up using a smart search, and verify their details. The first thing you will see is a list of registered users. </p>
+    <p>Click an <strong>E-mail</strong> link in the list to display more information about the user. For each user, you will have the following tab sections:</p>
     <ul>
-      <li>The videos must have been transcoded using a Context Aware or Dynamic Delivery ingest profile</li>
-      <li> The minimum length of a video to generate auto captions is:
-        <ul>
-          <li>5 seconds, if the language is specified</li>
-          <li>15 seconds, if the language is auto-detected</li>
-        </ul>
-      </li>
-      <li>The maximum length of a video that can be auto-captioned is 4 hours</li>
+      <li><strong>Overview</strong></li>
+      <li><strong>Viewing history</strong></li>
+      <li><strong>Subscriptions</strong></li>
+      <li><strong>Active sessions</strong></li>
+      <li><strong>Profiles</strong></li>
+      <li><strong>Delete and forget</strong></li> 
     </ul>
-    <p>Brightcove Beacon uses the follow process to determine the source that will be used to generate the captions.</p>
+   <p>You can also export detailed data about your registered users. This data can be used to help you manage email marketing campaigns, and customer relationship programs.</p>
+   <ul>
+     <li><strong>Export</strong></li>
+   </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Users_list">Users list</h2>
+    <p>In Beacon Studio, in the primary navigation, click <strong>Registered Users</strong> to view a list of users for your account.</p>
+    <aside class="bcls-aside bcls-aside--information">The users list will only contain the users that you have searched for and viewed their details.
+     If you don't see a user in the list, start typing either the user's email address or name in the <strong>Find users</strong> field.</aside>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Overview"
+        src="/assets/images/registered-users/users-list.png"
+      />
+    </figure>
+    <h4>Actions</h4>
+    <p>For user details, do either:</p>
     <ul>
-      <li>If the video has default audio track, that will be used as the captions source file (supported by default in the Media module)</li>
-      <li>If the video has no default audio track but a master/mezzanine file exists, that will be used as the  source file (supported by default in the Media module)</li>
-      <li>If the video has no default audio track or master/mezzanine files, but audio tracks are specified in the Dynamic Ingest call, the specified audio track will be used  (not yet supported in the Media module)</li>
-      <li>If the video has no default audio track, no master/mezzanine files, and no audio track is specified, captions cannot be generated</li>
+      <li>Click an <strong>E-mail</strong> link in the <strong>Users</strong> list</li>
+      <li>In the search box, start typing either an email address or a user name; select a user from the results list</li>
     </ul>
-    <p>If you are using a third-party to generate caption files, see <a href="adding-captions-videos-using-media-module.html">Adding Captions to Videos using the Media Module</a> for information on how to associate caption files with videos.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: Please contact your Brightcove Account Manager to have this feature enabled.</aside>
+    <p>Detailed information about a specific user is described in the following sections of this document.</p>
+    <!-- <ol class="bcls-tasklist-restart">
+      <li>In the search box, start typing either an email address or a user name, and select a user from the results list.</li>
+      <li>Click an <strong>E-mail</strong> link in the list to display more information about the user, as described in the following sections of this document.</li>
+    </ol> -->
   </section>
+  
   <section class="bcls-section">
-    <h2 id="upload">Generating captions when uploading videos</h2>
-    <p>The Upload module provides an option to generate caption files when videos are uploaded. To generate a caption file during upload, follow these steps.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Upload</strong> in the navigation header to open the Upload module.</li>
-      <li>Enable the <strong>Auto captioning</strong> option, the <strong>Automatic captioning settings </strong>dialog will open.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/gen-captions-settings.png" /></figure>
-      </li>
-      <li>Select the <strong>Language</strong> to generate the captions in. If a <strong>Language</strong> is not selected, the video language is auto-detected. Selecting a language will improve the caption file generation time and may improve overall accuracy.</li>
-      <li>Enter a <strong>Label</strong>. The label is typically set to the language used in the video. The label will be displayed in the CC dropdown in the video player and will be used by viewers to select the captions to be displayed.</li>
-      <li>Click <strong>Done</strong>.</li>
-    </ol>
+    <h2 id="Overview">Overview</h2>
+    <p>The <strong>Overview</strong> tab displays general information about the selected user, including the plan names they have signed up for, and their parental control setting.</p>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Overview"
+        src="/assets/images/registered-users/overview.png"
+      />
+    </figure>
+
+    <h4>Fields</h4>
+    <ul>
+      <li><strong>Email</strong> - Email address for this user</li>
+      <li><strong>Name</strong> - First and last name of the user</li>
+      <li><strong>Last Login</strong> - Date when the user was last logged into your app</li>
+      <li><strong>Plan</strong> - A list of subscription plans that the user is signed up for</li>
+      <li><strong>Parental Control</strong> - Whether the user has turned on parental controls for their account, and if a pin is required for access</li>
+    </ul>
+    <h4>Actions</h4>
+    <ul>
+      <li>Click a <strong>Plan</strong> name to see details</li>
+    </ul> 
+
+    <h3>Plan Details</h3>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        width="400"
+        alt="Plan information"
+        src="/assets/images/registered-users/plan-information.png"
+      />
+    </figure>
+    <h4>Fields</h4>
+    <ul>
+      <li><strong>Name</strong> - Subscription plan name</li>
+      <li><strong>Description</strong> - Summary of the subscription plan</li>
+      <li><strong>Status</strong> - Current status of the plan (whether it is published or not), and the user's subscription status</li>
+      <li><strong>Options</strong> - Additional plan options available for the user</li>
+    </ul>
   </section>
+
   <section class="bcls-section">
-    <h2 id="existing">Generating captions for an existing video</h2>
-    <p>The Media module provides the option to generate  caption files for existing videos in your account.  To generate a caption file for an existing video, follow these steps.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Media</strong> in the navigation header to open the Media module.</li>
-      <li>Click the link for the video you want to edit to open the video properties.</li>
-      <li>Locate the <strong>Text Tracks</strong> section and click <strong>Edit</strong>.</li>
-      <li>Select the <strong>Auto caption</strong> option.</li>
-      <li>Select the <strong>Language</strong> to generate the captions in. If a <strong>Language</strong> is not selected, the video language is auto-detected. Selecting a language will improve the caption file generation time and may improve overall accuracy.</li>
-      <li>Enter a <strong>Label</strong>. The label is typically set to the language used in the video. The label will be displayed in the CC dropdown in the video player and will be used by viewers to select the captions to be displayed.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/gen-captions-auto-caption.png" /></figure>
-      </li>
-      <li>Click <strong>Add Text Track</strong>.</li>
-      <li>Click <strong>Save</strong>.</li>
-    </ol>
-    <p>The caption generation process will begin. When complete, a message will be displayed.</p>
-    <p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/gen-captions-complete.png" /></figure>
-    </p>
-    <p>After the captions are generated, Brightcove recommends <a href="#review">reviewing the captions</a>.</p>
+    <h2 id="Viewing_history">Viewing history</h2>
+    <p><strong>Viewing history</strong> displays a list of movies that this registered user has watched. History is captured and saved for 1 year.</p>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Viewing history"
+        src="/assets/images/registered-users/viewing-history.png"
+      />
+    </figure>
+
+    <h4>Columns</h4>
+    <ul>
+      <li><strong>Date</strong> - Date that a movie was viewed; click this column header to control the results sort order (descending or ascending)</li>
+      <li><strong>Title</strong> - Name of the movie viewed</li>
+      <li><strong>Profile</strong> - Name of the user profile</li>
+    </ul>
+
+    <h4>Actions</h4>
+    <ul>
+      <li>Use the <strong>Show</strong> filter dropdown to limit display results</li>
+      <li>Click a <strong>Title</strong> name to see movie details</li>
+    </ul>
+
+    <h3>Movie details</h3>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        width="400"
+        alt="Title information"
+        src="/assets/images/registered-users/title-information.png"
+      />
+    </figure>
+    <h4>Fields</h4>
+    <ul>
+      <li><strong>Title</strong> - Name of the movie, including it's season and episode</li>
+      <li><strong>Genre</strong> - Descriptive category for the movie</li>
+      <li><strong>Released</strong> - Year the movie was released</li>
+      <li><strong>Duration</strong> - Time length of the movie in hours and minutes</li>
+      <li><strong>Available</strong> - Movie availability</li>
+      <li><strong>Plans</strong> - A list of plans that the user is subscribed to</li>
+      <li><strong>Asset ID</strong> - Unique identifier for the movie</li>
+    </ul>
+
+    <h4>Actions</h4>
+    <ul>
+      <li>Click the <strong>Asset ID</strong> number to view more details in the <strong>Media</strong> module</li>
+    </ul>
   </section>
+
   <section class="bcls-section">
-    <h2 id="multiple">Generating captions for multiple videos</h2>
-    <p>The Media module also provides the option to generate  caption files for multiple videos at once.  A maximum of 100 videos can be captioned at once. To generate a caption files for multiple videos, follow these steps.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Media</strong> in the navigation header to open the Media module.</li>
-      <li>Select the check box next to the videos  you want to generate captions for.</li>
-      <li>Click <strong>More</strong> &gt; <strong>Auto caption</strong>.</li>
-    </ol>
+    <h2 id="Subscriptions">Subscriptions</h2>
+    <p>The <strong>Subscriptions</strong> tab shows a list of subscription plan purchases and changes for a registered user. This includes plan trial periods.</p>
+  
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Subscriptions"
+        src="/assets/images/registered-users/subscriptions.png"
+      />
+    </figure>
+
+    <h4>Columns</h4>
+    <ul>
+      <li><strong>Plan name</strong> - Subscription plan name</li>
+      <li><strong>Store name</strong> - App store name</li>
+      <li><strong>Status</strong> - Current subscription status; values: <strong>In Trial</strong>, <strong>Pending</strong> or <strong>Active</strong></li>
+      <li><strong>Start</strong> - Start date for the associated subscription</li>
+      <li><strong>Trial ends</strong> - End date for the user's trial period</li>
+      <li><strong>Ends</strong> - End date for the associated subscription</li>
+      <li><strong>Canceled</strong> - Date that the subscription was canceled</li>
+    </ul>
+    <h4>Actions</h4>
+    <ul>
+      <li>Use the <strong>Show</strong> filter dropdown to limit display results</li>
+      <li>Click the <strong>Plan name</strong> to view more details about the plan</li>
+    </ul>
+
+    <h3>Plan Details</h3>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        width="400"
+        alt="Plan information"
+        src="/assets/images/registered-users/plan-information.png"
+      />
+    </figure>
+    <h4>Fields</h4>
+    <ul>
+      <li><strong>Name</strong> - Subscription plan name</li>
+      <li><strong>Description</strong> - Summary of the subscription plan</li>
+      <li><strong>Status</strong> - Current status of the plan (whether it is published or not), and the user's subscription status</li>
+      <li><strong>Options</strong> - Additional plan options available for the user</li>
+    </ul>
   </section>
+
   <section class="bcls-section">
-    <h2 id="review">Reviewing caption files</h2>
-    <p>After the caption files are generated, they are automatically configured as part of the video's text tracks properties. Captions  will have a status of <strong>Published</strong> and appear immediately during video playback. Brightcove recommends reviewing the generated captions.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Media</strong> in the navigation header to open the Media module.</li>
-      <li>Click on the video to open the video properties.</li>
-      <li>At the top of the page, click the <strong>CC</strong> button to open the caption editor.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/capedit-cc-icon.png" /></figure>
-      </li>
-      <li>Click <strong>Save draft</strong>. This will set the caption status to <strong>Draft</strong> and the captions will not be displayed.</li>
-    </ol>
-    <p>The <a href="using-the-caption-editor.html">caption editor</a> can be used to make any needed edits to the captions. When done, click <span class="button-blue">Publish text track</span> to publish the text tracks.</p>
+    <h2 id="Purchases">Purchases</h2>
+    <p>The <strong>Purchases</strong> tab shows a list of in-app purchases for a registered user.</p>
+
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Purchases"
+        src="/assets/images/registered-users/purchases.png"
+      />
+    </figure>
+
+    <h3>Columns</h3>
+    <ul>
+      <li><strong>Date</strong> - Date when the user made an in-app purchase</li>
+      <li><strong>Product description</strong> - Description for the item purchased by the user</li>
+      <li><strong>Type</strong> - Type of purchase</li>
+      <li><strong>Store Name</strong> - Name of the online store where the product was purchased</li>
+    </ul>
   </section>
+
   <section class="bcls-section">
-    <h2 id="download">Downloading caption files</h2>
-    <p>Chances are the caption generation process will not be perfect and you may need to edit  names used in the video and/or  punctuation. The Media module provides the ability to download  caption files. To download a caption file, follow these steps.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Media</strong> in the navigation header to open the Media module.</li>
-      <li>Click the link for the video you want to edit.</li>
-      <li>Locate the <strong>Text Tracks</strong> section and click <strong>Edit</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/gen-captions-edit-text-track.png" /></figure>
-      </li>
-      <li>Click the download icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-download.png" />) in the <strong>Actions</strong> column to download the caption file.</li>
-    </ol>
-    <p>The caption file is a formatted WEBVTT file and can be edited using any text editor. Once the changes are made, delete the existing caption file by clicking on the delete icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-red-delete.png" />) in the <strong>Actions</strong> column. The edited caption file can then be uploaded. For information on how to upload a new text tracks file, see <a href="adding-captions-videos-using-media-module.html#texttrack">Configuring the text track properties</a>.</p>
+    <h2 id="Active_sessions">Active sessions</h2>
+    <p>View a list of active sessions associated with a registered user.</p>
+
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Active sessions"
+        src="/assets/images/registered-users/active-sessions.png"
+      />
+    </figure>
+
+    <h3>Columns</h3>
+    <ul>
+      <li><strong>Date</strong> - Date when a session was started; click this header to control the results sort order (descending or ascending)</li>
+      <li><strong>Device</strong> - Type of device being used for a session</li>
+      <li><strong>Start time</strong> - Time when a session was started</li>
+      <li><strong>End Session</strong> - Click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a session to delete it</li>
+    </ul>
+    <h3>Actions</h3>
+    <ul>
+      <li>Click <strong>End all sessions</strong> to terminate all currently active user sessions</li>
+    </ul>
   </section>
+
   <section class="bcls-section">
-    <h2 id="supported_languages">Supported languages</h2>
-    <p>Currently, auto captions are limited to the following languages.</p>
-    <table>
-      <tr>
-        <td width="311"><ul>
-            <li>Arabic (Gulf)</li>
-            <li>Arabic (Modern Standard)</li>
-            <li>Chinese (Mandarin)</li>
-            <li>Dutch</li>
-            <li>English (Australian)</li>
-            <li>English (British)</li>
-            <li>English (Indian)</li>
-            <li>English (Irish)</li>
-            <li>English (US)</li>
-            <li>Farsi</li>
-            <li>French</li>
-            <li>French (Canadian)</li>
-            <li>German</li>
-            <li>German (Swiss)</li>
-            <li>Hebrew</li>
-          </ul></td>
-        <td width="255"><ul>
-            <li>Hindi (Indian)</li>
-            <li>Indonesian</li>
-            <li>Italian</li>
-            <li>Japanese</li>
-            <li>Korean</li>
-            <li>Malay</li>
-            <li>Portuguese</li>
-            <li>Portuguese (Brazilian)</li>
-            <li>Russian</li>
-            <li>Spanish</li>
-            <li>Spanish (US)</li>
-            <li>Tamil</li>
-            <li>Telugu</li>
-            <li>Turkish</li>
-          </ul></td>
-      </tr>
-    </table>
+    <h2 id="Profiles">Profiles</h2>
+    <p>View a list of user profiles associated with a registered user.</p>
+
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Profiles"
+        src="/assets/images/registered-users/profiles.png"
+      />
+    </figure>
+
+    <h3>Columns</h3>
+    <ul>
+      <li><strong>Profile</strong> - Name of the profile</li>
+      <li><strong>Created</strong> - Creation date and time</li>
+      <li>
+        <p><strong>Remove Profile</strong> - Click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a profile to delete it</p>
+        <aside class="bcls-aside bcls-aside--information"><strong>Notes:
+          <ul>
+            <li>The main profile can not be deleted</li>
+            <li>Activity and data related to this profile will no longer be tracked</li>
+          </ul> </strong>
+        </aside>
+      </li> 
+    </ul> 
+
+    <!-- <h3>Actions</h3>
+    <ul>
+      <li><strong>Remove Profile</strong> - Click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a profile to delete it</li>
+    </ul> -->
   </section>
+
+  <section class="bcls-section">
+    <h2 id="Delete_and_forget">Delete and forget</h2>
+    <p>This action is used for <a href="https://gdpr.eu/">GDPR compliance</a>, when a user requests that their personal data be erased.</p>
+    <aside class="bcls-aside bcls-aside--warning"><strong>WARNING: Deleting a viewer will delete all related data and permissions. This CANNOT be undone!</strong></aside>
+
+    <h3>Steps</h3>
+      <ol class="bcls-tasklist">
+        <li>
+          <p>Click <strong>Delete and forget</strong>.</p>
+          <figure class="bcls-figure">
+            <img
+              class="bcls-image--no-border"
+              alt="Delete and forget"
+              src="/assets/images/registered-users/delete-and-forget.png"
+            />
+          </figure>
+        </li>
+        <li>
+          <p>To continue, type <strong>Delete</strong> in the text area.</p>
+          <figure class="bcls-figure">
+            <img
+              class="bcls-image--no-border"
+              alt="Delete and forget dialog"
+              src="/assets/images/registered-users/delete_dialog.png"
+            />
+          </figure>
+        </li>
+        <li>To confirm, click <strong>Delete and forget</strong>.</li>  
+      </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Export">Export</h2>
+    <p>For your convenience, you can export detailed data about your registered users as a CSV file. You can then open this file in a spreadsheet program to manage email marketing campaigns, and customer relationship programs.</p>
+
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Export user data"
+        src="/assets/images/registered-users/export.png"
+      />
+    </figure>
+
+    <h3>Actions</h3>
+    <p>Select <strong>Export</strong> for one of the following: (You will be prompted to filter the data that you want to include)</p>
+    <ul>
+      <li><strong>All registered users</strong> - Export data for all registered users</li>
+      <li><strong>New Users</strong> - Export data for new registered users within the past month</li>
+    </ul>
+  </section> 
+
 </article>
 
 <!-- complete bootstrap layout -->
