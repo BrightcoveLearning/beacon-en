@@ -572,6 +572,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                           
                         
                           
+                            <li><a href="/channels/cloud-playout/configuring-s3-buckets.html">Configuring S3 Buckets</a></li>
+                          
+                        
+                          
+                            <li><a href="/channels/cloud-playout/channel-live-redundancy.html">Using Live Redundancy with Channels</a></li>
+                          
+                        
+                          
                             <li><a href="/channels/cloud-playout/cloud-playout-add-content.html">Managing the Channel Program</a></li>
                           
                         
@@ -1511,7 +1519,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist-restart" style="--s:1">
       <li>Click <strong>Cloud Playout</strong> in the navigation header.</li>
       <li>
-        Click <img src="/assets/images/cloud-playout/cloudplayout-add-new.png" alt="add new" class="ui-image">:
+        Click <span class="button-blue">Add New</span>:
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-new-channel-dialog.png" alt="New Channel">
           <figcaption class="bcls-caption--image">New Channel</figcaption>
@@ -1527,7 +1535,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Enter the channel <strong>Schedule</strong> details.
         <ul>
           <li><strong>Loop Playout Content</strong> - If <strong>On</strong>, the program will be played in a loop and the <strong>End Date/Time</strong> will be enabled. The program can still be modified at any time and the changes will be reflected in the current program and the loops to follow. See the <a href="#looping">Creating a looping program</a> section below.</li>
-          <li><strong>Ad Insertion</strong> - If on, allows ads to be displayed during channel playback. If this option is selected, Live inputs are not allowed, and you can only output to a <strong>Brightcove Live Event</strong> or <strong>Amazon S3 Bucket</strong>. See <a href="/channels/cloud-playout/enabling-server-side-ads.html">Monetizing Content</a>.</li>
+          <li><strong>Ad Insertion</strong> - If on, allows ads to be displayed during channel playback. If this option is selected, you can only output to a <strong>Brightcove Live Event</strong> or <strong>Amazon S3 Bucket</strong>. See <a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Content</a>.</li>
           <li>
             <strong>Start Date/Time</strong> - Time when the channel will start playing out. The start time for all assets will be calculated by adding their duration to this start time. This time can be updated only when the channel is not in running state.
             <aside class="bcls-aside bcls-aside--warning language-editable">Note: it takes 1-2 minutes for the initial startup of a channel, so if the start is time-sensitive, schedule it for 2 minutes before the time you want to initiate playback.</aside>
@@ -1535,6 +1543,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li><strong>End Date/Time</strong> - If no value is entered and <strong>Loop Playout Content</strong> is not selected, the stream will end once the playout is complete. If <strong>Loop Playout Content</strong> is selected and there is no <strong>End Date/Time</strong>, the playout will be streamed until the channel is stopped. This time can be updated at any time.</li>
         </ul>
       </li>
+      <li>If you will be using Live inputs, set <strong>Live Input</strong> to On, and enter a Slate URL, unless you are going to use the default Brightcove MP4 for you slate. The slate MP4 will play whenever Live input is stopped because the encoder is stopped or some technical issue blocks the live stream. <strong>Note that <strong>the Slate URL must be a static URL that is always available</strong> (short-lived CDN URLs are not allowed).</strong></li>
       <li>
         Import closed captions is enabled by default; if you do not want to import captions, disable it now or while the channel is in DRAFT state:
         <figure class="bcls-figure">
@@ -1555,8 +1564,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li><strong>Output to</strong> - Select an output method for the channel
             <ul>
               <li><strong>Brightcove Live Event</strong> - Create or use a previously created Brightcove Live Channel. When creating a new channel, the region of the channel will be optimized based upon the <strong>Output Region</strong> that was selected.</li>
+                <aside class="bcls-aside bcls-aside--information language-editable">If you are using Brightcove Live, you can also set the destination as a redundant group to get automatic failover for uninterrupted, reliable playback. See <a href="/cloud-playout/channel-live-redundancy.html">Using Live Redundancy with Channels</a> for more details.</aside>
+              </li>
               <li><strong>RTMP</strong> - this destination is <strong>not compatible with Beacon.</strong></li>
-              <li><strong>Amazon S3 Bucket </strong> - You can select this destination <strong>in addition to Brightcove Live Event, but not as the only destination</strong>. This option will push an HLS output to an Amazon S3 bucket. You will be required to enter Bucket Name, Region, Access Key and Secret Key. The bucket should be public and writeable.</li>
+              <li><strong>Amazon S3 Bucket </strong>- Select to push an HLS output to an Amazon S3 bucket. You will be required to enter Bucket Name, Region, Access Key and Secret Key. The bucket should be public and writeable. To avoid entering all this information every time you create a channel see <a href="/cloud-playout/configuring-s3-buckets.html">Configuring S3 Buckets</a>.</li>
             </ul>
             <aside class="bcls-aside bcls-aside--information">Note that outputting to <strong>Brightcove Live Event</strong> will automatically generate live hours for your account, which are billable. There is no addition charge for using Cloud Playout, but normal charges for live streaming hours apply.
             </aside>
@@ -1590,6 +1601,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-rtmp-ingest-point.png" alt="Ingest Point">
       <figcaption class="bcls-caption--image">Ingest Point</figcaption>
     </figure>
+    <aside class="bcls-aside bcls-aside--warning language-editable">
+      Please note that Cloud Playout uses a CNAME mapping for the ingest point but in rare cases this mapping may not be complete and the channel may temporarily show an IP Address. Check the channel settings before starting a live stream to the channel and wait until the Ingest Point shows a CNAME if you see an IP address such as the one below:
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/cloud-playout/ingest-point-ip-address.png" alt="Ingest Point with IP Address">
+        <figcaption class="bcls-caption--image">Ingest Point with IP Address</figcaption>
+      </figure>
+    </aside>
     <p>Depending on the encoder you are using, you may need to enter both the RTMP ingest point and the stream name. The stream name for the channel is the <strong>Channel ID</strong>, which is also the last part of the Ingest Point address.</p>
     <aside class="bcls-aside bcls-aside--information">Note that if you are using the OBS software encoder, you will need to specify a <strong>Custom...</strong> service, and will need to input a <strong>Server</strong> and <strong>Stream Key</strong>. The <strong>Server</strong> will be the first part of the <strong>Ingest Point</strong>, and the <strong>Steam Key</strong> will be the remaining part, as shown in the example below:
       <figure class="bcls-figure">
