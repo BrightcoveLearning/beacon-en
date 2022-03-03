@@ -64,7 +64,7 @@ parent: Cloud Playout
       <li>Enter the channel <strong>Schedule</strong> details.
         <ul>
           <li><strong>Loop Playout Content</strong> - If <strong>On</strong>, the program will be played in a loop and the <strong>End Date/Time</strong> will be enabled. The program can still be modified at any time and the changes will be reflected in the current program and the loops to follow. See the <a href="#looping">Creating a looping program</a> section below.</li>
-          <li><strong>Ad Insertion</strong> - If on, allows ads to be displayed during channel playback. If this option is selected, you can only output to a <strong>Brightcove Live Event</strong> or <strong>Amazon S3 Bucket</strong>. See <a href="/cloud-playout/enabling-server-side-ads.html">Monetizing Content</a>.</li>
+          <li><strong>Ad Insertion</strong> - If on, allows ads to be displayed during channel playback. If this option is selected, you can only output to a <strong>Brightcove Live Event</strong> or <strong>Amazon S3 Bucket</strong>. See <a href="/channels/cloud-playout/enabling-server-side-ads.html">Monetizing Content</a>.</li>
           <li>
             <strong>Start Date/Time</strong> - Time when the channel will start playing out. The start time for all assets will be calculated by adding their duration to this start time. This time can be updated only when the channel is not in running state.
             <aside class="bcls-aside bcls-aside--warning language-editable">Note: it takes 1-2 minutes for the initial startup of a channel, so if the start is time-sensitive, schedule it for 2 minutes before the time you want to initiate playback.</aside>
@@ -93,10 +93,10 @@ parent: Cloud Playout
           <li><strong>Output to</strong> - Select an output method for the channel
             <ul>
               <li><strong>Brightcove Live Event</strong> - Create or use a previously created Brightcove Live Channel. When creating a new channel, the region of the channel will be optimized based upon the <strong>Output Region</strong> that was selected.</li>
-                <aside class="bcls-aside bcls-aside--information language-editable">If you are using Brightcove Live, you can also set the destination as a redundant group to get automatic failover for uninterrupted, reliable playback. See <a href="/cloud-playout/channel-live-redundancy.html">Using Live Redundancy with Channels</a> for more details.</aside>
+                <aside class="bcls-aside bcls-aside--information language-editable">If you are using Brightcove Live, you can also set the destination as a redundant group to get automatic failover for uninterrupted, reliable playback. See <a href="/channels/cloud-playout/channel-live-redundancy.html">Using Live Redundancy with Channels</a> for more details.</aside>
               </li>
               <li><strong>RTMP</strong> - this destination is <strong>not compatible with Beacon.</strong></li>
-              <li><strong>Amazon S3 Bucket </strong>- Select to push an HLS output to an Amazon S3 bucket. You will be required to enter Bucket Name, Region, Access Key and Secret Key. The bucket should be public and writeable. To avoid entering all this information every time you create a channel see <a href="/cloud-playout/configuring-s3-buckets.html">Configuring S3 Buckets</a>.</li>
+              <li><strong>Amazon S3 Bucket </strong>- Select to push an HLS output to an Amazon S3 bucket. You will be required to enter Bucket Name, Region, Access Key and Secret Key. The bucket should be public and writeable. To avoid entering all this information every time you create a channel see <a href="/channels/cloud-playout/configuring-s3-buckets.html">Configuring S3 Buckets</a>.</li>
             </ul>
             <aside class="bcls-aside bcls-aside--information">Note that outputting to <strong>Brightcove Live Event</strong> will automatically generate live hours for your account, which are billable. There is no addition charge for using Cloud Playout, but normal charges for live streaming hours apply.
             </aside>
