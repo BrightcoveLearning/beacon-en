@@ -1501,9 +1501,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>There are Video Cloud and Beacon variations of both playlist types.</p>
     <ul>
       <li> <strong>Video Cloud playlists</strong> - Can <strong>only</strong> contain videos</li>
-      <li> <strong>Beacon playlists</strong> - Can contain videos and other entities (i.e. live events, series, seasons, etc.). </li>
+      <li> <strong>OTT playlists</strong> - Can contain videos and other entities (i.e. live events, series, seasons, etc.). </li>
     </ul>
-    <p>Brightcove recommends that playlists that contain only videos be created as Video Cloud playlists even though Beacon playlists can contain only videos. There is no limit to the number of playlists that can be created. The assets that are initially loaded into a playlist in the player is determined by the type of playlist:</p>
+    <p>Brightcove recommends that playlists that contain only videos be created as Video Cloud playlists even though OTT playlists can contain only videos. There is no limit to the number of playlists that can be created. The assets that are initially loaded into a playlist in the player is determined by the type of playlist:</p>
     <ul>
       <li><strong>Manual </strong> - Assets are loaded into the playlist based upon the order of the items in the  playlist</li>
       <li><strong>Smart </strong> - Assets are loaded into the playlist based upon the <strong>Play Order</strong> playlist setting </li>
@@ -1511,7 +1511,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="view">Viewing all  playlists</h2>
-    <p>To view all the playlists in the account, in the side navigation panel, click <strong>All Video Cloud playlists</strong> or <strong>All Beacon playlists</strong>. <strong>All Video Cloud playlists</strong> will display all the Video Cloud playlists that have been created. <strong>All Beacon playlists</strong> will display all the Beacon playlists <strong>AND</strong> the Video Cloud playlists that have been ingested to Beacon (<strong>Beacon ingest</strong> column with a <img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-green-check.png" />). </p>
+    <p>To view all the playlists in the account, in the side navigation panel, click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong>. <strong>All Video Cloud playlists</strong> will display all the Video Cloud playlists that have been created. <strong>All OTT playlists</strong> will display all the OTT playlists <strong>AND</strong> the Video Cloud playlists that have been ingested to Beacon (<strong>Beacon ingest</strong> column with a <img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-green-check.png" />). </p>
     <p>For Video Cloud playlists, the page will display:</p>
     <ul>
       <li><strong>Playlist name</strong> - Name of the playlist</li>
@@ -1520,7 +1520,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Updated date</strong> - Date the playlist was last updated</li>
       <li><strong>Video Count</strong> - Number of videos in the playlist</li>
     </ul>
-    <p>For Beacon playlists, the page will display:</p>
+    <p>For OTT playlists, the page will display:</p>
     <ul>
       <li><strong>Playlist name</strong> - Name of the playlist</li>
       <li><strong>Status</strong> - Published (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-green-eye.png" />) or unpublished (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-red-eye.png" />)</li>
@@ -1544,7 +1544,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <ul>
           <li><strong>Language View</strong> (Beacon only) - Select a language to enter Overview settings in a localized language</li>
           <li><strong>Name</strong> - Playlist name</li>
-          <li><strong>Title</strong> (Beacon playlists only) - Playlist title displayed in Beacon apps</li>
+          <li><strong>Title</strong> (OTT playlists only) - Playlist title displayed in Beacon apps</li>
           <li><strong>Reference ID</strong> (Video Cloud playlists only) - A unique ID assigned by a publisher to a playlist</li>
           <li><strong>Description</strong> - Playlist description</li>
           <li><strong>Show Playlist in Sidebar</strong> (Video Cloud playlists only) - If checked, the playlist will appear in the sidebar
@@ -1554,15 +1554,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>The playlist panel will contain other settings that can be configured based upon the type of playlist:
         <ul>
-          <li>Smart (available for <a href="#vc-smart-props">Video Cloud</a> and <a href="#beacon-smart-props">Beacon</a> playlists)</li>
-          <li><a href="#availability">Availability</a> (Beacon playlists only)</li>
+          <li>Smart (available for <a href="#vc-smart-props">Video Cloud</a> and <a href="#beacon-smart-props">OTT </a> playlists)</li>
+          <li><a href="#availability">Availability</a> (OTT playlists only)</li>
         </ul>
       </li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="beacon-smart-props">Configuring Beacon smart playlist settings</h2>
-    <p>If you are creating a Beacon smart playlist, click the <strong>Smart</strong> tab to configure the smart playlist settings. The <strong>Parameters</strong> section is used to define which assets will appear in the playlist. The following parameters are supported.</p>
+    <h2 id="beacon-smart-props">Configuring OTT smart playlist settings</h2>
+    <p>If you are creating a OTT smart playlist, click the <strong>Smart</strong> tab to configure the smart playlist settings. The <strong>Parameters</strong> section is used to define which assets will appear in the playlist. The following parameters are supported.</p>
     <ul>
       <li><strong>Actors, Directors, Writers, Singers, Music composers, Song Writers</strong> - The value of one of these fields is used to define the videos in the playlist</li>
       <li><strong>Tags</strong> - Tags are used to define the videos that will appear in the playlist. Enter one or more tags (separated by commas). </li>
@@ -1590,10 +1590,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Click <strong>Apply</strong> to save the changes. </p>
   </section>
   <section class="bcls-section">
-    <h2 id="beacon-manual-add">Adding assets to a Beacon manual playlist</h2>
-    <p>To add videos to a Beacon manual playlist, follow these steps:</p>
+    <h2 id="beacon-manual-add">Adding assets to a OTT manual playlist</h2>
+    <p>To add videos to a OTT manual playlist, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>In the side navigation panel, click <strong>All Beacon playlists</strong>.</li>
+      <li>In the side navigation panel, click <strong>OTT playlists</strong>.</li>
       <li>Click on a playlist name to open the playlist details.</li>
       <li>Click <strong>Add content</strong>.</li>
       <li>Click on assets to select them. Click on the tabs at the top of the dialog to filter by content type. The search field can be used to search for assets.
@@ -1603,10 +1603,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="availability">Configuring Beacon playlist availability</h2>
-    <p>Playlist availability details can be used to restrict access to Beacon playlists based upon date, locations and devices. To view and edit the availability details for a Beacon playlist, follow these steps:</p>
+    <h2 id="availability">Configuring OTT playlist availability</h2>
+    <p>Playlist availability details can be used to restrict access to OTT playlists based upon date, locations and devices. To view and edit the availability details for a OTT playlist, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>All Beacon playlists</strong> in the panel navigation.</li>
+      <li>Click <strong>OTT playlists</strong> in the panel navigation.</li>
       <li>Click on a playlist name to open the playlist details page.</li>
       <li>Click <strong>Edit Settings</strong>.</li>
       <li>Click the <strong>Availability</strong> tab.</li>
@@ -1722,7 +1722,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <li>Open the playlist using one of these methods:
           <ul>
             <li>Click on the playlist name in the side navigation panel</li>
-            <li>Click <strong>All Video Cloud playlists</strong> or <strong>All Beacon playlists</strong> in the side navigation panel, locate the playlist and click on the playlist name.</li>
+            <li>Click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong> in the side navigation panel, locate the playlist and click on the playlist name.</li>
           </ul>
         </li>
         <li>Confirm a list of videos in the playlist appears.</li>
@@ -1748,7 +1748,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>To edit the settings for a manual or smart playlist, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>If the playlist is displayed in the side navigation panel, click on the playlist and then click the down arrow next to the playlist and click<strong> Edit Settings</strong>.</li>
-      <li>If the playlist is not displayed in the sidebar, click <strong>All Video Cloud playlists</strong> or <strong>All Beacon playlists</strong> in the side navigation panel, locate the playlist and click the on the playlist name  and then click <strong>Edit Settings</strong>.</li>
+      <li>If the playlist is not displayed in the sidebar, click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong> in the side navigation panel, locate the playlist and click the on the playlist name  and then click <strong>Edit Settings</strong>.</li>
       <li>Edit the playlist settings and then click <strong>Apply</strong>.</li>
     </ol>
   </section>
@@ -1756,7 +1756,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="delete">Deleting a playlist</h2>
     <p>To delete a playlist, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>All Video Cloud playlists</strong> or <strong>All Beacon playlists</strong> in the side navigation panel.</li>
+      <li>Click <strong>All Video Cloud playlists</strong> or <strong> OTT playlists</strong> in the side navigation panel.</li>
       <li>Click the checkbox next to the playlist to delete.</li>
       <li>Click the delete button (<img alt="" src="/assets/images/media/icon-delete.png" />).</li>
       <li>Click <strong>Delete </strong> to confirm the deletion.</li>
@@ -1770,7 +1770,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Open the manual playlist using one of these methods:
         <ul>
           <li>Click on the playlist name in the side navigation panel</li>
-          <li>Click <strong>All Video Cloud playlists</strong> or <strong>All Beacon playlists</strong> in the side navigation panel, locate the playlist and click on the playlist name.</li>
+          <li>Click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong> in the side navigation panel, locate the playlist and click on the playlist name.</li>
         </ul>
       </li>
       <li>Confirm that the list of videos in the playlist  appears.</li>
