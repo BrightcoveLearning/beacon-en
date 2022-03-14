@@ -46,7 +46,7 @@ parent: Cloud Playout
     <h2 id="channel">Creating a channel</h2>
     <p>To create a new Cloud Playout channel, follow these steps. </p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Click <strong>Cloud Playout</strong> in the navigation header.</li>
+      <li>Click <strong>Cloud Playout</strong> in the primary navigation.</li>
       <li>
         Click <span class="button-blue">Add New</span>:
         <figure class="bcls-figure">
@@ -93,15 +93,15 @@ parent: Cloud Playout
           <li><strong>Output to</strong> - Select an output method for the channel
             <ul>
               <li><strong>Brightcove Live Event</strong> - Create or use a previously created Brightcove Live Channel. When creating a new channel, the region of the channel will be optimized based upon the <strong>Output Region</strong> that was selected.</li>
-                <aside class="bcls-aside bcls-aside--information language-editable">If you are using Brightcove Live, you can also set the destination as a redundant group to get automatic failover for uninterrupted, reliable playback. See <a href="/channels/cloud-playout/channel-live-redundancy.html">Using Live Redundancy with Channels</a> for more details.</aside>
-              </li>
-              <li><strong>RTMP</strong> - this destination is <strong>not compatible with Beacon.</strong></li>
-              <li><strong>Amazon S3 Bucket </strong>- Select to push an HLS output to an Amazon S3 bucket. You will be required to enter Bucket Name, Region, Access Key and Secret Key. The bucket should be public and writeable. To avoid entering all this information every time you create a channel see <a href="/channels/cloud-playout/configuring-s3-buckets.html">Configuring S3 Buckets</a>.</li>
-            </ul>
-            <aside class="bcls-aside bcls-aside--information">Note that outputting to <strong>Brightcove Live Event</strong> will automatically generate live hours for your account, which are billable. There is no addition charge for using Cloud Playout, but normal charges for live streaming hours apply.
-            </aside>
+              <aside class="bcls-aside bcls-aside--information language-editable">If you are using Brightcove Live, you can also set the destination as a redundant group to get automatic failover for uninterrupted, reliable playback. See <a href="/channels/cloud-playout/channel-live-redundancy.html">Using Live Redundancy with Channels</a> for more details.</aside>
           </li>
+          <li><strong>RTMP</strong> - this destination is <strong>not compatible with Beacon.</strong></li>
+          <li><strong>Amazon S3 Bucket </strong>- Select to push an HLS output to an Amazon S3 bucket. You will be required to enter Bucket Name, Region, Access Key and Secret Key. The bucket should be public and writeable. To avoid entering all this information every time you create a channel see <a href="/channels/cloud-playout/configuring-s3-buckets.html">Configuring S3 Buckets</a>.</li>
         </ul>
+        <aside class="bcls-aside bcls-aside--information">Note that outputting to <strong>Brightcove Live Event</strong> will automatically generate live hours for your account, which are billable. There is no addition charge for using Cloud Playout, but normal charges for live streaming hours apply.
+        </aside>
+      </li>
+      </ul>
       </li>
       <li>Click <img src="/assets/images/cloud-playout/cloudplayout-create-channel.png" alt="create channel" class="ui-image">. The new channel will be created with a status of <strong>DRAFT</strong>.</li>
     </ol>
@@ -109,7 +109,7 @@ parent: Cloud Playout
   <section class="bcls-section">
     <h2 id="add_content">Adding content to a channel</h2>
     <p>See <a href="/channels/cloud-playout/cloud-playout-add-content.html">Managing the Channel Program</a> for information on how to add VOD content, playlists, and live events to your channel.</p>
-    <p>Also see:</p> 
+    <p>Also see:</p>
     <ul>
       <li><a href="/channels/cloud-playout/static-image-overlays.html">Adding Static Image Overlays</a></li>
       <!-- <li><a href="/channels/cloud-playout/static-image-overlays.html">Adding Dynamic Overlays</a></li> -->
@@ -121,7 +121,7 @@ parent: Cloud Playout
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-playlist-created.png" /></figure>
     <p>We strongly recommend that you make any changes to the channel in the Cloud Playout module, and <strong>do not edit the generated playlist in any way</strong>.</p>
   </section>
-  
+
   <section class="bcls-section">
     <h2 id="getting_the_rtmp_ingest_point">Getting the RTMP ingest point</h2>
     <aside class="bcls-aside bcls-aside--information language-editable">This section only applies if you are including live events in your channel.</aside>
