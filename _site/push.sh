@@ -1,5 +1,1 @@
-git submodule foreach 'git checkout main'
-git submodule foreach 'git add .'
-git submodule foreach "git commit -m '215'"
-git submodule foreach 'git pull'
-git submodule foreach 'git push'
+git submodule foreach "git checkout main ; git add . ; git commit -m '300' ; git pull ; git push"
