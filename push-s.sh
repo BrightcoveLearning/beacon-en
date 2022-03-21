@@ -1,1 +1,1 @@
-git submodule foreach "git checkout main ; git add . ; git commit -m 'intial submodule testing' ; git pull ; git push"
+git submodule foreach "git pull ; git checkout main ; git add . ; git commit -m 'intial submodule testing' ; git push"
