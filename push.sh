@@ -1,1 +1,0 @@
-git submodule foreach "git checkout main ; git add . ; git commit -m '300' ; git pull ; git push"

@@ -1558,9 +1558,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Create_two_templates">Create two templates</h2>
-    <p>A template defines how your banner and preferences dialog appear, and function, for your users. In the following steps you will create two templates, one for CCPA and one for GDPR.</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">You may not need both templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating both templates.</aside>
+    <h2 id="Create_two_templates">Create three templates</h2>
+    <p>A template defines how your banner and preferences dialog appear, and function, for your users. In the following steps you will create two templates, one for CCPA, one for GDPR and a generic one for all other regions.</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">You may not need all templates. As stated earlier, generally CCPA is used for California and GDPR for EU and UK. If you are not targeting one of these regions the corresponding template may not be needed. You should investigate your targeted geographies to check on cookie compliance regulations. The step-by-step instructions will cover creating all three templates.</aside>
     <ol class="bcls-tasklist">
       <li>In the left navigation, click <strong>Templates</strong>.
         <figure class="bcls-figure">
@@ -1609,6 +1609,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/save-template.png" alt="Save template">
         </figure>
       </li>
+      <li>Click <strong>Templates</strong> in the left navigation.</li>
       <li>Click <strong>Add New</strong> to start creation of your second template.</li>
       <li>Select the <strong>IAB Transparency and Consent Framework 2.0</strong> for the <em>Framework</em>.
         <figure class="bcls-figure">
@@ -1621,13 +1622,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/iab-agree.png" alt="IAB Agree">
         </figure>
       </li>
-      <li>Complete the form then click <strong>Create</strong>.
+      <li>Complete the form then click <strong>Create Template</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/gdpr-form.png" alt="gdpr form">
         </figure>
         <aside class="bcls-aside bcls-aside--information language-editable">Note that using <strong>GDPR</strong> in the template name makes sense as IAB standards are GDPR compliant.</aside>
       </li>
-      <li>Supply your company's logo for the banner, as shown in steps 8-10 above.</li>
+      <li>Supply your company's logo for the banner, as shown in steps 11-13 above.</li>
       <li>While still in the <em>Preference Center</em>, open the <strong>Advanced Configuration</strong> options.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/advanced-configuration.png" alt="advanced configuration">
@@ -1664,13 +1665,59 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>Click <strong>Save Template</strong>.</li>
+      <li>Click <strong>Templates</strong> in the left navigation.</li>
+      <li>Click <strong>Add New</strong> to start creation of your third template.</li>
+      <li>Select the <strong>Generic Cookie Banner</strong> for the <em>Framework</em>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/generic-template2.png" alt="new iab framework">
+        </figure>
+      </li>
+      <li>Click <strong>Next</strong>.</li>
+      <li>Complete the form then click <strong>Create Template</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/name-the-template-generic.png" alt="name generic template">
+        </figure>
+      </li>
+      <li>Supply your company's logo for the banner, as shown in steps 11-13 above.</li>
+      <li>Note that your banner now contains three buttons.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/three-buttons.png" alt="three buttons">
+        </figure>
+      </li>
+      <li>You will now alter the look of your banner:
+        <ol type="a">
+          <li>Click the <strong>Banner</strong> tab</li>
+          <li>Click <strong>Content</strong></li>
+          <li>Click <strong>Button Set</strong></li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/banner-content-buttonset.png" alt="banner content buttonset">
+        </figure>
+      </li>
+      <li>In the <em>Button Set</em> dialog, <strong>disable</strong> the following buttons:
+        <ul>
+          <li>Show Cookie Setting Button</li>
+          <li>Show Reject All Button</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/button-set-dialog.png" alt="button set dialog">
+        </figure>
+      </li>
+      <li>Click <strong>Save</strong>.</li>
+      <li>Note that the banner contains only the <em>Accept All Cookies</em> button and the close button (<strong>X</strong>).
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/banner-two-buttons.png" alt="banner two buttons">
+        </figure>
+      </li>
+      <li>Click <strong>Save Template</strong>.</li>
     </ol>
+    <p>You have now created your three templates. Note that your Generic Global template will be used in regions NOT assigned to other templates.</p>
   </section>
 
   <section class="bcls-section">
     <h2 id="Create_geolocation_rules">Create geolocation rules</h2>
     <p>Creating geolocation rules first requires that you create a geolocation rule group. The group will act as a container for the rules you create. The actual geolocation rules define cookie compliance behaviors you wish for different geographic regions.</p>
-    <ol class="bcls-tasklist-restart">
+    <ol class="bcls-tasklist">
       <li>To start the process, create a new rule group by:
         <ol type="a">
           <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
@@ -1687,6 +1734,32 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>Click <strong>Create</strong>.</li>
+      <li>To set the <em>Global</em> rule, start by clicking the edit button.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/global-rule-edit.png" alt="edit global rule">
+        </figure>
+      </li>
+      <li>Clear the <em>Template</em> input box and begin typing the name of your global template, created earlier, then select it.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/rule-generic-tempalte-selection.png" alt="select generic template">
+        </figure>
+      </li>
+      <li>For the <em>Cookie Categories</em>, select <strong>Opt-out</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/cookie-categories-opt-out.png" alt="opt out">
+        </figure>
+      </li>
+      <li>For <em>Capture Records of Consent</em> change the following:
+        <ul>
+          <li>Enable <em>Capture Records of Consent</em></li>
+          <li>Set <em>Advanced Analytics</em> to <strong>Strictly Necessary Cookies</strong></li>
+          <li>Consider checking the <em>Use this consent model if site visitor's IP address is unknown</em> checkbox if this rule acting in a global capacity.</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/capture-consent.png" alt="capture consent">
+        </figure>
+      </li>
+      <li>Click <strong>Save</strong>.</li>
       <li>To create your first actual geolocation rule, from the rule group details page, click <strong>Add Rule</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-add-rule.png" alt="geo add rule">
@@ -1765,7 +1838,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           </tbody>
         </table>
       </li>
-      <li>You may wish to create a rule that can be applied to regions NOT selected for the CCPA or GDPR rules. It might be applied to all other regions, and because of this you might want to name this rule <strong>Global</strong>. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
+      <li>Check to be sure your rules appear as follows, except of course, using your rule names.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/general/managing-cookie-consent/geo-rules.png" alt="geo rules">
+        </figure>
+      </li>
+      <!-- <li>You may wish to create a rule that can be applied to regions NOT selected for the CCPA or GDPR rules. It might be applied to all other regions, and because of this you might want to name this rule <strong>Global</strong>. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
         <table class="bcls-table">
           <thead class="bcls-table__head">
             <tr>
@@ -1800,7 +1878,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
           </tbody>
         </table>
-      </li>
+      </li> -->
     </ol>
   </section>
 
@@ -1841,7 +1919,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>In the <em>Test Website</em> dialog:
         <ol type="a">
-          <li>Set the script version to <strong>6.29.0</strong>.</li>
+          <li>Set the script version to <strong>6.32.0</strong> (or the latest version).</li>
           <li>Click <strong>Confirm</strong>.</li>
         </ol>
         <figure class="bcls-figure">
