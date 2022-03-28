@@ -4,19 +4,20 @@ parent: Home
 description: Quickly view account details, subscription plans and viewing history for the registered users in your account.
 ---
 
-<article class="bcls-article">
-  <h1>{{ page.title }}</h1>
+<h1>{{ page.title }}</h1>
+<article class="landing-page-wrapper">
   <summary>{{ page.description }}</summary>
-  <h2>Topics</h2>
-  <section>
-    {% for item in site.data.navigation %}
+
+  <section class="bcls-topic-list">
+    <h2 id="Topics_in_this_section">Topics in {{ page.title }}</h2>
+    <ul>
+      {% for item in site.data.navigation %}
       {% if item.name == page.title %}
-        {% for doc in item.docs %}
-        <ul>
-          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
-        </ul>
-        {% endfor %}
+      {% for doc in item.docs %}
+      <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+      {% endfor %}
       {% endif %}
-    {% endfor %}
+      {% endfor %}
+    </ul>
   </section>
 </article>
