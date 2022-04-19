@@ -1527,10 +1527,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </figure>
 
     <h3>Features</h3>
-    <p><strong>Users</strong></p>
+    <h4>Users</h4>
     <ul>
       <li>Content configured for Offline Playback will have a button for download</li>
-      <li>Download videos for offline playback on mobile devices and tablets</li>
+      <li>Download videos on iOS and Android apps for mobile devices and tablets</li>
       <li>
         Download both DRM-protected and clear (non-encrypted) videos and watch it when not connected
         <ul>
@@ -1544,7 +1544,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Option to delete or renew an asset when it is expired</li>
       <li>If the viewer's subscription becomes invalid for any reason, playback will be blocked when they reconnect to the network</li>
     </ul>
-    <p><strong>Customers</strong></p>
+    <h4>Customers</h4>
     <ul>
       <li>You can set the duration of an asset availability in the Beacon CMS; it is automatically deleted from the device at the end of the window</li>
       <li>Server-Side Ads (SSAI) ads are not delivered for content playing from the device</li>
@@ -1553,294 +1553,64 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Requirements">Requirements</h2>
-    
-    <p>The Brightcove Native Player SDKs support offline playback with the following versions:</p>
-    
-    <h3>Brightcove Native SDK version</h3>
+    <h3>Enable your account</h3>
+    <p>Contact Brightcove customer support for the following:</p>
     <ul>
-      <li>Native SDK for iOS 6.0.1+</li>
-      <li>Native SDK for Android 5.0.3+</li>
+      <li>Enable your Beacon Studio account for Offline Playback</li>
+      <li>
+        Enable your Brightcove Beacon apps for Offline Playback
+        <ul>
+          <li>Apps can be configured to offer Offline Playback for all viewers or it can be a premium feature, available through a subscription</li>
+        </ul>
+      </li>
     </ul>
-    
-    <h3>Device OS version</h3>
+    <h3>Manage your content</h3>
+    <p>Make sure your content is available for Offline Playback:</p>
     <ul>
-      <li>iOS 10.0+, but 10.3+ is recommended</li>
-      <li>Android 5.0+</li>
+      <li>
+        <p>In Beacon Studio, ingest videos using an ingest profile that produces a downloadable asset (see steps below)</p>
+        <aside class="bcls-aside bcls-aside--information">Ingesting content with a downloadable asset will increase customer storage cost.</aside>
+      </li>
+      <li>In Beacon Studio, set videos to enable Offline Playback (see steps below)</li>
+      <li>In Beacon CMS, set which assets will be available for Offline Playback (see steps below)</li>
     </ul>
     </section>
 
   <section class="bcls-section">
-    <h2 id="Users_list">Users list</h2>
-    <p>In Beacon Studio, in the primary navigation, click <strong>Registered Users</strong> to view a list of users for your account.</p>
-    <aside class="bcls-aside bcls-aside--information">The users list will only contain the users that you have searched for and viewed their details.
-     If you don't see a user in the list, start typing either the user's email address or name in the <strong>Find users</strong> field.</aside>
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Overview"
-        src="/assets/images/registered-users/users-list.png"
-      />
-    </figure>
-    <h4>Actions</h4>
-    <p>For user details, do either:</p>
-    <ul>
-      <li>Click an <strong>E-mail</strong> link in the <strong>Users</strong> list</li>
-      <li>In the search box, start typing either an email address or a user name; select a user from the results list</li>
-    </ul>
-    <p>Detailed information about a specific user is described in the following sections of this document.</p>
-    <!-- <ol class="bcls-tasklist-restart">
-      <li>In the search box, start typing either an email address or a user name, and select a user from the results list.</li>
-      <li>Click an <strong>E-mail</strong> link in the list to display more information about the user, as described in the following sections of this document.</li>
-    </ol> -->
-  </section>
-  
-  <section class="bcls-section">
-    <h2 id="Overview">Overview</h2>
-    <p>The <strong>Overview</strong> tab displays general information about the selected user, including the plan names they have signed up for, and their parental control setting.</p>
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Overview"
-        src="/assets/images/registered-users/overview.png"
-      />
-    </figure>
+    <h2 id="Setup_instructions">Setup instructions</h2>
+    <p>Follow these steps to enable video assets for Offline Playback:</p>
 
-    <h4>Fields</h4>
-    <ul>
-      <li><strong>Email</strong> - Email address for this user</li>
-      <li><strong>Name</strong> - First and last name of the user</li>
-      <li><strong>Last Login</strong> - Date when the user was last logged into your app</li>
-      <li><strong>Plan</strong> - A list of subscription plans that the user is signed up for</li>
-      <li><strong>Parental Control</strong> - Whether the user has turned on parental controls for their account, and if a pin is required for access</li>
-    </ul>
-    <h4>Actions</h4>
-    <ul>
-      <li>Click a <strong>Plan</strong> name to see details</li>
-    </ul> 
-
-    <h3>Plan Details</h3>
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        width="400"
-        alt="Plan information"
-        src="/assets/images/registered-users/plan-information.png"
-      />
-    </figure>
-    <h4>Fields</h4>
-    <ul>
-      <li><strong>Name</strong> - Subscription plan name</li>
-      <li><strong>Description</strong> - Summary of the subscription plan</li>
-      <li><strong>Status</strong> - Current status of the plan (whether it is published or not), and the user's subscription status</li>
-      <li><strong>Options</strong> - Additional plan options available for the user</li>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Viewing_history">Viewing history</h2>
-    <p><strong>Viewing history</strong> displays a list of movies that this registered user has watched. History is captured and saved for 1 year.</p>
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Viewing history"
-        src="/assets/images/registered-users/viewing-history.png"
-      />
-    </figure>
-
-    <h4>Columns</h4>
-    <ul>
-      <li><strong>Date</strong> - Date that a movie was viewed; click this column header to control the results sort order (descending or ascending)</li>
-      <li><strong>Title</strong> - Name of the movie viewed</li>
-      <li><strong>Profile</strong> - Name of the user profile</li>
-    </ul>
-
-    <h4>Actions</h4>
-    <ul>
-      <li>Use the <strong>Show</strong> filter dropdown to limit display results</li>
-      <li>Click a <strong>Title</strong> name to see movie details</li>
-    </ul>
-
-    <h3>Movie details</h3>
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        width="400"
-        alt="Title information"
-        src="/assets/images/registered-users/title-information.png"
-      />
-    </figure>
-    <h4>Fields</h4>
-    <ul>
-      <li><strong>Title</strong> - Name of the movie, including it's season and episode</li>
-      <li><strong>Genre</strong> - Descriptive category for the movie</li>
-      <li><strong>Released</strong> - Year the movie was released</li>
-      <li><strong>Duration</strong> - Time length of the movie in hours and minutes</li>
-      <li><strong>Available</strong> - Movie availability</li>
-      <li><strong>Plans</strong> - A list of plans that the user is subscribed to</li>
-      <li><strong>Asset ID</strong> - Unique identifier for the movie</li>
-    </ul>
-
-    <h4>Actions</h4>
-    <ul>
-      <li>Click the <strong>Asset ID</strong> number to view more details in the <strong>Media</strong> module</li>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Subscriptions">Subscriptions</h2>
-    <p>The <strong>Subscriptions</strong> tab shows a list of subscription plan purchases and changes for a registered user. This includes plan trial periods.</p>
-  
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Subscriptions"
-        src="/assets/images/registered-users/subscriptions.png"
-      />
-    </figure>
-
-    <h4>Columns</h4>
-    <ul>
-      <li><strong>Plan name</strong> - Subscription plan name</li>
-      <li><strong>Store name</strong> - App store name</li>
-      <li><strong>Status</strong> - Current subscription status; values: <strong>In Trial</strong>, <strong>Pending</strong> or <strong>Active</strong></li>
-      <li><strong>Start</strong> - Start date for the associated subscription</li>
-      <li><strong>Trial ends</strong> - End date for the user's trial period</li>
-      <li><strong>Ends</strong> - End date for the associated subscription</li>
-      <li><strong>Canceled</strong> - Date that the subscription was canceled</li>
-    </ul>
-    <h4>Actions</h4>
-    <ul>
-      <li>Use the <strong>Show</strong> filter dropdown to limit display results</li>
-      <li>Click the <strong>Plan name</strong> to view more details about the plan</li>
-    </ul>
-
-    <h3>Plan Details</h3>
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        width="400"
-        alt="Plan information"
-        src="/assets/images/registered-users/plan-information.png"
-      />
-    </figure>
-    <h4>Fields</h4>
-    <ul>
-      <li><strong>Name</strong> - Subscription plan name</li>
-      <li><strong>Description</strong> - Summary of the subscription plan</li>
-      <li><strong>Status</strong> - Current status of the plan (whether it is published or not), and the user's subscription status</li>
-      <li><strong>Options</strong> - Additional plan options available for the user</li>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Purchases">Purchases</h2>
-    <p>The <strong>Purchases</strong> tab shows a list of in-app purchases for a registered user.</p>
-
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Purchases"
-        src="/assets/images/registered-users/purchases.png"
-      />
-    </figure>
-
-    <h3>Columns</h3>
-    <ul>
-      <li><strong>Date</strong> - Date when the user made an in-app purchase</li>
-      <li><strong>Product description</strong> - Description for the item purchased by the user</li>
-      <li><strong>Type</strong> - Type of purchase</li>
-      <li><strong>Store Name</strong> - Name of the online store where the product was purchased</li>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Active_sessions">Active sessions</h2>
-    <p>View a list of active sessions associated with a registered user.</p>
-
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Active sessions"
-        src="/assets/images/registered-users/active-sessions.png"
-      />
-    </figure>
-
-    <h3>Columns</h3>
-    <ul>
-      <li><strong>Date</strong> - Date when a session was started; click this header to control the results sort order (descending or ascending)</li>
-      <li><strong>Device</strong> - Type of device being used for a session</li>
-      <li><strong>Start time</strong> - Time when a session was started</li>
-      <li><strong>End Session</strong> - Click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a session to delete it</li>
-    </ul>
-    <h3>Actions</h3>
-    <ul>
-      <li>Click <strong>End all sessions</strong> to terminate all currently active user sessions</li>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Profiles">Profiles</h2>
-    <p>View a list of user profiles associated with a registered user.</p>
-
-    <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Profiles"
-        src="/assets/images/registered-users/profiles.png"
-      />
-    </figure>
-
-    <h3>Columns</h3>
-    <ul>
-      <li><strong>Profile</strong> - Name of the profile</li>
-      <li><strong>Created</strong> - Creation date and time</li>
+    <h3>Beacon Studio</h3>
+    <p>These steps will be completed in Beacon Studio:</p>
+    <ol class="bcls-tasklist">
       <li>
-        <p><strong>Remove Profile</strong> - Click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a profile to delete it</p>
-        <aside class="bcls-aside bcls-aside--information"><strong>Notes:
-          <ul>
-            <li>The main profile can not be deleted</li>
-            <li>Activity and data related to this profile will no longer be tracked</li>
-          </ul> </strong>
-        </aside>
-      </li> 
-    </ul> 
-
-    <!-- <h3>Actions</h3>
-    <ul>
-      <li><strong>Remove Profile</strong> - Click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a profile to delete it</li>
-    </ul> -->
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Delete_and_forget">Delete and forget</h2>
-    <p>This action is used for <a href="https://gdpr.eu/">GDPR compliance</a>, when a user requests that their personal data be erased.</p>
-    <aside class="bcls-aside bcls-aside--warning"><strong>WARNING: Deleting a viewer will delete all related data and permissions. This CANNOT be undone!</strong></aside>
-
-    <h3>Steps</h3>
-      <ol class="bcls-tasklist">
-        <li>
-          <p>Click <strong>Delete and forget</strong>.</p>
-          <figure class="bcls-figure">
-            <img
-              class="bcls-image--no-border"
-              alt="Delete and forget"
-              src="/assets/images/registered-users/delete-and-forget.png"
-            />
-          </figure>
-        </li>
-        <li>
-          <p>To continue, type <strong>Delete</strong> in the text area.</p>
-          <figure class="bcls-figure">
-            <img
-              class="bcls-image--no-border"
-              alt="Delete and forget dialog"
-              src="/assets/images/registered-users/delete_dialog.png"
-            />
-          </figure>
-        </li>
-        <li>To confirm, click <strong>Delete and forget</strong>.</li>  
-      </ol>
-  </section>
+       <p>When you upload or retranscode a video, make sure that you use an ingest profile that includes a downloadable asset (MP4).</p>
+        <aside class="bcls-aside bcls-aside--information">Ingesting content with a downloadable asset will increase customer storage cost.</aside>
+        <p>For example, your profile may be similar to this:</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/media/offline-playback/ingest-profile.png" alt="Ingest profile">
+        </figure>
+      </li>
+      <li>
+        <p>In the <strong>Media</strong> module, select a video asset that you want to enable for Offline Playback.</p>
+       </li>
+       <li>
+        <p>In the<strong> Video Information</strong> section, select <span class="button-blue-text"><i class="button-icon" data-feather="edit-3"></i>Edit</span>.</p>
+         <figure class="bcls-figure">
+           <img class="bcls-image" src="/assets/images/media/offline-playback/edit-video-info.png" alt="Edit video info">
+         </figure>
+       </li>
+       <li>
+        <p>Select <strong>Enable offline playback</strong>. You will do this for all downloadable assets.</p>
+         <figure class="bcls-figure">
+           <img class="bcls-image" src="/assets/images/media/offline-playback/enable-offline-box.png" alt="Enable offline checkbox">
+         </figure>
+       </li>
+       <li>Click <span class="button-blue">Save</span>.</li>
+    </ol>
+   
+    
+  </section> 
 
 </article>
 
