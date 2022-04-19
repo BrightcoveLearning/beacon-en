@@ -1,0 +1,65 @@
+---
+title: Managing Slates
+description: This topic covers the management of slate assets, which are used to fill dead time in Cloud Playout channel playback, which might result from ad content that doesn't completely fill a scheduled ad slot or to fill time when a hard start time is set.
+parent: Cloud Playout
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="introduction">Introduction</h2>
+    <p>Brightcove provides a default slate to all accounts. You can use a custom slate instead, by hosting an MP4 video on a permanent URL and adding it as an asset to your account to be used on as many Cloud Playout channels as you like.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="adding_slate_assets">Adding slate assets</h2>
+    <p>The steps below will walk you through adding a new slate asset to your account.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Login to your account and go to the Cloud Playout module.</li>
+      <li>
+        Go to the <strong>Configuration</strong> section and click the <strong>Slate</strong> tab:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/slate-configuration.png" alt="Slate Configuration">
+          <figcaption class="bcls-caption--image">Slate Configuration</figcaption>
+        </figure>
+      </li>
+      <li>Click <span class="button-blue">Add New</span>.</li>
+      <li>
+        End a slate name and a valid MP4 URL, and then click <span class="button-blue">Add</span>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/add-new-slate.png" alt="Add New Slate">
+          <figcaption class="bcls-caption--image">Add New Slate</figcaption>
+        </figure>
+      </li>
+      <li>
+        Once added, the new slate will appear in the list:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/slate-list.png" alt="Slate List">
+          <figcaption class="bcls-caption--image">Slate List</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="updating_deleting_slate"></h2>
+    <p>To update the name or URL for a slate click the <i data-feather="edit-3" style="color: red;"></i> icon, make the necessary changes, and click <span class="button-blue">Update</span>:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/update-slate.png" alt="Update Slate">
+      <figcaption class="bcls-caption--image">Update Slate</figcaption>
+    </figure>
+    <p>To delete a slate you no longer need, click the <i data-feather="trash-2" style="color: red;"></i> icon beside it.</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note that the Default slate may not be updated or deleted.</aside>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="adding_a_slate_to_a_channel">Adding a slate to a channel</h2>
+    <p>When you are creating or updating a channel, if <strong>Live Input</strong> is enabled, you will see a <strong>Slate</strong> dropdown field that will display the list of available slates for you to select from:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/select-slate-for-channel.png" alt="Select Slate for Channel">
+      <figcaption class="bcls-caption--image">Select Slate for Channel</figcaption>
+    </figure>
+  </section>
+
+</article>

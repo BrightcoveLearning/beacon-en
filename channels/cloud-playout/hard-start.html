@@ -1,0 +1,108 @@
+---
+title: Setting a Hard Start for a Channel
+description: The Cloud Playout Hard Start feature allows you to specify a time when the first item in your channel will begin playing, and will automatically play slate content until that time is reached.
+parent: Cloud Playout
+grandparent: Channels
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="introduction">Introduction</h2>
+    <p>Sometimes it is critical to set the exact time that your channel content will begin playing. The <strong>Hard Start</strong> feature allows you to do this, and Brightcove will automatically fill the time between the start of the channel and the hard start time by looping slate content - either the default slate or your own <a href="/channels/cloud-playout/managing-slates.html">custom slate</a>.</p>
+    <h3>Notes</h3>
+    <ul>
+      <li>The hard start time must be greater than the channel start time.</li>
+      <li>When you use Hard Start, you must specify a slate - either the default one or your own <a href="/channels/cloud-playout/managing-slates.html">custom slate</a>. Also remember that your custom slate video must be on a public and permanent URL (short-lived CDN URLs are not allowed). </li>
+      <li>The channel will start at the channel start time, and the slate will begin playing immediately, looping until the hard start time.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Using_hard_start">Using Hard Start</h2>
+    <p>Hard Start can be set after you have created the channel configuration by clicking the <strong>Quick Edit</strong> icon (<i data-feather="edit-3"></i>) that appears on the channel details and channel running pages:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/channel-quick-edit.png" alt="Channel Quick Edit">
+      <figcaption class="bcls-caption--image">Channel Quick Edit</figcaption>
+    </figure>
+    <p>That will bring up the <strong>Edit Schedule</strong> dialog where you can enter the Hard Start time and select a slate:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/edit-scheule.png" alt="Channel Edit Schedule">
+      <figcaption class="bcls-caption--image">Channel Edit Schedule</figcaption>
+    </figure>
+    <h3>Notes for Channels in a DRAFT or SCHEDULED state</h3>
+    <ul>
+      <li>The Hard Start time must be at least 10 minutes after the Channel Start Date Time.</li>
+      <li>The Hard Start time must <strong>not</strong> be later than the Channel End Date Time (if any).</li>
+      <li>When a Hard Start is added, a slate must always be added as well (there is a default slate if you haven't created a custom one).</li>
+      <li>To remove the Hard Start, delete it in the Edit Schedule dialog and remove the slate.</li>
+      <li>You can update both the Hard Start time and the slate.</li>
+    </ul>
+    <h3>Notes for Channels in a RUNNING state, but content playback hasn't started</h3>
+    <ul>
+      <li>You can update the Hard Start time, but you cannot remove it.</li>
+      <li>You can set the Hard Start time to an earlier time, as long as it is later than the current time.</li>
+      <li>The slate cannot be updated.</li>
+    </ul>
+    <h3>Notes for Channels in a RUNNING state where content playback has started</h3>
+    <ul>
+      <li>You cannot add or update a Hard Start time.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="hard_start_indicators">Hard Start indicators</h2>
+    <p>If Hard Start is not available for the channel, the Hard Start label will be gray:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/hard-start-gray.png" alt="Hard Start Unavailable">
+      <figcaption class="bcls-caption--image">Hard Start Unavailable</figcaption>
+    </figure>
+    <p>If Hard Start is available for the channel, the Hard Start label will be green:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/hard-start-green.png" alt="Hard Start Available">
+      <figcaption class="bcls-caption--image">Hard Start Available</figcaption>
+    </figure>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Overriding Hard Start">Overriding Hard Start</h2>
+    <h3>Channel in a SCHEDULED state</h3>
+    <p>If the channel is scheduled, and you wish to start it immediately, playing the channel playlist instead of the hard start slate, click <span class="button-red-text-border">Play Now</span>:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/override-hard-start-scheduled.png" alt="Override Hard Start (Scheduled Channel)">
+      <figcaption class="bcls-caption--image">Override Hard Start (Scheduled Channel)</figcaption>
+    </figure>
+    <p>Note that the EPG will also be updated automatically to reflect the actual start time:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/override-hard-start-epg-update.png" alt="EPG Updated for Override">
+      <figcaption class="bcls-caption--image">EPG Updated for Override</figcaption>
+    </figure>
+
+    <h3>Channel in a RUNNING state (with the <strong>slate</strong> playing)</h3>
+    <p>If the channel has started, but the Hard Start time has not been reached, you can stop the slate and start the channel content immediately by selecting a video in the playlist and clicking the <strong>play</strong> button on the video thumbnail:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/override-hard-start-running.png" alt="Override Hard Start Running Channel">
+      <figcaption class="bcls-caption--image">Override Hard Start Running Channel</figcaption>
+    </figure>
+    <p>The selected video will start immediately and the Hard Start time for the channel will be updated to the current time:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/override-hard-start-time-updated.png" alt="Hard Start Time Updated by Override">
+      <figcaption class="bcls-caption--image">Hard Start Time Updated by Override</figcaption>
+    </figure>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="rerunning_a_stopped_channel">Rerunning a stopped channel</h2>
+    <p>A channel with a Hard Start time retains that information after it has stopped. Therefore, if you want the channel to play again, you will need to edit the schedule to set future date/times.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="notes_and_known_issues">Notes and known issues</h2>
+    <ul>
+      <li>If you need to start the channel immediately while retaining the hard start time (you want to get the channel started, but with the hard start slate), we recommend that you edit the schedule and update the channel start time to a nearby time, instead of using Play Now on the channel.</li>
+      <li>When choosing a custom slate, be sure that the URL for the MP4 will be always available in a region close the to the selected region for the channel. If the slate is not accessible from the Cloud Playout channel, this may cause the destinations (BC Live, etc.) to close the connections since they won’t be receiving any feeds. </li>
+      <li>Once the channel is stopped and the channel is in DRAFT state, currently the EPG is faultily constructed from the hard start time as if it’s a fresh channel, instead of showing the actual as-run record of played assets.</li>
+    </ul>
+  </section>
+</article>
