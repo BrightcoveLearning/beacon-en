@@ -6,3 +6,9 @@
 	path = assets/images/s-social-img
 	url = https://github.com/BrightcoveLearning/s-social-img
 	branch = main
+[submodule "_includes/s-ott-plugins"]
+	path = _includes/s-ott-plugins
+	url = https://github.com/BrightcoveLearning/s-ott-plugins
+[submodule "assets/images/s-ott-plugins-img"]
+	path = assets/images/s-ott-plugins-img
+	url = https://github.com/BrightcoveLearning/s-ott-plugins-img
