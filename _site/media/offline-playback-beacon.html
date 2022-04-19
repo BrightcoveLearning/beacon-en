@@ -1518,8 +1518,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
     <p>From the Brightcove Beacon app, you can access a list of all of your downloaded content. Here, you can play and delete your downloaded videos. When you are online, you can renew an expired asset.</p>
 
-    <p>Using offline playback, users can download both DRM-protected and clear (non-encrypted) video content to their devices and watch it when they are not connected.</p>
-
     <figure class="bcls-figure">
       <img
         class="bcls-image--no-border"
@@ -1528,8 +1526,48 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       />
     </figure>
 
-    
+    <h3>Features</h3>
+    <p><strong>Users</strong></p>
+    <ul>
+      <li>Content configured for Offline Playback will have a button for download</li>
+      <li>Download videos for offline playback on mobile devices and tablets</li>
+      <li>
+        Download both DRM-protected and clear (non-encrypted) videos and watch it when not connected
+        <ul>
+          <li>Content will play on the device if the viewer travels to another region that is not supported by the rights settings until they reconnect on the mobile or wifi network</li>
+        </ul>
+      </li>
+      <li>Ability to cancel, pause or delete a download</li>
+      <li>Ability to choose a bitrate for the download</li>
+      <li>When download is complete, the network can be disconnected or unavailable and videos play from the device</li>
+      <li>Audio and subtitles should be available whent the video is downloaded</li>
+      <li>Option to delete or renew an asset when it is expired</li>
+      <li>If the viewer's subscription becomes invalid for any reason, playback will be blocked when they reconnect to the network</li>
+    </ul>
+    <p><strong>Customers</strong></p>
+    <ul>
+      <li>You can set the duration of an asset availability in the Beacon CMS; it is automatically deleted from the device at the end of the window</li>
+      <li>Server-Side Ads (SSAI) ads are not delivered for content playing from the device</li>
+    </ul>
   </section>
+
+  <section class="bcls-section">
+    <h2 id="Requirements">Requirements</h2>
+    
+    <p>The Brightcove Native Player SDKs support offline playback with the following versions:</p>
+    
+    <h3>Brightcove Native SDK version</h3>
+    <ul>
+      <li>Native SDK for iOS 6.0.1+</li>
+      <li>Native SDK for Android 5.0.3+</li>
+    </ul>
+    
+    <h3>Device OS version</h3>
+    <ul>
+      <li>iOS 10.0+, but 10.3+ is recommended</li>
+      <li>Android 5.0+</li>
+    </ul>
+    </section>
 
   <section class="bcls-section">
     <h2 id="Users_list">Users list</h2>
