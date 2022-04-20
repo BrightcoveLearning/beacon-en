@@ -53,7 +53,7 @@ layout: staging
     <h3>Enable your account</h3>
     <p>Contact Brightcove customer support for the following:</p>
     <ul>
-      <li>Enable your Beacon Studio account for Offline Playback</li>
+      <li>Enable your Video Cloud Studio account for Offline Playback</li>
       <li>
         Enable your Brightcove Beacon apps for Offline Playback
         <ul>
@@ -65,10 +65,10 @@ layout: staging
     <p>Make sure your content is available for Offline Playback:</p>
     <ul>
       <li>
-        <p>In Beacon Studio, ingest videos using an ingest profile that produces a downloadable asset (see steps below)</p>
+        <p>In Video Cloud Studio, ingest videos using an ingest profile that produces a downloadable asset (see steps below)</p>
         <aside class="bcls-aside bcls-aside--information">Ingesting content with a downloadable asset will increase customer storage cost.</aside>
       </li>
-      <li>In Beacon Studio, set videos to enable Offline Playback (see steps below)</li>
+      <li>In Video Cloud Studio, set videos to enable Offline Playback (see steps below)</li>
       <li>In Beacon CMS, set which assets will be available for Offline Playback (see steps below)</li>
     </ul>
     </section>
@@ -76,9 +76,10 @@ layout: staging
   <section class="bcls-section">
     <h2 id="Setup_instructions">Setup instructions</h2>
     <p>Follow these steps to enable video assets for Offline Playback:</p>
+    <aside class="bcls-aside bcls-aside--information">You need to complete setup steps in both Video Cloud Studio and Beacon CMS.</aside>
 
-    <h3>Beacon Studio</h3>
-    <p>These steps will be completed in Beacon Studio:</p>
+    <h3>Video Cloud Studio</h3>
+    <p>These steps will be completed in Video Cloud Studio:</p>
     <ol class="bcls-tasklist">
       <li>
        <p>When you upload or retranscode a video, make sure that you use an ingest profile that includes a downloadable asset (MP4).</p>
@@ -105,8 +106,35 @@ layout: staging
        </li>
        <li>Click <span class="button-blue">Save</span>.</li>
     </ol>
-   
-    
+
+    <h3>Beacon CMS</h3>
+    <p>These steps will be completed in Beacon CMS:</p>
+    <p>Offline playback can be set in Beacon at several levels to support the business objectives of the content owner.</p>
+
+    <h4>Entire Account</h4>
+    <p>You can set Offline Playback for all assets in your account.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+       <p>In Brightcove Beacon CMS, click <img class="bcls-image--no-border" alt="Gear icon" src="/assets/images/media/offline-playback/gear-icon.png" /> to display account settings.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-home.png" alt="Beacon CMS home">
+        </figure>
+      </li>
+      <li>In <strong>Settings</strong>, select <strong>Assets</strong>.</li>
+       <li>
+        <p>For <strong>Allow Downloads?</strong>, select <strong>Yes</strong>.</p>
+         <figure class="bcls-figure">
+           <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-assets.png" alt="Beacon CMS Assets">
+         </figure>
+       </li>
+       <li>
+         <p>Set the <strong>No. days assets remain available on device</strong></p>
+         This settting allows you to define the duration of availability for all of your assets. You can also set availability on the asset level.
+      </li>
+       <li>Click <img class="bcls-image--no-border" alt="Save Setting button" src="/assets/images/media/offline-playback/save-setting-button.png" />.</li>
+    </ol>
   </section> 
+
+  
 
 </article>
