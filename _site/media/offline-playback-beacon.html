@@ -1,41 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to enable and use Offline Playback with your Brightcove Beacon apps.">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="In this topic, you will learn how to enable and use Offline Playback with your Brightcove Beacon apps." />
+
   <title>Offline Playback with Brightcove Beacon Apps</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
   
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
-<script translate="no">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-2728311-17');
-</script>
+  <script src="/assets/js/site/google-analytics.js"></script>
   <script src="/assets/js/sajari-head.js"></script>
-	<script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="/assets/css/local.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-
 <body class="body">
-
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
@@ -439,6 +429,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/media/managing-videos.html">Managing Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/media/offline-playback-beacon.html">Offline Playback</a></li>
                   
                 
                   
@@ -1574,7 +1568,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>In Video Cloud Studio, set videos to enable Offline Playback (see steps below)</li>
       <li>In Beacon CMS, set which assets will be available for Offline Playback (see steps below)</li>
     </ul>
-    </section>
+  </section>
 
   <section class="bcls-section">
     <h2 id="Setup_in_Video_Cloud_Studio">Setup in Video Cloud Studio</h2>
@@ -1655,25 +1649,70 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
     <h3>Content</h3>
     <p>Individual assets can be made available for Offline Playback to all viewers by enabling Offline Playback on each asset in the <strong>Rights & Scheduling</strong> settings for series, seasons, episodes, movies and playlists.</p>
+    <h4>Movies</h4>
     <ol class="bcls-tasklist-restart">
-      <li>In Brightcove Beacon CMS, click <strong>Commerce</strong>.</li>
-      <li>
-       <p>Select <strong>SVOD/AuthVOD Plans</strong> and click on your package name.</p>
+      <li>In Brightcove Beacon CMS, select <strong>Movies</strong> and click on your movie name.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-svod-plans.png" alt="SVOD/AuthVOD Plans">
+          <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-movies.png" alt="Movies">
         </figure>
       </li>
+      <li>Select the <strong>Rights & Scheduling</strong> tab.</li>
        <li>
         <p>For <strong>Allow Downloads?</strong>, select <strong>Yes</strong>.</p>
          <figure class="bcls-figure">
-           <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-edit-pkg.png" alt="Edit package">
+           <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-movie-rights.png" alt="Rights & Scheduling">
          </figure>
        </li>
-       <li>Click <strong>Edit Package</strong>.</li> 
+       <li>Click <strong>Update Movie</strong>.</li> 
+    </ol>
+
+    <h4>Playlists</h4>
+    <ol class="bcls-tasklist-restart">
+      <li>In Brightcove Beacon CMS, select <strong>Playlists</strong> and click on your playlist name.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-playlists.png" alt="Playlists">
+        </figure>
+      </li>
+      <li>Select the <strong>Rights & Scheduling</strong> tab.</li>
+       <li>
+        <p>For <strong>Allow Downloads?</strong>, select <strong>Yes</strong>.</p>
+         <figure class="bcls-figure">
+           <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-pliaylist-rights.png" alt="Rights & Scheduling">
+         </figure>
+       </li>
+       <li>Click <strong>Save changes in Playlist</strong>.</li> 
     </ol>
   </section>
 
+  <h4>Series, seasons, episodes</h4>
+  <ol class="bcls-tasklist-restart">
+    <li>In Brightcove Beacon CMS, select <strong>Programs</strong> and click on your series name.
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-programs.png" alt="Programs">
+      </figure>
+    </li>
+    <li>Select the <strong>Rights & Scheduling</strong> tab.</li>
+     <li>
+      <p>For <strong>Allow Downloads?</strong>, select <strong>Yes</strong>.</p>
+       <figure class="bcls-figure">
+         <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-series-rights.png" alt="Rights & Scheduling">
+       </figure>
+     </li>
+     <li>Click <strong>Update Series</strong>.</li> 
+     <li>In the left navigation, select <strong>Seasons</strong> and enable <strong>Allow Downloads</strong> for any seasons that you want enabled.</li>
+     <li>In the left navigation, select <strong>Episodes</strong> and enable <strong>Allow Downloads</strong> for any episodes that you want enabled.</li>
+  </ol>
+</section>
+
+<section class="bcls-section">
+  <h2 id="Sync_and_clearing_cache">Sync and clear cache</h2>
+  <h3>Sync videos</h3>
+  <p>Your asset changes in Video Cloud Studio will be automatically synced with Beacon CMS.</p>
   
+  <h3>Clear cache</h3>
+  <p>To see your changes right away in your Beacon app, refresh your app cache.</p>
+  <p>For details, see the <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/tools.html">Using the Tools</a> document.</p>
+</section> 
 
 </article>
 
