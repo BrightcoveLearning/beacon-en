@@ -1577,12 +1577,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </section>
 
   <section class="bcls-section">
-    <h2 id="Setup_instructions">Setup instructions</h2>
-    <p>Follow these steps to enable video assets for Offline Playback:</p>
-    <aside class="bcls-aside bcls-aside--information">You need to complete setup steps in both Video Cloud Studio and Beacon CMS.</aside>
-
-    <h3>Video Cloud Studio</h3>
-    <p>These steps will be completed in Video Cloud Studio:</p>
+    <h2 id="Setup_in_Video_Cloud_Studio">Setup in Video Cloud Studio</h2>
+    <p>Follow these steps to enable video assets for Offline Playback in Video Cloud Studio:</p>
     <ol class="bcls-tasklist">
       <li>
        <p>When you upload or retranscode a video, make sure that you use an ingest profile that includes a downloadable asset (MP4).</p>
@@ -1609,9 +1605,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
        </li>
        <li>Click <span class="button-blue">Save</span>.</li>
     </ol>
-
-    <h3>Beacon CMS</h3>
-    <p>These steps will be completed in Beacon CMS:</p>
+  </section>
+  
+  <section class="bcls-section">
+    <h2 id="Setup_in_Beacon_CMS">Setup in Beacon CMS</h2>
     <p>Offline playback can be set in Beacon at several levels to support the business objectives of the content owner.</p>
 
     <h4>Entire Account</h4>
@@ -1634,9 +1631,28 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
          <p>Set the <strong>No. days assets remain available on device</strong></p>
          This settting allows you to define the duration of availability for all of your assets. You can also set availability on the asset level.
       </li>
-       <li>Click <img class="bcls-image--no-border" alt="Save Setting button" src="/assets/images/media/offline-playback/save-setting-button.png" />.</li>
+       <li>Click <strong>Save Setting</strong>.</li>
     </ol>
-  </section> 
+
+    <h4>Subscriptions</h4>
+    <p>You can offer Offline Playback as a premium feature to subscribers by enabling Offline Playback on subscription plan settings. Offline Playback will be available only to subscribers of that plan.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>In Brightcove Beacon CMS, click <strong>Commerce</strong>.</li>
+      <li>
+       <p>Select <strong>SVOD/AuthVOD Plans</strong> and click on your package name.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-svod-plans.png" alt="SVOD/AuthVOD Plans">
+        </figure>
+      </li>
+       <li>
+        <p>For <strong>Allow Downloads?</strong>, select <strong>Yes</strong>.</p>
+         <figure class="bcls-figure">
+           <img class="bcls-image" src="/assets/images/media/offline-playback/beacon-cms-edit-pkg.png" alt="Edit package">
+         </figure>
+       </li>
+       <li>Click <strong>Edit Package</strong>.</li> 
+    </ol>
+  </section>
 
   
 
