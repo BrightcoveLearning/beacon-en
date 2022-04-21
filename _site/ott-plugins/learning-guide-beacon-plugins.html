@@ -1516,122 +1516,117 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <article class="bcls-article">
   <summary>In this topic, you will learn about Beacon plugins; what they are, why you would use them, and an introduction to how to implement them.</summary>
 
-  <h1>Learning Guide: Beacon Plugins</h1>
-<article class="bcls-article">
-  <summary>In this topic, you will learn about Beacon plugins; what they are, why you would use them, and an introduction to how to implement them.</summary>
-
   <section class="bcls-section">
-    
-    Here's some info about the OTT Plugins.
-    
-    <aside class="bcls-aside bcls-aside--information language-editable">This document is one part of the OTT Plugins document collection. Since OTT Plugins are implemented using JavaScript and CSS, the target audience for this document is developers with some experience with both of those technologies. To learn more about OTT Plugins see the <a href="/ott-plugins/index.html">OTT Plugins documentation home page</a>.</aside>
-    <h2 id="Introduction">Introduction</h2>
-    <p>OTT plugins allow you to customize your web apps in ways that are not available through the normal page creation process in Beacon Studio. Here are a few examples:</p>
-    <h3>Custom buttons</h3>
-    <p>Add custom buttons. In this case the buttons provide functionality to download the playing video and see the location of the filming.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-ott-plugins-img/buttons/custom-buttons.png" alt="custom buttons">
-    </figure>
-    <h3>Custom content areas</h3>
-    <p>Add text to special <code>&lt;div&gt;</code>s set aside for extra content. </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-ott-plugins-img/custom-divs/div-mid-page.png" alt="">
-    </figure>
-    <h3>Side panel</h3>
-    <p>This short video shows a OTT plugin that was created to display a panel that can be opened and closed by a viewer.</p>
-    <div style="position: relative; display: block; max-width: 960px;">
-      <div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/1752604059001/default_default/index.html?videoId=1722964957659610162" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div>
-    </div>
-    <h3>Custom pages</h3>
-    <p>Create new pages with HTML content of your choice.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-ott-plugins-img/custom-pages/page-in-app.png" alt="">
-    </figure>
+  
+  Here's some info about the OTT Plugins.
+  
+  <aside class="bcls-aside bcls-aside--information language-editable">This document is one part of the OTT Plugins document collection. Since OTT Plugins are implemented using JavaScript and CSS, the target audience for this document is developers with some experience with both of those technologies. To learn more about OTT Plugins see the <a href="/ott-plugins/index.html">OTT Plugins documentation home page</a>.</aside>
+  <h2 id="Introduction">Introduction</h2>
+  <p>OTT plugins allow you to customize your web apps in ways that are not available through the normal page creation process in Beacon Studio. Here are a few examples:</p>
+  <h3>Custom buttons</h3>
+  <p>Add custom buttons. In this case the buttons provide functionality to download the playing video and see the location of the filming.</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-ott-plugins-img/buttons/custom-buttons.png" alt="custom buttons">
+  </figure>
+  <h3>Custom content areas</h3>
+  <p>Add text to special <code>&lt;div&gt;</code>s set aside for extra content. </p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-ott-plugins-img/custom-divs/div-mid-page.png" alt="">
+  </figure>
+  <h3>Side panel</h3>
+  <p>This short video shows a OTT plugin that was created to display a panel that can be opened and closed by a viewer.</p>
+  <div style="position: relative; display: block; max-width: 960px;">
+    <div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/1752604059001/default_default/index.html?videoId=1722964957659610162" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div>
+  </div>
+  <h3>Custom pages</h3>
+  <p>Create new pages with HTML content of your choice.</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-ott-plugins-img/custom-pages/page-in-app.png" alt="">
+  </figure>
 
-    <p>The plugin functionality is controlled with JavaScript and CSS. <em>This means that to implement OTT plugins some experience with JavaScript and CSS is required.</em></p>
-    <h3>Implementation startup</h3>
-    <p>The plugin code is read in by your Beacon web app. In Beacon Classic, you point to one JavaScript file and one CSS file that are loaded at app startup. Here is a screenshot where the data is entered in Beacon Classic:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-ott-plugins-img/learning-guide/cms-web-customization.png" alt="cms web customization">
-    </figure>
-    <p>The files must be located at a publicly addressable URL and be named as follows:</p>
-    <ul>
-      <li>The JavaScript file must be called <strong>index.js</strong></li>
-      <li>The optional CSS file must be called <strong>index.css</strong></li>
-    </ul>
-  </section>
-
-
-  <section class="bcls-section">
-    <h2 id="Available_elements">Available elements</h2>
-    <p>The following table shows all OTT plugin elements with a brief description of the purpose/functionality:</p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Element</th>
-          <th>Functionality</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td><a href="/ott-plugins/working-with-page-events.html">Page events and data</a></td>
-          <td>Listen for page events like page loading, unloading and changing</td>
-        </tr>
-        <tr>
-          <td><a href="/ott-plugins/user-events.html">User events and data</a></td>
-          <td>Listen for user events like sign in, register and sign out</td>
-        </tr>
-        <tr>
-          <td><a href="/ott-plugins/side-panel.html">Side panel events and data</a></td>
-          <td>Open and close the side panel and listen for events of side panel behavior</td>
-        </tr>
-        <tr>
-          <td><a href="/ott-plugins/buttons-and-events.html">Custom buttons events and data</a></td>
-          <td>Add and remove buttons and listen for click events</td>
-        </tr>
-        <tr>
-          <td><a href="/ott-plugins/custom-divs.html">Custom sections</a></td>
-          <td>Place custom content in custom <code>&lt;div&gt;</code>s</td>
-        </tr>
-        <tr>
-          <td><a href="/ott-plugins/custom-page.html">Custom pages</a></td>
-          <td>Create a custom page in the Beacon Studio then populate with dynamically built HTML of your choice</td>
-        </tr>
-      </tbody>
-    </table>
-    <aside class="bcls-aside bcls-aside--information language-editable">Note that the element names in the table are linked to the detailed documentation for that element. The detailed documentation shows the available functionality and implementation details.</aside>
-  </section>
+  <p>The plugin functionality is controlled with JavaScript and CSS. <em>This means that to implement OTT plugins some experience with JavaScript and CSS is required.</em></p>
+  <h3>Implementation startup</h3>
+  <p>The plugin code is read in by your Beacon web app. In Beacon Classic, you point to one JavaScript file and one CSS file that are loaded at app startup. Here is a screenshot where the data is entered in Beacon Classic:</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-ott-plugins-img/learning-guide/cms-web-customization.png" alt="cms web customization">
+  </figure>
+  <p>The files must be located at a publicly addressable URL and be named as follows:</p>
+  <ul>
+    <li>The JavaScript file must be called <strong>index.js</strong></li>
+    <li>The optional CSS file must be called <strong>index.css</strong></li>
+  </ul>
+</section>
 
 
-  <section class="bcls-section">
-    <h2 id="Implementation_architecture">Implementation architecture</h2>
-    <p>As mentioned earlier, OTT Plugins are implemented with JavaScript and CSS. Obviously, there are many ways to structure your JavaScript code. For instance:</p>
-    <ul>
-      <li>You could simply put all your code the single <strong>index.js</strong> file mentioned earlier.</li>
-      <li>Brightcove's consulting team did an implementation of the plugins using <a href="https://reactjs.org/">React</a>, a JavaScript library for building user interfaces.</li>
-    </ul>
-    <p>For the documents on this site, it was decided that the one file approach would lead to poor coding practices. React was maybe more than what was needed when the exact JavaScript skill sets of Beacon Studio customers is not known. This led to the decision to use JavaScript modules for implementation and examples in this documentation.</p>
-    <p>The <a href="/ott-plugins/javascript-modules-beacon-plugins.html">Using JavaScript Modules for OTT Plugins</a> document explains the basic programming model around OTT Plugins, and how JavaScript modules can be used for code implementation.</p>
-    <p>Of course, you are free to organize your JavaScript code in any way you wish.</p>
-  </section>
+<section class="bcls-section">
+  <h2 id="Available_elements">Available elements</h2>
+  <p>The following table shows all OTT plugin elements with a brief description of the purpose/functionality:</p>
+  <table class="bcls-table">
+    <thead class="bcls-table__head">
+      <tr>
+        <th>Element</th>
+        <th>Functionality</th>
+      </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+      <tr>
+        <td><a href="/ott-plugins/working-with-page-events.html">Page events and data</a></td>
+        <td>Listen for page events like page loading, unloading and changing</td>
+      </tr>
+      <tr>
+        <td><a href="/ott-plugins/user-events.html">User events and data</a></td>
+        <td>Listen for user events like sign in, register and sign out</td>
+      </tr>
+      <tr>
+        <td><a href="/ott-plugins/side-panel.html">Side panel events and data</a></td>
+        <td>Open and close the side panel and listen for events of side panel behavior</td>
+      </tr>
+      <tr>
+        <td><a href="/ott-plugins/buttons-and-events.html">Custom buttons events and data</a></td>
+        <td>Add and remove buttons and listen for click events</td>
+      </tr>
+      <tr>
+        <td><a href="/ott-plugins/custom-divs.html">Custom sections</a></td>
+        <td>Place custom content in custom <code>&lt;div&gt;</code>s</td>
+      </tr>
+      <tr>
+        <td><a href="/ott-plugins/custom-page.html">Custom pages</a></td>
+        <td>Create a custom page in the Beacon Studio then populate with dynamically built HTML of your choice</td>
+      </tr>
+    </tbody>
+  </table>
+  <aside class="bcls-aside bcls-aside--information language-editable">Note that the element names in the table are linked to the detailed documentation for that element. The detailed documentation shows the available functionality and implementation details.</aside>
+</section>
 
-  <section class="bcls-section">
-    <h2 id="Additional documentation">Additional documentation and resources</h2>
-    <p>The following documents and GitHub repo are additional resources covering OTT plugins:</p>
-    <ul>
-      <li><a href="/ott-plugins/dispatching-handling-events.html">Dispatching and Handling Events in OTT Plugins</a></li>
-      <li><a href="/ott-plugins/javascript-modules-beacon-plugins.html">Using JavaScript Modules for OTT Plugins</a></li>
-      <li><a href="/ott-plugins/custom-divs.html">Implementing Custom Sections</a></li>
-      <li><a href="/ott-plugins/buttons-and-events.html">Implementing Buttons and Event Handlers</a></li>
-      <li><a href="/ott-plugins/side-panel.html">Implementing the Side Panel</a></li>
-      <li><a href="/ott-plugins/working-with-page-events.html">Working with Page Events</a></li>
-      <li><a href="/ott-plugins/user-events.html">Implementing User Events</a></li>
-      <li><a href="/ott-plugins/custom-page.html">Creating a Custom Page</a></li>
-      <li><a href="/ott-plugins/data-module.html">Storing Data in a Separate Module</a></li>
-      <li><a href="https://github.com/BrightcoveLearning/ott-plugins-example-code">ott-plugins-example-code</a> GitHub repo</li>
-    </ul>
-  </section>
-</article>
+
+<section class="bcls-section">
+  <h2 id="Implementation_architecture">Implementation architecture</h2>
+  <p>As mentioned earlier, OTT Plugins are implemented with JavaScript and CSS. Obviously, there are many ways to structure your JavaScript code. For instance:</p>
+  <ul>
+    <li>You could simply put all your code the single <strong>index.js</strong> file mentioned earlier.</li>
+    <li>Brightcove's consulting team did an implementation of the plugins using <a href="https://reactjs.org/">React</a>, a JavaScript library for building user interfaces.</li>
+  </ul>
+  <p>For the documents on this site, it was decided that the one file approach would lead to poor coding practices. React was maybe more than what was needed when the exact JavaScript skill sets of Beacon customers is not known. This led to the decision to use JavaScript modules for implementation and examples in this documentation.</p>
+  <p>The <a href="/ott-plugins/javascript-modules-beacon-plugins.html">Using JavaScript Modules for OTT Plugins</a> document explains the basic programming model around OTT Plugins, and how JavaScript modules can be used for code implementation.</p>
+  <p>Of course, you are free to organize your JavaScript code in any way you wish.</p>
+</section>
+
+<section class="bcls-section">
+  <h2 id="Additional documentation">Additional documentation and resources</h2>
+  <p>The following documents and GitHub repo are additional resources covering OTT plugins:</p>
+  <ul>
+    <li><a href="/ott-plugins/dispatching-handling-events.html">Dispatching and Handling Events in OTT Plugins</a></li>
+    <li><a href="/ott-plugins/javascript-modules-beacon-plugins.html">Using JavaScript Modules for OTT Plugins</a></li>
+    <li><a href="/ott-plugins/custom-divs.html">Implementing Custom Sections</a></li>
+    <li><a href="/ott-plugins/buttons-and-events.html">Implementing Buttons and Event Handlers</a></li>
+    <li><a href="/ott-plugins/side-panel.html">Implementing the Side Panel</a></li>
+    <li><a href="/ott-plugins/working-with-page-events.html">Working with Page Events</a></li>
+    <li><a href="/ott-plugins/user-events.html">Implementing User Events</a></li>
+    <li><a href="/ott-plugins/custom-page.html">Creating a Custom Page</a></li>
+    <li><a href="/ott-plugins/data-module.html">Storing Data in a Separate Module</a></li>
+    <li><a href="https://github.com/BrightcoveLearning/ott-plugins-example-code">ott-plugins-example-code</a> GitHub repo</li>
+  </ul>
+</section>
 
 </article>
 <!-- complete bootstrap layout -->
