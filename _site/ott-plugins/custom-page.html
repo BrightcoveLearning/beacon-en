@@ -1,41 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use a JavaScript plugin to create a custom page in your Beacon web app.">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="In this topic, you will learn how to use a JavaScript plugin to create a custom page in your Beacon web app." />
+
   <title>Creating a Custom Page</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
   
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
-<script translate="no">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-2728311-17');
-</script>
+  <script src="/assets/js/site/google-analytics.js"></script>
   <script src="/assets/js/sajari-head.js"></script>
-	<script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="/assets/css/local.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-
 <body class="body">
-
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
@@ -1517,7 +1507,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <summary>In this topic, you will learn how to use a JavaScript plugin to create a custom page in your Beacon web app.</summary>
 
   <section class="bcls-section">
-    <aside class="bcls-aside bcls-aside--information language-editable">This document is one part of the Beacon Plugins document collection. Since Beacon Plugins are implemented using JavaScript and CSS, the target audience for this document is developers with some experience with both of those technologies. To learn more about Beacon Plugins see the <a href="/ott-plugins/index.html">Beacon Plugins documentation home page</a>.</aside>
+    <aside class="bcls-aside bcls-aside--information language-editable">This document is one part of the OTT Plugins document collection. Since OTT Plugins are implemented using JavaScript and CSS, the target audience for this document is developers with some experience with both of those technologies. To learn more about OTT Plugins see the <a href="/ott-plugins/index.html">OTT Plugins documentation home page</a>.</aside>
     <h2 id="Introduction">Introduction</h2>
     <p>With JavaScript plugin code, you can add free-form pages to your Beacon web app by using the <em>Custom Pages</em> element. To create and populate the page with content, you will:</p>
     <ol class="bcls-tasklist">
@@ -1592,7 +1582,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Use a templating engine built for dynamically generating HTML, like <a href="https://handlebarsjs.com/">handlebars.js</a>. For alternatives to <em>handlebars.js</em> search for <em>JavaScript templating engines</em>.</li>
     </ul>
 
-    <p>In this document and other examples in the <em>Beacon Plugins</em> documentation on this site, the first approach is taken. This works fine for the simple, short examples shown, but for more complex HTML of greater length a templating engine would most likely be a better fit.</p>
+    <p>In this document and other examples in the <em>OTT Plugins</em> documentation on this site, the first approach is taken. This works fine for the simple, short examples shown, but for more complex HTML of greater length a templating engine would most likely be a better fit.</p>
     <p>Once you decide how to build your HTML, the next question is how to place it in the custom page? The key to answering this question is the <code>custom_page_area</code> selector. A <code>&lt;div&gt;</code> is created on the custom page as a target for your HTML.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/s-ott-plugins-img/custom-pages/console-div.png" alt="div in console">

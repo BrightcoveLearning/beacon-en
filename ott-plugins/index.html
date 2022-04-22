@@ -3,21 +3,4 @@ title: Beacon Plugins
 description: This section contains topics on Beacon plugins.
 parent: "OTT Plugins"
 ---
-
-<h1>{{ page.title }}</h1>
-<article class="landing-page-wrapper">
-  <summary>{{ page.description }}</summary>
-
-  <section class="bcls-topic-list">
-    <h2 id="Topics_in_this_section">Topics in {{ page.title }}</h2>
-    <ul>
-      {% for item in site.data.navigation %}
-      {% if item.name == page.title %}
-      {% for doc in item.docs %}
-      <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
-      {% endfor %}
-      {% endif %}
-      {% endfor %}
-    </ul>
-  </section>
-</article>
+{% include s-ott-plugins/index.html %}
