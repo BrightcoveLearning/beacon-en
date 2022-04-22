@@ -5,7 +5,6 @@ normal=`tput sgr0`
 echo "Enter your ${bold}COMMIT MESSAGE${normal}:"
 read COMMITMESSAGE 
 git pull
-./push-s.sh
 git add .
 git commit -m '$COMMITMESSAGE'
 git push

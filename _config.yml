@@ -29,8 +29,10 @@ site_domain: 'beacon-help.support.brightcove.com'
 # local server (for "jekyll serve") will be localhost:{PORT number below}
 port: 4002
 
+# Jekyll variables
 product: Brightcove Beacon
 product_short: Beacon
+product_short_lc: beacon
 product_underscore: Brightcove_Beacon
 color: rgb(51, 51, 51)
 product_color: rgb(28, 185, 213)
