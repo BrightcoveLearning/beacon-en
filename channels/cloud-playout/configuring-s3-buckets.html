@@ -2,31 +2,7 @@
 title: Configuring S3 Buckets
 description: This topic explains how to configure one or more AWS S3 buckets to use as a destination for Cloud Playout channels.
 parent: Cloud Playout
-grantparent: Managing Channels
+grandparent: Managing Channels
 ---
 
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-    <h2 id="Introduction">Introduction</h2>
-    <p>You can use AWS S3 buckets as either the sole destination for a Cloud Playout channel or in addition to an RTMP address or Brightcove Live. The <strong>Configuration</strong> page allows you to set up the configuration for your bucket(s) once instead of each time you create a channel.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="configuring_buckets">Configuring buckets</h2>
-    <p>To configure one or more S3 buckets to use with Cloud Playout, follow the steps below.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>
-        In Cloud Playout, click <strong>Configuration</strong> in the menu on the left:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/cloud-playout/configuration-menu-item.png" alt="Go to Configuration">
-          <figcaption class="bcls-caption--image">Go to Configuration</figcaption>
-        </figure>
-      </li>
-      <li>Click <span class="button-blue">Add New</span>.</li>
-      <li>Enter the bucket name, access key, secret key, and region.</li>
-      <li>Click <span class="button-blue">Add</span>.</li>
-    </ol>
-    <p>For information on how to generate an access key and secret key, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/">How do I create an AWS access key?</a></p>
-  </section>
-</article>
+{% include s-cloudplayout/cloud-playout-overview.html %}

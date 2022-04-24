@@ -1509,7 +1509,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <h1>Adding Static Image Overlays</h1>
 <article class="bcls-article">
   <summary>This topic explains how to add static image overlays to your Cloud Playout channels.</summary>
-  <p>Also see <a href="/channels/cloud-playout/dynamic-overlays.html">Adding Dynamic Overlays</a>.</p>
+  <p>Also see <a href="dynamic-overlays.html">Adding Dynamic Overlays</a>.</p>
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
     <p>You can use the static image overlay feature to superimpose a static image onto a video in a Cloud Playout channel. A static image is a still image that doesn't have motion. You prepare the image and store it outside of Cloud Playout and provide to us as a publicly accessible , unauthenticated http/https URL.</p>
@@ -1524,26 +1524,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ul>
       <li>The image that you overlay on a video should be a <a href="https://en.wikipedia.org/wiki/Truevision_TGA">.tga</a> or a .png file.</li>
       <li>
-        Create and manage static overlay images for an account using the new side menu item:
+        Create and manage static overlay images for an account using the side menu item:
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/cloud-playout/overlays-menu-item.png" alt="Overlays">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlays-menu-item.png" alt="Overlays">
           <figcaption class="bcls-caption--image">Overlays</figcaption>
         </figure>
       </li>
       <li>
         The overlay images then can be associated with a channel:
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/cloud-playout/overlay-associate-with-channel.png" alt="Associate Overlay with Channel">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlay-associate-with-channel.png" alt="Associate Overlay with Channel">
           <figcaption class="bcls-caption--image">Associate Overlay with Channel</figcaption>
         </figure>
         <br>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/cloud-playout/overlays-draft-channel.png" alt="Overlays in Draft Channel">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlays-draft-channel.png" alt="Overlays in Draft Channel">
           <figcaption class="bcls-caption--image">Overlays in Draft Channel</figcaption>
         </figure>
         <br>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/cloud-playout/overlays-for-running-channel.png" alt="Overlays in Running Channel">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlays-for-running-channel.png" alt="Overlays in Running Channel">
           <figcaption class="bcls-caption--image">Overlays in Running Channel</figcaption>
         </figure>
       </li>
@@ -1563,7 +1563,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </ul>
       </li>
       <li>You can configure with an opacity of 0 - 100. <strong>0</strong> is transparent and <strong>100</strong> is fully opaque.</li>
-      <li>You can position the image overlay on the video frame, as specified by x/y coordinates. By default X, Y coordinates are considered as 0, 0 (the top left edge of a video frame)</li>
       <li>
         You can position the image overlay on the video frame, as specified by x/y coordinates. By default the X, Y coordinates are considered as 0, 0 (<strong>the top left corner of a video frame</strong>):
         <ul>
@@ -1574,14 +1573,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         <strong>Sizing:</strong> the <strong>Use Original</strong> option can be used for Resolution to use the original resolution of the supplied image:
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/cloud-playout/overlay-use-original-size.png" alt="Use Original Image Size">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlay-use-original-size.png" alt="Use Original Image Size">
           <figcaption class="bcls-caption--image">Use Original Image Size</figcaption>
         </figure>
         <ul>
           <li>
             You can provide a custom <strong>width</strong> and <strong>height</strong> for the resolution to let the system scale the image before applying it on the source video:
             <figure class="bcls-figure">
-              <img class="bcls-image" src="/assets/images/cloud-playout/overlay-custom-width-height.png" alt="Set Width and Height">
+              <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlay-custom-width-height.png" alt="Set Width and Height">
               <figcaption class="bcls-caption--image">Set Width and Height</figcaption>
             </figure>
           </li>
@@ -1627,9 +1626,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="Contextual_Overlay_Launch">Contextual Overlay Launch</h2>
-    <p>For ease of access, if you want the overlay to appear for a specific video in the playlist, you can mouse hover the video in the playlist and click on the <strong>Add Overlay icon</strong> ( <img src="/assets/images/cloud-playout/overlay-icon.svg" alt="overlay icon"> ), the UI will launch the Add Overlays modal, with the start time and duration of the selected video.</p>
+    <p>For ease of access, if you want the overlay to appear for a specific video in the playlist, you can mouse hover the video in the playlist and click on the <strong>Add Overlay icon</strong> ( <img src="/assets/images/s-cloudplayout-img/overlay-icon.svg" alt="overlay icon"> ), the UI will launch the Add Overlays modal, with the start time and duration of the selected video.</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-add-particular-video.png" alt="Contextual Overlay Launch">
+      <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlay-add-particular-video.png" alt="Contextual Overlay Launch">
       <figcaption class="bcls-caption--image">Contextual Overlay Launch</figcaption>
     </figure>
     <h3>Notes</h3>
@@ -1648,25 +1647,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3>Problem case</h3>
     <p>The diagram below shows a too-large overlay, with a company logo in the lower-right corner and therefore hidden:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-problem-case.png" alt="Problem Case">
+      <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlay-problem-case.png" alt="Problem Case">
       <figcaption class="bcls-caption--image">Problem Case</figcaption>
     </figure>
     <h4>Solution 1</h4>
     <p>You could use the width and height fields to resize the image to fit the size of the video screen. The disadvantage of this is that resizing an image degrades the image quality, and will make the logo itself smaller:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-solution-1.png" alt="Solution 1">
+      <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlay-solution-1.png" alt="Solution 1">
       <figcaption class="bcls-caption--image">Solution 1</figcaption>
     </figure>
     <h4>Solution 2</h4>
     <p>If you move the logo to the upper-left corner, at least that will be assured visibility, but may not have a desirable placement:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-solution-2.png" alt="Solution 2">
+      <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlay-solution-2.png" alt="Solution 2">
       <figcaption class="bcls-caption--image">Solution 2</figcaption>
     </figure>
     <h4>Solution 3</h4>
     <p>The <strong>ideal solution</strong> is to size your overlay to exactly match the resolution of the video (and check <strong>Use Original</strong> for the sizing):</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-solution-3.png" alt="Solution 3">
+      <img class="bcls-image" src="/assets/images/s-cloudplayout-img/overlay-solution-3.png" alt="Solution 3">
       <figcaption class="bcls-caption--image">Solution 3</figcaption>
     </figure>
     <h5>Notes</h5>
