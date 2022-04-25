@@ -22,3 +22,9 @@
 	path = assets/images/s-cloudplayout-img
 	url = https://github.com/BrightcoveLearning/s-cloudplayout-img
 	branch = main
+[submodule "_includes/s-admin"]
+	path = _includes/s-admin
+	url = https://github.com/BrightcoveLearning/s-admin
+[submodule "assets/images/s-admin-img"]
+	path = assets/images/s-admin-img
+	url = https://github.com/BrightcoveLearning/s-admin-img
