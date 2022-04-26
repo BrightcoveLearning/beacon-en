@@ -10,11 +10,12 @@ description: In this topic you will learn ways to style captions.
     <p>The default look and feel of the captions is subject to change so you may wish to style the captions. There are a few ways that captions can be styled:</p>
     <ul>
       <li><a href="#infile">By adding styling options to the WebVTT file</a></li>
-      <li><a href="#css">By creating a custom class in a CSS file</a></li>
       <li><a href="#cssguide">CSS style guide</a></li>
       <li><a href="#user">User styling options</a></li>
     </ul>
+    <aside class="bcls-aside bcls-aside--information">Note:  Never use <code>!important</code> or any other CSS tricks to override user preferences (those set in the Captions Settings dialog).</aside>
     <aside class="bcls-aside bcls-aside--information">Note:  Safari uses native captions on the device and the device settings take precedence over vtt styles.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note:  Currently, only in-line styling is supported.  Style blocks are not supported.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="infile">Adding styling options to the WebVTT file</h2>
@@ -35,36 +36,6 @@ description: In this topic you will learn ways to style captions.
     </ul>
     <p>Because the Brightcove Player manages the positioning of captions, you can not use styles to change the location or orientation of the captions. The inline styles don't provide many styling options. For a greater variety of styling options, you can use a CSS file as described in the next section.</p>
     <p>For details about inline styles, see <a href="https://www.w3.org/TR/webvtt1/#styling">this link</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="css">Creating a custom class in a CSS file</h2>
-    <p>A custom class can be created as part of a CSS file and then applied to elements in the WebVTT file. For example, the class below changes the text color to white, background color to blue and bolds the font.</p>
-    <pre>
-<code translate="no">
-&lt;style&gt;
-   .captionstyle {
-      color:white;
-      background-color:blue;
-      font-weight:bold
-    }
-&lt;/style&gt;</code></pre>
-    <p>Then, the WebVTT file can be modified to apply the new <code translate="no">captionstyle</code> selector. The <code translate="no">c</code> prefix is used to denote the style used is a class selector (this is a WebVTT format standard).</p>
-    <pre>
-WEBVTT
-
-
-00:00:00.000 --&gt; 00:00:03.530 align:middle line:84%
-
-
-00:00:03.530 --&gt; 00:00:06.510 align:middle line:90%
-<code translate="no">&lt;c.captionstyle&gt;</code>In this video we'll learn how
-to login to and navigate around<code translate="no">&lt;/c&gt;</code>
-
-
-00:00:06.510 --&gt; 00:00:09.550 align:middle line:84%
-<code translate="no">&lt;c.captionstyle&gt;</code>inside of Beacon Studio.<code translate="no">&lt;/c&gt;</code>
-            </pre>
-    <p>For more information on styling options for caption files, see the <a href="https://dev.w3.org/html5/webvtt/#css-extensions">W3C WebVTT specification document</a> or see <a href="https://www.w3.org/TR/webvtt1/#styling">this link</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="cssguide">CSS Style Guide</h2>
