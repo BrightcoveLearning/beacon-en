@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
+  <meta name="description" content="In this topic you will learn how to add custom metadata fields to your videos." />
 
   <title>Creating Custom Metadata Fields</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -1505,20 +1505,24 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <article class="bcls-article">
   <h1>Creating Custom Metadata Fields</h1>
   <summary>In this topic you will learn how to add custom metadata fields to your videos.</summary>
+  <section class="bcls-section"> 
+    <p>Custom metadata can be used to add additional metadata fields to your videos. Custom fields are added as part of your account settings. After the custom fields have been added, the fields can be assigned values using the Media module.</p>
+  </section>
   <section class="bcls-section">
-    <p>Custom metadata can be used to add additional metadata fields to your videos. Custom fields are added as part of the account settings. After the custom fields have been added, the fields can be assigned values using the Media module.</p>
+    <h2 id="newUI">Creating custom fields</h2>
     <p>To create custom fields, follow these steps.</p>
-    <aside class="bcls-aside bcls-aside--information">Note:  After you make any changes to custom fields, you may need to clear your browser cache and reload the page to see the changes.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: After you make any changes to custom fields, you may need to clear your browser cache and reload the page to see the changes.</aside>
     <ol class="bcls-tasklist-restart">
-      <li>In the primary navigation, click <i data-feather="settings"></i>  <strong>Admin</strong>.  Note that you must be an account administrator to access to the Administration page.</li>
-      <li>Click <strong>Video Fields</strong>. </li>
+      <li>Login to Brightcove Beacon.</li>
+      <li>Open the <strong>Admin</strong> module and then <strong>Video Fields</strong>. Note that you must be an account administrator to access to the Admin menu.</li>
       <li>The Video Fields page will display your custom fields and all the standard video metadata fields. Review the standard fields before creating any new custom fields. This will help you avoid creating custom fields when a standard field that can do the job already exists.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Video Fields page" src="/assets/images/admin/custom-fields-overview.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Video Fields page" src="/assets/images/s-admin-img/node1050-custom-fields-overview.png" /></figure>
       </li>
-      <li>Click <strong>Add Custom Field</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Adding a field" src="/assets/images/admin/custom-field-new.png" /></figure>
+      <li>Click <span class="button-blue">Add Custom Field</span>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Adding a field" src="/assets/images/s-admin-img/node1050-new-custom-field.png" /></figure>
       </li>
-      <li>Enter a <strong>Display Name</strong>. This will appear as the label for the field in the Upload and Media modules. An<strong> Internal Name</strong> will automatically be created for the field based on the display name. The internal name is used when programmatically accessing the field using any of the Video Cloud APIs. The internal name can be changed but the internal name cannot include whitespace, double-byte characters or punctuation.
+      <aside class="bcls-aside bcls-aside--information">Note: There is no way to set a default value for a custom field.</aside>
+      <li>Enter a <strong>Display Name</strong>. This will appear as the label for the field in the Upload and Media modules. An<strong> Internal Name</strong> will automatically be created for the field based on the display name. The internal name is used when programmatically accessing the field using any of the Brightcove APIs. The internal name can be changed but the internal name cannot include whitespace, double-byte characters or punctuation.
         <p>Note that internal names never have spaces and are all lower-case. They are generally formed by making the display name lower case and replacing spaces with underscore characters.</p>
         <p>For example, if you enter <code translate="No">My Field</code> as the display name, the internal name will be <code translate="No">my_field</code>.</p>
         <aside class="bcls-aside bcls-aside--information">Note: There are some reserved words that <strong>must not</strong> be used as custom field internal names (the display name does not matter). See the <a href="#reserved">Reserved names</a> section for information.</aside>
@@ -1531,21 +1535,20 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>Enter a <strong>Description</strong>. The description field will appear as a hint in the Studio interface.</li>
       <li>If the custom field will be required, check <strong>Make this Field Required</strong>.</li>
-      <li>If your field type is <strong>List</strong>, enter a comma-separated list of values and then click <strong>Add to List</strong>.
-        </p>
+      <li>If your field type is <strong>List</strong>, enter a comma-separated list of values and then click <span class="button-blue">Add to List</span>.
         <aside class="bcls-aside bcls-aside--information">Notes:
           <ol>
             <li>The values must not contain quotation marks (example: Animals,Birds,Fish).</li>
             <li>No value can contain a comma - all commas will be treated as separators of different values.</li>
           </ol>
         </aside>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Adding a field" src="/assets/images/admin/custom-fields-new-field-added.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Adding a field" src="/assets/images/s-admin-img/node1050-new-custom-field-added.png" /></figure>
         <aside class="bcls-aside bcls-aside--information">Note: If custom field values have less than three characters, you will <strong>not</strong> be able to search for videos based on that value either in Studio or using the CMS API. For example, if you want to create a boolean-like custom field, <code translate="No">isfeatureitem</code>, make the value list <code translate="No">true</code> and <code translate="No">false</code>, not <code translate="No">yes</code> and <code translate="No">no</code>; if you use the latter values, you will <strong>not</strong> be able to find videos using the search <code translate="No">isfeatureitem:no</code>.</aside>
       </li>
-      <li>Click <strong>Save Field</strong> to save the changes. Click <strong>Save and Add Another</strong> to save the field and begin creating another field.</li>
+      <li>Click <span class="button-blue">Save Field</span> to save the changes. Click <span class="button-blue">Save and Add Another</span> to save the field and begin creating another field.</li>
     </ol>
-    <p>Custom fields you create are available immediately&nbsp;and will be visible&nbsp;in the <strong>CUSTOM FIELDS</strong> section in the Media module.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/custom-fields-media-module.png" /></figure>
+    <p>Custom fields you create are available immediately&nbsp;and will be visible&nbsp;in the Media module.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-admin-img/node1050-media-module.png" /></figure>
     <p>Up to 10 custom fields can be created. If you need more than 10 fields, click the <strong>Need more fields?</strong> link in the Video Fields page to contact Brightcove Customer Support with a request for more. Publishers are limited to 50 custom fields.</p>
   </section>
   <section class="bcls-section">
@@ -1554,12 +1557,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="delete">Deleting list values</h2>
-    <p>You can add remove existing values from a List type custom field. Click the custom field name link, click the delete icon (<img alt="" src="/assets/images/admin/custom-fields-delete-icon.png" />) associated with the value and then click <strong>Save Field</strong>.</p>
+    <p>You can add remove existing values from a List type custom field. Click the custom field name link, click the delete icon (<img alt="" src="/assets/images/s-admin-img/node1050-delete-icon.png" />) associated with the value and then click <strong>Save Field</strong>.</p>
     <p>When a list value is removed, any videos that were previously assigned that value will keep the value. However, if a video with the deleted value is edited, the value will be cleared and a new value will have to be selected.</p>
   </section>
   <section class="bcls-section">
     <h2 id="remove">Removing custom fields from an account</h2>
-    <p>To remove a custom field from an account, click the delete icon (<img alt="" src="/assets/images/admin/custom-fields-delete-icon.png" />) associated with the  custom field name.</p>
+    <p>To remove a custom field from an account, click the delete icon (<img alt="" src="/assets/images/s-admin-img/node1050-delete-icon.png" />) associated with the  custom field name.</p>
   </section>
   <section class="bcls-section">
     <h2 id="reserved">Reserved names</h2>
@@ -1568,52 +1571,77 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <table class="bcls-table">
       <tbody class="bcls-table__body">
         <tr>
-          <td width="215" align="center">category</td>
-          <td width="215" align="center">complete</td>
-          <td width="215" align="center">creationdate</td>
+          <td style="text-align:center;width:215px;" translate="No">category</td>
+          <td style="text-align:center;width:215px;" translate="No">complete</td>
+          <td style="text-align:center;width:215px;" translate="No">created_at</td>
         </tr>
         <tr>
-          <td align="center" translate="No">dataimport</td>
-          <td align="center" translate="No">discriminator</td>
-          <td align="center" translate="No">displayname</td>
+          <td style="text-align:center;" translate="No">creationdate</td>
+          <td style="text-align:center;" translate="No">custom_fields</td>
+          <td style="text-align:center;" translate="No">dataimport</td>
         </tr>
         <tr>
-          <td align="center" translate="No">displayname_analyzed</td>
-          <td align="center" translate="No">displayname_tokenized</td>
-          <td align="center" translate="No">enddate</td>
+          <td style="text-align:center;" translate="No">discriminator</td>
+          <td style="text-align:center;" translate="No">displayname</td>
+          <td style="text-align:center;" translate="No">displayname_analyzed</td>
         </tr>
         <tr>
-          <td align="center" translate="No">itemstate</td>
-          <td align="center" translate="No">lastmodifieddate</td>
-          <td align="center" translate="No">mediaid</td>
+          <td style="text-align:center;" translate="No">displayname_tokenized</td>
+          <td style="text-align:center;" translate="No">enddate</td>
+          <td style="text-align:center;" translate="No">itemstate</td>
         </tr>
         <tr>
-          <td align="center" translate="No">playable_now</td>
-          <td align="center" translate="No">playstotal</td>
-          <td align="center" translate="No">playstrailingweek</td>
+          <td style="text-align:center;" translate="No">lastmodifieddate</td>
+          <td style="text-align:center;" translate="No">mediaid</td>
+          <td style="text-align:center;" translate="No">name</td>
         </tr>
         <tr>
-          <td align="center" translate="No">publisheddate</td>
-          <td align="center" translate="No">publisherid</td>
-          <td align="center" translate="No">referenceid</td>
+          <td style="text-align:center;" translate="No">playable_now</td>
+          <td style="text-align:center;" translate="No">playstotal</td>
+          <td style="text-align:center;" translate="No">playstrailingweek</td>
         </tr>
         <tr>
-          <td align="center" translate="No">referenceid_analyzed</td>
-          <td align="center" translate="No">scheduled</td>
-          <td align="center" translate="No">searchtext</td>
+          <td style="text-align:center;" translate="No">published_at</td>
+          <td style="text-align:center;" translate="No">publisheddate</td>
+          <td style="text-align:center;" translate="No">publisherid</td>
         </tr>
         <tr>
-          <td align="center" translate="No">searchtext_analyzed</td>
-          <td align="center" translate="No">startdate</td>
-          <td align="center" translate="No">tag</td>
-
-          <tr>
-            <td align="center" translate="No">video_type</td>
-            <td align="center" translate="No"></td>
-          
+          <td style="text-align:center;" translate="No">referenceid</td>
+          <td style="text-align:center;" translate="No">referenceid_analyzed</td>
+          <td style="text-align:center;" translate="No">scheduled</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;" translate="No">referenceid_analyzed</td>
+          <td style="text-align:center;" translate="No">schedule.ends_at</td>
+          <td style="text-align:center;" translate="No">schedule.starts_at</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;" translate="No">scheduled</td>
+          <td style="text-align:center;" translate="No">searchtext</td>
+          <td style="text-align:center;" translate="No">searchtext_analyzed</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;" translate="No">startdate</td>
+          <td style="text-align:center;" translate="No">tag</td>
+          <td style="text-align:center;" translate="No">tags</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;" translate="No">text</td>
+          <td style="text-align:center;" translate="No">state</td>
+          <td style="text-align:center;" translate="No">video_type</td>
         </tr>
       </tbody>
     </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="code">Programmatically accessing custom fields</h2>
+    <p>Custom fields can be accessed programmatically using one of the Brightcove APIs. The following developer documents provide more information.</p>
+    <ul>
+      <li><a href="https://player.support.brightcove.com/references/video-metadata-mediainfo.html#displaytagsfields">Getting custom fields for a video in a player</a></li>
+      <li><a href="https://apis.support.brightcove.com/cms/references/reference.html#api-videoGroup-Get_Custom_Fields">Get a list of custom fields for an account</a></li>
+      <li><a href="https://apis.support.brightcove.com/cms/references/reference.html#api-videoGroup-Get_Video_by_ID_or_Reference_ID">Using the CMS API</a></li>
+      <li><a href="https://apis.support.brightcove.com/playback/references/reference_v1.html">Using the Playback API</a></li>
+    </ul>
   </section>
 </article>
 

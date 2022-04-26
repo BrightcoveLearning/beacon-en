@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
+  <meta name="description" content="This topic provides guidance on creating custom ingest profiles." />
 
   <title>Ingest Profiles Best Practices</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -1517,8 +1517,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Creating new profiles</li>
       <li>Cloning from existing profiles</li>
       <li>Editing custom profiles</li>
-      <li>Removing unneeded profiles  </li>
+      <li>Removing unneeded profiles</li>
     </ul>
+    <p>If you need programmatic access to your ingest profiles, you can create, read, update, and delete custom profiles using the <a href="https://apis.support.brightcove.com/ingest-profiles/">Ingest Profiles REST API</a>. Note that this requires you to set up <a href="https://apis.support.brightcove.com/oauth/">OAuth credentials</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="How_do_I_update_my_profiles">How do I update my profiles?</h2>
@@ -1526,7 +1527,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="How_many_renditions_can_a_profile_have">How many renditions can a profile have?</h2>
-    <p>A Dynamic Delivery profile can have up to 37 renditions. Note that for custom Dynamic Delivery profiles, you can only select the <a href="standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html#Renditions">pre-defined renditions</a> that are currently available.</p>
+    <p>A <a href="https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html">Dynamic Delivery</a> profile can have up to 37 renditions. Note that for custom Dynamic Delivery profiles, you can only select the <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html#Renditions">pre-defined renditions</a> that are currently available.</p>
     <p>If you are making a custom Context Aware Encoding profile, <code translate="No">min_renditions</code> has a minimum values of 1, and <code translate="No">max_renditions</code> has a maximum value of 15.</p>
     <aside class="bcls-aside bcls-aside--information">
       <p>Note that unnecessary renditions will add to your managed storage costs, so you should not create renditions that are unlikely to be played given kind of videos you publish and the audiences and devices that you target.</p>
@@ -1540,7 +1541,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="What_profile_should_I_set_as_default">What profile should I set as default?</h2>
-    <p>Any standard or custom profile can be set as the default  in Studio.</p>
+    <p>Any standard or custom profile can be set as the default either in Studio or through the Ingest Profile API. The default will only be used if the user does not specify a particular profile (either in the Upload module or using the Dynamic Ingest API).</p>
+    <p>We recommend that you set the default profile to one that would not be a very bad choice if the user forgets to specify a particular profile.</p>
   </section>
 </article>
 

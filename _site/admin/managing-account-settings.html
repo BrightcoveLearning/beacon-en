@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
+  <meta name="description" content="This topic provides an overview of the Studio account settings options." />
 
   <title>Managing Account Settings</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -1504,11 +1504,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <article class="bcls-article">
   <h1>Managing Account Settings</h1>
-  <summary>This topic provides an overview of the  account settings that are available.</summary>
+  <summary>This topic provides an overview of the Studio account settings options.</summary>
   <section class="bcls-section">
-    <p>To access the account settings,in the left navigation, click <i data-feather="settings"></i>  <strong>Admin</strong>. Note that you must be an account administrator to access to the Administration page.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/account-settings-menu.png" /></figure>
-    <p>The following account settings are available:</p>
+    <p>To access the Studio account settings, open the <strong>Admin</strong> module in the primary navigation.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: You must be an account administrator to access the <strong>Admin</strong> menu.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: Your Studio version and account configuration will determine which Admin menu options are available.</aside>
+    
+    
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-admin-img/node14055-account-settings-menu-beacon.png" /></figure>
+      
+      <p>The following account settings are available:</p>
     <ul>
       <li><a href="#account_info">Account Information</a></li>
       <li><a href="#users">User Management</a></li>
@@ -1521,21 +1526,24 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><a href="#ssads">Server-Side Ad Settings</a></li>
       <li><a href="#player">Player Settings</a></li>
       <li><a href="#live">Live Settings</a></li>
+      <li><a href="#integrations">Integrations</a></li>
       <li><a href="#api">API Authentication</a></li>
+      <li><a href="#billing">Billing</a></li>
     </ul>
   </section>
   <section class="bcls-section">
     <h2 id="account_info">Account Information</h2>
-    <p>The Account Information option allows you to edit the account name and mailing address and can be used to clone accounts. For more information, see <a href="managing-account-information.html">Managing Account Information</a>.</p>
+    <p>The Account Information option allows you to edit the account name and mailing address and can be used to clone accounts. For more information, see <a href="/admin/managing-account-information.html">Managing Account Information</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="users">User Management</h2>
-    <p>The User Management option allows you to manage the users who are authorized to use Studio. For more information on managing users, see <a href="managing-users.html">Managing Users</a>.</p>
+    <p>The User Management option allows you to manage the users who are authorized to use Studio. For more information on managing users, see <a href="/admin/managing-users.html">Managing Users</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="account_settings">Account Settings</h2>
     <p>The Analytics Settings provide access to account-related settings. The <strong>Default Reporting Time Zone</strong> is used to calculate day boundaries for reporting data. Changing the reporting time zone setting only affects data going forward, and changes are not applied retroactively. If you change this setting, you may see a flat spot or a spike in your analytics data when looking at day boundaries where the change was applied. Updates to this setting may not take effect immediately and analytics data may continue to refer to the old setting until the system processes the changes.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/account-settings.png" /></figure>
+    <p>If <strong>Enable Video Content Type Field</strong> is enabled, the Video Content Type field will be displayed on the Media module homepage. It also allows a Video Content Type to be assigned to videos on the video properties page. For more information on managing users, see <a href="/campaign/get-started/overview-video-content-types.html">Overview of Video Content Types</a>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-admin-img/node14055-account-settings.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="upload">Upload Settings</h2>
@@ -1543,22 +1551,22 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p><strong>Required Fields</strong> - Select an option for how required fields are handled:</p>
     <ul>
       <li><strong>Required for activation</strong> - Required fields must have values before the video can be activated.</li>
-      <li><strong>Required for upload</strong> - Required fields must have values before the video can be processed and uploaded using the Upload page.</li>
+      <li><strong>Required for upload</strong> - Required fields must have values before the video can be processed and uploaded using the Upload module.</li>
     </ul>
-    <p><strong>Upload Additional Assets</strong> - When checked, allows poster and thumbnail images to be uploaded when videos are uploaded using the Upload page. The upload status dialog will display and provide the ability to select poster and thumbnail images to upload. For more information, see <a href="/media/uploading-videos.html">Uploading Videos</a>.</p>
-    <p><strong>Default Image Dimensions</strong> - These values can be used to set default image sizes for poster and thumbnail images. By configuring sizes as part of the Upload Settings, you can avoid having to set image dimensions in your ingest profiles. When these values are configured and your ingest profiles have image sizes as well, Video Cloud will use the following process to determine what dimensions to use for various types of image ingests:</p>
+    <p><strong>Upload Additional Assets</strong> - When checked, allows poster and thumbnail images to be uploaded when videos are uploaded using the Upload module. The upload status dialog will display and provide the ability to select poster and thumbnail images to upload. For more information, see <a href="/media/uploading-videos-using-upload-module.html">Uploading Videos Using the Upload Module</a>.</p>
+    <p><strong>Default Image Dimensions</strong> - These values can be used to set default image sizes for poster and thumbnail images. By configuring sizes as part of the Upload Settings, you can avoid having to set image dimensions in your ingest profiles. When these values are configured and your ingest profiles have image sizes as well, Beacon will use the following process to determine what dimensions to use for various types of image ingests:</p>
     <ol class="bcls-tasklist">
-      <li>When you upload a video using the Upload page, Video Cloud will first look to see if there are image dimensions defined in the selected ingest profile. If the ingest profile has image dimensions, those dimensions will be used. If not, Video Cloud will check for dimensions in the following order:
+      <li>When you upload a video using the Upload module, Beacon will first look to see if there are image dimensions defined in the selected ingest profile. If the ingest profile has image dimensions, those dimensions will be used. If not, Beacon will check for dimensions in the following order:
         <ul>
           <li>Use image dimensions specified in the default ingest profile for the account</li>
           <li>Use image dimensions specified in the Upload settings</li>
-          <li>Use global default image dimensions specified by Video Cloud</li>
+          <li>Use global default image dimensions specified by Beacon</li>
         </ul>
       </li>
-      <li>If you upload a poster or thumbnail image from the video details page, or capture an image from the video details page, the image dimensions specified as part of the default ingest profile for the account will be used. If the default ingest profile does not have image dimensions, Video Cloud will check for dimensions in the following order:
+      <li>If you upload a poster or thumbnail image from the video details page, or capture an image from the video details page, the image dimensions specified as part of the default ingest profile for the account will be used. If the default ingest profile does not have image dimensions, Beacon will check for dimensions in the following order:
         <ul>
           <li>Use image dimensions specified in the Upload settings</li>
-          <li>Use global default image dimensions specified by Video Cloud</li>
+          <li>Use global default image dimensions specified by Beacon</li>
         </ul>
       </li>
     </ol>
@@ -1568,41 +1576,49 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Allow concurrent uploads </strong> - Multiple files are uploaded concurrently</li>
       <li><strong>Upload one file at a time</strong> - Files are uploaded one at a time; this is recommended when large files are being uploaded</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/account-settings-upload.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-admin-img/node14055-upload-settings.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="ingest">Ingest Profiles</h2>
-    <p>The Ingest Profiles option allows you to manage the ingest profiles your Video Cloud account. For more information on managing ingest profiles, see <a href="managing-ingest-profiles.html">Managing Ingest Profiles</a>.</p>
+    <p>The Ingest Profiles option allows you to manage the ingest profiles your Beacon account. For more information on managing ingest profiles, see <a href="/admin/managing-ingest-profiles.html">Managing Ingest Profiles</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="fields">Video Fields</h2>
-    <p>The Video Fields option allows you to mark standard video fields as required and also allows you to view, create, and modify custom metadata fields for your account. For more information on configuring video fields, see <a href="creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a>.</p>
+    <p>The Video Fields option allows you to mark standard video fields as required and also allows you to view, create, and modify custom metadata fields for your account. For more information on configuring video fields, see <a href="/admin/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="language">Language Settings</h2>
-    <p>The Language Settings is where you define a Primary Language and then add and manage additional metadata languages. For more information on configuring language settings, see <a href="configuring-language-settings.html">Configuring Language Settings</a>.</p>
+    <p>The Language Settings is where you define a Primary Language and then add and manage additional metadata languages. For more information on configuring language settings, see <a href="/admin/configuring-language-settings.html">Configuring Language Settings</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="sharing">Media Sharing</h2>
-    <p>The Media Sharing option allows you to upload videos once and then share the videos to other Brightcove accounts. For more information on media sharing, see <a href="managing-media-sharing-settings.html">Managing Media Sharing Settings</a>.</p>
+    <p>The Media Sharing option allows you to upload videos once and then share the videos to other Beacon accounts. For more information on media sharing, see <a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="ssads">Server-Side Ad Settings</h2>
-    <p>The Server-Side Ad Settings allow you to manage both Live and VOD server-side ad configurations. For more information, see <a href="configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a>.</p>
+    <p>The Server-Side Ad Settings allow you to manage both Live and VOD server-side ad configurations. For more information, see <a href="/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="player">Player Settings</h2>
-    <p><strong>Basic Authentication</strong> - Provides the option of using basic username and password authentication for access to the Player Management and Delivery System APIs. If this option is not enabled, <a href="managing-api-authentication-credentials.html">API authentication</a> must be used.</p>
+    <p><strong>Basic Authentication</strong> - Provides the option of using basic username and password authentication for access to the Player Management and Delivery System APIs. If this option is not enabled, <a href="/admin/managing-api-authentication-credentials.html">API authentication</a> must be used.</p>
     <p><strong>Player Mapping</strong> - Provides the ability to create player mapping for use in the Directed Migration Tool. The Directed Migration Tool provides a way to specify that a Brightcove Player should be loaded instead of a Smart Player.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/account-settings-player-service.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-admin-img/node14055-player-service-settings.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="live">Live Settings</h2>
     <p>The Live Settings allow you to manage the settings for Brightcove Live. For more information, see <a href="https://live.support.brightcove.com/admin/managing-live-settings.html">Managing Live Settings</a>.</p>
   </section>
   <section class="bcls-section">
+    <h2 id="integrations">Integrations</h2>
+    <p>Integrations allows you to integrate with Zoom and broadcast a Zoom meeting using Brightcove Live. For more information, see <a href="https://live.support.brightcove.com/live-module/zoom-live-integration.html">Integrating a Zoom meeting into Brightcove Live</a>.</p>
+  </section>
+  <section class="bcls-section">
     <h2 id="api">API Authentication</h2>
-    <p>The API Authentication option allows you to create and manage API credentials. For more information on managing API credentials, see <a href="managing-api-authentication-credentials.html">Managing API Authentication Credentials</a>.</p>
+    <p>The API Authentication option allows you to create and manage API credentials. For more information on managing API credentials, see <a href="/admin/managing-api-authentication-credentials.html">Managing API Authentication Credentials</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="billing">Billing</h2>
+    <p>The Billing option allows you to view billing information for the account. For more information on billing, see <a href="/admin/viewing-billing-information.html">Viewing Billing Information</a>.</p>
   </section>
 </article>
 
