@@ -30,3 +30,11 @@
 	path = assets/images/s-admin-img
 	url = https://github.com/BrightcoveLearning/s-admin-img
   branch = main
+[submodule "_includes/s-players"]
+	path = _includes/s-players
+	url = https://github.com/BrightcoveLearning/s-players
+  branch = main
+[submodule "assets/images/s-players-img"]
+	path = assets/images/s-players-img
+	url = https://github.com/BrightcoveLearning/s-players-img
+  branch = main
