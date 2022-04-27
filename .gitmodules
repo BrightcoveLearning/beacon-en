@@ -38,3 +38,11 @@
 	path = assets/images/s-players-img
 	url = https://github.com/BrightcoveLearning/s-players-img
   branch = main
+[submodule "_includes/s-layout"]
+	path = _includes/s-layout
+	url = https://github.com/BrightcoveLearning/s-layout
+  branch = main
+[submodule "assets/images/s-layout-img"]
+	path = assets/images/s-layout-img
+	url = https://github.com/BrightcoveLearning/s-layout-img
+  branch = main
