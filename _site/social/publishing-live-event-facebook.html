@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="In this topic you will learn how to create a video clip using Brightcove Social." />
+  <meta name="description" content="In this topic you will learn how to publish a live event to Facebook using Brightcove Social." />
 
-  <title>Creating a Video Clip Using Brightcove Social</title>
+  <title>Publishing a Live Event to Facebook</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -54,7 +54,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Creating a Video Clip Using Brightcove Social</li>
+      <li class="breadcrumb-item active" aria-current="page">Publishing a Live Event to Facebook</li>
       
       
     </nav>
@@ -1503,99 +1503,129 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Creating a Video Clip Using Brightcove Social</h1>
-  <summary>In this topic you will learn how to create a video clip using Brightcove Social.</summary>
+  <h1>Publishing a Live Event to Facebook</h1>
+  <summary>In this topic you will learn how to publish a live event to Facebook using Brightcove Social.</summary>
   <section class="bcls-section">
-    <p>Brightcove Social provides the ability to create video clips from existing videos in your Beacon account. There are several reasons you might want to create a clip:</p>
+    
+    <p>The Brightcove Live to Social Media feature can be used to schedule and then broadcast a live event to Facebook all from within the Social module. To do this, the following tasks will be completed:</p>
     <ul>
-      <li>To create a short, teaser clip that can be posted to social media</li>
-      <li>To limit the length of a video that you want to post (most platforms limit the length of videos)</li>
-      <li>You have found that shorter videos perform better on social media</li>
+      <li><a href="#schedule">Schedule a Facebook live event</a></li>
+      <li><a href="#live_event">Create a live event and assign it to scheduled social event</a></li>
+      <li><a href="#preview">Preview and broadcast the live stream</a></li>
+      <li><a href="#end">End the live stream</a></li>
     </ul>
+    <aside class="bcls-aside bcls-aside--information">Note: Your account must be enabled for Brightcove Live before using this feature.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="create">Creating a clip</h2>
-    After a clip is saved, it will be saved as a video in your Beacon account. Follow these steps to create a clip.
+    <h2 id="schedule">Scheduling a Facebook live event</h2>
+    <p>Scheduling a Facebook live event in advance allows you to publicize the event to your Facebook audience before the event begins. Before a live event can be scheduled, a publishing destination for the Facebook site you are going to stream the event to must be created. For information on creating publishing destinations, see <a href="https://studio.support.brightcove.com/social/creating-social-media-publishing-destinations.html">Creating Social Media Publishing Destinations</a>.</p>
+    <p>To schedule an upcoming Facebook live video, follow these steps.</p>
     <ol class="bcls-tasklist-restart">
       <li>Open the<strong> Social </strong>Module.</li>
-      <li>Click <strong>Videos</strong> in the left navigation. A list of videos in your Beacon account will display.</li>
-      <li>Click on the video to create a clip from and then click <strong> Clip</strong>. The clip editor will open.
-        <aside class="bcls-aside bcls-aside--information">
-          <ul>
-        <li>In order to create a clip, the source video must have at least one MP4 rendition available. If the <strong> Clip</strong> button is disabled, the video may not have an MP4 rendition available.</li>
-        <li>You cannot create a clip from another clip. If you selected a clipped video, the <strong> Clip</strong> button will be disabled.</li>
-        <li>You cannot create a clip from a video that has DRM enabled (lock appears in the video thumbnail) and was transcoded using a legacy ingest profile. DRM enabled videos transcoded using a Dynamic Delivery ingest profile can be clipped. If a clip can't be created, the <strong> Clip</strong> button will be disabled.</li>
-        <li>Videos with closed captions can be clipped via Social, but the resulting clipped video will not have captions. You will need to upload new captions to the clipped video, and Social will use those when publishing.</li>
-      </ul>
-      </aside>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16672-create-clip.png" /></figure>
+      <li>From the <strong>Published</strong> page, click <span class="button-blue">Create Live Event</span>.</li>
+      <li>Select the destination the event will be streamed to and then click <span class="button-blue">Continue</span>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-select-dest.png" /></figure>
       </li>
-      <li>Enter a <strong>Clip Name</strong>.</li>
-      <li>Drag the handles that appear on the timeline to trim the beginning and end of your video. You can also enter specific start and end times using the edit fields. More precise control when editing may be achieved using the <a href="#keys">keyboard shortcuts</a>. When you are done, click <span class="button-blue">Continue</span>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16672-clipped-video.png" /></figure>
-        <aside class="bcls-aside bcls-aside--information">Note: The player in the clipping modal will scrub to within a frame or two of the actual frame at the time displayed. The behavior is the same whether you use the mouse to drag the sliders or use the keyboard shortcuts to set the clip points. The clip editor clips at exactly the times provided.</aside>
+      <li>On the Schedule a Live Event page, optionally, enter a <strong>Title</strong> and <strong>Status Message</strong>. These values will appear in the Facebook post announcing the live stream.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-title-status.png" /></figure>
       </li>
-      <li>Review the clip information. The Clip Name, Tags and any custom fields created for the account can be edited.
-        <aside class="bcls-aside bcls-aside--information">Note: You may want to remove tags that will cause the clip to appear on your existing playlists or to be auto-synced to a social destination.</aside>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16672-clip-info.png" /></figure>
+      <li>In the <strong>Schedule</strong> section, use the calendar and clock controls to set the <strong>Event Date &amp; Time</strong> for the event.</li>
+      <li>Select the appropriate <strong>Time Zone</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-schedule.png" /></figure>
       </li>
-      <li>When done, select an option:
+      <li>In the <strong>Live Settings</strong> section, configure the <strong>Facebook Live Video Settings</strong> as appropriate.
         <ul>
-          <li><span class="button-blue">Save</span> - Starts transcoding and then saves the clip in your Beacon account.</li>
-          <li><span class="button-blue">Save &amp; Publish...</span> - Starts transcoding and then saves the clip in your Beacon account. You also can select the destination(s) to publish the video to. There may be a delay for published clips to appear on your social media sites as the video must be transcoded.</li>
-          <li><span class="button-blue">Cancel</span> - Discards the clip.</li>
+          <li><strong>Allow embedding</strong> - If checked, video can be embedded on third-party sites</li>
         </ul>
+        <figure class="bcls-figure"><img alt="" class="bcls-image--no-border" src="/assets/images/s-social-img/live-fb-live-settings.png" /></figure>
+      </li>
+      <li>Configure the <strong>Target</strong> and <strong>Rights</strong> sections as needed. Note that the Rights section will only appear if the connected account has access to the <a href="https://www.facebook.com/facebookmedia/blog/introducing-rights-manager">Facebook Rights Manager</a>.</li>
+      <li>Click the <strong>Add Custom Image</strong> link at the top of the page.</li>
+      <li>Click <strong>Select Image</strong> to browse and select an image or drag and drop an image to use. This image will appear in the Facebook post announcing the live event. The preview image will update to display the new image.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-new-image.png" /></figure>
+      </li>
+      <li>Click <span class="button-blue">Ok, Got It</span>.</li>
+      <li>Click <strong>Schedule Event</strong> to schedule the event in Facebook.</li>
+      <li>Click the <strong>View on Facebook</strong> link at the top of the page to view the post on Facebook.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-fb-event-scheduled.png" /></figure>
       </li>
     </ol>
-    <p>Clips that are saved are transcoded using the ingest profile designated as the <strong>Social clipping default</strong> for the account. For information on setting default ingest profiles, see <a href="/admin/managing-ingest-profiles.html">Managing Ingest Profiles</a>.</p>
-    <p>Note that when creating clips, the entire source video must be downloaded. For longer source videos, it may take longer before the clip is available in your Beacon account.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: The clip source file name will be set to the same source file name as the source video.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="keys">Using keyboard shortcut keys</h2>
-    <p>More precise control over the clipping can be done using the keyboard shortcut keys:</p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th scope="col">Shortcut</th>
-          <th scope="col">Description</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td >J <em>or</em> ←</td>
-          <td >Back one frame</td>
-        </tr>
-        <tr>
-          <td >K</td>
-          <td >Play / Pause</td>
-        </tr>
-        <tr>
-          <td >L <em>or</em> →</td>
-          <td >Forward one frame</td>
-        </tr>
-        <tr>
-          <td >I</td>
-          <td >Mark current frame as in point</td>
-        </tr>
-        <tr>
-          <td >O</td>
-          <td >Mark current frame as out point</td>
-        </tr>
-        <tr>
-          <td >Space bar</td>
-          <td >Play / Pause</td>
-        </tr>
-        <tr>
-          <td >⇧ + I</td>
-          <td >Go to in point</td>
-        </tr>
-        <tr>
-          <td >⇧ + O</td>
-          <td >Go to out point</td>
-        </tr>
-      </tbody>
-    </table>
+    <h2 id="live_event">Creating a live event</h2>
+    <p>Before you can start streaming a live event, a live event must be created using the Live module. Live events created in the Live module will be available to broadcast using the Social module.</p>
+    <p>When creating an event in the Live module, keep the following points in mind:</p>
+    <ul>
+      <li>If you create a recurring event, you can create the event ahead of time and activate it when you are ready to start streaming to Facebook.</li>
+      <li>If you create a regular event (non-recurring), the live event must be started within 30 minutes of the event being created. If you are using a regular event, it should be created right before you are ready to go live on Facebook.</li>
+    </ul>
+    <p>For detailed information on creating live events using the Live module, see <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Creating and Managing Live Events using the Live Module</a>.</p>
+    <p>To create a new live event, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Live </strong> module.</li>
+      <li>Click <span class="button-blue">Create Event</span>. The Create Live Event page will open.</li>
+      <li>Enter the <strong>Event Name</strong> and any required fields.</li>
+      <li>For the <strong>Streaming to Social Media</strong> option, select <strong>Allowed</strong>.</li>
+      <li>Select a <strong>Live Ingest Profile</strong>.</li>
+      <li>Click <strong>Stream Options</strong> and select the <strong>Region</strong> closest to where your encoder is located.</li>
+      <li>If you wish to create a recurring event, in the <strong>Advanced Options</strong> section, select the <strong>Create this as a recurring event using a Static Entry Point (SEP)</strong> option.</li>
+      <li>Click <span class="button-blue">Create Event</span>. The Control Room page will open and display a <strong>Streaming Endpoint (RTMP URL)</strong> and <strong>Stream Name</strong> which  will be used by your encoder.</li>
+      <li>To connect a live event to a scheduled social event using the Live module, click <strong>Connect to Social Media</strong> in the left navigation. Note that the live event can also be assigned using the <a href="#social_assign">Social module</a>.</li>
+      <li>Click on an event and then click <span class="button-blue">Connect</span>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-connect-social-media.png" /></figure>
+      </li>
+      <li>Click the <strong>Control Room</strong> link in the left navigation to return to the control room.</li>
+    </ol>
+    <p>The <strong>Streaming Endpoint (RTMP URL)</strong> and <strong>Stream Name</strong> values will be used by your encoder. Start the live stream and confirm it appears in the Control Room.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="social_assign">Assigning a live event to a scheduled social event</h2>
+    <p>If the live event wasn't assigned to a scheduled event using the Live module, the live event to use must be selected in the Social module. To assign a live event to a scheduled event using the Social module, follow these steps.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: These steps are only required if the live event was not assigned in the Live module.</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>Return to the Social module and edit the scheduled event. The scheduled event will appear on the Published page with a status of <strong>Live Scheduled</strong>.</li>
+      <li>Click the <strong>Connect Video Source</strong> link at the top of the page.</li>
+      <li>Select the live event from the <strong>Select Video Source</strong> dropdown list.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-select-video-source.png" /></figure>
+      </li>
+      <li>Click <span class="button-blue">Connect Source</span>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="preview">Previewing and broadcasting the live stream</h2>
+    <p>Before previewing the event in the Social module, the live event should be started and should be visible in the Live module.</p>
+    <p>To preview and broadcast the live stream, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>If the event was assigned using the Live module, return to the Social module and edit the scheduled event.</li>
+      <li>Confirm the stream preview appears. This is a preview from the Social module.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-social-module-preview.png" /></figure>
+      </li>
+      <li>Click the <strong>Preview Live Stream </strong>link at the top of the page and then click <strong>Preview</strong>. Click the <strong>Play</strong> button to preview the Facebook live stream. This is the stream that Facebook will broadcast so confirm it is as expected.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-preview-fb-stream.png" /></figure>
+      </li>
+      <li>To broadcast the live stream to Facebook, click the <strong>Broadcast to Viewers</strong> link and then click <strong>Broadcast Stream</strong>. The preview will update to show the number of viewers.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-broadcast-facebook.png" /></figure>
+      </li>
+    </ol>
+    <p>Click the <strong>Switch to Facebook player</strong> link under the player to view the Facebook player.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-broadcast-facebook-fb-player.png" /></figure>
+    <p>The live stream will also be viewable on your Facebook page.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-live-on-facebook.png" /></figure>
+    <p>As Facebook comments are added by viewers, they can be viewed inside of the Social module by clicking on the <strong>Comment Feed</strong> tab.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-comment-feed.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="end">Ending the live stream</h2>
+    <p>To end the live stream, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Return to the Social module and edit your scheduled event.</li>
+      <li>Click the <strong>End Social Live Event</strong> link at the top of the page and then click <strong>End Live Event</strong>.</li>
+      <li>Return to the Live module to end the event and make sure to stop your encoder.</li>
+      <li>If you were using a recurring event, return to the Live module and deactivate the event.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Note: Make sure the encoder is closed/stopped when the live stream is complete. Leaving a connection open between any encoder and Brightcove, even when no data is being sent, may result in unexpected connection charges.</aside>
+    <p>Completed events will appear in the Social module on the Published page. Clicking the delete icon (<img alt="" src="/assets/images/social/live-fb-delete-icon.png" />) will remove the event from Facebook.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/live-fb-event-complete.png" /></figure>
   </section>
 </article>
 
@@ -1624,7 +1654,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 08 Feb 2022
+  Page last updated on 27 Apr 2022
 </div>
 
 
