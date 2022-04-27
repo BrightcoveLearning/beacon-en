@@ -1507,19 +1507,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Getting Started with Brightcove Social</h1>
   <summary>This topic provides an overview of Brightcove Social. Brightcove Social allows you to easily publish videos in your Video Cloud account out to popular social media platforms such as YouTube, Facebook and Twitter.</summary>
   <section class="bcls-section">
-    <p>To access Brightcove Social, login to  Studio. In the primary navigation, click <i data-feather="crosshair"></i> <strong>Social.</strong>  A list of your published videos will be displayed by default.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16342-social-home-beacon.png" /></figure>
+    
+    <p>To access Brightcove Social, login to Brightcove Beacon and open the<strong> Social </strong> module in the primary navigation. A list of your published videos will be displayed by default.</p>
+    
+    
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16342-social-module-beacon.png" /></figure>
+  
     <p>Using Brightcove Social you can:</p>
     <ul>
       <li><a href="#view">View your published videos</a></li>
       <li><a href="#publish">Publish videos to social media platforms</a></li>
+      <li><a href="#publish-live">Publish live videos to social media platforms</a></li>
       <li><a href="#autosync">Automatically sync videos to social media accounts</a></li>
       <li><a href="#create">Create social media publishing destinations</a></li>
       <li><a href="#analytics">Review Social analytics</a></li>
     </ul>
     <aside class="bcls-aside bcls-aside--information">
-      <p>Note: We have encountered some cases where the Social module does not load. Most often this appears to be caused by the user's network blocking the Facebook library: <code translate="no">https://connect.facebook.net/en_US/sdk.js</code>.</p>
-      <p>This is especially common in Firefox, due to the Enhanced Tracking Protection, which blocks the Facebook SDK by default. For information and instructions on adjusting these settings, see <a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop">Enhanced Tracking Protection in Firefox for desktop</a>.</p>
+      <p>Note: If you are having issues getting the Social module to load, check to ensure your network is not blocking the Facebook library: <code translate="no">https://connect.facebook.net/en_US/sdk.js</code>. This is especially common in Firefox due to the Enhanced Tracking Protection which blocks the Facebook SDK by default. For information and instructions on adjusting these settings, see <a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop">Enhanced Tracking Protection in Firefox for desktop</a>.</p>
     </aside>
   </section>
   <section class="bcls-section">
@@ -1528,7 +1532,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="publish">Publishing videos to social media platforms</h2>
-    <p>To publish a video to a social media platform, click the <strong>Videos</strong> link in the left navigation. For information on publishing videos to a social media account, see <a href="/social/publishing-videos-social-media-platforms.html">Publishing Videos to Social Media Platforms</a>.</p>
+    <p>To publish a video to a social media platform, click the <strong>Videos</strong> link in the left navigation or click <span class="button-blue">Choose videos to Publish</span> at the top of the page. For information on publishing videos to a social media account, see <a href="/social/publishing-videos-social-media-platforms.html">Publishing Videos to Social Media Platforms</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="publish-live">Publishing live videos to social media platforms</h2>
+    <p>To publish a live video to a social media platform, click <span class="button-blue">Create Live Event</span> at the top of the page. For information on publishing live videos to a social media account, see one of the following:</p>
+    <ul>
+      <li><a href="/social/publishing-live-event-facebook.html">Publishing a Live Event to Facebook</a></li>
+      <li><a href="publishing-live-event-youtube.html">Publishing a Live Event to YouTube</a></li>
+    </ul>
   </section>
   <section class="bcls-section">
     <h2 id="autosync">Automatically syncing videos to social media accounts</h2>
@@ -1543,6 +1555,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Social Analytics provides data on how videos shared to social media channels are performing. View the social analytics by clicking <strong>Social Analytics</strong> in the left navigation. For information on social analytics, see <a href="/social/reviewing-social-analytics.html">Reviewing Social Analytics</a>.</p>
   </section>
 </article>
+
 <!-- complete bootstrap layout -->
 <!-- <nav id="more_resources">
   <h2 id="more_resources_header" style="margin-left: 1rem !important;">More Resources</h2>
