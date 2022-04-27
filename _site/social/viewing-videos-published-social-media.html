@@ -1506,8 +1506,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Viewing Videos Published to Social Media</h1>
   <summary>In this topic you will learn how to monitor the status of videos that have been posted, or are scheduled to be posted, to your social media accounts using Brightcove Social.</summary>
   <section class="bcls-section">
-    <p>When you open Brightcove <i data-feather="crosshair"></i> <strong>Social</strong>, or click <strong>Published</strong> in the primary navigation, a list of videos published using Brightcove Social will appear.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16343-publish-streams.png" /></figure>
+    
+    <p>When you open Brightcove Social, or click <strong>Published</strong> in the left navigation, a list of videos published using Brightcove Social will appear.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16343-publish-streams.png" /></figure>
     <p>Note that if Auto Sync is being used and the sync rules are configured to update video metadata on the social platform, multiple entries for the same video may appear in the list. For example, an entry will appear when the video is first synced and then additional entries will appear if the video metadata is updated and synced to a social platform.</p>
   </section>
   <section class="bcls-section">
@@ -1535,12 +1536,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Synced</strong> - Displays videos that were synced with Auto Sync</li>
       <li><strong>Abandoned</strong> - Displays videos that were Auto Synced out to a social platform and then either:
         <ul>
-          <li>Deleted from Video Cloud with the video being left on the social platform due to Auto Sync being configured to take no actions when a video is deleted</li>
+          <li>Deleted from Beacon with the video being left on the social platform due to Auto Sync being configured to take no actions when a video is deleted</li>
           <li>Untagged so that it doesn’t match the autosync any more but is left on the social platform due to Auto Sync being configured to take no actions when video metadata changes</li>
         </ul>
       </li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16343-filter-streams.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16343-filter-streams.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="search">Searching for videos</h2>
@@ -1559,9 +1560,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="errors">Common publishing errors</h2>
     <p>Below is a list of common publishing errors that may be encountered.</p>
     <ol class="bcls-tasklist-restart">
-      <li>YouTube - <strong>Upload rejection: Video was a duplicate</strong>. YouTube doesn't allow the same video (as determined by comparing digital fingerprints of the uploaded video binary, not by Video Cloud video ID) to be uploaded to a channel more than once, and fails attempts after the first with this error.</li>
-      <li><strong>NO_RENDITION_FOR_SOCIAL_PLATFORM_ERROR</strong>. The Social module couldn't find a Video Cloud video rendition that meets the platform's video requirements. The most common cause of these by far is publishers with Twitter auto syncs tagging videos that are greater than 140 seconds (Twitter's maximum allowed duration).</li>
-      <li>YouTube - <strong>The request metadata specifies an invalid or empty video title (as part of a longer error message)</strong>. YouTube has a maximum title length of 100 characters, so when using auto sync, if the Video Cloud video metadata that gets mapped to the YouTube title is too long, this error will result.</li>
+      <li>YouTube - <strong>Upload rejection: Video was a duplicate</strong>. YouTube doesn't allow the same video (as determined by comparing digital fingerprints of the uploaded video binary, not by Beacon video ID) to be uploaded to a channel more than once, and fails attempts after the first with this error.</li>
+      <li><strong>NO_RENDITION_FOR_SOCIAL_PLATFORM_ERROR</strong>. The Social module couldn't find a Beacon video rendition that meets the platform's video requirements. The most common cause of these by far is publishers with Twitter auto syncs tagging videos that are greater than 140 seconds (Twitter's maximum allowed duration).</li>
+      <li>YouTube - <strong>The request metadata specifies an invalid or empty video title (as part of a longer error message)</strong>. YouTube has a maximum title length of 100 characters, so when using auto sync, if the Beacon video metadata that gets mapped to the YouTube title is too long, this error will result.</li>
     </ol>
   </section>
 </article>
@@ -1591,7 +1592,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 08 Feb 2022
+  Page last updated on 27 Apr 2022
 </div>
 
 
