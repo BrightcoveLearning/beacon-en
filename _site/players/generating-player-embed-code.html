@@ -1506,15 +1506,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Generating Player Embed Code</h1>
   <summary>This topic covers how to generate embed code for both preview and published players.</summary>
   <section class="bcls-section">
-    <p>The Players module provides the ability to generate the player embed code and player URL for both preview and published players. Typically, you would generate the embed code for a player using the Players module when you want to dynamically assign a video to the player at runtime. For information on assigning videos to a player dynamically, see <a href="/publish-videos/dynamically-assigning-videos-player.html">Dynamically Assigning Videos to a Player</a>.</p>
-    <p>If you are a Video Cloud customer looking to publish a playlist or a single video to a player, use the publish function inside the Media module. For more information, see <a href="/publish-videos/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists with the Media Module</a>.</p>
+    <p>The Players module provides the ability to generate the player embed code and player URL for both preview and published players. Typically, you would generate the embed code for a player using the Players module when you want to dynamically assign a video to the player at runtime. For information on assigning videos to a player dynamically, see <a href="/publish/dynamically-assigning-videos-player.html">Dynamically Assigning Videos to a Player</a>.</p>
+    <p>If you are a Beacon customer looking to publish a playlist or a single video to a player, use the publish function inside the Media module. For more information, see <a href="/publish/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists with the Media Module</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="diff">Preview player vs. published player</h2>
     <p>The preview player is used so you can preview changes before they are published. Once the changes are acceptable, the player can be published and the changes will be reflected in any published players. The preview player will display a Brightcove logo overlay indicating that it should not be used in production.</p>
     <p>The published player has been optimized and is the player that will appear on your web pages. This player contains all of the changes that have been made to the player settings and then published by clicking the <strong>Publish</strong> button.</p>
     <p>Open the Players module and select a player. Click <strong>Embed Code &amp; URL</strong> and click <strong>Preview Player</strong> or <strong>Published Player</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14063-menu-options.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node14063-menu-options.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="types">Types of embed code</h2>
@@ -1523,13 +1523,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Standard (iframe)</strong> - Recommended for most cases. Places the player inside an <code translate="No">&lt;iframe&gt;</code> tag. If player dimensions are specified, the iframe will be sized to the player dimensions. If no player dimensions are specified, the iframe can be placed inside of a <code translate="No">&lt;div&gt;</code> tag and the responsive nature of the player will resize the player to occupy the entire space of the <code translate="No">&lt;div&gt;</code>.</li>
       <li><strong>Advanced (I<strong>n-Page</strong>)</strong> - Allows the player to exist in the the HTML page directly, not in an iframe. This offers developers the benefits of ease of accessing the player and associated properties and events. By using the advanced embed code, you lose the ease of use of the player as a single, contained unit in social media applications and sharing. <strong>This option is available only for the published player.</strong></li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14063-pub-code.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node14063-pub-code.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="previewcode">Generating embed code for a preview player</h2>
     <p>To generate the embed code for a preview player:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Open the Players module.</li>
+      <li>Open the  <strong>Players</strong>  module.</li>
       <li>Click on the row for the player you want to generate the code for. Don't click on the player name and open the properties page.</li>
       <li>Click <strong>Embed Code &amp; URL</strong> and click <strong>Preview Player</strong>.</li>
       <li>Select the appropriate embed code.</li>
@@ -1539,12 +1539,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="publish">Generating embed code for a published player</h2>
     <p>To generate the embed code for a published player:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Open the Players module.</li>
+      <li>Open the  <strong>Players</strong>  module.</li>
       <li>Click on the row for the player you want to generate the code for.</li>
       <li>Click <strong>Embed Code &amp; URL</strong> and click <strong>Published Player</strong>.</li>
       <li>Select the appropriate embed code.</li>
     </ol>
-    <p>The Published Player embed code can also be copied by clicking on a player name and then clicking <strong>Publish &amp; Embed</strong>.</p>
+    <p>The Published Player embed code can also be copied by clicking on a player name and then clicking <span class="button-blue">Publish &amp; Embed</span>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="appid">Adding an application ID to the embed code</h2>

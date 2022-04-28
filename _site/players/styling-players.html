@@ -1505,15 +1505,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <article class="bcls-article">
   <h1>Styling Players</h1>
   <summary>This topic provides an overview of the player styling settings that can be configured using the Players module.</summary>
-  <section class="bcls-section">
+  <section class="bcls-section"> 
     <p>Some basic player styling options can be configured using the Players module. For complete customization of the Brightcove Player, you need to use Cascading Style Sheets (CSS). For more information on using CSS to customize the player appearance, see the <a href="https://player.support.brightcove.com/getting-started/step-step-player-customization.html">Step-by-Step: Player Customization</a> developer document.</p>
     <p>To configure the player <strong>Styling</strong> settings, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Players</strong> in the navigation header to open the Players module.</li>
+      <li>Open the <strong>Players</strong> module.</li>
       <li>Click the link for the player you want to configure.</li>
       <li>Click <strong>Styling</strong> in the left navigation menu.</li>
     </ol>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="style menu" src="/assets/images/players/node14051-player-styling-settings.png" /></figure>
+    
+    
+    <figure class="bcls-figure">
+    <img class="bcls-image--no-border" alt="style menu" src="/assets/images/s-players-img/node14051-player-styling-settings-beacon.png" /></figure>
+    
     <p>The following style settings can be configured:</p>
     <ul>
       <li><a href="#playlist_type">Playlist Type</a></li>
@@ -1538,7 +1542,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="title_desc">Title and description</h2>
     <p>Select <strong>Show title and description </strong> to display the video title and description on the player.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="video title" src="/assets/images/players/node14051-player-title.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="video title" src="/assets/images/s-players-img/node14051-player-title.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="play_button_shape">Play button shape</h2>
@@ -1561,7 +1565,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="color_theme">Color theme</h2>
     <p>The <strong>Color Theme</strong> settings control the colors used in the player including the play/pause buttons, elapsed time and volume, captions, full screen and sharing icons.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14051-player-controls.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node14051-player-controls.png" /></figure>
     <p>The following theme colors can be configured:</p>
     <ul>
       <li><strong>Main</strong> - Controls the color of the big play button, progress bar and volume level</li>
@@ -1573,21 +1577,21 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click a theme color to open the color picker.</li>
       <li>Click a color on the ride side of the control.</li>
       <li>Click in the square to select a shade of the desired color. Color can also be set using the hue, saturation, value (HSV) color model into the text control.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="icon color" src="/assets/images/players/node14051-choose-icon-color.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="icon color" src="/assets/images/s-players-img/node14051-choose-icon-color.png" /></figure>
       </li>
       <li>The slider below the color square can be used to set the opacity of the controls.</li>
       <li>Click outside of the color picker to modify another theme color.</li>
     </ol>
-  </section>
+    Selecting the <strong>Revert back to older player default theme</strong> checkbox will set the play button and progress bar to a pinkish color.</section>
   <section class="bcls-section">
     <h2 id="logo_overlay">Logo Overlay</h2>
     <p>A logo overlay is an image that appears on top of the player. A sample logo overlay appears below.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14051-player-overlay-sample.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node14051-player-overlay-sample.png" /></figure>
     <aside class="bcls-aside bcls-aside--information">Note: The overlay plugin can also be manually configured and provides the ability to display text and multiple overlays. For information, see <a href="/players/configuring-player-overlay-using-overlay-plugin.html">Configuring a Player Overlay Using the Overlay Plugin</a>.</aside>
     <p>To add a logo overlay:</p>
     <ol class="bcls-tasklist-restart">
       <li>Set the <strong>Logo Overlay</strong> to <strong>On</strong>.</li>
-      <li>Click <strong>Browse</strong> and select an overlay image (.png, .jpg, and .gif images are supported).</li>
+      <li>Click <span class="button-blue">Browse</span> and select an overlay image (.png, .jpg, and .gif images are supported).</li>
       <li>(Optional) Enter a <strong>Logo URL</strong>. When the overlay is clicked, this URL will open in a new browser tab.</li>
       <li>Select a <strong>Logo Position</strong> for the overlay:
         <ul>

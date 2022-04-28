@@ -1505,13 +1505,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <article class="bcls-article">
   <h1>Getting Started with the Players Module</h1>
   <summary>This topic provides an overview of the Players module which is used to used to create and manage video players.</summary>
-  <section class="bcls-section">
-    <p>If you are looking to quickly get started creating and publishing a player, check out the <a href="/publish-videos/step-step-using-players-module-create-and-publish-player.html">Step-by-Step: Using the Players Module to Create and Publish a Player</a> topic.</p>
+  <section class="bcls-section"> 
+    <p>If you are looking to quickly get started creating and publishing a player, check out the <a href="/publish/step-step-using-players-module-create-and-publish-player.html">Step-by-Step: Using the Players Module to Create and Publish a Player</a> topic.</p>
   </section>
   <section class="bcls-section">
     <h2 id="using">Using the Players module</h2>
-    <p>To access the Players module, login to Beacon Studio and click <strong>Players</strong> in the primary navigation. Video Cloud Studio is shown below. The Brightcove Player Studio UI will have minor differences.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-players-module.png" /></figure>
+    <p>To access the Players module, login to Studio and click <strong>Players</strong> in the primary navigation.</p>
+    
+    
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node14049-players-module-beacon.png" />
+    </figure>
+  
     <p>The body of the page will display:</p>
     <ul>
       <li>Player name</li>
@@ -1519,9 +1523,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Updated date and time</li>
       <li>Player status
         <ul>
-          <li><img alt="" src="/assets/images/players/node14049-cone-icon.png" /> - Indicates that changes have been made to the player but the changes have not been published</li>
-          <li><img alt="" src="/assets/images/players/node14049-check-icon.png" /> - Indicates that the player is activated and all changes made to the player have been published</li>
-          <li><img alt="" src="/assets/images/players/node14049-red-circle-icon.png" /> - Indicates that the player is inactive</li>
+          <li><img alt="" src="/assets/images/s-players-img/node14049-cone-icon.png" /> - Indicates that changes have been made to the player but the changes have not been published</li>
+          <li><img alt="" src="/assets/images/s-players-img/node14049-check-icon.png" /> - Indicates that the player is activated and all changes made to the player have been published</li>
+          <li><img alt="" src="/assets/images/s-players-img/node14049-red-circle-icon.png" /> - Indicates that the player is deactivated</li>
         </ul>
       </li>
     </ul>
@@ -1540,12 +1544,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="create">Creating a new player</h2>
     <p>To create a new player using the Players module:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click  <strong>+ Add Player</strong>.</li>
-      <li>Enter a name and short description for the player and then click <strong>Save</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-new-player.png" /></figure>
+      <li>Click <span class="button-blue"><i class="button-icon" data-feather="plus"></i>Add player</span>.</li>
+      <li>Enter a name and short description for the player and then click <span class="button-blue">Save</span>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node14049-new-player.png" /></figure>
       </li>
       <li>The new player will appear in the list of players.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-list-of-players.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node14049-list-of-players.png" /></figure>
       </li>
     </ol>
     <aside class="bcls-aside bcls-aside--information">Note: A maximum of 200 players can be created. Brightcove discourages the creation of a large numbers of players but, if this is necessary, please contact your Account Manager and request an increase in the number of players you can create.</aside>
@@ -1564,9 +1568,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>End Screens</li>
       <li>Advertising</li>
       <li>Content Restriction</li>
-      <li>Third-Party Analytics</li>
-      <li>Audience</li>
+      <li>Campaign</li>
       <li>JSON Editor</li>
+      <li>Third-Party Analytics</li>
     </ul>
     <p>To edit the player properties, click an item in the left navigation menu. For information on configuring player properties, see <a href="/players/setting-player-properties.html">Setting Player Properties</a>.</p>
     <aside class="bcls-aside bcls-aside--information">Note: Any changes made to a player may take up to 5 minutes to appear in published players.</aside>
@@ -1576,19 +1580,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Duplicating a player allows you to create a new player based upon an existing player. To duplicate a player in the Players module:</p>
     <ol class="bcls-tasklist-restart">
       <li>Check the box next to the player you want to duplicate.</li>
-      <li>Click the <strong>Duplicate</strong> button.</li>
+      <li>Click <span class="button-blue-text-bordered">Duplicate</span>.</li>
       <li>Enter a <strong>Name</strong> and <strong>Short Description</strong> for the player.</li>
-      <li>Click <strong>Save</strong>.</li>
+      <li>Click <span class="button-blue">Save</span>.</li>
     </ol>
-    <p>Note that players with unpublished changes can't be duplicated. The Duplicate button will be disabled.</p>
-  </section>
+    Note that players with unpublished changes can't be duplicated. The Duplicate button will be disabled.</section>
   <section class="bcls-section">
     <h2 id="delete">Deleting players</h2>
     <p>Deleting a player removes it from your account and cannot be undone. To delete a player in the Players module:</p>
     <ol class="bcls-tasklist-restart">
       <li>Check the box next to the player(s) you want to delete.</li>
-      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/players/icon-delete.png" />.</li>
-      <li>Confirm the deletion by clicking <strong>Delete</strong>.</li>
+      <li>Click <img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/icon-delete.png" />.</li>
+      <li>Confirm the deletion by clicking <span class="button-red">Delete</span>.</li>
     </ol>
   </section>
   <section class="bcls-section">
@@ -1603,7 +1606,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="preview">Previewing a player</h2>
     <p>To preview a player, select a player from the list of players and then click <strong> Preview player</strong>. The player will open in the preview dialog.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-preview-player.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node14049-preview-player.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="embed">Generating the embed code and URL for a player</h2>
@@ -1613,7 +1616,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="shortcuts">Keyboard shortcuts</h2>
     <p>Pressing the <strong>?</strong> key in the Players module will open a list of the shortcut keys that are available.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node14049-keyboard-shortcuts.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node14049-keyboard-shortcuts.png" /></figure>
   </section>
 </article>
 

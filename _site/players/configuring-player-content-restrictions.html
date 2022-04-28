@@ -1506,17 +1506,20 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Configuring Player Content Restrictions</h1>
   <summary>In this topic you will learn how to configure the content restriction properties using the Players module.</summary>
   <section class="bcls-section">
+    
     <p>The player <strong>Content Restriction</strong> properties can be used to restrict a player to particular countries, or block a player from particular countries. Domain restrictions can be added to a player to limit the domains where the player can be used.</p>
     <aside class="bcls-aside bcls-aside--information">
       <h4>Notes:</h4>
       <ul>
         <li>The <strong>Geo Restriction</strong> properties are only available to Enterprise and Professional accounts. <strong>Domain Restriction</strong> is available to all accounts.</li>
         <li>IP address can also be used to limit playback For information, see <a href="https://player.support.brightcove.com/content-protection/restricting-video-playback-using-ip-address.html">Restricting Video Playback Using IP Address</a>.</li>
-        <li>IE 10 and 11, in compatibility mode, will show Domain Restriction errors when viewing domain-restricted content.</li>
       </ul>
     </aside>
     <p>To view and edit the <strong>Content Restriction</strong> properties for a player, open the Players module, click on a player name and click <strong>Content Restriction </strong>in the left navigation menu.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="content restriction" src="/assets/images/players/node15616-content-restrictions.png" /></figure>
+    
+    
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="content restriction" src="/assets/images/s-players-img/node15616-content-restrictions-beacon.png" /></figure>
+    
     <aside class="bcls-aside bcls-aside--information">Note: Any changes made to a player may take up to 5 minutes to appear in published players.</aside>
   </section>
   <section class="bcls-section">
@@ -1525,8 +1528,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <aside class="bcls-aside bcls-aside--information">
       <h4>Notes:</h4>
       <ul>
-        <li>While domain restrictions can help prevent unauthorized distribution of your content, customers seeking maximum content security should look at DRM solutions instead. See <a href="https://studio.support.brightcove.com/general/overview-digital-rights-management-drm-video-cloud.html">Digital Rights Management (DRM) in Video Cloud</a> for more information.</li>
-        <li>For viewers using Internet Explorer, the domain restriction feature requires version 10 or newer. Viewers using Internet Explorer &lt; 10 will not get playback at all.</li>
+        <li>While domain restrictions can help prevent unauthorized distribution of your content, customers seeking maximum content security should look at DRM solutions instead. See <a href="/general/overview-digital-rights-management-drm-video-cloud.html">Digital Rights Management (DRM) in Video Cloud</a> for more information.</li>
         <li>Domain restrictions are supported when using a Gallery In-Page Experience and the Recommended (JavaScript) embed code.</li>
         <li>Domain restricted players are not compatible with AMP integrations. This is because the AMP integration creates an iframe which in turn isn't supported by domain restricted players.</li>
         <li>When using the domain restriction feature, domain restrictions should be configured for all players in your account. If all players are not configured with domain restrictions, someone could take the policy key from an unprotected player and use it to play any video.</li>
@@ -1536,7 +1538,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>To configure a domain restriction for a player, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>Enter one or more complete domain URLs (such as http://www.brightcove.com or https://www.brightcove.com) to restrict your player's availability to these particular domains. Be sure to include either http:// or https://. Click <strong>+</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node15616-domains.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node15616-domains.png" /></figure>
         <aside class="bcls-aside bcls-aside--information">
           <h4>Notes:</h4>
           <ul>
@@ -1545,7 +1547,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           </ul>
         </aside>
         </li>
-      <li>Click <strong>Save</strong> to save the changes.</li>
+      <li>Click <span class="button-blue">Save</span> to save the changes.</li>
     </ol>
   </section>
   <section class="bcls-section">
@@ -1555,21 +1557,21 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <h4>Notes:</h4>
       <ul>
         <li>Geo filtering is a feature available to Enterprise and Professional accounts for an additional fee. Contact Brightcove if you would like to upgrade your account to include geo filtering.</li>
-        <li>Geo filtering can also be <a href="/media/configuring-video-availability.html">applied to individual videos</a>. Video Cloud will apply both player and video geo filtering policies - if a country is excluded by either, the video will not be available there.</li>
+        <li>Geo filtering can also be <a href="/media/configuring-video-availability.html">applied to individual videos</a>. Beacon will apply both player and video geo filtering policies - if a country is excluded by either, the video will not be available there.</li>
       </ul>
     </aside>
     <p>To set the geo filtering properties for a player:</p>
     <ol class="bcls-tasklist-restart">
       <li>Select <strong>Allow viewing from the following countries</strong> or <strong>Prevent viewing from the following countries</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node15616-geo-settings.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node15616-geo-settings.png" /></figure>
         </li>
       <li>Enter the appropriate country names. As you type, the country list will be filtered.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node15616-geofilter-country.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node15616-geofilter-country.png" /></figure>
         </li>
       <li>Click on a country and then press enter to add it to the list.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node15616-geofilter-country-added.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node15616-geofilter-country-added.png" /></figure>
         </li>
-      <li>Click <strong>Save</strong>.</li>
+      <li>Click <span class="button-blue">Save</span>.</li>
     </ol>
   </section>
 </article>

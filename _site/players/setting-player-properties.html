@@ -1506,15 +1506,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Setting Player Properties</h1>
   <summary>This topic provides an overview on how to modify player settings in the Players module.</summary>
   <section class="bcls-section">
-    <p>To configure or edit player settings, open the Players module and click on a player name. The player properties page will open. Buttons at the top of the  page provide the ability to:</p>
+    <p>To edit player properties, follow these steps: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Players </strong> module.</li>
+      <li>Click on a player name.</li>
+    </ol>
+    <p>The player properties page will open. Buttons at the top of the  page provide the ability to:</p>
     <ul>
-      <li><a href="#delete">Delete a player</a></li>
-      <li><a href="#activate">Activate/Deactivate a player</a></li>
-      <li><a href="#revert">Revert changes</a></li>
+      <li>More button</li>
+      <ul>
+        <li><a href="#delete">Delete a player</a></li>
+        <li><a href="#activate">Activate/Deactivate a player</a></li>
+        <li><a href="#revert">Revert changes</a></li>
+      </ul>
       <li><a href="#preview">Preview a player</a></li>
       <li><a href="#publish">Publish and copy the embed code for a player</a></li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/player-props-buttons.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/player-props-buttons.png" /></figure>
     <p>To edit the player properties, click an item in the left navigation menu. The following player properties can be configured:</p>
     <ul>
       <li><a href="#playerinfo">Player Information</a></li>
@@ -1526,9 +1534,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><a href="#endscreens">End Screens</a></li>
       <li><a href="#ads">Advertising</a></li>
       <li><a href="#content_restriction">Content Restriction</a></li>
-      <li><a href="#analytics">Third-Party Analytics</a></li>
-      <li><a href="#audience">Audience</a></li>
+      <li><a href="#campaign">Campaign</a></li>
       <li><a href="#json">JSON Editor</a></li>
+      <li><a href="#analytics">Third-Party Analytics</a></li>
     </ul>
     <aside class="bcls-aside bcls-aside--information">Note: Any changes made to a player may take up to 5 minutes to appear in published players.</aside>
   </section>
@@ -1536,15 +1544,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="delete">Deleting a player</h2>
     <p>Deleting a player removes it from your account and cannot be undone. To delete a player:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Delete</strong>.</li>
-      <li>Confirm the deletion by clicking <strong>Delete</strong>.</li>
+      <li>Click <strong>More <span class="button-blue-text-bordered">... </span>&gt;  Delete</strong>.</li>
+      <li>Confirm the deletion by clicking <span class="button-red">Delete</span>.</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="activate">Activating/Deactivating a player</h2>
     <p>Players that are activated can play  videos. Deactivated players cannot play videos. To activate/deactivate a player:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Activate</strong> or <strong>Deactivate</strong>.</li>
+      <li>Click <strong>More <span class="button-blue-text-bordered">... </span>&gt;  Activate</strong> or <strong>Deactivate</strong>.</li>
       <li>Confirm the activation or deactivation.</li>
     </ol>
   </section>
@@ -1552,8 +1560,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="revert">Reverting changes</h2>
     <p>The Players module provides the ability to revert player changes. Reverting changes will  discard all unpublished changes made to a player. To revert changes to a player:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Revert changes</strong>.</li>
-      <li>Confirm the action by clicking <strong>Discard Changes</strong>.</li>
+      <li>Click <strong>More <span class="button-blue-text-bordered">... </span>&gt; Revert changes</strong>.</li>
+      <li>Confirm the action by clicking <span class="button-red">Discard Changes</span>.</li>
     </ol>
   </section>
   <section class="bcls-section">
@@ -1563,14 +1571,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Preview URL</li>
       <li>Standard and Advanced player embed code</li>
     </ul>
-    <p>Note that the preview URL and embed code should not be used on production sites.</p>
-    </section>
+    Note that the preview URL and embed code should not be used on production sites.</section>
   <section class="bcls-section">
     <h2 id="publish">Publishing and getting the embed code for a player</h2>
-    <p>The <strong>Publish &amp; Embed</strong> button is used to publish the player and to generate the player embed code and URL for the published player. To publish a player and get the embed code:</p>
+    <p>The <span class="button-blue">Publish &amp; Embed </span> button is used to publish the player and to generate the player embed code and URL for the published player. To publish a player and get the embed code:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click<strong> Publish &amp; Embed</strong>.</li>
-      <li>Click <strong>Publish Changes</strong>.</li>
+      <li>Click<strong> <span class="button-blue">Publish &amp; Embed </span></strong>.</li>
+      <li>Click <span class="button-blue">Publish Changes</span>.</li>
     </ol>
     <p>Once a player is published, changes will be reflected in all instances of that particular player. It may take a few minutes for changes to appear in published players.</p>
     <p>Standard (iframe) and advanced (in-page) embed code is provided. For information on the differences between the preview player and published player and on generating the embed code for a player, see <a href="/players/generating-player-embed-code.html">Generating Player Embed&nbsp;Code</a>.</p>
@@ -1618,18 +1625,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>The <strong>Content Restriction</strong> properties are used to configure domain restrictions and geo-filtering for the player. For more information, see <a href="/players/configuring-player-content-restrictions.html">Configuring Player Content Restrictions</a>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="analytics">Third-Party Analytics</h2>
-    <p>The <strong>Third-Party Analytics</strong> properties are used to integrate Brightcove Players with Google Analytics and Adobe Analytics. For more information, see <a href="/players/configuring-google-analytics-event-tracking.html">Configuring Google Analytics Event Tracking</a> and <a href="/players/configuring-adobe-analytics-event-tracking.html">Configuring Adobe Analytics Event Tracking</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="audience">Audience</h2>
-    <p>The<strong> Audience </strong>properties are used to enable Audience integration and configure the player with an Audience connection and lead form. For more information, see <a href="https://audience.support.brightcove.com/general/creating-audience-enabled-player.html">Creating an Audience-enabled Player</a>.</p>
+    <h2 id="campaign">Campaign</h2>
+    <p>The<strong> Campaign </strong>properties are used to integrate Brightcove Players with marketing automation platforms and  lead forms. For more information, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="json">JSON Editor</h2>
     <p>The JSON Editor can be used to edit the player configuration. Care should be taken when editing the player configuration.</p>
     <aside class="bcls-aside bcls-aside--information">Note: This is an advanced option and should only be used by publishers who are comfortable editing the player configuration.</aside>
     <p>For information on editing the player configuration, see the <a href="https://player.support.brightcove.com/general/player-configuration-guide.html">Player Configuration Guide</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="analytics">Third-Party Analytics</h2>
+    <p>The <strong>Third-Party Analytics</strong> properties are used to integrate Brightcove Players with Google Analytics and Adobe Analytics. For more information, see <a href="/players/configuring-google-analytics-event-tracking.html">Configuring Google Analytics Event Tracking</a> and <a href="/players/configuring-adobe-analytics-event-tracking.html">Configuring Adobe Analytics Event Tracking</a>.</p>
   </section>
 </article>
 

@@ -1506,6 +1506,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Adding Thumbnail Seeking to a  Brightcove Player</h1>
   <summary>In this topic, you will learn the how to add thumbnail seeking to a Brightcove Player.</summary>
   <section class="bcls-section">
+    
     <p>Players can be configured to display video thumbnail images over the player progress bar. Thumbnail images show a preview of the video at that point in time and allow viewers to preview a video and jump to a specific point in the video. Play the video below and hover over the progress bar to see the thumbnail seeking feature.</p>
     <div style="position: relative; display: block; max-width: 640px;">
       <div style="padding-top: 56.25%;">
@@ -1514,6 +1515,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <aside class="bcls-aside bcls-aside--information">Note: This feature is currently not available when using a playlist player.</aside>
     <aside class="bcls-aside bcls-aside--information">Note: Thumbnails on mobile devices are not supported.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: If you build custom implementations on top of the Brightcove Playback API (PAPI) responses, please note the following:
+      <ul>
+        <li>With Server-Side Ad Insertion (SSAI), the thumbnails manifest is located in the VMAP instead of the PAPI response.</li>
+        <li>With non-SSAI, the thumbnails manifest is included in the PAPI response.</li>
+      </ul>
+    </aside>
     <h3>When are thumbnail images generated?</h3>
     <p>Brightcove generates the images dynamically on request. Any video ingested with Dynamic Delivery will have images generated on the first request. This ensures that images are not created for unused videos. Once generated, images are cached locally and on the CDN for repeat viewing, just like any other image.</p>
     <h3>How often are images generated?</h3>
@@ -1533,13 +1540,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Implementing_thumbnails_using_Studio">Configuring thumbnail seeking</h2>
     <p>Note that by default, thumbnail seeking is enabled for any newly created players. To configure thumbnail seeking for a player, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Players</strong> in the navigation header to open the Players module.</li>
+      <li>Open the  <strong>Players</strong>  module.</li>
       <li>Click the link for the player you want to configure.</li>
       <li>Click <strong>Controls </strong>in the left navigation menu.</li>
       <li>Check<strong> Thumbnail Seeking</strong>.
         <figure class="bcls-figure">
-        <img class="bcls-image--no-border" alt="Brightcove Plugin" src="/assets/images/players/thumbnail-seeking.png" /> </figure></li>
-      <li>Click<strong> Publish &amp; Embed </strong> and then <strong>Publish Changes</strong> to publish the player. Note that it may take up to 5 minutes for the changes to appear in published players.</li>
+        <img class="bcls-image--no-border" alt="Brightcove Plugin" src="/assets/images/s-players-img/thumbnail-seeking.png" /> </figure></li>
+      <li>Click <span class="button-blue">Publish &amp; Embed</span>   and then <span class="button-blue">Publish Changes</span> to publish the player. Note that it may take up to 5 minutes for the changes to appear in published players.</li>
     </ol>
   </section>
 </article>

@@ -1506,6 +1506,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Configuring Player Advertising using the Players Module</h1>
   <summary>This topic provides an overview on how to configure a player to support both client-side and server-side advertising.</summary>
   <section class="bcls-section">
+    
     <p>The advertising properties are used to enable client-side and/or server-side advertising for a Brightcove Player:</p>
     <ul>
       <li>Client-side advertising supports Google's Interactive Media Ads (IMA) for HTML5 version 3. This allows you to request and track VAST ads for your player. For details about Google IMA, see the <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/">Using the IMA HTML5 SDK Version 3</a> document.</li>
@@ -1518,7 +1519,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist-restart">
       <li>Open the <a href="https://googleads.github.io/googleads-ima-html5/vsi/">Video Suite Inspector</a> page.</li>
       <li>Paste your ad tag URL into the Input type form input field.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ima plugin studio" src="/assets/images/players/node15689-vs-inspect.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ima plugin studio" src="/assets/images/s-players-img/node15689-vs-inspect.png" /></figure>
       </li>
       <li>Click <strong>Test Ad</strong>.</li>
       <li>Verify that you see your ad. If your ad tag is not working in this test environment, it will not work with a Brightcove Player.</li>
@@ -1529,7 +1530,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="client">Configuring the client-side advertising properties</h2>
     <p>To configure client-side advertising for a player, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Players</strong> in the navigation header to open the Players module.</li>
+      <li>Open the  <strong>Players</strong>  module.</li>
       <li>Click the link for the player you want to configure.</li>
       <li>Click <strong>Advertising</strong> in the left navigation menu.</li>
       <li>Check <strong>Enable Client-Side (IMA)</strong>.</li>
@@ -1553,9 +1554,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Check <strong>Hard timeouts</strong> to prevent slow loading ads from appearing. Unchecking this option could result in a slow loading ad interrupting video playback.</li>
       <li>Set the <strong>Maximum Number of Redirects</strong>. This specifies the maximum number of redirects before the subsequent redirects will be denied, and the ad load aborted. The number of redirects directly affects latency and thus user experience.</li>
       <li>Select the IMA <strong>Plugin Version</strong> to use.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node15897-ad-props1.png" /></figure>
+    
+    
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node15897-ad-props-beacon.png" /></figure>
+  
       </li>
-      <li>Click <strong>Save</strong> to save the changes.</li>
+      <li>Click <span class="button-blue">Save</span>  to save the changes.</li>
     </ol>
     <p>The IMA plugin does support additional properties that are not available in the UI. If needed, modify the IMA plugin JSON to include any other options you may need. For more information on IMA plugin specific options and ad framework options, see the <a href="https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html">Advertising with IMA3 Plugin</a> developer document.</p>
   </section>
@@ -1568,9 +1572,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Check <strong>Enable Server-Side (SSAI)</strong>.</li>
       <li>Use the <strong>Select Configuration</strong> dropdown to select the ad configuration to associate with this player.</li>
       <li>Check the <strong>Enable ad information overlays</strong> checkbox if you want overlays to display over your ads. This includes "Learn More" and ad count down overlays.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node15897-server-ad-props.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node15897-server-ad-props.png" /></figure>
       </li>
-      <li>Click <strong>Save</strong>.</li>
+      <li>Click <span class="button-blue">Save</span>.</li>
     </ol>
   </section>
 </article>

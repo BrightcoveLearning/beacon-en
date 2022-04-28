@@ -1507,7 +1507,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <summary>In this topic you will learn how to configure Google Analytics event tracking in the Players module.</summary>
   <section class="bcls-section">
     <p>The Players module provides the ability to easily integrate Brightcove Players with Google Analytics. This allows player events and custom dimension data to be sent to a Google Analytics account for reporting purposes. Note that when the integration is configured, only analytics for video events will be passed to Google Analytics.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: Each analytics system gathers data and calculates metrics differently. Video Cloud analytics data will not be identical to what appears in Google Analytics.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: Each analytics system gathers data and calculates metrics differently. Beacon analytics data will not be identical to what appears in Google Analytics.</aside>
     <aside class="bcls-aside bcls-aside--information">Note: The Google Analytics plugin is not supported when using the Brightcove Player SDKs.</aside>
     <aside class="bcls-aside bcls-aside--information">Note: The Players Module supports Google's Universal Analytics data model. The newer Google Analytics 4 update is not supported. See the <a href="#version">Google Analytics Versions</a> section below for more information.</aside>
   </section>
@@ -1522,13 +1522,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click <strong>Sign In to Google Account</strong>.</li>
       <li>Select the Google account to sign in with and enter your credentials if prompted.</li>
       <li>Click <strong>Allow</strong> to let Brightcove access your Google account.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18804-permissions.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node18804-permissions.png" /></figure>
       </li>
       <li>Use the <strong>Select Account</strong> dropdown to select the Google account to send tracking data to.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18804-select-account.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node18804-select-account.png" /></figure>
       </li>
       <li>Select the <strong>Events for Tracking</strong>. See the <a href="#events">Events and custom dimensions </a> section below for a description of the events.</li>
-      <li>Click <strong>Save</strong>. This will configure the player with the Google Analytics plugin and create any needed custom dimensions in your Google Analytics account.
+      <li>Click  <span class="button-blue">Save</span>. This will configure the player with the Google Analytics plugin and create any needed custom dimensions in your Google Analytics account.
         <aside class="bcls-aside bcls-aside--information">Note: You must have the <strong>Edit</strong> permission in your Google Analytics account in order to create dimensions.</aside>
       </li>
     </ol>
@@ -1538,7 +1538,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="events">Events &amp; custom dimensions</h2>
     <p>Both events and custom dimension data can be passed to Google Analytics.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18804-select-events.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node18804-select-events.png" /></figure>
     <p>The following events can be passed.</p>
     <h3>Basic Events</h3>
     <ul>
@@ -1559,7 +1559,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3>Custom Dimensions</h3>
     <p>Custom dimensions allow you to combine Google Analytics data with non-Analytics data. Custom dimensions collect data that Google Analytics doesn't automatically track. The following custom dimensions are available.</p>
     <aside class="bcls-aside bcls-aside--information">Note: For more information on custom dimensions, see the <a href="https://support.google.com/analytics/answer/2709828?hl=en">Google Analytics Help</a>.</aside>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/players/node18804-select-dimensions.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node18804-select-dimensions.png" /></figure>
     <ul>
       <li><strong>Video Seconds Viewed</strong> - Count of watched seconds (only available if the <strong>Video Engagement</strong> event was selected)</li>
       <li><strong>Range</strong> - The range of seconds viewed (only available if the <strong>Video Engagement</strong> event was selected)</li>
