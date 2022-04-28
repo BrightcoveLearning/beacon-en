@@ -54,3 +54,11 @@
 	path = assets/images/s-publish-img
 	url = https://github.com/BrightcoveLearning/s-publish-img
   branch = main
+[submodule "_includes/s-publishing-apps"]
+	path = _includes/s-publishing-apps
+	url = https://github.com/BrightcoveLearning/s-publishing-apps
+  branch = main
+[submodule "assets/images/s-publishing-apps-img"]
+	path = assets/images/s-publishing-apps-img
+	url = https://github.com/BrightcoveLearning/s-publishing-apps-img
+  branch = main
