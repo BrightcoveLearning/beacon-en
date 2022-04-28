@@ -1508,37 +1508,39 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <p>This topic contains information on publishing videos and playlists to the web. For information on the other publishing options, see:</p>
     <ul>
-      <li><a href="/publish-videos/publishing-video-email.html">Publishing a Video to Email</a></li>
-      <li><a href="https://social.support.brightcove.com/general/publishing-videos-social-media-platforms.html">Publishing Videos to Social Media Platforms</a></li>
+      <li><a href="/publish/publishing-video-email.html">Publishing a Video to Email</a></li>
+      <li><a href="/social/publishing-videos-social-media-platforms.html">Publishing Videos to Social Media Platforms</a></li>
+      <li><a href="/publish/publishing-videos-page-experience.html">Publishing Videos to an In-Page Experience</a></li>
     </ul>
-    <p>If you are looking to dynamically assign video content to a player, get the <a href="/players/generating-player-embed-code.html">embed code for the player</a> and then use one of the techniques available to <a href="/publish-videos/dynamically-assigning-videos-player.html">dynamically assign videos to a player</a>.</p>
+    <p>If you are looking to dynamically assign video content to a player, get the <a href="/players/generating-player-embed-code.html">embed code for the player</a> and then use one of the techniques available to <a href="/publish/dynamically-assigning-videos-player.html">dynamically assign videos to a player</a>.</p>
   </section>
   <section class="bcls-section">
+
     <aside class="bcls-aside bcls-aside--information">Note: For information on creating playlists, see <a href="/media/creating-and-managing-playlists.html">Creating and Managing Playlists</a>.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="steps">Publishing videos and playlists</h2>
     <p>To publish a video or playlist, follow these steps.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click <strong>Media</strong> in the navigation header to open the Media module.</li>
+      <li>Open the <strong>Media</strong> module.</li>
       <li>To publish a single video, click <strong>All videos</strong> in the side navigation panel and then do one of the following:
         <ul>
-          <li>Click the checkbox next to the video and then click <strong>Publish and Embed &gt; Publish to web</strong></li>
-          <li>Click on the video name and then click<strong> Publish and Embed &gt; Publish to web </strong>on the video properties page</li>
+          <li>Click the checkbox next to the video and then click  <span class="button-blue">Publish &amp; Embed </span>  &gt; Publish to web</li>
+          <li>Click on the video name and then click <span class="button-blue">Publish &amp; Embed </span>  &gt; Publish to web on the video properties page</li>
         </ul>
       </li>
-      <li>To publish a playlist, click <strong>All Playlists</strong> in the side navigation panel and then do one of the following:
+      <li>To publish a playlist, click <strong>All playlists</strong> in the side navigation panel and then do one of the following:
         <ul>
-          <li>Click the check box next to the playlist and then click <strong>Publish and Embed &gt; Publish to web</strong></li>
+          <li>Click the check box next to the playlist and then click  <span class="button-blue">Publish &amp; Embed </span>  &gt; Publish to web</li>
           <li>Click on the playlist name and then click <strong>Publish Playlist </strong>on the playlist videos page</li>
         </ul>
       </li>
       <li>Confirm that the publishing dialog opens. The name of the video or playlist being published will appear in the publishing dialog title.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node15473-publish-video.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node15473-publish-video.png" /></figure>
         <p>Known Issue: Since the preview player is being loaded over HTTPS within the Studio, if your content is being served over HTTP, the preview player will not playback the content and your browser will display an insecure scripts message. This is not a Studio bug but a browser security limitation.</p>
       </li>
       <li>Select a player to use. When publishing playlists, there are some playlist-related player properties that can be set to control <span class="BCL-objective"> appearance and behavior of the playlist</span>. See the <a href="#playlistprop">Setting playlist properties</a> section below for details.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node15473-player-id.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node15473-player-id.png" /></figure>
         <p>Note that the preview will update to display the player that was selected.</p>
       </li>
       <li>(Optional) The preview link below the preview player can be used to preview the player in another browser tab. Click the <strong>Shorten</strong> button to generate a shortened URL.</li>
@@ -1563,7 +1565,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           </li>
           <li><strong>Advanced - In-page embed code</strong> - Allows the player to exist in the the HTML page directly, not in an iframe. This offers developers the benefits of ease of accessing the player and associated properties and events. By using the in-page embed code, you lose the ease of use of the player as a single, contained unit in social media applications and sharing. This option is available only for the published player.</li>
         </ul>
-        For more information on the types of publishing code, see <a href="/publish-videos/choosing-correct-embed-code.html">Choosing the Correct Embed&nbsp;Code</a>.</li>
+        For more information on the types of publishing code, see <a href="/publish/choosing-correct-embed-code.html">Choosing the Correct Embed&nbsp;Code</a>.</li>
       <li>Copy the publishing code. When finished, click <strong>Close</strong>.</li>
     </ol>
   </section>
@@ -1577,18 +1579,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist-restart">
       <li>Open the <strong>Players</strong> module.</li>
       <li>Click on the player name to open the player properties.</li>
-      <li>As part of the <strong>Player Information</strong> properties, select a <strong>Player Type</strong> of <strong>Playlist</strong>. Click <strong>Save</strong>.</li>
+      <li>As part of the <strong>Player Information</strong> properties, select a <strong>Player Type</strong> of <strong>Playlist</strong>. Click  <span class="button-blue"> Save </span>.</li>
       <li>Click <strong>Styling</strong> in the left navigation menu.</li>
       <li>Select a <strong>Playlist Type</strong>:
         <ul>
           <li><strong>Playlist (Vertical)</strong> - Playlist displays on the right side of the player.
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node15473-v-playlist-example.png" /></figure>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node15473-v-playlist-example.png" /></figure>
           </li>
           <li><strong>Playlist (Horizontal)</strong> - Playlist displays on the bottom of the player.
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node15473-h-playlist-example.png" /></figure>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node15473-h-playlist-example.png" /></figure>
           </li>
           <li><strong>Playlist (Hidden)</strong> - Playlist is not displayed.
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node15473-hidden-playlist-example.png" /></figure>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node15473-hidden-playlist-example.png" /></figure>
           </li>
         </ul>
       </li>
@@ -1605,7 +1607,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           </li>
         </ul>
       </li>
-      <li>Click <strong>Save</strong> to save changes. Remember to publish the player so the changes appear in the published player.</li>
+      <li>Click  <span class="button-blue"> Save </span>  to save changes. Remember to publish the player so the changes appear in the published player.</li>
     </ol>
     <p>When using the <strong>Standard (iframe)</strong> embed code, the playlist has a show/hide button and is automatically sized and positioned. When using the <strong>Advanced (in-page)</strong> embed code, you must insert the playlist as an HTML <code translate="No">&lt;div&gt;</code> element and write your own CSS to position and size the playlist. This gives you full control over the playlist's display. In the latter case, the playlist does not even need to be adjacent to the player if you don't want it to be. The <strong>Advanced (in-page embed) player</strong> section of the <a href="https://player.support.brightcove.com/general/implementing-playlists.html#Advanced_in_page_embed_player">Implementing Playlists</a>&nbsp;document has substantial content on formatting and styling a playlist.</p>
   </section>

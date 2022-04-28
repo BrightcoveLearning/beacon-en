@@ -1506,8 +1506,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Driving Video Views Through Email</h1>
   <summary>In this topic you will learn how to drive video views through the use of email.</summary>
   <section class="bcls-section">
+
     <p>We often get asked about the best way to embed video inside of email. On most platforms, embedding videos directly into email isn’t possible. This isn't a Brightcove limitation, nearly every modern email system will strip out video player embed code due to security reasons. We can however, drive awareness and traffic for content by creating an email with some teaser text and a thumbnail image. The thumbnail image will look like a video player and be a clickable link that redirects to our video landing page.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node15097-sample-email.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node15097-sample-email.png" /></figure>
     <p>To complete this solution, the following steps will be performed:</p>
     <ol>
       <li><a href="#createplayer">Create a Brightcove Player</a></li>
@@ -1520,9 +1521,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 class="BCL_conceptTitle" id="createplayer">Creating a Brightcove Player</h2>
     <p>Start by creating a dedicated Brightcove player for use on a video landing page. Having a dedicated player makes it easier to track video analytics. Also, set the player to autoplay so when the user redirects from email to the landing page, the video will automatically start playing.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Log in to Beacon Studio and open the <strong>Players</strong> module.</li>
-      <li>Click <strong>New Player</strong>.</li>
-      <li>Name the player and click <strong>Save</strong>.</li>
+      <li>Login to Brightcove Beacon. </li>
+       <li>Open the <strong>Players</strong> module.</li>
+      <li>Click <span class="button-blue"><i class="button-icon" data-feather="plus"></i>Add player</span>.</li>
+      <li>Name the player and click <span class="button-blue">Save </span>.</li>
       <li>Click the link for the player to open the player properties.</li>
       <li>In the left navigation, click <strong>Playback</strong>.</li>
       <li>Set <strong>Auto-Play Video on Player Load</strong> to <strong>Auto-Play</strong> (or any of the Auto-Play options).</li>
@@ -1576,10 +1578,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Browse and select the player image you created. The image will be embedded in the email.</li>
       <li>Select the entire image and click the <strong>Insert link</strong> icon at the bottom of the email.</li>
       <li>Click the <strong>Change</strong> link so the image link can be edited.<br />
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node15097-image-url.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node15097-image-url.png" /></figure>
       </li>
       <li>Add the URL to the video landing page and click <strong>OK</strong>.<br />
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/publish-videos/node15097-url.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-publish-img/node15097-url.png" /></figure>
       </li>
       <li>Send the email.</li>
     </ol>

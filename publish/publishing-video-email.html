@@ -3,29 +3,4 @@ title: Publishing a Video to Email
 description: This topic provides an overview of how to publish a video to email using the Media module.
 parent: 'Publishing Videos & Players'
 ---
-<article class="bcls-article">
-  <h1>{{ page.title }}</h1>
-  <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-    <p>On most platforms, embedding videos directly into email isn’t possible. This isn't a Brightcove limitation, nearly every modern email system will strip out video player embed code due to security reasons. You can however, drive awareness and traffic for content by creating an email with some teaser text and a poster image. The Media module provides the ability to publish a video to an email landing page.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For another option on emailing videos that provides more control over the appearance of the video poster image and uses a custom landing page, see <a href="/publish-videos/driving-video-views-through-email.html">Driving Video Views Through Email</a>.</aside>
-  </section>
-  <section class="bcls-section">
-    <p>To publish a video to an email landing page, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the Media module.</li>
-      <li>Select a video.</li>
-      <li>Click <strong>Publish and Embed &gt; Email Landing Page</strong>.</li>
-      <li>Select a landing page. The dropdown list will contain a <strong>Simple Landing Page</strong> which is a system provided, unstyled sample landing page. The list will also contain any published landing page experiences that were created using the Gallery module. Using a Gallery landing page provides more flexibility over the appearance and styling of the landing page. Lead forms can also be used to capture viewer information. For more information on creating Gallery landing pages, see <a href="https://gallery.support.brightcove.com/experiences/landing/creating-landing-page-experience.html">Creating a Landing Page Experience</a>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select player" src="/assets/images/publish-videos/node16779-publish-dialog.png" /></figure>
-        <aside class="bcls-aside bcls-aside--information">Note: The poster image will be sized to 640 x 360.</aside>
-      </li>
-      <li>Select to <strong>Autoplay Video</strong>. This option is only available when selecting the <strong>Simple Landing Page</strong>.</li>
-      <li>Select a video player. This option is only available when selecting the <strong>Simple Landing Page</strong>. For Gallery landing pages, the player is assigned as part of the <a href="https://gallery.support.brightcove.com/experiences/landing/creating-landing-page-experience.html">experience properties</a>.</li>
-      <li>(Optional) Click the <strong>Preview landing page</strong> link to preview the landing page.</li>
-      <li>Highlight the image, copy it to the clipboard and then paste into an email message.</li>
-    </ol>
-    <p>Click <strong>Generate Short Link</strong> to generate a shortened link that can also be used and distributed. When the email is received, clicking on the poster image or short link will open the video in a browser tab.</p>
-    <p>If a Gallery landing page is used with a lead form, the lead form data can be downloaded using the inside the Audience module. For information, see <a href="https://gallery.support.brightcove.com/experiences/portal/exporting-gallery-lead-data.html">Exporting Gallery Lead Data</a>.</p>
-  </section>
-</article>
+{% include s-publish/publishing-video-email.html %}
