@@ -439,15 +439,19 @@
     - name: 'iOS/tvOS'
       url: '/publishing-apps/ios-tvos/index.html'
       docs:
+        - name: 'FairPlay Certificate Registration'
+          url: '/publishing-apps/ios-tvos/fairplay-certificate.html'
         - name: 'Installing an iOS/tvOS Test Build'
           url: '/publishing-apps/ios-tvos/installing-ios-test-build.html'
+        - name: 'Resources'
+          url: '/publishing-apps/ios-tvos/resources.html'
         - name: 'Submitting to the Apple Store'
           url: '/publishing-apps/ios-tvos/submitting-to-apple.html'
-    #    - name: 'LG'
-    #      url: '/publishing-apps/lg/index.html'
-    #      docs:
-    #        - name: 'Submitting to the LG (webOS) Store'
-    #          url: '/publishing-apps/lg/submitting-to-lg.html'
+    - name: 'LG'
+      url: '/publishing-apps/lg/index.html'
+      docs:
+        - name: 'Submitting to the LG (webOS) Store'
+          url: '/publishing-apps/lg/submitting-to-lg.html'
     #- name: 'Panasonic'
     #  url: '/publishing-apps/panasonic/index.html'
     #  docs:
