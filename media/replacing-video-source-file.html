@@ -3,36 +3,4 @@ title: Replacing a Video Source File
 parent: Managing Media
 description: This topic covers how to replace a video source file.
 ---
-<article class="bcls-article">
-  <h1>Replacing a Video Source File</h1>
-  <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-    <p>There may be times when you want to replace the source file for a video. One common case is when you need to edit a video that was already published. If you delete the video and re-upload, you will have to re-enter all of the video metadata and you will lose any video analytics associated with the video.</p>
-    <p>While the new renditions are being created, the video will remain playable using the existing renditions.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: You cannot replace the source file for videos that have been shared to your account.</aside>
-    <aside class="bcls-aside bcls-aside--information">Note: Video file names (including the extension) must not exceed 120 single-byte (60 double-byte) characters. If it does, the video will be ingested successfully, but you will not be able to retranscode it later.</aside>
-  </section>
-  <section class="bcls-section">
-    <h2 id="steps">Steps to replace a video source file</h2>
-    <p>To replace a video source file, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the Media module.</li>
-      <li>Click <strong>All videos</strong> in the panel navigation.</li>
-      <li>Click the link for the video you want to replace the source file for.</li>
-      <li>Click the <strong>Video and Tracks</strong> tab.</li>
-      <li>Locate the <strong>Video Files</strong> section and click<strong> Replace Source File</strong>.</li>
-      <li>The <strong>Upload</strong> module will open in another tab. Confirm that the Upload module indicates that you are replacing a source file.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/replace-source-upload.png" /></figure>
-      </li>
-      <li>Select an ingest profile to use.
-        <aside class="bcls-aside bcls-aside--information">Note: Videos that were initially transcoded using a Dynamic Delivery or Context Aware ingest profile can only be retranscoded using one of those ingest profile types. Videos transcoded using a Legacy ingest profile can be retranscoded with any type of profile.</aside>
-      </li>
-      <li>Use the Upload module to upload a new source file.</li>
-      <li>Check <strong>Keep existing thumbnail and video still images</strong> to keep the existing thumbnail and poster images. Uncheck the option to have new images generated from the new source file.</li>
-      <li>Check <strong>Keep existing audio tracks</strong> to keep the existing audio tracks. Uncheck the option to have new audio tracks generated from the new source file.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/replace-source-keep-images.png" /></figure>
-      </li>
-      <li>Click <strong>Process</strong> to begin the transcoding. A <strong>Processing Complete</strong> message will display. Note that there will be a delay before the updated renditions are available. Check the <strong>Upload Date</strong> values in the <strong>Video Files</strong> section of the Media module to verify that the new renditions are available.</li>
-    </ol>
-  </section>
-</article>
+{% include s-media/replacing-video-source-file.html %}

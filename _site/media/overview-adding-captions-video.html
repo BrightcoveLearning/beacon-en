@@ -1523,21 +1523,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<!-- 
-  This content appears on:
-  
-  https://studio.support.brightcove.com/media/overview-adding-captions-video.html
-
-  If you update in one place, you MUST update it in all!
- -->
-
 <h1>Overview: Adding Captions to a Video</h1>
 <article class="bcls-article">
   <summary>In this topic, you will learn how about working with captions in Video Cloud.</summary>
   <section class="bcls-section">
     <h2 id="intro">Introduction</h2>
     <p>Closed captions can be added to videos to provide additional or interpretive information to individuals who wish to access it. Captions are necessary so the deaf and hard of hearing can access the audio portion of video presentations.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Example of Captions" src="https://general.support.brightcove.com/assets/images/general/sample-captions.png" />
+    <figure class="bcls-figure"><img class="bcls-image" alt="Example of Captions" src="/assets/images/s-media-img/overview-captions-sample.png" />
       <figcaption class="bcls-caption--image">Example of Captions</figcaption>
     </figure>
     <p>Such text may be used for accessibility, to provide translations of the audio track or some other purpose, but the underlying technology used is the same.</p>
@@ -1549,17 +1541,20 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>At a Remote URL (remote asset)</strong> - In this case, the WebVTT file is hosted on your server and you add the URL for the file to the video metadata.
         <aside class="bcls-aside bcls-aside--information">Note: If you are hosting captions files on your own server, make sure the file is located at a URL that can be accessed by the Brightcove player. The server hosting the captions file should also have Cross-Origin Resource Sharing (CORS) enabled. You can read more about CORS <a href="https://general.support.brightcove.com/developer/concepts-cors.html">here</a>.</aside>
       </li>
-      <li><strong>Uploaded using Brightcove Beacon</strong> (<strong>ingested</strong>) - In this case, the WebVTT file is uploaded (ingested)  using the  Media module.</li>
+      <li><strong>Uploaded using Beacon</strong> (<strong>ingested</strong>) - In this case, the WebVTT file is uploaded (ingested) to Beacon. This can be done using the Media module or using the APIs.</li>
     </ol>
-    <aside class="bcls-aside bcls-aside--information">Note: If the video source file you ingest into Brightcove Beacon has embedded 608/708 captions, they will be ignored during the processing of the video, and <strong>not</strong> present in the video renditions. To have captions with your videos, you have a few options:
+    <aside class="bcls-aside bcls-aside--information">
+      <p>Note: If the video source file you ingest into Beacon has embedded 608/708 captions, they will be ignored during the processing of the video, and <strong>not</strong> present in the video renditions. To have captions with your videos, you have a few options:</p>
       <ul>
         <li><a href="/media/generating-captions-videos.html">Let Beacon generate caption files</a></li>
         <li><a href="/media/adding-captions-videos-using-media-module.html">Manually add captions</a></li>
+        <li><a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Use the Dynamic Ingest API</a></li>
+        <li><a href="https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-add-webvtt-captions-text-tracks.html">Use the CMS API (for remotely hosted captions)</a></li>
       </ul>
     </aside>
   </section>
-  <section id="associate" class="bcls-section">
-    <h2>Associating captions with a video</h2>
+  <section class="bcls-section">
+    <h2 id="associate">Associating captions with a video</h2>
     <p>There are several ways to associate a captions file with a video:</p>
     <ol>
       <li>Using Studio</li>
@@ -1567,22 +1562,31 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Using the APIs</li>
     </ol>
     <h3 id="cap_gen">Automatically generating captions for videos</h3>
-    <p>Beacon Studio can automatically generate captions for videos. For information, see <a href="/media/generating-captions-videos.html">Automatically Generating Captions for Videos</a>.</p>
+    <p>Brightcove Beacon can  generate captions for videos. For information, see <a href="/media/generating-captions-videos.html">Generating Captions for Videos</a>.</p>
     <h3 id="studio">Adding captions in Studio</h3>
-    <p>Captions can be associated with a video using the Media module. For information, see <a href="adding-captions-videos.html">Adding Captions to Videos</a>.</p>
+    <p>Captions can be associated with a video using the Media module. For information, see <a href="/media/adding-captions-videos-using-media-module.html">Adding Captions to Videos using the Media Module</a>.</p>
     <h3 id="pubcode">Modifying the player publishing code</h3>
-    <p>In this case, a <code translate="no">&lt;track&gt;</code> tag is added to the player publishing code. For more information, see <a href="https://player.support.brightcove.com/general/adding-captions-videos-programmatically.html">Adding Captions to Videos Programmatically</a>.</p>
+    <p>In this case, a <code translate="No">&lt;track&gt;</code> tag is added to the player publishing code. For more information, see <a href="https://player.support.brightcove.com/general/adding-captions-videos-programmatically.html">Adding Captions to Videos Programmatically</a>.</p>
     <h3 id="api">Adding captions via the APIs</h3>
-    <p>How you add captions via the APIs varies depending on whether the captions file will be ingested or used as a remote asset. </p>
-    <aside class="bcls-aside bcls-aside--information">Note: No more than 1000 text tracks may be added.</aside>
+    <p>How you add captions via the APIs varies depending on whether the captions file will be ingested or used as a remote asset.</p>
+    <ul>
+      <li>
+        <p><strong>Remote asset captions</strong> - If you prefer to host the captions yourself (or have a captions provider who hosts them), then you can associate the captions with a video using the CMS API. For information, see <a href="https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-add-webvtt-captions-text-tracks.html">Using the CMS API: Add WebVTT Captions</a>.</p>
+      </li>
+      <li>
+        <p><strong>Add captions to Brightcove Beacon</strong> - If you want to have Brightcove host your captions, you can ingest your WebVTT file using the Dynamic Ingest API. For information, see <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Ingesting WebVTT Files</a>.</p>
+      </li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Note: Regardless of the method used to add caption files to a video, no more than 1000 text tracks may be added.</aside>
   </section>
-  <section id="remove" class="bcls-section">
-    <h2>Removing captions</h2>
-    <p>Captions can be removed from videos using the Media module. In Studio, open the Media module and edit the video details. Click the <strong>Video and Tracks</strong> tab and then edit the <strong>TEXT TRACKS</strong> section as needed.</p>
+  <section class="bcls-section">
+    <h2 id="remove">Removing captions</h2>
+    <p>Captions can be removed from videos using the Media module or via the CMS API. In Studio, open the  <strong>Media</strong>  module and edit the video properties. Edit the <strong>Text Tracks</strong> property as needed.</p>
+    <p>Captions can also be removed using the <span translate="No">CMS API</span> by making an <a href="https://apis.support.brightcove.com/cms/references/reference.html#api-videoGroup-Update_Video">Update Video</a> request and submitting a request body with an empty <code translate="No">text_tracks</code> array (or an array from which the object associated with that set of captions has been removed).</p>
   </section>
-  <section id="styling" class="bcls-section">
-    <h2>Styling captions</h2>
-    <p>Styling can be applied to WebVTT captions using CSS. See <a href="https://studio.support.brightcove.com/media/styling-captions.html">Styling Captions</a> for details.</p>
+  <section class="bcls-section">
+    <h2 id="styling">Styling captions</h2>
+    <p>Styling can be applied to WebVTT captions using CSS. See <a href="/media/styling-captions.html">Styling Captions</a> for details.</p>
   </section>
 </article>
 

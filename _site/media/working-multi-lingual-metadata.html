@@ -1527,34 +1527,41 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Working with Multi-Lingual Metadata</h1>
   <summary>In this topic you will learn how to add multi-lingual metadata to videos.</summary>
   <section class="bcls-section">
-    <p>To view and edit the details for a video, open the <strong>Media</strong> module, click <strong>All videos</strong> and click a video title link. The video details page will open.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: This feature is available to all customers, but it is not enabled by default. Contact your account manager if you would like to have it turned on for your account(s).</aside>
+    <p>To view and edit the properties for a video, open the Media module and click the video title link. The video properties page will open.</p>
+<aside class="bcls-aside bcls-aside--information">Note: Multi-lingual metadata cannot be added to videos that were transcoded using a Legacy ingest profile.</aside>
     <aside class="bcls-aside bcls-aside--information">Note: Before you can associate multi-lingual metadata with videos, you must configure a primary language and one or more additional languages as part of the <a href="/admin/configuring-language-settings.html">Language Settings</a>.</aside>
     <figure class="bcls-figure"></figure>
-    <p>When the video details page opens, the video metadata will be displayed using the primary language. The language selector will display above the <strong>Video Information</strong> section and will display the primary language. Click the button to select another  language.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/multiling-language-selector.png" /></figure>
+    <p>When the video properties page opens, the video metadata will be displayed using the primary language. The language selector will display above the Video Information section and will display the primary language. Click the button to select another  language. In this example, English was configured as the primary language and French and Spanish were added as additional languages.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/language-selector.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="required">Adding multi-lingual metadata</h2>
     <p>To add multi-lingual metadata to a video, select the language to add metadata for using the language selector.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/multiling-select-spanish-language.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/select-spanish-language.png" /></figure>
     <p>The video properties will update and display the correct language version of the page.</p>
-    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/media/multiling-view-spanish-properties.png" /></figure>
-    <p>To edit the video details, click the <strong>Edit</strong> button in a section or double-click in a section. Enter the localized value(s) and then click <strong>Save</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/multiling-spanish-video-info.png" /></figure>
-    <p>The following video details sections support multi-lingual metadata:</p>
+    
+
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/view-spanish-properties-beacon.png" /></figure>
+
+    <p>To edit the video properties, click <span class="button-blue-text-bordered">Edit</span>  in the section or double-click in the section. Enter the localized value(s) and then click <span class="button-blue"> Save </span> .</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/spanish-video-info.png" /></figure>
+    <p>The following video property sections support multi-lingual metadata:</p>
     <ul>
       <li>Video Information</li>
+
       <li>Categorization</li>
-      <li>Text Tracks </li>
+
       <li>Audio Tracks</li>
-      <li>Custom Fields</li>
       <li>Images</li>
+      <li>Custom Fields</li>
+      <li>Text Tracks </li>
     </ul>
   </section>
   <section class="bcls-section">
     <h2 id="videoinfo">Required fields</h2>
     <p>In order to save changes, all required fields for the primary language must have values. If required fields are missing for any of the additional languages, a message will be displayed but changes can be saved.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/multiling-spanish-fields-required.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/spanish-fields-required.png" /></figure>
   </section>
 </article>
 

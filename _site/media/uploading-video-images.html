@@ -1523,39 +1523,58 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
+<h1>Uploading Video Images</h1>
 <article class="bcls-article">
-  <h1>Uploading Video Images</h1>
   <summary>In this topic you will learn how to upload video images using the Media module.</summary>
   <section class="bcls-section">
-    <p>Videos in your Brightcove Beacon account have associated poster, thumbnail, portrait, landscape and ultrawide images. These images allow viewers to pick which videos they want to see in a playlist or other listing of your content. Poster and thumbnail images can be seen in the following areas:</p>
+    
+     
+Videos in your Beacon account have associated poster, thumbnail, portrait, landscape and ultrawide images. 
+ These images allow viewers to pick which videos they want to see in a playlist or other listing of your content. Poster and thumbnail images can be seen in the following areas:</p>
     <ul>
-      <li>In the Media module, the thumbnail image is displayed next to the video; the poster image will appear in the preview player on the video details page</li>
+      <li>In the Media module, the thumbnail image is displayed next to the video; the poster image will appear in the preview player on the video properties page</li>
       <li>The thumbnail image will appear when publishing a playlist</li>
       <li>The poster image is displayed in the playback area of the video player after the player loads and the video metadata is available; the poster will display until the viewer presses the play button</li>
     </ul>
-    <p>For videos that are uploaded to Brightcove Beacon, poster and thumbnail images are created automatically by taking a snapshot from the source video at the midway point. The size of the poster and thumbnail is based upon the dimensions specified in the ingest profile used when uploading the video. If you don't like the default images that were captured, you can upload other images or <a href="/media/capturing-poster-and-thumbnail-images.html">capture new images</a> to use as the poster and thumbnail.</p>
+    <p>For videos that are uploaded to Beacon, poster and thumbnail images are created automatically by taking a snapshot from the source video at the midway point. The size of the poster and thumbnail is based upon the dimensions specified in the ingest profile used when uploading the video. If you don't like the default images that were captured, you can upload other images or <a href="/media/capturing-poster-and-thumbnail-images.html">capture new images</a> to use as the poster and thumbnail.</p>
+    <aside class="bcls-aside bcls-aside--information">
+      Notes:
+      <ul>
+        <li>If you are uploading images for a video you have recently uploaded, you must wait until processing of the video has completely finished. Otherwise, the image upload will fail.</li>
+        <li>Because processing the uploaded images is an asynchronous process, errors encountered will not be immediately apparent. You should refresh the page after 30 seconds to verify that the images were uploaded and processed successfully.</li>
+      </ul>
+    </aside>
     <p>When uploading custom poster and thumbnail images, we recommend:</p>
     <ul>
       <li><strong>Poster image</strong> - Recommended aspect ratio of 16:9 and a minimum width of 640px</li>
       <li><strong>Thumbnail image</strong> - Recommended aspect ratio of 16:9 and a minimum width of 160px</li>
-      <li><strong>Landscape image</strong> - Recommended aspect ratio of 16:9</li>
-      <li><strong>Portrait image</strong> - Recommended aspect ratio of 2:3</li>
-      <li><strong>Ultrawide image</strong> - Recommended aspect ratio of 21:9
+
+        <li><strong>Landscape image</strong> - Recommended aspect ratio of 16:9</li>
+        <li><strong>Portrait image</strong> - Recommended aspect ratio of 2:3</li>
+        <li><strong>Ultrawide image</strong> - Recommended aspect ratio of 21:9</li>
+
+            </ul>
         <aside class="bcls-aside bcls-aside--information">Note: Uploaded images should use the sRGB color format.</aside>
-      </li>
-    </ul>
     <p>When you upload new poster and thumbnail images, the image dimensions will be based upon the image dimensions specified in the default ingest profile for the account. For information on increasing the quality of poster and thumbnail images, see <a href="/media/increasing-quality-poster-and-thumbnail-images.html">Increasing the Quality of Poster and Thumbnail Images</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="steps">Steps to upload new  images</h2>
-    <p>To upload a new image, follow these steps:</p>
+    <p>To upload a new images, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Media</strong> module.</li>
+      <li>Open the <strong>Media</strong>  module.</li>
+
       <li>Click <strong>All videos</strong> in the panel navigation.</li>
+
       <li>Click the link for the video you want to edit.</li>
+    
+
       <li>Click the <strong>Images</strong> tab.</li>
-      <li>Hover over the appropriate image and click the upload button.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/upload-poster-edit-images.png" /></figure>
+
+      <li>Hover over the Poster/Thumbnail image and click the upload button.
+    
+    
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15519-edit-images-beacon.png" /></figure>
+
       </li>
       <li>Browse and select a new image. It may take a minute for the processing to complete and for the images to appear in the Media module.
         <aside class="bcls-aside bcls-aside--information">Note: .png and .jpg images are supported.</aside>
@@ -1566,6 +1585,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Limitations">Limitations</h2>
     <ul>
       <li>The ingestion system does not allow concurrent jobs on the same video. Therefore, if you attempt to upload images while the video is being ingested or retranscoded, the image upload will fail.</li>
+      <li>If the video was ingested using a legacy profile,  the upload button will be enabled, but image upload will fail. The workaround is to <a href="/media/retranscoding-videos-using-media-module.html">retranscode</a> or <a href="/media/replacing-video-source-file.html">replace</a> the video using a Dynamic Delivery or Context Aware Encoding profile.</li>
     </ul>
   </section>
 </article>

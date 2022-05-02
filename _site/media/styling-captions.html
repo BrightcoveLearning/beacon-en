@@ -1527,7 +1527,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Styling Captions</h1>
   <summary>In this topic you will learn ways to style captions.</summary>
   <section class="bcls-section">
-    <p>The default look and feel of the captions is subject to change so you may wish to style the captions. There are a few ways that captions can be styled:</p>
+    <p>The default look and feel of the captions is subject to change so you may wish to style the captions. When styling captions, be cautious to preserve <a href="https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=122#contrast-minimum" title="https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=122#contrast-minimum">adequate color contrast to meet WCAG accessibility guidelines</a> and consider  end viewers when making styling changes. </p>
+    <p>There are a few ways that captions can be styled:</p>
     <ul>
       <li><a href="#infile">By adding styling options to the WebVTT file</a></li>
       <li><a href="#cssguide">CSS style guide</a></li>
@@ -1543,15 +1544,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ul>
       <li>Bold text
         <pre class="line-numbers">
-<code class="language-html">&lt;b&gt;Lorem ipsum&lt;/b&gt;</code></pre>
+<code class="language-html" translate="No">&lt;b&gt;Lorem ipsum&lt;/b&gt;</code></pre>
       </li>
       <li>Italic text
         <pre class="line-numbers">
-<code class="language-html">&lt;i&gt;dolor sit amet&lt;/i&gt;</code></pre>
+<code class="language-html" translate="No">&lt;i&gt;dolor sit amet&lt;/i&gt;</code></pre>
       </li>
       <li>Underlined text
         <pre class="line-numbers">
-<code class="language-html">&lt;u&gt;consectetuer adipiscing&lt;/u&gt;</code></pre>
+<code class="language-html" translate="No">&lt;u&gt;consectetuer adipiscing&lt;/u&gt;</code></pre>
       </li>
     </ul>
     <p>Because the Brightcove Player manages the positioning of captions, you can not use styles to change the location or orientation of the captions. The inline styles don't provide many styling options. For a greater variety of styling options, you can use a CSS file as described in the next section.</p>
@@ -1570,97 +1571,97 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td><code translate="no">font-family</code></td>
+          <td><code translate="No">font-family</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">font-size</code></td>
+          <td><code translate="No">font-size</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">font-weight</code></td>
+          <td><code translate="No">font-weight</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">color</code></td>
+          <td><code translate="No">color</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">background</code></td>
+          <td><code translate="No">background</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">background-color</code></td>
+          <td><code translate="No">background-color</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">opacity</code></td>
+          <td><code translate="No">opacity</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">visibility</code></td>
+          <td><code translate="No">visibility</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">text-decoration</code></td>
+          <td><code translate="No">text-decoration</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">text-shadow</code></td>
+          <td><code translate="No">text-shadow</code></td>
           <td style="text-align:center">✔</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td><code translate="no">width</code></td>
+          <td><code translate="No">width</code></td>
           <td>&nbsp;</td>
           <td style="text-align:center">✔</td>
         </tr>
         <tr>
-          <td><code translate="no">height</code></td>
+          <td><code translate="No">height</code></td>
           <td>&nbsp;</td>
           <td style="text-align:center">✔</td>
         </tr>
         <tr>
-          <td><code translate="no">line-height</code></td>
+          <td><code translate="No">line-height</code></td>
           <td>&nbsp;</td>
           <td style="text-align:center">✔</td>
         </tr>
         <tr>
-          <td><code translate="no">white-space</code></td>
+          <td><code translate="No">white-space</code></td>
           <td>&nbsp;</td>
           <td style="text-align:center">✔</td>
         </tr>
         <tr>
-          <td><code translate="no">word-wrap</code></td>
+          <td><code translate="No">word-wrap</code></td>
           <td>&nbsp;</td>
           <td style="text-align:center">✔</td>
         </tr>
         <tr>
-          <td><code translate="no">top</code></td>
+          <td><code translate="No">top</code></td>
           <td>&nbsp;</td>
           <td style="text-align:center">✔</td>
         </tr>
         <tr>
-          <td><code translate="no">left</code></td>
+          <td><code translate="No">left</code></td>
           <td>&nbsp;</td>
           <td style="text-align:center">✔</td>
         </tr>
         <tr>
-          <td><code translate="no">display</code></td>
+          <td><code translate="No">display</code></td>
           <td>&nbsp;</td>
           <td style="text-align:center">✔</td>
         </tr>
         <tr>
-          <td><code translate="no">direction</code></td>
+          <td><code translate="No">direction</code></td>
           <td>&nbsp;</td>
           <td style="text-align:center">✔</td>
         </tr>
@@ -1672,7 +1673,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="user">User styling of captions</h2>
     <p>For users on iOS devices, caption styling is controlled through the iOS Settings. To access the settings select <strong>Settings</strong> &gt; <strong>General</strong> &gt; <strong>Accessibility</strong> &gt; <strong>Subtitles &amp; Captioning</strong> &gt; <strong>Style</strong>. Here you can select a predefined style or create new styles.</p>
     <p>Viewers on desktop and Android devices can change the appearance of the captions by using the captions settings menu.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/captions-settings-menu.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15481-caption-settings-menu.png" /></figure>
     <p>Clicking on the captions settings menu will display an overlay which allows the following caption properties to be set:</p>
     <ul>
       <li>Foreground color and opacity</li>
@@ -1682,7 +1683,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Text edge style</li>
       <li>Font family</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/captions-settings.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15481-caption-settings.png" /></figure>
     <p>Click <strong>Defaults</strong> to return the captions to their default styling.</p>
   </section>
   <section class="bcls-section">

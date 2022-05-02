@@ -1530,16 +1530,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>The Media module provides the ability to export video metadata for all of your videos or a subset of videos. When using this feature, keep the following in mind:</p>
     <ul>
       <li>Brightcove recommends exporting less than 15K videos at a time. If you need to export more than 15K videos, use the search feature to return a subset of videos and export multiple "batches" at a time.</li>
-      <li>URLs for renditions and images are not fixed. Brightcove reconfigures the storage of media assets from time to time and when this happens, URLs for specific assets will change. If you are relying on hard-coded URLs to these assets, the links may break at some point.</li>
+      <li>URLs for renditions and images are not fixed. Brightcove reconfigures the storage of media assets from time to time and when this happens, URLs for specific assets will change. If you are relying on hard-coded URLs to these assets, the links may break at some point. The best way to prevent links to media from breaking is to retrieve them from Beacon at runtime using the <a href="https://apis.support.brightcove.com/cms/getting-started/overview-cms-api.html">CMS API</a>.</li>
       <li>Double-byte characters such as Korean and Japanese will not display properly if opened in Excel. This is caused by the fact that the generated .csv file is encoded by UTF-8 and Excel does not support it properly. To fix this, the .csv file should be re-encoded by ANSI, then, it will be displayed properly in Excel.</li>
     </ul>
     <p>To export video metadata, follow these steps.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Open the Media module.</li>
-      <li>In the panel navigation, click<strong> All videos</strong>.</li>
+      <li>Open the <strong>Media</strong>  module.</li>
       <li>If you want to export data for specific videos, check the checkbox next to the videos.</li>
       <li>Click <strong>Export</strong> at the top of the page.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/export-data.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18703-export-data.png" /></figure>
       </li>
       <li>Select the videos to export:
         <ul>
@@ -1552,10 +1551,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>Click <strong>Export Data</strong>. The data export will begin.</li>
       <li>When the export file is ready, click <strong>Download File</strong> to download the video data file to your local computer.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/export-done.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18703-export-done.png" /></figure>
       </li>
     </ol>
-    <p>The .csv file will be named with the Brightcove Beacon account number. A third-party spreadsheet program can be used to view the exported video data.</p>
+    <p>The .csv file will be named with the Beacon account number. A third-party spreadsheet program can be used to view the exported video data.</p>
   </section>
   <section class="bcls-section">
     <h2 id="add">Exported video data details</h2>
@@ -1574,7 +1573,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
         <tr>
           <td>account_id</td>
-          <td valign="top"><p>Brightcove Beacon account ID</p></td>
+          <td valign="top"><p>Beacon account ID</p></td>
         </tr>
         <tr>
           <td>ad_keys</td>
@@ -1590,14 +1589,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
         <tr>
           <td>created_at</td>
-          <td valign="top">When the video was created in the Video Cloud system</td>
+          <td valign="top">When the video was created in the Beacon system</td>
         </tr>
         <tr>
           <td>created_by</td>
           <td valign="top">Information about the user who created the video:
             <ul>
-              <li>if created by API, the <code translate="no">type</code> will be <code translate="no">api_key</code></li>
-              <li>if created before the auditing feature was enabled on December 7, 2018, the <code translate="no">type</code> will be <code translate="no">unknown</code></li>
+              <li>if created by API, the <code translate="No">type</code> will be <code translate="No">api_key</code></li>
+              <li>if created before the auditing feature was enabled on December 7, 2018, the <code translate="No">type</code> will be <code translate="No">unknown</code></li>
+              <li>if created by a user and the user has been removed from the account, their user ID will still appear here</li>
             </ul></td>
         </tr>
         <tr>
@@ -1642,7 +1642,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
         <tr>
           <td>images</td>
-          <td valign="top">Information about the  images</td>
+          <td valign="top">Information about the poster and thumbnail images</td>
         </tr>
         <tr>
           <td>link</td>
@@ -1700,9 +1700,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td>updated_by</td>
           <td valign="top">Information about the user last updated the video:
             <ul>
-              <li>if created by API, the <code translate="no">type</code> will be <code translate="no">api_key</code></li>
-              <li>if created before the auditing feature was enabled on December 7, 2018, the <code translate="no">type</code> will be <code translate="no">unknown</code></li>
-              <li>if the video was not modified after ingestion, the <code translate="no">type</code> will be <code translate="no">internal</code></li>
+              <li>if created by API, the <code translate="No">type</code> will be <code translate="No">api_key</code></li>
+              <li>if created before the auditing feature was enabled on December 7, 2018, the <code translate="No">type</code> will be <code translate="No">unknown</code></li>
+              <li>if the video was not modified after ingestion, the <code translate="No">type</code> will be <code translate="No">internal</code></li>
             </ul></td>
         </tr>
         <tr>
