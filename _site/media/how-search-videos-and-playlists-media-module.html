@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="In this topic you will learn how to add audio tracks to videos using the Media module." />
+  <meta name="description" content="In this topic you will learn how to search for videos and playlists." />
 
-  <title>Adding Audio Tracks to Videos</title>
+  <title>Searching Videos and Playlists</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -54,7 +54,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Adding Audio Tracks to Videos</li>
+      <li class="breadcrumb-item active" aria-current="page">Searching Videos and Playlists</li>
       
       
     </nav>
@@ -328,11 +328,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               <ul class="sidenav-submenu" style="display:none;">
                 
                   
-                    <li><a href="/media/adding-audio-tracks-videos.html">Adding Audio Tracks to Videos</a></li>
+                    <li><a href="/media/adding-audio-tracks-videos-using-media-module.html">Adding Audio Tracks to Videos</a></li>
                   
                 
                   
-                    <li><a href="/media/adding-captions-videos.html">Adding Captions to Videos</a></li>
+                    <li><a href="/media/adding-captions-videos-using-media-module.html">Adding Captions to Videos</a></li>
                   
                 
                   
@@ -380,7 +380,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/media/downloading-videos.html">Downloading Videos</a></li>
+                    <li><a href="/media/downloading-videos-video-cloud.html">Downloading Videos</a></li>
                   
                 
                   
@@ -444,11 +444,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/media/retranscoding-videos.html">Retranscoding Videos</a></li>
+                    <li><a href="/media/retranscoding-videos-using-media-module.html">Retranscoding Videos</a></li>
                   
                 
                   
-                    <li><a href="/media/searching-videos-and-playlist.html">Searching Videos and Playlists</a></li>
+                    <li><a href="/media/how-search-videos-and-playlists-media-module.html">Searching Videos and Playlists</a></li>
                   
                 
                   
@@ -456,7 +456,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/media/sharing-videos-other-accounts.html">Sharing Videos</a></li>
+                    <li><a href="/media/media-sharing-using-media-module.html">Sharing Videos</a></li>
                   
                 
                   
@@ -464,11 +464,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/media/uploading-videos.html">Uploading Videos</a></li>
+                    <li><a href="/media/uploading-videos-using-upload-module.html">Uploading Videos</a></li>
                   
                 
                   
-                    <li><a href="/media/uploading-video-images.html">Uploading Video Images</a></li>
+                    <li><a href="/media/uploading-poster-and-thumbnail-images.html">Uploading Video Images</a></li>
                   
                 
                   
@@ -1524,133 +1524,488 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Adding Audio Tracks to Videos</h1>
-  <summary>In this topic you will learn how to add audio tracks to videos using the Media module.</summary>
+  <h1>Searching Videos and Playlists</h1>
+  <summary>In this topic you will learn how to search for videos and playlists.</summary>
   <section class="bcls-section">
-    <p>Videos can be configured with multiple audio tracks. Multiple audio tracks can be used to:</p>
+    <p>The Media module provides a <strong>Search...</strong> field that can be used to search videos in a Beacon account.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-search-videos.png" /></figure>
+    <p>The following types of searches can be performed:</p>
     <ul>
-      <li>Play back the same video in different languages </li>
-      <li>Provide audio with descriptions for the visually challenged</li>
-      <li>Provide stereo vs. multi-channel (surround sound) audio</li>
+      <li><a href="#videosearch">Video search</a></li>
+      <li><a href="#playlistsearch">Playlist search</a></li>
+      <li><a href="#advsearch">Advanced search</a></li>
+      <li><a href="#savedsearch">Saved search</a></li>
     </ul>
-    <p>Multiple audio tracks are supported for HLS V4+ and DASH - with and without DRM protection. Videos with multiple audio tracks will display a headphone icon (<img alt="" src="/assets/images/s-media-img/node18591-headphone-icon.png" />) in the controlbar. When the icon is clicked, the viewer can select between audio tracks.</p>
-    <aside class="bcls-aside bcls-aside--information">Notes:
+  </section>
+  <section class="bcls-section">
+    <h2 id="videosearch">Video search</h2>
+    <h3>Terminology</h3>
+    <p>In this section, the term <strong>exact</strong> means that the search string is enclosed in quotation marks. For example:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Exact Search</th>
+          <th>Non-Exact Search</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>"great blue"</td>
+          <td>great blue</td>
+        </tr>
+        <tr>
+          <td><code translate="No">name</code>:"great blue"</td>
+          <td><code translate="No">name</code>:great blue</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note that "exact" means that all terms inside the quotation marks must be matched, but they may not match exactly. For example, a search on <code translate="No">"running water"</code> could return a video that has the phrase <code translate="No">water runs downhill</code> in the title or description.</p>
+    <p>To search the videos in your account, enter a search term in the <strong>Search...</strong> field. By default, the search will be performed on videos.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-search-options.png" /></figure>
+    <p>To search for multiple video IDs, use the following syntax: <strong>id:xxx id:xxx id:xxx</strong>. For example, <code translate="No">id:5985323381001 id:5715142164001</code>.</p>
+    <p>It is also possible to search <a href="#playlistsearch">playlists</a> or enter <a href="#advsearch">advanced search terms</a>.</p>
+    <p>The following video fields will be searched:</p>
+    <ul>
+      <li>Video id (<code translate="No">id</code>)</li>
+      <li>Name (<code translate="No">name</code>)</li>
+      <li>Short description (<code translate="No">description</code>)</li>
+      <li>Long description (<code translate="No">long_description)</code>)</li>
+      <li>Tags (<code translate="No">tags</code>)</li>
+      <li>Reference id (<code translate="No">reference_id</code>)</li>
+      <li>Custom fields (<code translate="No">custom_fields</code> or <code translate="No">{field_name}</code>)</li>
+    </ul>
+    <p>Query support for video fields differ. Some fields support partial-word searches and <a href="#stemming">stemming searches</a>, and some do not.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Search field&nbsp;</th>
+          <th>Supports</th>
+          <th><strong>Does Not Support</strong></th>
+          <th>Examples</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Name and descriptions</td>
+          <td><strong>exact</strong> matches for one or more whole words; <a href="#stemming">stemming</a> support</td>
+          <td>no partial-word support</td>
+          <td><ul>
+              <li><code translate="No">name:"great blue"</code> will match <code translate="No">"Great Blue Heron"</code></li>
+              <li><code translate="No">name:"great blu"</code> will <strong>not</strong> match <code translate="No">"Great Blue Heron"</code></li>
+              <li><code translate="No">name:great blu</code> will match <code translate="No">"Great Blue Heron"</code></li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td>Video ID</td>
+          <td>exact matches only</td>
+          <td>no partial-word or <a href="#stemming">stemming</a> support</td>
+          <td><strong>5591838791001</strong> will match video with id 5591838791001 <strong>5591838791</strong> will <strong>not</strong> match that video</td>
+        </tr>
+        <tr>
+          <td>Tags</td>
+          <td>matches only for whole words</td>
+          <td>no partial-word or <a href="#stemming">stemming</a> support</td>
+          <td><code translate="No">tags:publ</code> will <strong>not</strong> match videos with tag <code translate="No">"public"</code></td>
+        </tr>
+        <tr>
+          <td>Reference ID</td>
+          <td>partial string matches that start with the Ref ID (first 3 chars.) and whole string matches</td>
+          <td>no partial-strings that do not start with the Ref ID</td>
+          <td><ul>
+              <li><code translate="No">reference_id:myv</code> matches video with reference id "myvid1"</li>
+              <li><code translate="No">reference_id:"myv"</code> does <strong>not</strong> match video with reference id <code translate="No">"myvid1"</code></li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td>Date fields</td>
+          <td>&nbsp;</td>
+          <td>not searchable using the text box, searchable using advanced search</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Individual text custom fields</td>
+          <td>matches for one or more whole words and <a href="#stemming">stemming</a> support; for <strong>exact</strong> search strings, whole word matches only</td>
+          <td>no partial-word support</td>
+          <td><ul>
+              <li><code translate="No">custom_fields:place</code> will match video with a custom field value of <code translate="No">"places"</code></li>
+              <li><code translate="No">custom_fields:plac</code> will <strong>not</strong> match video with a custom field value of <code translate="No">"places"</code></li>
+              <li><code translate="No">custom_fields:"place"</code> will <strong>not</strong> match video with a custom field value of <code translate="No">"places"</code></li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td>Individual list custom fields</td>
+          <td>matches for one or more whole words and <a href="#stemming">stemming</a> support; <strong>exact</strong> search stings, whole word matches only</td>
+          <td>no partial-word support</td>
+          <td><ul>
+              <li><code translate="No">topic:place</code> will match video with a topic list-type custom field value of "places"</li>
+              <li><code translate="No">topic:plac</code> will <strong>not</strong> match video with a topic list-type custom field value of <code translate="No">"places"</code></li>
+              <li><code translate="No">topic:"place"</code> will <strong>not</strong> match video with a topic list-type custom field value of <code translate="No">"places"</code></li>
+            </ul></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="bcls-section">
+      <h2 id="Ignored_words">Ignored words</h2>
+  
+      <p>Certain words are ignored in search strings because they are so common that they are likely to return many results unrelated to what you are actually searching for. Below is a list of words that are ignored by search:</p>
+  
+      <p>"a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with"</p>
+  
+      <p>In addition, non-alphanumeric characters such as hyphens, underscores, line-breaks, "$", "&", "*", etc. are treated as word delimiters. For example, a search string like <code translate="No">small-town</code> will be treated as <code translate="No">small town</code>.</p>
+    </section>
+
+    <div class="BCL-subsection">
+      <h3 id="stemming">What is stemming?</h3>
+      <p>Video fields that support stemming return words that have the stem of the search word in common. In addition, stemming supports entering whole words only, not partial words:</p>
       <ul>
-        <li>Multiple audio tracks can only be used with videos set up for <a href="/general/overview-dynamic-delivery.html">Dynamic Delivery</a>. In addition, your account must be enabled for multiple audio tracks. Contact your account manager for details.</li>
-        <li>If audio tracks are added to a title after the video was originally ingested; the default ingest profile for the publisher's account is selected when processing the audio track. We recommend processing audio tracks with the same ingest profile as the original video title to ensure the same audio bitrate/renditions are used. For more details in setting the default ingest profile, please refer to <a href="/admin/managing-ingest-profiles.html#default">Managing Ingest Profiles</a>.</li>
-        <li>When a video is uploaded using a Dynamic Delivery ingest profile, the source audio for the video will be transcoded according to the ingest profile and will appear in the <strong>Audio Tracks</strong> section for the video in the Media module. By default, the audio <strong>Language</strong> is set to <strong>English</strong> with a <strong>Variant</strong> type of <strong>main</strong>. The defaults can be changed by Brightcove Support. Additional audio tracks can then be added.</li>
-        <li>When you add additional audio tracks to a video, they must all have the same bitrate/rendition profile to ensure successful playback in HLS (DASH playback will still work).</li>
-        <li>When you add an audio track to a video, and then add a duplicate before the first one has finished uploading, one of the tracks may be corrupted, silently, <strong>causing playback of the video to fail</strong>. Be sure to wait until each track has fully uploaded before uploading another one.</li>
+        <li>Example 1: Searching on <code translate="No">running</code> will return results containing: <code translate="No">running</code>, <code translate="No">run</code>, <code translate="No">runs</code></li>
+        <li>Example 2: Searching on <code translate="No">vid</code> will not return results containing: <code translate="No">video</code></li>
       </ul>
-    </aside>
-    <p>Below is an example of a video that has been configured with multiple audio tracks.</p>
-    <p>
-      <!-- <iframe src="//players.brightcove.net/1752604059001/default_default/index.html?videoId=6033855353001" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" allow="encrypted-media" width="640" height="360"></iframe> -->
-      <div style="position: relative; display: block; max-width: 640px;"><div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/57838016001/default_default/index.html?videoId=5413700943001" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div></div>
-    </p>
-    <aside class="bcls-aside bcls-aside--information">Note: Multiple audio tracks can also be added to videos using the APIs. For information, see <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/implementing-multiple-audio-tracks-using-apis.html">Implementing Multiple Audio Tracks Using the APIs</a>.</aside>
+    </div>
+    <div class="BCL-subsection">
+      <h3>General rules</h3>
+      <ul>
+        <li>For an exact match, enclose strings in quotes</li>
+        <li>By default, Brightcove Beacon assumes an OR logical operator between words</li>
+        <li>Search is case-insensitive</li>
+      </ul>
+    </div>
+    <div class="BCL-subsection">
+      <h3>Examples</h3>
+      <table class="bcls-table">
+        <thead class="bcls-table__head">
+          <tr>
+            <th width="236">Search Term</th>
+            <th width="388">Returns</th>
+          </tr>
+        </thead>
+        <tbody class="bcls-table__body">
+          <tr>
+            <td><code translate="No">financial planning</code></td>
+            <td>all videos that contain <code translate="No">financial</code> OR <code translate="No">planning</code></td>
+          </tr>
+          <tr>
+            <td><code translate="No">"financial planning"</code></td>
+            <td>all videos that contain <code translate="No">financial</code> AND <code translate="No">planning</code>. Note that the quotation marks ensure that matching videos will have all the terms, but possible not the exact terms - for example, the search terms here might also return videos with <code translate="No">finance</code> and <code translate="No">plan</code> in the title or description</td>
+          </tr>
+          <tr>
+            <td>walk</td>
+            <td>all videos that contain <strong>walk</strong>, <strong>walks</strong>, or <strong>walking</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
   <section class="bcls-section">
-    <h2 id="audiotrack">Configuring the audio track properties</h2>
-    <p>Audio track files can be uploaded and hosted by Brightcove or reside at an internet accessible URL. To view and edit the audio track properties for a video, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Media</strong> module.</li>
-      <li>Click the video title link and locate the <strong>Audio Tracks</strong> section. The audio track for the source video will appear.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18591-audio-tracks-section.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue-text-bordered"> <i data-feather="edit-3"></i> Edit</span> or double-click in the section.</li>
-      <li>Click <span class="button-blue"> Add Audio Track</span> </li>
-      <li>Select if the audio track file will be uploaded from the local file system or from an external URL.
-        <ul>
-          <li><strong>File Upload</strong> - Click <strong>Browse</strong> and select the audio track file from the local file system. The file will be uploaded to Beacon.</li>
-          <li><strong>URL Upload</strong> - Enter the public URL where the audio track file resides and then click <strong>Upload</strong>. The file will be uploaded to Beacon.
-            <aside class="bcls-aside bcls-aside--information">Note: Audio track file names with parentheses, question marks, quotation marks, spaces and other special characters will silently fail when uploading. Brightcove recommends using file names without special characters.</aside>
-          </li>
-        </ul>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18591-audio-track-properties.png" /></figure>
-      </li>
-      <li>The <strong>Language</strong> field should contain the <a href="http://www.w3schools.com/tags/ref_language_codes.asp">language code</a> that specifies the language of the track text data.</li>
-      <li>Select the <strong>Variant</strong> of text track. The <strong>Variant</strong> describes the kind of audio track. Options include:
-        <ul>
-          <li><strong translate="No">main</strong> - The main track, usually the one muxed into the video file</li>
-          <li><strong translate="No">alternate</strong> - An alternate audio track</li>
-          <li><strong translate="No">commentary</strong> - An audio track that provides commentary on the video track</li>
-          <li><strong translate="No">dub</strong> - A track containing a dubbed version of spoken words in a different language</li>
-          <li><strong translate="No">descriptive</strong> - The track is descriptive of the video content in some way</li>
-        </ul>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18591-spanish-audio.png" /></figure>
-      </li>
-      <li>Click<span class="button-blue"> Add Audio Track</span> to save the audio track information.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18591-spanish-audio-added.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue"> Add Audio Track</span> to add another audio track or <span class="button-blue"> Save</span> to save the audio tracks. The newly added audio tracks will appear in the list when processing is finished.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18591-tracks-added.png" /></figure>
-        <aside class="bcls-aside bcls-aside--information">Note: Changes made to the audio track properties may take up to 15 minutes to appear in published players.</aside>
-      </li>
-    </ol>
-    <p>To delete an audio track, click the delete icon (<img alt="" src="/assets/images/s-media-img/node18591-delete-icon.png" />) next to the audio track. Note that there may be a delay before the UI is updated and the audio track no longer appears.</p>
-    <p>When a video with multiple audio tracks is published, a headphone button (<img alt="" src="/assets/images/s-media-img/node18591-headphone-icon.png" />) will appear on the player chrome. Click the<strong> </strong>button to select an audio track.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18591-headphone-icon-in-player.png" /></figure>
+    <h2 id="playlistsearch">Playlist search</h2>
+    <p>To search the playlists in your account, enter a search term in the <strong>Search...</strong> field and then click on the <strong>playlists</strong> option.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-playlist-search.png" /></figure>
+    <p>A list of playlists will appear in the body of the page.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="defaulttrack">Setting a default audio track</h2>
-    <p>When a video is uploaded, the source audio will be set as the main (default) track. To set an audio track to be the default track, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Click <span class="button-blue-text-bordered"> <i data-feather="edit-3"></i> Edit</span> or double-click in the <strong>Audio Tracks</strong> section.</li>
-      <li>Click on the track that is currently the default audio track.</li>
-      <li>Uncheck the <strong>Default</strong> option.</li>
-      <li>Click on the track that will be set as the default audio track.</li>
-      <li>Check the <strong>Default</strong> option.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18591-set-default-track.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue"> Update Audio Track</span>.</li>
-    </ol>
+    <h2 id="advsearch">Advanced search</h2>
+    <p>Advanced search allows you to search for values in specific fields using search qualifiers. For example, you can specify that only the video name or tag fields should be searched. You can also exclude videos with certain terms. For example, you can search for videos that contain <strong>sports</strong> but exclude the videos that include <strong>baseball</strong>. To open the Advanced Search dialog, click the <strong>More Search Options</strong> link.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Advanced Search" src="/assets/images/s-media-img/node15529-advanced-search.png" /></figure>
+    <p>The following criteria can be used to customize the search:</p>
+    <ul>
+      <li><a href="#tags">Tags</a></li>
+      <li><a href="#daterange">Date Range</a></li>
+      <li><a href="#includetext">Text to Include</a></li>
+      <li><a href="#excludetext">Text to Exclude</a></li>
+      <li><a href="#playable">Playable</a></li>
+    </ul>
+    <div id="tags" class="BCL-subsection">
+      <h3>Tags</h3>
+      <p>Advanced search can be used to return videos based upon video tag. There are three options when searching using tags:</p>
+      <ul>
+        <li><strong>Any</strong> - Return videos with any of the tags (OR)</li>
+        <li><strong>All</strong> - Return videos will all of the tags (AND)</li>
+        <li><strong>None</strong> - Return videos that do not have any of these tags</li>
+      </ul>
+      <p>This example would return all videos that are tagged with either <code translate="No">birds</code> or <code translate="No">animals</code>.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-tag-example.png" /></figure>
+      <p>Additional tags criteria can be entered by using the delete/add buttons (<img alt="" src="/assets/images/s-media-img/node15529-delete-add.png" />).</p>
+    </div>
+    <div id="daterange" class="BCL-subsection">
+      <h3>Date Range</h3>
+      <p>Advanced search can be used to return videos based upon date range. The following dates can be searched:</p>
+      <ul>
+        <li>Created At (<code translate="No">created_at</code>)</li>
+        <li>Updated At (<code translate="No">updated_at</code>)</li>
+        <li>Scheduled Starts At (<code translate="No">schedule.starts_at</code>)</li>
+        <li>Scheduled Ends At (<code translate="No">schedule.ends_at</code>)</li>
+      </ul>
+      <p>This example would return all videos created between March 1, 2016 and March 31, 2016.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-date-range-example.png" /></figure>
+      <p>Additional date ranges can be entered by using the delete/add buttons (<img alt="" src="/assets/images/s-media-img/node15529-delete-add.png" />).</p>
+    </div>
+    <div id="includetext" class="BCL-subsection">
+      <h3>Text to Include</h3>
+      <p>Advanced search can be used to return videos based upon text in video metadata. The following fields can be searched:</p>
+      <ul>
+        <li>All</li>
+        <li>Name</li>
+        <li>Name and Description</li>
+        <li>Reference ID</li>
+        <li>Custom Fields</li>
+        <li>A specific custom field</li>
+      </ul>
+      <p>Assume the account has two custom fields, <strong>Year</strong> and <strong>Subject</strong>. This would return all videos with the <strong>Year</strong> custom field equal to <strong>2016</strong> and the <strong>Subject</strong> custom field equal to <strong>birds</strong>.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-text-example.png" /></figure>
+      <p>Additional criteria can be entered by using the delete/add buttons (<img alt="" src="/assets/images/s-media-img/node15529-delete-add.png" />).</p>
+    </div>
+    <div id="excludetext" class="BCL-subsection">
+      <h3>Text to Exclude</h3>
+      <p>Advanced search can be used to exclude videos based upon text in video metadata. The following fields can be searched:</p>
+      <ul>
+        <li>Name</li>
+        <li>Name and Description</li>
+        <li>Reference ID</li>
+        <li>Custom Fields</li>
+        <li>A specific custom field</li>
+      </ul>
+      <p>This example will not return videos that have <strong>private</strong> in the name or description fields.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-exclude-text-example.png" /></figure>
+      <p>Additional criteria can be entered by using the delete/add buttons (<img alt="" src="/assets/images/s-media-img/node15529-delete-add.png" />).</p>
+    </div>
+    <div id="playable" class="BCL-subsection">
+      <h3>Playable</h3>
+      <p>Advanced search can be used to return videos based upon their status:</p>
+      <ul>
+        <li>All</li>
+        <li>Playable</li>
+        <li>Not Playable</li>
+      </ul>
+    </div>
+    <p>After entering the search criteria, the advanced search syntax will appear in the search box.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-advanced-search-syntax.png" /></figure>
+    <p>See the <a href="#advsearchsyntax">Advanced search syntax</a> section for more information.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="limitations">Limitations</h2>
-    <p>The following limitations apply when using multiple audio tracks</p>
-    <dl>
-      <dt>Audio masters not stored</dt>
-      <dd>If you retranscode the video from the video master, the additional audio tracks will be lost, and must be re-added</dd>
-      <dt>Audio-only files must be used</dt>
-      <dd>Audio tracks must be audio-only files without video tracks</dd>
-      <dt>HLSv3, HLS with audio and video in the same segment</dt>
-      <dd>
-        <ul>
-          <li>The playback API will not return HLSv3 manifests</li>
-          <li>All HLS manifests will include de-muxed video/audio</li>
-        </ul>
-      </dd>
-      <dt>Smooth Streaming</dt>
-      <dd>Smooth Streaming URLs will not be available.</dd>
-      <dt>Social Distribution</dt>
-      <dd>It is not possible to select which audio track will be used for distribution. The track included in the video source (the muxed in audio) will be used, always.</dd>
-      <dt>Ordering of audio tracks beyond the one "default" track</dt>
-      <dd>
-        <ul>
-          <li>You can pick a default audio track with <span translate="No">CMS API</span> per title by setting the <code translate="No">is_default</code> field to <code translate="No">true</code></li>
-          <li>There is also an account default, which can be set by Support</li>
-          <li>This will only affect the "default" track in HLS manifests</li>
-          <li>No other ordering is possible</li>
-        </ul>
-      </dd>
-      <dt>Ingesting more than one audio track from a single source</dt>
-      <dd>We support <strong>one audio track from the source supplied in ".master"</strong>, and one for each source under ".audio_tracks.masters".</dd>
-      <dt>DRM protection on videos that include only audio</dt>
-      <dd>As soon as a video track is added, DRM protection will be enabled.</dd>
-      <dt>End-user friendly labels</dt>
-      <dd>We do not support custom labels for audio tracks. If you require that, you will need to make the change on the client side via the Player API.</dd>
-      <dt>In some instances, switching tracks may cause the Brightcove Player to become unstable</dt>
-      <dd>
-        <ul>
-          <li>Track switching before all audio segments have been downloaded</li>
-          <li>When the video is played back using the Silverlight plugin (in versions of IE less than 10, or any version of IE in versions of Window less than 8) - multiple audio tracks are <strong>not</strong> supported in Silverlight.</li>
-          <li>If the audio and video are different durations, the player will may stop whenever the shorter one runs out.</li>
-        </ul>
-      </dd>
-      <dt>Video "duration"</dt>
-      <dd>The video <code translate="No">duration</code> reported by the catalog/Playback API may be incorrect if the audio tracks have different durations.</dd>
-    </dl>
+    <h2 id="advsearchsyntax">Advanced search syntax</h2>
+    <p>When the Advanced Search dialog is used to search for videos, the advanced search syntax will appear in the search box after entering the search criteria. This section outlines the search syntax. The search syntax can also be entered into the search box without using the Advanced Search dialog. To open the Advanced Search dialog, click the <strong>More Search Options</strong> link.</p>
+    <p>To mark a search term as required (returned videos <strong>must</strong> match) or excluded (returned videos <strong>must not</strong> match), add a <strong>+</strong> or <strong>-</strong> sign immediately preceding the term.</p>
+    <p>The following search qualifiers and values are supported.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="299">Qualifier</th>
+          <th width="442">Valid Values</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><code translate="No">name</code></td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td>text</td>
+          <td>strings or quoted strings (<code translate="No">name</code>)</td>
+        </tr>
+        <tr>
+          <td><code translate="No">tags</code></td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td><code translate="No">reference_id</code></td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td><code translate="No">custom_fields</code> - searches all custom fields</td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td>&lt;<code translate="No">custom_field_name</code>&gt; - searches specified custom field name</td>
+          <td>strings or quoted strings</td>
+        </tr>
+        <tr>
+          <td><code translate="No">state</code><sup>[1]</sup></td>
+          <td><code translate="No">ACTIVE</code>, <code translate="No">INACTIVE</code>, <code translate="No">PENDING</code></td>
+        </tr>
+        <tr>
+          <td><code translate="No">updated_at</code></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code translate="No">created_at</code></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code translate="No">schedule.starts_at</code></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code translate="No">schedule.ends_at</code></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code translate="No">published_at</code><sup>[2]</sup></td>
+          <td>date range</td>
+        </tr>
+        <tr>
+          <td><code translate="No">complete</code><sup>[3]</sup></td>
+          <td><code translate="No">true</code> or <code translate="No">false</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="BCL-subsection">
+      <h3>Notes</h3>
+      <p><sup>[1]</sup> A video would be in a PENDING state when it has been shared to an account but it has not been accepted.</p>
+      <p><sup>[2]</sup> The date the video was last activated.</p>
+      <p><sup>[3]</sup> A video has a complete state of true when the video has at least one playable rendition. It does not necessarily mean that all transcoding is complete.</p>
+    </div>
+    <div class="BCL-subsection">
+      <h3>Working with date fields</h3>
+      <p>When working with date fields, the dates can be in UTC (2012-08-01T00:00:00Z) format or use a relative format:</p>
+      <ul>
+        <li><code translate="No">-1day</code></li>
+        <li><code translate="No">-2days</code></li>
+        <li><code translate="No">+4hours</code></li>
+        <li><code translate="No">-60minutes</code></li>
+        <li><code translate="No">-1d</code></li>
+        <li><code translate="No">-2d</code></li>
+        <li><code translate="No">+4h</code></li>
+        <li><code translate="No">-60m</code></li>
+      </ul>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h3>Examples</h3>
+    <p>When combining multiple search terms, separate them with a space so that  additional terms are not interpreted as part of the first one.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="385">Search Term</th>
+          <th width="239">Returns</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><code translate="No">+name:florida</code></td>
+          <td>all videos with <code translate="No">Florida</code> in the video name</td>
+        </tr>
+        <tr>
+          <td><code translate="No">+text:meeting</code></td>
+          <td>all videos with the word <code translate="No">meeting</code> in the video name or short or long description</td>
+        </tr>
+        <tr>
+          <td><code translate="No">+tags:birds</code></td>
+          <td>all videos that are tagged <code translate="No">birds</code></td>
+        </tr>
+        <tr>
+          <td><code translate="No">+tags:birds +state:inactive</code></td>
+          <td>all videos that are tagged <code translate="No">birds</code> and have a status of <code translate="No">inactive</code></td>
+        </tr>
+        <tr>
+          <td><code translate="No">+tags:live,"now playing" +state:ACTIVE</code></td>
+          <td>all videos that are tagged <code translate="No">live</code> and <code translate="No">now playing</code> and have a status of <code translate="No">active</code></td>
+        </tr>
+        <tr>
+          <td><code translate="No">+custom_fields:"2015"</code></td>
+          <td>all videos that have a value of <code translate="No">2015</code> in <strong>any</strong> custom field</td>
+        </tr>
+        <tr>
+          <td><code translate="No">+subject:birds</code></td>
+          <td>all videos that a value of <code translate="No">birds</code> in the <code translate="No">subject</code> custom field</td>
+        </tr>
+        <tr>
+          <td><code translate="No">+producer:"Bob Bailey"</code></td>
+          <td>all videos that a value of <code translate="No">Bob Bailey</code> in the <code translate="No">producer</code> custom field</td>
+        </tr>
+        <tr>
+          <td><code translate="No">+created_at:-3d</code></td>
+          <td>all videos created in the last 3 days</td>
+        </tr>
+        <tr>
+          <td><code translate="No">+updated_at:-1d</code></td>
+          <td>all videos updated in the past day</td>
+        </tr>
+        <tr>
+          <td><code translate="No">+updated_at:-2d +state:INACTIVE</code></td>
+          <td>all videos that have been updated in the last two days and are <code translate="No">inactive</code></td>
+        </tr>
+        <tr>
+          <td><code translate="No">+schedule.starts_at:2015-06-01..2015-06-07</code></td>
+          <td>all videos that are scheduled to start between June 1, 2015 and June 6, 2015</td>
+        </tr>
+        <tr>
+          <td><code translate="No">+updated_at:2015-06-01T13:00:00Z..2015-06-01T15:00:00Z</code></td>
+          <td>all videos that were updated on June 1, 2015 between 1pm and 3pm</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="savedsearch">Saving searches</h2>
+    <p>Searches that you run frequently can be saved so they can be re-run quickly without having to re-enter the search syntax. After you have entered the search syntax that returns the videos you want to see, click <strong>Save Search</strong>. Enter a name for the saved search and then click <span class="button-blue">Save</span>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-saved-search.png" /></figure>
+    <p>To re-run the saved search, click the <strong>Saved Searches</strong> link under the search box and click on the saved search to run.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15529-saved-search-run.png" /></figure>
+    <p>To delete any of the saved searches, click the delete icon (<img alt="" src="/assets/images/s-media-img/node15529-delete-icon.png" />) next to the search.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Ignored_words">Ignored words</h2>
+    <p>Certain words are ignored in search strings because they are so common that they are likely to return many results unrelated to what you are actually searching for. Below is a list of words that are ignored by search:</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td width="135">a</td>
+          <td width="135">an</td>
+          <td width="135">and</td>
+        </tr>
+        <tr>
+          <td>are</td>
+          <td>as</td>
+          <td>at</td>
+        </tr>
+        <tr>
+          <td>be</td>
+          <td>but</td>
+          <td>by</td>
+        </tr>
+        <tr>
+          <td>for</td>
+          <td>if</td>
+          <td>in</td>
+        </tr>
+        <tr>
+          <td>into</td>
+          <td>is</td>
+          <td>it</td>
+        </tr>
+        <tr>
+          <td>no</td>
+          <td>not</td>
+          <td>of</td>
+        </tr>
+        <tr>
+          <td>on</td>
+          <td>or</td>
+          <td>such</td>
+        </tr>
+        <tr>
+          <td>that</td>
+          <td>the</td>
+          <td>their</td>
+        </tr>
+        <tr>
+          <td>then</td>
+          <td>there</td>
+          <td>these</td>
+        </tr>
+        <tr>
+          <td>they</td>
+          <td>this</td>
+          <td>to</td>
+        </tr>
+        <tr>
+          <td>was</td>
+          <td>will</td>
+          <td>with</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </article>
 
@@ -1679,7 +2034,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 09 Aug 2021
+  Page last updated on 02 May 2022
 </div>
 
 

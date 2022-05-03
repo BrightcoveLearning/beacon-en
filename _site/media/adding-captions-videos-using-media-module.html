@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="In this topic you will learn to share videos to other accounts." />
+  <meta name="description" content="In this topic you will learn how to add captions to videos using the Media module." />
 
-  <title>Sharing Videos to Other Accounts</title>
+  <title>Adding Captions to Videos</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -54,7 +54,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Sharing Videos to Other Accounts</li>
+      <li class="breadcrumb-item active" aria-current="page">Adding Captions to Videos</li>
       
       
     </nav>
@@ -328,11 +328,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               <ul class="sidenav-submenu" style="display:none;">
                 
                   
-                    <li><a href="/media/adding-audio-tracks-videos.html">Adding Audio Tracks to Videos</a></li>
+                    <li><a href="/media/adding-audio-tracks-videos-using-media-module.html">Adding Audio Tracks to Videos</a></li>
                   
                 
                   
-                    <li><a href="/media/adding-captions-videos.html">Adding Captions to Videos</a></li>
+                    <li><a href="/media/adding-captions-videos-using-media-module.html">Adding Captions to Videos</a></li>
                   
                 
                   
@@ -380,7 +380,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/media/downloading-videos.html">Downloading Videos</a></li>
+                    <li><a href="/media/downloading-videos-video-cloud.html">Downloading Videos</a></li>
                   
                 
                   
@@ -444,11 +444,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/media/retranscoding-videos.html">Retranscoding Videos</a></li>
+                    <li><a href="/media/retranscoding-videos-using-media-module.html">Retranscoding Videos</a></li>
                   
                 
                   
-                    <li><a href="/media/searching-videos-and-playlist.html">Searching Videos and Playlists</a></li>
+                    <li><a href="/media/how-search-videos-and-playlists-media-module.html">Searching Videos and Playlists</a></li>
                   
                 
                   
@@ -456,7 +456,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/media/sharing-videos-other-accounts.html">Sharing Videos</a></li>
+                    <li><a href="/media/media-sharing-using-media-module.html">Sharing Videos</a></li>
                   
                 
                   
@@ -464,11 +464,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/media/uploading-videos.html">Uploading Videos</a></li>
+                    <li><a href="/media/uploading-videos-using-upload-module.html">Uploading Videos</a></li>
                   
                 
                   
-                    <li><a href="/media/uploading-video-images.html">Uploading Video Images</a></li>
+                    <li><a href="/media/uploading-poster-and-thumbnail-images.html">Uploading Video Images</a></li>
                   
                 
                   
@@ -1524,169 +1524,153 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Sharing Videos to Other Accounts</h1>
-  <summary>In this topic you will learn to share videos to other accounts.</summary>
+  <h1>Adding Captions to Videos</h1>
+  <summary>In this topic you will learn how to add captions to videos using the Media module.</summary>
   <section class="bcls-section">
-    
-    <p>Media sharing allows publishers to upload videos once and then share the videos to other accounts. The accounts can be your own, corporate accounts or accounts of other publishers. The shared videos can then be used independently in the other Brightcove accounts. Media sharing is typically used when publishers want to keep a master account of video content and then share videos out to other divisions or subsidiaries of the organization.</p>
-    <aside class="bcls-aside bcls-aside--information"> Note:
+
+    <p>The text tracks properties can be configured to provide captions for a video. Captions provide additional or interpretive information to individuals who wish to access it. Captions are necessary so the deaf and hard of hearing can access the audio portion of video presentations. To display captions for a video in the Brightcove player, you need to complete the following tasks:</p>
+    <ul>
+      <li><a href="#captionsfile">Create caption files</a></li>
+      <li><a href="#texttrack">Configure the text track properties</a></li>
+      <li><a href="#style">Style captions</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="captionsfile">Creating caption files</h2>
+    <p>To add captions to a video, you first need to create a captions file. One option is to use Brightcove Beacon to <a href="generating-captions-videos.html">generate captions for videos</a>.  The Brightcove Player supports Web Video Text Tracks Format (WebVTT), SRT, DFXP and SCC formats, although all non-WebVTT formats are converted to WebVTT as part of the Dynamic Delivery ingestion process.
+      The WebVTT file format (shown below) is plain text and contains time text data followed by the desired caption or subtitle text.</p>
+    <aside class="bcls-aside bcls-aside--information">
+      <p><strong>Notes</strong></p>
       <ul>
-        <li>Media sharing is available only for Enterprise customers. If you are interested in upgrading your account, please contact Brightcove for more information.</li>
-        <li>Media sharing can be two-way: each account can be a master and an affiliate for the other.</li>
+        <li>SRT, SCC and DFXP captions will be automatically converted to WebVTT for Dynamic Delivery accounts</li>
+        <li>The text of the captions must be encoded UTF-8 to display properly for double-byte languages such as Japanese and Korean</li>
+        <li>Because the captions are displayed in HTML, any text inside <code translate="No">< ></code> brackets will be interpreted as a tag and not displayed</li>
+        <li>If "&lt;" is used within  a WebVTT file without a trailing whitespace, captions will not be displayed by the Android SDK</li>
       </ul>
     </aside>
-    <p>Media sharing can also be implemented programmatically using the CMS API. For more information, see <a href="https://apis.support.brightcove.com/cms/managing-videos/media-sharing-cms-api.html">Media Sharing with the CMS API</a>.</p>
+    <pre>
+WEBVTT
+00:00:00.000 --&gt; 00:00:07.080 align:middle line:90%
+
+00:00:07.080 --&gt; 00:00:10.280 align:middle line:84%
+Hi, I'm Bob Bailey, a Learning
+Specialist with Brightcove.
+
+00:00:10.280 --&gt; 00:00:12.780 align:middle line:84%
+In this video, you'll learn
+about how Video Cloud Studio is
+
+00:00:12.780 --&gt; 00:00:14.940 align:middle line:84%
+organized and get a
+brief overview of what
+
+00:00:14.940 --&gt; 00:00:17.490 align:middle line:90%
+you can accomplish using it.
+</pre>
+    <aside class="bcls-aside bcls-aside--information">Notes:
+      <ul>
+        <li>Caption file names should only include letters (upper or lower case), numbers, dashes (-) and underscores (_).</li>
+        <li> We have seen cases where captions created by a third party start the captions with the time stamp:
+          <p>01:00:00.000</p>
+          <p>This will cause the captions to being <strong>one hour</strong> into the video. To ensure that the captions are correctly synced with the video, make sure that the time stamps begin with <strong>00:00:00.000</strong> and check all time stamps for the <strong>01</strong> hour offset.</p>
+        </li>
+      </ul>
+    </aside>
+    <p>For more information on the WebVTT format, see <a href="http://dev.w3.org/html5/webvtt/">this link</a>. You should have a separate caption file for each language you need to support. While there are many third-party tools to help create captions files, Brightcove has several partners that provide transcription, captioning and translation services. For a complete list of Brightcove partners, visit the <a href="https://www.brightcove.com/en/partners">Partners</a> section of our website.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="terminology">Media sharing terminology</h2>
-    <p>This topic will use the following terminology:</p>
-    <ul>
-      <li><strong>Master</strong> - The account that created the original video. The Master owns the content and is responsible for setting up, managing and providing content to affiliates. The Master account is responsible for storage costs related to shared videos.</li>
-      <li><strong>Affiliate</strong> - The account that is receiving the video. The affiliate can accept content shared to it from a master.</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="limitations">Media sharing limitations</h2>
-    <ul>
-      <li>Sharing videos that have been secured using DRM is <strong>not</strong> supported. Sharing videos from an account that is not DRM-enabled to an account that is DRM-enabled is supported, but the shared videos will <strong>not</strong> be packaged for DRM.</li>
-      <li>Sharing will fail for videos created using the "Convert live stream to VOD" option. It will work for videos made by clipping live streams.</li>
-      <li>When using the Live module to create a live event/channel, the video object that is created  cannot be shared to another account. As a work around, create a remote asset and manually add in the manifest URL from the Live module. </li>
-      <li>Shared videos can be downloaded for offline viewing only if the original video can be. The property is inherited from the original video and cannot be changed for shared video only.</li>
-      <li>When playing a shared video with SSAI, SSAI Macro replacement will use the metadata from the parent video instead of the child Video.  SSAI will also skip the ad lookup if the parent video is marked as <code translate="No">Advertising='Free'</code>, even if the child video is labeled as <code translate="No">Ad Supported</code>. </li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="manage">Managing media sharing relationships</h2>
-    <p>Before videos can be shared between accounts, media sharing settings must be configured as part of the <strong>ADMIN &gt; Media Sharing</strong> settings. Note that only account administrators have access to the Admin menu. If you wish to share videos to other accounts, affiliates must be added and the affiliate accounts must accept the relationship. Master and affiliate accounts can terminate the relationship at any time. Terminating a media sharing relationship <strong>does not</strong> remove any shared videos from affiliate accounts. If you want to remove shared videos from an affiliate's account, you need either delete them from your own (master) account or open the video properties, go to the <strong>Media Sharing</strong> section, and click the <strong>Remove Video</strong> icon for the affiliate account.</p>
-    <figure><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18465-remove-video.png" /></figure>
-    <p>For information on configuring the Media Sharing settings, see <a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="sharing">Sharing videos</h2>
-    <p>By default, the ability to share videos is available to all users in your account with access to the Media module. To share videos, follow these steps:</p>
+    <h2 id="texttrack">Configuring the text track properties</h2>
+    <p>Once the caption files have been created, they can be uploaded and hosted by Brightcove or reside at an internet accessible URL.</p>
+    <p>To view and edit the text track properties for a video, open the Media module, click the video title link and locate the <strong>Text Tracks</strong> section. </p>
+    <aside class="bcls-aside bcls-aside--information">Note: Text track file names with parentheses, question marks, quotation marks, spaces and other special characters will silently fail when uploading. Brightcove recommends using file names without special characters.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: Text track for videos shared to the account can't be edited in the Media module.</aside>
+    <p>To configure the text track properties, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>Open the <strong>Media</strong> module.</li>
-        <li> Select one or more videos and then click <strong>More &gt; Share</strong>.</li>
-        <aside class="bcls-aside bcls-aside--information">Note: When sharing large numbers of videos, Brightcove recommends sharing at most 50 videos at a time. Sharing a large number of videos at once may cause a time out error in Studio. If you need to share a large number of videos, the <span translate="No">CMS API</span> should be used.</aside>
+      <li>Click the video tittle link.</li>
+      <li>Click <span class="button-blue-text-bordered"> <i data-feather="edit-3"></i> Edit</span>
+        or double-click in the <strong>Text Tracks</strong> section.</li>
+      <li>Select if the text track file will be uploaded to Beacon or hosted on an external URL.
+        <ul>
+          <li><strong>File Upload</strong> - Click <strong>Browse</strong> and select the text track file from the file system. The file will be uploaded to Beacon.</li>
+          <li><strong>URL Upload</strong> - Enter the public URL where the text track file resides and then click <strong>Upload</strong>. The file will be uploaded to Beacon.</li>
+          <li><strong>Remote URL</strong> - Enter the public URL where the text track file resides. The URL must be less than 250 characters. Captions will be loaded from the remote URL.
+            <aside class="bcls-aside bcls-aside--information">Note: Using a remote URL is not supported when using Server-Side Ad Insertion (SSAI).</aside>
+            <aside class="bcls-aside bcls-aside--information">Note: If you are hosting captions files on your own server, make sure the file is located at a URL that can be accessed by the Brightcove player. The server hosting the captions file should also have Cross-Origin Resource Sharing (CORS) enabled. You can read more about CORS <a href="https://general.support.brightcove.com/developer/concepts-cors.html">here</a>.</aside>
+          </li>
+          <li><strong>Auto caption</strong> - Select this option to have caption files generated for the video.</li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15481-caption-properties2.png" /></figure>
       </li>
-      <li>Select the affiliate account(s) to share the video(s) to and then click <strong>Share</strong>. The search field can be used to search for an account ID. The search field supports fuzzy searches so entering part of an ID will return matches.
-        <figure><img alt="" src="/assets/images/s-media-img/node18465-select-accounts.png" /></figure>
+      <li>Select the <strong>Language</strong> of the track text data.</li>
+      <li>Enter the appropriate <strong>Label</strong> for the caption file. The label is displayed inside player and allows the viewer to select a language. If no label is supplied, the value specified for <strong>language</strong> is displayed.</li>
+      <li>Select the <strong>Kind</strong> of text track. Options include:
+        <ul>
+          <li><strong>Captions</strong> - Similar to subtitles, but may also include sound effects and other audio information</li>
+          <li><strong>Subtitles</strong> - The transcription or translation of the dialogue</li>
+          <li><strong>Descriptions</strong> - Intended to be a separate text file that describes the video through a screen reader</li>
+          <li><strong>Chapters</strong> - Intended to help the user navigate through the video</li>
+          <li><strong>Metadata</strong> - Information and content about the video which isn’t intended to be displayed to the viewer by default (though you may wish to do so using JavaScript)</li>
+        </ul>
+      </li>
+      <li>Select a <strong>Status</strong>:
+        <ul>
+          <li><strong>Publish</strong> - Text track will appear in players</li>
+          <li><strong>Draft</strong> - Text track will not appear in players</li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Edit Mime Type" src="/assets/images/s-media-img/node15481-caption-english.png" /></figure>
+      </li>
+      <li>Click <span class="button-blue"> Add Text Track</span> to save the text track information.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15481-caption-added.png" /></figure>
+      </li>
+      <li>Click <span class="button-blue"> Add Text Track</span>  to add another text track or <span class="button-blue"> Save</span>  to save the text tracks.
+        <aside class="bcls-aside bcls-aside--information">Note: Changes made to the text track properties may take up to 15 minutes to appear in published players.</aside>
       </li>
     </ol>
-    <p>It is possible to reshare videos (share previously shared videos to the same account). Doing so will replace any video metadata changes made by the affiliate account with the values from the master (sharing) account. Use caution when resharing videos.</p>
+    <p>If any text tracks have been designated as the default, they will appear in <strong>bold</strong>. To delete a text track, click the delete icon (<img alt="" src="/assets/images/s-media-img/node15481-delete-icon.png" />) next to the text track.</p>
+    <p>When a player with associated captions is published, a <strong>CC</strong> button will appear on the player chrome. Click the <strong>CC</strong> button to select a caption language and display the captions.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15481-cc-button.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information"><strong>Note:</strong> The <strong>Caption(CC)/Subtitles icon depends on the player's language</strong>. Brightcove strongly advises users not to change this because it is an intentional design choice to present a localized UI.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="review">Reviewing shared videos</h2>
-    <p>Affiliate accounts have the ability to configure an <strong>Acceptance Mode</strong> for each master account. When the <strong>Acceptance Mode</strong> is <strong>Auto</strong>, shared videos will appear in the affiliate account's list of videos in the Media module. When the <strong>Acceptance Mode</strong> is <strong>Manual</strong>, a <strong>Shares Pending</strong> link displaying the number of shared videos will appear in the Media module.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For information on configuring the Acceptance Mode, see <a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a>.</aside>
-    
-    
-    <figure><img alt="" src="/assets/images/s-media-img/sharing-shares-pending-beacon.png" /></figure>
-   
-    <p>Clicking the <strong>Shares Pending</strong> link will display the list of shared videos.</p>
-    <figure><img alt="" src="/assets/images/s-media-img/node18465-shares-pending-list.png" /></figure>
-    <p>From the shares pending list, you can:</p>
-    <ul>
-      <li><strong>Reject</strong> - To reject the shared video and not include it in your account. Rejecting a shared video does not prevent the master from sharing it to your account again in the future.</li>
-      <li><strong>Accept</strong> - To accept the shared video into your account.</li>
-    </ul>
-    <p><strong>Quick View</strong> can be used to open a panel to view video properties. Once you accept a shared video, it no longer appears in the Shares Pending list in the Media module, and it appears in the All videos view.</p>
+    <h2 id="edit_captions">Edit caption properties</h2>
+    <p>To edit the properties of existing captions, click <strong>Edit</strong> in the Text Tracks panel, and then <span class="button-blue-text-bordered"> <i data-feather="edit-3"></i> Edit</span>  on the captions item that you want to edit:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Editing Caption Properties" src="/assets/images/s-media-img/node15481-edit-captions.png" />
+      <figcaption class="bcls-caption--image">Editing Caption Properties</figcaption>
+    </figure>
   </section>
   <section class="bcls-section">
-    <h2 id="view">Shared videos in the Media module</h2>
-    <p>Shared videos will display a sharing icon in the upper corner of the video thumbnail to indicate that the video has been shared into or out of an account.</p>
-    <div class="BCL-subsection">
-      <h3>Video shared into an account</h3>
-      <p>Hovering over the sharing icon (<img alt="" src="/assets/images/s-media-img/node15924-shared-in-icon.png" />) will display sharing details.</p>
-      <figure><img alt="" src="/assets/images/s-media-img/node18465-shared-in.png" /></figure>
-    </div>
-    <section class="bcls-subsection">
-      <h3>Video shared to another account</h3>
-      <p>Hovering over the sharing icon (<img alt="" src="/assets/images/s-media-img/node15924-shared-out-icon.png" />) will display sharing details.</p>
-      <figure><img alt="" src="/assets/images/s-media-img/node18465-shared-out.png" /></figure>
-    </section>
-    <p>Master accounts can see the status of videos shared to affiliate accounts using the <strong>Media Sharing</strong> section of the video properties page.</p>
-    <figure><img alt="" src="/assets/images/s-media-img/node18465-media-sharing-status.png" /></figure>
-    <p>Errors may also appear here. For example, if <strong>Enforce custom field matching</strong> is checked, the affiliate account must have the same custom fields as the master account or any shares will fail.</p>
+    <h2 id="download">Downloading caption files</h2>
+    <p>The Media module provides the ability to download  caption files. To download a caption file, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong> module.</li>
+      <li>Click the link for the video you want to edit.</li>
+      <li>Locate the <strong>Text Tracks</strong> section and <span class="button-blue-text-bordered"> <i data-feather="edit-3"></i> Edit</span>.
+
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/gen-captions-edit-text-track.png" /></figure>
+      </li>
+      <li>Click the download icon (<img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/icon-download.png" />) in the <strong>Actions</strong> column to download the caption file. </li>
+    </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="delete">Deleting shared videos</h2>
-    <p>When a shared video is deleted from a master account, a message is displayed reminding you that deleting the shared video will delete it from all the affiliate accounts you've shared it with.</p>
-    <figure><img alt="" src="/assets/images/s-media-img/node18465-delete-shared-video.png" /></figure>
+    <h2 id="style">Styling captions</h2>
+    <p>The default look and feel of the captions is subject to change so you may wish to style the captions. For information on styling captions, see <a href="/media/styling-captions.html">Styling Captions</a>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="properties">Shared video properties</h2>
-    <p>When a video is shared to an affiliate account, the following video properties are copied with the shared video:</p>
+    <h2 id="limitations">Limitations</h2>
     <ul>
-      <li>Name</li>
-      <li>Short and long description</li>
-      <li>Reference ID (If any of the affiliate accounts that you are sharing with already have a video with the same reference ID, the sharing operation fails with an error message. You can avoid this by setting up reference ID naming conventions that prevent affiliates from using the same reference IDs.)</li>
-      <li>Related Link (link text and link URL)</li>
-      <li>Tags</li>
-      <li>Video projection</li>
-      <li>Thumbnail and poster images - By default, poster and thumbnail images for the master videos will be used in the affiliate accounts. If changes are made to the poster and/or thumbnail in the master account, those changes will be reflected in the affiliate accounts <strong>unless</strong> the affiliate account has previously generated new poster or thumbnail images. Once the affiliate account makes a change to the poster or thumbnail images, any changes to the poster/thumbnail made in the master account <strong>will not </strong>propagate to the affiliate account.</li>
-      <li>Text Tracks - Affiliates do not have the ability to delete or edit the text track properties for shared videos (the text tracks are shared, but are <strong>not</strong> visible in Studio for the affiliate account)</li>
-      <li>Audio Tracks - Affiliates do not have the ability to delete or edit the audio track properties for shared videos (the audio tracks are shared, but are <strong>not</strong> visible in Studio for the affiliate account) </li>
-      <li>Advertising (Free / Ad Supported)</li>
-      <li>Ad keys</li>
-      <li>Scheduling start date and end date</li>
-      <li>Geo-restriction - Publishers should ensure that master and affiliate accounts are configured the same way with respect to geo-restrictions.</li>
-      <li>Cue points with their associated metadata</li>
-      <li>Custom fields - If the master account is configured to <strong>Enforce custom field matching</strong>, the affiliate account(s) must have the same custom fields as the master account or any shares will fail.</li>
+      <li>Captions are supported on the following device types and operating systems.
+        <ul>
+          <li>iOS 10+</li>
+          <li>Android 7+</li>
+          <li>Microsoft Edge</li>
+          <li>The latest Chrome, Safari, and Firefox browsers on desktops</li>
+        </ul>
+      </li>
+      <li>There is no technical limit to the length of a caption, but in order for the full caption to be visible, the player must be large enough to display that much text</li>
+      <li>Because Safari uses the native capabilities for styling captions, the <strong>Captions Settings</strong> menu option is not available in the the <strong>CC</strong> menu on Safari browsers (both iOS and macOS).</li>
+      <li>If you ingest an invalid WebVTT file in Studio, the file will "process", but will not be added to the video. <strong>Workaround</strong>: you can validate your WebVTT files using <a href="https://quuz.org/webvtt/">this online validator</a>.</li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information">Note: If the custom field is a list type, the custom field must have the same options in both accounts.</aside>
-    <p>The shared video has all the values for these video metadata fields that the master video had at the moment it was shared. However, from that point on, the master copy and the affiliate copy become independent entities:</p>
-    <ul>
-      <li>Video files are not copied when you use Media Sharing, only the video metadata is copied. The shared video points to the original video files in your account.</li>
-      <li>If the video is deleted from the master account, the video is deleted from all affiliate accounts.</li>
-      <li>Any changes an affiliate makes to a video will not affect the original or any other shared copies. If an affiliate deletes a shared video, it is removed from the affiliate's account but remains in the master account and in all other affiliate accounts.</li>
-      <li>Affiliates can't remove or update text tracks using the Media Module.</li>
-      <li>When affiliates receive a video by sharing, it is in the active state. This is true even if the video was not active in the master account.</li>
-      <li>If an affiliate accepts a video and required fields are missing, the video will be inactive.</li>
-      <li>An affiliate account that receives a shared video cannot share that video to another account. Only the master account can share the video.</li>
-      <li>Each account is billed separately for playback (video plays and bandwidth usage) of a shared video from that account.</li>
-      <li>Reporting about a shared video is specific to each account and does not aggregate information about each copy of the video in each account.</li>
-    </ul>
-    <p>It is possible to reshare videos (share previously shared videos to the same account). Doing so will replace any video metadata changes made by the affiliate account with the values from the master (sharing) account. Use caution when resharing videos.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="renditions">Shared video renditions</h2>
-    <p>Videos can be shared to affiliate accounts <strong>before</strong> transcoding has completed. Affiliate accounts that receive the shared video will have access to the renditions that were created in the master account. If the video in the source account is retranscoded, or if the source file is changed, those changes will occur in the affiliate accounts that receive the shared video.</p>
-    <p>Affiliate accounts are unable to retranscode or replace the source file for a shared video.</p>
-  </section>
-  <!--<div class="bcls-section">
-  <h2 id="drm">Media sharing & DRM</h2>
-  <p>If a master account shares a DRM-enabled video to an affiliate account that does not have DRM enabled, the shared video will be DRM-enabled in the affiliate account. If a master account without DRM shares a  video to an affiliate account that has  DRM enabled, the shared video will not be DRM-enabled in the affiliate account. Affiliate accounts have no control over the renditions so DRM can't be added to the shared video.</p>
-</div>-->
-  
-  <section class="bcls-section">
-    <h2 id="billing">Shared media and billing</h2>
-    <p>We often get questions on how media that is shared between accounts affects billing. Below are a few scenarios that explain how billing is handled for content that is shared between publishers.</p>
-    <h3>Scenario 1</h3>
-    <ul>
-      <li>Pub A and Pub B with content on Brightcove CDN</li>
-      <li>Pub A shares to Pub B</li>
-      <li>Pub B pays Brightcove for streams and bandwidth</li>
-      <li>Pub A pays Brightcove for storage costs related to shared videos</li>
-    </ul>
-    <h3>Scenario 2</h3>
-    <ul>
-      <li>Pub A using BYO CDN</li>
-      <li>Pub B on Brightcove CDN OR BYO CDN (doesn't matter)</li>
-      <li>Pub A shares to Pub B</li>
-      <li>Pub B pays Brightcove for streams; Pub A pays their own CDN for bandwidth</li>
-    </ul>
-    <h3>Scenario 3</h3>
-    <ul>
-      <li>Pub A with content on Brightcove CDN</li>
-      <li>Pub B using BYO CDN</li>
-      <li>Pub A shares to Pub B</li>
-      <li>Pub B pays Brightcove for streams and bandwidth assuming that the billing parameters are being passed. We have seen edge cases where the billing parameters are not being passed due to the creation of custom video players that are not properly passing the billing parameters.</li>
-    </ul>
-    <h3>Scenario 4 - Content must be fetched from Origin</h3>
-    <p>We pass along the account ID&nbsp;in every request&nbsp;so that each account is billed for its own origin access. So if the <strong>Sharer</strong> account frequently misses its CDN cache and has to go back to origin for content, then the <strong>Sharer</strong> will be billed for that. If the <strong>Sharee</strong> account frequently misses its CDN cache and has to go back to origin for content, then the <strong>Sharee</strong> account is billed for that. Charges for Origin access stay separate regardless of the CDN config scenario.</p>
-    <h3>Scenario 5 - Images</h3>
-    <p>As with video usage, consumption of images for shared videos by the affiliate account's viewers will be charged to the affiliate account.</p>
   </section>
 </article>
 
@@ -1715,7 +1699,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 23 Feb 2022
+  Page last updated on 02 May 2022
 </div>
 
 
