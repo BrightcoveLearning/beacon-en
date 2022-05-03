@@ -1,41 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to create and manage playlists in  Beacon Studio.">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="In this topic you will learn how to create and manage playlists in {{ site.product }}." />
+
   <title>Creating and Managing Playlists</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css" />
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css" />
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet" />
   
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
-<script translate="no">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-2728311-17');
-</script>
+  <script src="/assets/js/site/google-analytics.js"></script>
   <script src="/assets/js/sajari-head.js"></script>
-	<script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="/assets/css/local.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-
 <body class="body">
-
 <header>
   <div class="div-header">
     <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove"></a>
@@ -1531,7 +1521,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <article class="bcls-article">
   <h1>Creating and Managing Playlists</h1>
-  <summary>In this topic you will learn how to create and manage playlists in  Beacon Studio.</summary>
+  <summary>In this topic you will learn how to create and manage playlists in {{ site.product }}.</summary>
   <section class="bcls-section">
     <p>A playlist is a collection of related videos or other media assets (i.e. seasons, live events, etc) that are grouped together in a particular order for playback in a player. The Media module makes it easy to create playlists and add assets to a playlist. After playlists have been created, you can:</p>
     <ul>
@@ -1547,7 +1537,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Manual</strong> - With a manual playlist, you assign specific videos or media assets to the playlist and re-order them manually</li>
       <li><strong>Smart</strong> - With a smart playlist, the videos or media assets in the playlist are constructed automatically, based on  tags or other metadata associated with the asset. Smart playlists are dynamic and automatically update based upon the assets in your media library and the rules that define the playlist.</li>
     </ul>
-    <p>There are Video Cloud and Beacon variations of both playlist types.</p>
+    <p>There are Video Cloud and OTT variations of both playlist types.</p>
     <ul>
       <li> <strong>Video Cloud playlists</strong> - Can <strong>only</strong> contain videos</li>
       <li> <strong>OTT playlists</strong> - Can contain videos and other entities (i.e. live events, series, seasons, etc.). </li>
@@ -1560,7 +1550,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="view">Viewing all  playlists</h2>
-    <p>To view all the playlists in the account, in the side navigation panel, click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong>. <strong>All Video Cloud playlists</strong> will display all the Video Cloud playlists that have been created. <strong>All OTT playlists</strong> will display all the OTT playlists <strong>AND</strong> the Video Cloud playlists that have been ingested to Beacon (<strong>Beacon ingest</strong> column with a <img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-green-check.png" />). </p>
+    <p>To view all the playlists in the account, in the side navigation panel, click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong>. <strong>All Video Cloud playlists</strong> will display all the Video Cloud playlists that have been created. <strong>All OTT playlists</strong> will display all the OTT playlists <strong>AND</strong> the Video Cloud playlists that have been ingested to Beacon (<strong>Beacon ingest</strong> column with a <img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/icon-green-check.png" />). </p>
     <p>For Video Cloud playlists, the page will display:</p>
     <ul>
       <li><strong>Playlist name</strong> - Name of the playlist</li>
@@ -1572,7 +1562,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>For OTT playlists, the page will display:</p>
     <ul>
       <li><strong>Playlist name</strong> - Name of the playlist</li>
-      <li><strong>Status</strong> - Published (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-green-eye.png" />) or unpublished (<img class="bcls-image--no-border" alt="" src="/assets/images/media/icon-red-eye.png" />)</li>
+      <li><strong>Status</strong> - Published (<img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/icon-green-eye.png" />) or unpublished (<img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/icon-red-eye.png" />)</li>
       <li><strong>Media count</strong> - Number of assets in the playlist</li>
       <li><strong>Media Type</strong> - Types of media in the playlist</li>
       <li><strong>Parameters</strong> - Parameters used to create the playlist (smart playlists only)</li>
@@ -1584,7 +1574,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>To create a playlist, open the Media module and follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>In the side navigation panel, click <strong>Create playlist</strong>. The <strong>Create a playlist</strong> dialog will open.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-create-panel2.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-create-panel.png" /></figure>
       </li>
       <li>Enter a <strong>Playlist name</strong>.</li>
       <li>Click on a <strong>Playlist type</strong>.</li>
@@ -1632,10 +1622,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3>Using multiple parameters</h3>
     <p>Multiple parameters can be entered by clicking <strong>Add a parameter</strong> and then entering an additional parameter. By default, multiple parameters will be evaluated using an <strong>AND</strong> operation. To change how multiple parameters are evaluated, click the selector icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-icon-parameters.png" />) next to the <strong>Parameters</strong> heading.</p>
     <p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-combine-parameters.png" /></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-combine-parameters.png" /></figure>
     </p>
     <p>In the following example, all videos that have a <strong>Director</strong> of <strong>Megan Long</strong> and are tagged <strong>birds</strong> will be added to the playlist.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-beacon-smart-example.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-beacon-smart-example.png" /></figure>
     <p>Click <strong>Apply</strong> to save the changes. </p>
   </section>
   <section class="bcls-section">
@@ -1646,7 +1636,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click on a playlist name to open the playlist details.</li>
       <li>Click <strong>Add content</strong>.</li>
       <li>Click on assets to select them. Click on the tabs at the top of the dialog to filter by content type. The search field can be used to search for assets.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-beacon-manual-add-content.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-beacon-manual-add-content.png" /></figure>
       </li>
       <li>Click<strong> Add</strong>. Videos added to a manual playlist will be added to the end of the playlist.</li>
     </ol>
@@ -1661,7 +1651,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click the <strong>Availability</strong> tab.</li>
     </ol>
     <p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-beacon-availability.png" /></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-beacon-availability.png" /></figure>
     </p>
     <p>The availability settings are controlled using rule sets. All playlists must have at least one rule set. Rule sets are created to control access to a video based upon:</p>
     <ul>
@@ -1738,14 +1728,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Text to include </strong>- Include videos that have the name in the short or long description fields</li>
       <li><strong>Text to exclude </strong>- Exclude videos that have the name in the short or long description fields</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-vc-smart.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-vc-smart.png" /></figure>
     <h3>Using multiple parameters</h3>
     <p>Multiple parameters can be entered by clicking <strong>Add a parameter</strong> and then entering an additional parameter. By default, multiple parameters will be evaluated using an <strong>OR</strong> operation. To change how multiple parameters are evaluated, click the selector icon (<img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-icon-parameters.png" />) next to the <strong>Parameters</strong> heading.</p>
     <p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-combine-parameters.png" /></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-combine-parameters.png" /></figure>
     </p>
     <p>In the following example, all videos that are tagged <strong>birds</strong> or <strong>animals</strong> or have a <strong>Subject</strong> custom field value of <strong>Animals</strong> will be added to the playlist.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-vc-parameter-example.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-vc-parameter-example.png" /></figure>
     <p>Click <strong>Apply</strong> to save the changes. </p>
   </section>
   <section class="bcls-section">
@@ -1756,7 +1746,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Check the boxes next to the videos that should be added to the playlist.</li>
       <li>Click <strong>More &gt; Add to Playlist</strong> at the top of the page.</li>
       <li>Select the playlist to add the videos to.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlist-add-videos-vc-manual-playlist.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-add-videos-vc-manual-playlist.png" /></figure>
       </li>
       <li>Click<strong> Add</strong>. Videos added to a manual playlist will be added to the top of the playlist.</li>
     </ol>
@@ -1777,7 +1767,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <li>Confirm a list of videos in the playlist appears.</li>
         <li>Click on a video asset and drag it to its new location in the list.</li>
       </ol>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/playlists-beacon-manual-change-order.png" /></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-beacon-manual-change-order.png" /></figure>
       <aside class="bcls-aside bcls-aside--information">Note: You can also change the video order by editing the <strong>Play Order</strong> field.</aside>
     </div>
     <div class="BCL-subsection">
@@ -1807,7 +1797,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist-restart">
       <li>Click <strong>All Video Cloud playlists</strong> or <strong> OTT playlists</strong> in the side navigation panel.</li>
       <li>Click the checkbox next to the playlist to delete.</li>
-      <li>Click the delete button (<img alt="" src="/assets/images/media/icon-delete.png" />).</li>
+      <li>Click the delete button (<img alt="" src="/assets/images/s-media-img/icon-delete.png" />).</li>
       <li>Click <strong>Delete </strong> to confirm the deletion.</li>
     </ol>
     <p>If the playlist is displayed in the side navigation panel, you can click on the playlist and then click the down arrow next to the playlist and click<strong> Delete</strong>.</p>
