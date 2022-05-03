@@ -70,3 +70,11 @@
 	path = assets/images/s-media-img
 	url = https://github.com/BrightcoveLearning/s-media-img
   branch = main
+[submodule "_includes/s-analytics"]
+	path = _includes/s-analytics
+	url = https://github.com/BrightcoveLearning/s-analytics
+  branch = main
+[submodule "assets/images/s-analytics-img"]
+	path = assets/images/s-analytics-img
+	url = https://github.com/BrightcoveLearning/s-analytics-img
+  branch = main
