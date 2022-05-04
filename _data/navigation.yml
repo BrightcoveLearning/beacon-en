@@ -101,8 +101,6 @@
       url: /media/configuring-series-availability.html
     - name: Configuring Video Availability
       url: /media/configuring-video-availability.html
-    - name: Creating a Beacon Classic Playlist
-      url: /media/creating-beacon-playlist.html
     - name: Creating and Managing Playlists
       url: /media/creating-and-managing-playlists.html
     - name: Creating and Managing Rule Sets
@@ -404,6 +402,8 @@
           url: '/publishing-apps/general/device-apps-validation-guide.html'
         - name: 'In-App Subscription Resources'
           url: '/publishing-apps/general/in-app-subscription-resources.html'
+        - name: 'Links to the App Stores Subscriptions'
+          url: '/publishing-apps/general/links-subscriptions.html'
         - name: 'Scheduling App Releases in the App Stores'
           url: '/publishing-apps/general/schedule-apps.html'
     - name: 'Android'
