@@ -1523,16 +1523,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Capturing Poster and Thumbnail Images</h1>
   <summary>In this topic you will learn how to capture poster and thumbnail images using the Media module.</summary>
   <section class="bcls-section">
-    <p>Videos in your Brightcove Beacon account have associated poster and thumbnail images. These images allow viewers to pick which videos they want to see in a playlist or other listing of your content. Poster and thumbnail images can be seen in the following areas:</p>
+    
+    <p>Videos in your Beacon account have associated poster and thumbnail images. These images allow viewers to pick which videos they want to see in a playlist or other listing of your content. Poster and thumbnail images can be seen in the following areas:</p>
     <ul>
-      <li>In the Media module, the thumbnail image is displayed next to the video; the poster image will appear in the preview player on the video details page</li>
+      <li>In the Media module, the thumbnail image is displayed next to the video; the poster image will appear in the preview player on the video properties page</li>
       <li>The thumbnail image will appear when publishing a playlist</li>
       <li>The poster image is displayed in the playback area of the video player before or after video playback</li>
     </ul>
-    <p>For videos that are uploaded to Brightcove Beacon, poster and thumbnail images are created automatically by taking a snapshot at the midway point. Brightcove Beacon will try to capture the image from the highest quality, playable MP4 rendition. If there are no MP4 renditions, it will next try HLS renditions and then DASH renditions.</p>
+    <p>For videos that are uploaded to Beacon, poster and thumbnail images are created automatically by taking a snapshot at the midway point. Beacon will try to capture the image from the highest quality, playable MP4 rendition. If there are no MP4 renditions, it will next try HLS renditions and then DASH renditions.</p>
     <aside class="bcls-aside bcls-aside--information">Note:  If a video is ingested using a custom ingest profile that <strong>does not</strong> include any HLS renditions (only MP4 renditions), the poster and thumbnail <strong>will not</strong> be captured during the transcoding process. Images can still be captured using the process described in this topic.</aside>
-    <p>Client-side image capture takes a frame of the largest rendition the browser can play and sends it to the Brightcove Beacon ingestion process with the poster and thumbnail dimensions specified in the default ingest profile. If those profile dimensions are larger than the frame we were able to capture, the image is not resized or scaled. If they are smaller, the image is scaled down. For information on increasing the quality of poster and thumbnail images, see <a href="/media/increasing-quality-poster-and-thumbnail-images.html">Increasing the Quality of Poster and Thumbnail Images</a>.</p>
-    <p>It is also possible to <a href="/media/uploading-poster-and-thumbnail-images.html">upload other video images</a>.</p>
+    <p>Client-side image capture takes a frame of the largest rendition the browser can play and sends it to the Beacon ingestion process with the poster and thumbnail dimensions specified in the default ingest profile. If those profile dimensions are larger than the frame we were able to capture, the image is not resized or scaled. If they are smaller, the image is scaled down. For information on increasing the quality of poster and thumbnail images, see <a href="/media/increasing-quality-poster-and-thumbnail-images.html">Increasing the Quality of Poster and Thumbnail Images</a>.</p>
+    <p>It is also possible to <a href="/media/uploading-poster-and-thumbnail-images.html">upload other images</a> to use as the poster and thumbnail.</p>
   </section>
   <section class="bcls-section">
     <h2 id="requirements">Requirements</h2>
@@ -1544,21 +1545,20 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Image capture is not supported for videos that have been secured using DRM</li>
       <li>Image capture is not supported for restricted trial accounts; you can contact Brightcove to remove this restriction</li>
     </ul>
-    <p>If image capture is not available, the image capture button will be disabled.</p>
+    <p>If image capture is not available, the image capture button will <strong>usually</strong> be disabled. The exception to this rule is that if the video was ingested using a legacy profile. In this case, the button will be enabled, but image capture will not work. The workaround is to <a href="/media/retranscoding-videos-using-media-module.html">retranscode</a> or <a href="/media/replacing-video-source-file.html">replace</a> the video using a Dynamic Delivery or Context Aware Encoding profile and then image capture will be available.</p>
   </section>
   <section class="bcls-section">
     <h2 id="steps">Steps to capture new poster and thumbnail images</h2>
     <p>To capture a new poster or thumbnail image, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Open the Media module.</li>
-      <li>In the panel navigation, click<strong> All videos</strong>.</li>
+      <li>Open the <i data-feather="video"></i> <strong>Media</strong>  module.</li>
       <li>Click the link for the video you want to edit.</li>
       <li>Using the preview player at the top of the page, play the video and pause on the frame you would like to save as the poster/thumbnail image. You can also scrub across the player progress bar to jump to another frame.</li>
-      <li>Click <strong>Capture</strong>.</li>
+      <li>Click <span class="button-blue"><i class="button-icon" data-feather="camera"></i>Capture</span>.</li>
       <li>The preview player at the top of the page will display the current video frame. Use the checkboxes to select whether new <strong>Poster</strong> and/or <strong>Thumbnail</strong> images will be captured.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/capture-poster-preview.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15620-preview-edit.png" /></figure>
       </li>
-      <li>Click <strong>Save</strong> to save the new images. It may take a minute for the processing to complete and for the images to appear in the Media module.</li>
+      <li>Click <span class="button-blue">Save</span> to save the new images. It may take a minute for the processing to complete and for the images to appear in the Media module.</li>
     </ol>
   </section>
   <section class="bcls-section">
