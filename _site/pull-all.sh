@@ -1,4 +1,2 @@
-git pull
-# pulled main repo
-git submodule update --remote
-# updated submodules
+cd s-scripts
+zsh pull-all.sh
