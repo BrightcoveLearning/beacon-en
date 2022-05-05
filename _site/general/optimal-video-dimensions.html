@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}." />
+  <meta name="description" content="This topic provides some information on the optimal video dimensions to use." />
 
-  <title>Supported Video and Audio Formats, Codecs, and Containers</title>
+  <title>Optimal Video Dimensions</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -54,7 +54,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Supported Video and Audio Formats, Codecs, and Containers</li>
+      <li class="breadcrumb-item active" aria-current="page">Optimal Video Dimensions</li>
       
       
     </nav>
@@ -1527,95 +1527,179 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Supported Video and Audio Formats, Codecs, and Containers</h1>
 <article class="bcls-article">
-  <summary>This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}.</summary>
+  <h1>Optimal Video Dimensions</h1>
+  <summary>This topic provides some information on the optimal video dimensions to use.</summary>
   <section class="bcls-section">
-    <h2 id="terms">Understanding codecs, containers, and file extensions</h2>
-    <p>Codecs, containers and file extensions are not equivalent but are often confused with one another. For example, H.264 video does not just mean a file with the extension <code translate="No">.mp4</code>. Video files contain both metadata (duration, dimensions, etc.) as well as the encoded and often compressed audio and video data.</p>
-    <ul>
-      <li>The <em>container</em> format defines how the metadata is stored along with the audio and video data. It does not define the coding or compression of the data.</li>
-      <li><em>Codecs</em> are responsible for encoding and decoding the video and audio streams in a video file. They can be lossy or lossless and are usually optimized for certain types of transmission. Note that there are some cases where the codec and container share a single definition, but these are uncommon.</li>
-    </ul>
-    <p>Other terms that are often confused are encoding/decoding and muxing/demuxing.</p>
-    <ul>
-      <li><em>Encoding </em>and <em>decoding </em>refer to converting the encoded video and audio data to and from streams that can be played.</li>
-      <li><em>Muxing </em>and <em>demuxing </em>refers to the writing and reading of audio and video streams into and from various container formats.</li>
-    </ul>
-    <p>For more information see:</p>
-    <ul>
-      <li>Containers are described in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Comparison_of_container_formats">article</a>.</li>
-      <li>More details on codecs can be found in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Video_codec">article</a>.</li>
-      <li>Additional references for codec IDs and codes can be found <a class="external-link" rel="nofollow" href="http://www.fourcc.org/codecs.php">here</a> and <a class="external-link" rel="nofollow" href="http://mp4ra.org/#/codecs">here</a>.</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="supported_source_formats">Supported source video types</h2>
-    <p>Since <span translate="No">Brightcove</span> generally handles the complexity of creating renditions with codecs and formats appropriate to different platforms, browsers, and device apps, what concerns you most is what kinds of source videos we can transcode for you.</p>
-    <p>Since <span translate="No">Brightcove</span> supports so many video input types, it is actually more helpful to talk about the formats we do not support. At the moment, there are only a few. The list below shows the formats <strong><em>not</em></strong> supported by <a href="https://zencoder.support.brightcove.com"><span translate="No">Zencoder</span> </a>, the <span translate="No">Beacon</span> <a href="/media/uploading-videos-using-upload-module.html">Upload module</a> and <a href="https://apis.support.brightcove.com/dynamic-ingest/"><span translate="No">Dynamic Ingest API</span></a>. Note that if a format is <strong>not</strong>  included in the list below, you can assume it <strong>is supported</strong>.</p>
-    <ul>
-      <li><code translate="No">Apple Intermediate</code></li>
-      <li><code translate="No">HDV 720p60</code></li>
-      <li><code translate="No">Go2Meeting3 (G2M3)</code></li>
-      <li><code translate="No">Avid Meridien Uncompressed</code></li>
-      <li><code translate="No">Windows Media Audio Lossless</code></li>
-      <li><code translate="No">CineForm</code> - partly supported; there are variants that can come from the software used to encode the source, or from OS, that make the source unusable by Zencoder. We are still trying to identify the exact factors that cause problems.</li>
-      <li><code translate="No">SWF</code> - partly supported by <span translate="No">Zencoder</span>; if the <code translate="No">SWF</code> contains a video or audio track, those can be processed, but many <code translate="No">SWFs</code> do not.</li>
-      <li><code translate="No">Animated .gif</code> - Officially not supported but they may work</li>
-    </ul>
-    <h3>Special cases</h3>
-    <ul>
-      <li>
-        <aside class="bcls-aside bcls-aside--information">Note: <code translate="No">AVdh (DNxHQ)</code> also does not work for <strong>422 10-bit and 444 12-bit sources (only)</strong> - this is a bug, and this note will be removed when it is fixed.</aside>
-      </li>
-      <li>Content encrypted with KMS is supported but requires that you pre-sign your object URLs, ala what is outlined here: <a href="https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/">https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/</a>.
-        <p>Steps to implement:</p>
-        <ol>
-          <li>Create a KMS managed encrypted bucket</li>
-          <li>Add the Beacon/Zencoder Ingest Policy</li>
-          <li>Create a pre-signed URL using the KMS key</li>
-          <li>Use this URL when ingesting the video</li>
-        </ol>
-      </li>
-    </ul>
-    <p>Aside from those listed above, we believe we support pretty much all known video formats. If you have problems with another video format, please <a href="https://supportportal.brightcove.com">Contact <span translate="No">Brightcove</span> Support</a> and also let <a href="mailto:docs@brightcove.com"><span translate="No">Brightcove</span> Learning Services</a> know.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="audio_concerns">Audio formats</h2>
-    <h3>Ingestion</h3>
-    <p>On the ingestion side, most formats are supported, except when they get over 8 channels of audio. (And the audio must either be configured as a single multichannel track, or multiple mono tracks.)</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For Beacon ingestion, if your sources have multi-channel audio, you need to have support create custom audio renditions to correctly map the channels.</aside>
-    <h3>Encoding and transcoding</h3>
-    <ul>
-      <li>For Multichannel audio, both AC-3 (Dolby Digital) and EAC-3 (Dolby Digital Plus) are supported, up to 5.1 channels.</li>
-      <li>For Stereo and mono, AAC is supported.</li>
-    </ul>
-    <h3>Playback (in the Brightcove Player)</h3>
-    <ul>
-      <li>AAC, in mono or stereo. 5.1 channel audio support depends on browser capability.</li>
-      <li>Safari is the only current browser that supports it natively, and will select 5.1 audio tracks when available.</li>
-      <li>The Brightcove Player will check for support and automatically select 2.0 stereo AAC when 5.1 support is unavailable.</li>
-    </ul>
-    <h3>Playback (in the SDK Native Players)</h3>
-    <ul>
-      <li>AAC, in mono or stereo.</li>
-      <li>iOS, iPadOS, and tvOS devices support EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>Most Android devices support EAC-3 and AC-3 5.1 audio, and will fall back to stereo AAC renditions when available.</li>
-    </ul>
-    <h3>Playback (other devices)</h3>
-    <ul>
-      <li>Chromecast supports EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>AirPlay to Apple TV will leverage tvOS 5.1/stereo capability.</li>
-    </ul>
-    <h3>Notes</h3>
-    <ul>
-      <li>When providing 5.1 audio, Brightcove recommends including both EAC-3 and AC-3 encoding types.</li>
-      <li>Some devices support 5.1 AAC, but these are uncommon, and AAC 5.1 should never be provided as the only multichannel format unless explicitly required.</li>
-      <li>All streams should include at least one stereo AAC track for devices and browsers without 5.1 support.</li>
-      <li>
-        <p><strong>Windows:</strong> Content with audio above 48kHz for AAC is not supported on Windows and it will cause the player to fail. See <a href="https://docs.microsoft.com/en-gb/windows/desktop/medfound/aac-decoder#format-constraints">this Microsoft document</a> for more information.</p>
-      </li>
-    </ul>
+    <p>Video codecs perform better when the width and height in pixels are multiples of 16. While you can use any width and height in your encoding settings, non-optimal dimensions can result in poor image quality and reduced frame rate. For the best image quality and playback, you should use width and height dimensions for your video that are multiples of 16; your next best choice is multiples of 8, and after that, multiples of 4.</p>
+    <p>Both the native encoding dimensions and the playback dimensions should be evenly divisible by the same number, ideally 16. For example, if you encode your native file to use a frame dimension of 640×480, scale down to a size such as 320×240.</p>
+    <p>The following tables list a collection of width by height measurements by quality for 16:9 and 4:3 aspect ratios:</p>
+    <h3>Recommended width and height for videos with 16:9 aspect ratios</h3>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th><strong>Best Choice:<br />
+            Multiples of 16</strong></th>
+          <th><strong>2nd Best Choice:<br />
+            Multiples of 8</strong></th>
+          <th><strong>3rd Best Choice:<br />
+            Multiples of 4</strong></th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>1920 x 1080</td>
+          <td>1792 x 1008</td>
+          <td>1856 x 1044</td>
+        </tr>
+        <tr>
+          <td>1280 x 720</td>
+          <td>1152 x 648</td>
+          <td>&nbsp;1216 x 684</td>
+        </tr>
+        <tr>
+          <td>1024 x 576</td>
+          <td>896 x 504</td>
+          <td>1088 x 612</td>
+        </tr>
+        <tr>
+          <td>768 x 432</td>
+          <td>&nbsp;640 x 360</td>
+          <td>960 x 540</td>
+        </tr>
+        <tr>
+          <td>512 x 288</td>
+          <td>384 x 216</td>
+          <td>832 x 468</td>
+        </tr>
+        <tr>
+          <td>256 x 144</td>
+          <td>128 x 72</td>
+          <td>704 x 396</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>576 x 324</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>448 x 252</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>320 x 180</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>192 x 108</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <h3>Recommended width and height for videos with 4:3 aspect ratios</h3>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th><strong>Best Choice:<br />
+            Multiples of 16</strong></th>
+          <th><strong>2nd Best Choice:<br />
+            Multiples of 8</strong></th>
+          <th><strong>3rd Best Choice:<br />
+            Multiples of 4</strong></th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>640 x 480</td>
+          <td>608 x 456</td>
+          <td>624 x 468&nbsp;</td>
+        </tr>
+        <tr>
+          <td>576 x 432</td>
+          <td>544 x 408</td>
+          <td>592 x 444&nbsp;</td>
+        </tr>
+        <tr>
+          <td>512 x 384</td>
+          <td>480 x 360</td>
+          <td>560 x 420&nbsp;</td>
+        </tr>
+        <tr>
+          <td>448 x 336</td>
+          <td>416 x 312</td>
+          <td>528 x 396&nbsp;</td>
+        </tr>
+        <tr>
+          <td>384 x 288</td>
+          <td>352 x 264</td>
+          <td>496 x 372&nbsp;</td>
+        </tr>
+        <tr>
+          <td>320 x 240</td>
+          <td>288 x 216</td>
+          <td>464 x 348&nbsp;</td>
+        </tr>
+        <tr>
+          <td>256 x 192</td>
+          <td>224 x 168</td>
+          <td>432 x 324&nbsp;</td>
+        </tr>
+        <tr>
+          <td>192 x 144</td>
+          <td>160 x 120</td>
+          <td>400 x 300&nbsp;</td>
+        </tr>
+        <tr>
+          <td>128 x 96</td>
+          <td>&nbsp;</td>
+          <td>368 x 276&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>336 x 252&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>304 x 228&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>272 x 204&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>240 x 180</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>208 x 156</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>176 x 132</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>144 x 108&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>112 x 84&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </article>
 
@@ -1644,7 +1728,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 03 May 2022
+  Page last updated on 05 May 2022
 </div>
 
 

@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}." />
+  <meta name="description" content="This topic provides an overview of using DRM." />
 
-  <title>Supported Video and Audio Formats, Codecs, and Containers</title>
+  <title>Overview: Digital Rights Management (DRM)</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -54,7 +54,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Supported Video and Audio Formats, Codecs, and Containers</li>
+      <li class="breadcrumb-item active" aria-current="page">Overview: Digital Rights Management (DRM)</li>
       
       
     </nav>
@@ -1527,95 +1527,336 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Supported Video and Audio Formats, Codecs, and Containers</h1>
 <article class="bcls-article">
-  <summary>This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}.</summary>
+  <h1>Overview: Digital Rights Management (DRM)</h1>
+  <summary>This topic provides an overview of using DRM.</summary>
   <section class="bcls-section">
-    <h2 id="terms">Understanding codecs, containers, and file extensions</h2>
-    <p>Codecs, containers and file extensions are not equivalent but are often confused with one another. For example, H.264 video does not just mean a file with the extension <code translate="No">.mp4</code>. Video files contain both metadata (duration, dimensions, etc.) as well as the encoded and often compressed audio and video data.</p>
+    <h2 id="Introduction">Introduction</h2>
+    <p>Digital Rights Management (DRM) prevents your videos from being played back except in clients that are granted permission to do so. Implementations of DRM vary, but the usual mechanism used is to encrypt the video and decrypt it only if the client has some kind of key to authorize playback.</p>
+    <p>All supported DRM packages also have built-in detection and blocking of screen-recording.</p>
+    <p>Also see:</p>
     <ul>
-      <li>The <em>container</em> format defines how the metadata is stored along with the audio and video data. It does not define the coding or compression of the data.</li>
-      <li><em>Codecs</em> are responsible for encoding and decoding the video and audio streams in a video file. They can be lossy or lossless and are usually optimized for certain types of transmission. Note that there are some cases where the codec and container share a single definition, but these are uncommon.</li>
+      <li><a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-content-drm.html">Ingesting content with DRM</a></li>
+      <li><a href="https://player.support.brightcove.com/plugins/configuring-brightcove-player-drm.html">Configuring the Brightcove Player for DRM</a></li>
+      <li><a href="https://sdks.support.brightcove.com/features/content-security-drm-native-player-sdks.html">Content Security (DRM) with the Native Player SDKs</a></li>
+      <li><a href="/general/drm-output-protection-settings.html">DRM Output Protection Settings</a></li>
     </ul>
-    <p>Other terms that are often confused are encoding/decoding and muxing/demuxing.</p>
+    <p>For additional content security mechanisms that can be set in either the player configuration or video properties, see:</p>
     <ul>
-      <li><em>Encoding </em>and <em>decoding </em>refer to converting the encoded video and audio data to and from streams that can be played.</li>
-      <li><em>Muxing </em>and <em>demuxing </em>refers to the writing and reading of audio and video streams into and from various container formats.</li>
+      <li><a href="/players/configuring-player-content-restrictions.html">Configuring Player Content Restrictions</a></li>
+      <li><a href="/media/configuring-video-availability.html">Configuring Video Availability</a></li>
+      <li><a href="/general/protecting-videos-hls-encryption.html">Protecting Videos with HLS Encryption</a></li>
     </ul>
-    <p>For more information see:</p>
-    <ul>
-      <li>Containers are described in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Comparison_of_container_formats">article</a>.</li>
-      <li>More details on codecs can be found in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Video_codec">article</a>.</li>
-      <li>Additional references for codec IDs and codes can be found <a class="external-link" rel="nofollow" href="http://www.fourcc.org/codecs.php">here</a> and <a class="external-link" rel="nofollow" href="http://mp4ra.org/#/codecs">here</a>.</li>
-    </ul>
+    <aside class="bcls-aside bcls-aside--information"><strong>Notes:</strong>
+      <ul>
+        <li>To use DRM or HLS encryption, your account must be enabled for these features. Contact your account manager for more information.</li>
+        <li>When videos are enabled for DRM, MP4 sources/renditions are automatically hidden (meaning that they exist, but are not sent to player as sources) in Studio, the CMS API, and the Playback API.</li>
+        <li>Brightcove currently does not support video-only or audio-only DRM playback.</li>
+      </ul>
+    </aside>
   </section>
   <section class="bcls-section">
-    <h2 id="supported_source_formats">Supported source video types</h2>
-    <p>Since <span translate="No">Brightcove</span> generally handles the complexity of creating renditions with codecs and formats appropriate to different platforms, browsers, and device apps, what concerns you most is what kinds of source videos we can transcode for you.</p>
-    <p>Since <span translate="No">Brightcove</span> supports so many video input types, it is actually more helpful to talk about the formats we do not support. At the moment, there are only a few. The list below shows the formats <strong><em>not</em></strong> supported by <a href="https://zencoder.support.brightcove.com"><span translate="No">Zencoder</span> </a>, the <span translate="No">Beacon</span> <a href="/media/uploading-videos-using-upload-module.html">Upload module</a> and <a href="https://apis.support.brightcove.com/dynamic-ingest/"><span translate="No">Dynamic Ingest API</span></a>. Note that if a format is <strong>not</strong>  included in the list below, you can assume it <strong>is supported</strong>.</p>
+    <h2 id="Supported_DRM_types">Supported DRM types</h2>
+    <p>Beacon offers broad support for DRM:</p>
     <ul>
-      <li><code translate="No">Apple Intermediate</code></li>
-      <li><code translate="No">HDV 720p60</code></li>
-      <li><code translate="No">Go2Meeting3 (G2M3)</code></li>
-      <li><code translate="No">Avid Meridien Uncompressed</code></li>
-      <li><code translate="No">Windows Media Audio Lossless</code></li>
-      <li><code translate="No">CineForm</code> - partly supported; there are variants that can come from the software used to encode the source, or from OS, that make the source unusable by Zencoder. We are still trying to identify the exact factors that cause problems.</li>
-      <li><code translate="No">SWF</code> - partly supported by <span translate="No">Zencoder</span>; if the <code translate="No">SWF</code> contains a video or audio track, those can be processed, but many <code translate="No">SWFs</code> do not.</li>
-      <li><code translate="No">Animated .gif</code> - Officially not supported but they may work</li>
-    </ul>
-    <h3>Special cases</h3>
-    <ul>
-      <li>
-        <aside class="bcls-aside bcls-aside--information">Note: <code translate="No">AVdh (DNxHQ)</code> also does not work for <strong>422 10-bit and 444 12-bit sources (only)</strong> - this is a bug, and this note will be removed when it is fixed.</aside>
-      </li>
-      <li>Content encrypted with KMS is supported but requires that you pre-sign your object URLs, ala what is outlined here: <a href="https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/">https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/</a>.
-        <p>Steps to implement:</p>
-        <ol>
-          <li>Create a KMS managed encrypted bucket</li>
-          <li>Add the Beacon/Zencoder Ingest Policy</li>
-          <li>Create a pre-signed URL using the KMS key</li>
-          <li>Use this URL when ingesting the video</li>
-        </ol>
+      <li>Comprehensive support for packaging, license serving and playback</li>
+      <li>Adaptive use of the appropriate DRM for a given device:
+        <ul>
+          <li>Beacon favors native device DRM to minimize dependency on plugins</li>
+          <li>Beacon leverages standards to reduce the number of renditions necessary to deliver a cross-platform solution</li>
+        </ul>
       </li>
     </ul>
-    <p>Aside from those listed above, we believe we support pretty much all known video formats. If you have problems with another video format, please <a href="https://supportportal.brightcove.com">Contact <span translate="No">Brightcove</span> Support</a> and also let <a href="mailto:docs@brightcove.com"><span translate="No">Brightcove</span> Learning Services</a> know.</p>
+    <p>Brightcove supports the three most popular types of DRM for HTML5 video:</p>
+    <ul>
+      <li><a href="#fairplay">Apple FairPlay</a></li>
+      <li><a href="#widevine">Google Widevine Modular</a></li>
+      <li><a href="#playready">Microsoft PlayReady</a></li>
+    </ul>
+    <p>You can sign up for multiple DRM types to protect your content on all devices and platforms.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="audio_concerns">Audio formats</h2>
-    <h3>Ingestion</h3>
-    <p>On the ingestion side, most formats are supported, except when they get over 8 channels of audio. (And the audio must either be configured as a single multichannel track, or multiple mono tracks.)</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For Beacon ingestion, if your sources have multi-channel audio, you need to have support create custom audio renditions to correctly map the channels.</aside>
-    <h3>Encoding and transcoding</h3>
-    <ul>
-      <li>For Multichannel audio, both AC-3 (Dolby Digital) and EAC-3 (Dolby Digital Plus) are supported, up to 5.1 channels.</li>
-      <li>For Stereo and mono, AAC is supported.</li>
-    </ul>
-    <h3>Playback (in the Brightcove Player)</h3>
-    <ul>
-      <li>AAC, in mono or stereo. 5.1 channel audio support depends on browser capability.</li>
-      <li>Safari is the only current browser that supports it natively, and will select 5.1 audio tracks when available.</li>
-      <li>The Brightcove Player will check for support and automatically select 2.0 stereo AAC when 5.1 support is unavailable.</li>
-    </ul>
-    <h3>Playback (in the SDK Native Players)</h3>
-    <ul>
-      <li>AAC, in mono or stereo.</li>
-      <li>iOS, iPadOS, and tvOS devices support EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>Most Android devices support EAC-3 and AC-3 5.1 audio, and will fall back to stereo AAC renditions when available.</li>
-    </ul>
-    <h3>Playback (other devices)</h3>
-    <ul>
-      <li>Chromecast supports EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>AirPlay to Apple TV will leverage tvOS 5.1/stereo capability.</li>
-    </ul>
+    <h2 id="Summary_of_DRM_support">Summary of DRM support</h2>
+    <p>Support for DRM depends on the video format, as shown in the following table.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Browser</th>
+          <th>Minimum OS Version</th>
+          <th>DASH<br>
+            Widevine</th>
+          <th>DASH<br>
+            Playready</th>
+          <th>HLS<br>
+            FairPlay</th>
+          <!-- <th>
+            HLS<br>
+            Widevine<br>
+            (Live only<sup><strong><a href="#note1-1">[1-1]</a></strong></sup>)
+          </th> -->
+          <th>
+            HLS<br>
+            Widevine<br>
+            (Live)
+          </th>
+          <th>
+            HLS<br>
+            Widevine<br>
+            (VOD)
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <th colspan="6">Web Player on Desktop Devices<sup><strong><a href="#note1-1">[1-1]</a></strong></sup></th>
+        </tr>
+        <tr>
+          <td>Chrome 35+</td>
+          <td>Windows and MacOS versions supported by Chrome</td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <td>Firefox 47+</td>
+          <td>Windows and MacOS versions supported by Firefox</td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <td>Safari 8+</td>
+          <td>MacOS Sierra+</td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <td>Chromium Edge</td>
+          <td>Windows 7, 8.1, MacOS</td>
+          <td><img alt="No" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <td>Chromium Edge</td>
+          <td>Windows 10</td>
+          <td><img alt="No" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <td>Legacy Edge</td>
+          <td>Windows 10</td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <th colspan="6">Web Player on Mobile Devices</th>
+        </tr>
+        <tr>
+          <td>Chrome<br>
+            last 3 major versions</td>
+          <td>Android 6+</td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <td>Safari</td>
+          <td>iOS 11.2+</td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <th colspan="6">Web Player on Set-Top Devices</th>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td>Android TV, Chromecast</td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td>Amazon Fire TV, Google TV, Roku</td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <td>Safari</td>
+          <td>Apple TV (via Airplay)</td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <th colspan="6">Android SDK (Native Player) on Mobile Devices</th>
+        </tr>
+        <tr>
+          <td>n/a</td>
+          <td>Android OS 6.0.1+ (all devices)</td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+        </tr>
+        <tr>
+          <td>n/a</td>
+          <td>Android TV, Amazon Fire TV</td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+        </tr>
+        <tr>
+          <th colspan="6">iOS SDK (Native Player) on Mobile Devices</th>
+        </tr>
+        <tr>
+          <td>n/a</td>
+          <td>iOS 11.2+ (all devices)</td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+        <tr>
+          <th colspan="6">tvOS SDK (Native Player) on Mobile Devices</th>
+        </tr>
+        <tr>
+          <td>n/a</td>
+          <td>tvOS (Apple TV)</td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="Yes" src="/assets/images/general/node18436-check16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+          <td><img alt="No" src="/assets/images/general/node18436-x16.png" /></td>
+        </tr>
+      </tbody>
+    </table>
     <h3>Notes</h3>
+    <!-- <li id="note1-1" style="list-style: none;"><sup><strong>[1-1]</strong></sup> <aside class="bcls-aside bcls-aside--warning">Widevine + HLS is supported for Live streams only, <strong>not</strong> for VOD content.</aside></li> -->
+    <li id="note1-1" style="list-style: none;"><sup><strong>[1-1]</strong></sup> DRM playback requires TLS 1.2, which may be disabled in older browsers and OS versions. <a href="https://knowledge.digicert.com/generalinformation/INFO3297.html#Chrome">This page</a> shows how it can be enabled.</li>
+  </section>
+  <section class="bcls-section">
+    <h2 id="DRM_support_details">DRM support details</h2>
+    <h3>Browsers</h3>
+    <p>DRM for browsers is for desktop or for mobile web (Chrome on Android 6+ devices; Safari on iOS 11.2+ devices). Brightcove uses MPEG-DASH and common encryption together with Widevine Modular, Apple Fairplay, and Microsoft PlayReady to provide DRM on the desktop - which type is used depends on the browser. This provides a single set of assets that can be played across different browsers while leveraging the native DRM that is available with modern browsers.</p>
+    <h3>iOS and Android applications</h3>
+    <p>The information below applies to apps built using the <a href="https://sdks.support.brightcove.com">Brightcove Native Player SDKs</a>. Note that in addition to regular playback, the SDKs also support <a href="#Offline_Playback_with_DRM">offline playback with DRM</a>.</p>
+    <h4>iOS</h4>
+    <p>For iOS devices, the current DRM solution is <a href="https://sdks.support.brightcove.com/features/content-security-drm-native-player-sdks.html">HLS with FairPlay Streaming</a>.</p>
+    <p>Apple's FairPlay Streaming (FPS) technology provides a secure solution for delivering HTTP Live Streaming (HLS) video to Apple devices, including iPhone, iPad and Apple TV. It uses an established secure key protocol and minimizes the power consumption on mobile devices.</p>
+    <h4>Android</h4>
+    <p>For Android devices, the solution is MPEG-DASH + CENC (Widevine Modular).</p>
+    <p>Google Widevine offers a multi-platform, multi-format DRM and video optimization solution that content owners, internet video providers, retailers and video operators can use to deliver a branded, high quality entertainment offering to internet-connected entertainment platforms.</p>
+    <h5>DRM Security Levels with Android Devices</h5>
+    <p>Widevine implements a set of industry standards, including CENC encryption, licensing key exchange and adaptive streaming quality to manage video protection. Widevine supports multiple levels of streaming quality based on the security capabilities of the receiving device.</p>
+    <p>The levels of security are named L1, L2 and L3:</p>
     <ul>
-      <li>When providing 5.1 audio, Brightcove recommends including both EAC-3 and AC-3 encoding types.</li>
-      <li>Some devices support 5.1 AAC, but these are uncommon, and AAC 5.1 should never be provided as the only multichannel format unless explicitly required.</li>
-      <li>All streams should include at least one stereo AAC track for devices and browsers without 5.1 support.</li>
-      <li>
-        <p><strong>Windows:</strong> Content with audio above 48kHz for AAC is not supported on Windows and it will cause the player to fail. See <a href="https://docs.microsoft.com/en-gb/windows/desktop/medfound/aac-decoder#format-constraints">this Microsoft document</a> for more information.</p>
+      <li><strong>Level 1</strong> - Hightest security level
+        <ul>
+          <li>Clear keys are only visible by security processor</li>
+          <li>Protected video path. Clear video is not exposed.</li>
+        </ul>
+      </li>
+      <li><strong>Level 2</strong> - Less secure
+        <ul>
+          <li>Clear keys are only visible by security processor</li>
+          <li>No protected video path. Clear video is exposed.</li>
+        </ul>
+      </li>
+      <li><strong>Level 3</strong> - Lowest security level
+        <ul>
+          <li>Key processing done by main CPU</li>
+          <li>No protected video path. Clear video is exposed.</li>
+        </ul>
       </li>
     </ul>
+    <p>Android devices support either L1 or L3 security levels, based on the hardware and software configurations. Only devices that meet the L1 specification can stream HD or higher quality content from Widevine-secured servers. If your device is only L3 compliant, you will not be able to stream DRM-protected HD content.</p>
+    <p>For more details, see the following:</p>
+    <ul>
+      <li><a href="https://www.widevine.com/solutions/widevine-drm">Widevine's DRM solution document</a></li>
+      <li><a href="https://source.android.com/devices/drm.html">Android Digital Rights Management (DRM) document</a></li>
+      <li><a href="https://support.google.com/widevine/answer/6072714?hl=en">Determine Android device security level</a></li>
+    </ul>
+    <h4 id="Offline_Playback_with_DRM">Offline Playback with DRM</h4>
+    <p>Offline playback allows users to download content while they are connected, and then watch it when they are offline. To protect your content, the Native SDKs use the following:</p>
+    <ul>
+      <li>The Native SDK for Android uses Google Widevine</li>
+      <li>The Native SDK for iOS uses FairPlay Streaming</li>
+    </ul>
+    <p>For details, see the <a href="https://sdks.support.brightcove.com/features/offline-playback-native-player-sdks.html">Overview of Offline Playback with the Native Player SDKs</a>.</p>
+    <h3>Other devices</h3>
+    <p>MPEG-DASH is supported by many devices, including Android TV and Chromecast. Videos packaged with DRM for the desktop browser can also be played on these devices.</p>
+    <p>Many consumer electronics devices support an older form of DRM - PlayReady over Smooth Streaming</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Signing_up_for_DRM">Signing up for DRM</h2>
+    <p>DRM requires an additional fee. Contact your Account Manager about bundling DRM protection so that you can secure your content wherever it plays.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="fairplay">Apple FairPlay</h2>
+    <p>FairPlay Streaming is a DRM system developed by Apple for video content in HLS format.</p>
+    <p>To enable your account for FairPlay, you will need to:</p>
+    <ol class="bcls-tasklist">
+      <li><a href="https://developer.apple.com/streaming/fps/">Obtain a FairPlay license from Apple</a></li>
+      <li>Contact Support to configure your account</li>
+    </ol>
+    <h3>Known issues</h3>
+    <ul>
+      <li>For Fairplay playback on mobile devices, and an external screen is used, the audio will play but the video is just a black image.
+        <p>For more information, see <a href="https://sdks.support.brightcove.com/features/content-security-drm-native-player-sdks.html">Content Security (DRM) with the Native Player SDKs</a></p>
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="widevine">Google Widevine Modular</h2>
+    <p>Widevine Modular is a system developed by Google to protect video content in MPEG DASH format.</p>
+    <p>By default, Beacon uses Brightcove's Widevine licensing server.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="playready">Microsoft PlayReady</h2>
+    <p>PlayReady is a DRM system developed by Microsoft. Playready comes in two forms:</p>
+    <ul>
+      <li><strong>Smooth PlayReady</strong> - Provides DRM protection for Smooth Streaming content</li>
+      <li><strong>PlayReady</strong> - Provides DRM protection for MPEG-DASH content</li>
+    </ul>
+    <p>Beacon uses Brightcove's PlayReady licensing server.</p>
+    <aside class="bcls-aside bcls-aside--information">Note that there are concurrency limits for PlayReady defined in your service agreement with Microsoft. See <a href="https://docs.microsoft.com/en-us/playready/features/concurrency-limiting">this Microsoft document</a> for information on managing concurrency. If the concurrency limit is exceeded for a video, it will fail to play for viewers beyond the maximum number.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Configure_your_Video_Cloud_account">Configure your Beacon account</h2>
+    <p>DRM must be configured for your account by Brightcove Support and your Account Manager. Contact your Account Manager for details.</p>
   </section>
 </article>
 
@@ -1644,7 +1885,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 03 May 2022
+  Page last updated on 05 May 2022
 </div>
 
 

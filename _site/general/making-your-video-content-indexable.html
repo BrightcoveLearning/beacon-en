@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}." />
+  <meta name="description" content="In this topic you will learn how about ways to ensure your video content is properly indexed by search engines." />
 
-  <title>Supported Video and Audio Formats, Codecs, and Containers</title>
+  <title>Making Your Video Content Indexable (SEO)</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -54,7 +54,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Supported Video and Audio Formats, Codecs, and Containers</li>
+      <li class="breadcrumb-item active" aria-current="page">Making Your Video Content Indexable (SEO)</li>
       
       
     </nav>
@@ -1527,95 +1527,140 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Supported Video and Audio Formats, Codecs, and Containers</h1>
 <article class="bcls-article">
-  <summary>This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}.</summary>
+  <h1>Making Your Video Content Indexable (SEO)</h1>
+  <summary>In this topic you will learn how about ways to ensure your video content is properly indexed by search engines.</summary>
   <section class="bcls-section">
-    <h2 id="terms">Understanding codecs, containers, and file extensions</h2>
-    <p>Codecs, containers and file extensions are not equivalent but are often confused with one another. For example, H.264 video does not just mean a file with the extension <code translate="No">.mp4</code>. Video files contain both metadata (duration, dimensions, etc.) as well as the encoded and often compressed audio and video data.</p>
+    <p>Internet search engines provide end-users a quick and easy to use way to get access to information available on the Internet. As more and more Internet content is multimedia, you need to ensure that your content is properly indexed by the search engines so that users can discover it. This article will provide an overview of how to enable your video content to be SEO enabled and indexed by the various search engines (Google, Yahoo, Microsoft).</p>
+    <p>There is a standard document, called a sitemap, that search engine indexers look for when examining your site. This document concisely tells the search engines what content is exposed on your site, the metadata for that content, and where that content is located on your site. A sitemap is an XML file that follows a standard specification.</p>
+    <p>There are two different flavors of sitemaps that you can (and should) create:</p>
     <ul>
-      <li>The <em>container</em> format defines how the metadata is stored along with the audio and video data. It does not define the coding or compression of the data.</li>
-      <li><em>Codecs</em> are responsible for encoding and decoding the video and audio streams in a video file. They can be lossy or lossless and are usually optimized for certain types of transmission. Note that there are some cases where the codec and container share a single definition, but these are uncommon.</li>
+      <li><strong><a href="#sitemap">Sitemap</a></strong> - A sitemap that will index your content in the standard text based search engines such as www.google.com or search.yahoo.com</li>
+      <li><strong><a href="#videositemap">Video Sitemap</a></strong> - A sitemap that will index your content in media-centric search engines such as video.google.com</li>
     </ul>
-    <p>Other terms that are often confused are encoding/decoding and muxing/demuxing.</p>
-    <ul>
-      <li><em>Encoding </em>and <em>decoding </em>refer to converting the encoded video and audio data to and from streams that can be played.</li>
-      <li><em>Muxing </em>and <em>demuxing </em>refers to the writing and reading of audio and video streams into and from various container formats.</li>
-    </ul>
-    <p>For more information see:</p>
-    <ul>
-      <li>Containers are described in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Comparison_of_container_formats">article</a>.</li>
-      <li>More details on codecs can be found in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Video_codec">article</a>.</li>
-      <li>Additional references for codec IDs and codes can be found <a class="external-link" rel="nofollow" href="http://www.fourcc.org/codecs.php">here</a> and <a class="external-link" rel="nofollow" href="http://mp4ra.org/#/codecs">here</a>.</li>
-    </ul>
+    <p>Note that both of these sitemaps index the metadata about your video content and provide links to end-users. The difference is <i>where</i> the metadata that is indexed is obtained from and <i>how</i> the content is surfaced in search results.</p>
+    <p>A proper SEO strategy for your video content will include creating <b>both</b> a standard sitemap as well as a video sitemap. From a priority perspective, you want to create <a href="#sitemap">a standard sitemap</a> first and then a <a href="#videositemap">video sitemap</a>. Using the Brightcove <a href="https://apis.support.brightcove.com/cms/getting-started/overview-cms-api.html">CMS API</a>, you write a script to generate your video sitemap automatically, rather than compiling it by hand.</p>
+    <p>Note that Brightcove Learning Services has a <a href="https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-sitemap-generator.html">sample app for generating video sitemaps</a> using the CMS API.</p>
+    <p>For more information on building submitting a sitemap, see the <a href="https://support.google.com/webmasters/answer/183668">Google documentation</a>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="supported_source_formats">Supported source video types</h2>
-    <p>Since <span translate="No">Brightcove</span> generally handles the complexity of creating renditions with codecs and formats appropriate to different platforms, browsers, and device apps, what concerns you most is what kinds of source videos we can transcode for you.</p>
-    <p>Since <span translate="No">Brightcove</span> supports so many video input types, it is actually more helpful to talk about the formats we do not support. At the moment, there are only a few. The list below shows the formats <strong><em>not</em></strong> supported by <a href="https://zencoder.support.brightcove.com"><span translate="No">Zencoder</span> </a>, the <span translate="No">Beacon</span> <a href="/media/uploading-videos-using-upload-module.html">Upload module</a> and <a href="https://apis.support.brightcove.com/dynamic-ingest/"><span translate="No">Dynamic Ingest API</span></a>. Note that if a format is <strong>not</strong>  included in the list below, you can assume it <strong>is supported</strong>.</p>
-    <ul>
-      <li><code translate="No">Apple Intermediate</code></li>
-      <li><code translate="No">HDV 720p60</code></li>
-      <li><code translate="No">Go2Meeting3 (G2M3)</code></li>
-      <li><code translate="No">Avid Meridien Uncompressed</code></li>
-      <li><code translate="No">Windows Media Audio Lossless</code></li>
-      <li><code translate="No">CineForm</code> - partly supported; there are variants that can come from the software used to encode the source, or from OS, that make the source unusable by Zencoder. We are still trying to identify the exact factors that cause problems.</li>
-      <li><code translate="No">SWF</code> - partly supported by <span translate="No">Zencoder</span>; if the <code translate="No">SWF</code> contains a video or audio track, those can be processed, but many <code translate="No">SWFs</code> do not.</li>
-      <li><code translate="No">Animated .gif</code> - Officially not supported but they may work</li>
-    </ul>
-    <h3>Special cases</h3>
-    <ul>
-      <li>
-        <aside class="bcls-aside bcls-aside--information">Note: <code translate="No">AVdh (DNxHQ)</code> also does not work for <strong>422 10-bit and 444 12-bit sources (only)</strong> - this is a bug, and this note will be removed when it is fixed.</aside>
-      </li>
-      <li>Content encrypted with KMS is supported but requires that you pre-sign your object URLs, ala what is outlined here: <a href="https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/">https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/</a>.
-        <p>Steps to implement:</p>
-        <ol>
-          <li>Create a KMS managed encrypted bucket</li>
-          <li>Add the Beacon/Zencoder Ingest Policy</li>
-          <li>Create a pre-signed URL using the KMS key</li>
-          <li>Use this URL when ingesting the video</li>
-        </ol>
-      </li>
-    </ul>
-    <p>Aside from those listed above, we believe we support pretty much all known video formats. If you have problems with another video format, please <a href="https://supportportal.brightcove.com">Contact <span translate="No">Brightcove</span> Support</a> and also let <a href="mailto:docs@brightcove.com"><span translate="No">Brightcove</span> Learning Services</a> know.</p>
+    <h2 id="sitemap">Standard Sitemaps</h2>
+    <p>Sitemaps follow the sitemap specification that is defined here: <a href="http://www.sitemaps.org/">www.sitemaps.org</a>. The purpose of the sitemap file is to provide a list of URLs on your site to the search engines. The only other information associated with a URL is when the page was last modified and how frequently the page changes. Note that there is no metadata about your content in this index. Because the sitemap is page-centric, we need to create a model where <i>each</i> video in your library will have a unique page, or URL, associated with it. This can be accomplished by having a single page whose behavior and content can be dynamically changed by passing in different query parameters to the page. For example, if you have a URL like <code translate="No">http://www.example.com/video.html?videoId=123</code>, you would have the <code translate="No">video.html</code> page look for the <code translate="No">videoId</code> query parameter (<code translate="No">videoId=123</code>) and modify the contents of the page returned to the browser to contain information about the video with id 123. This would be done on the server-side of your application where the page would look for the ID and then use the Brightcove <span translate="No">CMS API</span> to fetch metadata about the video and write it into the page. Alternatively, you could store the URL where the video is published in a custom field, so that the <span translate="No">CMS API</span> could retrieve it.</p>
+    <p>There is also a <code translate="No">changefreq</code> tag in the sitemap that tells search engines how often the content changes. If you update videos frequently, you would need to record that info in a tag or custom field also, so that the <span translate="No">CMS API</span> could return it. Many videos are rarely updated, so if that is the case for yours, you could just set the value of the tag to <code translate="No">yearly</code>, or you could omit this optional tag altogether. There is not clear evidence that site crawlers pay much attention to it anyway.</p>
+    <p>For the purposes of this article, we assume that there is a single landing page on your site which can be used to play back all video content for your site. Different query parameters will be passed to the page to tell the page what video to play back and what video to surface metadata for. For example, let's say you have a page that displays the contents of an entire playlist and queues up a specific video in a player. You tell the page what playlist to display metadata for via a <code translate="No">bcpid</code> query parameter and what video to surface in a player via the <code translate="No">bcvid</code> parameter. Thus, what we want to do is create a URL for every unique playlist and video id combination.</p>
+    <p>Here is an example of sitemap that would be created:</p>
+    <pre>
+<code class="language-xml" translate="No">
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ &lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+   &lt;url&gt;
+     &lt;loc&gt;http://www.example.com/video?bclid=345&amp;bctid=123&lt;/loc&gt;
+     &lt;lastmod&gt;2015-01-01&lt;/lastmod&gt;
+     &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+   &lt;/url&gt;
+   &lt;url&gt;
+     &lt;loc&gt;http://www.example.com/video?bclid=12&amp;bctid=544&lt;/loc&gt;
+     &lt;lastmod&gt;2015-03-01&lt;/lastmod&gt;
+   &lt;/url&gt;
+ &lt;/urlset&gt;</code></pre>
+    <p>To create a sitemap file, you can create a script that uses <span translate="No">CMS API</span> requests to walk through the playlists in the Beacon account and, for each playlist, walks through its contained videos. For each playlist and video combination, the script creates an entry in the sitemap supplying a unique URL to the playlist/video combination. Once you've created a sitemap file for your site, place the resulting <code translate="No">sitemap.xml</code> file in the root directory of your webserver. For example, if your domain is <code translate="No">www.example.com</code>, the sitemap file would be available at <code translate="No">http://www.example.com/sitemap.xml</code>. Even better would be to automatically generate this file with a server-side application and update the file on your live site.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="audio_concerns">Audio formats</h2>
-    <h3>Ingestion</h3>
-    <p>On the ingestion side, most formats are supported, except when they get over 8 channels of audio. (And the audio must either be configured as a single multichannel track, or multiple mono tracks.)</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For Beacon ingestion, if your sources have multi-channel audio, you need to have support create custom audio renditions to correctly map the channels.</aside>
-    <h3>Encoding and transcoding</h3>
-    <ul>
-      <li>For Multichannel audio, both AC-3 (Dolby Digital) and EAC-3 (Dolby Digital Plus) are supported, up to 5.1 channels.</li>
-      <li>For Stereo and mono, AAC is supported.</li>
-    </ul>
-    <h3>Playback (in the Brightcove Player)</h3>
-    <ul>
-      <li>AAC, in mono or stereo. 5.1 channel audio support depends on browser capability.</li>
-      <li>Safari is the only current browser that supports it natively, and will select 5.1 audio tracks when available.</li>
-      <li>The Brightcove Player will check for support and automatically select 2.0 stereo AAC when 5.1 support is unavailable.</li>
-    </ul>
-    <h3>Playback (in the SDK Native Players)</h3>
-    <ul>
-      <li>AAC, in mono or stereo.</li>
-      <li>iOS, iPadOS, and tvOS devices support EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>Most Android devices support EAC-3 and AC-3 5.1 audio, and will fall back to stereo AAC renditions when available.</li>
-    </ul>
-    <h3>Playback (other devices)</h3>
-    <ul>
-      <li>Chromecast supports EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>AirPlay to Apple TV will leverage tvOS 5.1/stereo capability.</li>
-    </ul>
-    <h3>Notes</h3>
-    <ul>
-      <li>When providing 5.1 audio, Brightcove recommends including both EAC-3 and AC-3 encoding types.</li>
-      <li>Some devices support 5.1 AAC, but these are uncommon, and AAC 5.1 should never be provided as the only multichannel format unless explicitly required.</li>
-      <li>All streams should include at least one stereo AAC track for devices and browsers without 5.1 support.</li>
-      <li>
-        <p><strong>Windows:</strong> Content with audio above 48kHz for AAC is not supported on Windows and it will cause the player to fail. See <a href="https://docs.microsoft.com/en-gb/windows/desktop/medfound/aac-decoder#format-constraints">this Microsoft document</a> for more information.</p>
-      </li>
-    </ul>
+    <h2 id="videositemap">Video Sitemaps</h2>
+    <p>A video sitemap is similar in concept to the standard sitemap file. The video sitemap file will have an entry per video in your account. In fact, a video sitemap uses the sitemap schema as its base and adds additional tags specific to video metadata.</p>
+    <p>The table below outlines the tags that Google requires for video sitemaps.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="170">Tag</th>
+          <th width="82">Required</th>
+          <th width="551">Description</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><code translate="No">&lt;loc&gt;</code></td>
+          <td>Y</td>
+          <td>Specifies the landing page (aka play page, referrer page) for the video.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">&lt;video:video&gt;</code></td>
+          <td>Y</td>
+          <td>Encloses all information about the video.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">&lt;video:thumbnail_loc&gt;</code></td>
+          <td>Y</td>
+          <td>A URL pointing to the video thumbnail image file.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">&lt;video:title&gt;</code></td>
+          <td>Y</td>
+          <td>The title of the video.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">&lt;video:description&gt;</code></td>
+          <td>Y</td>
+          <td>The description of the video.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">&lt;video:content_loc&gt;</code></td>
+          <td>Depends</td>
+          <td>A URL pointing to the actual video media file. Note: You must specify at least one of <code translate="No">&lt;video:player_loc&gt;</code> or <code translate="No">&lt;video:content_loc&gt;</code>.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">&lt;video:player_loc&gt;</code></td>
+          <td>Depends</td>
+          <td>A URL pointing to a player for a specific video. Usually this is the information in the src element of an &lt;embed&gt; tag and should not be the same as the content of the &lt;loc&gt; tag. Note: You must specify at least one of <code translate="No">&lt;video:player_loc&gt;</code> or <code translate="No">&lt;video:content_loc&gt;</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>For a list of all the supported tags and a more detailed explanation of tags, see the <a href="https://support.google.com/webmasters/answer/80471">Google documentation</a>.</p>
+    <p>Below is a sample video sitemap.</p>
+    <pre>
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"&gt;
+   &lt;url&gt;
+     &lt;loc&gt;http://www.example.com/videos/video_landing_page.html&lt;/loc&gt;
+     &lt;video:video&gt;
+       &lt;video:thumbnail_loc&gt;http://www.example.com/thumbs/123.jpg&lt;/video:thumbnail_loc&gt;
+       &lt;video:title&gt;Grilling steaks for summer&lt;/video:title&gt;
+       &lt;video:description&gt;Get perfectly done steaks every time&lt;/video:description&gt;
+       &lt;video:content_loc&gt;http://brightcove04.brightcove.com/22/20318290001/201510/2249/20318290001_4582301804001_4582289844001.mp4?pubId=20318290001&amp;videoId=4582289844001&lt;/video:content_loc&gt;
+       &lt;video:player_loc&gt;http://players.brightcove.net/20318290001/default_default/index.html?videoId=4582289844001&lt;/video:player_loc&gt;
+       &lt;video:duration&gt;600&lt;/video:duration&gt;
+       &lt;video:publication_date&gt;2014-11-05T19:20:30+08:00.&lt;/video:publication_date&gt;
+       &lt;video:tag&gt;steak&lt;/video:tag&gt;
+       &lt;video:tag&gt;meat&lt;/video:tag&gt;
+       &lt;video:tag&gt;summer&lt;/video:tag&gt;
+       &lt;video:family_friendly&gt;yes&lt;/video:family_friendly&gt;
+     &lt;/video:video&gt;
+   &lt;/url&gt;
+ &lt;/urlset&gt;
+</pre>
+    <p>Once you've created your video sitemap, you can submit it to Google following the instructions <a href="https://support.google.com/webmasters/answer/183668#addsitemap">here</a>.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Based on your preference, you can either create separate files for standard and video sitemaps or add information about your video content to an existing sitemap document. However, take into consideration that sitemap files cannot contain more than 50,000 URLs and cannot be larger than 50MB. For more information on sitemap guidelines, review Google's <a href="https://support.google.com/webmasters/answer/183668#1">Sitemap formats and guidelines</a> support article.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="gallery">Brightcove Gallery</h2>
+    <p>Brightcove Gallery allows you to create engaging video experiences without the need of any technical resources. Sites built using Brightcove Gallery will automatically compile the video metadata into a video sitemap for you. For more information, see <a href="https://gallery.support.brightcove.com/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">Configuring Search Engine Optimization Settings for a Portal Experience</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="seo_schema_plugin">SEO Schema Generator Plugin</h2>
+    <p>Another good way to increase SEO for your video content is to use the <a href="https://player.support.brightcove.com/plugins/video-seo-schema-generator-plugin.html">SEO Schema Generator Plugin</a>. The plugin automatically generates a video schema <a href="#micro">micro-format</a> that provides information to search engines about video content embedded in your HTML.</p>
+    <p>For more on micro-formats, and ways to create video schemas if you cannot for some reason use the plugin, see the following section.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="micro">Adding context using micro-formats</h2>
+    <p>In addition to video sitemaps, you can increase the visibility of video content on your site by using micro-formats.</p>
+    <p>While HTML tags tell the browser how to display your content, it doesn't provide any information about what the content means. Your site may be generated from structured data, probably stored in databases, but the structure is lost when it is formatted in HTML. Search engines can benefit from knowing about the structure of the data on your site.</p>
+    <p>A collection of schemas (i.e. HTML tags) has been created to identify the type of content on your web pages. Search engines including Bing, Google and Yahoo rely on this markup to improve search results.</p>
+    <p>These schemas, or micro-formats, provide you with a collection of shared vocabularies to add to your markup that will define the content on your web page. You can find details about these tags at <a href="http://schema.org/"> schema.org</a>.</p>
+    <p>For your media player, Brightcove recommends using the <a href="http://schema.org/VideoObject"> VideoObject</a> schema.</p>
+    <p>Brightcove has created a tool to generate your player publishing code with the micro-format data included. Check out the <a href="https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-schema-builder.html"> Video Schema Builder.</a></p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="conclusion">Conclusion</h2>
+    <p>A complete SEO strategy for your video content should include creating both a standard sitemap as well as a video sitemap. This will ensure that your content is indexed across the widest swath of search engines. Additionally, your content will be surfaced in the most aesthetically pleasing manner for the point of discovery. This article has outlined an approach for providing a unique URL per video in your account and sample code for generating the sitemap files that the engines will index.</p>
   </section>
 </article>
 
@@ -1644,7 +1689,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 03 May 2022
+  Page last updated on 05 May 2022
 </div>
 
 

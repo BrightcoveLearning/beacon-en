@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}." />
+  <meta name="description" content="This topic explains Brightcove's support of TLS and HTTPS for secure delivery of online media." />
 
-  <title>Supported Video and Audio Formats, Codecs, and Containers</title>
+  <title>TLS for Media, Player, and API URLs</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -54,7 +54,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Supported Video and Audio Formats, Codecs, and Containers</li>
+      <li class="breadcrumb-item active" aria-current="page">TLS for Media, Player, and API URLs</li>
       
       
     </nav>
@@ -1527,95 +1527,143 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Supported Video and Audio Formats, Codecs, and Containers</h1>
 <article class="bcls-article">
-  <summary>This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}.</summary>
+  <h1>TLS for Media, Player, and API URLs</h1>
+  <summary>This topic explains Brightcove's support of TLS and HTTPS for secure delivery of online media.</summary>
   <section class="bcls-section">
-    <h2 id="terms">Understanding codecs, containers, and file extensions</h2>
-    <p>Codecs, containers and file extensions are not equivalent but are often confused with one another. For example, H.264 video does not just mean a file with the extension <code translate="No">.mp4</code>. Video files contain both metadata (duration, dimensions, etc.) as well as the encoded and often compressed audio and video data.</p>
+    <h2>Introduction</h2>
+    <p>Transport Layer Security (TLS) protects data transferred over the internet by encrypting it. (TLS replaced an earlier cryptographic protocol called SSL.) The process is largely transparent to users. Data delivered over the web can be delivered with or without encryption, so it is up to the client (a browser, for example) to signal to servers that data should be encrypted. This is usually done by using the HTTPS protocol for URLs instead of HTTP.</p>
+    <p>Beacon supports TLS for all media delivery on these terms:</p>
     <ul>
-      <li>The <em>container</em> format defines how the metadata is stored along with the audio and video data. It does not define the coding or compression of the data.</li>
-      <li><em>Codecs</em> are responsible for encoding and decoding the video and audio streams in a video file. They can be lossy or lossless and are usually optimized for certain types of transmission. Note that there are some cases where the codec and container share a single definition, but these are uncommon.</li>
+      <li>Those using Brightcove CDNs can <a href="https://supportportal.brightcove.com">Contact Brightcove Support</a> to have their accounts configured for either <strong>HTTPS + HTTP</strong> delivery of data, or for <strong>HTTPS-only</strong> delivery.</li>
+      <li>Those using other CDNs (sometimes called BYO CDNs) can request these options from their CDN (if they are supported, which is likely).</li>
     </ul>
-    <p>Other terms that are often confused are encoding/decoding and muxing/demuxing.</p>
-    <ul>
-      <li><em>Encoding </em>and <em>decoding </em>refer to converting the encoded video and audio data to and from streams that can be played.</li>
-      <li><em>Muxing </em>and <em>demuxing </em>refers to the writing and reading of audio and video streams into and from various container formats.</li>
-    </ul>
-    <p>For more information see:</p>
-    <ul>
-      <li>Containers are described in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Comparison_of_container_formats">article</a>.</li>
-      <li>More details on codecs can be found in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Video_codec">article</a>.</li>
-      <li>Additional references for codec IDs and codes can be found <a class="external-link" rel="nofollow" href="http://www.fourcc.org/codecs.php">here</a> and <a class="external-link" rel="nofollow" href="http://mp4ra.org/#/codecs">here</a>.</li>
-    </ul>
+    <p>Whether you need TLS depends mainly on whether the site(s) and pages(s) where you deploy your videos load over HTTPS - if they do, then your videos and video assets, as well as players and API requests must also be requested over HTTPS; if they do not, they may fail to load or generate warnings in the viewer's browser.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="supported_source_formats">Supported source video types</h2>
-    <p>Since <span translate="No">Brightcove</span> generally handles the complexity of creating renditions with codecs and formats appropriate to different platforms, browsers, and device apps, what concerns you most is what kinds of source videos we can transcode for you.</p>
-    <p>Since <span translate="No">Brightcove</span> supports so many video input types, it is actually more helpful to talk about the formats we do not support. At the moment, there are only a few. The list below shows the formats <strong><em>not</em></strong> supported by <a href="https://zencoder.support.brightcove.com"><span translate="No">Zencoder</span> </a>, the <span translate="No">Beacon</span> <a href="/media/uploading-videos-using-upload-module.html">Upload module</a> and <a href="https://apis.support.brightcove.com/dynamic-ingest/"><span translate="No">Dynamic Ingest API</span></a>. Note that if a format is <strong>not</strong>  included in the list below, you can assume it <strong>is supported</strong>.</p>
-    <ul>
-      <li><code translate="No">Apple Intermediate</code></li>
-      <li><code translate="No">HDV 720p60</code></li>
-      <li><code translate="No">Go2Meeting3 (G2M3)</code></li>
-      <li><code translate="No">Avid Meridien Uncompressed</code></li>
-      <li><code translate="No">Windows Media Audio Lossless</code></li>
-      <li><code translate="No">CineForm</code> - partly supported; there are variants that can come from the software used to encode the source, or from OS, that make the source unusable by Zencoder. We are still trying to identify the exact factors that cause problems.</li>
-      <li><code translate="No">SWF</code> - partly supported by <span translate="No">Zencoder</span>; if the <code translate="No">SWF</code> contains a video or audio track, those can be processed, but many <code translate="No">SWFs</code> do not.</li>
-      <li><code translate="No">Animated .gif</code> - Officially not supported but they may work</li>
-    </ul>
-    <h3>Special cases</h3>
-    <ul>
-      <li>
-        <aside class="bcls-aside bcls-aside--information">Note: <code translate="No">AVdh (DNxHQ)</code> also does not work for <strong>422 10-bit and 444 12-bit sources (only)</strong> - this is a bug, and this note will be removed when it is fixed.</aside>
-      </li>
-      <li>Content encrypted with KMS is supported but requires that you pre-sign your object URLs, ala what is outlined here: <a href="https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/">https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/</a>.
-        <p>Steps to implement:</p>
-        <ol>
-          <li>Create a KMS managed encrypted bucket</li>
-          <li>Add the Beacon/Zencoder Ingest Policy</li>
-          <li>Create a pre-signed URL using the KMS key</li>
-          <li>Use this URL when ingesting the video</li>
-        </ol>
-      </li>
-    </ul>
-    <p>Aside from those listed above, we believe we support pretty much all known video formats. If you have problems with another video format, please <a href="https://supportportal.brightcove.com">Contact <span translate="No">Brightcove</span> Support</a> and also let <a href="mailto:docs@brightcove.com"><span translate="No">Brightcove</span> Learning Services</a> know.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="audio_concerns">Audio formats</h2>
-    <h3>Ingestion</h3>
-    <p>On the ingestion side, most formats are supported, except when they get over 8 channels of audio. (And the audio must either be configured as a single multichannel track, or multiple mono tracks.)</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For Beacon ingestion, if your sources have multi-channel audio, you need to have support create custom audio renditions to correctly map the channels.</aside>
-    <h3>Encoding and transcoding</h3>
-    <ul>
-      <li>For Multichannel audio, both AC-3 (Dolby Digital) and EAC-3 (Dolby Digital Plus) are supported, up to 5.1 channels.</li>
-      <li>For Stereo and mono, AAC is supported.</li>
-    </ul>
-    <h3>Playback (in the Brightcove Player)</h3>
-    <ul>
-      <li>AAC, in mono or stereo. 5.1 channel audio support depends on browser capability.</li>
-      <li>Safari is the only current browser that supports it natively, and will select 5.1 audio tracks when available.</li>
-      <li>The Brightcove Player will check for support and automatically select 2.0 stereo AAC when 5.1 support is unavailable.</li>
-    </ul>
-    <h3>Playback (in the SDK Native Players)</h3>
-    <ul>
-      <li>AAC, in mono or stereo.</li>
-      <li>iOS, iPadOS, and tvOS devices support EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>Most Android devices support EAC-3 and AC-3 5.1 audio, and will fall back to stereo AAC renditions when available.</li>
-    </ul>
-    <h3>Playback (other devices)</h3>
-    <ul>
-      <li>Chromecast supports EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>AirPlay to Apple TV will leverage tvOS 5.1/stereo capability.</li>
-    </ul>
-    <h3>Notes</h3>
-    <ul>
-      <li>When providing 5.1 audio, Brightcove recommends including both EAC-3 and AC-3 encoding types.</li>
-      <li>Some devices support 5.1 AAC, but these are uncommon, and AAC 5.1 should never be provided as the only multichannel format unless explicitly required.</li>
-      <li>All streams should include at least one stereo AAC track for devices and browsers without 5.1 support.</li>
-      <li>
-        <p><strong>Windows:</strong> Content with audio above 48kHz for AAC is not supported on Windows and it will cause the player to fail. See <a href="https://docs.microsoft.com/en-gb/windows/desktop/medfound/aac-decoder#format-constraints">this Microsoft document</a> for more information.</p>
-      </li>
-    </ul>
+    <h2 id="Changes_in_TLS_support">Changes in TLS support</h2>
+    <p>Following the recommendations of internet security experts, Brightcove change its support for versions of TLS as detailed below.</p>
+    <section class="bcls-subsection">
+      <h3>What is the change?</h3>
+      <p>Beacon is gradually ending support for TLS versions 1.0 or 1.1. Customers using these versions must migrate as soon as possible.</p>
+      <p>Support for TLS 1.0 and 1.1 has been turned off for the:</p>
+      <ul>
+        <li>Gallery APIs</li>
+        <li>Delivery System API</li>
+        <li>Player Management API</li>
+        <li>Ingest APIs (<code translate="No">https://ingest.api.brightcove.com</code> and <code translate="No">https://ingestion.api.brightcove.com</code>)</li>
+      </ul>
+      <p><strong>Support for TLS 1.0 and 1.1 will be turned off for all services by June 30, 2022.</strong></p>
+    </section>
+    <section class="bcls-subsection">
+      <h3>Why is Brightcove deprecating older TLS versions?</h3>
+      <p>The security of customer data is a top priority for Brightcove. These changes are unfolding across our industry, and many of our technology partners and peers have already taken the steps to disable early TLS.</p>
+    </section>
+    <section class="bcls-subsection">
+      <h3>How do I know if our systems are ready for this change?</h3>
+      <p>As TLS 1.0/1.1 are deprecated, connections with the Beacon platform will need to use the TLS 1.2 encryption protocol (or later). We expect the impact to be minimal, but there are two areas of risk:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>You should make sure that all connections to the Beacon APIs (e.g., a call from a Python script to the CMS API) are made from platforms that support TLS 1.2 or later. This means that automated processes should be hosted from a compatible platform.</li>
+        <li>Your users may be impacted if they are using an unsupported browser, if they have disabled the relevant encryption protocols, or if they are using an unsupported device.</li>
+      </ol>
+      <p>In general, the impact should be limited to older devices and browsers that represent a small fraction of our users. Please see below for a sample of unsupported clients and devices.</p>
+    </section>
+    <section class="bcls-subsection">
+      <h3>Unsupported Platforms (Players/SDKs)</h3>
+      <p>As noted before, HTTP connections (unencrypted) are unaffected by the change. Below find a list of user agents where HTTPS connections using TLS 1.2 are not supported.</p>
+      <h4>OS/Browser Combinations</h4>
+      <ul>
+        <li>Windows 7<sup><strong><a href="#note1-1">[1-1]</a></strong></sup> / Chrome 29 (or earlier Chrome versions)<sup><strong><a href="#note1-2">[1-2]</a></strong></sup></li>
+        <li>Windows 7<sup><strong><a href="#note1-1">[1-1]</a></strong></sup> / Firefox 10.10.12, Firefox 17.0.7, Firefox 24.2.0, Firefox 22, Firefox 24<sup><strong><a href="#note1-2">[1-2]</a></strong></sup></li>
+        <li>Windows 8 / Firefox 26</li>
+        <li>Windows XP<sup><strong><a href="#note1-1">[1-1]</a></strong></sup> / IE 6<sup><strong><a href="#note1-3">[1-3]</a></strong></sup></li>
+        <li>Windows Vista<sup><strong><a href="#note1-1">[1-1]</a></strong></sup> / IE 7<sup><strong><a href="#note1-3">[1-3]</a></strong></sup></li>
+        <li>Windows Phone 8.0 / IE 10<sup><strong><a href="#note1-3">[1-3]</a></strong></sup></li>
+        <li>Windows 7<sup><strong><a href="#note1-1">[1-1]</a></strong></sup> / Opera 12.15, Opera 15, Opera 16<sup><strong><a href="#note1-4">[1-4]</a></strong></sup></li>
+        <li>OS X 10.6.8 / Safari 5.1.9<sup><strong><a href="#note1-2">[1-2]</a></strong></sup></li>
+        <li>OS X 10.8.4 / Safari 6.0.4<sup><strong><a href="#note1-2">[1-2]</a></strong></sup></li>
+        <li>Android 4.3 or earlier</li>
+      </ul>
+      <h5>Notes</h5>
+      <ul>
+        <li id="note1-1" style="list-style: none;"><sup><strong>[1-1]</strong></sup> Windows versions earlier than Windows 8 are not supported by Brightcove</li>
+        <li id="note1-2" style="list-style: none;"><sup><strong>[1-2]</strong></sup> Brightcove supports only the current version, and two earlier major releases of browsers</li>
+        <li id="note1-3" style="list-style: none;"><sup><strong>[1-3]</strong></sup> Brightcove does not support any version of IE (Internet Explorer)</li>
+        <li id="note1-4" style="list-style: none;"><sup><strong>[1-4]</strong></sup> Brightcove does not support any version of Opera</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information language-editable">Brightcove services and apps may work on unsupported browsers and platforms, but we do not test on these and cannot provide help in resolving issues.</aside>
+    </section>
+    <section class="bcls-subsection">
+      <h3>Other Unsupported Platforms and Devices</h3>
+      <p>You should verify integrations on platforms and devices where we do not provide a player or SDK, or where they have authored a custom integration with our APIs. The list below is not meant to be exhaustive, but includes a number of platforms and OEM devices that do not support TLS 1.2.</p>
+      <h4>Software Libraries and Runtime Environments</h4>
+      <ul>
+        <li>Java 6u45</li>
+        <li>Java 7u25</li>
+        <li>OpenSSL 0.9.8y</li>
+      </ul>
+      <h4>Smart TV/OEM Devices</h4>
+      <ul>
+        <li>2015 Panasonic CS650 TV</li>
+        <li>2014 Sharp TV - UD20, U20, US20, W20, W25, R30, XL20, G20</li>
+        <li>Playstation 3</li>
+        <li>Playstation Vita</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">Note that bots and crawlers are not listed. Please see <a href="https://www.ssllabs.com/ssltest/clients.html">https://www.ssllabs.com/ssltest/clients.html</a>.</aside>
+    </section>
+    <section class="bcls-subsection">
+      <h3>Enabling TLS 1.2</h3>
+      <p>In some cases, TLS 1.2 may be supported but disabled. To enable TLS 1.2 protocols on Windows web browsers, please see below.</p>
+      <ul>
+        <li><a href="#Microsoft_Internet_Explorer">Microsoft Internet Explorer</a></li>
+        <li><a href="#Google_Chrome">Google Chrome</a></li>
+        <li><a href="#Mozilla_Firefox">Mozilla Firefox</a></li>
+        <li><a href="#Opera">Opera</a></li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information language-editable">TLS 1.2 should be enabled on all current browser versions, and no adjustments to settings are required.</aside>
+      <h4 id="Microsoft_Internet_Explorer">Microsoft Internet Explorer</h4>
+      <ol class="bcls-tasklist-restart">
+        <li>Open Internet Explorer.</li>
+        <li>From the menu bar, click Tools &gt; Internet Options &gt; Advanced tab:
+          <figure class="bcls-figure"><img class="bcls-image" alt="Internet Explorer Settings" src="/assets/images/s-general-img/node18576-IE-dialog.png" />
+            <figcaption class="bcls-caption--image">Internet Explorer Settings.</figcaption>
+          </figure>
+        </li>
+        <li>Scroll down to Security category, manually check the option box for Use TLS 1.2.</li>
+        <li>Click OK.</li>
+        <li>Close your browser and restart Internet Explorer.</li>
+      </ol>
+      <h4 id="Google_Chrome">Google Chrome</h4>
+      <ol class="bcls-tasklist-restart">
+        <li>Open Google Chrome.</li>
+        <li>Click Alt-F and select Settings.</li>
+        <li>Scroll down and select Show advanced settings.</li>
+        <li>Scroll down to the Network section and click on Change proxy settings.</li>
+        <li>Select the Advanced tab.</li>
+        <li>Scroll down to Security category, manually check the option box for Use TLS 1.1 and Use TLS 1.2.</li>
+        <li>Click OK.</li>
+        <li>Close your browser and restart Google Chrome.</li>
+      </ol>
+      <h4 id="Mozilla_Firefox">Mozilla Firefox</h4>
+      <ol class="bcls-tasklist-restart">
+        <li>Open Firefox.</li>
+        <li>In the address bar, type about:config and press Enter.</li>
+        <li>In the Search field, enter <code translate="No">tls</code>. Find and double-click the entry for <code translate="No">security.tls.version.max</code>.</li>
+        <li>Set the integer value to 3 to force protocol of TLS 1.2.</li>
+        <li>Click OK.</li>
+        <li>Close your browser and restart Mozilla Firefox.</li>
+      </ol>
+      <h4 id="Opera">Opera</h4>
+      <ol class="bcls-tasklist-restart">
+        <li>Open Opera.</li>
+        <li>Click Ctrl plus F12.</li>
+        <li>Scroll down to the Network section and click on Change proxy settings.</li>
+        <li>Select the Advanced tab.</li>
+        <li>Scroll down to Security category, manually check the option box for Use TLS 1.1 and Use TLS 1.2.</li>
+        <li>Click OK.</li>
+        <li>Close your browser and restart Opera.</li>
+      </ol>
+    </section>
   </section>
 </article>
 
@@ -1644,7 +1692,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 03 May 2022
+  Page last updated on 05 May 2022
 </div>
 
 

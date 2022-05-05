@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}." />
+  <meta name="description" content="Brightcove {{ site.product_short }} is designed to simplify the process of publishing your videos so that your single upload plays beautifully on the desktop, mobile device, and connected TV, no matter the content, resolution, or connection speed." />
 
-  <title>Supported Video and Audio Formats, Codecs, and Containers</title>
+  <title>Best Practices: The Video Creating, Transcoding, and Uploading Workflow</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -54,7 +54,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Supported Video and Audio Formats, Codecs, and Containers</li>
+      <li class="breadcrumb-item active" aria-current="page">Best Practices: The Video Creating, Transcoding, and Uploading Workflow</li>
       
       
     </nav>
@@ -1527,95 +1527,177 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 
 
-<h1>Supported Video and Audio Formats, Codecs, and Containers</h1>
 <article class="bcls-article">
-  <summary>This document lists the supported containers and codecs you can use when you upload videos to {{ site.product_short }}.</summary>
+  <h1>Best Practices: The Video Creating, Transcoding, and Uploading Workflow</h1>
+  <summary>Brightcove {{ site.product_short }} is designed to simplify the process of publishing your videos so that your single upload plays beautifully on the desktop, mobile device, and connected TV, no matter the content, resolution, or connection speed.</summary>
   <section class="bcls-section">
-    <h2 id="terms">Understanding codecs, containers, and file extensions</h2>
-    <p>Codecs, containers and file extensions are not equivalent but are often confused with one another. For example, H.264 video does not just mean a file with the extension <code translate="No">.mp4</code>. Video files contain both metadata (duration, dimensions, etc.) as well as the encoded and often compressed audio and video data.</p>
+    <p>When you upload your video, Beacon automatically transcodes your single video into a collection of renditions, each suitable for the typical range of your viewers’ bandwidth and resolution. Then, Beacon dynamically detects the screen size and connection speed from the environment where your video plays, and serves the right rendition of your video to maximize quality given the speed and power available to each individual viewer. This article offers best practices for recording, exporting, uploading and publishing your Beacon videos that assures optimum playback of your content everywhere it plays.</p>
+    <p>The tables below summarize the settings that you can use when creating video content:</p>
+    <h3 class="BCL_subsectionTitle">Video</h3>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td  style="width:25%"><strong>Format</strong></td>
+          <td  style="width:75%">MP4, M4V, MOV</td>
+        </tr>
+        <tr>
+          <td ><strong>Codec</strong></td>
+          <td >H.264, H.265 (HEVC)<sup><strong><a href="#note1-1">[1-1]</a></strong></sup></td>
+        </tr>
+        <tr>
+          <td ><strong>Bitrate</strong></td>
+          <td >2x the bitrate of the highest rendition</td>
+        </tr>
+        <tr>
+          <td ><strong>Frame rate</strong></td>
+          <td >Constant, usually between 15 - 60 frames per second</td>
+        </tr>
+        <tr>
+          <td ><strong>Aspect ratio</strong></td>
+          <td >Your video aspect ratio will be preserved. An aspect ratio of 16:9 is common.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>Notes</h4>
     <ul>
-      <li>The <em>container</em> format defines how the metadata is stored along with the audio and video data. It does not define the coding or compression of the data.</li>
-      <li><em>Codecs</em> are responsible for encoding and decoding the video and audio streams in a video file. They can be lossy or lossless and are usually optimized for certain types of transmission. Note that there are some cases where the codec and container share a single definition, but these are uncommon.</li>
+      <li id="note1-1"><sup><strong>[1-1]</strong></sup> HEVC support is a paid add-on. Contact your Account Manager if you are interested in adding HEVC support to your account. See <a href="https://apis.support.brightcove.com/ingest-profiles/guides/hevc-video.html">HEVC Video</a> for more information. Also note that <strong>HDR video is not currently supported with any codec</strong>.</li>
     </ul>
-    <p>Other terms that are often confused are encoding/decoding and muxing/demuxing.</p>
+    <h3 class="BCL_subsectionTitle">Audio</h3>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td  style="width:25%"><strong>Codec</strong></td>
+          <td  style="width:75%">AAC (Advanced Audio Codec)</td>
+        </tr>
+        <tr>
+          <td ><strong>Bit rate</strong></td>
+          <td >Constant, 128 kbps</td>
+        </tr>
+        <tr>
+          <td ><strong>Channels</strong></td>
+          <td >Stereo</td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;
+    <p>Now, you are ready to look further into the details of these settings:</p>
+    <p>The Beacon publication workflow includes the following processes:</p>
     <ul>
-      <li><em>Encoding </em>and <em>decoding </em>refer to converting the encoded video and audio data to and from streams that can be played.</li>
-      <li><em>Muxing </em>and <em>demuxing </em>refers to the writing and reading of audio and video streams into and from various container formats.</li>
-    </ul>
-    <p>For more information see:</p>
-    <ul>
-      <li>Containers are described in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Comparison_of_container_formats">article</a>.</li>
-      <li>More details on codecs can be found in this <a class="external-link" rel="nofollow" href="http://en.wikipedia.org/wiki/Video_codec">article</a>.</li>
-      <li>Additional references for codec IDs and codes can be found <a class="external-link" rel="nofollow" href="http://www.fourcc.org/codecs.php">here</a> and <a class="external-link" rel="nofollow" href="http://mp4ra.org/#/codecs">here</a>.</li>
+      <li><a href="#beforerecord">Step 1: Before you Record</a></li>
+      <li><a href="#recording">Step 2: Recording</a></li>
+      <li><a href="#exporting">Step 3: Exporting</a></li>
+      <li><a href="#uploading">Step 4: Uploading</a></li>
+      <li><a href="#transcoding">Step 5: Transcoding</a></li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="supported_source_formats">Supported source video types</h2>
-    <p>Since <span translate="No">Brightcove</span> generally handles the complexity of creating renditions with codecs and formats appropriate to different platforms, browsers, and device apps, what concerns you most is what kinds of source videos we can transcode for you.</p>
-    <p>Since <span translate="No">Brightcove</span> supports so many video input types, it is actually more helpful to talk about the formats we do not support. At the moment, there are only a few. The list below shows the formats <strong><em>not</em></strong> supported by <a href="https://zencoder.support.brightcove.com"><span translate="No">Zencoder</span> </a>, the <span translate="No">Beacon</span> <a href="/media/uploading-videos-using-upload-module.html">Upload module</a> and <a href="https://apis.support.brightcove.com/dynamic-ingest/"><span translate="No">Dynamic Ingest API</span></a>. Note that if a format is <strong>not</strong>  included in the list below, you can assume it <strong>is supported</strong>.</p>
-    <ul>
-      <li><code translate="No">Apple Intermediate</code></li>
-      <li><code translate="No">HDV 720p60</code></li>
-      <li><code translate="No">Go2Meeting3 (G2M3)</code></li>
-      <li><code translate="No">Avid Meridien Uncompressed</code></li>
-      <li><code translate="No">Windows Media Audio Lossless</code></li>
-      <li><code translate="No">CineForm</code> - partly supported; there are variants that can come from the software used to encode the source, or from OS, that make the source unusable by Zencoder. We are still trying to identify the exact factors that cause problems.</li>
-      <li><code translate="No">SWF</code> - partly supported by <span translate="No">Zencoder</span>; if the <code translate="No">SWF</code> contains a video or audio track, those can be processed, but many <code translate="No">SWFs</code> do not.</li>
-      <li><code translate="No">Animated .gif</code> - Officially not supported but they may work</li>
-    </ul>
-    <h3>Special cases</h3>
-    <ul>
-      <li>
-        <aside class="bcls-aside bcls-aside--information">Note: <code translate="No">AVdh (DNxHQ)</code> also does not work for <strong>422 10-bit and 444 12-bit sources (only)</strong> - this is a bug, and this note will be removed when it is fixed.</aside>
-      </li>
-      <li>Content encrypted with KMS is supported but requires that you pre-sign your object URLs, ala what is outlined here: <a href="https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/">https://aws.amazon.com/blogs/developer/generating-amazon-s3-pre-signed-urls-with-sse-kms-part-2/</a>.
-        <p>Steps to implement:</p>
-        <ol>
-          <li>Create a KMS managed encrypted bucket</li>
-          <li>Add the Beacon/Zencoder Ingest Policy</li>
-          <li>Create a pre-signed URL using the KMS key</li>
-          <li>Use this URL when ingesting the video</li>
-        </ol>
-      </li>
-    </ul>
-    <p>Aside from those listed above, we believe we support pretty much all known video formats. If you have problems with another video format, please <a href="https://supportportal.brightcove.com">Contact <span translate="No">Brightcove</span> Support</a> and also let <a href="mailto:docs@brightcove.com"><span translate="No">Brightcove</span> Learning Services</a> know.</p>
+    <h2 id="beforerecord">Step 1: Before you Record</h2>
+    <div class="BCL_subsection">
+      <h3 class="BCL_subsectionTitle">Source Encoding</h3>
+      <p>There are many factors that impact the overall results of transcoded media. It is not realistic to provide a one-size-fits-all recommendation, so this step will list some of the more important considerations and how they affect the output.</p>
+      <div class="BCL_subsection">
+        <h4 class="BCL_subsectionTitle">General</h4>
+        <ul>
+          <li>Try to start with the highest possible source media if possible. Successive transcode passes reduce the overall quality exponentially. If possible, start with the uncompressed source. Because of increased file transfer and ingestion times, it may not always make sense to send a raw source. In these cases, it is best to upload a source with 2-3x the bitrate of the highest rendition you expect to generate. So if you intend to have a top rendition with a video bitrate of 3 Mbps, the you would want to upload a source video with a bitrate of 6-9 Mbps.</li>
+          <li>If the raw source must be compressed before uploading, H.264 and AAC are the preferred video and audio codecs.</li>
+          <li>Do not use multiple video or audio streams. Occasionally we see source media that may have more than one audio or video stream. This is often the case with media copied directly from a DVD. While we make a best guess as to which stream to use, there is no way for us to know what stream was preferred.</li>
+          <li>Avoid stream delays. For example, some video editing tools will inject a start time for the audio stream such that the audio starts playing at some time after the video. We have found that some tools introduce audio sync issues during this process.</li>
+        </ul>
+      </div>
+      <div class="BCL_subsection">
+        <h4 class="BCL_subsectionTitle">Video</h4>
+        <ul>
+          <li>The frame size should be at least as large as the largest anticipated rendition. However, do not scale media to a frame size larger than the original.</li>
+          <li>H.264 requires that frame sizes are multiples of 4 and is optimized for multiples of 16. We will scale transcodes to meet this requirement, but for best results source media should already be encoded in multiples of 16. Multiples of 8 or 4 will also work though with a slight performance decrease.</li>
+          <li>Avoid interlacing. Most web and mobile video players do not handle interlaced content well. While we will detect and remove interlacing, there can be a quality loss during the conversion.</li>
+          <li>Avoid anamorphic video. Anamorphic video, or video with a non-square Pixel Aspect Ratio, does not play correctly in some mobile and Web players. We attempt to detect anamorphic video and convert it, but occasionally the original source metadata is incorrect. This can prevent us from converting the material correctly.</li>
+          <li>If you are creating a screencast with a tool such as Camtasia, see <a href="/publish/creating-and-publishing-high-quality-screencasts.html">Creating and Publishing High Quality Screencasts</a> for some best practices and tips when exporting your screencast and uploading it to Beacon.</li>
+        </ul>
+      </div>
+      <div class="BCL_subsection">
+        <h4 class="BCL_subsectionTitle">Audio</h4>
+        <ul>
+          <li>For maximum compatibility, use stereo or mono audio and avoid 5.1.</li>
+          <li>Normalize the audio tracks to standard levels such that you avoid "clipping" while also avoiding a low volume.</li>
+          <li>Make sure that audio levels are consistent across media that might be viewed together.</li>
+        </ul>
+      </div>
+    </div>
   </section>
   <section class="bcls-section">
-    <h2 id="audio_concerns">Audio formats</h2>
-    <h3>Ingestion</h3>
-    <p>On the ingestion side, most formats are supported, except when they get over 8 channels of audio. (And the audio must either be configured as a single multichannel track, or multiple mono tracks.)</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For Beacon ingestion, if your sources have multi-channel audio, you need to have support create custom audio renditions to correctly map the channels.</aside>
-    <h3>Encoding and transcoding</h3>
-    <ul>
-      <li>For Multichannel audio, both AC-3 (Dolby Digital) and EAC-3 (Dolby Digital Plus) are supported, up to 5.1 channels.</li>
-      <li>For Stereo and mono, AAC is supported.</li>
-    </ul>
-    <h3>Playback (in the Brightcove Player)</h3>
-    <ul>
-      <li>AAC, in mono or stereo. 5.1 channel audio support depends on browser capability.</li>
-      <li>Safari is the only current browser that supports it natively, and will select 5.1 audio tracks when available.</li>
-      <li>The Brightcove Player will check for support and automatically select 2.0 stereo AAC when 5.1 support is unavailable.</li>
-    </ul>
-    <h3>Playback (in the SDK Native Players)</h3>
-    <ul>
-      <li>AAC, in mono or stereo.</li>
-      <li>iOS, iPadOS, and tvOS devices support EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>Most Android devices support EAC-3 and AC-3 5.1 audio, and will fall back to stereo AAC renditions when available.</li>
-    </ul>
-    <h3>Playback (other devices)</h3>
-    <ul>
-      <li>Chromecast supports EAC-3 and AC-3 5.1 audio, and stereo AAC.</li>
-      <li>AirPlay to Apple TV will leverage tvOS 5.1/stereo capability.</li>
-    </ul>
-    <h3>Notes</h3>
-    <ul>
-      <li>When providing 5.1 audio, Brightcove recommends including both EAC-3 and AC-3 encoding types.</li>
-      <li>Some devices support 5.1 AAC, but these are uncommon, and AAC 5.1 should never be provided as the only multichannel format unless explicitly required.</li>
-      <li>All streams should include at least one stereo AAC track for devices and browsers without 5.1 support.</li>
-      <li>
-        <p><strong>Windows:</strong> Content with audio above 48kHz for AAC is not supported on Windows and it will cause the player to fail. See <a href="https://docs.microsoft.com/en-gb/windows/desktop/medfound/aac-decoder#format-constraints">this Microsoft document</a> for more information.</p>
-      </li>
-    </ul>
+    <h2 id="recording">Step 2: Recording</h2>
+    <div class="BCL_subsection">
+      <h3 class="BCL_subsectionTitle">What is my content and where will it play?</h3>
+      <p>In most cases, when you publish your videos using Beacon, they look great across all distribution targets, whether they are playing amid other content within a browser, in full-screen mode, in the confines of small mobile device screens, or spread out across large monitors. Still, it's best when recording your video to make a practice of considering both the nature of your content and the viewing conditions of your audience. You can take some measures when recording tricky content to show under challenging conditions, such as an instructional screen cast with small text you would like to make crisp and legible from both a player included with other browser content and as a full screen video, or an HD news cast shown to countries with populations having low bandwidth Internet access.</p>
+      <p>Here are some recommendations for recording practices to avoid issues with content and playback:</p>
+      <ul>
+        <li><strong>De-interlace at record-time</strong>. For the best quality playback, Beacon de-interlaces all content. When recording with a camcorder, set the record setting to progressive not interlace. If you are working with an already recorded interlaced video as a source file, opt to check the de-interlace setting within your video editing software at compression time in preparation for uploading to Beacon. If you do not transcode your video with Beacon, and you shot an interlaced video, de-interlace the video file before uploading it.</li>
+        <li><strong>Capture at a constant frame rate.</strong> To best avoid stuttering during playback, record video at a constant frame rate and avoid a variable frame rate when creating your source files. Also, shoot progressive and use the same frame-rate you will publish to - 30 fps is a good place to start.</li>
+        <li><strong>Adopt a strategy for screencasts.</strong> Creating recordings with clear, crisp, and legible text is especially challenging when creating software tutorial videos you intend to play both from a player within a browser and in a full-screen mode. See <a href="/publish/creating-and-publishing-high-quality-screencasts.html">Creating and Publishing High Quality Screencasts</a> for some best practices and tips when exporting your screencast and uploading it to Beacon.</li>
+        <li><strong>Avoid camera shake.</strong> While this may seem obvious for viewing, shaking actually impacts the encoder's ability to compress material using motion estimation algorithms. In other words, lower compression and lower quality.</li>
+        <li><strong>Avoid noisy backgrounds.</strong> This applies to video as well as audio. In the case of video, things like background movement (e.g. traffic) and complex background images (e.g. noisy wallpaper) all impact compression negatively. Similarly, background noise during an interview reduces audio compression.</li>
+        <li><strong>Use proper lighting.</strong> Darker scenes can be more difficult to encode without quality loss.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="exporting">Step 3: Exporting</h2>
+      <h3 class="BCL_subsectionTitle">What compression format do I upload to Beacon?</h3>
+      <p>Brightcove recommends uploading a video source file encoded as an H.264 format to leverage optimum quality for the widest range of delivery targets. The H.264 codec offers the maximum opportunity for Beacon's transcoding engine to create the highest quality renditions for the range of resolutions and bandwidths where your video plays. See <a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Supported Video Codecs and Containers</a> for more on the distinction between codecs, containers, and file types. For detailed specifics on the best format for your Beacon video uploads, see <a href="/general/video-source-file-specifications-and-recommendations.html">Video Source File Specifications and Recommendations</a>.</p>
+      <h3 id="quicktime" class="BCL_subsectionTitle">Checking your video's codec</h3>
+      <p>To be sure your video source file is encoded in a H.264 format, you can verify the format in the QuickTime player's movie inspector:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Open QuickTime Player. You can get QuickTime for free at <a href="https://www.apple.com/quicktime/download/">https://www.apple.com/quicktime/download/</a>.</li>
+        <li>Select <strong>File</strong> &gt; <strong>Open File... </strong>and choose your exported video file.</li>
+        <li>From your opened video in the QuickTime player, select <strong>Window </strong>&gt; <strong>Show Movie Inspector</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-general-img/node6187-inspector.png" /></figure>
+        </li>
+        <li>In the movie inspector window for your video, check that the <strong>Format</strong> is H.264/MPEG-4 AVC (Advanced Video Coding).</li>
+      </ol>
+      <p>The QuickTime movie inspector is a handy tool for reporting the format, resolution, frame rate, and other properties of your compressed video source file.</p>
+      <h3 id="principles" class="BCL_subsectionTitle">Guiding principles when exporting from video editing software</h3>
+      <p>When compressing and exporting videos from your favorite video editors, we recommend compressing your videos in using an H.264 codec and letting Beacon automatically create renditions best for multiple resolutions and bit rates. In addition, we recommend:</p>
+      <ul type="square">
+        <li><strong>Opt out of Flash</strong>. When rendering your videos from video production software, select an H.264 codec option, that is a codec, or container<em> other than</em> Flash or SWF.</li>
+        <li><strong>Avoid single-target formatting</strong>. Avoid the streamlined encoding options that come with your editing software offering a one-click solution to encode your video for a specific target such as the web, iPhone, YouTube, DVD, or BlueRay. To let Beacon take care of distribution for you, format your video using QuickTime conversion settings that creates the most flexible native H.264 codec, and let Beacon create multiple renditions from your single H.264 upload to serve to multiple distribution targets including the web, iPhone, and YouTube, as well as multiple resolutions and connection speeds.</li>
+        <li><strong>Multi-pass, if you have the time</strong>. Best practices advise uploading the highest quality video possible, and multi-pass processing is one of the best practices for creating a quality source file. Under some conditions, the marginally improved quality of your video might not justify the time it takes to encode using a two-pass process. Two-pass encoding can reduce the incidence of video artifacts and provides the most benefit to videos that have areas of high motion.</li>
+        <li><strong>Don't be stingy with file size.</strong> Beacon is built to handle large file uploads. If you're used to compressing files for the sake of successful uploads, don't. Be sure to upload a high quality source file.</li>
+        <li><strong>Get us a high quality file. </strong>We recommend a source with 2-3x the bitrate of the highest rendition you expect to generate. So if you intend to have a top rendition with a video bitrate of 3 Mbps, the you would want to upload a source video with a bitrate of 6-9 Mbps. Also remember, sometimes videos that have too much data do not stream via HTTP smoothly. Excessively high quality video can cause buffering.</li>
+        <li><strong>Stay consistent with the frame rate</strong>. Export at the frame rate you shot at to avoid stuttering. Also, if the export frame rate setting is not the same as the source, you risk asynchronous video and audio tracks.</li>
+        <li><strong>Keep a copy of your native file</strong>: It's a great practice to save your native video files in case you want to edit them, compress them anew, or re-encode them. Use a profile from the <a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">list of Standard Ingest Profiles</a> that matches your target audience, or create your own ingest profile. </li>
+        <li><strong>Consider action and size when exporting for high resolution</strong>: High resolution videos especially benefit from using minimum bit rates while maintaining quality play. See <a href="video-source-file-specifications-and-recommendations.html#highres">High resolution encoding recommendations</a> for bit rate minimums when considering video size, aspect ratio, and the amount of action in the content.</li>
+        <li><strong>Adopt a mobile strategy</strong>. If you want to show your videos on mobile devices in addition to desktop monitors, you must encode your videos to the flexible H.264 format and consider other encoding options. </li>
+      </ul>
+      <h3 class="BCL_subsectionTitle">Step-by-Step export instructions</h3>
+      <p>For recommended specific instructions for exporting videos from tools like Apple Final Cut Pro X, Telestream ScreenFlow, Adobe Premiere Pro or Techsmith Camtasia Studio, refer to the detailed instructions provided by these software packages.</p>
+  </section>
+    <section class="bcls-section">
+    <h2 id="uploading">Step 4: Uploading</h2>
+    <div class="BCL_subsection">
+      <h3 class="BCL_subsectionTitle">How do I get the flexibility I need from my source file?</h3>
+      <p>Upload your video or videos using the Upload module in Beacon Studio. &nbsp;See&nbsp;<a href="/media/uploading-videos-using-upload-module.html">Uploading Videos Using the Upload Module</a>&nbsp;for more information.&nbsp;Alternatively, you can upload a batch of videos using the <a href="https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html">Dynamic Ingest API</a>.</p>
+      <p>When you upload a video to the Beacon platform, Beacon stores it as a digital master. This digital master is the source for all renditions Beacon creates. The digital master is also the source if you should ever elect to <a href="/media/retranscoding-videos-using-media-module.html">retranscode your video</a> in order to change your transcode settings.</p>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="transcoding">Step 5: Transcoding</h2>
+      <div class="BCL_subsection">
+      <h3 class="BCL_subsectionTitle">How long will it take to process my video?</h3>
+      <p>It can take up to three times the duration of the video for the transcoding process to complete.</p>
+    </div>
+    <div class="BCL_subsection">
+      <h3 class="BCL_subsectionTitle">What is my content, where is my audience watching it, and what is my audience watching it on?</h3>
+      <p>If you want your videos to play beautifully across a range of screen sizes such as in the three screen strategy of publishing to desktop, mobile device, and wide monitor TVs, and if you want your videos to play smoothly across a range of connection speeds from dial-up, to cellular, to high speed cable, you must start with a video file that plays as optimally as possible in each of those environments. To assure that your video shows as beautifully as possible across the variety of the size and speed conditions of your viewers, Beacon creates a collection of video files, called multi-bitrate renditions, each of various sizes and qualities. When Beacon detects the resolution, bandwidth, and other conditions of the device requesting to play your video, it serves the best rendition of your video for that environment, be it a smaller and slower version to fit the constraints of a mobile device screen or low bandwidth connection, or be it a full-quality version that takes advantage of wide screen monitors with high speed, and high definition capabilities.</p>
+      <p>You have fine grain control of the speed, size, and encoding quality of these rendition files. If you know the connection rates, devices and screen resolutions of your audience, you can tailor each rendition file of your videos to create a collection of renditions that targets size and speed conditions of those viewers.</p>
+      <h3 class="BCL_subsectionTitle">Further reading on setting multi-bitrate renditions</h3>
+      <ul>
+        <li>See <a href="/general/overview-dynamic-delivery.html">Overview of Dynamic Delivery</a> for an overview of Dynamic Delivery transcoding</li>
+        <li>See <a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles</a> for detailed information on recommended transcode setting</li>
+        <li>See <a href="video-source-file-specifications-and-recommendations.html#highres">High resolution encoding recommendations</a> for best practices for setting renditions for high resolution videos</li>
+        <li>See <a href="https://player.support.brightcove.com/playback/determining-which-rendition-will-play.html">Determining Which Rendition Will Play</a> to learn how the Brightcove Player will determine which rendition will be played</li>
+        <li>See <a href="/general/optimal-video-dimensions.html">Optimal Video Dimensions</a> for recommended video width and height for 16:9 and 4:3 aspect ratio sizing</li>
+      </ul>
+    </div>
   </section>
 </article>
 
@@ -1644,7 +1726,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div id="last_updated" class="last-updated">
-  Page last updated on 03 May 2022
+  Page last updated on 05 May 2022
 </div>
 
 
