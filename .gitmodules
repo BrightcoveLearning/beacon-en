@@ -78,3 +78,7 @@
 	path = assets/images/s-analytics-img
 	url = https://github.com/BrightcoveLearning/s-analytics-img
   branch = main
+[submodule "s-scripts"]
+	path = s-scripts
+	url = https://github.com/BrightcoveLearning/s-scripts
+  branch = main
