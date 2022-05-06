@@ -601,24 +601,50 @@
   docs:
     - name: Authentication Using OAuth
       url: /general/authentication-using-oauth.html
+    - name: 'Best Practices: Transcoding and Uploading'
+      url: /general/best-practices-video-creating-transcoding-and-uploading-workflow.html
+    - name: China Delivery Overview
+      url: /general/china-delivery-overview.html
+    - name: Creating Audio-Only Renditions
+      url: /general/creating-audio-only-renditions-low-bandwidth-delivery.html
+    - name: DRM Output Protection Settings
+      url: /general/drm-output-protection-settings.html
     - name: Known Issues
       url: /general/known-issues.html
     - name: Login Durations
       url: /general/login-durations.html
+    - name: Making Your Video Content Indexable
+      url: /general/making-your-video-content-indexable.html
     - name: Managing Cookie Consent Using OneTrust
       url: /general/managing-cookie-consent.html
+    - name: Optimal Video Dimensions
+      url: /general/optimal-video-dimensions.html
     - name: 'OIDC Configuration and Testing'
       url: '/general/oidc-authentication-for-beacon.html'
+    - name: 'Overview: Digital Rights Management (DRM)'
+      url: /general/overview-digital-rights-management-drm-video-cloud.html
     - name: Overview of Context Aware Encoding
       url: /general/overview-context-aware-encoding.html
     - name: Overview of Dynamic Delivery
       url: /general/overview-dynamic-delivery.html
+    - name: Protecting Videos with HLS Encryption
+      url: /general/protecting-videos-hls-encryption.html
     - name: Related Content
       url: /general/related-content.html
+    - name: Resetting Your Studio Password
+      url: /general/resetting-your-studio-password.html
     - name: Supported Video and Audio Formats
       url: /general/supported-video-and-audio-formats-codecs-and-containers.html
+    - name: TLS for Media, Player, and API URLs
+      url: /general/tls-media-player-and-api-urls.html
+    - name: Video Source File Specs and Recommendations
+      url: /general/video-source-file-specifications-and-recommendations.html
     - name: When to Use Beacon Studio / Beacon Classic
       url: /general/beacon-studio-or-classic.html
+    - name: Working with 360° Videos
+      url: /general/working-360deg-videos.html
+    - name: Working with Audio-Only Content
+      url: /general/working-audio-content.html
     - name: Using Multiple Languages
       url: /general/using-multiple-languages.html
 - section:
