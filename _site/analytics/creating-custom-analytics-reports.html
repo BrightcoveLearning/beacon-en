@@ -1579,13 +1579,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <article class="bcls-article">
   <summary>In this topic you will learn how to create custom reports using the Analytics module.</summary>
   <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--information">Note: The ability to create custom reports in the Analytics module is only available to Enterprise and Professional publishers.</aside>
+    
     <p>The Analytics module can be used to generate custom, ad-hoc analytics reports that can be downloaded in comma separated values (.csv) or Microsoft Excel (.xlsx) formats. Reports can also be scheduled to run on a daily, weekly or monthly basis.</p>
-    <p>The <span translate="No">Analytics API</span> is used to retrieve data from the analytics system. The <span translate="No">Analytics API</span> can also be used to create your own custom reports. For more information on the Analytics API, see the <a href="https://apis.support.brightcove.com/analytics/">Video Cloud Analytics API</a> documentation.</p>
+    <p>The <span translate="No">Analytics API</span> is used to retrieve data from the analytics system. The <span translate="No">Analytics API</span> can also be used to create your own custom reports. For more information on the Analytics API, see the <a href="https://apis.support.brightcove.com/analytics/">Analytics API</a> documentation.</p>
     <p>To begin creating custom reports, open the Analytics module and click on the <strong>Custom</strong> link in the left navigation.</p>
     <aside class="bcls-aside bcls-aside--information">Note: You may notice that the number of video views for a given day vary over time. For an explanation on why this may happen, see the <a href="/analytics/faq-analytics-module.html">Analytics FAQ</a>.</aside>
     <aside class="bcls-aside bcls-aside--information">Note: Reports that return more than one million rows will not load.</aside>
     <aside class="bcls-aside bcls-aside--information">Note: Simultaneous custom report requests within the same account will execute in series. If the reports have large date ranges and many fields are selected, there may be a delay before all the results are returned. A good alternative is to schedule large reports.</aside>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="custom reports UI" src="/assets/images/analytics/node14608-report-builder-ui.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="custom reports UI" src="/assets/images/s-analytics-img/node14608-report-builder-ui.png" /></figure>
     <aside class="bcls-aside bcls-aside--information">Note: the <strong>video duration</strong> is displayed in <strong>seconds</strong></aside>
     <p>To create a custom report, you will perform the following steps:</p>
     <ol class="bcls-tasklist">
@@ -1601,14 +1603,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="timezone" class="BCL_conceptTitle">Reporting time zone</h2>
-    <p>Data in custom reports is shown using the account's reporting time zone offset. The reporting time zone can be configured  as part of the Beacon settings (<strong>Admin&nbsp;&gt; Account Settings &gt; Default Reporting Time Zone)</strong>. Note that only account administrators have access to the Account Settings.</p>
+    <p>Data in custom reports is shown using the account's reporting time zone offset. The reporting time zone can be configured from the Beacon Studio home page by going to <strong>Admin&nbsp;&gt; Account Settings &gt; Default Reporting Time Zone</strong>. Note that only account administrators have access to the Account Settings.</p>
     <p>The reporting time zone is used to calculate day boundaries for reporting data. Changing the reporting time zone setting only affects data going forward, and changes are not applied retroactively. If you change this setting, you may see a flat spot or a spike in your data when looking at day boundaries where the change was applied. Updates to this setting may not take effect immediately, and analytics data may continue to refer to the old setting until the system processes the changes.</p>
     <aside class="bcls-aside bcls-aside--information">Note that the default Reporting Time Zone applies <strong>only</strong> to the Analytics module and <strong>not</strong> to the Live Analytics which is technically a separated services by design</aside>
   </section>
   <section class="bcls-section">
     <h2 id="account" class="BCL_conceptTitle">Selecting accounts</h2>
-    <p>If you have access to multiple Brightcove accounts, you can include data from the current Beacon account or select multiple accounts.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="include accounts" src="/assets/images/analytics/node14608-include-accounts.png" /></figure>
+    <p>If you have access to multiple Brightcove accounts, you can include data from the current account or select multiple accounts.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="include accounts" src="/assets/images/s-analytics-img/node14608-include-accounts.png" /></figure>
     <p>If you create a report that includes all accounts and those accounts use different time zones, data is reported using the time zone for that account.</p>
   </section>
   <section class="bcls-section">
@@ -1620,11 +1622,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <aside class="bcls-aside bcls-aside--information">Note: Recurring reports are executed after the analytics reconciliation has taken place, usually 3 to 5 days after the end of a reporting period.</aside>
       </li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report type" src="/assets/images/analytics/node14608-report-type.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report type" src="/assets/images/s-analytics-img/node14608-report-type.png" /></figure>
     <div id="onetime" class="BCL-subsection">
       <h3>One-time report</h3>
       <p>Selecting <strong>One-time</strong> will run the report one time. A calendar control will appear and you can specify the time period that you want the analytics data to cover.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="date selector" src="/assets/images/analytics/node14608-date-range.png" /></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="date selector" src="/assets/images/s-analytics-img/node14608-date-range.png" /></figure>
       <aside class="bcls-aside bcls-aside--tip">Tip: Start by selecting a smaller date range to confirm the report contains the data you are looking for. When you have confirmed the report data, expand the date range as needed.</aside>
     </div>
     <div id="recurring" class="BCL-subsection">
@@ -1657,14 +1659,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="metrics">Data groups and fields</h2>
     <p id="dimensions">When you select a <strong>Data Group</strong>, the Data Fields that can be returned can be selected. Fields that are grayed-out cannot be returned for that Data Group.</p>
-    <p>To add a data group, click the <img alt="date selector" src="/assets/images/analytics/node14608-plus.png" /> button. To remove a group, click <img alt="date selector" src="/assets/images/analytics/node14608-minus.png" />.</p>
+    <p>To add a data group, click the <img alt="date selector" src="/assets/images/s-analytics-img/node14608-plus.png" /> button. To remove a group, click <img alt="date selector" src="/assets/images/s-analytics-img/node14608-minus.png" />.</p>
   </section>
   <section class="bcls-section">
     <h2 id="filter" class="BCL_conceptTitle">Adding a report filter</h2>
     <p>Filters can be added to limit the amount of data returned. When using multiple filters, an AND operation will be used. In the following example, videos that are tagged <strong>video cloud essentials</strong> AND have the custom field <strong>Product=Video Cloud</strong> will be returned.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="filters" src="/assets/images/analytics/node14608-filter-sample.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="filters" src="/assets/images/s-analytics-img/node14608-filter-sample.png" /></figure>
     <aside class="bcls-aside bcls-aside--information">Note: A filter will only display in your report if you have also selected its matching data group. For example, if you want to filter on Video Tag, you must select the Video dimension.</aside>
-    <p>To add a filter, click the <img alt="date selector" src="/assets/images/analytics/node14608-plus.png" /> button. To remove a filter, click <img alt="date selector" src="/assets/images/analytics/node14608-minus.png" />. The following values can be used as filters.</p>
+    <p>To add a filter, click the <img alt="date selector" src="/assets/images/s-analytics-img/node14608-plus.png" /> button. To remove a filter, click <img alt="date selector" src="/assets/images/s-analytics-img/node14608-minus.png" />. The following values can be used as filters.</p>
     <ul>
       <li><strong>Video</strong> - One or more active video IDs in the account</li>
       <li><strong>Video Tag</strong> - One or more video tags
@@ -1755,7 +1757,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li>All Others</li>
         </ul>
       </li>
-      <li><strong>Country </strong>- <a href="https://www.iso.org/obp/ui/#search">ISO-3611-1</a> country code</li>
+      <li><strong>Country </strong>- <a href="https://www.iso.org/obp/ui/#search/code/">ISO-3611-1</a> 2 letter country code</li>
       <li><strong>Destination Domain</strong> - The domain(s) where a video_impression occurred</li>
     </ul>
   </section>
@@ -1763,13 +1765,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="data" class="BCL_conceptTitle">Selecting data fields</h2>
     <p>The <strong>Data Fields</strong> section is used to select the data values that will be included in the report. The list of data fields available is based upon the dimension(s) that were selected.</p>
     <p>If the selected account is configured with custom fields, they can also be selected. If the report includes all accounts, all custom fields from those accounts will be displayed.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data fields" src="/assets/images/analytics/node14608-data-fields.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data fields" src="/assets/images/s-analytics-img/node14608-data-fields.png" /></figure>
     <aside class="bcls-aside bcls-aside--information">Note: For the utilization data, we only report on live seconds streamed, not live bandwidth.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="preview" class="BCL_conceptTitle">Previewing the report</h2>
     <p>The <strong>Preview Report</strong> section shows the data columns that have been selected, populated with <strong>sample data</strong>. Click a trash can icon to remove that data item from the report.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: The data displayed in the report preview is <strong>sample data</strong>, not actual data from your Brightcove Beacon account. Also, the sort order of the preview has no effect on how data will be sorted in the report you download. Data in the downloaded report can be sorted using using a third party spreadsheet application.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: The data displayed in the report preview is <strong>sample data</strong>, not actual data from your Beacon account. Also, the sort order of the preview has no effect on how data will be sorted in the report you download. Data in the downloaded report can be sorted using using a third party spreadsheet application.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="options" class="BCL_conceptTitle">Configuring delivery options</h2>
@@ -1780,7 +1782,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>XLSX - Microsoft Excel</li>
     </ul>
     <p>Email notifications can be used to notify yourself and other users in your organization when the report is complete. Checking the <strong>E-mail me when my report is ready</strong> will send an email to the report requester when the report is complete. Additional people can be notified by adding their email addresses to the <strong>Notify others</strong> text field. When the report is complete, they will receive an email with a link to the report.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="email" src="/assets/images/analytics/node14608-email.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="email" src="/assets/images/s-analytics-img/node14608-email.png" /></figure>
     <p>The link to download the report is valid for 90 days.</p>
   </section>
   <section class="bcls-section">

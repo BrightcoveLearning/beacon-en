@@ -1579,8 +1579,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Engagement Report Reference</h1>
   <summary>In this topic you will learn about the Engagement report that is provided as part of the Analytics module.</summary>
   <section class="bcls-section">
-    <p>To view the Engagement report, open the Analytics module and click <span style="BCL_command"><strong>Engagement</strong></span> in the left side navigation. The report will display a graph showing total video engagement for the time period selected. The report switcher below the chart can be used to quickly switch to another report.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Compare previous period" src="/assets/images/analytics/node10105-report-switcher.png" /></figure>
+    
+    <p>To view the Engagement report, open the Analytics module and click <strong>Engagement</strong> in the left side navigation. The report will display a graph showing total video engagement for the time period selected. The report switcher below the chart can be used to quickly switch to another report.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Compare previous period" src="/assets/images/s-analytics-img/node10105-report-switcher.png" /></figure>
     <p>The dropdown list to the right of the report switcher can be used to select a report dimension. The following dimensions are available with the Engagement Report:</p>
     <ul>
       <li><a href="#video">Video</a></li>
@@ -1610,10 +1611,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="details" class="bcls-sectionTitle">Engagement report details</h2>
-    <p>The first column that appears in the body of the report will vary based upon the report dimension that is selected (video name, player name, or day). All reports will display the following data:</p>
+    <p>The first column that appears in the body of the report will vary based upon the report dimension that is selected (video, player, or day). All reports will display the following data:</p>
     <ul>
       <li><strong>Engagement Score</strong> - a calculation based on the views recorded for each 100th of the video</li>
       <li><strong>Average Viewed Minutes</strong> - average viewed minutes for the selected dimension (video, player or day)</li>
+      <li><strong>Average Completion Rate</strong> - (video percent viewed / video view) / 100 </li>
       <li><strong>Views at 1%</strong> - how many views were recorded at the 1% point of the video</li>
       <li><strong>Views at 25%</strong> - how many views were recorded at the 25% point of the video</li>
       <li><strong>Views at 50%</strong> - how many views were recorded at the 50% point of the video</li>
@@ -1628,45 +1630,45 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="video" class="bcls-sectionTitle">Viewing video dimension analytics</h2>
     <p>When the <strong>Video</strong> dimension is selected, a graph will display the overall video engagement for the time period selected. The body of the report lists the video name, video ID, duration and the engagement details for each video.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Account Engagement  Report" src="/assets/images/analytics/node10105-engagement-report.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Account Engagement  Report" src="/assets/images/s-analytics-img/node10105-engagement-report.png" /></figure>
     <p>Clicking the link for any of the videos will display the video engagement for that video.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Video Engagement  Report" src="/assets/images/analytics/node10105-video-engagement.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Video Engagement  Report" src="/assets/images/s-analytics-img/node10105-video-engagement.png" /></figure>
     <p>The preview player is synchronized with the engagement graph and provides to ability to see in the video where any engagement spikes or drop-offs occur. By clicking on any point in the engagement graph, the player will play the corresponding point in the video.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Video Engagement in Player" src="/assets/images/analytics/node10105-engagement-in-player.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Video Engagement in Player" src="/assets/images/s-analytics-img/node10105-engagement-in-player.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="player" class="bcls-sectionTitle">Viewing player dimension analytics</h2>
     <p>When the <strong>Player</strong> dimension is selected, a graph will display the overall video engagement for the time period selected. The body of the report lists the engagement details for each player.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Engagement by Player" src="/assets/images/analytics/node10105-player-engagement.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Engagement by Player" src="/assets/images/s-analytics-img/node10105-player-engagement.png" /></figure>
     <p>Clicking the link for any of the players will display the video engagement for that player.</p>
   </section>
   <section class="bcls-section">
     <h2 id="day" class="bcls-sectionTitle">Viewing day dimension analytics</h2>
     <p>When the <strong>Day</strong> dimension is selected, a graph will display the video engagement for the time period selected. The body of the report lists the engagement details for each day. In the body of the report, you can use the drop down list to view the video engagement by Video or Player.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Engagement by Day" src="/assets/images/analytics/node10105-day-engagement.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Engagement by Day" src="/assets/images/s-analytics-img/node10105-day-engagement.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="filter">Using filters</h2>
     <p>Filters can be used to limit the data that appears in the report. To add a filter, follow these steps.</p>
     <ol class="bcls-tasklist">
       <li>Click the <strong>+ Add filters</strong> pill at the top of the report.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add filter" src="/assets/images/analytics/node10105-add-filter.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add filter" src="/assets/images/s-analytics-img/node10105-add-filter.png" /></figure>
       </li>
       <li>The data can be filtered by <strong>tags</strong>,<strong> custom fields</strong>, <strong>countries</strong> and/or <strong>device types</strong>. Configure the filter criteria using the filter panel. The following example will apply the filter:
-<ul>
+        <ul>
           <li>Tag = <strong>on demand training</strong> AND</li>
           <li>Custom field <strong>Product</strong> = <strong>Video Cloud</strong> AND</li>
           <li>Countries<strong></strong> = <strong>United States</strong></li>
         </ul>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Day  Performance" src="/assets/images/analytics/node10105-filter-panel.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Day  Performance" src="/assets/images/s-analytics-img/node10105-filter-panel.png" /></figure>
       </li>
-      <li>Click <strong>Apply Filters</strong>.</li>
+      <li>Click <span class="button-blue">Apply Filters</span>.</li>
     </ol>
     <p>The applied filters will appear in pills at the top of the report. Each pill will display a filter type and up to two values. Up to three pills will be displayed.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Day  Performance" src="/assets/images/analytics/node10105-filter-pills.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Day  Performance" src="/assets/images/s-analytics-img/node10105-filter-pills.png" /></figure>
     <p>Additional pills are collapsed into an overflow pill and, are displayed in a tooltip on hover.</p>
     <p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Day  Performance" src="/assets/images/analytics/node10105-pill-hover.png" /></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Day  Performance" src="/assets/images/s-analytics-img/node10105-pill-hover.png" /></figure>
     </p>
     <p>To remove a filter, click a pill and clear the filter from the filter panel.</p>
     <h3>Notes on using filters</h3>
@@ -1699,7 +1701,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>The data export contains both the performance and engagement metrics regardless of where you are in the UI</li>
     </ul>
     <p>Having all of the data in the original format from the API allows you to manipulation the data in ways other than what is provided in the UI.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export" src="/assets/images/analytics/node10105-export.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export" src="/assets/images/s-analytics-img/node10105-export.png" /></figure>
     <p>The export buttons above the graph will export the graph data. The export buttons above the table will export the table data. Note that the reports support print-friendly style sheets so printing a report or saving to PDF will generate a printer-friendly page.</p>
   </section>
 </article>
