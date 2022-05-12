@@ -368,12 +368,14 @@
           url: /analytics/exporting-data-analytics-module.html
         - name: Resources for Analytics
           url: /analytics/resources.html
+        - name: SSAI Performance Analytics
+          url: /analytics/ssai-performance-data.html
     - name: Third-Party Analytics
       url: /analytics/index.html
       docs:
         - name: Google Analytics Self Configuration
           url: /analytics/ga-self-configuration.html
-        - name: Reviewing Player Events in Google Analytics
+        - name: Reviewing Player Event Data in Google Analytics
           url: /analytics/reviewing-player-event-data-google-analytics.html
         - name: Viewing Analytics Data in Google Analytics
           url: /analytics/viewing-analytics-data-google.html
