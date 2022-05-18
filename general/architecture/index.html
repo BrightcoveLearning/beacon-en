@@ -1,18 +1,22 @@
 ---
 title: 'Architecture'
 description: Section description.
-parent: general
+parent: 'General Information'
 ---
-<h1>{{ page.title }}</h1>
-<article class="landing-page-wrapper">
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
   <summary>{{ page.description }}</summary>
   <section>
-    <h3 id="Topics_in_this_section">Topics in {{ page.title }}</h3>
+    <h2 id="Topics_in_this_section">Topics in {{ page.title }}</h2>
     <ul class="bcls-topic-list">
       {% for item in site.data.navigation %}
-      {% if item.name == page.title %}
-      {% for doc in item.docs %}
+      {% if item.name == page.parent %}
+      {% for entry in item.docs %}
+      {% if entry.name == page.title %}
+      {% for doc in entry.docs %}
       <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
+      {% endfor %}
+      {% endif %}
       {% endfor %}
       {% endif %}
       {% endfor %}
