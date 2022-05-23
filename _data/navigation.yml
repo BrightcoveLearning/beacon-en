@@ -437,6 +437,8 @@
     - name: 'iOS/tvOS'
       url: '/publishing-apps/ios-tvos/index.html'
       docs:
+        - name: 'Account Deletion'
+          url: '/publishing-apps/ios-tvos/account-deletion.html'
         - name: 'FairPlay Certificate Registration'
           url: '/publishing-apps/ios-tvos/fairplay-certificate.html'
         - name: 'Installing an iOS/tvOS Test Build'
