@@ -1884,15 +1884,22 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Name</strong> - The video name is used to define the videos that will appear in the playlist. Enter a video name to search for.</li>
       <li><strong>Description</strong> - The video's short and long description are used to define the videos that will appear in the playlist. Enter a description to search for.</li>
       <li><strong>Custom fields </strong> - The video's custom fields are used to define the videos that will appear in the playlist.
-        Select a custom field from the dropdown list and then select/enter a custom field value.</li>
+        Select a custom field from the dropdown list and then select/enter a custom field value.
+        <ul>
+          <li><strong>Match any</strong> - Include videos that have any of the custom field values listed</li>
+          <li><strong>Exclude </strong>- Exclude videos with the selected custom field values  listed</li>
+        </ul>
+      </li>
+      
       <li><strong>Updated date</strong> - Date the video was updated</li>
       <li><strong>Created date</strong> - Date the video was created</li>
       <li><strong>Last activated date</strong> - Date the video was last activated</li>
     </ul>
-    <p>The <strong>Name</strong>, <strong>Description</strong> and <strong>Custom field</strong> options support these options:</p>
+    <p>The <strong>Name</strong>, <strong>Description</strong> and <strong>Custom field</strong> (<strong>Text</strong> type) options support these options:</p>
     <ul>
-      <li><strong>Text to include </strong>- Include videos that have the name in the short or long description fields</li>
-      <li><strong>Text to exclude </strong>- Exclude videos that have the name in the short or long description fields</li>
+      <li><strong>Text to include </strong>- Include videos that have the text in the name, short or long description or custom field</li>
+      <li><strong>Text to exclude </strong>- Exclude videos that have the text in the name,  short or long description fields or custom field</li>
+      <li></li>
     </ul>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/playlist-vc-smart.png" /></figure>
     <h3>Using multiple parameters</h3>
