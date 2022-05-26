@@ -25,7 +25,7 @@ parent: "Monetization"
   </section>
 
   <section class="bcls-section">
-    <h2 id="section-name">Creating a package in Brightcove Beacon</h2>
+    <h2 id="section-name">Creating a package in Brightcove Beacon Classic</h2>
     <p>Here are the detailed steps to follow in Beacon Classic to create an AuthVOD package:</p>
     <ol class="bcls-tasklist">
       <li>Click the <strong>Commerce</strong> tab along the top of Beacon Classic.
@@ -35,7 +35,12 @@ parent: "Monetization"
       </li>
       <li>Select <strong>Packages</strong> from the left navigation.</li>
       <li>Click the <strong>Add New Package</strong> button.</li>
-      <li>On the <strong>Package</strong> tab supply the internal name and be sure to leave the <strong>Status</strong> as <strong>Unpublished</strong>.
+      <li>On the <strong>Package</strong> tab:
+        <ol type="a">
+          <li>Supply the internal name.</li>
+          <li>Set the <strong>Billing Frequency</strong> to <strong>Free</strong>.</li>
+          <li>Be sure to leave the <strong>Status</strong> as <strong>Unpublished</strong>.</li>
+        </ol>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/package-tab.png" alt="package tab">
         </figure>
@@ -72,7 +77,7 @@ parent: "Monetization"
       <li>For the <strong>beacon.rights.&lt;counter&gt;.type</strong>, enter <strong>SVOD</strong>.</li>
       <li>At either the top or bottom of the list of custom fields, click <strong>Save</strong>.</li>
     </ol>
-    <p>The following screenshot shows an example of actual values used in the custom fields. In this case, the <strong>counter</strong> is zero (highlighted in red) and the package name is <strong>AuthVOD Test</strong> (highlighted in yellow). Remember when implementing AuthVOD, the <strong>beacon.rights.&lt;counter&gt;.type</strong> is always set to <strong>SVOD</strong>.</p>
+    <p>The following screenshot shows an example of actual values used in the custom fields. In this case, the <strong>counter</strong> is zero (highlighted in red) and the package name is <strong>MyAuthVODPackage</strong> (highlighted in yellow). Remember when implementing AuthVOD, the <strong>beacon.rights.&lt;counter&gt;.type</strong> is always set to <strong>SVOD</strong>.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/values-in-custom-fields.png" alt="custom field values">
     </figure>
