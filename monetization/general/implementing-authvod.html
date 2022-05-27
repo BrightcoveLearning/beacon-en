@@ -88,6 +88,33 @@ parent: "Monetization"
   </section>
 
   <section class="bcls-section">
+    <h2 id="section-name">Ingest videos into Brightcove Beacon</h2>
+    <p>Changes that are made to videos in Video Cloud Studio need to be ingested into Brightcove Beacon. This is done automatically every hour, but you can also ingest manually on demand. The broad steps will be detailed below.</p>
+    <aside class="bcls-aside bcls-aside--tip">For complete details on ingesting videos see the <a href="/syncing-with-video-cloud/forcing-a-sync.html">Forcing a Sync</a> document.</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>In Brightcove Beacon, in the top menu, click on the Tools (wrench icon) tab.</li>
+      <li>From the left navigation, be sure the <strong>Ingestion</strong> option is selected (it is the default option).</li>
+      <li>Click the <strong>Update Brightcove Videos</strong> button.</li>
+      <li>Once the ingestion is finished, you can check to be sure your videos have been assigned to your AuthVOD package by first clicking in the top menu the <strong>Commerce</strong> tab.</li>
+      <li>From the left navigation, be sure the <strong>Packages</strong> option is selected (it is the default option).</li>
+      <li>Click the name of your AuthVOD package.</li>
+      <li>Click on the <strong>Content</strong> tab to see the assets assigned to this AuthVOD package. An example of this tab is shown here:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/content.png" alt="content">
+        </figure>
+      </li>
+      <li>To start cache clearing, in the top menu, click on the Tools (wrench icon) tab.</li>
+      <li>From the left navigation, click the <strong>Cache</strong> option.</li>
+      <li>Click the <strong>Cache Purge</strong> button.</li>
+    </ol>
+    <p>Now, any viewers who are authenticated to the Brightcove Beacon app will have access to AuthVOD content. If a viewer tries to play a video while NOT authenticated, a message appears in the bottom-left of the video prompting them to sign in, as shown here:
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/sign-in.png" alt="sign in prompt">
+    </figure>
+    </p>
+  </section>
+
+  <section class="bcls-section">
     <h2 id="Unpublishing">Unpublishing or deleting a package</h2>
     <p>If a package is no longer needed you have two options:</p>
     <ul>
