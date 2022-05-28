@@ -3,18 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="In this topic, you will learn the requirements for implementing an endpoint to receive in-app purchase notifications.">
   
   <title>Receiving In-App Purchase Notifications</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/s-site-assets-favicons/site.webmanifest">  
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/learning-paths/learning-paths.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
@@ -31,9 +33,8 @@
   gtag('config', 'UA-2728311-17');
 </script>
   <script src="/assets/js/sajari-head.js"></script>
-	<script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-
 
 <body class="body">
 
@@ -1060,6 +1061,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                       <ul class="sidenav-subsubmenu" style="display:none;">
                         
                           
+                            <li><a href="/publishing-apps/ios-tvos/account-deletion.html">Account Deletion</a></li>
+                          
+                        
+                          
                             <li><a href="/publishing-apps/ios-tvos/fairplay-certificate.html">FairPlay Certificate Registration</a></li>
                           
                         
@@ -1413,6 +1418,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                           
                         
                           
+                            <li><a href="/general/references/marketplace.html">Marketplace</a></li>
+                          
+                        
+                          
                             <li><a href="/general/references/optimal-video-dimensions.html">Optimal Video Dimensions</a></li>
                           
                         
@@ -1690,15 +1699,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Overview">Overview</h2>
-    <p>Consider when an in-app purchase is done through a Brightcove Beacon app. The app communicates with one of the platform stores, like the Apple App Store, to complete the purchase. By default the supplier of the video content, and possibly other merchandise, purchased is not notified. It is necessary for the provider of the video content and/or merchandise to setup an endpoint so Brightcove Beacon can notify the provider a purchase was completed.</p>
-    <p>For clarification, this example demonstrates the flow of the purchase to notification. The fictional company, Acme Symphony. has implemented an endpoint. A viewer using a Brightcove Beacon app on iOS makes a purchase. A high-level take on the workflow is as follows:</p>
+    <p>It is necessary for the provider of the video content and/or merchandise to setup an endpoint so Brightcove Beacon can notify the provider that a purchase is completed. When an in-app purchase is made through a Brightcove Beacon app, the app communicates with one of the platform stores, like the Apple App Store, to complete the purchase. Defined endpoints will receive a notification of this transaction.</p>
+    <!-- <p>By default the supplier of the video content (and possibly other merchandise) purchased is not notified.</p> -->
+    <p>Let's look at an example that demonstrates the flow from purchase to notification. The fictional company, Acme Symphony, has implemented an endpoint. A viewer using a Brightcove Beacon app on iOS makes a purchase. Here is the high-level workflow:</p>
     <ul>
       <li>A viewer purchases a subscription for access to videos of past symphonies, and tickets for the upcoming summer season of live concerts.</li>
       <li>The Beacon app completes the purchase through the Apple App Store.</li>
       <li>The Beacon app notifies Beacon of the purchase.</li>
       <li>The Beacon entitlement subsystem grants the viewer access to all video assets in the purchased subscription.</li>
       <li>A notification is sent to Acme Symphony's endpoint.</li>
-      <li>Acme Symphony knows of the purchase and sends tickets to the purchaser, and subscription purchase is reflected in Acme Symphony's store front.</li>
+      <li>Acme Symphony knows of the purchase and is able to trigger additional workflows like sending tickets to the purchaser.</li>
     </ul>
     <p>The rest of the document clarifies the technical implementation and provides specifics for implementing your endpoint.</p>
   </section>
@@ -1707,13 +1717,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="How_notifications_are_implemented">How notifications are implemented</h2>
     <p>Here is a high-level diagram of the process:</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/monetization/receive-iap-notifications/beacon-in-app-purchase-v3.png" alt="overview beacon in app purchase">
+      <img class="bcls-image" src="/assets/images/monetization/receive-iap-notifications/beacon-in-app-purchase v4.png" alt="overview beacon in app purchase">
     </figure>
     <p>Clarification details for the diagram:</p>
     <ul>
       <li>Amazon Simple Notification Service (Amazon SNS) is a managed service that provides message delivery from publishers to subscribers. For full details see Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">SNS Developer Guide</a>.</li>
-      <li>After the notification is received by you, the Brightcove Beacon user, the actions will vary. In the example, since tickets were purchased the tickets would need to be sent. So once the notification is received, your business rules will determine what must occur.</li>
+      <li>After the notification is received by you, the Brightcove Beacon customer, the actions will vary. In the example, since tickets were purchased, the tickets would need to be sent. So once the notification is received, your business rules will determine what must occur.</li>
       <li>The endpoint implementation approach is entirely your decision. The decision will most likely be guided by backend technologies used and skills of your software engineers.</li>
+      <li>The dashed line from the platform stores directly to the Brightcove Beacon backend is for other notifications, like renewals.</li>
     </ul>
   </section>
 
@@ -1733,15 +1744,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Beacon will report all purchase related events, including the following actions on subscriptions:
         <ul>
           <li>New</li>
-          <li>Renewals</li>
-          <li>Cancellations</li>
-          <li>Pauses</li>
-          <li>Holds</li>
-          <li>Resumes</li>
+          <li>Renewal</li>
+          <li>Cancellation</li>
+          <li>Applicable to Google Play only:
+            <ul>
+              <li>Pause</li>
+              <li>Hold</li>
+              <li>Resume</li>
+            </ul>
+          </li>
         </ul>
       </li>
-      <li>Enough information is provided in the notification so the seller's external system is able to apply entitlements and/or prevent purchases of the same asset (subscription) if already purchased through Beacon or native stores.</li>
-      <li>Purchase events are delivered to external stores within 5 min after receiving notification from source stores.</li>
+      <li>Enough information is provided in the notification so the external store is able to apply entitlements and/or prevent purchases of the same asset (subscription) if already purchased through Beacon or native stores.</li>
+      <li>Purchase events are delivered to external stores after receiving notification from source stores. This typically happens in under 5 minutes (usually within seconds). </li>
     </ul>
   </section>
 
@@ -1751,12 +1766,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Following are the requirements for the external end point:</p>
     <ul>
       <li>The API endpoint must be compatible with AWS SNS integration. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-http-https-endpoint-as-subscriber.html">Fanout to HTTP/S endpoints</a> document for more details. This document contains a link to an implementation of an endpoint that processes Amazon SNS HTTP POST requests, written as a Java servlet.</li>
+      <li>The API endpoint must be open to range of IP addresses used by AWS - see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html">AWS IP address ranges</a>.</li>
       <li>The API endpoint will go through a subscription confirmation step. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.confirm.html">Confirm the subscription</a> document for more details.</li>
       <li>The API endpoint will need to unescape the JSON in the message field of the notification. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-and-json-formats.html">Parsing message formats</a> document for more details.</li>
       <li>The API endpoint must verify the signature and provenance of the message. See Amazon's <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-verify-signature-of-message.html">Verifying the signatures of Amazon SNS messages</a> document for more details.</li>
     </ul>
     <p>To be able to recover from errors, it is possible to re-send all purchases for a user (filtering any non active notifications). The store's external API endpoint is responsible for re-processing all messages, even if those were previously consumed.</p>
-    <aside class="bcls-aside bcls-aside--warning language-editable">It is possible to generate an infinite loop of notifications. For instance, Beacon sends the IAP notification to the end point, the receiver creates a user and sends a <em>create entitlement</em> message to Beacon, which in turn sends an IAP notification to the receiver, and an infinite loop is started. When implementing your endpoint you must be sure not to allow this to happen.</aside>
+    <aside class="bcls-aside bcls-aside--warning language-editable">Notes:
+      <ul>
+        <li>It is possible to generate an infinite loop of notifications. For instance, Beacon sends the IAP notification to the end point, the receiver creates a user and sends a <em>create entitlement</em> message to Beacon, which in turn sends an IAP notification to the receiver, and an infinite loop is started. When implementing your endpoint you must be sure not to allow this to happen.</li>
+        <li>SNS queues do not have a retention period. We have a 3x 20s retry policy and then the message is moved to a dead letter queue. The dead-letter queue has a retention period of 14 days. However, the customer can force the sync either via beacon admin UI or via the API.
+          <p>Brightcove can provide a file you can use to force the sync for all users, or you can use the API directly.</p>
+      </ul>
+    </aside>
   </section>
 
   <section class="bcls-section">
@@ -1834,7 +1856,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td>String</td>
           <td>Always</td>
           <td></td>
-          <td>The name of the SVOD or TVOD package</td>
+          <td>The name of the SVOD or TVOD package in Brightcove Beacon</td>
         </tr>
         <tr>
           <td>notification_date</td>

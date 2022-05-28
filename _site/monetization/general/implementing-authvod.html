@@ -7,10 +7,10 @@
   <meta name="description" content="In this topic, you will learn how to create an AuthVOD monetization package.">
   
   <title>Implementing AuthVOD</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/s-site-assets-favicons/site.webmanifest">  
 <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -1061,6 +1061,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                       <ul class="sidenav-subsubmenu" style="display:none;">
                         
                           
+                            <li><a href="/publishing-apps/ios-tvos/account-deletion.html">Account Deletion</a></li>
+                          
+                        
+                          
                             <li><a href="/publishing-apps/ios-tvos/fairplay-certificate.html">FairPlay Certificate Registration</a></li>
                           
                         
@@ -1414,6 +1418,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                           
                         
                           
+                            <li><a href="/general/references/marketplace.html">Marketplace</a></li>
+                          
+                        
+                          
                             <li><a href="/general/references/optimal-video-dimensions.html">Optimal Video Dimensions</a></li>
                           
                         
@@ -1692,7 +1700,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <aside class="bcls-aside bcls-aside--information">NOTE: In this topic, some of the steps are performed in Beacon Classic.</aside>
   <section class="bcls-section">
     <h2 id="Understanding_AuthVOD">Understanding AuthVOD</h2>
-    <p>AuthVOD (AUTHenticated Video On Demand) is a monetization package where viewers must authenticate, that is enter a username and password, to the Brightcove Beacon app to watch videos included in the package. The videos may or may not show advertisements, depending on how you configure that package.</p>
+    <p>AuthVOD (AUTHenticated Video On Demand) is a monetization package where viewers must authenticate, that is enter a username and password, to the Brightcove Beacon app to watch videos included in the package. If the viewer is NOT authenticated and tries to view a video in an AuthVOD package a <strong>Sign In</strong> prompt is displayed instead of the play button.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/prompt-for-sign-in.png" alt="prompt for sign in">
+    </figure>
+    <p>The videos may or may not show advertisements, depending on how you configure that package.</p>
     <p>See the <a href="/monetization/general/monetization-options.html">Understanding Monetization Options</a> document for more information on AuthVOD, as well as all monetization packages you can use with Brightcove Beacon.</p>
   </section>
 
@@ -1707,7 +1719,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="section-name">Creating a package in Brightcove Beacon</h2>
+    <h2 id="section-name">Creating a package in Brightcove Beacon Classic</h2>
     <p>Here are the detailed steps to follow in Beacon Classic to create an AuthVOD package:</p>
     <ol class="bcls-tasklist">
       <li>Click the <strong>Commerce</strong> tab along the top of Beacon Classic.
@@ -1717,7 +1729,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>Select <strong>Packages</strong> from the left navigation.</li>
       <li>Click the <strong>Add New Package</strong> button.</li>
-      <li>On the <strong>Package</strong> tab supply the internal name and be sure to leave the <strong>Status</strong> as <strong>Unpublished</strong>.
+      <li>On the <strong>Package</strong> tab:
+        <ol type="a">
+          <li>Supply the internal name.</li>
+          <li>Set the <strong>Billing Frequency</strong> to <strong>Free</strong>.</li>
+          <li>Be sure to leave the <strong>Status</strong> as <strong>Unpublished</strong>.</li>
+        </ol>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/package-tab.png" alt="package tab">
         </figure>
@@ -1754,10 +1771,37 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>For the <strong>beacon.rights.&lt;counter&gt;.type</strong>, enter <strong>SVOD</strong>.</li>
       <li>At either the top or bottom of the list of custom fields, click <strong>Save</strong>.</li>
     </ol>
-    <p>The following screenshot shows an example of actual values used in the custom fields. In this case, the <strong>counter</strong> is zero (highlighted in red) and the package name is <strong>AuthVOD Test</strong> (highlighted in yellow). Remember when implementing AuthVOD, the <strong>beacon.rights.&lt;counter&gt;.type</strong> is always set to <strong>SVOD</strong>.</p>
+    <p>The following screenshot shows an example of actual values used in the custom fields. In this case, the <strong>counter</strong> is zero (highlighted in red) and the package name is <strong>MyAuthVODPackage</strong> (highlighted in yellow). Remember when implementing AuthVOD, the <strong>beacon.rights.&lt;counter&gt;.type</strong> is always set to <strong>SVOD</strong>.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/values-in-custom-fields.png" alt="custom field values">
     </figure>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="section-name">Ingest videos into Brightcove Beacon</h2>
+    <p>Changes that are made to videos in Video Cloud Studio need to be ingested into Brightcove Beacon. This is done automatically every hour, but you can also ingest manually on demand. The broad steps will be detailed below.</p>
+    <aside class="bcls-aside bcls-aside--tip">For complete details on ingesting videos see the <a href="/syncing-with-video-cloud/forcing-a-sync.html">Forcing a Sync</a> document.</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>In Brightcove Beacon, in the top menu, click on the Tools (wrench icon) tab.</li>
+      <li>From the left navigation, be sure the <strong>Ingestion</strong> option is selected (it is the default option).</li>
+      <li>Click the <strong>Update Brightcove Videos</strong> button.</li>
+      <li>Once the ingestion is finished, you can check to be sure your videos have been assigned to your AuthVOD package by first clicking in the top menu the <strong>Commerce</strong> tab.</li>
+      <li>From the left navigation, be sure the <strong>Packages</strong> option is selected (it is the default option).</li>
+      <li>Click the name of your AuthVOD package.</li>
+      <li>Click on the <strong>Content</strong> tab to see the assets assigned to this AuthVOD package. An example of this tab is shown here:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/content.png" alt="content">
+        </figure>
+      </li>
+      <li>To start cache clearing, in the top menu, click on the Tools (wrench icon) tab.</li>
+      <li>From the left navigation, click the <strong>Cache</strong> option.</li>
+      <li>Click the <strong>Cache Purge</strong> button.</li>
+    </ol>
+    <p>Now, any viewers who are authenticated to the Brightcove Beacon app will have access to AuthVOD content. If a viewer tries to play a video while NOT authenticated, a message appears in the bottom-left of the video prompting them to sign in, as shown here:
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/implementing-authvod/sign-in.png" alt="sign in prompt">
+    </figure>
+    </p>
   </section>
 
   <section class="bcls-section">
@@ -1797,7 +1841,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 03 Dec 2021
+  Page last updated on 26 May 2022
 </div>
 
 

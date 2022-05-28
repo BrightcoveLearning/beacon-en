@@ -122,3 +122,11 @@
 	path = assets/s-site-assets-images
 	url = https://github.com/BrightcoveLearning/s-site-assets-images
   branch = main
+[submodule "_includes/s-campaign"]
+	path = _includes/s-campaign
+	url = https://github.com/BrightcoveLearning/s-campaign
+  branch = main
+[submodule "assets/images/s-campaign-img"]
+	path = assets/images/s-campaign-img
+	url = https://github.com/BrightcoveLearning/s-campaign-img
+  branch = main

@@ -7,10 +7,10 @@
   <meta name="description" content="In this topic, you will learn how to find information and manage settings related to registered users.">
   
   <title>Working with Registered Users</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/s-site-assets-favicons/site.webmanifest">  
 <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -1061,6 +1061,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                       <ul class="sidenav-subsubmenu" style="display:none;">
                         
                           
+                            <li><a href="/publishing-apps/ios-tvos/account-deletion.html">Account Deletion</a></li>
+                          
+                        
+                          
                             <li><a href="/publishing-apps/ios-tvos/fairplay-certificate.html">FairPlay Certificate Registration</a></li>
                           
                         
@@ -1411,6 +1415,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                         
                           
                             <li><a href="/general/references/making-your-video-content-indexable.html">Making Your Video Content Indexable</a></li>
+                          
+                        
+                          
+                            <li><a href="/general/references/marketplace.html">Marketplace</a></li>
                           
                         
                           
@@ -1831,17 +1839,30 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   
     <figure class="bcls-figure">
       <img
-        class="bcls-image--no-border"
+        class="bcls-image"
         alt="Subscriptions"
         src="/assets/images/registered-users/subscriptions.png"
       />
     </figure>
+    <!-- <figure class="bcls-figure">
+      <img
+        class="bcls-image"
+        alt="Subscriptions"
+        src="/assets/images/registered-users/subscriptions2.png"
+      />
+    </figure> -->
 
     <h4>Columns</h4>
     <ul>
       <li><strong>Plan name</strong> - Subscription plan name</li>
       <li><strong>Store name</strong> - App store name</li>
-      <li><strong>Status</strong> - Current subscription status; values: <strong>In Trial</strong>, <strong>Pending</strong> or <strong>Active</strong></li>
+      <li><strong>Status</strong> - Current subscription status; values:
+        <ul>
+          <li><strong>In Trial</strong> - User is in a trial period for this plan</li>
+          <li><strong>Pending</strong> - User payment information is being verified</li>
+          <li><strong>Active</strong> - User has enrolled in this subscription plan</li>
+        </ul>
+      </li>
       <li><strong>Start</strong> - Start date for the associated subscription</li>
       <li><strong>Trial ends</strong> - End date for the user's trial period</li>
       <li><strong>Ends</strong> - End date for the associated subscription</li>
@@ -1869,6 +1890,30 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Status</strong> - Current status of the plan (whether it is published or not), and the user's subscription status</li>
       <li><strong>Options</strong> - Additional plan options available for the user</li>
     </ul>
+
+    <!-- <h3>Add subscription</h3>
+    <p>You can select a plan name or, as shown here, you can manually add a subscription:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <span class="button-blue">Add subscription</span>.</li>
+      <li>
+        <p>Select values for each of the fields in the dialog. All of the fields are required.</p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image"
+            width="400"
+            alt="Add subscription dialog"
+            src="/assets/images/registered-users/add-subscription.png"
+          />
+        </figure>
+        <ul>
+          <li><strong>Plan name</strong> - Select a subscription plan name that you have defined in your account</li>
+          <li><strong>Start</strong> - Enter the date for when the subscription will start</li>
+          <li><strong>End</strong> - Enter the date for when the subscription will end</li>
+        </ul>
+      </li>
+      <li>Click <span class="button-blue">Add subscription</span>.</li>
+    </ol> -->
+    
   </section>
 
   <section class="bcls-section">
@@ -1998,7 +2043,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 29 Mar 2022
+  Page last updated on 25 May 2022
 </div>
 
 

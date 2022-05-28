@@ -437,6 +437,8 @@
     - name: 'iOS/tvOS'
       url: '/publishing-apps/ios-tvos/index.html'
       docs:
+        - name: 'Account Deletion'
+          url: '/publishing-apps/ios-tvos/account-deletion.html'
         - name: 'FairPlay Certificate Registration'
           url: '/publishing-apps/ios-tvos/fairplay-certificate.html'
         - name: 'Installing an iOS/tvOS Test Build'
@@ -616,6 +618,8 @@
           url: /general/references/known-issues.html
         - name: Making Your Video Content Indexable
           url: /general/references/making-your-video-content-indexable.html
+        - name: Marketplace
+          url: /general/references/marketplace.html
         - name: Optimal Video Dimensions
           url: /general/references/optimal-video-dimensions.html
         - name: 'Overview: China Delivery Overview'
