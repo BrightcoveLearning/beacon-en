@@ -130,3 +130,11 @@
 	path = assets/images/s-campaign-img
 	url = https://github.com/BrightcoveLearning/s-campaign-img
   branch = main
+[submodule "_includes/s-monetization"]
+	path = _includes/s-monetization
+	url = https://github.com/BrightcoveLearning/s-monetization
+  branch = main
+[submodule "assets/images/s-monetization-img"]
+	path = assets/images/s-monetization-img
+	url = https://github.com/BrightcoveLearning/s-monetization-img
+  branch = main
