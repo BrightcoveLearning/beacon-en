@@ -1712,9 +1712,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
     <aside class="bcls-aside bcls-aside--information">
       This document is complementary to the
-      <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Streaming a Live Event</a>
-      documentation to guide you into add SSAI to your live events. For detailed information on how to create an event, please see the section on
-      <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#create" target="_blank">Creating a live event in Brightcove Beacon</a>.
+      <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Streaming a Live Event</a> documentation to guide you into add SSAI to your live events. For detailed information on how to create an event, please see the section on <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#create" target="_blank">Creating a live event in Brightcove Beacon</a>.
     </aside>
 
     <p>SSAI provides these main features during Live events:</p>
@@ -1727,8 +1725,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>
         You can configure
-        <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html#fill_slate" target="_blank">fill slates</a>
-        to fill any unused ad time.
+        <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html#fill_slate" target="_blank">fill slates</a> to fill any unused ad time.
       </li>
     </ul>
   </section>
@@ -1794,8 +1791,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Configuring_a_Fill_Slate">Configuring a Fill Slate</h2>
     <p>
-      Fill slates are videos that will be displayed when there are gaps in a Live stream ad break that cannot be filled with a dynamically-served ad. If the requested ad is shorter
-      than the Ad break time, the fill slate will be displayed so viewers don't see a blank player.
+      Fill slates are videos that will be displayed when there are gaps in a Live stream ad break that cannot be filled with a dynamically-served ad. If the requested ad is shorter than the Ad break time, the fill slate will be displayed so viewers don't see a blank player.
     </p>
     <aside class="bcls-aside bcls-aside--information">
       You should configure at least one fill slate before requesting a server-side ad.
@@ -1805,8 +1801,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         Click the <strong>ADMIN</strong> > <strong>Live Settings</strong> link in the Studio header.
         <aside class="bcls-aside bcls-aside--information">
-          You must be an account administrator to access the
-          <strong>ADMIN</strong> menu.
+          You must be an account administrator to access the <strong>ADMIN</strong> menu.
         </aside>
       </li>
       <li>
@@ -1845,16 +1840,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         Select a <strong>Fill Slate</strong>. The fill slate will be displayed when there are gaps in a live stream ad break that cannot be filled with a dynamically-served ad.
       </li>
       <li>
-        When the <strong>Ad Audio</strong> setting is checked, the audio levels on ads will be normalized based on the adjustment that is set. This can be used as a way to help
-        make sure ads aren’t significantly louder than the content. Brightcove recommends selecting this option.
+        When the <strong>Ad Audio</strong> setting is checked, the audio levels on ads will be normalized based on the adjustment that is set. This can be used as a way to help make sure ads aren’t significantly louder than the content. Brightcove recommends selecting this option.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" width="450" height="700" src="/assets/images/s-monetization-img/live-ssai/6-ssai-check.png" />
         </figure>
       </li>
       <li>Click <strong>Create Event</strong></li>
       <li>
-        The <strong>Control Room</strong> page will open with details about the Live event including the <strong>Streaming Endpoint (RTMP URL)</strong> and
-        <strong>Stream Name</strong>. These values will be used by the encoder.
+        The <strong>Control Room</strong> page will open with details about the Live event including the <strong>Streaming Endpoint (RTMP URL)</strong> and <strong>Stream Name</strong>. These values will be used by the encoder.
       </li>
       <li>
         Configure your encoder and start the Live stream.
@@ -1869,15 +1862,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </aside>
       </li>
       <li>
-        By default, the <strong>Control Room</strong> preview player shows the ad-free stream. Ads will not be shown in the <strong>Control Room</strong> unless a Live ad
-        configuration is selected. Use the dropdown below to the player to select an ad configuration.
+        By default, the <strong>Control Room</strong> preview player shows the ad-free stream. Ads will not be shown in the <strong>Control Room</strong> unless a Live ad configuration is selected. Use the dropdown below to the player to select an ad configuration.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/7-select-ad-config.png" />
         </figure>
       </li>
       <li>
-        (Optional) Click the plus button (<img alt="" src="/assets/images/s-monetization-img/live-ssai/node18753-plus-icon.png" />) to select an additional ad configuration. Doing this will
-        add another preview player on the <strong>Control Room</strong> page.
+        (Optional) Click the plus button (<img alt="" src="/assets/images/s-monetization-img/live-ssai/node18753-plus-icon.png" />) to select an additional ad configuration. Doing this will add another preview player on the <strong>Control Room</strong> page.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/8-two-preview-players.png" />
         </figure>
@@ -1890,8 +1881,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Requesting_an_ad">Requesting an ad</h2>
     <p>
-      Follow these steps to request an ad in the Live
-      <strong>Control Room</strong>:
+      Follow these steps to request an ad in the Live <strong>Control Room</strong>:
     </p>
     <ol class="bcls-tasklist">
       <li>
@@ -1901,13 +1891,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>
-        Click <strong>Insert</strong> to insert an ad break into the live stream. If the ad doesn't fill the entire ad break time, the fill slate (being selected when the event was
-        created) will be displayed.
+        Click <strong>Insert</strong> to insert an ad break into the live stream. If the ad doesn't fill the entire ad break time, the fill slate (being selected when the event was created) will be displayed.
       </li>
     </ol>
     <p>
-      Ads will be seen in the <strong>Control Room</strong> preview player and in players that are published using the Live module. This example shows 2 ads being displayed in the
-      <strong>Control Room</strong>.
+      Ads will be seen in the <strong>Control Room</strong> preview player and in players that are published using the Live module. This example shows 2 ads being displayed in the <strong>Control Room</strong>.
     </p>
     <figure class="bcls-figure">
       <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/10-adsplayer.png" />
@@ -1944,8 +1932,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li> -->
       <li>Go to the Brightcove Beacon Platform.</li>
       <li>
-        In Brightcove Beacon, in the upper menu, click the
-        <strong>Advertisement</strong> tab.
+        In Brightcove Beacon, in the upper menu, click the <strong>Advertisement</strong> tab.
       </li>
       <li>
         Click the <strong>Add New Configuration</strong> button.
@@ -1954,8 +1941,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>
-        Check to be sure you are seeing the
-        <strong>New Advertisement</strong> form.
+        Check to be sure you are seeing the <strong>New Advertisement</strong> form.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="New Advertisement form" src="/assets/images/s-monetization-img/live-ssai/15-newadconfig-settings.png" />
         </figure>
@@ -1973,13 +1959,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Streaming a Live Event</a>
         document.
         <aside class="bcls-aside bcls-aside--information">
-          For the Live event to stream successfully in Brightcove Beacon, the
-          <strong>Job ID</strong> and <strong>Stream Video ID</strong> must match the IDs of the current Live event.
+          For the Live event to stream successfully in Brightcove Beacon, the <strong>Job ID</strong> and <strong>Stream Video ID</strong> must match the IDs of the current Live event.
         </aside>
       </li>
       <li>
-        In you Brightcove Beacon Live Event click the
-        <strong>Rights & Scheduling</strong> tab.
+        In you Brightcove Beacon Live Event click the <strong>Rights & Scheduling</strong> tab.
       </li>
       <li>
         In the <strong>Rights Type</strong> dropdown menu, select <strong>Advertising - AVOD</strong>.
@@ -2007,19 +1991,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>
-        In your Brightcove Beacon app, click on the
-        <strong>Play</strong> button. You should now be able to see your Live event streaming, with ads inserted by SSAI from Video Cloud.
+        In your Brightcove Beacon app, click on the <strong>Play</strong> button. You should now be able to see your Live event streaming, with ads inserted by SSAI from Video Cloud.
       </li>
     </ol>
     <p>
-      Once your event ends, you can save all or part of it as a clip that becomes a video asset in Video Cloud or a playable stream that can be shown in Brightcove Beacon. The Ads
-      of the Live event will not be saved, but the cue points from where the ads were transmitted will be registered so that you can add new ads in a later VOD of your recorded
-      Live event.
+      Once your event ends, you can save all or part of it as a clip that becomes a video asset in Video Cloud or a playable stream that can be shown in Brightcove Beacon. The Ads of the Live event will not be saved, but the cue points from where the ads were transmitted will be registered so that you can add new ads in a later VOD of your recorded Live event.
     </p>
     <p>
       For more information on how to create a clip, please see the
-      <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#Clip" target="_blank">Creating a Clip from your Live event</a>
-      section from the <em>Streaming a Live Event</em> document.
+      <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#Clip" target="_blank">Creating a Clip from your Live event</a> section from the <em>Streaming a Live Event</em> document.
     </p>
   </section>
 </article>
