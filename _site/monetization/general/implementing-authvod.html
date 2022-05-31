@@ -1702,10 +1702,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Understanding_AuthVOD">Understanding AuthVOD</h2>
     <p>AuthVOD (AUTHenticated Video On Demand) is a monetization package where viewers must authenticate, that is enter a username and password, to the Brightcove Beacon app to watch videos included in the package. If the viewer is NOT authenticated and tries to view a video in an AuthVOD package a <strong>Sign In</strong> prompt is displayed instead of the play button.</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/prompt-for-sign-in.png" alt="prompt for sign in">
+      <img class="bcls-image" src="/assets/images/s-monetization-img/implementing-authvod/prompt-for-sign-in.png" alt="prompt for sign in">
     </figure>
     <p>The videos may or may not show advertisements, depending on how you configure that package.</p>
-    <p>See the <a href="/monetization/general/monetization-options.html">Understanding Monetization Options</a> document for more information on AuthVOD, as well as all monetization packages you can use with Brightcove Beacon.</p>
+    <p>See the <a href="/s-monetization-img/general/monetization-options.html">Understanding Monetization Options</a> document for more information on AuthVOD, as well as all monetization packages you can use with Brightcove Beacon.</p>
   </section>
 
   <section class="bcls-section">
@@ -1724,7 +1724,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist">
       <li>Click the <strong>Commerce</strong> tab along the top of Beacon Classic.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/navigation-to-add.png" alt="get to add new package button">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/implementing-authvod/navigation-to-add.png" alt="get to add new package button">
         </figure>
       </li>
       <li>Select <strong>Packages</strong> from the left navigation.</li>
@@ -1736,12 +1736,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li>Be sure to leave the <strong>Status</strong> as <strong>Unpublished</strong>.</li>
         </ol>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/package-tab.png" alt="package tab">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/implementing-authvod/package-tab.png" alt="package tab">
         </figure>
       </li>
       <li>If you wish to use advertising, you can click the <strong>Yes</strong> radio button for <strong>Advertisement</strong> then choose an <strong>Ads Provider</strong> from the dropdown.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/package-tab-ads.png" alt="package tab">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/implementing-authvod/package-tab-ads.png" alt="package tab">
         </figure>
       </li>
       <li>On the <strong>Textual Data</strong> tab enter the name visible to viewers, and a headline about the package.</li>
@@ -1758,7 +1758,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>beacon.rights.&lt;counter&gt;.packageName</li>
       <li>beacon.rights.&lt;counter&gt;.type</li>
     </ul>
-    <aside class="bcls-aside bcls-aside--tip">For more information on creating and using custom fields with Brightcove Beacon, see the <a href="/monetization/general/vc-custom-fields.html">Custom Fields for Monetization</a> document.</aside>
+    <aside class="bcls-aside bcls-aside--tip">For more information on creating and using custom fields with Brightcove Beacon, see the <a href="/s-monetization-img/general/vc-custom-fields.html">Custom Fields for Monetization</a> document.</aside>
     <p>The steps below detail the process of assigning values to those custom fields.</p>
     <p>For each video you wish to be in the package, complete the following steps:</p>
     <ol class="bcls-tasklist-restart">
@@ -1773,7 +1773,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
     <p>The following screenshot shows an example of actual values used in the custom fields. In this case, the <strong>counter</strong> is zero (highlighted in red) and the package name is <strong>MyAuthVODPackage</strong> (highlighted in yellow). Remember when implementing AuthVOD, the <strong>beacon.rights.&lt;counter&gt;.type</strong> is always set to <strong>SVOD</strong>.</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/values-in-custom-fields.png" alt="custom field values">
+      <img class="bcls-image" src="/assets/images/s-monetization-img/implementing-authvod/values-in-custom-fields.png" alt="custom field values">
     </figure>
   </section>
 
@@ -1790,7 +1790,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click the name of your AuthVOD package.</li>
       <li>Click on the <strong>Content</strong> tab to see the assets assigned to this AuthVOD package. An example of this tab is shown here:
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/content.png" alt="content">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/implementing-authvod/content.png" alt="content">
         </figure>
       </li>
       <li>To start cache clearing, in the top menu, click on the Tools (wrench icon) tab.</li>
@@ -1799,7 +1799,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
     <p>Now, any viewers who are authenticated to the Brightcove Beacon app will have access to AuthVOD content. If a viewer tries to play a video while NOT authenticated, a message appears in the bottom-left of the video prompting them to sign in, as shown here:
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/sign-in.png" alt="sign in prompt">
+      <img class="bcls-image" src="/assets/images/s-monetization-img/implementing-authvod/sign-in.png" alt="sign in prompt">
     </figure>
     </p>
   </section>
@@ -1814,12 +1814,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>There are two places you can unpublish/delete a package:</p>
     <ul>
       <li>From the <strong>SVOD/AuthVOD Plans</strong> section check the package(s) you wish to unpublish/delete then click the appropriate button.<figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/unpublish-delete.png" alt="unpublish delete">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/implementing-authvod/unpublish-delete.png" alt="unpublish delete">
         </figure>
       </li>
       <li>If you are editing the package, from the <strong>Package</strong> tab you can both unpublish and delete. Use the <strong>Status</strong> to unpublish or the <strong>Delete</strong> button to delete.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/implementing-authvod/unpublish-delete-edit.png" alt="unpublish delete when editing">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/implementing-authvod/unpublish-delete-edit.png" alt="unpublish delete when editing">
         </figure>
       </li>
     </ul>
@@ -1841,7 +1841,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 30 May 2022
+  Page last updated on 31 May 2022
 </div>
 
 

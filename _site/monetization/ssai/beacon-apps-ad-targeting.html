@@ -1749,7 +1749,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </ul>
           </li>
           <li>If client-side ad macros are used, they are only valid for Beacon web apps. All other app platforms use ad targeting. If ad macros are used, they simply are ignored for all non-web apps.</li>
-          <li>See the <a href="/monetization/ssai/vod-ssai.html">Implementing VOD SSAI</a>, <a href="/monetization/ssai/live-ssai.html">Implementing Live SSAI</a> and <a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing Server-Side Ads with Brightcove Player</a> documents for more information on setting up SSAI.</li>
+          <li>See the <a href="/s-monetization-img/ssai/vod-ssai.html">Implementing VOD SSAI</a>, <a href="/s-monetization-img/ssai/live-ssai.html">Implementing Live SSAI</a> and <a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing Server-Side Ads with Brightcove Player</a> documents for more information on setting up SSAI.</li>
           <!-- <li>Client-side macros for the web are expanded by the player. Please follow the documentation at <a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#Client_side_macros">https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#Client_side_macros</a> to setup client-side macros. If support is needed for client-side macros, that should be logged through Brightcove support for Brightcove Player.</li> -->
           <li>When finished with the SSAI configuration, copy the ID for that ad configuration which will be used in the Beacon setup.</li>
         </ul>
@@ -2082,11 +2082,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="VOD_steps">VOD steps</h2>
     <h3>Video Cloud steps - VOD</h3>
     <ol class="bcls-tasklist-restart">
-      <li>In Video Cloud Studio, navigate to <strong>Admin → Server-Side Ad Settings</strong>. (For full details see the <a href="/monetization/ssai/vod-ssai.html">Implementing VOD SSAI</a> document.)</li>
+      <li>In Video Cloud Studio, navigate to <strong>Admin → Server-Side Ad Settings</strong>. (For full details see the <a href="/s-monetization-img/ssai/vod-ssai.html">Implementing VOD SSAI</a> document.)</li>
       <li>
         From the <span class="blue-button">Create Ad Configuration</span> dropdown, select <strong>VOD</strong>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/create-vod-ad-config.png" alt="Create VOD Ad Config">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/ad-targeting/create-vod-ad-config.png" alt="Create VOD Ad Config">
           <figcaption class="bcls-caption--image">Create VOD Ad Config</figcaption>
         </figure>
       </li>
@@ -2097,7 +2097,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li>Paste in your ad tag in the format detailed in the <a href="#VOD_SSAI_ad_tag_creation">VOD SSAI ad tag creation</a> section above. </li>
         </ol>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ssai-config-vod.png" alt="SSAI Configuration VOD">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/ad-targeting/ssai-config-vod.png" alt="SSAI Configuration VOD">
           <figcaption class="bcls-caption--image">SSAI Configuration VOD</figcaption>
         </figure>
       </li>
@@ -2105,7 +2105,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click <strong>Save</strong>.</li>
       <li>Find your new ad configuration in the table and copy your ad config ID. You will need this value for the Beacon advertising configuration in the next section.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
           <figcaption class="bcls-caption--image">Copy ad config ID</figcaption>
         </figure>
       </li>
@@ -2125,7 +2125,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li>Paste in the <strong>SSAI ad config ID</strong> copied in the steps just above into <strong>VOD Ad Config ID</strong>.</li>
         </ol>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ad-config-vod.png" alt="Beacon Ad Configuration">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/ad-targeting/ad-config-vod.png" alt="Beacon Ad Configuration">
           <figcaption class="bcls-caption--image">Beacon Ad Configuration VOD</figcaption>
         </figure>
       </li>
@@ -2136,11 +2136,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Live_steps">Live steps</h2>
     <h3>Video Cloud steps - Live</h3>
     <ol class="bcls-tasklist-restart">
-      <li>In Video Cloud Studio, navigate to <strong>Admin → Server-Side Ad Settings</strong>. (For full details see the <a href="/monetization/ssai/live-ssai.html">Implementing Live SSAI</a> document.)</li>
+      <li>In Video Cloud Studio, navigate to <strong>Admin → Server-Side Ad Settings</strong>. (For full details see the <a href="/s-monetization-img/ssai/live-ssai.html">Implementing Live SSAI</a> document.)</li>
       <li>
         From the <strong>Create Ad Configuration</strong> dropdown, select <strong>Live</strong>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/create-live-ad-config.png" alt="Create Live Ad Config">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/ad-targeting/create-live-ad-config.png" alt="Create Live Ad Config">
           <figcaption class="bcls-caption--image">Create Live Ad Config</figcaption>
         </figure>
       </li>
@@ -2151,14 +2151,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li>Paste in your ad tag in the format detailed in the <a href="#Live_SSAI_ad_tag_creation">Live SSAI ad tag creation</a> section above.</li>
         </ol>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ssai-config-live.png" alt="SSAI Configuration Live">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/ad-targeting/ssai-config-live.png" alt="SSAI Configuration Live">
           <figcaption class="bcls-caption--image">SSAI Configuration Live</figcaption>
         </figure>
       </li>
       <li>Click <strong>Save</strong>.</li>
       <li>Find your new ad configuration in the table and copy your ad config ID. You will need this value for the Beacon advertising configuration in the next section.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
           <figcaption class="bcls-caption--image">Copy ad config ID</figcaption>
         </figure>
       </li>
@@ -2179,7 +2179,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li>Paste in the <strong>SSAI ad config ID</strong> copied in the steps just above into <strong>Live Ad Config ID</strong>.</li>
         </ol>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/monetization/ad-targeting/ad-config-live.png" alt="Beacon Ad Configuration Live">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/ad-targeting/ad-config-live.png" alt="Beacon Ad Configuration Live">
           <figcaption class="bcls-caption--image">Beacon Ad Configuration Live</figcaption>
         </figure>
       </li>
@@ -2209,7 +2209,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 27 May 2022
+  Page last updated on 31 May 2022
 </div>
 
 
