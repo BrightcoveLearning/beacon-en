@@ -1698,7 +1698,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <summary>In this topic you will learn how to create publishing destinations using Brightcove Social.</summary>
   <section class="bcls-section">
     
-    <p>A publishing destination is a social media account/page that you wish to publish Beacon videos to. Before you can publish videos to social media accounts using Brightcove Social, you have to create at least one destination. Destinations can be created to publish videos to YouTube, Facebook and Twitter.</p>
+    <p>A publishing destination is a social media account/page that you wish to publish Beacon videos to. Before you can publish videos to social media accounts using Brightcove Social, you have to create at least one destination. Destinations can be created to publish videos to YouTube, Facebook, Twitter and LinkedIn.</p>
   </section>
   <section class="bcls-section">
     <h2 id="youtube">Creating a YouTube destination</h2>
@@ -1951,6 +1951,62 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Set a custom default Tweet</li>
     </ul>
   </section>
+<section class="bcls-section">
+    <h2 id="linkedin">Creating a LinkedIn destination</h2>
+    <p>Create a LinkedIn destination when you want to publish videos to LinkedIn. To create a LinkedIn destination, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the<strong> Social </strong>Module.</li>
+      <li>Click <strong>Destinations</strong> in the left navigation.</li>
+      <li>Click <span class="button-blue">Add Destination</span>.</li>
+      <li>Click<strong> Sign in with LinkedIn</strong>.</li>
+      <li>A dialog will open requesting you to log into your LinkedIn account. Enter your credentials and click <strong>Sign In</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16345-auth-linkedin-dest.png" /></figure>
+      </li>
+      <li>A dialog will open confirming what Brightcove Social is allowed to do. Click <strong>Allow</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16345-auth-linkedin-dest1.png" /></figure>
+      </li>
+      <li>Give the destination a unique, descriptive name. If you have multiple LinkedIn organizations, select the page to publish to using the dropdown list and then click <span class="button-blue">Add</span>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16345-name-linkedin-dest.png" /></figure>
+      </li>
+      <li>Basic information and the destination defaults will be displayed. Click  <span class="button-blue">Edit</span>  in the <strong>Basic info</strong> section to edit the destination name. See the <a href="#linkedin_defaults">Setting Linkedin defaults</a> section for information on configuring default values.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16345-linkedin-dest-created.png" /></figure>
+      </li>
+      <li>Click <strong>Destinations</strong> in the left margin and confirm that the destination appears in the list of destinations. The value below the destination name is the destination id.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16345-linkedin-dest-added.png" /></figure>
+      </li>
+    </ol>
+    <p>Click the destination name to edit the destination. Click the link in the Channel/Page column to open the LinkedIn page in another browser tab.</p>
+  </section>
+<section class="bcls-section">
+    <h2 id="linkedin_defaults">Setting LinkedIn defaults</h2>
+    <p>The destination default values will be used as the default video properties when <a href="/social/publishing-videos-social-media-platforms.html">publishing videos to social platforms</a>. To configure publishing defaults for LinkedIn destinations, click on the destination name and then click <span class="button-blue">Edit</span> in the <strong>Defaults for this destination</strong> section. The following LinkedIn video properties can be configured:</p>
+    <ul>
+      <li><a href="#linkedinpostinfo">Post Info</a></li>
+      <li><a href="#linkedinvisibility">Visibility</a></li>
+      <li><a href="#linkedincaptions">Captions</a></li>
+    </ul>
+    <div id="linkedinpostinfo" class="BCL-subsection">
+      <h3>Configuring the Post Info properties</h3>
+      <p>Click on the <strong>Post Info</strong> link. The following LinkedIn video properties can be set:</p>
+      <ul>
+        <li><strong>Commentary</strong> - Options to use the Video Cloud short or long description or to enter a default description to use</li>
+        <li><strong>Thumbnail Source</strong> - Options to use the Video Cloud thumbnail or the the LinkedIn thumbnail</li>
+      </ul>
+    </div>
+    <div id="linkedinvisibility" class="BCL-subsection">
+      <h3>Configuring the Visibility properties</h3>
+      <p>Click on the <strong>Visibility</strong> link and select a Visibility setting for the video. The following settings are available:</p>
+      <ul>
+        <li><strong>PUBLIC</strong> - Anyone can view the video</li>
+        <li><strong>LOGGED IN</strong> - Anyone who is logged in  can view the video   </li>
+      </ul>
+    </div>
+    <div id="linkedincaptions" class="BCL-subsection">
+      <h3>Configuring the Captions properties</h3>
+      <p>Click on the <strong>Captions</strong> link. Select <strong>Use Video Cloud captions</strong> to use the captions associated with the video or <strong>No captions</strong> to not use captions.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: For information on working with captions in Video Cloud, see <a href="/media/overview-adding-captions-video.html">Overview: Adding Captions to a Video</a>.</aside>
+    </div>
+</section>
   <section class="bcls-section">
     <h2 id="delete">Deleting a destination</h2>
     <p>To delete a destination, follow these steps:</p>

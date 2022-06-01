@@ -1696,8 +1696,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <article class="bcls-article">
   <h1>Using Auto Sync to Synchronize Videos to Social Media Accounts</h1>
   <summary></summary>
-  <section class="bcls-section">
-    
+  <section class="bcls-section"> 
     <p>Brightcove Social provides an Auto Sync feature which can be used to automatically synchronize videos to social media channels based upon the tags that are associated with a video.</p>
     <p>Before configuring Auto Sync, you should have some publishing destinations created. For information on creating publishing destinations, see <a href="/social/creating-social-media-publishing-destinations.html">Creating Social Media Publishing Destinations</a>.</p>
     <p>Note that using Auto Sync and manually publishing videos using the Social module are independent operations. Auto Sync is not aware of which videos have been manually published using the Social module. If a video is tagged in a way that causes Auto Sync to publish it to one of your social destinations, it will do that regardless if that video has previously been manually published using the Social module.</p>
@@ -1747,6 +1746,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><a href="#yt">YouTube</a></li>
       <li><a href="#fb">Facebook</a></li>
       <li><a href="#twitter">Twitter</a></li>
+      <li><a href="#linkedin">LinkedIn</a></li>
     </ul>
     <aside class="bcls-aside bcls-aside--information">Notes:
       <ul>
@@ -1821,6 +1821,28 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <li>Click <span class="button-blue">Next</span>.</li>
         <li>Confirm the Auto Sync settings and then click <span class="button-blue">Finish</span>.
           <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16642-twitter-confirm.png" /></figure>
+        </li>
+      </ol>
+    </div>
+    <div id="linkedin" class="BCL-subsection">
+      <h3>Configuring LinkedIn rules</h3>
+      <ol class="bcls-tasklist-restart">
+        <li>Select what happens when a video is untagged or deleted from Beacon:
+          <ul>
+            <li><strong>Delete distributed video on LinkedIn</strong> - The video will be removed from LinkedIn</li>
+            <li><strong>No action</strong> - Nothing happens to the LinkedIn video</li>
+          </ul>
+        </li>
+        <li>Select what happens when the video metadata is changed:
+          <ul>
+            <li><strong>Update video metadata on LinkedIn</strong> - Changes to video metadata on the Beacon side will be synchronized to LinkedIn</li>
+            <li><strong>No action</strong> - No action is taken </li>
+          </ul>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16642-linkedin-rules.png" /></figure>
+        </li>
+        <li>Click <span class="button-blue">Next</span>.</li>
+        <li>Confirm the Auto Sync settings and then click <span class="button-blue">Finish</span>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16642-linkedin-confirm.png" /></figure>
         </li>
       </ol>
     </div>
