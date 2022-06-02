@@ -17,6 +17,8 @@
       url: /getting-started/design-best-practices.html
     - name: App Design Considerations
       url: /getting-started/app-design-considerations.html
+    - name: Training
+      url: /getting-started/training/index.html
 - section:
   name: Learning the Basics
   url: '/basics/index.html'
@@ -711,12 +713,6 @@
       url: /ott-plugins/data-module.html
     - name: Working with Page Events
       url: /ott-plugins/working-with-page-events.html
-- section:
-  name: Training
-  url: /training/index.html
-  docs:
-    - name: Placeholder Page
-      url: /training/placeholder.html
 - section:
   name: Release Notes
   url: /release-notes/index.html
