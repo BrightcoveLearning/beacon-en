@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn about vendor restrictions for your app, as well as guidance for app content like Help pages.">
+  <meta name="description" content="This topic provides an overview of the Beacon Studio interface and modules. Beacon Studio allows you to manage your media assets and create app pages.">
   
-  <title>Application Design Considerations</title>
+  <title>Getting Started with Beacon Studio</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/getting-started/">Getting Started</a></li>
+      <li class="breadcrumb-item"><a href="/get-started/">Getting Started</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Application Design Considerations</li>
+      <li class="breadcrumb-item active" aria-current="page">Getting Started with Beacon Studio</li>
     </ol>
   </nav>
 </header>
@@ -167,19 +167,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
-              <h5 class="submenu-header"><a href="/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a></h5>
+              <h5 class="submenu-header"><a href="/get-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
                 
                   
-                    <li><a href="/getting-started/learning-guide-bc-beacon.html">Brightcove Beacon Learning Guide</a></li>
+                    <li><a href="/get-started/learning-guide-bc-beacon.html">Brightcove Beacon Learning Guide</a></li>
                   
                 
                   
-                    <li><a href="/getting-started/implementation-phases.html">Implementation Phases</a></li>
+                    <li><a href="/get-started/implementation-phases.html">Implementation Phases</a></li>
                   
                 
                   
-                    <li><a href="/getting-started/getting-started-beacon-studio.html">Getting Started with Beacon Studio</a></li>
+                    <li><a href="/get-started/getting-started-beacon-studio.html">Getting Started with Beacon Studio</a></li>
                   
                 
                   
@@ -187,15 +187,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/getting-started/design-best-practices.html">App Design Best Practices</a></li>
+                    <li><a href="/get-started/design-best-practices.html">App Design Best Practices</a></li>
                   
                 
                   
-                    <li><a href="/getting-started/app-design-considerations.html">App Design Considerations</a></li>
+                    <li><a href="/get-started/app-design-considerations.html">App Design Considerations</a></li>
                   
                 
                   
-                    <li><a href="/getting-started/training/index.html">Training</a></li>
+                    <li><a href="/get-started/training/index.html">Training</a></li>
                   
                 
               </ul>
@@ -1686,130 +1686,83 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Application Design Considerations</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn about vendor restrictions for your app, as well as guidance for app content like <strong>Help</strong> pages.</summary>
-
-  <section class="bcls-section">
-    <h2 id="Introduction">Introduction</h2>
-    <p>
-      The first section of this document lets you know restrictions some vendors
-      have for your app. The vendors are listed with lists of restrictions
-      following.
-    </p>
-    <p>
-      The rest of the document contains sections on content you should consider
-      for inclusion in your application. For instance, what should your
-      <strong>Help</strong>
-      page look like, and what text should it contain.
-    </p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Vendor_design_restrictions">Vendor design restrictions</h2>
-    <p>
-      Many vendors have some design restrictions that you cannot change. It is
-      important to be aware of these issues so you do not spend time requesting
-      a feature, or feature change, that is not allowed.
-    </p>
-
-    <h3>iOS</h3>
+  <h1>Getting Started with Beacon Studio</h1>
+  <summary>This topic provides an overview of the Beacon Studio interface and modules. Beacon Studio allows you to manage your media assets and create app pages.</summary>
+  <section class="bcls-section"> 
+    <script src="https://solutions.brightcove.com/jcao/AppMeasurement.js"></script><script src="https://solutions.brightcove.com/jcao/VisitorAPI.js"></script>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1691957866331564395">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>To access Beacon Studio, navigate to: <a href="https://studio.brightcove.com">https://studio.brightcove.com</a>. Sign in with your email address and password. The home page provides the ability to:</p>
     <ul>
-      <li>
-        For the
-        <strong>tabbed_block</strong>
-        and
-        <strong>dropdown-block</strong>
-        block types to function correctly, they must be the only blocks on a
-        page.
-      </li>
+      <li><a href="#account">Select an account and view the user profile</a></li>
+      <li><a href="#modules">Access Beacon modules</a></li>
+      <li><a href="#settings">Manage Beacon settings</a></li>
     </ul>
-    <h3>Apple TV</h3>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/getting-started/studio-home.png" /></figure>
+    <p> You can have a maximum of 5 sessions at any time. A session is initiated any time you log in  with the same email address. Once a 6th session is started, the oldest session is invalidated. The Beacon Studio session timeout is 24 hours.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="account">Selecting an account</h2>
+    <p>If you have access to multiple Brightcove accounts, the  account selector can be used to select the Brightcove account you want to access. To switch accounts, click on the user icon in the top right corner of Beacon Studio. The current account name will appear in the header and above the list of accounts.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Depending on the width of your browser, the account name may not be displayed in the header.</aside>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/getting-started/studio-select-account.png" /></figure>
+    <p>Click the <strong>My Profile</strong> link to update your user information and password. For more information, see <a href="/admin/managing-profile-information.html">Managing Profile Information</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="modules">Accessing modules</h2>
+    <p>The Beacon Studio primary navigation provides access to the Studio modules. When the <strong>Dashboard</strong> is displayed, the module names will display in the primary navigation. For all other modules, only the module icon will be displayed.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/getting-started/studio-primary-nav.png" /></figure>
+    <p>Note that the modules that display are based upon your Brightcove Beacon subscription and user profile.</p>
     <ul>
-      <li>The main menu will always be open when the app opens.</li>
+      <li>Dashboard - Beacon Studio dashboard page</li>
+      <li><a href="/media/getting-started-media-module.html">Media</a> - Upload videos, edit video details, create season and series</li>
+      <li><a href="/layout/getting-started-layout-module.html">Layout</a> - Create page layouts to use in apps</li>
+      <li><a href="https://live.support.brightcove.com">Live</a> - Create and stream live events</li>
+      <li><a href="/channels/cloud-playout/cloud-playout-overview.html">Cloud Playout</a> - Create live linear channels for videos</li>
+      <li><a href="/analytics/getting-started-analytics-module.html">Analytics</a> - View analytics on video and player performance</li>
+      <li><a href="/social/getting-started-brightcove-social.html">Social</a> - Distribute videos to social media accounts</li>
+      <li><a href="/players/getting-started-players-module.html">Players</a> - Create and style players and generate publishing code for players</li>
+      <li><a href="/registered-users/working-with-registered-users.html">Registered Users</a> - Manage users who have created an account with your Brightcove Beacon app</li>
+      <li><a href="/admin/managing-account-settings.html">Admin</a> - Manage Brightcove Beacon account settings</li>
     </ul>
   </section>
-
   <section class="bcls-section">
-    <h2 id="Help_pages">Help pages</h2>
-    <p>
-      For your
-      <strong>Help</strong>
-      page, you will most likely at least want to give your customer a way to
-      reach you. Here are two examples:
-    </p>
-    <pre>
-    If you need help, please contact us through one of the following ways:
-
-    Chat at www.acmeone.tv
-
-    Facebook Messenger through official Fan Page: www.facebook.com/Acmeone
-
-    Instagram Direct through official Instagram profile: www.instagram.com/acmeone
-
-    Direct Message through official Twitter profile: www.twitter.com/Acmeone
-
-    Email: worker@acmeone.tv
-
-    Whatsapp: +55 (55) 55555-5555</pre
-    >
-
-    <p>and</p>
-    <pre>
-Acmeone is a video streaming platform that enables users to watch live TV, movies and series over the internet.
-
-A user needs to download the Acmeone application in order to have access to the Acmeone platform.
-
-Once the Acmeone application has been downloaded, the Acmeone landing page will enable the user to register, login or explore Acmeone.
-
-Once the user completes registration or login (or enters Acmeone in explore mode), the user will be taken to the Acmeone home page.
-
-The Acmeone home page will present the main menu, where users will be able to:
- *Watch Live TV
- *Watch On Demand Movies
-
-Acmeone will also enable users to save favorites, rate and search for content.
-
-The Acmeone Settings section will enable users to review their account, change passwords, logout, set parental controls and change the language to/from Spanish and English.
-
-Thank you for being a valued Acmeone user.
-
-For additional help and support, please contact us using the following contact information:
-     Phone: 1-555-555-5555
-     Email: acmeonesupport@acmeone.com
-
-    </pre>
+    <h2 id="settings">Managing settings</h2>
+    <p>The Beacon Studio settings menu can be accessed from the <strong>Admin</strong> menu in the primary navigation. The  Admin menu provides access to:</p>
+    <ul>
+      <li><a href="/admin/managing-account-settings.html#account_info">Account Information</a> - View information about the current Brightcove Beacon account</li>
+      <li><a href="/admin/managing-users.html">User Management</a> - Manage the users who are authorized to use Beacon Studio</li>
+      <li><a href="/admin/managing-account-settings.html#account_settings">Account Settings</a> - Configure general account settings</li>
+      <li><a href="/admin/managing-account-settings.html#upload">Upload Settings</a> - Provides options to customize the Upload module</li>
+      <li><a href="/admin/managing-ingest-profiles.html">Ingest Profiles</a> - Manage the ingest profiles in your Brightcove Beacon account</li>
+      <li><a href="/admin/managing-account-settings.html#fields">Video Fields</a> - Mark standard video fields as required and also view, create, and modify custom metadata fields for the account</li>
+      <li><a href="/admin/configuring-language-settings.html">Language Settings</a> - Configure support for  additional metadata languages</li>
+      <li><a href="/admin/managing-media-sharing-settings.html">Media Sharing</a> - Share videos to other accounts</li>
+      <li><a href="../admin/configuring-server-side-ad-settings.html">Server-Side Ad Settings</a> - Configure server-side ad settings</li>
+      <li><a href="/admin/managing-account-settings.html#player">Player Settings</a> - Provides the option of using basic user name and password authentication for access to the Player Management and Delivery System APIs</li>
+      <li><a href="https://live.support.brightcove.com/admin/managing-live-settings.html">Live Settings</a> - Manage the settings used by the Live module</li>
+      <li><a href="/admin/managing-api-authentication-credentials.html">API Authentication</a> - Create and manage API credentials</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Note: You must be an account administrator to have access to the ADMIN menu.</aside>
   </section>
-
   <section class="bcls-section">
-    <h2 id="Password_recovery">Password recovery email</h2>
+    <h2 id="help">Using contextual help</h2>
+    <p>Contextual help is available throughout the application. Click the help icon (<img class="bcls-image--no-border" alt="" src="/assets/images/getting-started/studio-help-icon.png" />) in the top navigation to open the help panel. As you navigate to different modules and parts of the application, the content in the help panel will update automatically. The help panel can be undocked and moved by clicking the undock button.</p>
     <p>
-      You need to set the verbiage for the password recovery email. Here are two
-      examples on which you can base your actual email:
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/getting-started/studio-undock.png" /></figure>
     </p>
-    <pre>
-RECOVER TOKEN: ##RECOVER_CODE##
-
-If you experience any inconvenience please contact MY_COMPANY support at:
-
-Email: [my-company@myco.com|mailto:my-company@myco.com]</pre
-    >
-    <p>and</p>
-    <pre>
-RECOVER TOKEN: ##RECOVER_CODE##
-
-If you experience any inconvenience please contact MY_COMPANY support at:
-
-[http://ww.myco.com/contact/contact-technical-help]
-
-or call our technical support department at (800) 334-0453.</pre
-    >
-    <p>
-      Note that
-      <code translate="No">##RECOVER_CODE##</code>
-      is a placeholder and is replaced by the actual code generated by
-      Brightcove Beacon.
-    </p>
+    <p>When the dialog is undocked, the height of the panel can be changed by dragging the bottom edge of the panel.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="localization">Localization</h2>
+    <p>The Beacon Studio language can be changed by changing the language in your profile. The following languages are supported:</p>
+    <ul>
+      <li>English</li>
+      <li>Spanish (Spain)</li>
+      <li>Japanese</li>
+    </ul>
+    <p>For more information, see <a href="/admin/managing-profile-information.html">Managing Profile Information</a>.</p>
   </section>
 </article>
 
@@ -1828,7 +1781,7 @@ or call our technical support department at (800) 334-0453.</pre
 
 <hr>
 <div class="last-updated">
-  Page last updated on 25 Nov 2020
+  Page last updated on 16 May 2022
 </div>
 
 

@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="This learning guide provides a starting point for your understanding of Brightcove Beacon.">
+  <meta name="description" content="In this topic, you will answer a series of questions, recording answers in a spreadsheet, that will lead you to the look of your Brightcove Beacon Experience application design.">
   
-  <title>Learning Guide: Brightcove Beacon</title>
+  <title>Creating Your Application Design - Layout Options</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/getting-started/">Getting Started</a></li>
+      <li class="breadcrumb-item"><a href="/get-started/">getting-started</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Learning Guide: Brightcove Beacon</li>
+      <li class="breadcrumb-item active" aria-current="page">Creating Your Application Design - Layout Options</li>
     </ol>
   </nav>
 </header>
@@ -167,19 +167,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
-              <h5 class="submenu-header"><a href="/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a></h5>
+              <h5 class="submenu-header"><a href="/get-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
                 
                   
-                    <li><a href="/getting-started/learning-guide-bc-beacon.html">Brightcove Beacon Learning Guide</a></li>
+                    <li><a href="/get-started/learning-guide-bc-beacon.html">Brightcove Beacon Learning Guide</a></li>
                   
                 
                   
-                    <li><a href="/getting-started/implementation-phases.html">Implementation Phases</a></li>
+                    <li><a href="/get-started/implementation-phases.html">Implementation Phases</a></li>
                   
                 
                   
-                    <li><a href="/getting-started/getting-started-beacon-studio.html">Getting Started with Beacon Studio</a></li>
+                    <li><a href="/get-started/getting-started-beacon-studio.html">Getting Started with Beacon Studio</a></li>
                   
                 
                   
@@ -187,15 +187,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/getting-started/design-best-practices.html">App Design Best Practices</a></li>
+                    <li><a href="/get-started/design-best-practices.html">App Design Best Practices</a></li>
                   
                 
                   
-                    <li><a href="/getting-started/app-design-considerations.html">App Design Considerations</a></li>
+                    <li><a href="/get-started/app-design-considerations.html">App Design Considerations</a></li>
                   
                 
                   
-                    <li><a href="/getting-started/training/index.html">Training</a></li>
+                    <li><a href="/get-started/training/index.html">Training</a></li>
                   
                 
               </ul>
@@ -1686,119 +1686,426 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Learning Guide: Brightcove Beacon</h1>
+<style media="screen">
+  .small_image p {
+    color: red;
+  }
+</style>
+<link href="/assets/css/splide.min.css" rel="stylesheet" />
+<style media="screen">
+  .splide {
+    background-color: #dcf3fb;
+    padding: 1em;
+  }
+</style>
+
+<h1>Creating Your Application Design - Layout Options</h1>
 <article class="bcls-article">
-  <summary>This learning guide provides a starting point for your understanding of Brightcove Beacon.</summary>
+  <summary>In this topic, you will answer a series of questions, recording answers in a spreadsheet, that will lead you to the look of your Brightcove Beacon Experience application design.</summary>
 
   <section class="bcls-section">
-    <h2 id="What_is_Brightcove_Beacon">What is Brightcove Beacon?</h2>
-
-    <p>Brightcove Beacon is a platform which enables you to create and configure a single media streaming experience which is then used across multiple devices. With Brightcove Beacon you can curate your content, implement monetization strategies, and design viewer experiences. In doing so, you can:</p>
-    <ul>
-      <li>Greatly reduce overall costs. The costs of developing apps for each platform are considerable, anywhere from $50K-$250K for a custom app targeted at just ONE platform. Brightcove Beacon allows creation of multiple apps from a single
-        configured experience.</li>
-      <li>Provide a consistent experience for viewers across all platforms.</li>
-      <li>Allow monetization of video content via options like AVOD and SVOD.</li>
-    </ul>
-
-    <p>Apps can be generated to run on the following four device types (some specific examples included):</p>
-    <ul>
-      <li>Mobile (Phone / Tablets)
-        <ul>
-          <li>Android<strong><sup>*</sup></strong></li>
-          <li>iOS</li>
-        </ul>
-      </li>
-      <li>Connected TVs
-        <ul>
-          <li>Android TV<strong><sup>**</sup></strong></li>
-          <li>Apple TV</li>
-          <li>Fire TV</li>
-          <li>Roku</li>
-        </ul>
-      </li>
-      <li>Smart TVs
-        <ul>
-          <li>LG</li>
-          <!-- <li>Panasonic</li> -->
-          <li>Samsung</li>
-          <li>Sony</li>
-          <li>Toshiba</li>
-        </ul>
-      </li>
-      <!-- <li>Consoles
-              <ul>
-                <li>Playstation</li>
-                <li>XBOX</li>
-              </ul>
-            </li> -->
-      <li>Web</li>
-    </ul>
-    <aside class="bcls-aside bcls-aside--information language-editable">
-      <p><strong><sup>*</sup></strong>The Huawei platform is not supported even if it is Android based.</p>
-      <p><strong><sup>**</sup></strong>Beacon supports the Android TV operating system. Brightcove Beacon support is not attached to a specific brand. As long as a device runs Android TV with Google Services enabled, it's expected to be supported. Brightcove does not test every single Android TV device, but it is expected that devices that properly support the operating system will also support Brightcove Beacon.</p>
-    </aside>
-
-    <p>Not only do you get multiple device apps from a single source, but Brightcove Beacon also allows you to control the content and layout for each device app from your single Brightcove Beacon Experience.</p>
-    <p>The following is a visual representation of Brightcove Beacon:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/getting-started/learning-guide/beacon-intro-diagram.png" alt="introductory diagram">
-    </figure>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="How_is_Brightcove_Beacon_implemented">How is Brightcove Beacon implemented?</h2>
-    <p>The phases listed in this table are detailed in the <a href="/getting-started/implementation-phases.html">Implementation Phases</a> document.</p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Implementation Phase</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>Prepare for Brightcove Beacon Experience Creation*</td>
-          <td>Gather design artifacts, create your application design and plan strategies for advertising and monetization.</td>
-        </tr>
-        <tr>
-          <td>Establish Relationships with 3rd Party Vendors*</td>
-          <td>Create accounts for: Stores to which you wish to submit device apps, advertising server, online payment vendor, etc.</td>
-        </tr>
-        <tr>
-          <td>Create Your Application Design</td>
-          <td>Determine you information architecture around which videos will be available for viewing, as well as how they are grouped and ordered.</td>
-        </tr>
-        <tr>
-          <td>Ingest or Add Content and Configure Your Brightcove Beacon Experience</td>
-          <td>Configuration of, and media assets added to, your Brightcove Beacon Experience.</td>
-        </tr>
-        <tr>
-          <td>Create Device Application(s) from Your Brightcove Beacon Experience</td>
-          <td>Work with a Brightcove representative to finalize the configuration of your Brightcove Beacon Experience, from which the device apps are then generated.</td>
-        </tr>
-        <tr>
-          <td>Submit Your Device Applications to Corresponding Stores</td>
-          <td>Submit the newly generated device app(s) to corresponding store(s) for approval, and then your apps are ready for customers’ use.</td>
-        </tr>
-      </tbody>
-    </table>
-
+    <h2 id="Introduction">Introduction</h2>
     <p>
-    <aside class="bcls-aside bcls-aside--information">* The first two phases should be executed simultaneously.</aside>
+      This document will lead you through a series of questions about how you want the layout of your Brightcove Beacon Experience to appear. The result of answering these questions will help you build your application design for the Brightcove Beacon Experience. A very simple example of what you want to have defined for your app is pictured here: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/top-level-example.png" alt="" />
+    </figure>
+    <p>
+      You may not have experience in designing a UX for an OTT app. In the last section of this doc,
+      <a href="#Is_guidance_available">Is guidance available?</a> , a list of vendors' advice is shown. You may wish to read and consider their guidance before designing your UI.
     </p>
   </section>
   <section class="bcls-section">
-    <h2 id="How_are_the_device_apps_updated">How are the device apps updated?</h2>
-    <p>Your specific device apps are submitted initially to vendors for approval, and only need to be resubmitted in very rare instances like an OS update. Of course, you will want to change the media that is offered for viewing, alter the app layout, or change your monetization for advertising strategy. This is done by altering the experience, which does NOT require a resubmission to a vendor store. The key to updating the app, but not having to resubmit to the vendor store, lies in the architecture of Brightcove Beacon as shown here:</p>
-    <aside class="bcls-aside bcls-aside--information">The diagram assumes you have, of course, downloaded and installed the Brightcove Beacon app on a device.</aside>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/getting-started/learning-guide/brightcove-beacon-load-process.png" alt="load process">
-    </figure>
-    <p>This architecture provides the functionality to only alter the single Brightcove Beacon Experience to update the layout or configuration of all your device apps.</p>
+    <h2 id="Recording_your_categories/selections"> Recording your categories/selections </h2>
+    <p>
+      You will record your decisions as you work through this document in a spreadsheet. To prepare the spreadsheet follow these steps: </p>
+    <ol class="bcls-tasklist">
+      <li>
+        Download a template by clicking on this link: <a href="https://solutions.brightcove.com/bcls/bcbeacon/app-design-layout-options.xlsx"> app-design-layout-options.xlsx
+        </a>. Be sure to remember where it is saved.
+      </li>
+      <li>Open a blank spreadsheet from the Google Sheets app.</li>
+      <li>
+        From the Google Sheets menu select
+        <strong>File > Import</strong>
+        .
+      </li>
+      <li>
+        From the dialog that appears, first choose <strong>Upload</strong>
+        then click the
+        <strong>Select a file from your device</strong> button, as shown here:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-upload.png" alt="" />
+        </figure>
+      </li>
+      <li>
+        Find the Excel file just downloaded, select it, then click <strong>Open</strong>
+        .
+      </li>
+      <li>
+        From the
+        <strong>Import file</strong>
+        dialog that appears, choose
+        <strong>Replace spreadsheet,</strong> then click the
+        <strong>Import data</strong>
+        button.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/import-file-dialog.png" alt="" />
+        </figure>
+      </li>
+      <li>
+        After the spreadsheet is imported you will see something similar to the following:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/imported-layout-options.png" alt="" />
+        </figure>
+      </li>
+    </ol>
+    <p>
+      In the spreadsheet you will record the answers to the questions in this document. You will make selections from dropdown lists indicating your choice of layout for a screen.
+    </p>
+    <p>
+      At the end of this process, you will share your completed Google Sheet with the Brightcove representative helping configure your experience.
+    </p>
   </section>
-
+  <section class="bcls-section">
+    <h2 id="Choosing_site_layout_options">Choosing site layout options</h2>
+    <p>
+      The following provide layout options for different parts of your app. The images shown, and from which you will choose your preference, are from a mobile app. Of course, the screens for TV or web will look slightly different. For instance, shown first below is a movie details screen from a mobile app, followed by the same movie details screen from the Apple TV app.
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/movie-details-a-mobile.png" alt="movie details a mobile" />
+    </figure>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/creating-app-design/movie-details-a-appletv.png" alt="movie details a apple tv" />
+    </figure>
+    <p>
+      Now it is your time to start choosing options. The following provide layout options for different parts of your app. Review the options for the particular layout, then record your selection in the spreadsheet.
+    </p>
+    <h3>Landing page</h3>
+    <p>
+      The landing page is optional. If you wish to have a landing page choose your layout, otherwise choose <strong>None</strong>. Note, there is no landing page on the web app. There are <strong>two</strong> options from which to choose.
+    </p>
+    <div class="splide7">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Landing A</p>
+              <img src="/assets/images/getting-started/creating-app-design/landing_A.png" alt="landing_A" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Landing Carousel</p>
+              <img src="/assets/images/getting-started/creating-app-design/landing_carousel.png" alt="landing_carousel" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h3>Movie details page</h3>
+    <p>
+      The movie details page displays details for a particular movie, and a list of related movies. There are <strong>four</strong> options from which to choose.
+    </p>
+    <div class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Movie Details A</p>
+              <img src="/assets/images/getting-started/creating-app-design/movies_details_A.png" alt="movies_details_A" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Movie Details F</p>
+              <img src="/assets/images/getting-started/creating-app-design/movies_details_F.png" alt="movies_details_F" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Movie Details G</p>
+              <img src="/assets/images/getting-started/creating-app-design/movie_details_G.png" alt="movie_details_G" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Movie Details H</p>
+              <img src="/assets/images/getting-started/creating-app-design/movie_details_H.png" alt="movie_details_H" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h3>Series details page</h3>
+    <p>
+      The series details page displays details for a particular series, and a list of related movies. There are <strong>two</strong> options from which to choose.
+    </p>
+    <div class="splide2">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Series Details A</p>
+              <img src="/assets/images/getting-started/creating-app-design/series_details_A.png" alt="series_details_A" />
+            </div>
+          </li>
+          <!--           <li class="splide__slide">
+            <div class="small_image">
+              <p>Series Details F</p>
+              <img src="/assets/images/getting-started/creating-app-design/series_details_F.png" alt="series_details_F" />
+            </div>
+          </li> -->
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Series Details G</p>
+              <img src="/assets/images/getting-started/creating-app-design/series_details_G.png" alt="series_details_G" />
+            </div>
+          </li>
+          <!--           <li class="splide__slide">
+            <div class="small_image">
+              <p>Series Details H</p>
+              <img src="/assets/images/getting-started/creating-app-design/series_details_H.png" alt="series_details_H" />
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <h3>Live TV</h3>
+    <p>
+      The customer can check what is playing now and what will play next on the selected channel. There is <strong>one</strong> option, and it is shown here.
+    </p>
+    <div class="splide3">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Live TV D</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_tv_D.png" alt="live_tv_D" />
+            </div>
+          </li>
+          <!--           <li class="splide__slide">
+            <div class="small_image">
+              <p>Live TV E</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_tv_E.png" alt="live_tv_E" />
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <h3>Player</h3>
+    <p>
+      The player controls appear different, as well as other videos in the series, if any. There are <strong>three</strong> options from which to choose.
+    </p>
+    <div class="splide4">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Player A</p>
+              <img src="/assets/images/getting-started/creating-app-design/player_A.png" alt="player_A" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Player B</p>
+              <img src="/assets/images/getting-started/creating-app-design/player_B.png" alt="player_B" />
+            </div>
+          </li>
+          <!--           <li class="splide__slide">
+            <div class="small_image">
+              <p>Player C</p>
+              <img src="/assets/images/getting-started/creating-app-design/player_C.png" alt="player_C" />
+            </div>
+          </li> -->
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Player D</p>
+              <img src="/assets/images/getting-started/creating-app-design/player_D.png" alt="player_D" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h3>Live TV Player</h3>
+    <p>
+      Player used when live TV is playing. There are <strong>three</strong>
+      options from which to choose.
+    </p>
+    <div class="splide5">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Live Player A</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_player_A.png" alt="live_player_A" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Live Player B</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_player_B.png" alt="live_player_B" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Live Player D</p>
+              <img src="/assets/images/getting-started/creating-app-design/live_player_D.png" alt="live_player_D" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h3>Customer Settings</h3>
+    <p>
+      Displays the customers' settings options. There are <strong>three</strong>
+      options from which to choose.
+    </p>
+    <div class="splide6">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Settings A</p>
+              <img src="/assets/images/getting-started/creating-app-design/settings_A.png" alt="settings_A" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Settings Carousel</p>
+              <img src="/assets/images/getting-started/creating-app-design/settings_carousel.png" alt="settings_carousel" />
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="small_image">
+              <p>Settings Grid</p>
+              <img src="/assets/images/getting-started/creating-app-design/settings_grid.png" alt="settings_grid" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Optional_items">Optional items</h2>
+    <p>
+      In this section you will decide if you wish to include some optional items. In the spreadsheet you will answer with <strong>Yes/No</strong>
+      .
+    </p>
+    <h3>Rating popup</h3>
+    <p>Determine if you wish to use a rating popup..</p>
+    <div class="small_image">
+      <img src="/assets/images/getting-started/creating-app-design/rating_popup.png" alt="rating_popup" />
+    </div>
+    <h3>More Info popup</h3>
+    <p>Determine if you wish to use a More Info popup.</p>
+    <div class="small_image">
+      <img src="/assets/images/getting-started/creating-app-design/more_info_popup.png" alt="more_info_popup" />
+    </div>
+    <h3>About screen</h3>
+    <p>Determine if you wish to use an About screen.</p>
+    <div class="small_image">
+      <img src="/assets/images/getting-started/creating-app-design/about.png" alt="about" />
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Moving_forward">Moving forward</h2>
+    <p>
+      You've completed this task. Be sure to save the spreadsheet you have been working on for later submission to Brightcove personnel when your Brightcove Beacon Experience is built.
+    </p>
+    <p>
+      If you have not done so, you need to complete the other part of defining your application design by working through the <a href="/get-started/creating-your-app-design-info-architecture.html"> Creating Your Application Design - Information Architecture </a>
+      to determine what videos you want displayed and how to group and order them.
+    </p>
+    <h3>Page design</h3>
+    <p>You also should start thinking of how you would like individual pages to look. For instance, here is an example home page:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/getting-started/home-page-example.png" alt="home page example">
+    </figure>
+    <p>For details on page layout options see the <a href="/layout/using-page-layouts.html">Using Page Layouts</a> document. There the different page types you can use are detailed, along with layout of video content on those pages.</p>
+  </section>
+  <!-- TEMPLATE
+ <h3>Title</h3>
+ <p></p>
+ <div class="image_display">
+ <p>img</p>
+ <img src="//assets/images/site-map/.png" alt=""> </div>
+ END TEMPLATE -->
+  <section class="bcls-section">
+    <h2 id="Is_guidance_available">Is guidance available?</h2>
+    <p>
+      UX design is a complicated matter, and you may wish to see what others consider when building a design. The following are links to some of the major OTT players advice on design and best practices.
+    </p>
+    <ul>
+      <li>
+        Roku:
+        <a href="https://developer.roku.com/docs/developer-program/design/best-practices.md"> Design Best Practices
+        </a>
+      </li>
+      <li>
+        Apple TV:
+        <a href="https://developer.apple.com/design/human-interface-guidelines/tvos/overview/themes/"> Human Interface Guidelines
+        </a>
+      </li>
+      <li>
+        Fire TV:
+        <a href="https://developer.amazon.com/docs/fire-tv/design-and-user-experience-guidelines.html"> Design and User Experience Guidelines </a>
+      </li>
+      <li>
+        Android TV:
+        <a href="https://developer.android.com/design/tv"> Design for Android TV
+        </a>
+      </li>
+    </ul>
+  </section>
 </article>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@1.2.5/dist/js/splide.min.js"></script>
+<script translate="no">
+  var mySplide = new Splide('.splide', {
+    width: '60%',
+    perPage: 2,
+    perMove: 1,
+  })
+  mySplide.mount()
+  var mySplide2 = new Splide('.splide2', {
+    width: '60%',
+    perPage: 2,
+    perMove: 1,
+  })
+  mySplide2.mount()
+  var mySplide3 = new Splide('.splide3', {
+    width: '90%',
+    perPage: 2,
+    perMove: 1,
+    arrows: false,
+  })
+  mySplide3.mount()
+  var mySplide4 = new Splide('.splide4', {
+    width: '90%',
+    perPage: 2,
+    perMove: 1,
+  })
+  mySplide4.mount()
+  var mySplide5 = new Splide('.splide5', {
+    width: '90%',
+    perPage: 2,
+    perMove: 1,
+  })
+  mySplide5.mount()
+  var mySplide6 = new Splide('.splide6', {
+    width: '60%',
+    perPage: 2,
+    perMove: 1,
+  })
+  mySplide6.mount()
+  var mySplide7 = new Splide('.splide7', {
+    width: '60%',
+    perPage: 2,
+    perMove: 1,
+    arrows: false,
+  })
+  mySplide7.mount()
+</script>
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1814,7 +2121,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 14 Mar 2022
+  Page last updated on 02 Jun 2022
 </div>
 
 
