@@ -78,6 +78,13 @@
               url: /get-started/basics/publish/publishing-playlist-web.html
             - name: Publishing Videos
               url: /get-started/basics/publish/publishing-single-video-web.html
+        - name: Analytics
+          url: /get-started/basics/analytics/index.html
+          docs:
+            - name: Determining How Much of a Video is Watched
+              url: /get-started/basics/analytics/determining-how-much-video-being-watched.html.html
+            - name: Determining Which Videos Have the Most Views
+              url: /get-started/basics/analytics/determining-which-videos-have-most-views.html
         - name: Administration
           url: /get-started/basics/admin/index.html
           docs:
