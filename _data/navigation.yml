@@ -58,10 +58,6 @@
               url: /get-started/basics/media/editing-video-properties-multiple-videos.html
             - name: Using Folders
               url: /get-started/basics/media/organizing-videos-using-folders.html
-            - name: Publishing Playlists
-              url: /get-started/basics/media/publishing-playlist-web.html
-            - name: Publishing Videos
-              url: /get-started/basics/media/publishing-single-video-web.html
             - name: Uploading Video Images
               url: /get-started/basics/media/uploading-video-poster-thumbnail-images.html
             - name: Uploading Videos
@@ -75,6 +71,13 @@
               url: /get-started/basics/players/creating-playlist-player.html
             - name: Styling Players
               url: /get-started/basics/players/styling-player.html
+        - name: Publish
+          url: /get-started/basics/publish/index.html
+          docs:
+            - name: Publishing Playlists
+              url: /get-started/basics/publish/publishing-playlist-web.html
+            - name: Publishing Videos
+              url: /get-started/basics/publish/publishing-single-video-web.html
         - name: Administration
           url: /get-started/basics/admin/index.html
           docs:

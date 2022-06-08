@@ -5,31 +5,4 @@ parent: Players
 grandparent: Learn the Basics
 
 ---
-<article class="bcls-article">
-  <h1>{{ page.title }}</h1>
-  <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-    <h3>Prerequisites</h3>
-    <ul>
-      <li>You have <a href="/get-started/basics/players/creating-player.html">created a player</a> in your Brightcove Beacon account</li>
-    </ul>
-    <h3>Steps</h3>
-    <ol class="bcls-tasklist-restart">
-      <li>In the primary navigation, click <i data-feather="play-circle"></i> <strong>Players.</strong>
-      <li>Click on the player name to style.</li>
-      <li>Click <strong>Styling</strong> in the left navigation.</li>
-      <li>Choose to show or hide the <strong>title and description.</strong></li>
-      <li>Select a <strong>Play Button Shape</strong> and <strong>Play Button Position</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="icon color" src="/assets/images/basics/players/node18809-player-styling.png" /></figure>
-      </li>
-      <li>Click a theme color to open the color picker.</li>
-      <li>Click a color on the ride side of the control.</li>
-      <li>Click in the square to select a shade of the desired color.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="icon color" src="/assets/images/basics/players/node18809-player-color-theme.png" /></figure>
-      </li>
-      <li>The slider below the color square can be used to set the opacity of the controls.</li>
-      <li>Click outside of the color picker to modify another theme color.</li>
-      <li>Changes made to a player <strong>MUST</strong> be published before they will appear in published players. To publish the changes, click <strong>Publish &amp; Embed</strong> and then <strong>Publish Changes</strong>.</li>
-    </ol>
-  </section>
-</article>
+{% include s-players/basics/styling-player.html %}
