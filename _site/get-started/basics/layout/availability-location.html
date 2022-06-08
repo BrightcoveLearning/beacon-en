@@ -3,18 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="In this topic, you will learn how to restrict/allow application use to/for specific locations.">
   
   <title>How To: Configure Location Restrictions</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/s-site-assets-favicons/site.webmanifest">  
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/prism.css">
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/learning-paths/learning-paths.css">
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/landing-page.css">
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
@@ -31,15 +33,14 @@
   gtag('config', 'UA-2728311-17');
 </script>
   <script src="/assets/js/sajari-head.js"></script>
-	<script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-
 
 <body class="body">
 
 <header>
   <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
+    <a href="/"><img class="product-logo" src="/assets/s-site-assets-images/COVE004_Brightcove_Beacon_Logo_RGB_K.svg" alt="Brightcove" style="max-width: 200px;"></a>
 <!-- GTranslate: https://gtranslate.io/ -->
 <select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
 
@@ -49,118 +50,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 /* ]]> */
 </script>
 
-    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-      <option value="">Other Brightcove Docs</option>
-      
-        
-          <option value="https://support.brightcove.com">Documentation Home</option>
-        
-      
-        
-          <option value="">-- VIDEO CLOUD --</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
-        
-      
-        
-          <option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
-        
-      
-        
-          <option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
-        
-      
-        
-          <option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
-        
-      
-        
-          <option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
-        
-      
-        
-          <option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
-        
-      
-        
-          <option value="">-- VIDEO ESSENTIALS --</option>
-        
-      
-        
-          <option value="https://audience-insights.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Audience Insights</option>
-        
-      
-        
-          <option value="https://beacon-help.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Studio</option>
-        
-      
-        
-          <option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Classic</option>
-        
-      
-        
-          <option value="https://corptv.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;CorpTV</option>
-        
-      
-        
-          <option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
-        
-      
-        
-          <option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
-        
-      
-        
-          <option value="">-- VIDEO CLOUD ADD-ONS --</option>
-        
-      
-        
-          <option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
-        
-      
-        
-          <option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
-        
-      
-        
-          <option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
-        
-      
-        
-          <option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
-        
-      
-    </select>
 
 
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
+&nbsp;<span class="secondary-nav"><a href="https://support.brightcove.com/product-updates.html">Product Updates</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://supportportal.brightcove.com">Contact Support</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">System Status</a></span>
     <br>
     
   </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">layout</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">How To: Configure Location Restrictions</li>
+    </ol>
+  </nav>
 </header>
-<!-- <img id="back_button" src="/assets/images/feather/arrow-left.svg" alt="Back" style="opacity: .2;cursor: not-allowed;"> -->
-<nav id="breadcrumbs" aria-label="breadcrumb">
-  <ol class="breadcrumb arr-right">
-    
-    <li class="breadcrumb-item"><a href="/index-howto.html">Beacon Help</a></li>
-    
-    
-    
-    <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
-    
-    
-    <li class="breadcrumb-item active" aria-current="page">How To: Configure Location Restrictions</li>
-    
-  </ol>
-</nav>
-<!-- <img id="forward_button" src="/assets/images/feather/chevron-right.svg" alt="Forward" style="opacity: .2;cursor: not-allowed;"> -->
-
 <div class="container">
     <div class="row">
       <div class="col-sm-3 left-side-bar">
@@ -1758,6 +1666,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h1>How To: Configure Location Restrictions</h1>
 <article class="bcls-article">
+  <summary>In this topic, you will learn how to restrict/allow application use to/for specific locations.</summary>
+
   <section class="bcls-section">
     <p>You can configure pages to appear in only specific locations. To configure permitted/denied locations, follow these steps:</p>
     <aside class="bcls-aside bcls-aside--information language-editable">When you make changes to the settings, a green circle with a checkmark animates to indicate your changes are automatically saved.</aside>
@@ -1768,7 +1678,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>In the far right of the <strong>Location restrictions</strong> row, click the toggle button.</li>
       <li>Select the locations for both the desired permitted and denied locations by typing the name of a country/location. As you begin typing the list will filter.</li>
     </ol>
-    <aside class="bcls-aside bcls-aside--information language-editable">You can also change the schedule by clicking on a page name. From the page details, in the <strong>Availability</strong> section, click <img src="/assets/images/common/edit-pencil-on-page-blue.png" alt="edit icon">.</aside> 
+    <aside class="bcls-aside bcls-aside--information language-editable">You can also change the schedule by clicking on a page name. From the page details, in the <strong>Availability</strong> section, click <img src="/assets/images/common/edit-pencil-on-page-blue.png" alt="edit icon">.</aside>
   </section>
   <section class="bcls-section">
     <h3>Related</h3>
