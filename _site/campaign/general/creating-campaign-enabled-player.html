@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="In this topic you will learn how to create a Campaign-enabled Brightcove Player.">
   
-  <title>How To: Create a Page</title>
+  <title>Creating a Campaign-enabled Player</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/general/">General Information</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Creating a Campaign-enabled Player</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,65 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Creating a Campaign-enabled Player</h1>
+    <summary>In this topic you will learn how to create a Campaign-enabled Brightcove Player.</summary>
+    <section class="bcls-section">
+      <p>Video engagement data will only be recorded when video content is viewed inside of a Campaign-enabled Brightcove Player. There are two ways to create a Campaign-enabled player:</p>
+      <ul>
+        <li><a href="#newplayer">Create a new player using the Campaign module</a></li>
+        <li><a href="#existingplayer">Enable Camapaign on an existing player</a></li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information language-editable">Note that regardless of how you create your Campaign enabled player, you must use the <a href="/publish/choosing-correct-embed-code.html">Advanced</a> code when you embed it in a page.</aside>
+    </section>
+    <section class="bcls-section">
+      <h2 id="newplayer">Creating a new player using the Campaign module</h2>
+      <p>Before creating a Campaign-enabled player using the Campaign module, the Campaign module should be configured with at least one data connection:</p>
+      <ul>
+        <li><a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">Eloqua</a></li>
+        <li><a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">Marketo (Munchkin)</a></li>
+        <li><a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">Marketo (REST APIs)</a></li>
+        <li><a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html">Salesforce</a></li>
+        <li><a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">HubSpot (REST APIs)</a></li>
+        <li><a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">HubSpot (Client-Side APIs)</a></li>
+        <li><a href="/campaign/integrations/non-map/integrating-campaign-single-sign.html">SSO</a></li>
+        <li><a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">Custom integration</a></li>
+      </ul>
+      <p>Note that <a href="/campaign/integrations/non-map/using-campaign-module-track-viewers.html">Campaign Tracking</a> is provided by default. To create a Campaign-enabled player using the Campaign module, follow these steps.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Open the <strong>Campaign</strong> module.</li>
+        <li>In the left navigation, click <strong>Campaign Players</strong>.</li>
+        <li>Click <span class="button-blue">Create Player</span>. A new Campaign-enabled player will be created and appear in the list of players.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="new player" src="/assets/images/s-campaign-img/general/node16419-new-player.png" /></figure>
+        </li>
+        <li>Using the <strong>Connect To</strong> dropdown, select the data connection that the player will use.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select integration" src="/assets/images/s-campaign-img/general/node16419-select-integration.png" /></figure>
+        </li>
+        <li><strong>(Optional)</strong> Using the <strong>Lead Form</strong> dropdown, select the <a href="/campaign/general/creating-campaign-lead-form.html">lead form</a> that the player will use.</li>
+      </ol>
+    </section>
+    <section class="bcls-section">
+      <h2 id="existingplayer">Enabling Campaign on an existing player</h2>
+      <p>To Campaign-enable an existing player, follow these steps.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Open the <strong>Players</strong> module.</li>
+        <li>Click on a player name to open the player properties.</li>
+        <li>Click <strong>Campaign</strong> in the left navigation menu.</li>
+        <li>Check the <strong>Enable Campaign</strong> option.</li>
+        <li>Use the <strong>Connect To</strong> dropdown to select a Campaign connection.</li>
+        <li>(Optional) Use the <strong>Lead Form</strong> dropdown to select a <a href="/campaign/general/creating-campaign-lead-form.html">lead form</a> to use.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="unpublished changes message" src="/assets/images/s-campaign-img/general/node16419-campaign-props.png" /></figure>
+        </li>
+        <li>Click <span class="button-blue">Save</span>. A message will appear indicating that you have unpublished changes.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="unpublished changes message" src="/assets/images/s-campaign-img/general/node16419-unpublished-changes.png" /></figure>
+        </li>
+        <li>Click <span class="button-blue">Publish &amp; Embed</span> and then <span class="button-blue">Publish Changes</span> to publish the change to the player.</li>
+        <li>Return to the Campaign module. Click <strong>Campaign Players </strong> in the left navigation.</li>
+        <li>Confirm that the player appears in the list of Campaign players.</li>
+      </ol>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1738,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 03 Jun 2022
 </div>
 
 

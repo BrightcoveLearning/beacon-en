@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="In this topic you will learn how to embed a Video Cloud video in an Oracle Eloqua landing page.">
   
-  <title>How To: Create a Page</title>
+  <title>Embedding a Video Cloud Video on an Eloqua Landing Page</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/integrations/eloqua/">Eloqua</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Embedding a Video Cloud Video on an Eloqua Landing Page</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,57 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Embedding a Video Cloud Video on an Eloqua Landing Page</h1>
+    <summary>In this topic you will learn how to embed a Video Cloud video in an Oracle Eloqua landing page.</summary>
+    <section class="bcls-section">
+      <p>The Campaign module provides the ability to add a Video Cloud video to Eloqua landing pages as a type of Cloud Content. Video is added to a landing page from within the Eloqua Landing Page WYSIWYG Editor.</p>
+      <p>To add a video to an Eloqua landing page, the following steps must be performed.</p>
+      <ol>
+        <li><a href="#landingpage">Create a landing page in Eloqua</a></li>
+        <li><a href="#video">Select a video and player</a></li>
+      </ol>
+    </section>
+    <section class="bcls-section">
+      <h2 id="landingpage">Creating an Eloqua landing page</h2>
+      <p>Eloqua landing pages can be used as a destination for visitors who clickthrough from emails sent from Eloqua. To create a landing page, follow these steps.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: For complete information on Eloqua landing pages, see the <a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/LandingPages/LandingPages.htm">Oracle Eloqua documentation</a>.</aside>
+      <ol class="bcls-tasklist-restart">
+        <li>Login to your Video Cloud account. Select the account that has the video you want to use on the landing page. This account must also have access to the Campaign module.</li>
+        <li>Login to your Eloqua account.</li>
+        <li>Navigate to <strong>Assets</strong> &gt; <strong>Landing Pages</strong> and then click <strong>Create a Landing Page</strong>.</li>
+        <li>Click <strong>Blank HTML Landing Page</strong> and then click <strong>Choose</strong>.</li>
+        <li>In the left navigation, click <strong>Cloud Content</strong>. The Cloud Content dialog will open.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/eloqua/node16128-cloud-content.png" /></figure>
+        </li>
+        <li>Drag the <strong>Brightcove Video</strong> object to the HTML page and drop it between the <code translate="No">&lt;body&gt;</code> tags.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/eloqua/node16128-drag-cloud-content.png" /></figure>
+          <aside class="bcls-aside bcls-aside--information">Note: Multiple players can be added to a landing page by dragging and dropping a player between the <code translate="No">&lt;body&gt;</code> tags. Save the landing page after adding each player.</aside>
+        </li>
+      </ol>
+      <p>The <strong>Cloud Content Configuration</strong> dialog will open where you can <a href="#video">select a video and player</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="video">Selecting a video and player</h2>
+      <p>The Cloud Content Configuration dialog is used to select a Video Cloud account, video and player.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Use the dropdown list in the upper right to select the Video Cloud account to use. After an account is selected, the dialog will update to display the videos and players from the selected account.</li>
+        <li>Select a video to display on the landing page. The 20 most recent videos will appear in the list.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/eloqua/node16128-select-video.png" /></figure>
+        </li>
+        <li>Select a player to use. Only Campaign-enabled players will appear.</li>
+        <li>Set the <strong>Player Size</strong>.</li>
+        <li>Click <strong>Save</strong> to save the changes.</li>
+        <li>Click <strong>X</strong> to close the Cloud Content Configuration dialog. The HTML will update with the code to embed the player.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/eloqua/node16128-html.png" /></figure>
+        </li>
+        <li><strong>(Optional)</strong> Add other objects to the landing page.</li>
+        <li>Click <strong>Save</strong> to save the landing page.</li>
+        <li>Give the landing page a name and then click <strong>Save</strong>.</li>
+      </ol>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1730,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 07 Jun 2022
 </div>
 
 

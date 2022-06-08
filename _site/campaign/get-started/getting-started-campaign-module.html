@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="This topic provides an overview of the Campaign module which is used to track video engagement.">
   
-  <title>How To: Create a Page</title>
+  <title>Getting Started with the Campaign Module</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/get-started/">Getting Started</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Getting Started with the Campaign Module</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,190 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Getting Started with the Campaign Module</h1>
+    <summary>This topic provides an overview of the Campaign module which is used to track video engagement.</summary>
+    <section class="bcls-section">
+      <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="4582289844001">&nbsp;</div>
+      <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+      <p>The Campaign module is used to track video engagement data for videos that are viewed inside of a Campaign-enabled Brightcove Player. Viewing data is stored in Video Cloud and can optionally be synchronized to popular marketing automation platforms such as Eloqua, Marketo, HubSpot and Salesforce.</p>
+      <p>To access the Campaign module, login to Video Cloud and click <strong>Campaign</strong> in the primary navigation. The Campaign homepage displays video engagement data which provides insights into how long videos were watched, which videos were watched, and who watched them. This allows you to better engage and convert your audiences.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/getting-started/node15634-campaign-ui.png" /></figure>
+      <p>The homepage provides the ability to:</p>
+      <ul>
+        <li><a href="#performance">View video performance</a></li>
+        <li><a href="#leads">View leads performance</a></li>
+        <li><a href="#status">View the Campaign module status</a></li>
+      </ul>
+      <p>The Campaign module provides the ability to:</p>
+      <ul>
+        <li><a href="#connections">Setup data connections</a></li>
+        <li><a href="#players">Create Campaign players</a></li>
+        <li><a href="#leadforms">Create and manage lead forms</a></li>
+        <li><a href="#email">Publish to Email </a></li>
+        <li><a href="#events">View player events</a></li>
+        <li><a href="#profiles">View viewer profiles</a></li>
+        <li><a href="#jobs">View synchronization activity</a></li>
+        <li><a href="#settings">Configure Campaign settings</a></li>
+        <li><a href="#export">Export Campaign data</a></li>
+        <li><a href="#gallery_leads">Export Gallery leads</a></li>
+        <li><a href="#manage">Manage viewer data</a></li>
+      </ul>
+    </section>
+    <section class="bcls-section">
+      <h2 id="performance">Viewing video performance</h2>
+      <p>The video performance section provides high level video performance for videos that were played inside of Campaign-enabled players.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: The Campaign analytics system is separate from the general Video Cloud analytics system, and the two track data differently. Therefore you will see differences in some metrics if you compare the two. For example, the Video Cloud analytics system counts views as soon as a video starts, while the Campaign analytics system does not count views until 10 seconds into the video. So if 14 viewers start the video, but 6 of them stop it before 10 seconds have played, Video Cloud analytics would show 14 views, while the Campaign module would show 8.</aside>
+      <p>Start by selecting a <strong>Time Period</strong> for the charts. The following options are available:</p>
+      <ul>
+        <li>7 Days</li>
+        <li>30 Days</li>
+        <li>90 Days</li>
+      </ul>
+      <p>The following charts are displayed:</p>
+      <ul>
+        <li><a href="#viewed">Most Viewed Videos</a></li>
+        <li><a href="#engage">Most Engaging Videos</a></li>
+        <li><a href="#trends">Viewer Trends</a></li>
+      </ul>
+      <div id="viewed" class="BCL-subsection">
+        <h3>Most Viewed Videos</h3>
+        <p>The Most Viewed Videos chart displays the most viewed videos in Campaign-enabled players for the selected time period.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/getting-started/node15634-most-viewed.png" /></figure>
+      </div>
+      <div id="engage" class="BCL-subsection">
+        <h3>Most Engaging Videos</h3>
+        <p>The Most Engaging Videos chart displays the most engaging videos in Campaign-enabled players for the selected time period. Engagement is the average percent watched. For details on how we calculate video engagement, watch the training video <a href="/analytics/calculating-video-engagement-score.html">Calculating Video Engagement Score</a>.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/getting-started/node15634-most-engaging.png" /></figure>
+      </div>
+      <div id="trends" class="BCL-subsection">
+        <h3>Viewer Trends</h3>
+        <p>The Viewer Trends chart displays video views over time for the selected time period. Views from both known and anonymous viewers are displayed. Hovering over the graph will display the actual data points.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/getting-started/node15634-viewer-trends.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Note: When using a Marketo Munchkin connection, the Viewer Trends graph will only show data for Unknown Viewers. When using a Munchkin connection, user details are not collected. For more detailed user information, the Marketo REST connection should be used. For information, see <a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">Integrating Video Cloud with Marketo Using the REST APIs</a>.</aside>
+      </div>
+    </section>
+    <section class="bcls-section">
+      <h2 id="leads">Viewing leads performance</h2>
+      <p>To view the leads information, click the <strong>Leads</strong> tab. Note that the Leads tab will only appear if your account has Campaign lead forms created. The leads performance section provides high level leads performance for videos that were played inside of Campaign-enabled players. Start by selecting a <strong>Time Period</strong> for the charts. The following options are available:</p>
+      <ul>
+        <li>7 Days</li>
+        <li>30 Days</li>
+        <li>90 Days</li>
+      </ul>
+      <p>The following charts are displayed:</p>
+      <ul>
+        <li><a href="#funnel">Campaign Funnel</a></li>
+        <li><a href="#top">Top Converting Videos</a></li>
+        <li><a href="#leads">Leads Chart</a></li>
+      </ul>
+      <div id="funnel" class="BCL-subsection">
+        <h3>Campaign Funnel</h3>
+        <p>The Campaign Funnel displays metrics for videos in Campaign-enabled players with Campaign lead forms for the selected time period:</p>
+        <ul>
+          <li><strong>Video impressions</strong> - The number of videos that were loaded</li>
+          <li><strong>Video views</strong> - The number of times a video started playing, recorded when the stream is started (does not include rewind or replay); it is not a measure of individual viewers</li>
+          <li><strong>Lead form views</strong> - The total number of lead form views</li>
+          <li><strong>Conversions</strong> - The total number of lead forms that were submitted</li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/getting-started/node15634-funnel.png" /></figure>
+      </div>
+      <div id="top" class="BCL-subsection">
+        <h3>Top Converting Videos</h3>
+        <p>The Top Converting Videos chart displays the videos with the highest conversion rate. The conversion rate is calculated by dividing the number of submitted lead forms divided by video impressions.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/getting-started/node15634-top-conv.png" /></figure>
+      </div>
+      <div id="leads_chart" class="BCL-subsection">
+        <h3>Leads Chart</h3>
+        <p>The Leads Chart displays the number of submitted lead forms by day for the selected time period. Hovering over the graph will display the actual data points.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/getting-started/node15634-leads-chart.png" /></figure>
+      </div>
+    </section>
+    <section class="bcls-section">
+      <h2 id="status">Viewing the Campaign module status</h2>
+      <p>The Campaign Status section displays the current status of the Campaign module.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/getting-started/node15634-campaign-status.png" /></figure>
+    </section>
+    <section class="bcls-section">
+      <h2 id="connections">Setting up data connections</h2>
+      <p>The <strong>Data Connections</strong> option is where you configure the Campaign integrations. Campaign can integrate with popular marketing automation platforms ("MAP&nbsp;integration") or the viewing data can be saved locally and then exported or extracted using the Audience API ("non-MAP" integration). The following table outlines the supported integrations.</p>
+      <table class="bcls-table">
+        <thead class="bcls-table__head">
+          <tr>
+            <th width="300">MAP Integrations</th>
+            <th width="300">Non-MAP Integrations</th>
+          </tr>
+        </thead>
+        <tbody class="bcls-table__body">
+          <tr>
+            <td><ul>
+                <li><a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">Oracle Eloqua</a></li>
+                <li><a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">Marketo (REST APIs)</a></li>
+                <li><a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">Marketo (Munchkin)</a></li>
+                <li><a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html">Salesforce</a></li>
+                <li><a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">HubSpot (REST APIs)</a></li>
+                <li><a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">HubSpot (Client-Side APIs)</a></li>
+              </ul></td>
+            <td><ul>
+                <li><a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">Custom integrations</a></li>
+                <li><a href="/campaign/integrations/non-map/integrating-campaign-single-sign.html">Single sign-on</a></li>
+                <li><a href="/campaign/integrations/non-map/using-campaign-module-track-viewers.html">Campaign Tracking</a></li>
+              </ul></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>When publishing Campaign-enabled players, use the Advanced Embed (in-page) publishing code. The Standard Embed (iframe) publishing code will not work as the Campaign plugin will be running inside of an iframe and therefore will be unable to access any parent page URL parameters and may not get the correct cookies.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: The number of connections that can be configured is based upon your Video Cloud subscription.</aside>
+    </section>
+    <section class="bcls-section">
+      <h2 id="players">Creating Campaign players</h2>
+      <p>The <strong>Campaign Players</strong> option allows you to create Campaign-enabled Brightcove Players. Video engagement data will only be recorded when video content is viewed inside of a Campaign-enabled video player. For information on creating Campaign-enabled players, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="leadforms">Creating and managing lead forms</h2>
+      <p>The <strong>Lead Forms</strong> option allows you to create lead forms for data capture. Once a lead form is created, it can be associated with a Campaign-enabled player. For information on creating lead forms, see <a href="/campaign/general/creating-campaign-lead-form.html">Creating a Campaign&nbsp;Lead Form</a>. It is also possible to create and use lead forms that are created inside of a third-party marketing automation platform.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="email">Publishing a video to email</h2>
+      <p>The <strong>Publish to Email</strong> option allows you to select a player, video and then generate the HTML embed code to email the video. For information, see <a href="/campaign/general/publishing-video-email-using-campaign-module.html">Publishing a Video to Email using the Campaign Module</a>.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: The Media module also provides the ability to publish a video to email. For information, see <a href="/publish/publishing-video-email.html">Publishing a Video to Email</a>.</aside>
+    </section>
+    <section class="bcls-section">
+      <h2 id="events">Viewing player events</h2>
+      <p>The <strong>All Recent Activity</strong> option allows you to view the player view events that were recorded for the past 24 hours. For information, see <a href="/campaign/general/viewing-player-events-campaign-module.html">Viewing Player Events in the Campaign Module</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="videoactivity">Viewing video activity</h2>
+      <p>The <strong>Video (non-MAP)</strong> option allows you to view the viewing activity for a video. For information, see <a href="/campaign/general/viewing-video-activity.html">Viewing Video Activity</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="profiles">Viewing viewer profiles</h2>
+      <p>The <strong>Viewer Profile (non-MAP)</strong> option allows you to view the player view events by viewer. This option is enabled when using SSO or custom integrations, or Campaign Tracking. For information, see <a href="/campaign/general/viewing-viewer-profile-information.html">Viewing Viewer Profile Information</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="jobs">Viewing synchronization activity</h2>
+      <p>The <strong>Synchronization Activity</strong> option displays the last 10 jobs that were synchronized from Campaign to a marketing automation platform. Synchronization runs on an hourly basis. Select a connection and then click the <strong>Test Sync</strong> button to run a synchronization. This is helpful when testing new integrations to avoid having to wait to see if event data is being sent to your marketing automation platform. Test Sync can be executed once every 5 minutes up to 10 times per hour.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: When using custom integrations, no synchronization jobs are created. Synchronization jobs are created only when using integrations with a marketing automation platform.</aside>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/getting-started/node15634-jobs.png" /></figure>
+    </section>
+    <section class="bcls-section">
+      <h2 id="settings">Configuring Campaign settings</h2>
+      <p>The <strong>Settings</strong> option allows you to configure some default settings for the account. For information, see <a href="/campaign/general/configuring-campaign-settings.html">Configuring Campaign Settings</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="export">Exporting Campaign data</h2>
+      <p>The <strong>Export Campaign Data</strong> option is used to export view event and lead form data. This option will only appear for account administrators. For information on exporting Campaign data, see <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exporting Campaign Data from the Campaign Module</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="gallery_leads">Exporting Gallery leads</h2>
+      <p>The <strong>Export Gallery Leads</strong> option is used to export lead form data that was captured from Gallery experiences. This option will only appear for account administrators. For information on exporting Gallery lead data, see <a href="https://gallery.support.brightcove.com/experiences/portal/exporting-gallery-lead-data.html">Exporting Gallery Lead Data</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="manage">Managing viewer data</h2>
+      <p>The <strong>Manage Viewer Data</strong> option allows you to search for a user and then either remove that user or export that user's data. This option will only appear for account administrators. For information on managing viewer data, see <a href="/campaign/admin/managing-viewer-data.html">Managing Viewer Data</a>.</p>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1863,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 06 Jun 2022
 </div>
 
 

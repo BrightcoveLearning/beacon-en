@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="In this topic you will learn about troubleshooting techniques when using the Campaign module.">
   
-  <title>How To: Create a Page</title>
+  <title>Troubleshooting Campaign Issues</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/admin/">Administering Campaign</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Troubleshooting Campaign Issues</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,87 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Troubleshooting Campaign Issues</h1>
+    <summary>In this topic you will learn about troubleshooting techniques when using the Campaign module.</summary>
+    <section class="bcls-section">
+      <h2 id="logging">Enabling verbose logging</h2>
+      <p>Enabling verbose logging allows you to view Campaign related information in the browser console. This is helpful when trying to debug Campaign issues. Verbose logging can be enabled by adding&nbsp;<code translate="No">bcverbose=1</code> to the URL of the page with the Campaign-enabled player or by configuring the Campaign plugin with the <code translate="No">"verbose": true</code> option:</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="configure plugin" src="/assets/images/s-campaign-img/admin/node18487-plugin.png" /></figure>
+      <p>Log messages can be viewed in the console.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="console" src="/assets/images/s-campaign-img/admin/node18487-console.png" /></figure>
+    </section>
+    <section class="bcls-section">
+      <h2 id="leadform">Lead form issues</h2>
+      <p>Below are some common issues and questions we have seen with lead forms.</p>
+      <h3>Why do lead forms continue to show for Marketo Munchkin integrations even after the form has been submitted?</h3>
+      <p>The Munchkin integration doesn't have an API that we can use to ask if the user is known or not. Since we don't know if they’re a known user, we always display the lead form. The Marketo REST integration does offer APIs so we can determine known vs. unknown users. Switching to a Marketo REST integration is recommended and can avoid this issue.</p>
+      <h3>My custom lead form is set to redirect on submit. Why do I see the page that’s redirected to for a second or two after submitting the form?</h3>
+      <p>We have to wait until the page that’s redirected to has fully loaded before dismissing the lead form. One solution is to redirect to a page that is lightweight (doesn’t have many images or JavaScript), or the blank page we set up (located at <code translate="No">https://map.brightcove.com/lead/complete</code>) specifically to address this problem.</p>
+      <h3>I configured my lead form with confirmation HTML. Why do I see a black screen for a couple seconds after submission?</h3>
+      <p>Make sure to change the text color of the HTML. The confirmation HTML is probably visible, you just can’t see it because the default text color is black.</p>
+      <h3>Why doesn't my HubSpot lead form dismiss after submission?</h3>
+      <p>Make sure the lead form in HubSpot is configured to redirect to <code translate="No"><strong>http://map.brightcove.com/lead/complete</strong></code>. If you want to display a confirmation message, configure this within Campaign and not HubSpot.</p>
+      <h3>Why is my lead form not displaying?</h3>
+      <p>If your lead form is not displaying, first ensure all the criteria for showing a lead form have been met. Note that criteria that depend on multiple videos being watched will not work across page refreshes. They are meant for use cases where the next video is automatically queued in the same player.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Confirm that the Campaign plugin has been added to the player. For information, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</li>
+        <li>Confirm that the integration has been correctly set up and is sent to the plugin.</li>
+        <li>Confirm that the lead form has been added to that player. The response to the call the plugin makes for its config should contain lead form display information under the leadForm property if a lead form has been added to the player.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="leadform debug" src="/assets/images/s-campaign-img/admin/node18487-leadform-debug.png" /></figure>
+        </li>
+        <li>Confirm that the viewer is not already a lead. The lead form will only be shown if Campaign has identified that the viewer is not already a lead in the marketing automation platform (MAP) or has not already filled out a lead form. The plugin makes a separate JSONP call to the Campaign server to check if the viewer is a lead. If the viewer is a lead, the server responds with a status of 1 and any other identifiers that could be useful in syncing the view data to the MAP. If the viewer is not a lead, the server responds with a status of 0.
+          <ul>
+            <li>Example response for a viewer that is not a lead:
+              <pre>
+  /**/ typeof jsonpCallback_2935650618 === 'function' &amp;&amp;
+   jsonpCallback_2935650618({"status":0});</pre>
+            </li>
+            <li>Example response for a viewer that is a lead:
+              <pre>
+  /**/ typeof jsonpCallback_45936049288 === 'function' &amp;&amp;
+   jsonpCallback_45936049288({"status":1,"eloqua":{"contactId":"5","internalId":"CTCPB000000000005"}});</pre>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+    <section class="bcls-section">
+      <h2 id="sync">Sync issues</h2>
+      <p>Below are some common sync issues we have seen.</p>
+      <h3>Marketo REST view events fail to sync with the error Activity type id ‘000000’ not found</h3>
+      <p>This happens when the custom Marketo activity associated with the integration has been deleted. When a Marketo REST integration is created, we fetch the activity, store its ID, and use that ID to sync events. The solution (assuming a new Brightcove Video View activity has been created) is to disconnect and re-create the integration to pick up the ID of the new activity.</p>
+      <h3>View Events not Syncing</h3>
+      <p>When the integration is correctly set up with a MAP, viewing data from a Campaign-enabled player should populate the <strong>All Recent Activity</strong> page and view events corresponding to a known lead in the respective MAP should eventually sync to the tool.</p>
+      <p>First, ensure view data is being displayed on the <strong>All Recent Activity</strong> page:</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="viewer activity" src="/assets/images/s-campaign-img/admin/node18487-viewer-activity.png" /></figure>
+      <p>If view events are listed but are not in the MAP, the user may have authorized Campaign with their MAP as a user that doesn’t have sufficient permissions to import view data into the MAP via the API or the integration is not correctly configured. The Campaign homepage lists the status of recent view event sync operations. Feedback should be available there to indicate why view events are not syncing to the MAP.</p>
+      <p>If view events are showing up in Campaign, check to see if the <strong>Status</strong> column is <strong>synced</strong>. This indicates that Campaign was able to successfully deliver the data into your MAP. If you see a status of <strong>unknown_contact</strong>, this means the user was not known and your MAP cannot receive it. Most MAPs only accept third-party data for known users. The solution is to use a custom lead form created in your MAP to ensure you are indeed a known user.</p>
+      <p>If view events are not listed, Campaign may have not been setup with a Campaign-enabled player. Using a browser with developer tools enabled, visit a page that contains the problematic video and ensure that certain HTTP calls are made by the Campaign plugin.</p>
+      <p>When the player loads, the plugin should make a call to the Campaign config endpoint to obtain parameters that determine the behavior of the plugin based on the integration:</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="plugin config" src="/assets/images/s-campaign-img/admin/node18487-debug-config.png" /></figure>
+      <p>If this call is missing from the network traffic, it means the player has not been assigned an integration. For information on how to do this, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p>
+      <p>This call is made using JSONP. If the JSONP response is an empty object, then it is possible the embed code is incorrect and specifies the wrong account ID. An empty object will be returned from this endpoint if the config request fails to include both account and player URL parameters or if the specified account could not be retrieved from the Campaign-specific database (most likely the wrong account was specified in the URL/embed code and it was not found in the database).</p>
+      <pre>
+  /**/ typeof jsonpCallback_78754666587 === 'function' &amp;&amp; jsonpCallback_78754666587({});</pre>
+      <p>If the object has an ID parameter, but is missing an integration parameter, the user has not set up an integration with their marketing automation tool and view events will not be recorded.</p>
+      <p>You will also have data sync issues if the Standard Embed (iframe) code was used when publishing the Campaign-enabled player. Use the Advanced Embed (in-page) code when publishing your player. Standard Embed (iframe) publishing code will not work as the Campaign plugin will be running inside of an iframe and therefore will be unable to access the parent page cookies or&nbsp;URL parameters.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="connection">Connection issues</h2>
+      <h3>The Campaign module says that it can’t setup an Eloqua integration</h3>
+      <p>Check the<a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html#requirements"> requirements for Eloqua</a>. If you are using the IP whitelist security feature, Campaign won’t be able to communicate with Eloqua unless you whitelist the specified IP addresses to allow Campaign - Eloqua traffic. Contact <a href="https://supportportal.brightcove.comlanguage=en_US/create">Brightcove Support</a> for more information.</p>
+      <h3>Campaign says that my Marketo REST custom activity is missing fields, but when I look in Marketo, I can see that all fields exist</h3>
+      <p>There are a few things to check:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>The field names must match exactly. "Event 1" is not the same as "Event1".</li>
+        <li>The activity must be approved and not in a draft state.</li>
+        <li>If you deleted the custom activity and re-created it without setting up a new Marketo REST integration, you must disconnect your old integration and create a new one. We lookup the custom activity and store its ID value for each integration. If the ID changes by deleting it, we won’t be able to pick up the new one automatically.</li>
+        <li>If new fields were recently added to the activity it could take up to 24 hours for the change to take effect in Marketo’s system.</li>
+      </ol>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1760,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 03 Jun 2022
 </div>
 
 

@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="This topic contains some of the common questions asked about Brightcove Campaign.">
   
-  <title>How To: Create a Page</title>
+  <title>Brightcove Campaign FAQ</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/general/">General Information</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Brightcove Campaign FAQ</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,146 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Brightcove Campaign FAQ</h1>
+    <summary>This topic contains some of the common questions asked about Brightcove Campaign.</summary>
+    <section class="bcls-section" id="why-how">
+      <h2>Why Campaign & How it Works</h2>
+      <dl>
+        <dt class="bcls-question">Why do I need to track video in my marketing automation solution?</dt>
+        <dd class="bcls-answer">Marketing automation solutions do not track video today. If you are investing in video as a powerful piece of content, you should make sure you are tracking its effectiveness and automating communications with leads/users who view your content. </dd>
+        <dt class="bcls-question">Does Brightcove and the Campaign module make use of any cookies?</dt>
+        <dd class="bcls-answer">The Campaign module creates and uses a 3rd party cookie to identify users when an integration is in place.  This way, viewers don't get asked to fill out a lead form a second time. The module also makes use of Marketo, HubSpot, and Eloqua APIs, which themselves use cookies to track viewers.  When using Campaign Profiles, a Brightcove cookie is used.</dd>
+        <dt class="bcls-question">Is Brightcove Campaign enabled for all customers?</dt>
+        <dd class="bcls-answer">No. Campaign is available as a purchasable add-on to Video Marketing Suite (VMS).  Campaign Profiles, however, is available to every Brightcove customer for free.  You can think of it as &quot;Campaign-lite&quot;.</dd>
+        <dt class="bcls-question">Who is eligible for Campaign Profiles.</dt>
+        <dd class="bcls-answer">Starting in Q4 2017, every VMS customer will have access to Campaign Profiles at no cost. <a href="/campaign/integrations/non-map/using-campaign-module-track-viewers.html">Customers will need to activate it to start tracking data</a>.  Enterprise Video Suite (EVS) customers will also have Campaign SSO tracking available.</dd>
+      </dl>
+    </section>
+    <section class="bcls-section" id="tracking-limitations">
+      <h2>Viewer Tracking & Limitations</h2>
+      <dl>
+        <dt class="bcls-question">What limitations does Campaign Profiles have compared to the full-featured Campaign module?</dt>
+        <dd class="bcls-answer">
+          <ul>
+            <li>No integrations with any third party systems</li>
+            <li>No API access</li>
+            <li>No custom lead forms (Campaign lead forms only)</li>
+            <li>1000 views/24 hour period capture maximum</li>
+          </ul>
+          You can still manually export Campaign data to a CSV or XLS file.</dd>
+        <dt class="bcls-question">What limitations/requirements does Campaign have when connected to a marketing automation platform?</dt>
+        <dd class="bcls-answer">Limitations and requirements are outlined in the documentation for each platform:
+          <ul>
+            <li><a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">Oracle Eloqua</a></li>
+            <li>HubSpot (<a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">Client-Side APIs</a> or <a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">REST APIs</a>)</li>
+            <li>Marketo (<a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">Munchkin</a> or <a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">REST APIs</a>)</li>
+            <li><a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html">Salesforce</a></li>
+          </ul>
+        </dd>
+        <dt class="bcls-question">Are there any limits on how often the Audience API can be polled? I know there's a 1000 cap on video search results, but are there other frequency related caps to that API endpoint? </dt>
+        <dd class="bcls-answer">The max # of view events per API call is actually 100. There's no rate-limiting in place, but if you try to call it too much, it will probably slow down  a bit.</dd>
+        <dt class="bcls-question">Is there any way to get Campaign data faster than the 3 hour delay that is currently present? I'd like to get &quot;close to real-time&quot; metrics.</dt>
+        <dd class="bcls-answer">No. If you want real-time metrics, you'd need to write your own plugin and send data to your own system.</dd>
+        <dt class="bcls-question">What is the trigger for an event view to be sent to Campaign? Is it when the video completes, when the player window is closed, or something else? What happens if the user never completes the video and doesn't close their player window?</dt>
+        <dd class="bcls-answer">It varies, but, basically, the Campaign plugin sends a heartbeat back to the server every 10 seconds.</dd>
+        <dt class="bcls-question">When does Campaign consider tracking on a view to be "completed"? Is it when the player window is closed or if they complete the video? What happens if they watch partway through, pause the video and never close the player window?</dt>
+        <dd class="bcls-answer">It is when 15 minutes have passed since we last saw a heartbeat, basically lack of activity.</dd>
+        <dt class="bcls-question">Is it possible for viewer data to change once it's available in the Campaign viewing data? Will that event data ever be updated in the future by some kind of log consolidation? </dt>
+        <dd class="bcls-answer">Once the data is available in Campaign via the UI or API, it's considered &quot;settled&quot;, and it's not going to change.</dd>
+      </dl>
+    </section>
+    <section class="bcls-section" id="data-protection">
+      <h2>Data protection & record retention</h2>
+      <dl>
+        <dt class="bcls-question">Is Campaign GDPR compliant?</dt>
+        <dd class="bcls-answer">
+          <p>Yes, Campaign gives customers the ability to act on behalf of their users, looking up and purging any data they've collected via Campaign. </p>
+          <p><a href="/campaign/admin/managing-viewer-data.html">https://studio.support.brightcove.com/campaign/admin/managing-viewer-data.html</a></p>
+        </dd>
+        <dt class="bcls-question">How long can data be retained in Campaign?</dt>
+        <dd class="bcls-answer">MAP integrations can be set to a maximum of 6 months, and non-MAP integrations can be set to 3 years. </dd>
+        <dt class="bcls-question">How long are GUID lookups cached?</dt>
+        <dd class="bcls-answer">30 days for known and 7 days for unknown (only applies to MAP integrations, no lookups needed for non-MAP integrations)</dd>
+      </dl>
+    </section>
+    <section id="marketing-automation" class="bcls-section">
+      <h2>Marketing automation & viewer analytics</h2>
+      <dl>
+        <dt class="bcls-question">What is different about tracking video from any other media in my marketing automation platform?</dt>
+        <dd class="bcls-answer">As opposed to a web page or downloadable white paper, with a video, you can determine exactly how much of the video the viewer watched and, therefore, exactly what content they have been exposed to. </dd>
+        <dt class="bcls-question">How do you connect with my Eloqua/Marketo/HubSpot account?</dt>
+        <dd class="bcls-answer">You are able to log into your Eloqua/Marketo/HubSpot account directly through the Video Marketing Suite in the Campaign module. From there, you are able to create players and lead forms with MAP tracking built-in, so you can start tracking video analytics immediately.</dd>
+        <dt class="bcls-question">Can I track views on my Eloqua/Marketo/HubSpot pages as well as my non-Eloqua/Marketo/HubSpot landing pages (Sitecore/WordPress/Gallery etc)? </dt>
+        <dd class="bcls-answer">Yes, as long as the player being used is “Campaign enabled” (has the Campaign plugin installed), all views will be tracked whether the player resides on a MAP landing page or any other landing page.</dd>
+        <dt class="bcls-question">What can I track with this integration?</dt>
+        <dd class="bcls-answer">With our integration, you can track video viewing analytics (video, video ID, percent viewed, time watched) for known contacts already in your database.</dd>
+        <dt class="bcls-question">What about unknown contacts?  Can I track them too?</dt>
+        <dd class="bcls-answer">With Brightcove Campaign, you can track unknown contacts, and then when they submit an Eloqua/HubSpot form (become known), Campaign is able to associate their viewership information with that new contact retroactively. Campaign resubmits viewership information daily to match view data from unknown contacts back to your Oracle Eloqua/HubSpot instance. </dd>
+        <dt class="bcls-question">Where will my video-view data show up in my MAP?</dt>
+        <dd class="bcls-answer">This depends on which MAP you are using.  See the following documentation for <a href="/campaign/integrations/eloqua/eloqua-integration-testing-guide.html">Oracle Eloqua</a>, <a href="/camapign/integrations/marketo/marketo-rest-integration-testing-guide.html">Marketo</a> and <a href="/campaign/integrations/hubspot/hubspot-rest-api-integration-testing-guide.html">HubSpot</a>.</dd>
+        <dt class="bcls-question">Where in Salesforce will my video viewing data show up?</dt>
+        <dd class="bcls-answer">Video views are delivered into Salesforce as a task under the viewer's contact in the Activity section. See <a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html#sfdata">Viewing video data in Salesforce</a> for an example of this. </dd>
+        <dt class="bcls-question">Can I be notified with Salesforce when one of my contacts has watched videos?</dt>
+        <dd class="bcls-answer">Not directly.  However, you can run reports that would notify you of a contact's activity.</dd>
+        <dt class="bcls-question">Is there any difference between tracking with Salesforce vs. Oracle Eloqua/Marketo?</dt>
+        <dd class="bcls-answer">The biggest difference is that Salesforce does not use cookies to track users.  Therefore, a unique identifier should be passed to identify the viewer.  See <a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html#identify">this document</a> for more info.  Additionally, Salesforce, being a CRM, does not offer automated follow-ups or lead scoring.  However, you can create tasks in Salesforce, which are then assigned to your sales team for real-life follow-ups.</dd>
+        <dt class="bcls-question">Campaign has a “Custom” integration option, what other platforms can Campaign integrate with using this?</dt>
+        <dd class="bcls-answer">
+          <p>Campaign can “integrate” with any data platform that:</p>
+          <ol>
+            <li>Uses a unique identifier for each contact record</li>
+            <li>Has an API that can receive additional data from third-party platforms (like Campaign)</li>
+          </ol>
+        </dd>
+      </dl>
+    </section>
+    <section id="lead-forms" class="bcls-section">
+      <h2>Player Lead Forms</h2>
+      <dl>
+        <dt class="bcls-question">When does Campaign display a lead form?</dt>
+        <dd class="bcls-answer">The default setting only displays the lead form to an unknown user in your MAP database (the ones you want to convert into a known user).  You can override this in the settings if you choose to always display the lead form.  This is most useful for testing.  Known users are automatically tracked, and that data is associated with the contact in your MAP without the need to display a form.</dd>
+        <dt class="bcls-question">Can I customize lead forms?</dt>
+        <dd class="bcls-answer">You can adjust the text and fields displayed using the  UI.  You can not modify it beyond what is available in the UI (Gallery can update some styling to make the forms match the site) </dd>
+      </dl>
+    </section>
+    <section id="general" class="bcls-section">
+      <h2>General topics</h2>
+      <dl>
+        <dt class="bcls-question">Which embed code should I use? Iframe or in-page?</dt>
+        <dd class="bcls-answer">For Campaign to work, it is required that the Advanced embed code is used.  If the Standard (iframe) embed code is used, then the player is isolated from the page, which means the Campaign plugin cannot see the unique identifier, and thus, all users will be seen as “unknown”.</dd>
+        <dt class="bcls-question">What is marketing automation?</dt>
+        <dd class="bcls-answer">Marketing automation is a technology that tracks lead/user interaction with different online marketing channels (email, web, forms, content, video, social, etc.). Marketing automation helps marketers market more effectively across these channels and automates repetitive marketing tasks (such as email communications). Marketing automation allows the marketer to set up automated and personalized tasks based on predefined variables. 
+          For example, if a user watches 75% of a specific video, send them an email on that specific subject, but if they only watch 12%, send them something else. </dd>
+        <dt class="bcls-question">Is Brightcove a marketing automation company?</dt>
+        <dd class="bcls-answer">No, Brightcove provides a complete solution for video marketing. With our solution, you can get your videos online, organize your content, create players, create video portals, track analytics, and integrate with your own existing marketing automation platform. Brightcove integrates video analytics into marketing automation platforms.</dd>
+        <dt class="bcls-question">How can I check to see if a Marketo custom activity is set up correctly?</dt>
+        <dd class="bcls-answer">Campaign has a hidden URL which offers some debugging tools for certain kinds of integrations, Marketo REST being one. <a href="https://studio.brightcove.com/products/videocloud/campaign/debug">https://studio.brightcove.com/products/videocloud/campaign/debug</a>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Campaign settings " src="/assets/images/s-campaign-img/general/faq-debug.png" /></figure>
+        </dd>
+        <dt class="bcls-question">What needs to be done to configure a custom integration?</dt>
+        <dd class="bcls-answer">Three things need to be done:
+          <ol>
+            <li>You need to expose a unique identifier in the URL or code of the page that Campaign can capture.</li>
+            <li> Create a script that makes use of the Audience API's to retrieve the data as a JSON file (Brightcove Global Services can help with this).</li>
+            <li> Map the data to fields  in your destination database (think spreadsheet merge).</li>
+          </ol>
+          The following support documentation covers these tasks:
+          <ul>
+            <li><a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">Creating Custom Integrations with the Campaign Module</a> - Covers how to provide a unique identifier that Campaign can capture</li>
+            <li> <a href="/campaign/develop/overview-audience-api.html">Audience API</a> -  Covers how to programmatically retrieve all the data as a JSON file which you can then import into your data processing system of choice</li>
+          </ul>
+        </dd>
+        <dt class="bcls-question">How does Campaign push CDO data to Eloqua?</dt>
+        <dd class="bcls-answer">We use the custom object bulk API. <a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/api-bulk-2.0-customobjects.html">https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/api-bulk-2.0-customobjects.html </a></dd>
+        <dt class="bcls-question">How does Campaign push the external asset activity? How can I control the Campaign, External Asset, and Activity Types used?</dt>
+        <dd class="bcls-answer">We using the external activity API (<a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-rest-2.0-data-activity-post.html">https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-rest-2.0-data-activity-post.html</a>). There's no control over the name of the campaign, asset name or type. We simply create a campaign on our own (named BrightcoveVideoPlay) and then proceed to create activities, also named BrightcoveVideoPlay. </dd>
+        <dt class="bcls-question">What IP addresses can I whitelist so that Campaign can talk to service X?</dt>
+        <dd class="bcls-answer">Campaign has established a set of IP addresses that should be used for IP whitelisting. To see the list, edit an Eloqua connection and click the <a ng-click="showInfo()" ng-if="::!ctrl.hideWhitelistInfo && ctrl.isEloqua(ctrl.integration)" context="troubleSeeing"><strong>Unable to see Campaign data in Eloqua?</strong></a> link to see the list of IP addresses.</dd>
+      </dl>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1819,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 03 Jun 2022
 </div>
 
 

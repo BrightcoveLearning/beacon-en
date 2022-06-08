@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="In this topic you will learn how to use a HubSpot form to capture lead data inside of a Brightcove Player.">
   
-  <title>How To: Create a Page</title>
+  <title>Creating Custom Lead Forms for HubSpot</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/integrations/hubspot/">HubSpot</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Creating Custom Lead Forms for HubSpot</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,119 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Creating Custom Lead Forms for HubSpot</h1>
+    <summary>In this topic you will learn how to use a HubSpot form to capture lead data inside of a Brightcove Player.</summary>
+    <section class="bcls-section">
+      <p>The Campaign module provides the ability to create custom lead forms which allow you to capture viewer information as videos are played inside of Brightcove players. The lead data is sent to, and processed by, HubSpot.</p>
+      <p>To create a custom lead form, the following steps must be performed.</p>
+      <ol>
+        <li><a href="#form">Create a form in HubSpot</a></li>
+        <li><a href="#edit">Copy and edit the form embed code</a></li>
+        <li><a href="#leadform">Create a custom lead form in the Campaign module</a></li>
+        <li><a href="#player">Assign the lead form to a player</a></li>
+        <li><a href="#formdata">Validate the form data in HubSpot</a></li>
+      </ol>
+      <aside class="bcls-aside bcls-aside--information">Note: For information on standard lead forms which capture viewer information and save the data in Video Cloud, see <a href="/campaign/general/creating-campaign-lead-form.html">Creating a Campaign Lead Form</a>.</aside>
+    </section>
+    <section class="bcls-section">
+      <h2 id="form">Creating a form in HubSpot</h2>
+      <p>HubSpot forms can be used to generate lead information from website visitors. These forms can also be displayed inside of Brightcove players. The steps below will create a simple form to capture viewer information. For complete details on HubSpot forms, see the <a href="https://knowledge.hubspot.com/landing-page-user-guide-v2/how-to-create-a-form-for-your-landing-page">HubSpot documentation</a>.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Login to your HubSpot account.</li>
+        <li>Click <strong>Marketing &gt; Forms</strong>. If you are using the Classic menu, click <strong>Contacts</strong> &gt; <strong>Forms</strong>.</li>
+        <li>Click <strong>Create form</strong>.</li>
+        <li>Click <strong>Embedded form</strong> and then click <strong>Next</strong>. By default, the form will contain an <strong>Email</strong> field and a <strong>Submit</strong> button.</li>
+        <li>Make sure <strong>Blank template</strong> is selected. Click <strong>Start</strong>.</li>
+        <li>Click the default name in the header and name the form. Press <strong>Enter</strong> to save the changes. </li>
+        <li>Click the default name in the header and name the form. Press <strong>Enter</strong> to save the changes.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/hubspot/node16772-name-form.png" /></figure>
+        </li>
+        <li>The left side of the page contains a list of fields that can be added to the form. Drag and drop the <strong>First name</strong> and <strong>Last name</strong> fields that you want on the form to the right side of the page.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/hubspot/node16772-drag-field.png" /></figure>
+        </li>
+        <li>To make a field required, hover over it and click <strong>More &gt; Make required</strong>. Required fields display a * next to the field label.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/hubspot/node16772-req-field.png" /></figure>
+        </li>
+        <li>Click the <strong>Options</strong> link at the top of the page.</li>
+        <li>For <strong>What should happen after a visitor submits this form</strong>, click <strong>Display a thank you message</strong>. Keep the default message as it will never be displayed.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/hubspot/node16772-submit-form-options.png" /></figure>
+        </li>
+        <li>Click the <strong>Style &amp; preview</strong> link at the top of the page. By default, a <strong>Desktop</strong> preview will appear.</li>
+        <li>Click <strong>Publish </strong>at the top of the page to publish the changes to the form.</li>
+      </ol>
+    </section>
+    <section class="bcls-section">
+      <h2 id="edit">Copying and editing the form embed code</h2>
+      <p>To use the form inside of the Campaign module, you will need to copy and edit the form embed code. Also, you may want to do some basic styling to the form. In the steps below, we will copy the form embed code to an HTML editor and then make some styling changes to the form.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Click <strong>Share</strong> in the upper right of the page and copy the Embed code to the clipboard.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/hubspot/node16772-copy-form-embed.png" /></figure>
+        </li>
+        <li>Paste the embed code into your HTML editor of choice.</li>
+        <li>The embed code needs a small change so Campaign knows to close the form when it is submitted. Locate the line that has <strong><code translate="No"> formId:</code></strong> Add a comma at the end of the line.</li>
+        <li>Add this line below the <strong><code translate="No"> formId:</code></strong> line.
+          <pre>
+  <code translate="No">onFormSubmit: bcLeadForm.submit</code></pre>
+        </li>
+        <li>By default, when the form is displayed inside of a Brightcove Player, the form will display on a transparent background over the player. Add the following CSS to the embed code to change the background color to grey.<br />
+          <code translate="No">&lt;style&gt;<br />
+          body {<br />
+          background-color: rgba(204,204,204,0.9);<br />
+          margin: 0;<br />
+          padding: 20px;<br />
+          height: 100%;<br />
+          }<br />
+          &lt;/style&gt;</code></li>
+      </ol>
+    </section>
+    <section class="bcls-section">
+      <h2 id="leadform">Creating a custom lead form in the Campaign module</h2>
+      <p>Once the form embed code has been edited, create a custom lead form in the Campaign module and associate the lead form with a Campaign-enabled player.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Open the <strong>Campaign</strong> module.</li>
+        <li>Click <strong>Lead Forms</strong> in the left navigation. If any lead forms have been created, they will be displayed.</li>
+        <li>Click <span class="button-blue">Create Lead Form</span>.</li>
+        <li>Give the lead form a descriptive <strong>Name</strong>.</li>
+        <li>Select a <strong>Form Language</strong>.</li>
+        <li>Select the <strong>Form Timing</strong>. The form timing determines when the lead form will be displayed.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (1)" src="/assets/images/s-campaign-img/integrations/hubspot/node16772-edit-lead-form-1.png" /></figure>
+        </li>
+        <li>Set the form type to <strong>Custom Lead Form</strong>.</li>
+        <li>Paste in the <strong>Form embed code</strong>
+          <aside class="bcls-aside bcls-aside--information">Note: Confirmation HTML <strong>cannot</strong> be entered when using  Hubspot forms otherwise the lead data will not be processed.</aside>
+          .
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form" src="/assets/images/s-campaign-img/integrations/hubspot/node16772-edit-lead-form-2.png" /></figure>
+        </li>
+        <li><strong>(Optional)</strong> Click <span class="button-blue">Preview Form</span> to open a preview of the form.</li>
+        <li>Click <span class="button-blue">Save</span> to save the lead form.</li>
+      </ol>
+    </section>
+    <section class="bcls-section">
+      <h2 id="player">Assigning a lead form to a player</h2>
+      <p>Once the lead form has been created, it needs to be assigned to a player. Follow these steps to assign a lead form to a player.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Click <strong>Campaign Players</strong> in the left navigation.</li>
+        <li>Locate your player and use the <strong>Lead Form</strong> dropdown list to select the lead form.</li>
+      </ol>
+      <p>The setup is now complete and you are ready to capture lead information. When a video is published using a Campaign-enabled player, the lead form will appear according to the form timing settings.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="formdata">Validating the form data in HubSpot</h2>
+      <p>Leads captured using the custom lead form will be added as contacts in your HubSpot account. An easy way to view data captured by the lead form is to create a Smart List in HubSpot.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Login to your HubSpot account.</li>
+        <li>Click <strong>Marketing</strong> &gt; <strong>Forms</strong>.</li>
+        <li>When you mouseover a form, an <strong>Actions</strong> menu will appear. Click <strong>Actions &gt; View submissions</strong>. A list of form submissions will appear.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="assign-lead-form-to-player" src="/assets/images/s-campaign-img/integrations/hubspot/node16772-form-submissions.png" /></figure>
+        </li>
+        <li>When you mouseover a row, click <strong>View submission</strong> to view the form data.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="assign-lead-form-to-player" src="/assets/images/s-campaign-img/integrations/hubspot/node16772-submission-details.png" /></figure>
+        </li>
+      </ol>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1792,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 07 Jun 2022
 </div>
 
 

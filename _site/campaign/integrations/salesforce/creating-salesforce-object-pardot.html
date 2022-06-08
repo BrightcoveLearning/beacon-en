@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="In this topic you will learn how to create the Salesforce custom object that is required when using the Pardot integration.">
   
-  <title>How To: Create a Page</title>
+  <title>Creating a Custom Salesforce Object</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/integrations/salesforce/">Salesforce</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Creating a Custom Salesforce Object</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,136 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Creating a Custom Salesforce Object</h1>
+    <summary>In this topic you will learn how to create the Salesforce custom object that is required when using the Pardot integration.</summary>
+    <section class="bcls-section">
+      <p>In order to send data into the Pardot platform, it’s required that you send contact-level viewing data to your Salesforce CRM via a Custom Object. You can then use the native capabilities of Pardot and Salesforce CRM to ingest the new Custom Object into Pardot.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="requirements">Requirements</h2>
+      <p>To use the Salesforce - Pardot integration, you must:</p>
+      <ul>
+        <li>Have the Salesforce and Pardot Connector installed and configured. Contact your Pardot Account Manager if you need assistance. </li>
+        <li>Have an available Custom Object mapping available in your Pardot account. Contact your Salesforce Account Manager if you need to purchase additional object mappings. </li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">Note:  The Campaign-Pardot integration has been developed specifically for Version 4 of the API.</aside>
+    </section>
+    <section class="bcls-section">
+      <h2 id="sf-objects">Salesforce objects</h2>
+      <p>Objects are database tables that allows you to store data specific to the organization in Salesforce.
+        There are two type of objects in Salesforce:</p>
+      <ul>
+        <li> <strong>Standard Objects</strong> - 
+          The objects provided by salesforce.com are called standard objects. Examples of standard objects are Accounts, Contacts, Opportunities, Leads, Products, Campaigns, Cases, Users, Contracts, Reports, and Dashboards</li>
+        <li><strong>Custom Object</strong> - 
+          The objects created by  users are called custom objects. Custom objects store information that is unique and important to your organization and provide a structure for sharing data.
+          Video viewing data can be sent from Brightcove Players to Salesforce using custom objects. Different fields with different data types can be added to the object. A lookup relationship essentially links two objects together so that you can “look up” one object from the related items on another object. We can create a look up relationship between the custom object and a Contact.</li>
+      </ul>
+    </section>
+    <section class="bcls-section">
+      <h2 id="object-creation">Creating a custom object</h2>
+      <p>Contacts are the users whose behavior you wish to track or keep records in Salesforce. There should be a relationship between the custom object that is created below and the Contact object in Salesforce in order to get data related to the correct user. To create this custom object, follow these steps:</p>
+      <aside class="bcls-aside bcls-aside--information">Note: The screen images below were taken using the Salesforce Lightning interface.</aside>
+      <ol class="bcls-tasklist">
+        <li>Login to Salesforce.</li>
+        <li>Click on the gear icon in the top right corner to open the <strong>Setup</strong> menu.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/salesforce/sf-pardot-setup-menu.png" /></figure>
+        </li>
+        <li>In the left navigation, in the <strong>PLATFORM TOOLS</strong> section, click <strong>Objects and Fields &gt; Object Manager</strong>.</li>
+        <li>At the top of the <strong>Object Manager</strong> page, click <strong>Create &gt; Custom Object</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/salesforce/sf-pardot-create-custom-object.png" /></figure>
+        </li>
+        <li>Enter a <strong>Label</strong>. Brightcove recommends using <code translate="No">BC Video View</code>. </li>
+        <li>Enter a <strong>Plural Label</strong>. Brightcove recommends using <code translate="No">BC Video Views</code>.</li>
+        <li>Enter an <strong>Object Name</strong>. An initial value will be generated based upon the <strong>Label</strong> value.</li>
+        <li>Enter a <strong>Record Name</strong>. An initial value will be generated based upon the <strong>Label</strong> value. Confirm the <strong>Data Type</strong> is <strong>Text</strong>.</li>
+        <li>Select any <strong>Optional Features</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/salesforce/sf-pardot-new-custom-object.png" /></figure>
+        </li>
+        <li>Click <strong>Save</strong>.</li>
+        <li>On the <strong>Custom Object Detail</strong> page, locate the <strong>Custom Fields & Relationships</strong> section.</li>
+        <li>Click <strong>New</strong>.</li>
+        <li>Create the following custom fields. For all fields, set the <strong>Data Type</strong> to <strong>Text</strong> and keep the default field-level security and page layout options.
+          <table width="92%" class="bcls-table">
+            <thead class="bcls-table__head">
+              <tr>
+                <th width="40%">Field Label</th>
+                <th width="20%"><strong>Length</strong></th>
+                <th width="40%"><strong>Field Name</strong></th>
+              </tr>
+            </thead>
+            <tbody class="bcls-table__body">
+              <tr>
+                <td>Video ID</td>
+                <td valign="top"><p>200</p></td>
+                <td valign="top"><p>Video_ID</p></td>
+              </tr>
+              <tr>
+                <td>Player ID</td>
+                <td valign="top"><p>200</p></td>
+                <td valign="top"><p>Player_ID</p></td>
+              </tr>
+              <tr>
+                <td>Page URL</td>
+                <td valign="top">200</td>
+                <td valign="top">Page_URL</td>
+              </tr>
+              <tr>
+                <td>Time Stamp</td>
+                <td valign="top">200</td>
+                <td valign="top">Time_Stamp</td>
+              </tr>
+              <tr>
+                <td>Total Time Watched</td>
+                <td valign="top">200</td>
+                <td valign="top">Total_Time_Watched</td>
+              </tr>
+              <tr>
+                <td>Percentage Watched</td>
+                <td valign="top">200</td>
+                <td valign="top">Percentage_Watched</td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Confirm all the fields have been created.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/salesforce/sf-pardot-all-custom-fields.png" /></figure>
+        </li>
+        <li>In the <strong>Custom Fields &amp; Relationships</strong> section, click <strong>New</strong>.</li>
+        <li>Select <strong>Lookup Relationship</strong> and click <strong>Next</strong>.</li>
+        <li>In the <strong>Related To</strong> dropdown, select <strong>Contact</strong>. Click <strong>Next</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/salesforce/sf-pardot-related-to.png" /></figure>
+          <p>This will associate the BC Video View custom object with a Contact in Salesforce.</p>
+        </li>
+        <li>For the <strong>Field Name</strong>, enter <strong>Contact</strong>. Click <strong>Next</strong>.</li>
+        <li>Keep the default field-level security options. Click <strong>Next</strong>.</li>
+        <li>On the reference field page (step 5) click <strong>Next</strong>.</li>
+        <li>On the custom related lists page (step 6) click <strong>Save</strong>.</li>
+      </ol>
+      <p>Typically, when using the Pardot integration type, you will select the <strong>Advanced</strong> Mapping Type in Brightcove Campaign and then map the view fields to the Salesforce custom object you created.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="pardot-data">Viewing data in Pardot</h2>
+      <p>Once the data is synced, you can view the objects and data in Pardot.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>In the left navigation, hover over <strong>Admin</strong> and click <strong>Custom Objects</strong>. </li>
+        <li>Click <strong>+ Add Custom Object</strong>.</li>
+        <li>Select the <strong>BC Video View</strong> custom object.</li>
+        <li>In the left navigation, hover over <strong>Prospects</strong> and click <strong>Prospect List</strong>. The contacts which have been created in Salesforce will be displayed.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/salesforce/sf-pardot-prospect-list.png" /></figure>
+        </li>
+        <li>Click on a prospect name.</li>
+        <li>Click on the <strong>Related Objects</strong> tab. Confirm that the custom object data appears (this is the same data that is in Salesforce).
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/salesforce/sf-pardot-related-objects.png" /></figure>
+        </li>
+        <li>Click on video name to view the details.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-campaign-img/integrations/salesforce/sf-pardot-video-details.png" /></figure>
+        </li>
+      </ol>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1809,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 07 Jun 2022
 </div>
 
 

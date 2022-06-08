@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="This topic explains how to configure the Campaign module for use with Oracle Eloqua.">
   
-  <title>How To: Create a Page</title>
+  <title>Integrating Video Cloud with Oracle Eloqua</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/integrations/eloqua/">Eloqua</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Integrating Video Cloud with Oracle Eloqua</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,157 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Integrating Video Cloud with Oracle Eloqua</h1>
+    <summary>This topic explains how to configure the Campaign module for use with Oracle Eloqua.</summary>
+    <section class="bcls-section">
+      <p>The Campaign module allows Video Cloud to synchronize viewing data from Brightcove Players to Oracle Eloqua. Once in Oracle Eloqua, this data can be used for segmentation, campaign logic, reports, lead scoring, and personalizing communications. The Campaign module integration with Oracle Eloqua consists of two main components:</p>
+      <ul>
+        <li>A Brightcove Player plug-in to enable tracking of video views data</li>
+        <li>A synchronization process to send tracking data from Video Cloud to Oracle Eloqua</li>
+      </ul>
+    </section>
+    <section class="bcls-section">
+      <h2 id="requirements">Requirements</h2>
+      <p>To use the Campaign module with Oracle Eloqua, you must:</p>
+      <ul>
+        <li>Have a Professional or Enterprise Video Cloud account</li>
+        <li>Have the Campaign module enabled for your account by submitting the required information in the initial splash screen that appears when you open the Campaign module</li>
+        <li>Click through the service agreement the first time you use the module</li>
+        <li>Use the Advanced Embed (in-page) publishing code when publishing your player; Standard Embed (iframe) publishing code will not work as the plugin will be running inside of an iframe and therefore will be unable to access any parent page URL parameters and may not get the correct cookies</li>
+        <li>Have Oracle Eloqua 10 and credentials to login at: <a href="https://login.eloqua.com/">https://login.eloqua.com</a>
+          <aside class="bcls-aside bcls-aside--information">Note: These credentials are entered into an Oracle Eloqua login page and are not provided directly to Brightcove.</aside>
+        </li>
+        <li>The credential being used to login to Oracle Eloqua should be added to the <strong>Advanced Users - Marketing</strong> group and have the following permissions:
+          <ul>
+            <li>Consume API</li>
+            <li>Install Cloud Applications</li>
+            <li>Set-up Marketing Campaigns</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section class="bcls-section">
+      <h2 id="features">Features</h2>
+      <p>Some of the key features of the Video Cloud - Oracle Eloqua integration are:</p>
+      <ul>
+        <li><strong>Lead forms</strong> - Create Eloqua forms that will appear automatically as viewers watch videos. For information, see <a href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html">Creating Custom Lead Forms for Oracle Eloqua</a>.</li>
+        <li><strong>Data format</strong> - Video cloud viewing data is delivered to a custom data object (CDO) in Oracle Eloqua. The data that is replicated to Oracle Eloqua is as follows:
+          <ul>
+            <li>Video Name</li>
+            <li>Video ID</li>
+            <li>Account ID (Video Cloud)</li>
+            <li>Page URL (URL of the referring page)</li>
+            <li>Player ID (Video Cloud player)</li>
+            <li>% Watched</li>
+          </ul>
+        </li>
+        <li><strong>Data transfer</strong> - Viewing data is synced hourly and it can take 2-4 hours to appear in Oracle Eloqua</li>
+        <li><strong>Data retention</strong> - Data collected can optionally be retained in Video Cloud for up to 1 month</li>
+      </ul>
+    </section>
+    <section class="bcls-section">
+      <h2 id="setupConnection">Setting up the connection</h2>
+      <p>Before configuring the integration with Eloqua, we recommend that you open a new browser window and manually log out of your Eloqua account. This will ensure that when you configure the integration, you will be prompted to login to your Eloqua account and you can confirm that you are using the correct account.</p>
+      <p>Follow these steps to setup the connection between Video Cloud and Oracle Eloqua.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Open the <strong>Campaign</strong> module.</li>
+        <li>In the left navigation, click <strong>Data Connections</strong>.</li>
+        <li>Click <span class="button-blue">Add New Connection</span>.</li>
+        <li>Select <strong>Eloqua</strong> as the integration.
+          <aside class="bcls-aside bcls-aside--information">Note: The data connections that are available are based upon your Video Cloud subscription.</aside>
+        </li>
+        <li>(Optional) Enter a <strong>Connection Name</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select eloqua" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-select-eloqua.png" /></figure>
+        </li>
+        <li>Click <span class="button-blue">Connect</span>.</li>
+        <li>Click <span class="button-blue">Connect to Eloqua</span>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connect to eloqua" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-connect-to-eloqua.png" /></figure>
+        </li>
+        <li>You will be prompted to sign in to Eloqua. Enter your Eloqua <strong>Company Name</strong>, <strong>Username</strong> and <strong>Password</strong>. Click <strong>Sign In</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Eloqua login" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-eloqua-login.png" /></figure>
+        </li>
+        <li>If the login is successful, you will prompted to install the <strong>Brightcove Video Connect for Eloqua</strong> app. Click <strong>Accept and Install</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="install app" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-eloqua-install-app.png" /></figure>
+        </li>
+        <li>You will be prompted to enable Eloqua for the account. Click <span class="button-blue">Enable</span>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="confirm account" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-confirm-enable-eloqua.png" /></figure>
+        </li>
+        <li>You will be prompted to allow <strong>Brightcove Video Connect for Eloqua</strong> to access your Eloqua account. Click <strong>Sign In</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="allow access to eloqua" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-allow-access-eloqua.png" /></figure>
+        </li>
+        <li>Confirm your company name and username and click <strong>Accept</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="allow access to eloqua" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-confirm-account.png" /></figure>
+        </li>
+        <li>You will be prompted to setup Eloqua. Click <span class="button-blue">Setup Eloqua</span>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="setup eloqua" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-setup-eloqua.png" /></figure>
+        </li>
+      </ol>
+    </section>
+    <section class="bcls-section">
+      <h2 id="configure">Configuring the integration</h2>
+      <p>Once the Video Cloud to Oracle Eloqua connection has been made, you can configure the integration.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-connected-options.png" /></figure>
+      <ol class="bcls-tasklist-restart">
+        <li>Check <strong>Sync video views to Eloqua as External Activities</strong> to sync views as external activities. External activities are another place to put information in Eloqua. Publishers may choose to do reporting or trigger things in Eloqua using external activities. For more information, see the Eloqua <a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/ExternalAssets/ExternalAssets.htm">documentation</a>.</li>
+        <li>By default, the <strong>Connection Status</strong> will be <strong>Enabled</strong>. The <strong>Connection Status</strong> determines if Video Cloud video engagement data is sent to Oracle Eloqua.
+          <ul>
+            <li><strong>Enabled</strong> - Data is collected and will be sent to Eloqua</li>
+            <li><strong>Disabled</strong> - No data is collected (integration is disabled)</li>
+          </ul>
+        </li>
+        <li>By default, <strong>Track Data for Unknown Viewers</strong> will be <strong>Disabled</strong>. This setting determines if video engagement data is saved in Video Cloud when the viewer is unknown. Only data for known viewers is sent to Eloqua.
+          <ul>
+            <li><strong>Enabled</strong> - Data for all viewers is collected and saved in Video Cloud</li>
+            <li><strong>Disabled</strong> - Data for unknown viewers is not saved in Video Cloud</li>
+          </ul>
+        </li>
+        <li>Select a data retention policy. The data retention policy determines how long the viewing data and lead form data (if using a Campaign lead form) will be retained in your Video Cloud account. Retaining data in Video Cloud allows you to recover from interrupted synchronizations. Also, Campaign will continue to retry events that fail to sync (usually because the viewer isn't a known contact at the time they viewed a video) until the event ages past the data retention period. <strong>You should adjust the retention settings according to your privacy policy</strong> - it is not required to retain any user data in Video Cloud. Data will be deleted after the data retention period.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data retention options" src="/assets/images/s-campaign-img/integrations/eloqua/node15635-data-retention-options.png" /></figure>
+        </li>
+      </ol>
+      <p>To remove the integration with Oracle Eloqua, click <span class="button-red-text-border">Disconnect</span>. The bottom of the page will list all Campaign-enabled players and associated lead forms.</p>
+      <p>The Campaign module supports multiple connections to marketing platforms. Click <span class="button-blue">Add New Connection</span> to configure additional integrations.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="verify">Verifying the integration</h2>
+      <p>When the integration is configured, test the integration to confirm that video view data is being sent to Eloqua. For information on verifying the integration, see the <a href="/campaign/integrations/eloqua/eloqua-integration-testing-guide.html">Eloqua Integration Testing Guide</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="player">Creating a Campaign-enabled player</h2>
+      <p>Video engagement data will only be sent to Eloqua when you are using a Campaign-enabled video player. For information on creating a Campaign-enabled Brightcove Player, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="trackingid">Passing a tracking ID</h2>
+      <p>The Campaign module supports the ability to pass a tracking ID value to Eloqua. The tracking ID might be used to track a campaign ID for example. The tracking ID can be appended to the URL that displays the Campaign-enabled player or added to the player embed code.</p>
+      <ul>
+        <li>Example: Appended to URL</li>
+      </ul>
+      <pre>
+    http://www.myurl.com/video.html?<strong>bctrackingid=12345</strong></pre>
+      <ul>
+        <li>Example: Added to player embed code</li>
+      </ul>
+      <pre>
+    &lt;video data-video-id="6033402539001" 
+           data-account="1486906377" 
+           data-player="default" 
+           data-embed="default" 
+           data-application-id 
+           class="video-js"
+           <strong>data-bc-trackingid="12345"</strong> 
+           controls&gt;&lt;/video&gt;
+    &lt;script src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt;/script&gt;</pre>
+      <p>Campaign will then pass the value along to Eloqua as another field that is synced.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="identify">Identifying viewers</h2>
+      <p>Campaign-enabled players with an Eloqua integration will invoke Eloqua’s APIs to obtain the visitor ID, frequently referred to as the Eloqua GUID. This ID is captured in the Campaign module’s viewing data and is used to synchronize viewing data to Eloqua.</p>
+      <p>Eloqua uses its own set of cookies and when a Brightcove Player is configured with an Eloqua integration, Campaign captures the GUID in the Eloqua cookie and communicates with Eloqua server-side, to try and figure out who the user is.</p>
+      <p>The user's email address can also be passed and used to identify the viewer. For more information and an example, see <a href="/campaign/general/how-campaign-module-identifies-viewers.html#email">How the Campaign Module Identifies Viewers</a>.</p>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1830,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 07 Jun 2022
 </div>
 
 

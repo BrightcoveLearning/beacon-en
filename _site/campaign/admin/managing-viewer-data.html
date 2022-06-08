@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="In this topic you will learn how to manage viewer data in the Campaign module.">
   
-  <title>How To: Create a Page</title>
+  <title>Managing Viewer Data</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/admin/">Administering Campaign</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Managing Viewer Data</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Managing Viewer Data</h1>
+    <summary>In this topic you will learn how to manage viewer data in the Campaign module.</summary>
+    <section class="bcls-section">
+      <p>The manage viewer data option allows you to search for a user and then either remove that user or export that user's data.</p>
+      <aside class="bcls-aside bcls-aside--information">Notes:
+        <ul>
+          <li>Typically when integrating with a marketing automation platform (MAP integration) the data retention period setting is used to control how long data is retained</li>
+          <li>You must be an account administrator to access to the Manage Viewer Data menu</li>
+        </ul>
+      </aside>
+    </section>
+    <section class="bcls-section">
+      <p>To manage viewer data, follow these steps.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Open the <strong>Campaign</strong> module.</li>
+        <li>Click <strong>Manage Viewer Data</strong> in the left navigation.</li>
+        <li>Enter the user to search for. Typically this will be one of the following values:
+          <ul>
+            <li><strong>Email</strong> - When using Campaign tracking and a Campaign lead form is used or with SSO integrations</li>
+            <li><strong>User ID</strong> - When using SSO or custom integrations</li>
+            <li><strong>Custom GUID</strong> - For anonymous users</li>
+            <li><strong>External GUID</strong> - When a MAP integration is being used</li>
+          </ul>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export lead data" src="/assets/images/s-campaign-img/admin/node18548-search.png" /></figure>
+        </li>
+        <li>If a match is found, select an action:
+          <ul>
+            <li><span class="button-red-text-border">Delete Viewer Data</span> - Remove viewing and lead data for the user</li>
+            <li><span class="button-blue">Export Viewer Data</span> - Export the lead and view event data for the user. The lead data will contain the data that was entered into a Campaign lead form. The view event data contains all of the view events for the viewer.</li>
+          </ul>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export lead data" src="/assets/images/s-campaign-img/admin/node18548-select-action.png" /></figure>
+        </li>
+      </ol>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1716,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 03 Jun 2022
 </div>
 
 

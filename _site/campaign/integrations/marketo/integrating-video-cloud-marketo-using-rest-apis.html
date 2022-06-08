@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="This topic explains how to configure the Campaign module for use with Marketo using the REST APIs.">
   
-  <title>How To: Create a Page</title>
+  <title>Integrating Video Cloud with Marketo Using the REST APIs</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/integrations/marketo/">Marketo</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Integrating Video Cloud with Marketo Using the REST APIs</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,97 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Integrating Video Cloud with Marketo Using the REST APIs</h1>
+    <summary>This topic explains how to configure the Campaign module for use with Marketo using the REST APIs.</summary>
+    <section class="bcls-section">
+      <p>The Campaign module allows Video Cloud to synchronize viewing data from Brightcove Players to Marketo. Once in Marketo, this data can be used for segmentation, campaign logic, reports, lead scoring, and personalizing communications.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: For information on how to configure the Campaign module for use with Marketo using the Munchkin ID, see <a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">Integrating Video Cloud with Marketo using Munchkin</a>.</aside>
+      <p>The Campaign module integration with Marketo consists of two main components:</p>
+      <ul>
+        <li>A Brightcove Player plug-in to enable tracking of video views data</li>
+        <li>A Synchronization process to send tracking data from Video Cloud to Marketo</li>
+      </ul>
+    </section>
+    <section class="bcls-section">
+      <h2 id="requirements">Requirements</h2>
+      <p>To use the Campaign module with the Marketo REST integration, you must:</p>
+      <ul>
+        <li>Create a role in Marketo which has access to all of the API permissions</li>
+        <li>Create a LaunchPoint Service</li>
+        <li>Have a Professional or Enterprise Video Cloud account</li>
+        <li>Have the Campaign module enabled for your account by submitting the required information in the initial splash screen that appears when you open the Campaign module</li>
+        <li>Click through the service agreement the first time you use the module</li>
+        <li>Use the Advanced Embed (in-page) publishing code when publishing your player; Standard Embed (iframe) publishing code will not work as the plugin will be running inside of an iframe and therefore will be unable to access any parent page URL parameters and may not get the correct cookies</li>
+      </ul>
+    </section>
+    <section class="bcls-section">
+      <h2 id="api">Creating an API-only user and LaunchPoint service</h2>
+      <p>Before you can make a call to the Marketo REST API, you need to create a new API role with access to all of the APIs, create an API-only user and then create a service that uniquely identifies your client application. The steps to complete these tasks are outlined in the <a href="https://developers.marketo.com/blog/quick-start-guide-for-marketo-rest-api/">Marketo documentation</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="setupConnection">Setting up the connection</h2>
+      <p>Once the configuration steps on the Marketo side have been completed, follow these steps to setup the connection between Video Cloud and Marketo.</p>
+      <h3 id="establishConnection">Establishing the connection between Video Cloud and Marketo</h3>
+      <ol class="bcls-tasklist-restart">
+        <li>Open the <strong>Campaign</strong> module.</li>
+        <li>In the left navigation, click <strong>Data Connections</strong>.</li>
+        <li>Click <span class="button-blue">Add New Connection</span>.</li>
+        <li>Select <strong>Marketo</strong> as the integration.
+          <aside class="bcls-aside bcls-aside--information">Note: The integrations that are available are based upon your Video Cloud subscription.</aside>
+        </li>
+        <li>(Optional) Enter a <strong>Connection Name</strong>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Campaign setup" src="/assets/images/s-campaign-img/integrations/marketo/node16341-setup-section.png" /></figure>
+        </li>
+        <li>Click <span class="button-blue">Connect</span>.</li>
+        <li>Select <strong>Standard (REST API) </strong>and then click <span class="button-blue">Save</span>.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="marketo integration type" src="/assets/images/s-campaign-img/integrations/marketo/node16341-munchkin-rest.png" /></figure>
+          <aside class="bcls-aside bcls-aside--information">Note: For information on using a Munchkin integration, see <a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">Integrating Video Cloud with Marketo using Munchkin</a>.</aside>
+          <p>You will required to paste in several values from your Marketo account. Note that you must be logged in as a Marketo administrator to complete the following steps. For the following steps, click the empty link and provide the appropriate value:</p>
+        </li>
+        <li><strong>Marketo Account ID</strong> - To get this value, in Marketo click <strong>Admin</strong> &gt; <strong>Integration</strong> &gt; <strong>Munchkin</strong>.</li>
+        <li><strong>Marketo REST API Endpoint URL</strong> - To get this value, in Marketo click <strong>Admin</strong> &gt; <strong>Integration </strong>&gt;<strong> Web Services</strong>.</li>
+        <li><strong>Marketo REST API Identity URL</strong> - To get this value, in Marketo click <strong>Admin</strong> &gt;<strong> Integration </strong>&gt;<strong> Web Services</strong>.</li>
+        <li><strong>Marketo LaunchPoint Client ID</strong> - To get this value, in Marketo click <strong>Admin</strong> &gt; <strong>Integration </strong>&gt;<strong> LaunchPoint</strong> and then click the <strong>View Details</strong> link for the LaunchPoint you created earlier as part of this setup.</li>
+        <li><strong>Marketo LaunchPoint Client Secret</strong> - To get this value, in Marketo click <strong>Admin</strong> &gt;<strong> LaunchPoint</strong> and then click the <strong>View Details</strong> link for the LaunchPoint you created earlier as part of this setup.</li>
+        <li>Click <span class="button-blue">Setup</span>.</li>
+      </ol>
+      <p>The Video Cloud connection to Marketo is now set up and ready to use.</p>
+      <aside class="bcls-aside bcls-aside--information">Note: If the correct permissions are not assigned to the Marketo user, an error will be displayed in Studio. Check your permissions and then try again.</aside>
+    </section>
+    <section class="bcls-section">
+      <h2 id="configure">Configuring the integration</h2>
+      <p>Once the Video Cloud to Marketo connection has been made, you can configure the integration.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/s-campaign-img/integrations/marketo/node16341-connected-options.png" /></figure>
+      <ol class="bcls-tasklist-restart">
+        <li>By default, the <strong>Connection Status</strong> will be <strong>Enabled</strong>. The <strong>Connection Status</strong> determines if Video Cloud video engagement data is sent to Marketo.
+          <ul>
+            <li><strong>Enabled</strong> - Data is collected and will be sent to Marketo</li>
+            <li><strong>Disabled</strong> - No data is collected (integration is disabled)</li>
+          </ul>
+        </li>
+        <li>By default, <strong>Track Data for Unknown Viewers</strong> will be set to <strong>Disabled</strong>. Enabling this option will track data for unknown users. Data will be retained based upon the selected data retention policy. If data retention is set to <strong>No retention</strong>, this field is not displayed.</li>
+        <li>Select a data retention policy. The data retention policy determines whether, and for how long, the lead information data that you capture will be retained in your Video Cloud account as well as in Marketo. Data collected can optionally be retained in Video Cloud for up to 1 month. Retaining data in Video Cloud allows you to recover from interrupted synchronizations. However, <strong>you should adjust the retention settings according to your privacy policy</strong> - it is not required to retain any user data in Video Cloud. Data will be deleted after the data retention period.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data retention options" src="/assets/images/s-campaign-img/integrations/marketo/node16341-data-retention-options.png" /></figure>
+        </li>
+      </ol>
+      <p>To remove the integration with Marketo, click <span class="button-red-text-border">Disconnect</span>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="player">Creating a Campaign-enabled player</h2>
+      <p>Video engagement data will only be sent to Marketo when you are using a Campaign-enabled video player. For information on creating a Campaign-enabled Brightcove Player, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="identify">Identifying viewers</h2>
+      <p>Campaign-enabled players with a Marketo integration will refer to the Munchkin cookie (_mkto_trk) which is created in the user's browser. This value is captured in the Campaign module’s viewing data and is used to synchronize viewing data to Marketo.</p>
+      <p>The user's email address can be passed in a <strong>bcemail</strong> URL parameter on the page that is displaying the video. For more information and an example, see <a href="/campaign/general/how-campaign-module-identifies-viewers.html#email">How the Campaign Module Identifies Viewers</a>.</p>
+    </section>
+    <section class="bcls-section">
+      <h2 id="verify">Verifying the integration</h2>
+      <p>When the integration is configured, test the integration to confirm that video view data is being sent to Marketo. For information on verifying the integration, see <a href="/campaign/integrations/marketo/marketo-rest-integration-testing-guide.html">Marketo REST Integration Testing Guide</a>.</p>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1770,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 07 Jun 2022
 </div>
 
 

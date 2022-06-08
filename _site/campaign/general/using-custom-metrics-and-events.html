@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to use the tools in the Layout module to create a page.">
+  <meta name="description" content="In this topic you will learn how to attach custom events and metrics to view events.">
   
-  <title>How To: Create a Page</title>
+  <title>Using Custom Metrics and Events</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -63,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/get-started/basics/layout/">Layout</a></li>
+      <li class="breadcrumb-item"><a href="/campaign/general/">General Information</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">How To: Create a Page</li>
+      <li class="breadcrumb-item active" aria-current="page">Using Custom Metrics and Events</li>
     </ol>
   </nav>
 </header>
@@ -1664,42 +1664,102 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>How To: Create a Page</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to use the tools in the Layout module to create a page.</summary>
-
-  <section class="bcls-section">
-    <p>Pages are used to display video content in a Brightcove Beacon application. To create a page, follow these steps:
-    </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Layout</strong> module.</li>
-      <li>At the top of the page list click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Create Page</span>. The <strong>Creating Page</strong> panel opens.</li>
-      <li>Enter a <strong>Page Name</strong>. Note that the character limit is beyond the logical limit for a page name.</li>
-      <li>Click a <strong>Layout</strong> to select it. The <strong>Layout</strong> controls how the content is displayed on the page. Selecting a layout updates the page preview on the right.
-        <figure class="bcls-figure"><img class="bcls-image" alt="" src="/assets/images/s-layout-img/basics/pages-layout.png" /></figure>
-      </li>
-      <li>Click <span class="button-blue">Create</span>.</li>
-      <li>Click <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add playlist</span>. The <strong>Choose Playlist</strong> panel opens displaying a list of created playlists.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/basics/pages-choose-playlist.png" alt="choose playlist">
-        </figure>
-      </li>
-      <li>Select one or more playlists to add to the page by hovering over the playlist and then clicking <span class="button-blue-text"><img src="/assets/images/common/plus-in-square.png"> Add</span>. As playlists are added, they appear on the page preview. Note that some layouts only accept one playlist.
-      </li>
-      <li>Click <strong>X</strong> to close playlists panel.</li>
-      <li>To make the new page visible in your apps, click <span class="button-blue">Publish</span> at the top of the navigation panel.</li>
-      <li>Click <strong>Back to All Pages</strong> to return to the list of pages.</li>
-    </ol>
-    <p>The page that was created appears in the list of pages. To edit any of the page details, click on the page name.
-    </p>
-  </section>
-  <section class="bcls-section">
-    <h3>Related</h3>
-    <ul>
-      <li><a href="/layout/creating-managing-pages.html">Creating and Managing Pages </a></li>
-    </ul>
-  </section>
-</article>
+    <h1>Using Custom Metrics and Events</h1>
+    <summary>In this topic you will learn how to attach custom events and metrics to view events.</summary>
+    <section class="bcls-section">
+      <p>The Campaign player plugin includes a client-side API for attaching custom events and metrics to view events. The following example outlines how to track custom events and metrics.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Obtain a reference to the Brightcove Player. This example assumes that an <code translate="No">id</code> of <code translate="No">myPlayerID</code> has been added to the player embed code.
+          <pre>
+    <code class="language-javascript" translate="No">
+  var player = videojs(‘myPlayerID’);
+    </code>
+    </pre>
+        </li>
+        <li>Listen for the Audience ready event, <code translate="No">audience:ready</code>.
+          <pre>
+    <code class="language-javascript" translate="No">
+  player.on(‘audience:ready’, function() {
+    // player.audience is now available for use
+  });
+  </code></pre>
+        </li>
+        <li>To track a string value, call <code translate="No">player.audience.track(‘event[1-3]’, ‘value’)</code>. To track a numeric value, call <code translate="No">player.audience.track(‘metric[1-3]’, value)</code>. The return value is a boolean indicating whether or not the event was sent successfully.
+          <pre>
+    <code class="language-javascript" translate="No">
+  // Store the string value “foo” in the slot event1
+  player.audience.track(‘event1’, ‘foo’);
+  
+  // Store the string value “bar” in the slot event2
+  player.audience.track(‘event2’, ‘bar’);
+  
+  // Store the decimal value 15.08 in slot metric1
+  player.audience.track(‘metric1’, 15.08);
+  
+  // Replace the value in slot metric1 with the number 10,
+  // and validate that the call was sent successfully
+  var result = player.audience.track(‘metric1’, 10);
+  
+  if (result) {
+     console.log(‘metric sent successfully’);
+  }
+    </code>
+    </pre>
+        </li>
+      </ol>
+    </section>
+    <section class="bcls-section">
+      <h2 id="sync">Synchronization with marketing automation platforms</h2>
+      <p>Custom events/metrics stored on a view event will sync for Marketo REST and Eloqua if the fields are defined on the custom activity or CDO. Campaign will also sync custom events/metrics to HubSpot if they're defined and to Salesforce if the integration is using a <strong>Mapping Type</strong> of <strong>Advanced</strong> and the events/metrics are mapped to something.</p>
+      <h3>Marketo REST</h3>
+      <p>For Marketo REST integrations, publishers should verify that the <strong>Brightcove Video View</strong> custom activity in Marketo has the custom event and metric fields. Custom activities are located under <strong>Admin</strong> &gt; <strong>Database Management</strong>.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit custom activity" src="/assets/images/s-campaign-img/general/node18442-edit-activity.png" /></figure>
+      <p>If the fields are not in the Brightcove Video view object:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Update the <strong>Brightcove Video View</strong> custom activity to add the fields, or</li>
+        <li>Contact Marketo Support and ask them to add the fields.</li>
+        <li>After the fields have been added, return to Campaign and press the <strong>Complete Update</strong> button so Campaign can access the newly added fields.</li>
+      </ol>
+      <h3>Oracle Eloqua</h3>
+      <p>For Eloqua integrations, publishers should verify that the <strong>BrightcoveVideoView</strong> custom object has the custom event and metric fields.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit custom activity" src="/assets/images/s-campaign-img/general/node18442-eloqua-cdo.png" /></figure>
+      <p>If the fields do not exist, the fields need to be added to the <strong>BrightcoveVideoView</strong> object by either:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Reconnecting your Eloqua account, or</li>
+        <li>Using the data mapping upgrade button.</li>
+      </ol>
+      <h3>Salesforce</h3>
+      <p>For Salesforce, your Campaign connection should be using a <strong>Mapping Type</strong> of <strong>Advanced</strong>. The <strong>Event</strong> and <strong>Metric</strong> fields can be mapped to Salesforce objects.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit custom activity" src="/assets/images/s-campaign-img/general/node18442-sf-fields.png" /></figure>
+    </section>
+    <section class="bcls-section">
+      <h2 id="notes">Notes</h2>
+      <ul>
+        <li>The limit on string length for event slot values is 250 characters.</li>
+        <li>If multiple values are sent to the same event or metric slot during a single viewing session, the existing value in the slot is replaced with the new value. In the following example, the final value stored in event1 is “click3”.
+  <pre><code class="language-javascript" translate="No">
+  player.audience.track(‘event1’, ‘click1’);
+  player.audience.track(‘event1’, ‘click2’);
+  player.audience.track(‘event1’, ‘click3’);
+  </code></pre>
+        </li>
+        <li>If a view event for the session does not exist yet then one will be created.</li>
+        <li>If the result of <code translate="No">track()</code> is false indicating that the event failed to send, you can <a href="#logging">enable the verbose option</a> on the Campaign plugin to see console logging with a specific reason why.</li>
+      </ul>
+    </section>
+    <section class="bcls-section">
+      <h2 id="view">Viewing events and metrics</h2>
+      <p>Custom events and metrics will appear in the Campaign UI. In the left navigation, click <strong>All Recent Activity</strong>. If any custom events or metrics have been recorded, the <strong>Show Interaction Events</strong> link will be enabled. Click the link to display the event/metric data.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="viewing metrics" src="/assets/images/s-campaign-img/general/node18442-events-ui.png" /></figure>
+    </section>
+    <section class="bcls-section">
+      <h2 id="logging">Enabling verbose logging</h2>
+      <p>Verbose logging can be enabled by adding&nbsp;<code translate="No">bcverbose=1</code> to the URL of the page with the player or by configuring the Campaign plugin with the <code translate="No">"verbose": true</code> option:</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="configure plugin" src="/assets/images/s-campaign-img/general/node18442-plugin.png" /></figure>
+    </section>
+  </article>
+  
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1715,7 +1775,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 08 Jun 2022
+  Page last updated on 06 Jun 2022
 </div>
 
 
