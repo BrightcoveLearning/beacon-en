@@ -1792,6 +1792,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Data for same period is looked at when it was less than 32 days old, and again after it is 32 days old. After 32 days, data is moved to a separate "historical" repository, and at that point we discard some data, especially detailed engagement data. This means calculated fields such as engagement score may change slightly, because the calculation is being made on less granular data.</li>
     </ol>
   </section>
+  <section class="bcls-section">
+    <h2 id="26">26. Why are my video views in the Analytics module higher than the amount of views in the Campaign module?</h2>
+    <p>The Analytics & Campaign modules are two separate systems and it should not be expected that the view events are 1:1, as each captures separate use cases.</p>
+    <p>The Campaign lead form requires a <code>video_view</code> event to have triggered before it can display a lead form. These <code>video_view</code> events trigger when a user initiates playback, which is done by having the user manually click the Play button. As a result, even though it may not look like any content has played back, a <code>video_view</code> has been registered and will appear for your video in the Analytics module.</p>
+    <p>If you are seeing a higher number of video views in the Analytics module compared to view events in the Campaign module, the most likely reason is that a user was presented your lead form, but did not fill it out to continue through with playback.</p>
+  </section>
 </article>
 
 <!-- complete bootstrap layout -->
