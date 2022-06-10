@@ -581,6 +581,119 @@
     - name: Streaming a Live Event
       url: /live/streaming-live-event.html
 - section:
+  name: Marketing Automation
+  url: /campaign/index.html
+  docs:
+  - name: Getting Started
+    url: /campaign/get-started/index.html
+    docs:
+      - name: Getting Started with Campaign
+        url: /campaign/get-started/getting-started-campaign-module.html
+      - name: Creating a Campaign-enabled Player
+        url: /campaign/general/creating-campaign-enabled-player.html
+      - name: Overview of Video Content Types
+        url: /campaign/get-started/overview-video-content-types.html
+      - name: Using the Chrome Extension
+        url: /campaign/get-started/using-hud.html
+  - name: General Information
+    url: /campaign/general/index.html
+    docs:
+      - name: Campaign FAQ
+        url: /campaign/general/campaign-faq.html
+      - name: Campaign Fields and Data Definitions
+        url: /campaign/general/campaign-fields-and-data-definitions.html
+      - name: Configuring Campaign Settings
+        url: /campaign/general/configuring-campaign-settings.html
+      - name: Creating a Campaign-enabled Player
+        url: /campaign/general/creating-campaign-enabled-player.html
+      - name: Creating a Campaign Lead Form
+        url: /campaign/general/creating-campaign-lead-form.html
+      - name: How Campaign Identifies Viewers
+        url: /campaign/general/how-campaign-module-identifies-viewers.html
+      - name: How Video Benchmark Score is Calculated
+        url: /campaign/general/how-vbs-calculated.html
+      - name: Overview of Video Content Types
+        url: /campaign/general/overview-video-content-types.html
+      - name: Publishing a Video to Email
+        url: /campaign/general/publishing-video-email-using-campaign-module.html
+      - name: Using Custom Metrics and Events
+        url: /campaign/general/using-custom-metrics-and-events.html
+      - name: Viewing Player Events
+        url: /campaign/general/viewing-player-events-campaign-module.html
+      - name: Viewing Video Activity
+        url: /campaign/general/viewing-video-activity.html
+      - name: Viewing Viewer Profile Information
+        url: /campaign/general/viewing-viewer-profile-information.html
+      - name: Working with UTM Fields
+        url: /campaign/general/working-utm-fields-campaign-module.html
+  - name: Integrations
+    url: /campaign/integrations/index.html
+    docs:
+      - name: Eloqua
+        url: /campaign/integrations/eloqua/index.html
+        docs:
+          - name: Creating Custom Lead Forms
+            url: /campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html
+          - name: Eloqua Integration Testing Guide
+            url: /campaign/integrations/eloqua/eloqua-integration-testing-guide.html
+          - name: Embedding a Video on a Landing Page
+            url: /campaign/integrations/eloqua/embedding-video-cloud-video-eloqua-landing-page.html
+          - name: Integrating with Oracle Eloqua
+            url: /campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html
+      - name: HubSpot
+        url: /campaign/integrations/hubspot/index.html
+        docs:
+          - name: Creating Custom Lead Forms
+            url: /campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html
+          - name: HubSpot REST API Testing Guide
+            url: /campaign/integrations/hubspot/hubspot-rest-api-integration-testing-guide.html
+          - name: 'Integrating with HubSpot (Client-Side APIs)'
+            url: /campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html
+          - name: 'Integrating with HubSpot (REST APIs)'
+            url: /campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html
+      - name: Marketo
+        url: /campaign/integrations/marketo/index.html
+        docs:
+          - name: Creating Custom Lead Forms
+            url: /campaign/integrations/marketo/creating-custom-lead-forms-marketo.html
+          - name: 'Integrating with Marketo (Munchkin)'
+            url: /campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html
+          - name: 'Integrating with Marketo (REST APIs)'
+            url: /campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html
+          - name: Marketo REST Integration Testing Guide
+            url: /campaign/integrations/marketo/marketo-rest-integration-testing-guide.html
+      - name: Non-MAP
+        url: /campaign/integrations/non-map/index.html
+        docs:
+          - name: Creating Custom Integrations
+            url: /campaign/integrations/non-map/creating-custom-integrations-campaign-module.html
+          - name: Integrating with Single Sign-On
+            url: /campaign/integrations/non-map/integrating-campaign-single-sign.html
+          - name: Using Campaign to Track Viewers
+            url: /campaign/integrations/non-map/using-campaign-module-track-viewers.html
+      - name: Salesforce
+        url: /campaign/integrations/salesforce/index.html
+        docs:
+          - name: Creating Custom Lead Forms
+            url: /campaign/integrations/salesforce/creating-custom-lead-forms-salesforce.html
+          - name: Creating Salesforce Object for Pardot
+            url: /campaign/integrations/salesforce/creating-salesforce-object-pardot.html
+          - name: Integrating with Salesforce
+            url: /campaign/integrations/salesforce/integrating-video-cloud-salesforce.html
+  - name: Administering Campaign
+    url: /campaign/admin/index.html
+    docs:
+      - name: Exporting Data from Campaign
+        url: /campaign/admin/exporting-campaign-data-campaign-module.html
+      - name: Exporting Gallery Lead Data
+        url: /campaign/admin/exporting-gallery-lead-data.html
+      - name: Managing Viewer Data
+        url: /campaign/admin/managing-viewer-data.html
+      - name: Troubleshooting Campaign Issues
+        url: /campaign/admin/troubleshooting-campaign-issues.html
+  - name: Developers (Audience API)
+    url: 'https://apis.support.brightcove.com/audience/index.html'
+- section:
   name: Administering Accounts
   url: /admin/index.html
   docs:
