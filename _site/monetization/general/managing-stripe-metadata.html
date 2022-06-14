@@ -1896,7 +1896,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Adding_custom_metadata">Adding custom metadata</h2>
-    <p>Follow these steps to add custom metadata to a Stripe subscription:</p>
+    <p>You can add a set of custom key-value pairs associated with a Stripe subscription. To add metadata, you can use the Stripe API or the Stripe dashboard as follows:</p>
     <ol class="bcls-tasklist">
       <li>Log into your Stripe account.</li>
       <li>In the left navigation, select <strong>Subscriptions</strong>.</li>
@@ -1905,15 +1905,24 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/set-metadata.png" alt="set stripe metadata" />
         </figure>
-      </li>
-      
+      </li> 
+      <li>For details about adding metadata, see Stripe's <a href="https://stripe.com/docs/api/subscriptions/create#create_subscription-metadata">Create subscription metadata</a> reference.</li> 
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="Connecting_Stripe_to_Brightcove_Beacon">Connecting Stripe to Brightcove Beacon</h2>
-    <p>
-      Once you have your Stripe API keys, you will give them to Brightcove personnel who are configuring your Brightcove Beacon Experience. They will associate your Stripe API keys with your Brightcove Beacon Experience so that when you configure Stripe to be used in your apps it is associated with your account.
-    </p>
+    <h2 id="Understanding_the_Stripe_API">Understanding the Stripe API</h2>
+    <h3 id="Base_URL">Base URL</h3>
+    
+    <p>The base URL for the Stripe API is:</p>
+    
+    <pre><code class="language-http" translate="No">https://api.stripe.com</code></pre>
+
+    <h3 id="Authentication">Authentication</h3>
+    
+    <p>Requests are authenticated with your API key in the <code translate="No">Authorization </code> header:</p>
+    
+    <pre><code class="language-json" translate="No">Authorization: Bearer {api_key}</code></pre>
+    
   </section>
 </article>'
 <!-- complete bootstrap layout -->
