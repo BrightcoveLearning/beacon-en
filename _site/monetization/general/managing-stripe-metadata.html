@@ -1947,10 +1947,30 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Searching_subscriptions_with_metadata">Searching subscriptions with metadata</h2>
     <p>In a previous steip, we added custom metadata (<code translate="No">Samsung:yes</code>) to one of our subscription packages. Now, we will use the Stripe API to search for subscriptions with that metadata.</p>
+    <p>You can use the API platform of your choice to interact with the Stripe API, but for these examples, we will use Postman.</p>
     
     
     <ol class="bcls-tasklist-restart">
-      <li></li>
+      <li>Login or create an account with <a href="https://www.postman.com/">Postman</a>.</li>
+      <li>Either fork the environment template within the <a href="https://www.postman.com/stripedev/workspace/stripe-developers/overview">Postman Stripe public workspace</a>, or create a new envionment within Postman. We'll create a new environment.</li>
+      <li>
+        <p>In your workspace, click <strong>New</strong>.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/new-environment.png" alt="create new" />
+        </figure>
+      </li>
+      <li>
+        <p>In the dialog, select <strong>Environment</strong>.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/new-environment-2.png" alt="select environment" />
+        </figure>
+      </li>
+      <li>
+        <p>Add your secret key as an environment variable and click <strong>Save</strong>.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/create-key-variable.png" alt="create secret key variable" />
+        </figure>
+      </li>
 
     </ol>
 
