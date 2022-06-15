@@ -1945,10 +1945,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Searching_subscriptions_with_metadata">Searching subscriptions with metadata</h2>
-    <p>In a previous steip, we added custom metadata (<code translate="No">Samsung:yes</code>) to one of our subscription packages. Now, we will use the Stripe API to search for subscriptions with that metadata.</p>
+    <h2 id="Creating Postman environment">Creating Postman environment</h2>
     <p>You can use the API platform of your choice to interact with the Stripe API, but for these examples, we will use Postman.</p>
-    
     
     <ol class="bcls-tasklist-restart">
       <li>Login or create an account with <a href="https://www.postman.com/">Postman</a>.</li>
@@ -1971,11 +1969,41 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/create-key-variable.png" alt="create secret key variable" />
         </figure>
       </li>
-
+      <li>Click <img class="ui-image" width="16px" src="/assets/images/s-monetization-img/managing-stripe-metadata/add-tab-icon.png" alt="Add tab icon"> to open a new tab.</li>
+      <li>
+        <p>In the request dialog, do the following:</p>
+        <ul>
+          <li>Select <strong>Authorization</strong></li>
+          <li>For <strong>Type</strong>, select <strong>Bearer Token</strong></li>
+          <li>For Token, enter <code translate="No">{{secret_key}}</code></li>
+        </ul>
+        <p>If your environment is set up correctly, you should see your secret key value when you mouse over the <code translate="No">secret_key</code> variable.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/mouse-over-key.png" alt="mouse over key variable" />
+        </figure>
+      </li>
+      <li>Click <strong>Save</strong>.</li>
+      <li>In the dialog, do the following:
+        <ul>
+          <li>Add a <strong>Request name</strong></li>
+          <li>Choose or create a new collection</li>
+          <li>Click <strong>Save</strong></li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/save-request.png" alt="save request" />
+        </figure>
+      </li>
     </ol>
+  </section>
 
+  <section class="bcls-section">
+    <h2 id="Searching_subscriptions_with_metadata">Searching subscriptions with metadata</h2>
+    <p>In a previous steip, we added custom metadata (<code translate="No">Samsung:yes</code>) to one of our subscription packages. Now, we will use the Stripe API to search for subscriptions with that metadata.</p>
     
-    
+    <ol class="bcls-tasklist-restart">
+      <li>Login or create an account with <a href="https://www.postman.com/">Postman</a>.</li>
+      
+    </ol>
   </section>
 </article>'
 <!-- complete bootstrap layout -->
