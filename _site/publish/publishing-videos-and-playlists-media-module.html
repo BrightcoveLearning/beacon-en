@@ -1896,8 +1896,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ul>
     <p>If you are looking to dynamically assign video content to a player, get the <a href="/players/generating-player-embed-code.html">embed code for the player</a> and then use one of the techniques available to <a href="/publish/dynamically-assigning-videos-player.html">dynamically assign videos to a player</a>.</p>
   </section>
-  <section class="bcls-section">
-
+  <section class="bcls-section"> 
     <aside class="bcls-aside bcls-aside--information">Note: For information on creating playlists, see <a href="/media/creating-and-managing-playlists.html">Creating and Managing Playlists</a>.</aside>
   </section>
   <section class="bcls-section">
@@ -1907,13 +1906,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Open the <strong>Media</strong> module.</li>
       <li>To publish a single video, click <strong>All videos</strong> in the side navigation panel and then do one of the following:
         <ul>
-          <li>Click the checkbox next to the video and then click  <span class="button-blue">Publish &amp; Embed </span>  &gt; Publish to web</li>
-          <li>Click on the video name and then click <span class="button-blue">Publish &amp; Embed </span>  &gt; Publish to web on the video properties page</li>
+          <li>Click the checkbox next to the video and then click <span class="button-blue">Publish &amp; Embed </span> &gt; Publish to web</li>
+          <li>Click on the video name and then click <span class="button-blue">Publish &amp; Embed </span> &gt; Publish to web on the video properties page</li>
         </ul>
       </li>
       <li>To publish a playlist, click <strong>All playlists</strong> in the side navigation panel and then do one of the following:
         <ul>
-          <li>Click the check box next to the playlist and then click  <span class="button-blue">Publish &amp; Embed </span>  &gt; Publish to web</li>
+          <li>Click the check box next to the playlist and then click <span class="button-blue">Publish &amp; Embed </span> &gt; Publish to web</li>
           <li>Click on the playlist name and then click <strong>Publish Playlist </strong>on the playlist videos page</li>
         </ul>
       </li>
@@ -1952,6 +1951,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
   </section>
   <section class="bcls-section">
+    <h2 id="refid">Using reference IDs when publishing</h2>
+    <p>It is also possible to use the video or playlist reference ID when publishing. With this method, if you accidentally delete a video or playlist, you simply upload another video or re-create a playlist and assign it the same reference ID as the deleted item. For information, see <a href="/publish/using-reference-ids.html">Using Reference IDs</a>.</p>
+  </section>
+  <section class="bcls-section">
     <h2 id="appid">Adding an application ID to the embed&nbsp;code</h2>
     <p>In the past, publishers would commonly create new players with different names to use on different parts of a site or to use on different sites. When reviewing player analytics, having different player names made it easier to determine which players were getting the most views. By adding an application ID parameter to the embed&nbsp;code, the same player can be used across a site, or sites, and the application ID can be used to identify where the player was published. Using a player application ID can help reduce the number of players that need to be created and maintained. For information on adding an application ID to the embed&nbsp;code, see <a href="/publish/adding-application-id-player-embed-code.html">Adding an Application ID to the Player Embed&nbsp;Code</a>.</p>
   </section>
@@ -1961,7 +1964,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist-restart">
       <li>Open the <strong>Players</strong> module.</li>
       <li>Click on the player name to open the player properties.</li>
-      <li>As part of the <strong>Player Information</strong> properties, select a <strong>Player Type</strong> of <strong>Playlist</strong>. Click  <span class="button-blue"> Save </span>.</li>
+      <li>As part of the <strong>Player Information</strong> properties, select a <strong>Player Type</strong> of <strong>Playlist</strong>. Click <span class="button-blue"> Save </span>.</li>
       <li>Click <strong>Styling</strong> in the left navigation menu.</li>
       <li>Select a <strong>Playlist Type</strong>:
         <ul>
@@ -1989,7 +1992,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           </li>
         </ul>
       </li>
-      <li>Click  <span class="button-blue"> Save </span>  to save changes. Remember to publish the player so the changes appear in the published player.</li>
+      <li>Click <span class="button-blue"> Save </span> to save changes. Remember to publish the player so the changes appear in the published player.</li>
     </ol>
     <p>When using the <strong>Standard (iframe)</strong> embed code, the playlist has a show/hide button and is automatically sized and positioned. When using the <strong>Advanced (in-page)</strong> embed code, you must insert the playlist as an HTML <code translate="No">&lt;div&gt;</code> element and write your own CSS to position and size the playlist. This gives you full control over the playlist's display. In the latter case, the playlist does not even need to be adjacent to the player if you don't want it to be. The <strong>Advanced (in-page embed) player</strong> section of the <a href="https://player.support.brightcove.com/general/implementing-playlists.html#Advanced_in_page_embed_player">Implementing Playlists</a>&nbsp;document has substantial content on formatting and styling a playlist.</p>
   </section>

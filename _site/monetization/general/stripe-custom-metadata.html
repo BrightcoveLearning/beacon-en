@@ -1937,7 +1937,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
     <h3 id="Authentication">Authentication</h3>
     
-    <p>Requests are authenticated with your API key in the <code translate="No">Authorization </code> header:</p>
+    <p>Requests are authenticated with your API key in the <code translate="No">Authorization</code> header:</p>
     
     <pre><code class="language-json" translate="No">Authorization: Bearer {api_key}</code></pre>
 
@@ -2040,13 +2040,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Return to the Postman environment that you created in the previous section.</li>
       <li>
         <p>For the <code translate="No">GET</code> request, paste in the following into the Request URL. Use the device type value of your choice.</p>
-        <pre><code class="language-http" translate="No">https://api.stripe.com/v1/subscriptions/search?query=metadata[&quot;device_type=samsung&quot;]</code></pre>
+        <pre><code class="language-http" translate="No">https://api.stripe.com/v1/subscriptions/search?query=metadata["samsung"]:"yes"</code></pre> 
         <br/>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/get-samsung-subscriptions.png" alt="Get Samsung subscriptions" />
         </figure>
       </li>
       <li>Click <strong>Send</strong>.</li> 
+      <li>
+        <p>If you get the following error with your <code translate="No">GET</code> request,</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/verrsion-error.png" alt="Stripe API version error" />
+        </figure>
+        <p>make sure that you are using the current version of the Stripe API. You can do this by adding the following header:</p>
+        <ul>
+          <li><code translate="No">KEY</code> is "Stripe-version"</li>
+          <li><code translate="No">VALUE</code> is "2020-08-27" (or latest version)</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/version-header.png" alt="Stripe version header" />
+        </figure>
+      </li>
     </ol>
 
     <h3>Response</h3>
