@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="In this topic, you will learn how to retrieve subscription information associated with Stripe custom metadata using the Stripe API.">
   
-  <title>Stripe Custom Metadata</title>
+  <title>Retrieving Subscription Info with Stripe Metadata</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -64,7 +64,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       <li class="breadcrumb-item"><a href="/monetization/general/">Monetization</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Stripe Custom Metadata</li>
+      <li class="breadcrumb-item active" aria-current="page">Retrieving Subscription Info with Stripe Metadata</li>
     </ol>
   </nav>
 </header>
@@ -1879,13 +1879,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Stripe Custom Metadata</h1>
+<h1>Retrieving Subscription Info with Stripe Metadata</h1>
 <article class="bcls-article">
   <summary>In this topic, you will learn how to retrieve subscription information associated with Stripe custom metadata using the Stripe API.</summary>
   <section class="bcls-section">
     <h2 id="Overview">Overview</h2>
     <p>
-      Brightcove is adding custom metadata to Stripe subscriptions that will allow you to identify the viewer's device type used when creating the subscription. You can then query the Stripe API to search for subscriptions associated with the custom metadata. You can also add webhooks to listen for Stripe events.
+      Brightcove is adding custom metadata to Stripe subscriptions that will allow you to identify the viewer's device type used when creating the subscription. You can query the Stripe API to search for subscriptions associated with the custom metadata. You can also add webhooks to listen for Stripe events.
     </p>
     <p>This topic will show you how to do the following:</p>
     <ul>
@@ -2004,19 +2004,45 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Searching_subscriptions_with_metadata">Searching subscriptions with metadata</h2>
-    <p>In a previous steip, we added custom metadata (<code translate="No">Samsung:yes</code>) to one of our subscription packages. Now, we will use the Stripe API to search for subscriptions with that metadata.</p>
+    <p>In this section, you will use the Stripe API to search for subscriptions that have custom metadata.</p> 
+    <h3>Custom metadata</h3>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+          <tr>
+              <th style="width:40%;">Name</th>
+              <th style="width:60%;">Value</th>                         
+          </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+          <tr>
+            <td><code translate="No">device_type</code></td>  
+            <td>Values:
+              <ul>
+                <li><code translate="No">androidtv</code></li>
+                <li><code translate="No">firetv</code></li>
+                <li><code translate="No">lgtv</code></li>
+                <li><code translate="No">nettv</code></li>
+                <li><code translate="No">operatv</code></li>
+                <li><code translate="No">panasonic</code></li>
+                <li><code translate="No">samsung</code></li>
+              </ul>
+            </td>                     
+          </tr>            
+      </tbody>
+    </table>
     
+    <h3>Steps</h3>
     <ol class="bcls-tasklist-restart">
-      <li>Return to the Postman environment that you created in the previous section..</li>
+      <li>Return to the Postman environment that you created in the previous section.</li>
       <li>
-        <p>For the <code translate="No">GET</code> request, paste in the following into the Request URL.</p>
-        <pre><code class="language-http" translate="No">https://api.stripe.com/v1/subscriptions/search?query=metadata[&quot;samsung&quot;]:&quot;yes&quot;</code></pre>
+        <p>For the <code translate="No">GET</code> request, paste in the following into the Request URL. Use the device type value of your choice.</p>
+        <pre><code class="language-http" translate="No">https://api.stripe.com/v1/subscriptions/search?query=metadata[&quot;device_type=samsung&quot;]</code></pre>
         <br/>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/get-samsung-subscriptions.png" alt="Get Samsung subscriptions" />
         </figure>
       </li>
-      <li>Click <strong>Send</strong>.</li>
+      <li>Click <strong>Send</strong>.</li> 
     </ol>
 
     <h3>Response</h3>
@@ -2182,16 +2208,185 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Your Brightcove Beacon app can listen for events on your Stripe account, and you can use webhooks to enable Stripe to push real-time notifications to your app, or you can use a webhook as an endpoint.</p>
     <p>For details, see the Stripe <a href="https://stripe.com/docs/webhooks">Use incoming webhooks</a> reference.</p>
 
-    <h3>Events</h3>
-    <p>Here are some events you can listen for:</p>
-
-    <h4>Subscription updated/renew</h4>
-    <p>A Stripe webhook can listen for the <code translate="No">subscription updated/renew</code> events.</p>
-    <p>Notice that the response contains the following:</p>
+    <p>Notice that each response contains the following:</p>
     <pre><code class="language-json" translate="No">&quot;metadata&quot;: {
     &quot;Samsung&quot;: &quot;yes&quot;
 },</code></pre>
-    <br/>
+
+    <h3>Events</h3>
+    <p>Here are some events you can listen for:</p>
+
+    <h4>customer.subscription.created</h4>
+    <p>A Stripe webhook can listen for the <code translate="No">customer.subscription.created</code> event.</p>
+
+    <details>
+      <summary><h3 id="Development_sequence">API response</h3></summary> 
+        <p>Your response should look similar to this:</p>
+        <pre class="line-numbers"><code class="language-json" translate="No">{
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
+    &quot;object&quot;: &quot;subscription&quot;,
+    &quot;application&quot;: null,
+    &quot;application_fee_percent&quot;: null,
+    &quot;automatic_tax&quot;: {
+      &quot;enabled&quot;: false
+    },
+    &quot;billing&quot;: &quot;charge_automatically&quot;,
+    &quot;billing_cycle_anchor&quot;: 1653581061,
+    &quot;billing_thresholds&quot;: null,
+    &quot;cancel_at&quot;: null,
+    &quot;cancel_at_period_end&quot;: false,
+    &quot;canceled_at&quot;: null,
+    &quot;collection_method&quot;: &quot;charge_automatically&quot;,
+    &quot;created&quot;: 1653581061,
+    &quot;current_period_end&quot;: 1656259461,
+    &quot;current_period_start&quot;: 1653581061,
+    &quot;customer&quot;: &quot;cus_LlFcWXPXftQibf&quot;,
+    &quot;days_until_due&quot;: null,
+    &quot;default_payment_method&quot;: null,
+    &quot;default_source&quot;: null,
+    &quot;default_tax_rates&quot;: [
+    ],
+    &quot;description&quot;: null,
+    &quot;discount&quot;: null,
+    &quot;ended_at&quot;: null,
+    &quot;invoice_customer_balance_settings&quot;: {
+      &quot;consume_applied_balance_on_void&quot;: true
+    },
+    &quot;items&quot;: {
+      &quot;object&quot;: &quot;list&quot;,
+      &quot;data&quot;: [
+        {
+          &quot;id&quot;: &quot;si_LlFgWbs9lqlwOF&quot;,
+          &quot;object&quot;: &quot;subscription_item&quot;,
+          &quot;billing_thresholds&quot;: null,
+          &quot;created&quot;: 1653581062,
+          &quot;metadata&quot;: {
+          },
+          &quot;plan&quot;: {
+            &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
+            &quot;object&quot;: &quot;plan&quot;,
+            &quot;active&quot;: true,
+            &quot;aggregate_usage&quot;: null,
+            &quot;amount&quot;: 100,
+            &quot;amount_decimal&quot;: &quot;100&quot;,
+            &quot;billing_scheme&quot;: &quot;per_unit&quot;,
+            &quot;created&quot;: 1653580781,
+            &quot;currency&quot;: &quot;eur&quot;,
+            &quot;interval&quot;: &quot;month&quot;,
+            &quot;interval_count&quot;: 1,
+            &quot;livemode&quot;: false,
+            &quot;metadata&quot;: {
+            },
+            &quot;name&quot;: &quot;Beacon Metadata&quot;,
+            &quot;nickname&quot;: null,
+            &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
+            &quot;statement_descriptor&quot;: null,
+            &quot;tiers&quot;: null,
+            &quot;tiers_mode&quot;: null,
+            &quot;transform_usage&quot;: null,
+            &quot;trial_period_days&quot;: null,
+            &quot;usage_type&quot;: &quot;licensed&quot;
+          },
+          &quot;price&quot;: {
+            &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
+            &quot;object&quot;: &quot;price&quot;,
+            &quot;active&quot;: true,
+            &quot;billing_scheme&quot;: &quot;per_unit&quot;,
+            &quot;created&quot;: 1653580781,
+            &quot;currency&quot;: &quot;eur&quot;,
+            &quot;livemode&quot;: false,
+            &quot;lookup_key&quot;: null,
+            &quot;metadata&quot;: {
+            },
+            &quot;nickname&quot;: null,
+            &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
+            &quot;recurring&quot;: {
+              &quot;aggregate_usage&quot;: null,
+              &quot;interval&quot;: &quot;month&quot;,
+              &quot;interval_count&quot;: 1,
+              &quot;trial_period_days&quot;: null,
+              &quot;usage_type&quot;: &quot;licensed&quot;
+            },
+            &quot;tax_behavior&quot;: &quot;unspecified&quot;,
+            &quot;tiers_mode&quot;: null,
+            &quot;transform_quantity&quot;: null,
+            &quot;type&quot;: &quot;recurring&quot;,
+            &quot;unit_amount&quot;: 100,
+            &quot;unit_amount_decimal&quot;: &quot;100&quot;
+          },
+          &quot;quantity&quot;: 1,
+          &quot;subscription&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
+          &quot;tax_rates&quot;: [
+          ]
+        }
+      ],
+      &quot;has_more&quot;: false,
+      &quot;total_count&quot;: 1,
+      &quot;url&quot;: &quot;/v1/subscription_items?subscription=sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;
+    },
+    &quot;latest_invoice&quot;: &quot;in_1L3jAgFzWFPFNFjq8YFoU6R3&quot;,
+    &quot;livemode&quot;: false,
+    &quot;metadata&quot;: {
+      &quot;Samsung&quot;: &quot;yes&quot;
+    },
+    &quot;next_pending_invoice_item_invoice&quot;: null,
+    &quot;pause_collection&quot;: null,
+    &quot;payment_settings&quot;: {
+      &quot;payment_method_options&quot;: null,
+      &quot;payment_method_types&quot;: null,
+      &quot;save_default_payment_method&quot;: &quot;off&quot;
+    },
+    &quot;pending_invoice_item_interval&quot;: null,
+    &quot;pending_setup_intent&quot;: null,
+    &quot;pending_update&quot;: null,
+    &quot;plan&quot;: {
+      &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
+      &quot;object&quot;: &quot;plan&quot;,
+      &quot;active&quot;: true,
+      &quot;aggregate_usage&quot;: null,
+      &quot;amount&quot;: 100,
+      &quot;amount_decimal&quot;: &quot;100&quot;,
+      &quot;billing_scheme&quot;: &quot;per_unit&quot;,
+      &quot;created&quot;: 1653580781,
+      &quot;currency&quot;: &quot;eur&quot;,
+      &quot;interval&quot;: &quot;month&quot;,
+      &quot;interval_count&quot;: 1,
+      &quot;livemode&quot;: false,
+      &quot;metadata&quot;: {
+      },
+      &quot;name&quot;: &quot;Beacon Metadata&quot;,
+      &quot;nickname&quot;: null,
+      &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
+      &quot;statement_descriptor&quot;: null,
+      &quot;tiers&quot;: null,
+      &quot;tiers_mode&quot;: null,
+      &quot;transform_usage&quot;: null,
+      &quot;trial_period_days&quot;: null,
+      &quot;usage_type&quot;: &quot;licensed&quot;
+    },
+    &quot;quantity&quot;: 1,
+    &quot;schedule&quot;: null,
+    &quot;start&quot;: 1653581061,
+    &quot;start_date&quot;: 1653581061,
+    &quot;status&quot;: &quot;active&quot;,
+    &quot;tax_percent&quot;: null,
+    &quot;test_clock&quot;: null,
+    &quot;transfer_data&quot;: null,
+    &quot;trial_end&quot;: null,
+    &quot;trial_start&quot;: null
+  },
+  &quot;previous_attributes&quot;: {
+    &quot;metadata&quot;: {
+      &quot;Samsung&quot;: null
+    }
+  }
+}
+</code></pre>    
+    </details>
+
+    <h4>customer.subscription.updated</h4>
+    <p>A Stripe webhook can listen for the <code translate="No">customer.subscription.updated</code> event.</p>
 
     <details>
       <summary><h3 id="Development_sequence">API response</h3></summary> 
@@ -2359,7 +2554,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </code></pre>    
     </details>
     
-    <h4>Subscription Removed/canceled</h4>
+    <!-- <h4>Subscription Removed/canceled</h4>
     <p>A Stripe webhook can listen for the <code translate="No">subscription Removed/canceled</code> events.</p>
     <p>Notice that the response contains the following:</p>
     <pre><code class="language-json" translate="No">&quot;metadata&quot;: {
@@ -2526,7 +2721,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   }
 }
 </code></pre>    
-    </details>
+    </details> -->
 
   </section>
 
