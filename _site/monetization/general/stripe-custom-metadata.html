@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to manage the Stripe metadata for your Beacon app using the Stripe API.">
+  <meta name="description" content="In this topic, you will learn how to retrieve subscription information associated with Stripe custom metadata using the Stripe API.">
   
-  <title>Managing Stripe Metadata</title>
+  <title>Stripe Custom Metadata</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -64,7 +64,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       <li class="breadcrumb-item"><a href="/monetization/general/">Monetization</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Managing Stripe Metadata</li>
+      <li class="breadcrumb-item active" aria-current="page">Stripe Custom Metadata</li>
     </ol>
   </nav>
 </header>
@@ -1879,17 +1879,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Managing Stripe Metadata</h1>
+<h1>Stripe Custom Metadata</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to manage the Stripe metadata for your Beacon app using the Stripe API.</summary>
+  <summary>In this topic, you will learn how to retrieve subscription information associated with Stripe custom metadata using the Stripe API.</summary>
   <section class="bcls-section">
     <h2 id="Overview">Overview</h2>
     <p>
-      When using a Stripe account with your Brightcove Beacon app, you can add custom metadata to Stripe subscriptions/ purchases. Then, you can use the Stripe API to search for that specific metadata associated with subscriptions. You can also add webhooks to listen for Stripe events.
+      Brightcove is adding custom metadata to Stripe subscriptions that will allow you to identify the viewer's device type used when creating the subscription. You can then query the Stripe API to search for subscriptions associated with the custom metadata. You can also add webhooks to listen for Stripe events.
     </p>
     <p>This topic will show you how to do the following:</p>
     <ul>
-      <li>Add custom metadata to Stripe subscriptions/ purchases</li>
       <li>Use the Stripe API to search for specific metadata in any subscription/purchase to return a list</li>
       <li>Create a webhook to listen for Stripe events</li>
     </ul>
@@ -1908,7 +1907,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ul>
   </section>
 
-  <section class="bcls-section">
+  <!-- <section class="bcls-section">
     <h2 id="Adding_custom_metadata">Adding custom metadata</h2>
     <p>You can add a set of custom key-value pairs associated with a Stripe subscription. To add metadata, you can use the Stripe API or the Stripe dashboard as follows:</p>
     <ol class="bcls-tasklist">
@@ -1922,7 +1921,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li> 
       <li>For details about adding metadata, see Stripe's <a href="https://stripe.com/docs/api/subscriptions/create#create_subscription-metadata">Create subscription metadata</a> reference.</li> 
     </ol>
-  </section>
+  </section> -->
 
   <section class="bcls-section">
     <h2 id="Understanding_the_Stripe_API">Understanding the Stripe API</h2>
@@ -2557,7 +2556,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 13 Jun 2022
+  Page last updated on 16 Jun 2022
 </div>
 
 
