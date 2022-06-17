@@ -1885,119 +1885,141 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-    <h1>Integrating Campaign with Single Sign-On</h1>
-    <summary>This topic explains how to configure the Campaign module for use with single sign-on.</summary>
-    <section class="bcls-section">
-      <p>The Campaign module provides the ability to track viewing activity when the viewer has logged into a system using single sign-on (SSO). In this scenario, viewing data is not sent to a marketing automation platform. With a Campaign SSO configuration, SAML attribute(s) are passed to Campaign to identify the viewer. One common use case for this would be internal training videos. Employees might be required to login to watch videos and then their viewing activity can be tracked and then viewed inside the Campaign module. The Campaign Module will store up to 500K event views per connection. Once the limit has been reached, it will start purging old events.</p>
-      <p>To enable Campaign for use with SSO, the following steps are required:</p>
-      <ol>
-        <li><a href="#sso">Configure single sign-on software</a></li>
-        <li><a href="#attributes">Configure your application to access SSO attributes</a></li>
-        <li><a href="#setupConnection">Setup the Campaign SSO connection</a></li>
-        <li><a href="#configure">Configure the integration</a></li>
-        <li><a href="#player">Create a Campaign-enabled player</a></li>
-        <li><a href="#viewdata">View video data</a></li>
-      </ol>
-      <aside class="bcls-aside bcls-aside--information">Note: Campaign lead forms are not supported when using  SSO connections. If you create your own custom lead form to collect viewer information,  the data submitted through the form will not be stored or available through the Audience API or the Campaign Module. Custom Lead Forms and their data are only submitted to the system they are built to work for.</aside>
-    </section>
-    <section class="bcls-section">
-      <h2 id="sso">Configuring SSO software</h2>
-      <p>The steps to install and configure SSO software is outside the scope of this topic. The SSO software should be configured so users have to authenticate themselves before they can view Video Cloud videos. The SSO software should be configured to expose some user attributes so they can be accessed from an external application. For example, this Okta SSO configuration exposes three attributes, <code translate="No">FirstName</code>, <code translate="No">LastName</code> and <code translate="No">Email</code>.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="okta setup" src="/assets/images/s-campaign-img/general/node18363-okta.png" /></figure>
-      <p>In this topic, the <code translate="No">Email</code> attribute will be used to identify viewers to the Campaign module.</p>
-      <aside class="bcls-aside bcls-aside--information">Note: Even though your SSO software can be configured to expose multiple attributes, Campaign will only use a single attribute to track viewers.</aside>
-    </section>
-    <section class="bcls-section">
-      <h2 id="attributes">Configuring an application to access SSO attributes</h2>
-      <p>The application or website that will be used to view Video Cloud videos should be configured so that the SSO attributes are made available to Campaign using JavaScript. This configuration will vary based upon the application or website being used. In the following example, an SSO access control profile was created in Gallery. As part of the configuration, the <code translate="No">Email</code> SSO attribute is being exposed and will be available inside the Gallery site. This is the value that will be used to identify viewers to the Campaign module.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="okta setup" src="/assets/images/s-campaign-img/general/node18363-gallery-config.png" /></figure>
-      <aside class="bcls-aside bcls-aside--information">Note: For information on configuring Access Control Profiles in Gallery, see <a href="https://gallery.support.brightcove.com/settings/configuring-access-control-profiles.html">Configuring Access Control Profiles</a>.</aside>
-      <aside class="bcls-aside bcls-aside--information">Note: Even though Gallery can be configured to expose multiple attributes, Campaign will only use a single attribute to track viewers.</aside>
-    </section>
-    <section class="bcls-section">
-      <h2 id="setupConnection">Setting up the connection</h2>
-      <p>Follow these steps to setup the connection between Video Cloud and your SSO provider.</p>
-      <h3 id="establishConnection2">Establishing the connection between Video Cloud and SSO</h3>
-      <ol class="bcls-tasklist-restart">
-        <li>Open the <strong>Campaign</strong> module.</li>
-        <li>In the left navigation, click <strong>Data Connections</strong>.</li>
-        <li>Click <span class="button-blue">Add New Connection</span>.</li>
-        <li>Select <strong>SSO</strong> as the integration.
-          <aside class="bcls-aside bcls-aside--information">Note: The integrations that are available are based upon your Video Cloud subscription.</aside>
-        </li>
-        <li>(Optional) Enter a <strong>Connection Name</strong>.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Campaign setup" src="/assets/images/s-campaign-img/general/node18363-setup-section.png" /></figure>
-        </li>
-        <li>Click <span class="button-blue">Connect</span>.</li>
-      </ol>
-      <p>The SSO connection is now set up and ready to use.</p>
-    </section>
-    <section class="bcls-section">
-      <h2 id="configure">Configuring the integration</h2>
-      <p>Once the SSO connection has been made, you can configure the integration.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/s-campaign-img/general/node18363-connected-options.png" /></figure>
-      <ol class="bcls-tasklist-restart">
-        <li>Click the <code translate="No">empty</code> link in the <strong>SSO Property</strong> section. Enter the name of the JavaScript value to look for in the page. In this example, Gallery was configured to expose the <code translate="No">Email</code> SSO attribute so that is what is being used here.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="email attribute" src="/assets/images/s-campaign-img/general/node18363-email-attribute.png" /></figure>
-          <p>In this topic, the Campaign SSO integration will be used to track viewing activity. Click <span class="button-blue">Save</span>.</p>
-          <aside class="bcls-aside bcls-aside--information">Note: It is also possible to leave the <strong>SSO Property</strong> empty and then use one of the <a href="#identify">additional options</a> to identify viewers.</aside>
-        </li>
-        <li>By default, the <strong>Connection Status</strong> will be <strong>Enabled</strong>. The <strong>Connection Status</strong> determines if Video Cloud video engagement data is saved.
-          <ul>
-            <li><strong>Enabled</strong> - Data is collected</li>
-            <li><strong>Disabled</strong> - No data is collected (integration is disabled)</li>
-          </ul>
-        </li>
-        <li>Select a data retention policy. The data retention policy determines how long the viewing data  will be retained in your Video Cloud account. <strong>You should adjust the retention settings according to your privacy policy</strong>.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data retention options" src="/assets/images/s-campaign-img/general/node18363-data-retention-options.png" /></figure>
-        </li>
-      </ol>
-      <p>To remove the integration, click <span class="button-red-text-border">Disconnect</span>. The bottom of the page will list all Campaign-enabled players, the connections they are associated with and the associated lead forms.</p>
-      <p>The Campaign module supports multiple connections to marketing platforms. Click <span class="button-blue">Add New Connection</span> to configure additional integrations.</p>
-    </section>
-    <section class="bcls-section">
-      <h2 id="identify">Additional options for identifying viewers</h2>
-      <p>If you don't specify a value for the <strong>SSO Property </strong>when the integration is configured, you are responsible for identifying viewers. The Campaign module needs the following information:</p>
-      <table class="bcls-table">
-        <thead class="bcls-table__head">
-          <tr>
-            <th>Description</th>
-            <th>URL Parameter</th>
-            <th>Embed Parameter</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody class="bcls-table__body">
-          <tr>
-            <td>What’s the GUID (needed for view event tracking)</td>
-            <td><code translate="No">bcssoguid</code></td>
-            <td><code translate="No">data-bc-sso-guid</code></td>
-            <td><code translate="No">string</code></td>
-          </tr>
-        </tbody>
-      </table>
-      <p>This parameter can be passed in via a URL parameter or through the player embed code. For viewer tracking to occur, this parameter should be passed as a URL parameter on the page that is displaying the video.</p>
-      <aside class="bcls-aside bcls-aside--information">Note: In order for the player/plugin to read the URL parameter, the Advanced (in-page) embed code should be used. The Standard (iframe) embed code will not work as the plugin will be running inside of an iframe and therefore is unable to access the parent page URL which has the parameter.</aside>
-      <p>It’s also possible to pass the GUID to the Campaign player using a JavaScript value that’s available in the page. Using the player config, it’s possible to tell Campaign what the name of the JavaScript variable is and Campaign will then attempt to read that variable using it as the custom GUID. To do this, edit the Campaign player and configure the plugin options for the Campaign plugin.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="plugin params" src="/assets/images/s-campaign-img/general/node18363-plugin-params.png" /></figure>
-      <p>In the above example, the player config is telling Campaign that there’s a JavaScript object in the page called <code translate="No">samlAttributes</code> and it has a property called <code translate="No">nameID</code>. Campaign will attempt to read that and use its value for the custom GUID.</p>
-    </section>
-    <section class="bcls-section">
-      <h2 id="player">Creating a Campaign-enabled player</h2>
-      <p>Video engagement data will only be tracked when you are using a Campaign-enabled video player. For information on creating a Campaign-enabled Brightcove Player, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p>
-    </section>
-    <section class="bcls-section">
-      <h2 id="viewdata">Viewing video data</h2>
-      <p>There are several options available for viewing video data when using an SSO integration:</p>
-      <ul>
-        <li><strong>Viewer Activities (Events)</strong> - Provided as part of the Campaign module, this option can be used to view video data inside the Campaign module. For information, see <a href="/campaign/general/viewing-player-events-campaign-module.html">Viewing Player Events in the Campaign Module</a>.</li>
-        <li><strong>Viewer Profiles</strong> - Provided as part of the Campaign module, this option can be used to view video data based upon a user profile value inside the Campaign module. For information, see <a href="/campaign/general/viewing-viewer-profile-information.html">Viewing Viewer Profile Information</a>.</li>
-        <li><strong>Export Data</strong> - Provided as part of the Campaign module, this option can be used to export video view and lead data. For information, see <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exporting Campaign Data from the Campaign Module</a>.</li>
-        <li><strong>Audience API</strong> - The Audience API can be used to programmatically retrieve video view and lead data. For information, see <a href="/campaign/develop/overview-audience-api.html">Overview: Audience API</a>.</li>
-      </ul>
-    </section>
-  </article>
-  
+  <h1>Integrating Campaign with Single Sign-On</h1>
+  <summary>This topic explains how to configure the Campaign module for use with single sign-on.</summary>
+  <section class="bcls-section">
+    <p>The Campaign module provides the ability to track viewing activity when the viewer has logged into a system using single sign-on (SSO) such as a Gallery experience that has been set up for SSO and Access Control Profiles. In this scenario, viewing data is not sent to a marketing automation platform. With a Campaign SSO configuration, SAML attribute(s) are passed to Campaign to identify the viewer. One common use case for this would be internal training videos. Employees might be required to login to watch videos and then their viewing activity can be tracked and then viewed inside the Campaign module. The Campaign Module will store up to 500K event views per connection. Once the limit has been reached, it will start purging old events.</p>
+    <p>To enable Campaign for use with SSO, the following steps are required:</p>
+    <ol>
+      <li><a href="#sso">Configure single sign-on software</a></li>
+      <li><a href="#attributes">Configure your application to access SSO attributes</a></li>
+      <li><a href="#setupConnection">Setup the Campaign SSO connection</a></li>
+      <li><a href="#configure">Configure the integration</a></li>
+      <li><a href="#player">Create a Campaign-enabled player</a></li>
+      <li><a href="#viewdata">View video data</a></li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Note: Campaign lead forms are not supported when using  SSO connections. If you create your own custom lead form to collect viewer information,  the data submitted through the form will not be stored or available through the Audience API or the Campaign Module. Custom Lead Forms and their data are only submitted to the system they are built to work for.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sso">Configuring SSO software</h2>
+    <p>The steps to install and configure SSO software is outside the scope of this topic. The SSO software should be configured so users have to authenticate themselves before they can view Video Cloud videos. The SSO software should be configured to expose some user attributes so they can be accessed from an external application. For example, this Okta SSO configuration exposes three attributes, <code translate="No">FirstName</code>, <code translate="No">LastName</code> and <code translate="No">Email</code>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="okta setup" src="/assets/images/s-campaign-img/general/node18363-okta.png" /></figure>
+    <p>In this topic, the <code translate="No">Email</code> attribute will be used to identify viewers to the Campaign module.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Even though your SSO software can be configured to expose multiple attributes, Campaign will only use a single attribute to track viewers.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="attributes">Configuring an application to access SSO attributes</h2>
+    <p>The application or website that will be used to view Video Cloud videos should be configured so that the SSO attributes are made available to Campaign using JavaScript. This configuration will vary based upon the application or website being used. In the following example, an SSO access control profile was created in Gallery. As part of the configuration, the <code translate="No">Email</code> SSO attribute is being exposed and will be available inside the Gallery site. This is the value that will be used to identify viewers to the Campaign module.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="okta setup" src="/assets/images/s-campaign-img/general/node18363-gallery-config.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Note: For information on configuring Access Control Profiles in Gallery, see <a href="https://gallery.support.brightcove.com/settings/configuring-access-control-profiles.html">Configuring Access Control Profiles</a>.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: Even though Gallery can be configured to expose multiple attributes, Campaign will only use a single attribute to track viewers.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="setupConnection">Setting up the connection</h2>
+    <p>Follow these steps to setup the connection between Video Cloud and your SSO provider.</p>
+    <h3 id="establishConnection2">Establishing the connection between Video Cloud and SSO</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Campaign</strong> module.</li>
+      <li>In the left navigation, click <strong>Data Connections</strong>.</li>
+      <li>Click <span class="button-blue">Add New Connection</span>.</li>
+      <li>Select <strong>SSO</strong> as the integration.
+        <aside class="bcls-aside bcls-aside--information">Note: The integrations that are available are based upon your Video Cloud subscription.</aside>
+      </li>
+      <li>(Optional) Enter a <strong>Connection Name</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Campaign setup" src="/assets/images/s-campaign-img/general/node18363-setup-section.png" /></figure>
+      </li>
+      <li>Click <span class="button-blue">Connect</span>.</li>
+    </ol>
+    <p>The SSO connection is now set up and ready to use.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">Configuring the integration</h2>
+    <p>Once the SSO connection has been made, you can configure the integration.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/s-campaign-img/general/node18363-connected-options.png" /></figure>
+    <ol class="bcls-tasklist-restart">
+      <li>Click the <code translate="No">empty</code> link in the <strong>SSO Property</strong> section. Enter the name of the JavaScript value to look for in the page. In this example, Gallery was configured to expose the <code translate="No">Email</code> SSO attribute so that is what is being used here.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="email attribute" src="/assets/images/s-campaign-img/general/node18363-email-attribute.png" /></figure>
+        <p>In this topic, the Campaign SSO integration will be used to track viewing activity. Click <span class="button-blue">Save</span>.</p>
+        <aside class="bcls-aside bcls-aside--information">Note: It is also possible to leave the <strong>SSO Property</strong> empty and then use one of the <a href="#identify">additional options</a> to identify viewers.</aside>
+      </li>
+      <li>By default, the <strong>Connection Status</strong> will be <strong>Enabled</strong>. The <strong>Connection Status</strong> determines if Video Cloud video engagement data is saved.
+        <ul>
+          <li><strong>Enabled</strong> - Data is collected</li>
+          <li><strong>Disabled</strong> - No data is collected (integration is disabled)</li>
+        </ul>
+      </li>
+      <li>Select a data retention policy. The data retention policy determines how long the viewing data  will be retained in your Video Cloud account. <strong>You should adjust the retention settings according to your privacy policy</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data retention options" src="/assets/images/s-campaign-img/general/node18363-data-retention-options.png" /></figure>
+      </li>
+    </ol>
+    <p>To remove the integration, click <span class="button-red-text-border">Disconnect</span>. The bottom of the page will list all Campaign-enabled players, the connections they are associated with and the associated lead forms.</p>
+    <p>The Campaign module supports multiple connections to marketing platforms. Click <span class="button-blue">Add New Connection</span> to configure additional integrations.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="identify">Additional options for identifying viewers</h2>
+    <p>If you don't specify a value for the <strong>SSO Property </strong>when the integration is configured, you are responsible for identifying viewers. The Campaign module needs the following information:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Description</th>
+          <th>URL Parameter</th>
+          <th>Embed Parameter</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>What’s the GUID (needed for view event tracking)</td>
+          <td><code translate="No">bcssoguid</code></td>
+          <td><code translate="No">data-bc-sso-guid</code></td>
+          <td><code translate="No">string</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>This parameter can be passed in via a URL parameter or through the player embed code. For viewer tracking to occur, this parameter should be passed as a URL parameter on the page that is displaying the video.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: In order for the player/plugin to read the URL parameter, the Advanced (in-page) embed code should be used. The Standard (iframe) embed code will not work as the plugin will be running inside of an iframe and therefore is unable to access the parent page URL which has the parameter.</aside>
+    <p>It’s also possible to pass the GUID to the Campaign player using a JavaScript value that’s available in the page. Using the player config, it’s possible to tell Campaign what the name of the JavaScript variable is and Campaign will then attempt to read that variable using it as the custom GUID. To do this, edit the Campaign player and configure the plugin options for the Campaign plugin.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="plugin params" src="/assets/images/s-campaign-img/general/node18363-plugin-params.png" /></figure>
+    <p>In the above example, the player config is telling Campaign that there’s a JavaScript object in the page called <code translate="No">samlAttributes</code> and it has a property called <code translate="No">nameID</code>. Campaign will attempt to read that and use its value for the custom GUID.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">Creating a Campaign-enabled player</h2>
+    <p>Video engagement data will only be tracked when you are using a Campaign-enabled video player. For information on creating a Campaign-enabled Brightcove Player, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewdata">Viewing video data</h2>
+    <p>There are several options available for viewing video data when using an SSO integration:</p>
+    <ul>
+      <li><strong>Viewer Activities (Events)</strong> - Provided as part of the Campaign module, this option can be used to view video data inside the Campaign module. For information, see <a href="/campaign/general/viewing-player-events-campaign-module.html">Viewing Player Events in the Campaign Module</a>.</li>
+      <li><strong>Viewer Profiles</strong> - Provided as part of the Campaign module, this option can be used to view video data based upon a user profile value inside the Campaign module. For information, see <a href="/campaign/general/viewing-viewer-profile-information.html">Viewing Viewer Profile Information</a>.</li>
+      <li><strong>Export Data</strong> - Provided as part of the Campaign module, this option can be used to export video view and lead data. For information, see <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exporting Campaign Data from the Campaign Module</a>.</li>
+      <li><strong>Audience API</strong> - The Audience API can be used to programmatically retrieve video view and lead data. For information, see <a href="/campaign/develop/overview-audience-api.html">Overview: Audience API</a>.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="faq">Frequently asked questions</h2>
+    <dl>
+      <dt class="bcls-question">How do I set up my Data Connection in Campaign?</dt>
+      <dd>Publishers need to configure their Campaign SSO Data Connection’s SSO property field to look for a SAML attribute that gets exposed by their SSO provider upon user sign-in.</dd>
+      <dt class="bcls-question">How do I know if an SSO Data Connection is right for my Gallery experience?</dt>
+      <dd>If you are using an SSO Setup with Access Control Profiles (users have to signin to access the experience) then an SSO Data Connection would be a good fit for tracking leads on your Gallery experience.</dd>
+      <dt class="bcls-question">How do I know what to populate this field with when using Gallery?</dt>
+      <dd>When a Gallery template is enabled for SSO, it uses an Access Control Profile. When setting up this profile, you have an option to <strong>Expose SAML Attributes</strong> for use in external JavaScript.
+        <p>SAML attributes can either be listed one at a time or a checkbox can be selected to expose all SAML Attributes.</p>
+        <p>Checking the <strong>Expose SAML Attributes</strong> checkbox will expose any tags from the SAML that your SSO provider sends upon user signin. You can verify these attributes by taking the following steps:</p>
+        <ol>
+          <li>Open your Gallery experience.</li>
+          <li>Signin via SSO.</li>
+          <li>Open a browser console via its developer tools.</li>
+          <li>Use the browser console to log out <code>window.samlAttributes</code>. </li>
+        </ol>
+      </dd>
+      <dt class="bcls-question">Can I use an SSO connection with a Gallery experience that does not use SSO?</dt>
+      <dd>No. In that case, you should use a Campaign player with Campaign Tracking or 3rd party MAP tracking.</dd>
+    </dl>
+  </section>
+</article>
+
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
