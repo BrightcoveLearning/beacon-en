@@ -403,7 +403,7 @@
     - name: Protecting Videos with HLS Encryption
       url: /general/protecting-videos-hls-encryption.html
 - section:
-  name: 'Publishing Apps'
+  name: 'App Publishing and Behavior'
   url: '/publishing-apps/index.html'
   docs:
     - name: 'General Information'
@@ -419,6 +419,13 @@
           url: '/publishing-apps/general/links-subscriptions.html'
         - name: 'Scheduling App Releases in the App Stores'
           url: '/publishing-apps/general/schedule-apps.html'
+    - name: 'App Behavior'
+      url: '/publishing-apps/app-behavior/index.html'
+      docs:
+        - name: 'Account Deletion'
+          url: '/publishing-apps/app-behavior/account-deletion.html'
+        - name: 'Parental Controls'
+          url: '/publishing-apps/app-behavior/parental-controls.html'
     - name: 'Android'
       url: '/publishing-apps/android/index.html'
       docs:
