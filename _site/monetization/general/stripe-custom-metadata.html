@@ -1922,7 +1922,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Prerequisites">Prerequisites</h2>
     <p>
-     To use the Stripe API as shown in this topic, you will need the following:
+      To use the Stripe API as shown in this topic, you will need the following:
     </p>
     <ul>
       <li><a href="https://dashboard.stripe.com/register">Stripe account</a></li>
@@ -1951,28 +1951,28 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Understanding_the_Stripe_API">Understanding the Stripe API</h2>
     <h3 id="Base_URL">Base URL</h3>
-    
+
     <p>The base URL for the Stripe API is:</p>
-    
+
     <pre><code class="language-http" translate="No">https://api.stripe.com</code></pre>
 
     <h3 id="Authentication">Authentication</h3>
-    
+
     <p>Requests are authenticated with your API key in the <code translate="No">Authorization</code> header:</p>
-    
+
     <pre><code class="language-json" translate="No">Authorization: Bearer {api_key}</code></pre>
 
     <h3 id="API_collection">API collection</h3>
-    
+
     <p>The Stripe API Collection is hosted within <a href="https://www.postman.com/stripedev/workspace/stripe-developers/overview">Stripe's Postman public workspace</a>. This allows you to fork from the public workspace into yours.</p>
     <p>If you don't want to fork the collection from the public workspace, you can import it from the <a href="https://github.com/stripe/stripe-postman">stripe-postman</a> GitHub repository.</p>
-    
+
   </section>
 
   <section class="bcls-section">
     <h2 id="Creating_a_Postman_environment">Creating a Postman environment</h2>
     <p>You can use the API platform of your choice to interact with the Stripe API, but for these examples, we will use Postman.</p>
-    
+
     <ol class="bcls-tasklist-restart">
       <li>Login or create an account with <a href="https://www.postman.com/">Postman</a>.</li>
       <li>Either fork the environment template within the <a href="https://www.postman.com/stripedev/workspace/stripe-developers/overview">Postman Stripe public workspace</a>, or create a new envionment within Postman. We'll create a new environment.</li>
@@ -2029,45 +2029,45 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Searching_subscriptions_with_metadata">Searching subscriptions with metadata</h2>
-    <p>In this section, you will use the Stripe API to search for subscriptions that have custom metadata.</p> 
+    <p>In this section, you will use the Stripe API to search for subscriptions that have custom metadata.</p>
     <h3>Custom metadata</h3>
     <table class="bcls-table">
       <thead class="bcls-table__head">
-          <tr>
-              <th style="width:40%;">Name</th>
-              <th style="width:60%;">Value</th>                         
-          </tr>
+        <tr>
+          <th style="width:40%;">Name</th>
+          <th style="width:60%;">Value</th>
+        </tr>
       </thead>
       <tbody class="bcls-table__body">
-          <tr>
-            <td><code translate="No">device_type</code></td>  
-            <td>Values:
-              <ul>
-                <li><code translate="No">androidtv</code></li>
-                <li><code translate="No">firetv</code></li>
-                <li><code translate="No">lgtv</code></li>
-                <li><code translate="No">nettv</code></li>
-                <li><code translate="No">operatv</code></li>
-                <li><code translate="No">panasonic</code></li>
-                <li><code translate="No">samsung</code></li>
-              </ul>
-            </td>                     
-          </tr>            
+        <tr>
+          <td><code translate="No">device_type</code></td>
+          <td>Values:
+            <ul>
+              <li><code translate="No">androidtv</code></li>
+              <li><code translate="No">firetv</code></li>
+              <li><code translate="No">lgtv</code></li>
+              <li><code translate="No">nettv</code></li>
+              <li><code translate="No">operatv</code></li>
+              <li><code translate="No">panasonic</code></li>
+              <li><code translate="No">samsung</code></li>
+            </ul>
+          </td>
+        </tr>
       </tbody>
     </table>
-    
+
     <h3>Steps</h3>
     <ol class="bcls-tasklist-restart">
       <li>Return to the Postman environment that you created in the previous section.</li>
       <li>
         <p>For the <code translate="No">GET</code> request, paste in the following into the Request URL. Use the device type value of your choice.</p>
-        <pre><code class="language-http" translate="No">https://api.stripe.com/v1/subscriptions/search?query=metadata["samsung"]:"yes"</code></pre> 
-        <br/>
+        <pre><code class="language-http" translate="No">https://api.stripe.com/v1/subscriptions/search?query=metadata["device_type"]:"samsung"</code></pre>
+        <br />
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/get-samsung-subscriptions.png" alt="Get Samsung subscriptions" />
         </figure>
       </li>
-      <li>Click <strong>Send</strong>.</li> 
+      <li>Click <strong>Send</strong>.</li>
       <li>
         <p>If you get the following error with your <code translate="No">GET</code> request,</p>
         <figure class="bcls-figure">
@@ -2090,12 +2090,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <pre><code class="language-json" translate="No">&quot;metadata&quot;: {
     &quot;Samsung&quot;: &quot;yes&quot;
 },</code></pre>
-    <br/>
+    <br />
 
     <details>
-      <summary><h3 id="Development_sequence">API response</h3></summary> 
-        <p>Your response should look similar to this:</p>
-        <pre class="line-numbers"><code class="language-json" translate="No">{
+      <summary>
+        <h3 id="Development_sequence">API response</h3>
+      </summary>
+      <p>Your response should look similar to this:</p>
+      <pre class="line-numbers"><code class="language-json" translate="No">{
   &quot;object&quot;: &quot;search_result&quot;,
   &quot;data&quot;: [
       {
@@ -2237,8 +2239,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   &quot;has_more&quot;: false,
   &quot;next_page&quot;: null,
   &quot;url&quot;: &quot;/v1/subscriptions/search&quot;
-</code></pre>    
-    </details>    
+</code></pre>
+    </details>
 
   </section>
 
@@ -2259,9 +2261,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>A Stripe webhook can listen for the <code translate="No">customer.subscription.created</code> event.</p>
 
     <details>
-      <summary><h3 id="Development_sequence">API response</h3></summary> 
-        <p>Your response should look similar to this:</p>
-        <pre class="line-numbers"><code class="language-json" translate="No">{
+      <summary>
+        <h3 id="Development_sequence">API response</h3>
+      </summary>
+      <p>Your response should look similar to this:</p>
+      <pre class="line-numbers"><code class="language-json" translate="No">{
   &quot;object&quot;: {
     &quot;id&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
     &quot;object&quot;: &quot;subscription&quot;,
@@ -2421,16 +2425,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     }
   }
 }
-</code></pre>    
+</code></pre>
     </details>
 
     <h4>customer.subscription.updated</h4>
     <p>A Stripe webhook can listen for the <code translate="No">customer.subscription.updated</code> event.</p>
 
     <details>
-      <summary><h3 id="Development_sequence">API response</h3></summary> 
-        <p>Your response should look similar to this:</p>
-        <pre class="line-numbers"><code class="language-json" translate="No">{
+      <summary>
+        <h3 id="Development_sequence">API response</h3>
+      </summary>
+      <p>Your response should look similar to this:</p>
+      <pre class="line-numbers"><code class="language-json" translate="No">{
   &quot;object&quot;: {
     &quot;id&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
     &quot;object&quot;: &quot;subscription&quot;,
@@ -2590,9 +2596,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     }
   }
 }
-</code></pre>    
+</code></pre>
     </details>
-    
+
     <!-- <h4>Subscription Removed/canceled</h4>
     <p>A Stripe webhook can listen for the <code translate="No">subscription Removed/canceled</code> events.</p>
     <p>Notice that the response contains the following:</p>
@@ -2767,11 +2773,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Limitations">Limitations</h2>
     <p>
-     There are some limitations when using the Stripe API:
+      There are some limitations when using the Stripe API:
     </p>
     <ul>
       <li>Quoting Stripe - "Don’t use search in read-after-write flows where strict consistency is necessary. Under normal operating conditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up to an hour behind during outages. Search functionality is not available to merchants in India."</li>
-      
+
     </ul>
   </section>
 </article>'
