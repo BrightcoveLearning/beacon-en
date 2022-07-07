@@ -1929,6 +1929,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     <aside class="bcls-aside bcls-aside--information">Note: Any changes made to a player may take up to 5 minutes to appear in published players.</aside>
   </section>
+
   <section class="bcls-section">
     <h2 id="domains">Configuring domain restrictions</h2>
     <p>Domain restrictions can be set on players to limit the domains where players can be used. If the player publishing code is copied and used on another site, domain restrictions would prevent the player from loading any videos. Publishers must use the in-page embed code to actually get playback working on those domains that have been whitelisted. Publishers cannot use the iframe embed code on a whitelisted domain (or any other domain) and expect playback to function properly.</p>
@@ -1939,7 +1940,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <li>Domain restrictions are supported when using a Gallery In-Page Experience and the Recommended (JavaScript) embed code.</li>
         <li>Domain restricted players are not compatible with AMP integrations. This is because the AMP integration creates an iframe which in turn isn't supported by domain restricted players.</li>
         <li>When using the domain restriction feature, domain restrictions should be configured for all players in your account. If all players are not configured with domain restrictions, someone could take the policy key from an unprotected player and use it to play any video.</li>
-        <li>While there is no limit on the number of domains that can be added in Studio, there is a limit on the length of the URL for the API request - included in that URL will be the comma-delimited list of domains. Therefore there is a limit on the number of domains that can be specified, but the number will depend on how long the domain names are. </li>
+        <li>While there is no limit on the number of domains that can be added in Studio, there is a limit on the URL length; The limit is 8000 characters for the API request to the Playback API - included in that URL will be the comma-delimited list of domains. Please note that this limitation is also valid if you are only using Studio. Therefore there is a limit on the number of domains that can be specified, but the number will depend on how long the domain names are.</li>
       </ul>
     </aside>
     <p>To configure a domain restriction for a player, follow these steps:</p>
@@ -1957,6 +1958,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click <span class="button-blue">Save</span> to save the changes.</li>
     </ol>
   </section>
+
   <section class="bcls-section">
     <h2 id="geofilter">Configuring geo filtering</h2>
     <p>Geo filtering can be used to control which countries can, and cannot, use a player.</p>
