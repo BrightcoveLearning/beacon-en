@@ -3,18 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to retrieve subscription information associated with Stripe custom metadata using the Stripe API.">
+  <meta name="description" content="This topic covers the metrics available in Essential Insights.">
   
-  <title>Managing Stripe Metadata</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
+  <title>Essential Insights</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/s-site-assets-favicons/site.webmanifest">  
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/prism.css">
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/learning-paths/learning-paths.css">
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/landing-page.css">
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
@@ -31,9 +33,8 @@
   gtag('config', 'UA-2728311-17');
 </script>
   <script src="/assets/js/sajari-head.js"></script>
-	<script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-
 
 <body class="body">
 
@@ -62,9 +63,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/monetization/general/">Monetization</a></li>
+      <li class="breadcrumb-item"><a href="/dashboard/">Dashboard</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Managing Stripe Metadata</li>
+      <li class="breadcrumb-item active" aria-current="page">Essential Insights</li>
     </ol>
   </nav>
 </header>
@@ -746,6 +747,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                         
                           
                             <li><a href="/monetization/general/resources.html">Resources for Monetization</a></li>
+                          
+                        
+                          
+                            <li><a href="/monetization/general/stripe-custom-metadata.html">Retrieving Stripe Subscription Info</a></li>
                           
                         
                           
@@ -1560,6 +1565,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
+                    <li><a href="/admin/creating-custom-live-ingest-profiles.html">Creating Custom Live Ingest Profiles</a></li>
+                  
+                
+                  
                     <li><a href="/admin/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a></li>
                   
                 
@@ -1569,6 +1578,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/creating-ingest-profiles-dynamic-delivery.html">Creating Ingest Profiles for Dynamic Delivery</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/fields-custom-live-ingest-profiles.html">Fields for Live Ingest Profiles</a></li>
                   
                 
                   
@@ -1592,6 +1605,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
+                    <li><a href="/admin/managing-live-settings.html">Managing Live Settings</a></li>
+                  
+                
+                  
                     <li><a href="/admin/managing-media-sharing-settings.html">Managing Media Sharing Settings</a></li>
                   
                 
@@ -1605,6 +1622,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles (DD & CAE)</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/standard-live-ingest-profiles.html">Standard Live Ingest Profiles</a></li>
                   
                 
               </ul>
@@ -1904,886 +1925,310 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Managing Stripe Metadata</h1>
+<h1>Essential Insights</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to retrieve subscription information associated with Stripe custom metadata using the Stripe API.</summary>
+  <summary>This topic covers the metrics available in Essential Insights.</summary>
+
   <section class="bcls-section">
-    <h2 id="Overview">Overview</h2>
-    <p>
-      Brightcove is adding custom metadata to Stripe subscriptions that will allow you to identify the viewer's device type used when creating the subscription. You can query the Stripe API to search for subscriptions associated with the custom metadata. You can also add webhooks to listen for Stripe events.
-    </p>
-    <p>This topic will show you how to do the following:</p>
+  <h2 id="Introduction">Introduction</h2>
+  <p>Insights is designed as an informational tool, answering two questions every video service has: how is my audience engaging with my video service and how is my content performing. Unique features include:
     <ul>
-      <li>Use the Stripe API to search for specific metadata in any subscription/purchase to return a list</li>
-      <li>Create a webhook to listen for Stripe events</li>
+      <li>A detailed understanding of <strong>Play Starts</strong> vs <strong>Engaged Views</strong> (as defined as at least 30 seconds). Every video service has audience members that start and quickly stop videos but as these lines diverge, you will want to better understand why customers are not sticking with your video.</li>
+      <li>Beyond understanding the Total Hours Viewed per Device, a breakdown by <strong>User</strong> identifies particular devices that are over or under performing.</li>
+      <li><strong>Sessions Over Time</strong> not only gives a sense of how many audience members are engaging with your video service but the average duration of their session. Any time session duration drops, you should start digging into your content performance.</li>
+      <li><strong>Percent Library Viewed</strong> and <strong>Percent Viewers Watching New Content</strong> (released in the last two weeks) are distinct metrics indicating your library's performance.</li>
+      <li><strong>Attention Index</strong> is a better method for measuring how engaging any video, series, or genre is.  The percentage of viewers that complete less than 10% of a video are subtracted from the percent of viewers watching more than 75% of a video. It’s like a Net Promoter Score for video.</li>
+      <li><strong>Top Titles includes Play Starts</strong> and <strong>Engaged Views</strong> as well as the <strong>Attention Index</strong> help you understand how each video is working for your audience. Editorial and promotional decisions should steer audiences to the most compelling videos.</li>
+      <li><strong>First Watched</strong> identifies the first video an audience member engages with, including its <strong>Attention Index</strong>. Promoting the right group of videos is a key to attracting new audience members.</li>
+      <li>CSV Exports allow for additional analysis and can support Royalty Reporting or importing into personalization engines.</li>
     </ul>
-  </section>
+    <p>In looking at the information provided by Insights, you may find it helpful to refer to the <a href="/analytics/insights-glossary.html">Glossary</a>.</p>
+</section>
 
   <section class="bcls-section">
-    <h2 id="Prerequisites">Prerequisites</h2>
-    <p>
-      To use the Stripe API as shown in this topic, you will need the following:
-    </p>
+    <h2 id="Usage_trends">Usage trends</h2>
+    <p>Usage Trends shows views, hours viewed, and audience size grouped by trialists & subscribers.</p>
+
+    <h3>Overview</h3>
+    <p>Quickly view a summary of usage trends data per day.</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Lost customers per day"
+            src="/assets/images/s-audience-insights-img/guides/engagement/usage-trends.png" />
+        <figcaption class="bcls-caption--image">Usage trends</figcaption>
+
+    </figure>
+
+    <p>Review usage trends data:</p>
     <ul>
-      <li><a href="https://dashboard.stripe.com/register">Stripe account</a></li>
-      <li><a href="https://www.postman.com/downloads/">Postman</a> or another API platform
-        <p>You can use the API platform of your choice to interact with the Stripe API, but for these examples, we will use Postman.</p>
-      </li>
+        <li><strong>New</strong> - Users with a view in the last week but none in the last year</li>
+        <li><strong>Engaged</strong> - Users with multiple views in the last month; views may not have gaps longer
+            than 28 days from previous views</li>
+        <li><strong>Re-engaged</strong> - Users with a view in the last week, but no views in the prior four weeks</li>
+        <li><strong>Recent</strong> - Users with no views in the last week but at least one view in the prior three weeks.</li>
     </ul>
-  </section>
 
-  <!-- <section class="bcls-section">
-    <h2 id="Adding_custom_metadata">Adding custom metadata</h2>
-    <p>You can add a set of custom key-value pairs associated with a Stripe subscription. To add metadata, you can use the Stripe API or the Stripe dashboard as follows:</p>
-    <ol class="bcls-tasklist">
-      <li>Log into your Stripe account.</li>
-      <li>In the left navigation, select <strong>Subscriptions</strong>.</li>
-      <li>
-        <p>In the <strong>Metadata</strong> section, add your desired data.</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/set-metadata.png" alt="set stripe metadata" />
-        </figure>
-      </li> 
-      <li>For details about adding metadata, see Stripe's <a href="https://stripe.com/docs/api/subscriptions/create#create_subscription-metadata">Create subscription metadata</a> reference.</li> 
-    </ol>
-  </section> -->
 
-  <section class="bcls-section">
-    <h2 id="Understanding_the_Stripe_API">Understanding the Stripe API</h2>
-    <h3 id="Base_URL">Base URL</h3>
-
-    <p>The base URL for the Stripe API is:</p>
-
-    <pre><code class="language-http" translate="No">https://api.stripe.com</code></pre>
-
-    <h3 id="Authentication">Authentication</h3>
-
-    <p>Requests are authenticated with your API key in the <code translate="No">Authorization</code> header:</p>
-
-    <pre><code class="language-json" translate="No">Authorization: Bearer {api_key}</code></pre>
-
-    <h3 id="API_collection">API collection</h3>
-
-    <p>The Stripe API Collection is hosted within <a href="https://www.postman.com/stripedev/workspace/stripe-developers/overview">Stripe's Postman public workspace</a>. This allows you to fork from the public workspace into yours.</p>
-    <p>If you don't want to fork the collection from the public workspace, you can import it from the <a href="https://github.com/stripe/stripe-postman">stripe-postman</a> GitHub repository.</p>
-
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Creating_a_Postman_environment">Creating a Postman environment</h2>
-    <p>You can use the API platform of your choice to interact with the Stripe API, but for these examples, we will use Postman.</p>
-
-    <ol class="bcls-tasklist-restart">
-      <li>Login or create an account with <a href="https://www.postman.com/">Postman</a>.</li>
-      <li>Either fork the environment template within the <a href="https://www.postman.com/stripedev/workspace/stripe-developers/overview">Postman Stripe public workspace</a>, or create a new envionment within Postman. We'll create a new environment.</li>
-      <li>
-        <p>In your workspace, click <strong>New</strong>.</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/new-environment.png" alt="create new" />
-        </figure>
-      </li>
-      <li>
-        <p>In the dialog, select <strong>Environment</strong>.</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/new-environment-2.png" alt="select environment" />
-        </figure>
-      </li>
-      <li>
-        <p>Add your secret key as an environment variable and click <strong>Save</strong>.</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/create-key-variable.png" alt="create secret key variable" />
-        </figure>
-      </li>
-      <li>Click <img class="ui-image" width="16px" src="/assets/images/s-monetization-img/managing-stripe-metadata/add-tab-icon.png" alt="Add tab icon"> to open a new tab.</li>
-      <li>
-        <p>In the request dialog, do the following:</p>
-        <ul>
-          <li>Select <strong>Authorization</strong></li>
-          <li>For <strong>Type</strong>, select <strong>Bearer Token</strong></li>
-          <li>For Token, enter <code translate="No">{{secret_key}}</code></li>
-        </ul>
-        <p>If your environment is set up correctly, you should see your secret key value when you mouse over the <code translate="No">secret_key</code> variable.</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/mouse-over-key.png" alt="mouse over key variable" />
-        </figure>
-      </li>
-      <li>Click <strong>Save</strong>.</li>
-      <li>In the dialog, do the following:
-        <ul>
-          <li>Add a <strong>Request name</strong></li>
-          <li>Choose or create a new collection</li>
-          <li>Click <strong>Save</strong></li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/save-request.png" alt="save request" />
-        </figure>
-      </li>
-      <li>
-        <p>You are now ready to create a <code translate="No">GET</code> request to the Stripe API.</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/environment-created.png" alt="Environment created" />
-        </figure>
-      </li>
-    </ol>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Searching_subscriptions_with_metadata">Searching subscriptions with metadata</h2>
-    <p>In this section, you will use the Stripe API to search for subscriptions that have custom metadata.</p>
-    <h3>Custom metadata</h3>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th style="width:40%;">Name</th>
-          <th style="width:60%;">Value</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td><code translate="No">device_type</code></td>
-          <td>Values:
-            <ul>
-              <li><code translate="No">androidtv</code></li>
-              <li><code translate="No">firetv</code></li>
-              <li><code translate="No">lgtv</code></li>
-              <li><code translate="No">nettv</code></li>
-              <li><code translate="No">operatv</code></li>
-              <li><code translate="No">panasonic</code></li>
-              <li><code translate="No">samsung</code></li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3>Steps</h3>
-    <ol class="bcls-tasklist-restart">
-      <li>Return to the Postman environment that you created in the previous section.</li>
-      <li>
-        <p>For the <code translate="No">GET</code> request, paste in the following into the Request URL. Use the device type value of your choice.</p>
-        <pre><code class="language-http" translate="No">https://api.stripe.com/v1/subscriptions/search?query=metadata["device_type"]:"samsung"</code></pre>
-        <br />
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/get-samsung-subscriptions.png" alt="Get Samsung subscriptions" />
-        </figure>
-      </li>
-      <li>Click <strong>Send</strong>.</li>
-      <li>
-        <p>If you get the following error with your <code translate="No">GET</code> request,</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/verrsion-error.png" alt="Stripe API version error" />
-        </figure>
-        <p>make sure that you are using the current version of the Stripe API. You can do this by adding the following header:</p>
-        <ul>
-          <li><code translate="No">KEY</code> is "Stripe-version"</li>
-          <li><code translate="No">VALUE</code> is "2020-08-27" (or latest version)</li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-monetization-img/managing-stripe-metadata/version-header.png" alt="Stripe version header" />
-        </figure>
-      </li>
-    </ol>
-
-    <h3>Response</h3>
-    <p>The API response should contain subscriptions with metadata for <code translate="No">Samsung:yes</code>.</p>
-    <p>Notice that the response contains the following:</p>
-    <pre><code class="language-json" translate="No">&quot;metadata&quot;: {
-    &quot;Samsung&quot;: &quot;yes&quot;
-},</code></pre>
-    <br />
-
-    <details>
-      <summary>
-        <h3 id="Development_sequence">API response</h3>
-      </summary>
-      <p>Your response should look similar to this:</p>
-      <pre class="line-numbers"><code class="language-json" translate="No">{
-  &quot;object&quot;: &quot;search_result&quot;,
-  &quot;data&quot;: [
-      {
-          &quot;id&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
-          &quot;object&quot;: &quot;subscription&quot;,
-          &quot;application&quot;: null,
-          &quot;application_fee_percent&quot;: null,
-          &quot;automatic_tax&quot;: {
-              &quot;enabled&quot;: false
-          },
-          &quot;billing_cycle_anchor&quot;: 1653581061,
-          &quot;billing_thresholds&quot;: null,
-          &quot;cancel_at&quot;: null,
-          &quot;cancel_at_period_end&quot;: false,
-          &quot;canceled_at&quot;: null,
-          &quot;collection_method&quot;: &quot;charge_automatically&quot;,
-          &quot;created&quot;: 1653581061,
-          &quot;current_period_end&quot;: 1656259461,
-          &quot;current_period_start&quot;: 1653581061,
-          &quot;customer&quot;: &quot;cus_LlFcWXPXftQibf&quot;,
-          &quot;days_until_due&quot;: null,
-          &quot;default_payment_method&quot;: null,
-          &quot;default_source&quot;: null,
-          &quot;default_tax_rates&quot;: [],
-          &quot;description&quot;: null,
-          &quot;discount&quot;: null,
-          &quot;ended_at&quot;: null,
-          &quot;items&quot;: {
-              &quot;object&quot;: &quot;list&quot;,
-              &quot;data&quot;: [
-                  {
-                      &quot;id&quot;: &quot;si_LlFgWbs9lqlwOF&quot;,
-                      &quot;object&quot;: &quot;subscription_item&quot;,
-                      &quot;billing_thresholds&quot;: null,
-                      &quot;created&quot;: 1653581062,
-                      &quot;metadata&quot;: {},
-                      &quot;plan&quot;: {
-                          &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-                          &quot;object&quot;: &quot;plan&quot;,
-                          &quot;active&quot;: true,
-                          &quot;aggregate_usage&quot;: null,
-                          &quot;amount&quot;: 100,
-                          &quot;amount_decimal&quot;: &quot;100&quot;,
-                          &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-                          &quot;created&quot;: 1653580781,
-                          &quot;currency&quot;: &quot;eur&quot;,
-                          &quot;interval&quot;: &quot;month&quot;,
-                          &quot;interval_count&quot;: 1,
-                          &quot;livemode&quot;: false,
-                          &quot;metadata&quot;: {},
-                          &quot;nickname&quot;: null,
-                          &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-                          &quot;tiers_mode&quot;: null,
-                          &quot;transform_usage&quot;: null,
-                          &quot;trial_period_days&quot;: null,
-                          &quot;usage_type&quot;: &quot;licensed&quot;
-                      },
-                      &quot;price&quot;: {
-                          &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-                          &quot;object&quot;: &quot;price&quot;,
-                          &quot;active&quot;: true,
-                          &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-                          &quot;created&quot;: 1653580781,
-                          &quot;currency&quot;: &quot;eur&quot;,
-                          &quot;livemode&quot;: false,
-                          &quot;lookup_key&quot;: null,
-                          &quot;metadata&quot;: {},
-                          &quot;nickname&quot;: null,
-                          &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-                          &quot;recurring&quot;: {
-                              &quot;aggregate_usage&quot;: null,
-                              &quot;interval&quot;: &quot;month&quot;,
-                              &quot;interval_count&quot;: 1,
-                              &quot;trial_period_days&quot;: null,
-                              &quot;usage_type&quot;: &quot;licensed&quot;
-                          },
-                          &quot;tax_behavior&quot;: &quot;unspecified&quot;,
-                          &quot;tiers_mode&quot;: null,
-                          &quot;transform_quantity&quot;: null,
-                          &quot;type&quot;: &quot;recurring&quot;,
-                          &quot;unit_amount&quot;: 100,
-                          &quot;unit_amount_decimal&quot;: &quot;100&quot;
-                      },
-                      &quot;quantity&quot;: 1,
-                      &quot;subscription&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
-                      &quot;tax_rates&quot;: []
-                  }
-              ],
-              &quot;has_more&quot;: false,
-              &quot;total_count&quot;: 1,
-              &quot;url&quot;: &quot;/v1/subscription_items?subscription=sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;
-          },
-          &quot;latest_invoice&quot;: &quot;in_1L3jAgFzWFPFNFjq8YFoU6R3&quot;,
-          &quot;livemode&quot;: false,
-          <span class="bcls-highlight">&quot;metadata&quot;: {
-              &quot;Samsung&quot;: &quot;yes&quot;
-          },</span>
-          &quot;next_pending_invoice_item_invoice&quot;: null,
-          &quot;pause_collection&quot;: null,
-          &quot;payment_settings&quot;: {
-              &quot;payment_method_options&quot;: null,
-              &quot;payment_method_types&quot;: null,
-              &quot;save_default_payment_method&quot;: &quot;off&quot;
-          },
-          &quot;pending_invoice_item_interval&quot;: null,
-          &quot;pending_setup_intent&quot;: null,
-          &quot;pending_update&quot;: null,
-          &quot;plan&quot;: {
-              &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-              &quot;object&quot;: &quot;plan&quot;,
-              &quot;active&quot;: true,
-              &quot;aggregate_usage&quot;: null,
-              &quot;amount&quot;: 100,
-              &quot;amount_decimal&quot;: &quot;100&quot;,
-              &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-              &quot;created&quot;: 1653580781,
-              &quot;currency&quot;: &quot;eur&quot;,
-              &quot;interval&quot;: &quot;month&quot;,
-              &quot;interval_count&quot;: 1,
-              &quot;livemode&quot;: false,
-              &quot;metadata&quot;: {},
-              &quot;nickname&quot;: null,
-              &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-              &quot;tiers_mode&quot;: null,
-              &quot;transform_usage&quot;: null,
-              &quot;trial_period_days&quot;: null,
-              &quot;usage_type&quot;: &quot;licensed&quot;
-          },
-          &quot;quantity&quot;: 1,
-          &quot;schedule&quot;: null,
-          &quot;start_date&quot;: 1653581061,
-          &quot;status&quot;: &quot;active&quot;,
-          &quot;test_clock&quot;: null,
-          &quot;transfer_data&quot;: null,
-          &quot;trial_end&quot;: null,
-          &quot;trial_start&quot;: null
-      }
-  ],
-  &quot;has_more&quot;: false,
-  &quot;next_page&quot;: null,
-  &quot;url&quot;: &quot;/v1/subscriptions/search&quot;
-</code></pre>
-    </details>
-
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Using_Stripe_webhooks">Using Stripe webhooks</h2>
-    <p>Your Brightcove Beacon app can listen for events on your Stripe account, and you can use webhooks to enable Stripe to push real-time notifications to your app, or you can use a webhook as an endpoint.</p>
-    <p>For details, see the Stripe <a href="https://stripe.com/docs/webhooks">Use incoming webhooks</a> reference.</p>
-
-    <p>Notice that each response contains the following:</p>
-    <pre><code class="language-json" translate="No">&quot;metadata&quot;: {
-    &quot;Samsung&quot;: &quot;yes&quot;
-},</code></pre>
-
-    <h3>Events</h3>
-    <p>Here are some events you can listen for:</p>
-
-    <h4>customer.subscription.created</h4>
-    <p>A Stripe webhook can listen for the <code translate="No">customer.subscription.created</code> event.</p>
-
-    <details>
-      <summary>
-        <h3 id="Development_sequence">API response</h3>
-      </summary>
-      <p>Your response should look similar to this:</p>
-      <pre class="line-numbers"><code class="language-json" translate="No">{
-  &quot;object&quot;: {
-    &quot;id&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
-    &quot;object&quot;: &quot;subscription&quot;,
-    &quot;application&quot;: null,
-    &quot;application_fee_percent&quot;: null,
-    &quot;automatic_tax&quot;: {
-      &quot;enabled&quot;: false
-    },
-    &quot;billing&quot;: &quot;charge_automatically&quot;,
-    &quot;billing_cycle_anchor&quot;: 1653581061,
-    &quot;billing_thresholds&quot;: null,
-    &quot;cancel_at&quot;: null,
-    &quot;cancel_at_period_end&quot;: false,
-    &quot;canceled_at&quot;: null,
-    &quot;collection_method&quot;: &quot;charge_automatically&quot;,
-    &quot;created&quot;: 1653581061,
-    &quot;current_period_end&quot;: 1656259461,
-    &quot;current_period_start&quot;: 1653581061,
-    &quot;customer&quot;: &quot;cus_LlFcWXPXftQibf&quot;,
-    &quot;days_until_due&quot;: null,
-    &quot;default_payment_method&quot;: null,
-    &quot;default_source&quot;: null,
-    &quot;default_tax_rates&quot;: [
-    ],
-    &quot;description&quot;: null,
-    &quot;discount&quot;: null,
-    &quot;ended_at&quot;: null,
-    &quot;invoice_customer_balance_settings&quot;: {
-      &quot;consume_applied_balance_on_void&quot;: true
-    },
-    &quot;items&quot;: {
-      &quot;object&quot;: &quot;list&quot;,
-      &quot;data&quot;: [
-        {
-          &quot;id&quot;: &quot;si_LlFgWbs9lqlwOF&quot;,
-          &quot;object&quot;: &quot;subscription_item&quot;,
-          &quot;billing_thresholds&quot;: null,
-          &quot;created&quot;: 1653581062,
-          &quot;metadata&quot;: {
-          },
-          &quot;plan&quot;: {
-            &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-            &quot;object&quot;: &quot;plan&quot;,
-            &quot;active&quot;: true,
-            &quot;aggregate_usage&quot;: null,
-            &quot;amount&quot;: 100,
-            &quot;amount_decimal&quot;: &quot;100&quot;,
-            &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-            &quot;created&quot;: 1653580781,
-            &quot;currency&quot;: &quot;eur&quot;,
-            &quot;interval&quot;: &quot;month&quot;,
-            &quot;interval_count&quot;: 1,
-            &quot;livemode&quot;: false,
-            &quot;metadata&quot;: {
-            },
-            &quot;name&quot;: &quot;Beacon Metadata&quot;,
-            &quot;nickname&quot;: null,
-            &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-            &quot;statement_descriptor&quot;: null,
-            &quot;tiers&quot;: null,
-            &quot;tiers_mode&quot;: null,
-            &quot;transform_usage&quot;: null,
-            &quot;trial_period_days&quot;: null,
-            &quot;usage_type&quot;: &quot;licensed&quot;
-          },
-          &quot;price&quot;: {
-            &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-            &quot;object&quot;: &quot;price&quot;,
-            &quot;active&quot;: true,
-            &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-            &quot;created&quot;: 1653580781,
-            &quot;currency&quot;: &quot;eur&quot;,
-            &quot;livemode&quot;: false,
-            &quot;lookup_key&quot;: null,
-            &quot;metadata&quot;: {
-            },
-            &quot;nickname&quot;: null,
-            &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-            &quot;recurring&quot;: {
-              &quot;aggregate_usage&quot;: null,
-              &quot;interval&quot;: &quot;month&quot;,
-              &quot;interval_count&quot;: 1,
-              &quot;trial_period_days&quot;: null,
-              &quot;usage_type&quot;: &quot;licensed&quot;
-            },
-            &quot;tax_behavior&quot;: &quot;unspecified&quot;,
-            &quot;tiers_mode&quot;: null,
-            &quot;transform_quantity&quot;: null,
-            &quot;type&quot;: &quot;recurring&quot;,
-            &quot;unit_amount&quot;: 100,
-            &quot;unit_amount_decimal&quot;: &quot;100&quot;
-          },
-          &quot;quantity&quot;: 1,
-          &quot;subscription&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
-          &quot;tax_rates&quot;: [
-          ]
-        }
-      ],
-      &quot;has_more&quot;: false,
-      &quot;total_count&quot;: 1,
-      &quot;url&quot;: &quot;/v1/subscription_items?subscription=sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;
-    },
-    &quot;latest_invoice&quot;: &quot;in_1L3jAgFzWFPFNFjq8YFoU6R3&quot;,
-    &quot;livemode&quot;: false,
-    &quot;metadata&quot;: {
-      &quot;Samsung&quot;: &quot;yes&quot;
-    },
-    &quot;next_pending_invoice_item_invoice&quot;: null,
-    &quot;pause_collection&quot;: null,
-    &quot;payment_settings&quot;: {
-      &quot;payment_method_options&quot;: null,
-      &quot;payment_method_types&quot;: null,
-      &quot;save_default_payment_method&quot;: &quot;off&quot;
-    },
-    &quot;pending_invoice_item_interval&quot;: null,
-    &quot;pending_setup_intent&quot;: null,
-    &quot;pending_update&quot;: null,
-    &quot;plan&quot;: {
-      &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-      &quot;object&quot;: &quot;plan&quot;,
-      &quot;active&quot;: true,
-      &quot;aggregate_usage&quot;: null,
-      &quot;amount&quot;: 100,
-      &quot;amount_decimal&quot;: &quot;100&quot;,
-      &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-      &quot;created&quot;: 1653580781,
-      &quot;currency&quot;: &quot;eur&quot;,
-      &quot;interval&quot;: &quot;month&quot;,
-      &quot;interval_count&quot;: 1,
-      &quot;livemode&quot;: false,
-      &quot;metadata&quot;: {
-      },
-      &quot;name&quot;: &quot;Beacon Metadata&quot;,
-      &quot;nickname&quot;: null,
-      &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-      &quot;statement_descriptor&quot;: null,
-      &quot;tiers&quot;: null,
-      &quot;tiers_mode&quot;: null,
-      &quot;transform_usage&quot;: null,
-      &quot;trial_period_days&quot;: null,
-      &quot;usage_type&quot;: &quot;licensed&quot;
-    },
-    &quot;quantity&quot;: 1,
-    &quot;schedule&quot;: null,
-    &quot;start&quot;: 1653581061,
-    &quot;start_date&quot;: 1653581061,
-    &quot;status&quot;: &quot;active&quot;,
-    &quot;tax_percent&quot;: null,
-    &quot;test_clock&quot;: null,
-    &quot;transfer_data&quot;: null,
-    &quot;trial_end&quot;: null,
-    &quot;trial_start&quot;: null
-  },
-  &quot;previous_attributes&quot;: {
-    &quot;metadata&quot;: {
-      &quot;Samsung&quot;: null
-    }
-  }
-}
-</code></pre>
-    </details>
-
-    <h4>customer.subscription.updated</h4>
-    <p>A Stripe webhook can listen for the <code translate="No">customer.subscription.updated</code> event.</p>
-
-    <details>
-      <summary>
-        <h3 id="Development_sequence">API response</h3>
-      </summary>
-      <p>Your response should look similar to this:</p>
-      <pre class="line-numbers"><code class="language-json" translate="No">{
-  &quot;object&quot;: {
-    &quot;id&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
-    &quot;object&quot;: &quot;subscription&quot;,
-    &quot;application&quot;: null,
-    &quot;application_fee_percent&quot;: null,
-    &quot;automatic_tax&quot;: {
-      &quot;enabled&quot;: false
-    },
-    &quot;billing&quot;: &quot;charge_automatically&quot;,
-    &quot;billing_cycle_anchor&quot;: 1653581061,
-    &quot;billing_thresholds&quot;: null,
-    &quot;cancel_at&quot;: null,
-    &quot;cancel_at_period_end&quot;: false,
-    &quot;canceled_at&quot;: null,
-    &quot;collection_method&quot;: &quot;charge_automatically&quot;,
-    &quot;created&quot;: 1653581061,
-    &quot;current_period_end&quot;: 1656259461,
-    &quot;current_period_start&quot;: 1653581061,
-    &quot;customer&quot;: &quot;cus_LlFcWXPXftQibf&quot;,
-    &quot;days_until_due&quot;: null,
-    &quot;default_payment_method&quot;: null,
-    &quot;default_source&quot;: null,
-    &quot;default_tax_rates&quot;: [
-    ],
-    &quot;description&quot;: null,
-    &quot;discount&quot;: null,
-    &quot;ended_at&quot;: null,
-    &quot;invoice_customer_balance_settings&quot;: {
-      &quot;consume_applied_balance_on_void&quot;: true
-    },
-    &quot;items&quot;: {
-      &quot;object&quot;: &quot;list&quot;,
-      &quot;data&quot;: [
-        {
-          &quot;id&quot;: &quot;si_LlFgWbs9lqlwOF&quot;,
-          &quot;object&quot;: &quot;subscription_item&quot;,
-          &quot;billing_thresholds&quot;: null,
-          &quot;created&quot;: 1653581062,
-          &quot;metadata&quot;: {
-          },
-          &quot;plan&quot;: {
-            &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-            &quot;object&quot;: &quot;plan&quot;,
-            &quot;active&quot;: true,
-            &quot;aggregate_usage&quot;: null,
-            &quot;amount&quot;: 100,
-            &quot;amount_decimal&quot;: &quot;100&quot;,
-            &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-            &quot;created&quot;: 1653580781,
-            &quot;currency&quot;: &quot;eur&quot;,
-            &quot;interval&quot;: &quot;month&quot;,
-            &quot;interval_count&quot;: 1,
-            &quot;livemode&quot;: false,
-            &quot;metadata&quot;: {
-            },
-            &quot;name&quot;: &quot;Beacon Metadata&quot;,
-            &quot;nickname&quot;: null,
-            &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-            &quot;statement_descriptor&quot;: null,
-            &quot;tiers&quot;: null,
-            &quot;tiers_mode&quot;: null,
-            &quot;transform_usage&quot;: null,
-            &quot;trial_period_days&quot;: null,
-            &quot;usage_type&quot;: &quot;licensed&quot;
-          },
-          &quot;price&quot;: {
-            &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-            &quot;object&quot;: &quot;price&quot;,
-            &quot;active&quot;: true,
-            &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-            &quot;created&quot;: 1653580781,
-            &quot;currency&quot;: &quot;eur&quot;,
-            &quot;livemode&quot;: false,
-            &quot;lookup_key&quot;: null,
-            &quot;metadata&quot;: {
-            },
-            &quot;nickname&quot;: null,
-            &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-            &quot;recurring&quot;: {
-              &quot;aggregate_usage&quot;: null,
-              &quot;interval&quot;: &quot;month&quot;,
-              &quot;interval_count&quot;: 1,
-              &quot;trial_period_days&quot;: null,
-              &quot;usage_type&quot;: &quot;licensed&quot;
-            },
-            &quot;tax_behavior&quot;: &quot;unspecified&quot;,
-            &quot;tiers_mode&quot;: null,
-            &quot;transform_quantity&quot;: null,
-            &quot;type&quot;: &quot;recurring&quot;,
-            &quot;unit_amount&quot;: 100,
-            &quot;unit_amount_decimal&quot;: &quot;100&quot;
-          },
-          &quot;quantity&quot;: 1,
-          &quot;subscription&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
-          &quot;tax_rates&quot;: [
-          ]
-        }
-      ],
-      &quot;has_more&quot;: false,
-      &quot;total_count&quot;: 1,
-      &quot;url&quot;: &quot;/v1/subscription_items?subscription=sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;
-    },
-    &quot;latest_invoice&quot;: &quot;in_1L3jAgFzWFPFNFjq8YFoU6R3&quot;,
-    &quot;livemode&quot;: false,
-    &quot;metadata&quot;: {
-      &quot;Samsung&quot;: &quot;yes&quot;
-    },
-    &quot;next_pending_invoice_item_invoice&quot;: null,
-    &quot;pause_collection&quot;: null,
-    &quot;payment_settings&quot;: {
-      &quot;payment_method_options&quot;: null,
-      &quot;payment_method_types&quot;: null,
-      &quot;save_default_payment_method&quot;: &quot;off&quot;
-    },
-    &quot;pending_invoice_item_interval&quot;: null,
-    &quot;pending_setup_intent&quot;: null,
-    &quot;pending_update&quot;: null,
-    &quot;plan&quot;: {
-      &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-      &quot;object&quot;: &quot;plan&quot;,
-      &quot;active&quot;: true,
-      &quot;aggregate_usage&quot;: null,
-      &quot;amount&quot;: 100,
-      &quot;amount_decimal&quot;: &quot;100&quot;,
-      &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-      &quot;created&quot;: 1653580781,
-      &quot;currency&quot;: &quot;eur&quot;,
-      &quot;interval&quot;: &quot;month&quot;,
-      &quot;interval_count&quot;: 1,
-      &quot;livemode&quot;: false,
-      &quot;metadata&quot;: {
-      },
-      &quot;name&quot;: &quot;Beacon Metadata&quot;,
-      &quot;nickname&quot;: null,
-      &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-      &quot;statement_descriptor&quot;: null,
-      &quot;tiers&quot;: null,
-      &quot;tiers_mode&quot;: null,
-      &quot;transform_usage&quot;: null,
-      &quot;trial_period_days&quot;: null,
-      &quot;usage_type&quot;: &quot;licensed&quot;
-    },
-    &quot;quantity&quot;: 1,
-    &quot;schedule&quot;: null,
-    &quot;start&quot;: 1653581061,
-    &quot;start_date&quot;: 1653581061,
-    &quot;status&quot;: &quot;active&quot;,
-    &quot;tax_percent&quot;: null,
-    &quot;test_clock&quot;: null,
-    &quot;transfer_data&quot;: null,
-    &quot;trial_end&quot;: null,
-    &quot;trial_start&quot;: null
-  },
-  &quot;previous_attributes&quot;: {
-    &quot;metadata&quot;: {
-      &quot;Samsung&quot;: null
-    }
-  }
-}
-</code></pre>
-    </details>
-
-    <!-- <h4>Subscription Removed/canceled</h4>
-    <p>A Stripe webhook can listen for the <code translate="No">subscription Removed/canceled</code> events.</p>
-    <p>Notice that the response contains the following:</p>
-    <pre><code class="language-json" translate="No">&quot;metadata&quot;: {
-    &quot;Samsung&quot;: &quot;yes&quot;
-},</code></pre>
-    <br/>
-
-    <details>
-      <summary><h3 id="Development_sequence">API response</h3></summary> 
-        <p>Your response should look similar to this:</p>
-        <pre class="line-numbers"><code class="language-json" translate="No">{
-  &quot;object&quot;: {
-    &quot;id&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
-    &quot;object&quot;: &quot;subscription&quot;,
-    &quot;application&quot;: null,
-    &quot;application_fee_percent&quot;: null,
-    &quot;automatic_tax&quot;: {
-      &quot;enabled&quot;: false
-    },
-    &quot;billing&quot;: &quot;charge_automatically&quot;,
-    &quot;billing_cycle_anchor&quot;: 1653581061,
-    &quot;billing_thresholds&quot;: null,
-    &quot;cancel_at&quot;: null,
-    &quot;cancel_at_period_end&quot;: false,
-    &quot;canceled_at&quot;: 1653582658,
-    &quot;collection_method&quot;: &quot;charge_automatically&quot;,
-    &quot;created&quot;: 1653581061,
-    &quot;current_period_end&quot;: 1656201600,
-    &quot;current_period_start&quot;: 1653581061,
-    &quot;customer&quot;: &quot;cus_LlFcWXPXftQibf&quot;,
-    &quot;days_until_due&quot;: null,
-    &quot;default_payment_method&quot;: null,
-    &quot;default_source&quot;: null,
-    &quot;default_tax_rates&quot;: [
-    ],
-    &quot;description&quot;: null,
-    &quot;discount&quot;: null,
-    &quot;ended_at&quot;: 1653582943,
-    &quot;invoice_customer_balance_settings&quot;: {
-      &quot;consume_applied_balance_on_void&quot;: true
-    },
-    &quot;items&quot;: {
-      &quot;object&quot;: &quot;list&quot;,
-      &quot;data&quot;: [
-        {
-          &quot;id&quot;: &quot;si_LlFgWbs9lqlwOF&quot;,
-          &quot;object&quot;: &quot;subscription_item&quot;,
-          &quot;billing_thresholds&quot;: null,
-          &quot;created&quot;: 1653581062,
-          &quot;metadata&quot;: {
-          },
-          &quot;plan&quot;: {
-            &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-            &quot;object&quot;: &quot;plan&quot;,
-            &quot;active&quot;: true,
-            &quot;aggregate_usage&quot;: null,
-            &quot;amount&quot;: 100,
-            &quot;amount_decimal&quot;: &quot;100&quot;,
-            &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-            &quot;created&quot;: 1653580781,
-            &quot;currency&quot;: &quot;eur&quot;,
-            &quot;interval&quot;: &quot;month&quot;,
-            &quot;interval_count&quot;: 1,
-            &quot;livemode&quot;: false,
-            &quot;metadata&quot;: {
-            },
-            &quot;name&quot;: &quot;Beacon Metadata&quot;,
-            &quot;nickname&quot;: null,
-            &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-            &quot;statement_descriptor&quot;: null,
-            &quot;tiers&quot;: null,
-            &quot;tiers_mode&quot;: null,
-            &quot;transform_usage&quot;: null,
-            &quot;trial_period_days&quot;: null,
-            &quot;usage_type&quot;: &quot;licensed&quot;
-          },
-          &quot;price&quot;: {
-            &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-            &quot;object&quot;: &quot;price&quot;,
-            &quot;active&quot;: true,
-            &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-            &quot;created&quot;: 1653580781,
-            &quot;currency&quot;: &quot;eur&quot;,
-            &quot;livemode&quot;: false,
-            &quot;lookup_key&quot;: null,
-            &quot;metadata&quot;: {
-            },
-            &quot;nickname&quot;: null,
-            &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-            &quot;recurring&quot;: {
-              &quot;aggregate_usage&quot;: null,
-              &quot;interval&quot;: &quot;month&quot;,
-              &quot;interval_count&quot;: 1,
-              &quot;trial_period_days&quot;: null,
-              &quot;usage_type&quot;: &quot;licensed&quot;
-            },
-            &quot;tax_behavior&quot;: &quot;unspecified&quot;,
-            &quot;tiers_mode&quot;: null,
-            &quot;transform_quantity&quot;: null,
-            &quot;type&quot;: &quot;recurring&quot;,
-            &quot;unit_amount&quot;: 100,
-            &quot;unit_amount_decimal&quot;: &quot;100&quot;
-          },
-          &quot;quantity&quot;: 1,
-          &quot;subscription&quot;: &quot;sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;,
-          &quot;tax_rates&quot;: [
-          ]
-        }
-      ],
-      &quot;has_more&quot;: false,
-      &quot;total_count&quot;: 1,
-      &quot;url&quot;: &quot;/v1/subscription_items?subscription=sub_1L3jAgFzWFPFNFjqFpyUF8XY&quot;
-    },
-    &quot;latest_invoice&quot;: &quot;in_1L3jf1FzWFPFNFjqFPC0c3Tq&quot;,
-    &quot;livemode&quot;: false,
-    &quot;metadata&quot;: {
-      &quot;Samsung&quot;: &quot;yes&quot;
-    },
-    &quot;next_pending_invoice_item_invoice&quot;: null,
-    &quot;pause_collection&quot;: null,
-    &quot;payment_settings&quot;: {
-      &quot;payment_method_options&quot;: null,
-      &quot;payment_method_types&quot;: null,
-      &quot;save_default_payment_method&quot;: &quot;off&quot;
-    },
-    &quot;pending_invoice_item_interval&quot;: null,
-    &quot;pending_setup_intent&quot;: null,
-    &quot;pending_update&quot;: null,
-    &quot;plan&quot;: {
-      &quot;id&quot;: &quot;price_1L3j69FzWFPFNFjqpEIV4RMb&quot;,
-      &quot;object&quot;: &quot;plan&quot;,
-      &quot;active&quot;: true,
-      &quot;aggregate_usage&quot;: null,
-      &quot;amount&quot;: 100,
-      &quot;amount_decimal&quot;: &quot;100&quot;,
-      &quot;billing_scheme&quot;: &quot;per_unit&quot;,
-      &quot;created&quot;: 1653580781,
-      &quot;currency&quot;: &quot;eur&quot;,
-      &quot;interval&quot;: &quot;month&quot;,
-      &quot;interval_count&quot;: 1,
-      &quot;livemode&quot;: false,
-      &quot;metadata&quot;: {
-      },
-      &quot;name&quot;: &quot;Beacon Metadata&quot;,
-      &quot;nickname&quot;: null,
-      &quot;product&quot;: &quot;prod_LlFbyvOQ6dpLXF&quot;,
-      &quot;statement_descriptor&quot;: null,
-      &quot;tiers&quot;: null,
-      &quot;tiers_mode&quot;: null,
-      &quot;transform_usage&quot;: null,
-      &quot;trial_period_days&quot;: null,
-      &quot;usage_type&quot;: &quot;licensed&quot;
-    },
-    &quot;quantity&quot;: 1,
-    &quot;schedule&quot;: null,
-    &quot;start&quot;: 1653582658,
-    &quot;start_date&quot;: 1653581061,
-    &quot;status&quot;: &quot;canceled&quot;,
-    &quot;tax_percent&quot;: null,
-    &quot;test_clock&quot;: null,
-    &quot;transfer_data&quot;: null,
-    &quot;trial_end&quot;: null,
-    &quot;trial_start&quot;: null
-  }
-}
-</code></pre>    
-    </details> -->
-
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Limitations">Limitations</h2>
-    <p>
-      There are some limitations when using the Stripe API:
-    </p>
+    <h3>Actions</h3>
     <ul>
-      <li>Quoting Stripe - "Don’t use search in read-after-write flows where strict consistency is necessary. Under normal operating conditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up to an hour behind during outages. Search functionality is not available to merchants in India."</li>
+        <li>Click <img class="bcls-image--no-border" alt="Expand Icon"
+                src="/assets/images/s-audience-insights-img/guides/lost-customers/expand-icon.png" /> to expand the graph and see more
+            information.
 
+        </li>
+        <li> Select <img class="bcls-image--no-border" alt="Expand Icon"
+                src="/assets/images/s-audience-insights-img/guides/engagement/view-hour-audience.png" /> to see engage trends displayed by
+            views, hours watched or audience size.</li>
+        <li>Click <img class="bcls-image--no-border" alt="Overflow menu"
+                src="/assets/images/s-audience-insights-img/guides/summary/overflow-menu.png" /> to download data as a CSV
+            file or a PNG image.
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                    src="/assets/images/s-audience-insights-img/guides/summary/download-csv.png" />
+            </figure>
+        </li>
+
+        <li>Select a date range for your data.
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Date range"
+                    src="/assets/images/s-audience-insights-img/guides/summary/date-range.png" />
+            </figure>
+        </li>
+        <li>Select the x-axis granularity to be <strong>Day</strong>, <strong>Week</strong> or
+            <strong>Month</strong>.
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="X-axis granularity"
+                    src="/assets/images/s-audience-insights-img/guides/summary/granularity.png" />
+            </figure>
+        </li>
+        <li>Check <img class="bcls-image--no-border" alt="Auto adjust"
+                src="/assets/images/s-audience-insights-img/guides/summary/auto-adjust.png" /> to automatically change the x-axis dimension
+            to day.
+        </li>
+        <li>Select <img class="bcls-image--no-border" alt=""
+                src="/assets/images/s-audience-insights-img/guides/engagement/new-engage-reengage.png" /> to automatically show a specific
+            graphic for new, engage and re-engage.
+        </li>
     </ul>
-  </section>
-</article>'
+    <h3>Examples</h3>
+    <ul>
+        <li>
+            Disinterested user
+            <figure class="bcls-figure"><img width="80%" class="bcls-image--no-border" alt="Example 1"
+                    src="/assets/images/s-audience-insights-img/guides/engagement/example-1.png" />
+                <figcaption class="bcls-caption--image">Disinterested User</figcaption>
 
-<!-- Note that this is an old url path name. This should be deleted eventually. The new path name is monetization/general/stripe-custom-metadata.html -->
+        </li>
+        <li>
+            Spotty viewing
+            <figure class="bcls-figure"><img width="80%" class="bcls-image--no-border" alt="Example 2"
+                    src="/assets/images/s-audience-insights-img/guides/engagement/example-2.png" />
+                <figcaption class="bcls-caption--image"> Spotty viewing</figcaption>
 
+        </li>
+        <li>
+            Seasonal viewing
+            <figure class="bcls-figure"><img width="80%" class="bcls-image--no-border" alt="Example 3"
+                    src="/assets/images/s-audience-insights-img/guides/engagement/example-3.png" />
+                <figcaption class="bcls-caption--image">Seasonal Viewing</figcaption>
+
+        </li>
+    </ul>
+
+</section> 
+
+  <section class="bcls-section">
+    <h2 id="Milestones">Milestones</h2>
+    <p>Milestones track progress against your decisions and are persistent throughout each tab of the Scorecard.</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Customer summary scorecard"
+            src="/assets/images/s-audience-insights-img/guides/lost-customers/milestones.png" />
+        <figcaption class="bcls-caption--image">Milestones</figcaption>
+    </figure>
+    <h3>Actions</h3>
+    <p>Here are the actions that are available for the milestones section.</p>
+    <ul>
+        <li>
+            <p>Click <img class="bcls-image--no-border" alt="Expand Icon"
+                    src="/assets/images/s-audience-insights-img/guides/lost-customers/create-milestone-button.png" /> to add a new
+                milestone.</p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                    src="/assets/images/s-audience-insights-img/guides/lost-customers/new-milestone.png" />
+            </figure>
+
+        </li>
+        <li>
+            <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
+                    src="/assets/images/s-audience-insights-img/guides/engagement/three-dots-milestones.png" /> to delete or edit a
+                milestone.</p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                    src="/assets/images/s-audience-insights-img/guides/engagement/edit-delete.png" />
+            </figure>
+        </li>
+        <li>
+            <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
+                    src="/assets/images/s-audience-insights-img/guides/lost-customers/views-button.png" /> to select which views to show.
+            </p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                    src="/assets/images/s-audience-insights-img/guides/lost-customers/views.png" />
+            </figure>
+        </li>
+    </ul>
+</section>
+
+  <section class="bcls-section">
+  <h2 id="Hours_by_device">Hours by device</h2>
+  <p>The Hours by Location insight shows you how your content is performing on different devices:</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-audience-insights-img/essential-insights/hours-by-device-overview.png" alt="Hours by Device">
+    <figcaption class="bcls-caption--image">Hours by Location</figcaption>
+  </figure>
+  <p>This can be useful for making decisions about ingest profiles and video production, to ensure that you are producing content well-matched to viewers's preferred devices.</p>
+  <p>Mouseover circles in the graph on the right to see more details:</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-audience-insights-img/essential-insights/hours-by-device-detail.png" alt="Hours by Device Details">
+    <figcaption class="bcls-caption--image">Hours by Device Details</figcaption>
+  </figure>
+</section>
+
+  <section class="bcls-section">
+  <h2 id="Hours_by_location">Hours by location</h2>
+  <p>The Hours by Location insight shows you how your content is performing in various parts of the world:</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-audience-insights-img/essential-insights/hours-by-location.png" alt="Hours by Location">
+    <figcaption class="bcls-caption--image">Hours by Location</figcaption>
+  </figure>
+  <p>Note the zoom control in the lower-left corner of the map and also that you can mouseover countries on the map or the graph the right to get details:</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-audience-insights-img/essential-insights/views-by-country-details-1.png" alt="Country Details">
+    <figcaption class="bcls-caption--image">Country Details</figcaption>
+  </figure>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-audience-insights-img/essential-insights/views-by-country-details-2.png" alt="Country Details">
+    <figcaption class="bcls-caption--image">Country Details</figcaption>
+  </figure>
+  <p>In addition, you can click on countries on the map to drilldown into a regional breakdown:</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="/assets/images/s-audience-insights-img/essential-insights/regional-drilldown.png" alt="Regional Drilldown">
+    <figcaption class="bcls-caption--image">Regional Drilldown</figcaption>
+  </figure>
+  <p>Mousing over regions works the same as for countries in the global view, and you can return to the global view by clicking <strong>Back</strong>.</p>
+</section>
+
+  <section class="bcls-section">
+    <h2 id="Sessions_over_time">Sessions over time</h2>
+    <p>Engagement sessions over time metrics allows you to see the new, engaged, re-engaged, and the average duration in minutes data.</p>
+
+    <h3>Overview</h3>
+    <p>Quickly view a summary of sessions over time data.</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Sessions over time"
+            src="/assets/images/s-audience-insights-img/guides/engagement/session-over-time.png" />
+        <figcaption class="bcls-caption--image">Sessions over time</figcaption>
+
+    </figure>
+
+    <p>Review usage trends data:</p>
+    <ul>
+        <li><strong>New</strong> - Users with a view in the last week but none in the last year</li>
+        <li><strong>Engaged</strong> - Users with multiple views in the last month. Views may not have gaps longer
+            than 28 days from previous views</li>
+        <li><strong>Re-engaged</strong> - Users with a view in the last week, but no views in the prior four weeks
+            <li><strong>Average duration</strong> - Average duration in minutes per session
+        </li>
+    </ul>
+
+
+    <h3>Actions</h3>
+    <p>Here are the actions that are available for this graph.</p>
+    <ul>
+        <li>
+            <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
+                    src="/assets/images/s-audience-insights-img/guides/summary/overflow-menu.png" /> to download data as a CSV
+                file or a PNG image.</p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                    src="/assets/images/s-audience-insights-img/guides/summary/download-csv.png" />
+            </figure>
+        </li>
+
+        <li><p>Select a date range for your data.</p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Date range"
+                    src="/assets/images/s-audience-insights-img/guides/summary/date-range.png" />
+            </figure>
+        </li>
+        <li><p>Select the x-axis granularity to be <strong>Day</strong>, <strong>Week</strong> or
+            <strong>Month</strong>.</p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="X-axis granularity"
+                    src="/assets/images/s-audience-insights-img/guides/summary/granularity.png" />
+            </figure>
+        </li>
+        <li>Check <img class="bcls-image--no-border" alt="Auto adjust"
+                src="/assets/images/s-audience-insights-img/guides/summary/auto-adjust.png" /> to automatically change the x-axis dimension
+            to day.
+        </li>
+    </ul>
+</section>
+ 
+  <section class="bcls-section">
+    <h2 id="Sessions_over_time">Sessions over time</h2>
+    <p>Engagement sessions over time metrics allows you to see the new, engaged, re-engaged, and the average duration in minutes data.</p>
+
+    <h3>Overview</h3>
+    <p>Quickly view a summary of sessions over time data.</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Sessions over time"
+            src="/assets/images/s-audience-insights-img/guides/engagement/session-over-time.png" />
+        <figcaption class="bcls-caption--image">Sessions over time</figcaption>
+
+    </figure>
+
+    <p>Review usage trends data:</p>
+    <ul>
+        <li><strong>New</strong> - Users with a view in the last week but none in the last year</li>
+        <li><strong>Engaged</strong> - Users with multiple views in the last month. Views may not have gaps longer
+            than 28 days from previous views</li>
+        <li><strong>Re-engaged</strong> - Users with a view in the last week, but no views in the prior four weeks
+            <li><strong>Average duration</strong> - Average duration in minutes per session
+        </li>
+    </ul>
+
+
+    <h3>Actions</h3>
+    <p>Here are the actions that are available for this graph.</p>
+    <ul>
+        <li>
+            <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
+                    src="/assets/images/s-audience-insights-img/guides/summary/overflow-menu.png" /> to download data as a CSV
+                file or a PNG image.</p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                    src="/assets/images/s-audience-insights-img/guides/summary/download-csv.png" />
+            </figure>
+        </li>
+
+        <li><p>Select a date range for your data.</p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Date range"
+                    src="/assets/images/s-audience-insights-img/guides/summary/date-range.png" />
+            </figure>
+        </li>
+        <li><p>Select the x-axis granularity to be <strong>Day</strong>, <strong>Week</strong> or
+            <strong>Month</strong>.</p>
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="X-axis granularity"
+                    src="/assets/images/s-audience-insights-img/guides/summary/granularity.png" />
+            </figure>
+        </li>
+        <li>Check <img class="bcls-image--no-border" alt="Auto adjust"
+                src="/assets/images/s-audience-insights-img/guides/summary/auto-adjust.png" /> to automatically change the x-axis dimension
+            to day.
+        </li>
+    </ul>
+</section>
+ 
+  <section class="bcls-section">
+  <h2 id="Limitations">Limitations</h2>
+  <ul>
+    <li>Top Titles are limited to the top 100 videos by audience size.</li>
+    <li>Insights are presented 1-day behind viewership as data is processed overnight.</li>
+    <li>Hours Viewed by Location only goes to a state/province level.</li>
+    <li>Library Breakdown by Genre may be disabled if the customer’s metadata isn’t structured to allow identification of videos by genre.</li>
+    <li>Data export per viewer is not included.</li>
+    <li>Segments and Sync to marketing systems are not included in Essential Insights, but are available in the full version of <a href="https://audience-insights.support.brightcove.com/">Audience Insights</a>.</li>
+
+  </ul>
+</section>
+
+</article>
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -2799,7 +2244,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 16 Jun 2022
+  Page last updated on 28 Jun 2022
 </div>
 
 
