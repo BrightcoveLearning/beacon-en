@@ -1924,6 +1924,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <li>When you add additional audio tracks to a video, they must all have the same bitrate/rendition profile to ensure successful playback in HLS (DASH playback will still work).</li>
         <li>When you add an audio track to a video, and then add a duplicate before the first one has finished uploading, one of the tracks may be corrupted, silently, <strong>causing playback of the video to fail</strong>. Be sure to wait until each track has fully uploaded before uploading another one.</li>
         <li>Brightcove has seen cases where Safari will not always loading the audio track marked as default. Due to Safari loading content natively, the language settings of the device will take priority when determining the audio track to load.</li>
+        <li>Cloud Playout doesn't support <strong>Multiple Audio Track</strong>.</li>
       </ul>
     </aside>
     <p>Below is an example of a video that has been configured with multiple audio tracks.</p>
