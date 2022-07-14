@@ -578,6 +578,78 @@
     - name: Viewing Published Videos
       url: /social/viewing-videos-published-social-media.html
 - section:
+  name: Live Streaming
+  url: /live/index.html
+  docs:
+  - name: Getting Started
+    url: /live/get-started/index.html
+    docs:
+    - name: Delivering Live Streams
+      url: /live/get-started/delivering-live-streams.html
+    - name: "Brightcove Live: Best Practices"
+      url: /live/get-started/live-module-guidelines-and-best-practices.html
+    - name: "Step-by-Step: SRT Live event"
+      url: /live/get-started/step-step-live-srt.html
+    - name: "Step-by-Step: Using the Live Module with OBS"
+      url: /live/get-started/step-step-using-live-module-open-broadcaster-software-obs.html
+    - name: "Step-by-Step: Using the Live Module with Wirecast"
+      url: /live/get-started/step-step-using-live-module-telestream-wirecast.html
+  - name: Using the Live Module
+    url: /live/live-module/index.html
+    docs:
+    - name: Client-Side Pre-roll Ads with Live SSAI
+      url: /live/live-module/client-side-preroll-with-live-ssai.html
+    - name: Creating and Managing Live Events using the Live Module
+      url: /live/live-module/creating-and-managing-live-events-using-live-module.html
+    - name: Creating a Video Clip
+      url: /live/live-module/creating-video-clip-using-live-module.html
+    - name: Implementing Server-Side Ads
+      url: /live/live-module/implementing-server-side-ads-live-module.html
+    - name: Live Redundancy
+      url: /live/live-module/live-redundancy.html
+    - name: Multi Language Audio
+      url: /live/live-module/multi-language-audio.html
+    - name: Playback Restrictions with Live Events
+      url: /live/live-module/playback-restrictions-live-module.html
+    - name: Reviewing Live Analytics
+      url: /live/live-module/reviewing-live-analytics.html
+    - name: Scheduling Clips
+      url: /live/live-module/scheduling-clips.html
+    - name: Scheduling Live Events
+      url: /live/live-module/scheduling-live-event.html
+    - name: Streaming to Facebook and YouTube
+      url: /live/live-module/using-live-rtmp-outputs-stream-facebook-and-youtube.html
+    - name: "Brightcove Live - Zoom Integration"
+      url: /live/live-module/zoom-live-integration.html
+  - name: General Information
+    url: /live/general/index.html
+    docs:
+    - name: Captions with Live Streams
+      url: /live/general/captions-with-live-streams.html
+    - name: Forensic Watermarking with Live Streams
+      url: /live/general/forensic-watermarking-live.html
+    - name: Live DRM
+      url: /live/general/live-drm.html
+    - name: Live Video Glossary
+      url: /live/general/live-video-glossary.html
+    - name: Reducing Latency for Live Streams
+      url: /live/general/reducing-latency-live-streams.html
+    - name: Streaming a Live Event using Beacon Classic
+      url: /live/general/streaming-live-event.html
+    - name: Supported Encoders for Live Events
+      url: /live/general/supported-encoders-live-events.html
+  - name: Web Conferencing
+    url: /live/web-conferencing/index.html
+    docs:
+    - name: Hosting an Avaya Conference
+      url: /live/web-conferencing/host-avaya-conference-brightcove-live.html
+    - name: Hosting a Cisco Webex Conference
+      url: /live/web-conferencing/host-cisco-webex-conference-brightcove-live.html
+    - name: Hosting an INXPO Event
+      url: /live/web-conferencing/host-inxpo-live.html
+    - name: Hosting a Zoom Conference
+      url: /live/web-conferencing/host-zoom-conference-brightcove-live.html
+- section:
   name: Styling & Appearance
   url: /styling/index.html
   docs:
