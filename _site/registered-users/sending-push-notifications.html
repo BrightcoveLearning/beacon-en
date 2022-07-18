@@ -2092,7 +2092,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Creating_a_message">Creating a message</h2>
+    <h2 id="Creating_a_notification">Creating a notification</h2>
     <p>Create a push notification to send now or to schedule it for a later time.</p>
     <ol class="bcls-tasklist">
       <li>In Beacon Studio, in the primary navigation, click <strong>Registered Users</strong>.</li>
@@ -2102,7 +2102,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <figure class="bcls-figure">
           <img
             class="bcls-image--no-border"
-            alt="Create message"
+            alt="Create messnotification"
             src="/assets/images/registered-users/notifications/create-message.png"
           />
         </figure> 
@@ -2113,9 +2113,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <ul>
         <li><strong>Notification name</strong> - Internal name for the notification</li>
         <li><strong>Title</strong> - Display name for the notification</li>
-        <li><strong>Text</strong> - Your message text</li>
+        <li><strong>Text</strong> - Your notification text</li>
         <li><strong>Delivery options</strong> - 
-          <p>For details, see the <a href="#Sending_a_message">Sending a message</a> section.</p>
+          <p>For details, see the <a href="#Sending_a_notification">Sending a notification</a> section.</p>
           <ul>
             <li>
               <strong>Send test now</strong> - Send a test notification now
@@ -2163,7 +2163,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </figure>
       <p>To fill in these additional fields, do the following:</p>
       <ol class="bcls-tasklist-restart">
-        <li>First, select an <strong>Asset type</strong>.
+        <li>
+          <p>First, select an <strong>Asset type</strong>.</p>
           <figure class="bcls-figure">
             <img
               class="bcls-image--no-border"
@@ -2172,7 +2173,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             />
           </figure>
         </li>
-        <li>Then, select an <strong>Asset</strong> from your Beacon library.
+        <li>
+          <p>Then, select an <strong>Asset</strong> from your Beacon library.</p>
           <figure class="bcls-figure">
             <img
               class="bcls-image--no-border"
@@ -2181,7 +2183,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             />
           </figure>
         </li>
-        <li>The landscape or poster image associated with your asset will be automatically populated here. In the notification, the image will be cropped into a square.
+        <li>
+         <p> The landscape or poster image associated with your asset will be automatically populated here. In the notification, the image will be cropped into a square.</p>
           <figure class="bcls-figure">
             <img
               class="bcls-image--no-border"
@@ -2190,7 +2193,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             />
           </figure>
         </li>
-        <li>Select values for the following input fields:
+        <li>
+          <p>Select values for the following input fields:</p>
           <ul>
             <li><strong>Display image in notification</strong> - Toggle to display the image in your notification</li>
             <li><strong>Image orientation</strong> - Choose either the landscape or portrait image</li>
@@ -2209,11 +2213,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Sending_a_message">Sending a message</h2>
+    <h2 id="Sending_a_notification">Sending a notification</h2>
     <p>You can either send a test notification now, or you can send a push notification now or schedule it for a later time.</p>
 
-    <h3>Send test now</h3>
-    <p>Send a test message to your Beacon app now.</p>
+    <h3>Send test notification</h3>
+    <p>Send a test notification to your Beacon app now.</p>
     <aside class="bcls-aside bcls-aside--tip">To enable testing mode on your device, navigate to the <strong>About this app</strong> view and tap the logo 5 times. Testing mode allows test notifications to be sent to this device. Restart the app to remove testing mode.</aside>
     <ol class="bcls-tasklist-restart">
       <li>
@@ -2238,7 +2242,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
        </li>
     </ol>
 
-    <h3>Send message now</h3>
+    <h3>Send notification now</h3>
     <p>Send a push notification to your Beacon app now.</p>
     <ol class="bcls-tasklist-restart">
       <li>
@@ -2262,7 +2266,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
     </ol>
-    <h3>Send message later</h3>
+    <h3>Send notification later</h3>
     <p>Schedule a date and time to send your push notification later.</p>
     <ol class="bcls-tasklist-restart">
       <li>
@@ -2291,7 +2295,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Managing_messages">Managing messages</h2>
+    <h2 id="Managing_notifications">Managing notifications</h2>
     <p>Once your notification has been scheduled, it will appear in the notification list.</p>
     <figure class="bcls-figure">
       <img
@@ -2315,11 +2319,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <ul>
           <li><img class="bcls-image-no-border" alt="status scheduled" src="/assets/images/registered-users/notifications/status-scheduled.png"/> - Scheduled</li>
           <li><img class="bcls-image-no-border" alt="status sent" src="/assets/images/registered-users/notifications/status-sent.png"/> - Sent</li>
-          <li><img class="bcls-image-no-border" alt="status failed" src="/assets/images/registered-users/notifications/status-failed.png"/> - Failed</li>
+          <li><p><img class="bcls-image-no-border" alt="status failed" src="/assets/images/registered-users/notifications/status-failed.png"/> - Failed</p></li>
 
         </ul>
       </li>
       <li><strong>Send date</strong> - The date that the notification is scheduled to be sent</li>
+      <li>
+       <p><strong>Type</strong> - Notification type</p>
+       <ul>
+        <li><strong>Actual</strong> - Real notification sent to app users</li>
+        <li><p><strong>Test</strong> - Test notification sent to app, viewable in test mode only</p></li>
+       </ul>
+      </li>
       <li><strong>Delete</strong> - Click <img class="bcls-image-no-border" alt="delete icon" src="/assets/images/registered-users/notifications/delete.png"/> to delete the notification</li> 
     </ul>
 
