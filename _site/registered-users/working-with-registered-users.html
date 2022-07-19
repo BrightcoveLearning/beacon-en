@@ -2088,25 +2088,21 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Subscriptions</strong></li>
       <li><strong>Active sessions</strong></li>
       <li><strong>Profiles</strong></li>
-      <li><strong>Delete and forget</strong></li> 
+      <li><strong>Delete and forget</strong></li>
     </ul>
-   <p>You can also export detailed data about your registered users. This data can be used to help you manage email marketing campaigns, and customer relationship programs.</p>
-   <ul>
-     <li><a href="/registered-users/export-registered-users.html">Exporting Registered User Data</a></li>
-   </ul>
+    <p>You can also export detailed data about your registered users. This data can be used to help you manage email marketing campaigns, and customer relationship programs.</p>
+    <ul>
+      <li><a href="/registered-users/export-registered-users.html">Exporting Registered User Data</a></li>
+    </ul>
   </section>
 
   <section class="bcls-section">
     <h2 id="Users_list">Users list</h2>
     <p>In Beacon Studio, in the primary navigation, click <strong>Registered Users</strong> to view a list of users for your account.</p>
     <aside class="bcls-aside bcls-aside--information">The users list will only contain the users that you have searched for and viewed their details.
-     If you don't see a user in the list, start typing either the user's email address or name in the <strong>Find users</strong> field.</aside>
+      If you don't see a user in the list, start typing either the user's email address or name in the <strong>Find users</strong> field.</aside>
     <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Overview"
-        src="/assets/images/registered-users/users-list.png"
-      />
+      <img class="bcls-image--no-border" alt="Overview" src="/assets/images/registered-users/users-list.png" />
     </figure>
     <h4>Actions</h4>
     <p>For user details, do either:</p>
@@ -2120,16 +2116,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click an <strong>E-mail</strong> link in the list to display more information about the user, as described in the following sections of this document.</li>
     </ol> -->
   </section>
-  
+
   <section class="bcls-section">
     <h2 id="Overview">Overview</h2>
     <p>The <strong>Overview</strong> tab displays general information about the selected user, including the plan names they have signed up for, and their parental control setting.</p>
     <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Overview"
-        src="/assets/images/registered-users/overview.png"
-      />
+      <img class="bcls-image--no-border" alt="Overview" src="/assets/images/registered-users/overview.png" />
     </figure>
 
     <h4>Fields</h4>
@@ -2137,22 +2129,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Email</strong> - Email address for this user</li>
       <li><strong>Name</strong> - First and last name of the user</li>
       <li><strong>Last Login</strong> - Date when the user was last logged into your app</li>
-      <li><strong>Plan</strong> - A list of subscription plans that the user is signed up for</li>
+      <li><strong>Role</strong> - The role assigned to the user, if none <strong>N/A</strong> is displayed</li>
+      <li><strong>Active Subscriptions</strong> - A list of subscription plans for which the user is signed up
+        <aside class="bcls-aside bcls-aside--information language-editable">Note that if an <a href="/monetization/general/implementing-authvod.html">AuthVOD</a> package is enabled this field wil show <strong>N/A</strong>, as follows:
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/registered-users/na-for-authvod.png" alt="NA for AuthVOD">
+          </figure>
+        </aside>
+      </li>
       <li><strong>Parental Control</strong> - Whether the user has turned on parental controls for their account, and if a pin is required for access</li>
+      <li><strong>Last Transaction</strong> - The date when the user last performed a monetization transaction</li>
     </ul>
     <h4>Actions</h4>
     <ul>
-      <li>Click a <strong>Plan</strong> name to see details</li>
-    </ul> 
+      <li>Click an <strong>Active Subscription</strong> name to see details</li>
+    </ul>
 
     <h3>Plan Details</h3>
     <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        width="400"
-        alt="Plan information"
-        src="/assets/images/registered-users/plan-information.png"
-      />
+      <img class="bcls-image--no-border" width="400" alt="Plan information" src="/assets/images/registered-users/plan-information.png" />
     </figure>
     <h4>Fields</h4>
     <ul>
@@ -2167,11 +2162,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Viewing_history">Viewing history</h2>
     <p><strong>Viewing history</strong> displays a list of movies that this registered user has watched. History is captured and saved for 1 year.</p>
     <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Viewing history"
-        src="/assets/images/registered-users/viewing-history.png"
-      />
+      <img class="bcls-image--no-border" alt="Viewing history" src="/assets/images/registered-users/viewing-history.png" />
     </figure>
 
     <h4>Columns</h4>
@@ -2189,12 +2180,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
     <h3>Movie details</h3>
     <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        width="400"
-        alt="Title information"
-        src="/assets/images/registered-users/title-information.png"
-      />
+      <img class="bcls-image--no-border" width="400" alt="Title information" src="/assets/images/registered-users/title-information.png" />
     </figure>
     <h4>Fields</h4>
     <ul>
@@ -2216,7 +2202,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Subscriptions">Subscriptions</h2>
     <p>The <strong>Subscriptions</strong> tab shows a list of subscription plan purchases and changes for a registered user. This includes plan trial periods.</p>
-  
+
     <!-- <figure class="bcls-figure">
       <img
         class="bcls-image"
@@ -2225,11 +2211,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       />
     </figure> -->
     <figure class="bcls-figure">
-      <img
-        class="bcls-image"
-        alt="Subscriptions"
-        src="/assets/images/registered-users/subscriptions2.png"
-      />
+      <img class="bcls-image" alt="Subscriptions" src="/assets/images/registered-users/subscriptions2.png" />
     </figure>
 
     <h4>Columns</h4>
@@ -2256,12 +2238,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
     <h3>Plan Details</h3>
     <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        width="400"
-        alt="Plan information"
-        src="/assets/images/registered-users/plan-information.png"
-      />
+      <img class="bcls-image--no-border" width="400" alt="Plan information" src="/assets/images/registered-users/plan-information.png" />
     </figure>
     <h4>Fields</h4>
     <ul>
@@ -2278,12 +2255,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         <p>Select values for each of the fields in the dialog. All of the fields are required.</p>
         <figure class="bcls-figure">
-          <img
-            class="bcls-image"
-            width="400"
-            alt="Add subscription dialog"
-            src="/assets/images/registered-users/add-subscription.png"
-          />
+          <img class="bcls-image" width="400" alt="Add subscription dialog" src="/assets/images/registered-users/add-subscription.png" />
         </figure>
         <ul>
           <li><strong>Plan name</strong> - Select a subscription plan name that you have defined in your account</li>
@@ -2293,7 +2265,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>Click <span class="button-blue">Add subscription</span>.</li>
     </ol>
-    
+
   </section>
 
   <section class="bcls-section">
@@ -2301,11 +2273,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>The <strong>Purchases</strong> tab shows a list of in-app purchases for a registered user.</p>
 
     <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Purchases"
-        src="/assets/images/registered-users/purchases.png"
-      />
+      <img class="bcls-image--no-border" alt="Purchases" src="/assets/images/registered-users/purchases.png" />
     </figure>
 
     <h3>Columns</h3>
@@ -2322,11 +2290,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>View a list of active sessions associated with a registered user.</p>
 
     <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Active sessions"
-        src="/assets/images/registered-users/active-sessions.png"
-      />
+      <img class="bcls-image--no-border" alt="Active sessions" src="/assets/images/registered-users/active-sessions.png" />
     </figure>
 
     <h3>Columns</h3>
@@ -2347,11 +2311,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>View a list of user profiles associated with a registered user.</p>
 
     <figure class="bcls-figure">
-      <img
-        class="bcls-image--no-border"
-        alt="Profiles"
-        src="/assets/images/registered-users/profiles.png"
-      />
+      <img class="bcls-image--no-border" alt="Profiles" src="/assets/images/registered-users/profiles.png" />
     </figure>
 
     <h3>Columns</h3>
@@ -2361,13 +2321,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         <p><strong>Remove Profile</strong> - Click <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Delete icon"> associated with a profile to delete it</p>
         <aside class="bcls-aside bcls-aside--information"><strong>Notes:
-          <ul>
-            <li>The main profile can not be deleted</li>
-            <li>Activity and data related to this profile will no longer be tracked</li>
-          </ul> </strong>
+            <ul>
+              <li>The main profile can not be deleted</li>
+              <li>Activity and data related to this profile will no longer be tracked</li>
+            </ul>
+          </strong>
         </aside>
-      </li> 
-    </ul> 
+      </li>
+    </ul>
 
     <!-- <h3>Actions</h3>
     <ul>
@@ -2381,33 +2342,24 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <aside class="bcls-aside bcls-aside--warning"><strong>WARNING: Deleting a viewer will delete all related data and permissions. This CANNOT be undone!</strong></aside>
 
     <h3>Steps</h3>
-      <ol class="bcls-tasklist">
-        <li>
-          <p>Click <strong>Delete and forget</strong>.</p>
-          <figure class="bcls-figure">
-            <img
-              class="bcls-image--no-border"
-              alt="Delete and forget"
-              src="/assets/images/registered-users/delete-and-forget.png"
-            />
-          </figure>
-        </li>
-        <li>
-          <p>To continue, type <strong>Delete</strong> in the text area.</p>
-          <figure class="bcls-figure">
-            <img
-              class="bcls-image--no-border"
-              alt="Delete and forget dialog"
-              src="/assets/images/registered-users/delete_dialog.png"
-            />
-          </figure>
-        </li>
-        <li>To confirm, click <strong>Delete and forget</strong>.</li>  
-      </ol>
+    <ol class="bcls-tasklist">
+      <li>
+        <p>Click <strong>Delete and forget</strong>.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="Delete and forget" src="/assets/images/registered-users/delete-and-forget.png" />
+        </figure>
+      </li>
+      <li>
+        <p>To continue, type <strong>Delete</strong> in the text area.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="Delete and forget dialog" src="/assets/images/registered-users/delete_dialog.png" />
+        </figure>
+      </li>
+      <li>To confirm, click <strong>Delete and forget</strong>.</li>
+    </ol>
   </section>
 
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
