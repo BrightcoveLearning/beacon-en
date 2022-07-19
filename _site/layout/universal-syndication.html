@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn .">
+  <meta name="description" content="In this topic, you will learn how to use templates and jobs to generate data reports needed for various platforms' search implementations.">
   
   <title>Universal Syndication</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -2074,13 +2074,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h1>Universal Syndication</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn .</summary>
+  <summary>In this topic, you will learn how to use templates and jobs to generate data reports needed for various platforms' search implementations.</summary>
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>The <strong>Layout -> App settings -> Data export -> Universal search data</strong> functionality is used for the following tasks:</p>
+    <p>The Universal Syndication functionality is used for the following tasks:</p>
     <ul>
-      <li>Create and <strong>Apple UMC Catalog CSV</strong> and/or <strong>Apple UMC Availability CSV</strong> template(s) that generates a data report that is submitted to Apple to enable universal search.</li>
+      <li>Create an <strong>Apple UMC Catalog CSV</strong> and/or <strong>Apple UMC Availability CSV</strong> template(s) that generates a data report that is submitted to Apple to enable universal search.</li>
       <li>Create a <strong>Google site map XML</strong> template that generates a data report that is used with Google search.</li>
       <li>Create a <strong>Sitemap index XML</strong> template that generates a data report that is used as a sitemap.</li>
       <li>Create a <strong>Roku Search Feed 2.0</strong> template that generates a data report that is submitted to Roku to enable universal search.</li>
@@ -2088,7 +2088,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>The basic steps to create one of these data reports is:</p>
     <ol>
       <li>Add a new template</li>
-      <li>Create a new job that uses the template to create a data report.</li>
+      <li>Create a new job that uses the template.</li>
+      <li>Run the job, either manually or on a schedule, to produce the desired data report.</li>
     </ol>
   </section>
 
@@ -2111,7 +2112,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/add-new-template.png" alt="add new template">
         </figure>
       </li>
-      <li>Supply a <strong>Template name</strong>. This name is for internal use only seen only in Studio.</li>
+      <li>Supply a <strong>Template name</strong>. This name is for internal use and viewed only in Studio.</li>
       <li>Choose a <strong>Platform and format type</strong>. Based on your selection different options are presented.
         <aside class="bcls-aside bcls-aside--information language-editable">Later in this document each <strong>Platform and format type</strong> will be detailed.</aside>
       </li>
@@ -2121,7 +2122,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="Creating_a_new_job">Creating a new job</h2>
+    <h2 id="Creating_and_using_a_new_job">Creating and using a new job</h2>
     <p></p>
     <ol class="bcls-tasklist">
       <li>From the <strong>App settings</strong> screen be sure <strong>Mange jobs</strong> is selected, then click <strong>Create new job</strong>.
@@ -2129,8 +2130,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/create-new-job.png" alt="create new job">
         </figure>
       </li>
-      <li>Supply a <strong>Job name</strong>. This name is for internal use only seen only in Studio.</li>
-      <li>Select the template you wish to use for this job by clicking the checkbox in front of the template name.</li>
+      <li>Supply a <strong>Job name</strong>. This name is for internal use and viewed only in Studio.</li>
+      <li>Select the template(s) you wish to use for this job by clicking the checkbox(es) in front of the template(s) name.</li>
       <li>From the <strong>Schedule job run frequency</strong> choose your wanted frequency. Note that repeated time is based on the current day of week and time the selection is made. This can be changed by running a job manually, which resets the day of week and time.</li>
       <li>Click <strong>Confirm</strong>.</li>
       <li>Back on the <strong>Manage jobs</strong> screen, note that you can also delete, edit and manually run a job.
@@ -2138,13 +2139,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/delete-edit-run-job.png" alt="delete edit run job">
         </figure>
       </li>
+      <li>To download the file(s) the jobs created, in the <strong>Results</strong> column click the down arrow. The file or files created appear and click the filename to begin the download process.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/download.png" alt="download a file">
+        </figure>
+      </li>
     </ol>
   </section>
 
   <section class="bcls-section">
     <h2 id="Platform_and_format_type_options">Platform and format type options</h2>
-    <p></p>
-    <p>Configuration of the options is most likely a collaboration with you and Brightcove's OTT Delivery Team.</p>
+    <p>When creating a new template you choose a <strong>Platform and format type</strong>. Based on the type selection a form appears that you will complete. This section details the information needed for each type. The types are:</p>
+    <ul>
+      <li><a href="#Apple_UMC_Catalog_CSV">Apple UMC Catalog CSV</a></li>
+      <li><a href="#Apple_UMC_Availability_CSV">Apple UMC Availability CSV</a></li>
+      <li><a href="#Google_site_map_XML">Google site map XML</a></li>
+      <li><a href="#Sitemap_index_XML">Sitemap index XML</a></li>
+      <li><a href="#Roku_Search_Feed_2.0">Roku Search Feed 2.0 (JSON)</a></li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--tip language-editable">Configuration of the options is most likely a collaboration with you and Brightcove's OTT Delivery Team.</aside>
 
     <h3 id="Apple_UMC_Catalog_CSV">Apple UMC Catalog CSV</h3>
     <ul>
@@ -2173,11 +2186,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>Asset types</strong></td>
-              <td>The assets types you wish to include in the generated data report.</td>
+              <td>The assets types you wish to include in the generated data report</td>
             </tr>
             <tr>
               <td><strong>File name</strong></td>
-              <td>You chosen name for the file that is generated; Note the <strong>.csv</strong> extension will automatically be added to your supplied file name</td>
+              <td>Your chosen name for the file that is generated; note the <strong>.csv</strong> extension will automatically be added to your supplied file name</td>
             </tr>
           </tbody>
         </table>
@@ -2215,11 +2228,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>File name</strong></td>
-              <td>You chosen name for the file that is generated. Note the <strong>.csv</strong> extension will automatically be added to your supplied file name</td>
+              <td>Your chosen name for the file that is generated; note the <strong>.csv</strong> extension will automatically be added to your supplied file name</td>
             </tr>
             <tr>
               <td><strong>Target geography</strong></td>
-              <td>Country for which the template is targeted</td>
+              <td>The two letter country code for which the template is targeted</td>
             </tr>
             <tr>
               <td><strong>Universal link prefix</strong></td>
@@ -2229,7 +2242,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </table>
       </li>
     </ul>
-
 
     <h3 id="Google_site_map_XML">Google site map XML</h3>
     <ul>
@@ -2262,7 +2274,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>File name</strong></td>
-              <td>File name of the generated data; the appropriate extension is added to the file name</td>
+              <td>Your chosen name for the file that is generated; a name is suggested, but it may be changed</td>
             </tr>
             <tr>
               <td><strong>Beacon application name</strong></td>
@@ -2281,7 +2293,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ul>
 
-
     <h3 id="Sitemap_index_XML">Sitemap index XML</h3>
     <ul>
       <li>
@@ -2290,7 +2301,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         <p><strong>Blank form appearance</strong>:</p>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/" alt="">
+          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/sitemap-index-xml.png" alt="Sitemap index XML">
         </figure>
       </li>
       <li>
@@ -2309,7 +2320,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>File name</strong></td>
-              <td>File name of the generated data; the appropriate extension is added to the file name</td>
+              <td>Your chosen name for the file that is generated; a name is suggested, but it may be changed</td>
             </tr>
             <tr>
               <td><strong>Beacon application name</strong></td>
@@ -2320,17 +2331,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ul>
 
-
-
-    <h3 id=""></h3>
+    <h3 id="Roku_Search_Feed_2.0">Roku Search Feed 2.0 (JSON)</h3>
     <ul>
       <li>
-        <p><strong>Use case</strong>: </p>
+        <p><strong>Use case</strong>: The Roku Search Feed syndication is used to generate catalog feed documents needed to participate in Roku Universal Search integration.</p>
       </li>
       <li>
         <p><strong>Blank form appearance</strong>:</p>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/" alt="">
+          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/roku-search-feed.png" alt="roku search feed">
         </figure>
       </li>
       <li>
@@ -2348,86 +2357,30 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               <td>Internal Studio name; not viewer facing</td>
             </tr>
             <tr>
-              <td><strong></strong></td>
-              <td></td>
+              <td><strong>Asset types</strong></td>
+              <td>The assets types you wish to include in the generated data report</td>
             </tr>
             <tr>
               <td><strong>File name</strong></td>
-              <td></td>
+              <td>File name of the generated data; the <strong>.json</strong> extension is added to the file name</td>
             </tr>
             <tr>
-              <td><strong></strong></td>
-              <td></td>
+              <td><strong>Target geography</strong></td>
+              <td>The two letter country code for which the template is targeted</td>
             </tr>
             <tr>
-              <td><strong></strong></td>
-              <td></td>
+              <td><strong>Universal link prefix</strong></td>
+              <td>Pointer to the Beacon app; enables searched assets to open in the app</td>
             </tr>
             <tr>
-              <td><strong></strong></td>
-              <td></td>
+              <td><strong>Publish to web</strong></td>
+              <td>Publishes site map to a specific URL based on Beacon application file name</td>
             </tr>
           </tbody>
         </table>
       </li>
     </ul>
-
-
-
-    <h3 id=""></h3>
-    <ul>
-      <li>
-        <p><strong>Use case</strong>: </p>
-      </li>
-      <li>
-        <p><strong>Blank form appearance</strong>:</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/" alt="">
-        </figure>
-      </li>
-      <li>
-        <p><strong>Form field definitions</strong>:</p>
-        <table class="bcls-table">
-          <thead class="bcls-table__head">
-            <tr>
-              <th>Field name</th>
-              <th>Definition</th>
-            </tr>
-          </thead>
-          <tbody class="bcls-table__body">
-            <tr>
-              <td><strong>Template name</strong></td>
-              <td>Internal Studio name; not viewer facing</td>
-            </tr>
-            <tr>
-              <td><strong></strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><strong>File name</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><strong></strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><strong></strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><strong></strong></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-    </ul>
-
   </section>
-
-
-
 </article>
 <!-- complete bootstrap layout -->
     </div>
