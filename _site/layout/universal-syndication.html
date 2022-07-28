@@ -2078,27 +2078,34 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>Universal Syndication generally assists in getting your OTT assets available on platforms, for instance Apple and Roku, searches as well as in search engines. For instance, the functionality provides viewers with the ability to find movies and TV shows that are available on Beacon iOS and tvOS apps using the built-in search utilities on iPhones and Apple TV devices. The discovered titles are then either opened in the OTT app or the viewer is guided through app installation and then opens the app to view the desired content.</p>
+    <p>Universal Syndication generally assists in getting your OTT assets available on platform searches, for instance Apple and Roku, as well as in search engines. For instance, the functionality provides viewers with the ability to find movies and TV shows that are available on Beacon iOS and tvOS apps using the built-in search utilities on iPhones and Apple TV devices. The discovered titles are then either opened in the OTT app or the viewer is guided through app installation and then opens the app to view the desired content.</p>
     <p>Specifically, the Universal Syndication functionality available in Studio is used for the following tasks:</p>
     <ul>
-      <li>Create an <strong>Apple UMC Catalog CSV</strong> and/or <strong>Apple UMC Availability CSV</strong> template(s) that generates a data report that is submitted to Apple to enable universal search.</li>
+      <li>Create an <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> template(s) that generates a data report that is submitted to Apple to enable universal search.</li>
       <li>Create a <strong>Google site map XML</strong> template that generates a data report that is used with Google search.</li>
-      <li>Create a <strong>Sitemap index XML</strong> template that generates a data report that is used as a sitemap.</li>
+      <li>Create a <strong>Sitemap index XML</strong> template that generates a data report that is an index for your sitemaps.</li>
       <li>Create a <strong>Roku Search Feed 2.0</strong> template that generates a data report that is submitted to Roku to enable universal search.</li>
     </ul>
-    <p>The basic steps to create one of these data reports is:</p>
+    <p>The general tasks to create one of these data reports is:</p>
     <ol>
       <li>Add a new template</li>
       <li>Create a new job that uses the template.</li>
       <li>Run the job, either manually or on a schedule, to produce the desired data report.</li>
     </ol>
+    <p>Starting in the <a href="http://localhost:4002/layout/universal-syndication.html#Adding_a_new_template">Adding a new template</a> section below are enumerated steps to perform these tasks.</p>
   </section>
 
   <section class="bcls-section">
     <h2 id="Overview_of_the_processes">Overview of the processes</h2>
-    <p>Using Universal Syndication tools to implement and improve searching for your video assets is a process. The process involves you, Brightcove's OTT delivery team and sometimes the platform vendor themselves. Following are quick overviews for Apple, Roku and Google.</p>
+    <p>Using Universal Syndication tools to implement and improve searching for your video assets is a process. The process involves you, Brightcove's OTT delivery team and sometimes the platform vendor themselves. Following are quick overviews for Apple, Google and Roku.</p>
     <h3>Apple</h3>
-    <p>You will need to generate </p>
+    <p>First, you need to work with Brightcove's OTT Delivery Team and Apple to prepare for the universal search implementation. You then generate the CSV files from the <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> templates. The <strong>Apple UMC Availability CSV</strong> job is run multiple times for different asset types: movies, series, seasons and episodes. The data in all the reports needs to match the current state of your catalog. You again work with Brightcove's OTT Delivery Team to be sure the CSV reports are in the correct format. Once the format is verified, you submit the data to Apple. Once the process is working, you periodically submit new data to Apple.</p>
+    <p>Note that the initial setup and verification process can take up to several months.</p>
+    <h3>Google Search</h3>
+    <p>The <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates work together to improve search results using site maps. You generate one or more site maps (possibly more than one because of size) and the site map index is the top level file that points to your site map(s). After these files are generated you submit them to Brightcove's OTT Delivery Team and the files are placed in the correct locations in relation to your OTT app. Once the process is working, you periodically submit new data to Brightcove's OTT Delivery Team.</p>
+    <h3>Roku</h3>
+    <p>You need first to go to the Roku site and complete forms that enable you to submit syndication data. Once completed, you generate data using the <strong>Roku Search Feed</strong> template. Using that data you work with Brightcove's OTT Delivery Team to submit it to Roku. Once the process is working, you periodically submit new data to Roku.</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note that for all processes it takes days before you start to see the respective results.</aside>
   </section>
 
   <section class="bcls-section">
@@ -2122,7 +2129,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>Supply a <strong>Template name</strong>. This name is for internal use and viewed only in Studio.</li>
       <li>Choose a <strong>Platform and format type</strong>. Based on your selection different options are presented.
-        <aside class="bcls-aside bcls-aside--information language-editable">Later in this document each <strong>Platform and format type</strong> will be detailed.</aside>
+        <aside class="bcls-aside bcls-aside--information language-editable">Later in this document each <strong>Platform and format type</strong> are detailed.</aside>
       </li>
       <li>Complete the form based on the type selected.</li>
       <li>Click <strong>Save</strong>.</li>
@@ -2157,7 +2164,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Platform_and_format_type_options">Platform and format type options</h2>
-    <p>When creating a new template you choose a <strong>Platform and format type</strong>. Based on the type selection a form appears that you will complete. This section details the information needed for each type. The types are:</p>
+    <p>When creating a new template you choose a <strong>Platform and format type</strong>. Based on the type selection a form appears that you complete. This section details the information needed for each type. The types are:</p>
     <ul>
       <li><a href="#Apple_UMC_Catalog_CSV">Apple UMC Catalog CSV</a></li>
       <li><a href="#Apple_UMC_Availability_CSV">Apple UMC Availability CSV</a></li>
@@ -2198,7 +2205,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>File name</strong></td>
-              <td>Your chosen name for the file that is generated; note the <strong>.csv</strong> extension will automatically be added to your supplied file name</td>
+              <td>Your chosen name for the file that is generated; note the <strong>.csv</strong> extension is automatically added to your supplied file name</td>
             </tr>
           </tbody>
         </table>
@@ -2236,7 +2243,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>File name</strong></td>
-              <td>Your chosen name for the file that is generated; note the <strong>.csv</strong> extension will automatically be added to your supplied file name</td>
+              <td>Your chosen name for the file that is generated; note the <strong>.csv</strong> extension is automatically added to your supplied file name</td>
             </tr>
             <tr>
               <td><strong>Target geography</strong></td>
@@ -2244,7 +2251,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>Universal link prefix</strong></td>
-              <td>Pointer to the Beacon app; enables searched assets to open in the app</td>
+              <td>
+                <ul>
+                  <li>Pointer to the Beacon app</li>
+                  <li>Enables searched assets to open in the app</li>
+                  <li>The base URL from your OTT web app</li>
+                  <li>Example: URL from your web app <br><em>https://bcls.brightcove.com/home?api=eyJ1cmwiOiJodHRwczovL2JlYWN</em> <br>the form entry is<br> <strong>https://bcls.brightcove.com</strong></li>
+                </ul>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -2254,7 +2268,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3 id="Google_site_map_XML">Google site map XML</h3>
     <ul>
       <li>
-        <p><strong>Use case</strong>: The Google site map XML syndication type generates files necessary to participate in Beacon’s new SEO strategy.</p>
+        <p><strong>Use case</strong>: The Google site map XML syndication type generates site maps following Google specifications. These site maps are necessary to participate in Beacon’s new SEO strategy.</p>
       </li>
       <li>
         <p><strong>Blank form appearance</strong>:</p>
@@ -2290,7 +2304,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>Universal link prefix</strong></td>
-              <td>Pointer to the Beacon app; enables searched assets to open in the app</td>
+              <td>
+                <ul>
+                  <li>Pointer to the Beacon app</li>
+                  <li>Enables searched assets to open in the app</li>
+                  <li>The base URL from your OTT web app</li>
+                  <li>Example: URL from your web app <br><em>https://bcls.brightcove.com/home?api=eyJ1cmwiOiJodHRwczovL2JlYWN</em> <br>the form entry is<br> <strong>https://bcls.brightcove.com</strong></li>
+                </ul>
+              </td>
             </tr>
             <tr>
               <td><strong>Publish to web</strong></td>
@@ -2304,8 +2325,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3 id="Sitemap_index_XML">Sitemap index XML</h3>
     <ul>
       <li>
-        <p><strong>Use case</strong>: The Sitemap index XML syndication type generates files necessary to participate in Beacon’s new SEO strategy</p>
-        <aside class="bcls-aside bcls-aside--information language-editable">The Sitemap index XML is automatically published to the web based on information provided in the form.</aside>
+        <p><strong>Use case</strong>: Because of limitations on site map sizes, the Sitemap index is the top level file that points to one or more site maps.</p>
       </li>
       <li>
         <p><strong>Blank form appearance</strong>:</p>
@@ -2379,7 +2399,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>Universal link prefix</strong></td>
-              <td>Pointer to the Beacon app; enables searched assets to open in the app</td>
+              <td>
+                <ul>
+                  <li>Pointer to the Beacon app</li>
+                  <li>Enables searched assets to open in the app</li>
+                  <li>The base URL from your OTT web app</li>
+                  <li>Example: URL from your web app <br><em>https://bcls.brightcove.com/home?api=eyJ1cmwiOiJodHRwczovL2JlYWN</em> <br>the form entry is<br> <strong>https://bcls.brightcove.com</strong></li>
+                </ul>
+              </td>
             </tr>
             <tr>
               <td><strong>Publish to web</strong></td>
