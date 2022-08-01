@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="In this topic, you will learn how to use templates and jobs to generate data reports needed for various platforms' search implementations.">
   
-  <title>Universal Syndication</title>
+  <title>OTT Syndication</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -64,7 +64,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       <li class="breadcrumb-item"><a href="/layout/">Managing Pages</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Universal Syndication</li>
+      <li class="breadcrumb-item active" aria-current="page">OTT Syndication</li>
     </ol>
   </nav>
 </header>
@@ -2072,14 +2072,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Universal Syndication</h1>
+<h1>OTT Syndication</h1>
 <article class="bcls-article">
   <summary>In this topic, you will learn how to use templates and jobs to generate data reports needed for various platforms' search implementations.</summary>
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>Universal Syndication generally assists in getting your OTT assets available on platform searches, for instance Apple and Roku, as well as in search engines. For instance, the functionality provides viewers with the ability to find movies and TV shows that are available on Beacon iOS and tvOS apps using the built-in search utilities on iPhones and Apple TV devices. The discovered titles are then either opened in the OTT app or the viewer is guided through app installation and then opens the app to view the desired content.</p>
-    <p>Specifically, the Universal Syndication functionality available in Studio is used for the following tasks:</p>
+    <p>OTT Syndication generally assists in getting your OTT assets available on platform searches, for instance Apple and Roku, as well as in search engines. For instance, the functionality provides viewers with the ability to find movies and TV shows that are available on Beacon iOS and tvOS apps using the built-in search utilities on iPhones and Apple TV devices. The discovered titles are then either opened in the OTT app or the viewer is guided through app installation and then opens the app to view the desired content.</p>
+    <p>Specifically, the OTT Syndication functionality available in Studio is used for the following tasks:</p>
     <ul>
       <li>Create an <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> template(s) that generates a data report that is submitted to Apple to enable universal search.</li>
       <li>Create a <strong>Google site map XML</strong> template that generates a site map that is used with Google search.</li>
@@ -2097,7 +2097,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Overview_of_the_processes">Overview of the processes</h2>
-    <p>Using Universal Syndication tools to implement and improve searching for your video assets is a process. The process involves you, Brightcove's OTT delivery team and sometimes the platform vendor themselves. Following are quick overviews for Apple, Google and Roku.</p>
+    <p>Using OTT Syndication tools to implement and improve searching for your video assets is a process. The process involves you, Brightcove's OTT delivery team and sometimes the platform vendor themselves. Following are quick overviews for Apple, Google and Roku.</p>
     <h3>Apple</h3>
     <p>First, you need to work with Brightcove's OTT Delivery Team and Apple to prepare for the universal search implementation. You then generate the CSV files from the <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> templates. The <strong>Apple UMC Availability CSV</strong> job is run multiple times for different asset types: movies, series, seasons and episodes. The data in all the reports needs to match the current state of your catalog. You again work with Brightcove's OTT Delivery Team to be sure the CSV reports are in the correct format. Once the format is verified, you submit the data to Apple. Once the process is working, you periodically submit new data to Apple.</p>
     <p>Note that the initial setup and verification process can take up to several months.</p>
@@ -2114,17 +2114,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist-restart">
       <li>In Studio, select <strong>Layout</strong>, then click the gear icon to enter the app settings.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/click-gear.png" alt="click gear icon">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/click-gear.png" alt="click gear icon">
         </figure>
       </li>
       <li>From <strong>App settings</strong>, under <strong>Data export</strong> click <strong>Universal search data</strong>.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/app-settings.png" alt="click Universal search data">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/app-settings.png" alt="click Universal search data">
         </figure>
       </li>
       <li>Be sure <strong>Configure templates</strong> is selected, then click <strong>Add new template</strong>.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/add-new-template.png" alt="add new template">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/add-new-template.png" alt="add new template">
         </figure>
       </li>
       <li>Supply a <strong>Template name</strong>. This name is for internal use and viewed only in Studio.</li>
@@ -2142,7 +2142,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist">
       <li>From the <strong>App settings</strong> screen be sure <strong>Mange jobs</strong> is selected, then click <strong>Create new job</strong>.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/create-new-job.png" alt="create new job">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/create-new-job.png" alt="create new job">
         </figure>
       </li>
       <li>Supply a <strong>Job name</strong>. This name is for internal use and viewed only in Studio.</li>
@@ -2151,12 +2151,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click <strong>Confirm</strong>.</li>
       <li>Back on the <strong>Manage jobs</strong> screen, note that you can also delete, edit and manually run a job.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/delete-edit-run-job.png" alt="delete edit run job">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/delete-edit-run-job.png" alt="delete edit run job">
         </figure>
       </li>
       <li>To download the file(s) from the jobs created, in the <strong>Results</strong> column click the down arrow. The file or files created appear and click the filename to begin the download process.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/download.png" alt="download a file">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/download.png" alt="download a file">
         </figure>
       </li>
     </ol>
@@ -2182,7 +2182,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         <p><strong>Blank form appearance</strong>:</p>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/apple-umc-catalog-csv.png" alt="Apple UMC Catalog CSV">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/apple-umc-catalog-csv.png" alt="Apple UMC Catalog CSV">
         </figure>
       </li>
       <li>
@@ -2220,7 +2220,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         <p><strong>Blank form appearance</strong>:</p>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/apple-umc-availability-csv.png" alt="Apple UMC Catalog CSV">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/apple-umc-availability-csv.png" alt="Apple UMC Catalog CSV">
         </figure>
       </li>
       <li>
@@ -2273,7 +2273,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         <p><strong>Blank form appearance</strong>:</p>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/google-site-map-xml.png" alt="Google site map XML">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/google-site-map-xml.png" alt="Google site map XML">
         </figure>
       </li>
       <li>
@@ -2330,7 +2330,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         <p><strong>Blank form appearance</strong>:</p>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/sitemap-index-xml.png" alt="Sitemap index XML">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/sitemap-index-xml.png" alt="Sitemap index XML">
         </figure>
       </li>
       <li>
@@ -2368,7 +2368,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>
         <p><strong>Blank form appearance</strong>:</p>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-layout-img/universal-syndication/roku-search-feed.png" alt="roku search feed">
+          <img class="bcls-image" src="/assets/images/s-layout-img/ott-syndication/roku-search-feed.png" alt="roku search feed">
         </figure>
       </li>
       <li>
