@@ -1,0 +1,313 @@
+---
+title: Controlling Viewer Access with Roles in Studio
+description: In this topic, you will learn how to present content to viewers based on their assigned roles. You will manage roles in your external VMS and Brightcove Beacon Studio.
+parent: Registered Users
+layout: staging
+---
+
+<!-- include s-registered-users/roles-as-rights-studio.html  -->
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>The Roles as Rights feature ensures that content is only viewable by viewers whose role matches the role set on the content.</p>
+    <p>Roles allow you to filter content and experience elements for groups of specific viewers. You can expose content for viewers within a group and hide it from all other viewers.</p>
+    <p>Content types can be shown or hidden based on the viewer's role. In Beacon Studio, you can create roles and assign them to the following content types:</p>
+    <ul>
+      <li>Movies</li>
+      <!-- <li>Programs</li> -->
+      <li>Series, Seasons, and Episodes</li>
+      <li>Channels and Live Events</li>
+      <li>Playlists and Pages</li>
+    </ul>
+    <!-- <p>For movies and episodes, you should use Video Cloud custom fields to assign roles.</p> -->
+    <p>To associate viewers with roles, use your external Viewer Management System (VMS). You will connect these user role definitions to Brightcove Beacon using OpenID Connect (OIDC) tokens. OIDC is an authentication protocol used to verify the identity of a user to a client service.</p>
+    <!-- <p>To associate viewers with roles, you will use your external user management system or LDAP (Lightweight Directory Access Protocol) system. You will connect these user role definitions to Brightcove Beacon using OpenID Connect (OIDC) tokens. OIDC is an authentication protocol used to verify the identity of a user to a client service.</p> -->
+    <p> For details about using OIDC, see the <a href="/references/oidc-authentication-for-beacon.html">OIDC Authentication Configuration and Testing</a> document.</p>
+    
+    <!-- <figure class="bcls-figure"><img class="bcls-image--no-border" alt="China Delivery Architecture" src="/assets/images/s-general-img/china-delivery.png" /> </figure> -->
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Workflow">Workflow</h2>
+    <p>The following workflows are associated with Roles as Rights:</p>
+    <h3>Viewer workflow</h3>
+    <p>Your app viewers will experience the following:</p>
+    <ol class="bcls-tasklist">
+      <li>
+        <p>Viewers will exist in your external Viewer Management System (VMS) and may have one or more roles assigned to them.</p> 
+        <aside class="bcls-aside bcls-aside--tip">Viewers with no roles will have access to all content with no associated roles.</aside>
+      </li>
+      <li>During viewer authentication with OIDC, a token is passed to Brightcove Beacon with the viewer's role(s).</li>
+      <li>Viewers have access to assets/pages that match any of the viewer's roles.</li>
+    </ol>
+    <figure class="bcls-figure">
+      <img class="bcls-image--no-border" alt="Viewer workflow diagram" src="/assets/images/s-general-img/roles/viewer-workflow.svg" />
+    </figure> 
+
+    <h3>Admin workflow</h3>
+    <p>You or your admin person will perform the following tasks:</p>
+    <ol class="bcls-tasklist-restart">
+     <li>Assign roles to viewers in your external VMS (or sets up rules to assign roles)</li>
+     <li>
+      <p>Connect external VMS to Brightcove Beacon</p>
+      <aside class="bcls-aside bcls-aside--information">Contact your account manager to connect your VMS to the Brightcove Beacon.</aside>
+    </li>
+     <li>Add the roles to Brightcove Beacon (these roles must match what is defined in your VMS)</li>
+     <li>Assign roles to assets/pages</li>
+    </ol>
+    <figure class="bcls-figure">
+      <img class="bcls-image--no-border" alt="Admin workflow diagram" src="/assets/images/s-general-img/roles/admin-workflow.svg" />
+    </figure>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Creating_a_notification">Creating a notification</h2>
+    <p>Create a push notification to send now or to schedule it for a later time.</p>
+    <ol class="bcls-tasklist">
+      <li>In Beacon Studio, in the primary navigation, click <strong>Registered Users</strong>.</li>
+      <li>Click <strong>App Notifications</strong>.</li>
+      <li>
+        <p>Add values for each input field.</p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt="Create messnotification"
+            src="/assets/images/registered-users/notifications/create-message.png"
+          />
+        </figure> 
+      </li>
+    </ol>
+    <h3>Input fields</h3>
+      <p>Enter values for the following fields:</p>
+      <ul>
+        <li><strong>Notification name</strong> - Internal name for the notification</li>
+        <li><strong>Title</strong> - Display name for the notification</li>
+        <li><strong>Text</strong> - Your notification text</li>
+        <li><strong>Delivery options</strong> - 
+          <p>For details, see the <a href="#Sending_a_notification">Sending a notification</a> section.</p>
+          <ul>
+            <li>
+              <strong>Send test now</strong> - Send a test notification now
+            </li>
+            <li>
+              <strong>Send now</strong> - Send the push notification now
+            </li>
+            <li>
+              <p><strong>Send later</strong> - Send later, by scheduling a date and time for notification delivery</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Notification type</strong> - Specifies the action when the user clicks on the notification</p>
+          <figure class="bcls-figure">
+            <img
+              class="bcls-image--no-border"
+              alt="Notification type"
+              src="/assets/images/registered-users/notifications/notification-type.png"
+            />
+          </figure>
+        </li>
+      </ul>
+
+    <h3>Additional input fields</h3>
+      <p>When you select a <strong>Notification type</strong> of either:</p>
+      <ul>
+        <li><strong>Open asset details</strong></li>
+        <li><strong>Open asset in player</strong></li>
+      </ul>
+      <figure class="bcls-figure">
+        <img
+          class="bcls-image--no-border"
+          alt="Select open asset"
+          src="/assets/images/registered-users/notifications/select-asset.png"
+        />
+      </figure>
+      <p>you will see the following additional input fields:</p>
+      <figure class="bcls-figure">
+        <img
+          class="bcls-image--no-border"
+          alt="Additional input fields"
+          src="/assets/images/registered-users/notifications/asset-fields.png"
+        />
+      </figure>
+      <p>To fill in these additional fields, do the following:</p>
+      <ol class="bcls-tasklist-restart">
+        <li>
+          <p>First, select an <strong>Asset type</strong>.</p>
+          <figure class="bcls-figure">
+            <img
+              class="bcls-image--no-border"
+              alt="Select asset type"
+              src="/assets/images/registered-users/notifications/select-asset-type.png"
+            />
+          </figure>
+        </li>
+        <li>
+          <p>Then, select an <strong>Asset</strong> from your Beacon library.</p>
+          <figure class="bcls-figure">
+            <img
+              class="bcls-image--no-border"
+              alt="Select asset"
+              src="/assets/images/registered-users/notifications/select-asset-image.png"
+            />
+          </figure>
+        </li>
+        <li>
+         <p> The landscape or poster image associated with your asset will be automatically populated here. In the notification, the image will be cropped into a square.</p>
+          <figure class="bcls-figure">
+            <img
+              class="bcls-image--no-border"
+              alt="Asset image"
+              src="/assets/images/registered-users/notifications/asset-image.png"
+            />
+          </figure>
+        </li>
+        <li>
+          <p>Select values for the following input fields:</p>
+          <ul>
+            <li><strong>Display image in notification</strong> - Toggle to display the image in your notification</li>
+            <li><strong>Image orientation</strong> - Choose either the landscape or portrait image</li>
+          </ul>
+          <p>You will see a preview of the image in your notification.</p>
+          <figure class="bcls-figure">
+            <img
+              class="bcls-image--no-border"
+              alt="Notification preview"
+              src="/assets/images/registered-users/notifications/notification-preview.png"
+            />
+          </figure>
+          <aside class="bcls-aside bcls-aside--information">The image is cropped into a square in the notification.</aside>
+        </li>
+      </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Sending_a_notification">Sending a notification</h2>
+    <p>You can either send a test notification now, or you can send a push notification now or schedule it for a later time.</p>
+
+    <h3>Send test notification</h3>
+    <p>Send a test notification to your Beacon app now.</p>
+    <aside class="bcls-aside bcls-aside--tip">To enable testing mode on your device, navigate to the <strong>About this app</strong> view and tap the logo 5 times. Testing mode allows test notifications to be sent to this device. Restart the app to remove testing mode.</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>In the notifications screen, set the <strong>Delivery options</strong> field to <strong>Send test now</strong>.</p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt="Send test notification"
+            src="/assets/images/registered-users/notifications/send-test.png"
+          />
+        </figure> 
+      </li>
+      <li>
+        <p> Click <strong>Send now</strong>.</p>
+         <figure class="bcls-figure">
+           <img
+             class="bcls-image--no-border"
+             alt="Send test now"
+             src="/assets/images/registered-users/notifications/send-test-screen.png"
+           />
+         </figure>
+       </li>
+    </ol>
+
+    <h3>Send notification now</h3>
+    <p>Send a push notification to your Beacon app now.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>In the notifications screen, set the <strong>Delivery options</strong> field to <strong>Send now</strong>.</p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt="Send now"
+            src="/assets/images/registered-users/notifications/send-now.png"
+          />
+        </figure>
+      </li>
+      <li>
+       <p> Click <strong>Send now</strong>.</p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt="Send now"
+            src="/assets/images/registered-users/notifications/send-now-screen.png"
+          />
+        </figure>
+      </li>
+    </ol>
+    <h3>Send notification later</h3>
+    <p>Schedule a date and time to send your push notification later.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>In the notifications screen, set the <strong>Delivery options</strong> field to <strong>Send later</strong>.</p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt="Schedule time to send"
+            src="/assets/images/registered-users/notifications/send-later.png"
+          />
+        </figure>
+      </li>
+      <li><p>Set the date and time for your notification delivery.</p></li>
+      <li>
+        <p>Click <strong>Schedule</strong>.</p>
+        <figure class="bcls-figure">
+          <img
+            class="bcls-image--no-border"
+            alt="Schedule notification"
+            src="/assets/images/registered-users/notifications/schedule-screen.png"
+          />
+        </figure>
+      </li>
+      
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Managing_notifications">Managing notifications</h2>
+    <p>Once your notification has been scheduled, it will appear in the notification list.</p>
+    <figure class="bcls-figure">
+      <img
+        class="bcls-image--no-border"
+        alt="Notification list"
+        src="/assets/images/registered-users/notifications/notification-list.png"
+      />
+    </figure>
+
+    <h3>Actions</h3>
+    <ul>
+      <li>Click <strong>Create notification</strong> to send or schedule a push notification.</li>
+      <li>Enter text in <strong>Search notifications</strong> to search the notifications list.</li>
+    </ul>
+
+    <h4>Columns</h4>
+    <ul>
+      <li><strong>Notification</strong> - Click the notification name to edit the notification</li>
+      <li>
+        <p><strong>Status</strong> - The current status of the notification</p>
+        <ul>
+          <li><img class="bcls-image-no-border" alt="status scheduled" src="/assets/images/registered-users/notifications/status-scheduled.png"/> - Scheduled</li>
+          <li><img class="bcls-image-no-border" alt="status sent" src="/assets/images/registered-users/notifications/status-sent.png"/> - Sent</li>
+          <li><p><img class="bcls-image-no-border" alt="status failed" src="/assets/images/registered-users/notifications/status-failed.png"/> - Failed</p></li>
+
+        </ul>
+      </li>
+      <li><strong>Send date</strong> - The date that the notification is scheduled to be sent</li>
+      <li>
+       <p><strong>Type</strong> - Notification type</p>
+       <ul>
+        <li><strong>Actual</strong> - Real notification sent to app users</li>
+        <li><p><strong>Test</strong> - Test notification sent to app, viewable in test mode only</p></li>
+       </ul>
+      </li>
+      <li><strong>Delete</strong> - Click <img class="bcls-image-no-border" alt="delete icon" src="/assets/images/registered-users/notifications/delete.png"/> to delete the notification</li> 
+    </ul> 
+  </section>
+
+</article>
+
+
