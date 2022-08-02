@@ -3,4 +3,80 @@ title: "Getting Started with the Layout Module"
 description: "In this topic, you will learn about the functionality and information available in the Layout module."
 parent: Managing Pages
 ---
-{% include s-layout/getting-started-layout-module.html %}
+<style translate="no">
+  .imageWithText {
+    width: auto;
+    vertical-align: text-bottom;
+    height: 1.4em;
+    padding-bottom: 3px
+  }
+</style>
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="Available_functionality/information">Available functionality/information</h2>
+    <p>This home page of the Layout module provides the following functionality/information:</p>
+    <h4>Refresh apps cache</h4>
+    <p>This refreshes the app cache so you can see your changes immediately. This process should not be done indiscriminately as doing this too frequently in production has an adverse effect on scalability and performance.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/getting-started-layout-module/refresh-apps-cache.png" alt="refresh apps cache">
+    </figure>
+
+    <h4>App Settings</h4>
+    <p>Click the gear icon to open the <em>App Settings</em> page.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/getting-started-layout-module/layout-gear-app-settings.png" alt="layout gear app settings">
+    </figure>
+    <p>This is the App Settings page that appears upon click of the gear icon.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/getting-started-layout-module/app-settings.png" alt="app settings">
+    </figure>
+
+
+    <h4>Page listing</h4>
+    <p>Each page created is listed in the page list. The following details the listing:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/getting-started-layout-module/{{ site.product_short }}-page-listing-info-google-drawings-mb.png" alt="">
+    </figure>
+    <ul>
+      <li><strong>Click and Drag Handle</strong>: Icon indicating the page can be moved using click and drag. You can click anywhere on the page name to move it.</li>
+      <li><strong>Page Status Indicator:</strong>: Indicates the page status, from the following:
+        <ul>
+          <li><img class="imageWithText" src="/assets/images/s-layout-img/getting-started-layout-module/icon-page-type-live.png" alt="home page icon"> : Live</li>
+          <li><img class="imageWithText" src="/assets/images/s-layout-img/getting-started-layout-module/icon-page-type-na-web.png" alt="system page"> : Not available on web</li>
+          <li><img class="imageWithText" src="/assets/images/s-layout-img/getting-started-layout-module/icon-page-type-unpublished.png" alt="configurable page"> : Unpublished</li>
+          <li><img class="imageWithText" src="/assets/images/s-layout-img/getting-started-layout-module/icon-scheduled.png" alt="scheduled to go live"> : Scheduled to go Live</li>
+        </ul>
+      </li>
+      <li><strong>Page Title</strong>: Title of the page. On hover, you see the gray name below the title (<em>825-DK-Home-(2)</em>) is the system name of the page.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img/getting-started-layout-module/hover-system-page-name.png" alt="hover system page name">
+        </figure>
+
+        If the page is published the page title will be in black, if unpublished in light grey.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img/getting-started-layout-module/published-vs-unpublished.png" alt="published vs unpublished">
+        </figure>
+      </li>
+      <li><strong>Page Availability Indicator</strong>: If displayed, indicates availability settings are currently preventing the page from being displayed in the apps. The pop-up information indicates what restrictions are preventing availability, in this case <em><strong>Devices</strong> restrictions</em>. Also in the pop-up is a link to the page where you can change availability restrictions.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img/getting-started-layout-module/page-availability-indicator.png" alt="page availability indicator">
+        </figure>
+      </li>
+      <li><strong>Duplicate Button</strong>: Click to make a duplicate of the page. The duplicate name will be in the format <em>Page Name (copy)</em>.</li>
+      <li><strong>Page Settings Dialog Button</strong>: Click to open the page settings dialog. Here you can change the page title, availability settings and archive the page.</li>
+    </ul>
+    <h4>Create page</h4>
+    <p>Click <span class="button-blue-text">Create Page</span> to start the page creation process.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/getting-started-layout-module/create-page.png" alt="create-page">
+    </figure>
+    <h4>Delete or restore archived pages</h4>
+    <p>Click <strong>Archived Pages</strong> to display a list of all archived pages from which you can choose to delete or restore the archived page.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/getting-started-layout-module/archived-pages.png" alt="archived pages">
+    </figure>
+  </section>
+</article>
