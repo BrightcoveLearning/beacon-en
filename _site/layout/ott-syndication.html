@@ -2082,8 +2082,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Specifically, the OTT Syndication functionality available in Studio is used for the following tasks:</p>
     <ul>
       <li>Create an <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> template(s) that generates a data report that is submitted to Apple to enable universal search.</li>
-      <li>Create a <strong>Google site map XML</strong> template that generates a site map that is used with Google search.</li>
-      <li>Create a <strong>Sitemap index XML</strong> template that generates a data report that is an index for your site maps.</li>
+      <li>Create a <strong>Google site map XML</strong> template that generates a sitemap that is used with Google search.</li>
+      <li>Create a <strong>Sitemap index XML</strong> template that generates a data report that is an index for your sitemaps.</li>
       <li>Create a <strong>Roku Search Feed 2.0</strong> template that generates a data report that is submitted to Roku to enable universal search.</li>
     </ul>
     <p>The general tasks to create one of these data reports is:</p>
@@ -2099,12 +2099,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Overview_of_the_processes">Overview of the processes</h2>
     <p>Using OTT Syndication tools to implement and improve searching for your video assets is a process. The process involves you, Brightcove's OTT delivery team and sometimes the platform vendor themselves. Following are quick overviews for Apple, Google and Roku.</p>
     <h3>Apple</h3>
-    <p>First, you need to work with Brightcove's OTT Delivery Team and Apple to prepare for the universal search implementation. You then generate the CSV files from the <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> templates. The <strong>Apple UMC Availability CSV</strong> job is run multiple times for different asset types: movies, series, seasons and episodes. The data in all the reports needs to match the current state of your catalog. You again work with Brightcove's OTT Delivery Team to be sure the CSV reports are in the correct format. Once the format is verified, you submit the data to Apple. Once the process is working, you periodically submit new data to Apple.</p>
+    <p>First, you need to work with Brightcove's OTT Delivery Team and Apple to prepare for the universal search implementation. You then generate the CSV files from the <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> templates. The <strong>Apple UMC Catalog CSV</strong> job is run once per asset type: movies, series, seasons and episodes. The data in all the reports needs to match the current state of your catalog. You again work with Brightcove's OTT Delivery Team to be sure the CSV reports are in the correct format. Once the format is verified, you submit the data to Apple. Once the process is working, you periodically submit new data to Apple.</p>
     <p>Note that the initial setup and verification process can take up to several months.</p>
     <h3>Google Search</h3>
-    <p>The <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates work together to improve search results using site maps. You generate one or more site maps (possibly more than one because of size) and the site map index is the top level file that points to your site map(s). After these files are generated you submit them to Brightcove's OTT Delivery Team and the files are placed in the correct locations in relation to your OTT app. Once the process is working, you periodically submit new data to Brightcove's OTT Delivery Team.</p>
+    <p>The <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates work together to improve search results using sitemaps. You generate one or more sitemaps (possibly more than one because of size) and the sitemap index is the top level file that points to your sitemap(s). After these files are generated you submit the resulting file's URLs to Brightcove's OTT Delivery Team and the OTT app is reconfigured to incorporate them. Once the process is working, no further manual submissions are needed, assuming that a stored job was created to automatically refresh the sitemap(s) periodically. As long as the stored job continues to refresh the sitemap(s), Google will automatically crawl those sitemaps periodically as well.</p>
     <h3>Roku</h3>
-    <p>You need first to go to the Roku site and complete forms that enable you to submit syndication data. Once completed, you generate data using the <strong>Roku Search Feed</strong> template. Using that data you work with Brightcove's OTT Delivery Team to submit it to Roku. Once the process is working, you periodically submit new data to Roku.</p>
+    <p>You need first to go to the Roku site and complete forms that enable you to submit syndication data. Once completed, you generate data using the <strong>Roku Search Feed</strong> template. Using that data you work with Brightcove's OTT Delivery Team to submit it to Roku. Once the process is working, no further manual submissions are needed, assuming that a stored job was created to automatically refresh the sitemap(s) periodically. As long as the stored job continues to refresh the sitemap(s), Roku will automatically, periodically pull the latest feed from the results URL.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">Note that for all processes it takes days before you start to see the respective results.</aside>
   </section>
 
@@ -2201,7 +2201,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>Asset types</strong></td>
-              <td>The assets types you wish to include in the generated data report</td>
+              <td>The single asset type you wish to include in the generated data report</td>
             </tr>
             <tr>
               <td><strong>File name</strong></td>
@@ -2268,7 +2268,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3 id="Google_site_map_XML">Google site map XML</h3>
     <ul>
       <li>
-        <p><strong>Use case</strong>: The Google site map XML syndication type generates site maps following Google specifications. These site maps are necessary to participate in Beacon’s new SEO strategy.</p>
+        <p><strong>Use case</strong>: The Google site map XML syndication type generates sitemaps following Google specifications. These sitemaps are necessary to participate in Beacon’s new SEO strategy.</p>
       </li>
       <li>
         <p><strong>Blank form appearance</strong>:</p>
@@ -2315,7 +2315,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>Publish to web</strong></td>
-              <td>Publishes site map to a specific URL based on Beacon application file name</td>
+              <td>Publishes sitemap to a specific URL based on Beacon application file name</td>
             </tr>
           </tbody>
         </table>
@@ -2325,7 +2325,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3 id="Sitemap_index_XML">Sitemap index XML</h3>
     <ul>
       <li>
-        <p><strong>Use case</strong>: Because of limitations on site map sizes, the Sitemap index is the top level file that points to one or more site maps.</p>
+        <p><strong>Use case</strong>: Because of limitations on sitemap sizes, the Sitemap index is the top level file that points to one or more sitemaps.</p>
       </li>
       <li>
         <p><strong>Blank form appearance</strong>:</p>
@@ -2410,7 +2410,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>Publish to web</strong></td>
-              <td>Publishes site map to a specific URL based on Beacon application file name</td>
+              <td>Publishes sitemap to a specific URL based on Beacon application file name</td>
             </tr>
           </tbody>
         </table>
