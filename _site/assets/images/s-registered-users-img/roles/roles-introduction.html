@@ -1,0 +1,53 @@
+
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>The Roles as Rights feature ensures that content is only viewable by viewers whose role matches the role set on the content.</p>
+    <p>Roles allow you to filter content and experience elements for groups of specific viewers. You can expose content for viewers within a group and hide it from all other viewers.</p>
+    <p>Content types can be shown or hidden based on the viewer's role. In Beacon Studio, you can create roles and assign them to the following content types:</p>
+    <ul>
+      <li>Movies</li>
+      <!-- <li>Programs</li> -->
+      <li>Series, Seasons, and Episodes</li>
+      <li>Channels and Live Events</li>
+      <li>Playlists and Pages</li>
+    </ul>
+    <!-- <p>For movies and episodes, you should use Video Cloud custom fields to assign roles.</p> -->
+    <p>To associate viewers with roles, use your external Viewer Management System (VMS). You will connect these user role definitions to Brightcove Beacon using OpenID Connect (OIDC) tokens. OIDC is an authentication protocol used to verify the identity of a user to a client service.</p>
+    <!-- <p>To associate viewers with roles, you will use your external user management system or LDAP (Lightweight Directory Access Protocol) system. You will connect these user role definitions to Brightcove Beacon using OpenID Connect (OIDC) tokens. OIDC is an authentication protocol used to verify the identity of a user to a client service.</p> -->
+    <p> For details about using OIDC, see the <a href="/references/oidc-authentication-for-beacon.html">OIDC Authentication Configuration and Testing</a> document.</p>
+    
+    <!-- <figure class="bcls-figure"><img class="bcls-image--no-border" alt="China Delivery Architecture" src="/assets/images/s-general-img/china-delivery.png" /> </figure> -->
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Workflow">Workflow</h2>
+    <p>The following workflows are associated with Roles as Rights:</p>
+    <h3>Viewer workflow</h3>
+    <p>Your app viewers will experience the following:</p>
+    <ol class="bcls-tasklist">
+      <li>
+        <p>Viewers will exist in your external Viewer Management System (VMS) and may have one or more roles assigned to them.</p> 
+        <aside class="bcls-aside bcls-aside--tip">Viewers with no roles will have access to all content with no associated roles.</aside>
+      </li>
+      <li>During viewer authentication with OIDC, a token is passed to Brightcove Beacon with the viewer's role(s).</li>
+      <li>Viewers have access to assets/pages that match any of the viewer's roles.</li>
+    </ol>
+    <figure class="bcls-figure">
+      <img class="bcls-image--no-border" alt="Viewer workflow diagram" src="/assets/images/s-general-img/roles/viewer-workflow.svg" />
+    </figure> 
+
+    <h3>Admin workflow</h3>
+    <p>You or your admin person will perform the following tasks:</p>
+    <ol class="bcls-tasklist-restart">
+     <li>Assign roles to viewers in your external VMS (or sets up rules to assign roles)</li>
+     <li>
+      <p>Connect external VMS to Brightcove Beacon</p>
+      <aside class="bcls-aside bcls-aside--information">Contact your account manager to connect your VMS to the Brightcove Beacon.</aside>
+    </li>
+     <li>Add the roles to Brightcove Beacon (these roles must match what is defined in your VMS)</li>
+     <li>Assign roles to assets/pages</li>
+    </ol>
+    <figure class="bcls-figure">
+      <img class="bcls-image--no-border" alt="Admin workflow diagram" src="/assets/images/s-general-img/roles/admin-workflow.svg" />
+    </figure>
+  </section>
