@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/landing-page.css">
   <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -2079,7 +2079,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
     <p>Captions are helpful for viewers with hearing impairments, and may be required if your channel adheres to accessibility requirements.</p>
-    <p>Cloud Playout can pass through the embedded 608/708 closed captions from VoD (and a Live fallback slate) and Live events and make the captions available across all outputs (Brightcove Live (SSAI/non-SSAI) , 3rd party RTMP and S3+HLS). </p>
+    <p>Cloud Playout can pass through the embedded 608 closed captions from VoD (and a Live fallback slate) and Live events and make the captions available across all outputs (Brightcove Live (SSAI/non-SSAI) , 3rd party RTMP and S3+HLS). </p>
     <aside class="bcls-aside bcls-aside--information language-editable">Closed captions are added to VOD MP4 renditions when text tracks are ingested using the <code translate="No">embed_closed_caption</code> option. See <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Ingesting WebVTT Files</a></aside>
   </section>
   <section class="bcls-section">
@@ -2095,7 +2095,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="How_Cloud_Playout_handles_captions">How Cloud Playout handles captions</h2>
     <ul>
       <li>Only one language track is supported on VoD MP4 renditions.</li>
-      <li>If a live stream contains embedded multi language channels or both 608 and 708 channels, everything will be passed through downstream.</li>
+      <li>If a live stream contains embedded multi language channels or both 608 and 708 channels, everything will be passed through downstream. To avoid showing double captions in the player, you can <a href="https://player.support.brightcove.com/general/rename-608-708-captions.html#708_captions">block parsing of the 708 captions</a> by modifying the player configuration.</li>
       <li>For S3+HLS output only the first language channel is considered for the output, so only one VTT output is generated even though the input may contain more than one caption channels.</li>
     </ul>
     <p>The diagram below summarizes how Cloud Playout handles captions for different channel types, asset types, and destinations:</p>
