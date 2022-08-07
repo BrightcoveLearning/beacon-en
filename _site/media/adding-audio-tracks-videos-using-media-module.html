@@ -2191,7 +2191,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </ul>
       </dd>
       <dt>Ingesting more than one audio track from a single source</dt>
-      <dd>We support <strong>one audio track from the source supplied in ".master"</strong>, and one for each source under ".audio_tracks.masters".</dd>
+      <dd>We support <strong>one audio track from the source supplied in the source video.</strong>. Additional audio tracks must be ingested as separate audio files.</dd>
       <dt>DRM protection on videos that include only audio</dt>
       <dd>As soon as a video track is added, DRM protection will be enabled.</dd>
       <dt>End-user friendly labels</dt>
@@ -2200,7 +2200,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <dd>
         <ul>
           <li>Track switching before all audio segments have been downloaded</li>
-          <li>When the video is played back using the Silverlight plugin (in versions of IE less than 10, or any version of IE in versions of Window less than 8) - multiple audio tracks are <strong>not</strong> supported in Silverlight.</li>
           <li>If the audio and video are different durations, the player will may stop whenever the shorter one runs out.</li>
         </ul>
       </dd>
