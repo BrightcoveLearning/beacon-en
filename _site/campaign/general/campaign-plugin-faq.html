@@ -2083,16 +2083,21 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="faq">Frequently asked questions</h2>
     <dl>
-      <dt class="bcls-question">Does the bcMapPlugin work when a lead form attached to a player, but no data connection is added?</dt>
-      <dd>No. The plugin expects a data connection to be added to the player. If a lead form is added to the player without a data connection, then the plugin will detect an incomplete setup and exit out of its initialization before the lead form has a chance to display.</dd>
-      <dt class="bcls-question">Does bcMapPlugin work when a lead form is not attached to a player?</dt>
-      <dd>Yes, the plugin will initialize when a data connection has been added to a player.
+      <details>
+        <summary>Does the bcMapPlugin work when a lead form attached to a player, but no data connection is added?</summary>
+        No. The plugin expects a data connection to be added to the player. If a lead form is added to the player without a data connection, then the plugin will detect an incomplete setup and exit out of its initialization before the lead form has a chance to display.
+      </details>
+      <details>
+        <summary>Does bcMapPlugin work when a lead form is not attached to a player?</summary>
+        Yes, the plugin will initialize when a data connection has been added to a player.
         The following data connections will require that T<strong>rack Data for Unknown Viewers</strong> be enabled before the player can send its event tracking beacons. Otherwise, there will be no lead form to detect viewers, everyone will be unknown, and that data will not be tracked.
         <ul>
           <li>Salesforce / Pardot</li>
           <li>Eloqua</li>
           <li>Campaign</li>
         </ul>
+      </details>
+
       </dd>
     </dl>
   </section>

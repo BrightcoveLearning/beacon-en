@@ -2197,11 +2197,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <a href="/social/publishing-live-event-facebook.html">Social module</a>.
           
           </li>
-      <!--<li>Select a <strong>Streaming Latency</strong> option.
+      <li>Select a <strong>Streaming Latency</strong> option.
       <ul>
         <li><strong>Regular</strong> - Live delay can be approximately 30-45 seconds</li>
         <li><strong>Low Latency</strong> - Live delay reduced to approximately 5-10 seconds (see the <a href="#low-latency">Using Low Latency streaming</a> section below)</li>
-      </ul></li>-->
+      </ul></li>
       <li>Select a <strong>Live Ingest Profile</strong>. The dropdown list will list all Live ingest profiles. The ingest profile will control the quality and number of live renditions that are created. Clicking the <strong>Manage Profiles</strong> link will open the ingest profile editor in another browser tab. Note that you must be an account administrator to access the ingest profile editor. Click the <strong>Renditions</strong> link to view the renditions that will be created using the selected ingest profile.
         <aside class="bcls-aside bcls-aside--information">The bitrate and billing details of the three tiers are as follows:
           <ul>
@@ -2298,12 +2298,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ul>
     <p>Click <strong>Edit Configuration </strong> to view/edit the API request that will be made to create the live stream. Caution should be used when editing the API call directly.</p>
   </section>
-  <!--<section class="bcls-section">
+  <section class="bcls-section">
     <h2 id="low-latency">Using low latency streaming</h2>
     <p>Latency refers to the delay between when a video is captured and when it&rsquo;s displayed on a viewer&rsquo;s device. When creating a new live event, there is an option to use <strong>Low Latency</strong>.</p>
     <figure class="bcls-figure"> <img src="/assets/images/s-live-img/live-module/node18470-streaming-latency.png"> </figure>
-    <aside class="bcls-aside bcls-aside--information">Note: If low latency is not enabled for your account, contact Brightcove Support.</aside>
-    <p>Low latency provides  near real-time streaming with streaming delays reduced to approximately 5-10 seconds. Low latency is recommended when faster interactions are needed but may provide an inferior quality of experience. There are factors outside of Brightcove's control that may determine whether a low latency feed can be delivered (encoder, viewer bandwith, etc.). If a low latency stream cannot be delivered, Brightcove Live will fallback and deliver the regular latency stream.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: If low latency is not enabled for your account, contact your Brightcove Account Manager.</aside>
+    <p>Low latency provides  near real-time streaming with streaming delays reduced to approximately 5-10 seconds. Low latency is recommended when faster interactions are needed but may provide an inferior quality of experience. There are factors outside of Brightcove's control that may determine whether a low latency feed can be delivered (encoder, viewer bandwidth, etc.). If a low latency stream cannot be delivered, Brightcove Live will fallback and deliver the regular latency stream.</p>
+    <p data-renderer-start-pos="32">For low latency source encoder setup, the following is required.</p>
+    <ul>
+      <li>30 frames per second, drop framerate is not supported (29.97)</li>
+      <li>Codec: H264</li>
+      <li>Profile:Baseline</li>
+    </ul>
     <p>The following options are not supported when using low latency:</p>
     <ul>
       <li>DRM</li>
@@ -2312,7 +2318,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li> Multi-Language Audio</li>
     </ul>
     <aside class="bcls-aside bcls-aside--information">Note: Low latency requires Brightcove Player version 6.62.0 and above.</aside>
-  </section>-->
+  </section>
   <section class="bcls-section">
     <h2 id="intro_recurring">Introduction to recurring events</h2>
     <p>Selecting the <strong>Create this as a recurring event using a Static Entry Point (SEP)</strong> option allows for a long-running live stream that can be activated and deactivated while keeping the same entry point URL and playback URL. When using recurring events, the streaming endpoint URL and video ID will not change.</p>
