@@ -2107,24 +2107,24 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>First, you need to work with Brightcove's OTT Delivery Team and Apple to prepare for the universal search implementation. You then generate the CSV files from the <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> templates. The <strong>Apple UMC Catalog CSV</strong> job is run once per asset type: movies, series, seasons and episodes. The data in all the reports needs to match the current state of your catalog. You again work with Brightcove's OTT Delivery Team to be sure the CSV reports are in the correct format. Once the format is verified, you submit the data to Apple. Once the process is working, you periodically submit new data to Apple.</p>
     <p>Note that the initial setup and verification process can take up to several months.</p>
     <h3>Google Search</h3>
-    <p>The <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates work together to improve search results using sitemaps. You generate one or more sitemaps (possibly more than one because of size) and the sitemap index is the top level file that points to your sitemap(s). After these files are generated you submit the resulting file's URLs to Brightcove's OTT Delivery Team and the OTT app is reconfigured to incorporate them. Once the process is working, no further manual submissions are needed, assuming that a stored job was created to automatically refresh the sitemap(s) periodically. As long as the stored job continues to refresh the sitemap(s), Google will automatically crawl those sitemaps periodically as well.</p>
+    <p>The <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates work together to improve search results using sitemaps. You generate one or more sitemaps (possibly more than one because of size) and the sitemap index is the top level file that points to your sitemap(s). After these files are generated you submit the resulting file's URLs to Brightcove's OTT Delivery Team and the OTT app is reconfigured to incorporate them. Once the process is working, no further manual submissions are needed, assuming that a stored job was created to automatically refresh the sitemap(s) periodically. As long as the stored job continues to refresh the sitemap(s), Google automatically crawls those sitemaps periodically as well.</p>
     <h3>SEO Page HTML</h3>
-    <p>The <strong>SEO Page HTML</strong> templates work with the <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates to enhance search engine optimization (SEO) as well as other benefits in social media sharing of your assets. When the OTT app backend detects a search crawler trying to load one of the web app pages, it will fetch a corresponding SEO-optimized page from the syndication service and return that page content to the crawler instead of the normal, SEO-unfriendly web app page. First, here is a page from the app where a video is shown and ready for the viewer to play (this page is of little value for search or SEO):
+    <p>The <strong>SEO Page HTML</strong> templates work with the <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates to enhance search engine optimization (SEO) as well as other benefits in social media sharing of your assets. When the OTT app backend detects a search crawler trying to load one of the web app pages, it fetches a corresponding SEO-optimized page from the syndication service and return that page content to the crawler instead of the normal, SEO-unfriendly web app page. First, here is a page from the app where a video is shown and ready for the viewer to play (this page is of little value for search or SEO):</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/s-layout-img/external-search-feeds/non-optimized-page.png" alt="non optimized page">
     </figure>
-    Here is an example of the SEO-optimized page:</p>
+    <p>Here is an example of the SEO-optimized page:</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/s-layout-img/external-search-feeds/seo-optimized-page.png" alt="seo optimized page">
     </figure>
     <h4>Benefits</h4>
-    <p>The benefits of the SEO optimization are:
+    <p>The benefits of the SEO optimization are:</p>
     <ul>
-      <li><strong>Assets will appear individually</strong>: Without the SEO optimization, Google will report a single entry for your OTT web app:
+      <li><strong>Assets appear individually</strong>: Without the SEO optimization, Google reports a single entry for your OTT web app:
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-layout-img/external-search-feeds/google-search-no-seo.png" alt="google search no seo">
         </figure>
-        <p>Whereas after the SEO optimization is done, each asset will appear in the search:</p>
+        <p>Whereas after the SEO optimization is done, each asset appears in the search:</p>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-layout-img/external-search-feeds/google-search-with-seo.png" alt="google search with seo">
         </figure>
@@ -2137,9 +2137,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ul>
 
-    </p>
     <h3>Roku</h3>
-    <p>You need first to go to the Roku site and complete forms that enable you to submit syndication data. Once completed, you generate data using the <strong>Roku Search Feed</strong> template. Using that data you work with Brightcove's OTT Delivery Team to submit it to Roku. Once the process is working, no further manual submissions are needed, assuming that a stored job was created to automatically refresh the sitemap(s) periodically. As long as the stored job continues to refresh the sitemap(s), Roku will automatically, periodically pull the latest feed from the results URL.</p>
+    <p>You need first to go to the Roku site and complete forms that enable you to submit syndication data. Once completed, you generate data using the <strong>Roku Search Feed</strong> template. Using that data you work with Brightcove's OTT Delivery Team to submit it to Roku. Once the process is working, no further manual submissions are needed, assuming that a stored job was created to automatically refresh the sitemap(s) periodically. As long as the stored job continues to refresh the sitemap(s), Roku automatically, periodically pulls the latest feed from the results URL.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">Note that for all processes it takes days before you start to see the respective results.</aside>
   </section>
 
