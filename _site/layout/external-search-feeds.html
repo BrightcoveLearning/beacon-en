@@ -2088,6 +2088,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Create an <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> template(s) that generates a data report that is submitted to Apple to enable universal search.</li>
       <li>Create a <strong>Google site map XML</strong> template that generates a sitemap that is used with Google search.</li>
       <li>Create a <strong>Sitemap index XML</strong> template that generates a data report that is an index for your sitemaps.</li>
+      <li>Create a <strong>SEO Page HTML</strong> template that greatly enhances behavior of your OTT app with searches and viewers sharing assets.</li>
       <li>Create a <strong>Roku Search Feed 2.0</strong> template that generates a data report that is submitted to Roku to enable universal search.</li>
     </ul>
     <p>The general tasks to create one of these data reports is:</p>
@@ -2174,6 +2175,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><a href="#Apple_UMC_Availability_CSV">Apple UMC Availability CSV</a></li>
       <li><a href="#Google_site_map_XML">Google site map XML</a></li>
       <li><a href="#Sitemap_index_XML">Sitemap index XML</a></li>
+      <li><a href="#SEO_Page_HTML">SEO Page HTML</a></li>
       <li><a href="#Roku_Search_Feed_2.0">Roku Search Feed 2.0 (JSON)</a></li>
     </ul>
     <aside class="bcls-aside bcls-aside--tip language-editable">Configuration of the options is most likely a collaboration with you and Brightcove's OTT Delivery Team.</aside>
@@ -2363,6 +2365,45 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </table>
       </li>
     </ul>
+
+    <h3 id="SEO_Page_HTML">SEO Page HTML</h3>
+    <ul>
+      <li>
+        <p><strong>Use case</strong>: Because of limitations on sitemap sizes, the Sitemap index is the top level file that points to one or more sitemaps.</p>
+      </li>
+      <li>
+        <p><strong>Blank form appearance</strong>:</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img/external-search-feeds/seo-page-html.png" alt="SEO Page HTML">
+        </figure>
+      </li>
+      <li>
+        <p><strong>Form field definitions</strong>:</p>
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Field name</th>
+              <th>Definition</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td><strong>Template name</strong></td>
+              <td>Internal Studio name; not viewer facing</td>
+            </tr>
+            <tr>
+              <td><strong>File name</strong></td>
+              <td>Your chosen name for the file that is generated; a name is suggested, but it may be changed</td>
+            </tr>
+            <tr>
+              <td><strong>Beacon application name</strong></td>
+              <td>Consult Brightcove's OTT Delivery Team to obtain this value</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+
 
     <h3 id="Roku_Search_Feed_2.0">Roku Search Feed 2.0 (JSON)</h3>
     <ul>
