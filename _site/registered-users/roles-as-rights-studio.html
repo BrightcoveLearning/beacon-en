@@ -2094,11 +2094,20 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Playlists and Pages</li>
     </ul>
     <!-- <p>For movies and episodes, you should use Video Cloud custom fields to assign roles.</p> -->
-    <p>To associate viewers with roles, use your external Viewer Management System (VMS). You will connect these user role definitions to Brightcove Beacon using OpenID Connect (OIDC) tokens. OIDC is an authentication protocol used to verify the identity of a user to a client service.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Requirements">Requirements</h2>
+    <p>The following is needed for Roles as Rights:</p>
+    <ul>
+      <li>An external Viewer Management System (VMS)</li>
+      <li> OpenID Connect (OIDC) authentication enabled for your account</li>
+    </ul>
+    <p>To associate viewers with roles, you will use your external VMS. These user role definitions will be connected to Brightcove Beacon using OIDC tokens</p>
+    <p> During viewer authentication with a Beacon app using OIDC, a token is passed to Beacon with the viewer's role(s).</p>
     <!-- <p>To associate viewers with roles, you will use your external user management system or LDAP (Lightweight Directory Access Protocol) system. You will connect these user role definitions to Brightcove Beacon using OpenID Connect (OIDC) tokens. OIDC is an authentication protocol used to verify the identity of a user to a client service.</p> -->
-    <p> For details about using OIDC, see the <a href="/references/oidc-authentication-for-beacon.html">OIDC Authentication Configuration and Testing</a> document.</p>
-    
-    <!-- <figure class="bcls-figure"><img class="bcls-image--no-border" alt="China Delivery Architecture" src="/assets/images/s-general-img/china-delivery.png" /> </figure> -->
+    <p> OIDC is an authentication protocol used to verify the identity of a user to a client service. For details about using OIDC, see the <a href="/references/oidc-authentication-for-beacon.html">OIDC Authentication Configuration and Testing</a> document.</p>
+
   </section>
 
   <section class="bcls-section">
