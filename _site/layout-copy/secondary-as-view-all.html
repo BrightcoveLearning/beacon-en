@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to create, delete and edit default and customer view all pages. A view all page is used when the number of videos in a carousel meets a maximum threshold and a View All link is displayed and when the link is clicked by the customer a page appears displaying all videos, possibly in a grid.">
+  <meta name="description" content="In this topic, you will learn how to create, delete and edit default and custom view all pages. A view all page is used when the number of videos in a carousel meets a maximum threshold and a View All link is displayed and when the link is clicked by the customer a page appears displaying all videos, possibly in a grid.">
   
   <title>Using View All Pages</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
@@ -2079,14 +2079,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h1>Using View All Pages</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to create, delete and edit default and customer view all pages. A view all page is used when the number of videos in a carousel meets a maximum threshold and a <strong>View All</strong> link is displayed and when the link is clicked by the customer a page appears displaying all videos, possibly in a grid.</summary>
+  <summary>In this topic, you will learn how to create, delete and edit default and custom view all pages. A view all page is used when the number of videos in a carousel meets a maximum threshold and a <strong>View All</strong> link is displayed and when the link is clicked by the customer a page appears displaying all videos, possibly in a grid.</summary>
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>If you have a page with a carousel that contains a playlist of more than 6 or 10 (depending on platform) a <strong>View All</strong> link appears at the end of the carousel.</p>
+    <p>If you have a page with a carousel that contains a playlist of more than 6 or 10 (depending on platform) a <strong>View All</strong> link appears at the end of the carousel. When the viewer clicks that link a new page is displayed showing the thumbnails in the carousel in a more suitable format to avoid excessive scrolling using a carousel.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/view-all-in-app.png" alt="view all in app">
     </figure>
+    <p>There are two types of view all pages:</p>
+    <ul>
+      <li><strong>Default view all pages</strong></li>
+      <li><strong>Secondary pages (implemented as custom view all pages)</strong></li>
+    </ul>
+
+    <section class="bcls-section">
+      <h2 id="section-name">section-title</h2>
+      <p></p>
+    </section>
+
     <p>There is a default view all page, which you can alter. Also, you can create a <em>secondary page</em> that automatically shows in lieu of the very wide carousel. Normally you would want the large number of videos display in a format, like a grid, where the viewer doesn't have to scroll excessively to see all the videos.</p>
     <p>Note that a secondary page can only be defined for a page that displays videos in a carousel. The single exception to this statement is a secondary page cannot be created when the <em>Hero (Autoplay Channel)</em> is the layout selected for the page from which you wish to link.</p>
     <aside class="bcls-aside bcls-aside--tip language-editable">Note: For clarity, in the steps below the term <strong>main page</strong> refer to the page where you choose the playlist which displays the <strong>Secondary page</strong>. On the main page you see a <strong>Secondary page</strong> indicator (highlighted) associated with the playlist added to the main page.
