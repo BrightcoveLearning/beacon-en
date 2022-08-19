@@ -32,7 +32,7 @@
 
   gtag('config', 'UA-2728311-17');
 </script>
-  <script src="/assets/js/sajari-head.js"></script>
+  <script src="/assets/s-site-assets-scripts/sajari-head.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
@@ -2096,7 +2096,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3>Notes</h3>
     <ul>
       <li>Legacy ingest profiles no longer support live clipping. To create a video clip from a live stream, make sure your account is enabled for Dynamic Delivery and use a Dynamic Delivery ingest profile.</li>
-      <li>VOD clips are incompatible with Context Aware Encoding (CAE) ingest profiles. Clips are automatically processed using the account default ingest profile, so if the default is a CAE profile, the clip creation will fail.</li>
       <li>Clips can only be created within 7 days of the event end. Afterwards, the <strong>Create Clip</strong> button will be disabled. If the event is longer than 24 hours, only the last 24 hours are clippable.</li>
       <li>For recurring events: If during the 7 days after an event the event is reactivated, the clipping will only be available for the content of the most recent event. There will be no way to create clips from the prior event, even if it's under 7 days after the last event was deactivated.</li>
       <li>If you stop and restart a channel for a new live stream, the previous live stream information for clipping may be overwritten.</li>
@@ -2499,7 +2498,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <script src="/assets/s-site-assets-scripts/sajari-reindex.js"></script>
   <script src="/assets/js/feedback.js"></script>
   
-  <script src="/assets/js/sajari-search-foot.js"></script>
+  <script src="/assets/s-site-assets-scripts/sajari-search-foot.js"></script>
   
   <script translate="no">
     feather.replace()
