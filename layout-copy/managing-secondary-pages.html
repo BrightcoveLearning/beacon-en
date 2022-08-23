@@ -1,6 +1,6 @@
 ---
-title: "Using View All Pages"
-description: "In this topic, you will learn how to create, delete and edit default and custom view all pages. A view all page is used when the number of videos in a carousel meets a maximum threshold and a <strong>View All</strong> link is displayed and when the link is clicked by the customer a page appears displaying all videos, possibly in a grid."
+title: "Managing Secondary Pages"
+description: "In this topic, you will learn how to create, delete and edit secondary pages."
 parent: "Managing Pages"
 ---
 <h1>{{ page.title }}</h1>
@@ -9,229 +9,110 @@ parent: "Managing Pages"
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>If you have a page with a carousel that contains a playlist of more than 6 or 10 (depending on platform) a <strong>View All</strong> link appears at the end of the carousel. When the viewer clicks that link a new page is displayed showing the thumbnails in the carousel in a more suitable format to avoid excessive scrolling using a carousel.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/view-all-in-app.png" alt="view all in app">
-    </figure>
-    <p>There are two types of view all pages:</p>
+    <p>This document focuses on the "mechanics" of secondary pages, that is creating, editing and deleting secondary pages. The use cases of why you would use secondary pages are in the following two documents:</p>
     <ul>
-      <li><strong>Default view all pages</strong></li>
-      <li><strong>Secondary pages (implemented as custom view all pages)</strong></li>
+      <li><a href="/layout-copy/using-view-all.html">Using View All Pages</a></li>
+      <li><a href="">Using Page Cards in a Playlist</a></li>
     </ul>
+  </section>
 
-    <section class="bcls-section">
-      <h2 id="Default_view_all_pages">Default view all pages</h2>
-      <p>Default view all pages are configurable and are associated with the playlist across all instances of the use of the playlist.</p>
-      <p>Following are the steps to alter the layout of a default view all page:</p>
-      <ol class="bcls-tasklist">
-        <li>In the <strong>Layout</strong> module click on the page for which you wish to change a default view all page. </li>
-        <li>Click the ellipsis (...) next to the playlist for which you are changing the default view all page.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/click-ellipsis.png" alt="click ellipsis">
-          </figure>
-        </li>
-        <li>In the playlist settings dialog which opens, click <span class="button-blue">More layout options</span>.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/click-more-layout-options.png" alt="more layout options">
-          </figure>
-        </li>
-        <li>At the bottom of the playlist layout dialog which opens, click the pencil icon to edit the <strong>View all page</strong>.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/pencil-to-edit.png" alt="pencil to edit">
-          </figure>
-        </li>
-        <li>In the <strong>View all page display</strong> settings dialog, make any wanted changes to the view all page layout.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/change-layout.png" alt="change layout">
-          </figure>
-        </li>
-        <li>After making changes, close the <strong>View all page display</strong> settings dialog.</li>
-      </ol>
-      <aside class="bcls-aside bcls-aside--tip language-editable">The changes to the default view all page are associated with this playlist FOR ALL PLACES the playlist is used in the app.</aside>
-    </section>
-
-    <section class="bcls-section">
-      <h2 id="Secondary_pages_as_view_all_pages">Secondary pages as view all pages</h2>
-      <p>As you have seen, the default view all pages are built to more efficiently display the video assets from a long carousel. But, you may wish to have the view all page display more than just the carousel's video assets. For instance, consider the following use case:</p>
-      <p><em>You have a carousel that is displaying a list of mysteries movies. You then most likely know that the viewer is interested in this genre. So, when the viewer clicks on the <strong>View All</strong> link, you want to show not only the video assets from the carousel, but more of your mystery video assets. The custom view all page could not only display the videos from the carousel, but also other mystery assets like Agatha Christie movies, Miss Marple mysteries, Hercule Poirot mysteries, etc.</em></p>
-      <p>The solution for this use case is <strong>secondary pages as custom view all pages</strong>.</p>
-
-      <h3>Creating the custom view all page</h3>
-      <p>In the following steps you will create a secondary page used as a custom view all page for a <em>New Mystery Movies</em> playlist, which is displayed as a carousel on the <em>BCLS Main</em> page. The custom view all page should:</p>
-      <ul>
-        <li>Display the <em>New Mystery Movies</em> video assets in a grid. This is the actual view all part of the view all page.</li>
-        <li>The view all page should also display <em>Agatha Christie's Miss Marple</em> and <em>Agatha Christie's Hercule Poirot</em> playlists.</li>
-      </ul>
-      <ol class="bcls-tasklist-restart">
-        <li>In the <strong>Layout</strong> module, click <strong>Create Page</strong>.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/click-create-page.png/" alt="click create page">
-          </figure>
-        </li>
-        <li>Click <strong>Secondary</strong>.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/click-secondary.png" alt="click secondary">
-          </figure>
-        </li>
-        <li>Create the page by giving it a name and choosing the layout for the linked carousel, then click <span class="button-blue">Create</span>.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/create-mysteries-page.png" alt="create page">
-          </figure>
-        </li>
-        <li>Add the <em>New Mystery Movies</em> playlist (the view all functionality) as well as the <em>Agatha Christie's Miss Marple</em> and <em>Agatha Christie's Hercule Poirot</em> playlists. The two playlists are added to hopefully draw the viewers' attention to other mystery content you have.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/add-playlists.png" alt="add playlists">
-          </figure>
-        </li>
-      </ol>
-      <p>You now have the custom view all page, built from a secondary page.</p>
-
-      <h3>Associating the custom view all page to the playlist</h3>
-      <p>You now have a custom view all page you wish to associate with a playlist. The following steps show you that process:</p>
-      <ol class="bcls-tasklist-restart">
-        <li>In the <strong>Layout</strong> module select the page that contains the playlist to which you wish to associate the custom view all page.</li>
-        <li>Click the ellipsis next to the playlist.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/add-custom-to-playlist-ellipsis.png" alt="click ellipsis">
-          </figure>
-        </li>
-        <li>From the dialog which appears, click <span class="button-blue">More layout options</span>.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/click-more-layout-options-custom.png" alt="click-more layout options">
-          </figure>
-        </li>
-        <li>At the bottom of the playlist layout dialog which opens, click the pencil icon.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/edit-cutom-view-all.png" alt="pencil to edit">
-          </figure>
-        </li>
-        <li>In the next dialog, click the <strong>Custom</strong> tab.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/click-custom-tab.png" alt="click custom tab">
-          </figure>
-        </li>
-        <li>Click the downward facing caret to view your secondary pages.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/view-secondary-pages.png" alt="view secondary pages">
-          </figure>
-        </li>
-        <li>Select the secondary page you just built.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/select-your-secondary-page.png" alt="select secondary page">
-          </figure>
-        </li>
-        <li>Confirm the preview page reflects your selection.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/confirm-in-preview.png" alt="confirm in preview">
-          </figure>
-        </li>
-        <li>Close the dialog, and you will see you now have a view all page associated with your playlist.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/associated-view-all.png" alt="see associated view all page">
-          </figure>
-          <aside class="bcls-aside bcls-aside--tip language-editable">You can click the <strong>View all page</strong> text to edit your custom view all page.</aside>
-        </li>
-      </ol>
+  <section class="bcls-section">
+    <h2 id="section-name">section-title</h2>
 
 
+    <p>There is a default view all page, which you can alter. Also, you can create a <em>secondary page</em> that automatically shows in lieu of the very wide carousel. Normally you would want the large number of videos display in a format, like a grid, where the viewer doesn't have to scroll excessively to see all the videos.</p>
+    <p>Note that a secondary page can only be defined for a page that displays videos in a carousel. The single exception to this statement is a secondary page cannot be created when the <em>Hero (Autoplay Channel)</em> is the layout selected for the page from which you wish to link.</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">Note: For clarity, in the steps below the term <strong>main page</strong> refer to the page where you choose the playlist which displays the <strong>Secondary page</strong>. On the main page you see a <strong>Secondary page</strong> indicator (highlighted) associated with the playlist added to the main page.
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/see-linked-page.png" alt="see linked page">
+      </figure>
+    </aside>
+  </section>
 
-
-
-
-
-      <p>There is a default view all page, which you can alter. Also, you can create a <em>secondary page</em> that automatically shows in lieu of the very wide carousel. Normally you would want the large number of videos display in a format, like a grid, where the viewer doesn't have to scroll excessively to see all the videos.</p>
-      <p>Note that a secondary page can only be defined for a page that displays videos in a carousel. The single exception to this statement is a secondary page cannot be created when the <em>Hero (Autoplay Channel)</em> is the layout selected for the page from which you wish to link.</p>
-      <aside class="bcls-aside bcls-aside--tip language-editable">Note: For clarity, in the steps below the term <strong>main page</strong> refer to the page where you choose the playlist which displays the <strong>Secondary page</strong>. On the main page you see a <strong>Secondary page</strong> indicator (highlighted) associated with the playlist added to the main page.
+  <section class="bcls-section">
+    <h2 id="Creating_a_secondary_page">Creating a secondary page</h2>
+    <p>The following are the steps required to create a secondary page:</p>
+    <ol class="bcls-tasklist">
+      <li>In the <strong>Layout</strong> module navigate to the properties of a page that contains a carousel.</li>
+      <li>To the right of the playlist whose contents you wish to display in a secondary page, click the ellipses (<strong>...</strong>).</li>
+      <li>In the playlist settings dialog which opens, click <span class="button-blue">More layout options</span>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/more-layout-options.png" alt="more layout options">
+        </figure>
+      </li>
+      <li>In the playlist layout dialog which opens, to the right of <strong>Secondary page</strong>, click <span class="button-blue-text"><i class="button-icon" data-feather="plus"></i>Add</span>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/add-linked-page.png" alt="add linked page">
+        </figure>
+      </li>
+      <li>Choose the layout for the secondary page.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/linked-page-layout.png" alt="linked page layout">
+        </figure>
+      </li>
+      <li>Click <span class="button-blue">Create</span>.</li>
+      <li>Confirm you are now viewing the properties for the secondary page.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/page-from-list-of-links.png" alt="page from list of links">
+        </figure>
+      </li>
+      <li>Click <span class="button-blue">Publish</span> and confirm your action in the dialog that appears.</li>
+      <li>Return to your main page's properties.</li>
+      <li>Check to be sure you can see the <strong>Secondary page</strong> indicator (highlighted).
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/see-linked-page.png" alt="see linked page">
         </figure>
-      </aside>
-    </section>
+      </li>
+    </ol>
+  </section>
 
-    <section class="bcls-section">
-      <h2 id="Creating_a_secondary_page">Creating a secondary page</h2>
-      <p>The following are the steps required to create a secondary page:</p>
-      <ol class="bcls-tasklist">
-        <li>In the <strong>Layout</strong> module navigate to the properties of a page that contains a carousel.</li>
-        <li>To the right of the playlist whose contents you wish to display in a secondary page, click the ellipses (<strong>...</strong>).</li>
-        <li>In the playlist settings dialog which opens, click <span class="button-blue">More layout options</span>.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/more-layout-options.png" alt="more layout options">
-          </figure>
-        </li>
-        <li>In the playlist layout dialog which opens, to the right of <strong>Secondary page</strong>, click <span class="button-blue-text"><i class="button-icon" data-feather="plus"></i>Add</span>.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/add-linked-page.png" alt="add linked page">
-          </figure>
-        </li>
-        <li>Choose the layout for the secondary page.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/linked-page-layout.png" alt="linked page layout">
-          </figure>
-        </li>
-        <li>Click <span class="button-blue">Create</span>.</li>
-        <li>Confirm you are now viewing the properties for the secondary page.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/page-from-list-of-links.png" alt="page from list of links">
-          </figure>
-        </li>
-        <li>Click <span class="button-blue">Publish</span> and confirm your action in the dialog that appears.</li>
-        <li>Return to your main page's properties.</li>
-        <li>Check to be sure you can see the <strong>Secondary page</strong> indicator (highlighted).
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/see-linked-page.png" alt="see linked page">
-          </figure>
-        </li>
-      </ol>
-    </section>
+  <section class="bcls-section">
+    <h2 id="Edit_a_secondary_page">Edit a secondary page</h2>
+    <p>To edit an existing secondary page, click on the <strong>Secondary page</strong> indicator associated with the playlist added to a main page.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/see-linked-page.png" alt="see linked page">
+    </figure>
+    <p>You then see the secondary page's details.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/page-from-list-of-links.png" alt="page from list of links">
+    </figure>
+  </section>
 
-    <section class="bcls-section">
-      <h2 id="Edit_a_secondary_page">Edit a secondary page</h2>
-      <p>To edit an existing secondary page, click on the <strong>Secondary page</strong> indicator associated with the playlist added to a main page.</p>
-      <figure class="bcls-figure">
-        <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/see-linked-page.png" alt="see linked page">
-      </figure>
-      <p>You then see the secondary page's details.</p>
-      <figure class="bcls-figure">
-        <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/page-from-list-of-links.png" alt="page from list of links">
-      </figure>
-    </section>
+  <section class="bcls-section">
+    <h2 id="Delete_a_secondary_page">Delete a secondary page</h2>
+    <p>To delete an existing secondary page, click on the <strong>Secondary page</strong> indicator associated with the playlist added to the main page.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/see-linked-page.png" alt="see linked page">
+    </figure>
+    <p>You then see the secondary page's details, where you can click <span class="button-red-text">Delete</span>.
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/click-delete.png" alt="click delete">
+    </figure>
+    </p>
+  </section>
 
-    <section class="bcls-section">
-      <h2 id="Delete_a_secondary_page">Delete a secondary page</h2>
-      <p>To delete an existing secondary page, click on the <strong>Secondary page</strong> indicator associated with the playlist added to the main page.</p>
-      <figure class="bcls-figure">
-        <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/see-linked-page.png" alt="see linked page">
-      </figure>
-      <p>You then see the secondary page's details, where you can click <span class="button-red-text">Delete</span>.
-      <figure class="bcls-figure">
-        <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/click-delete.png" alt="click delete">
-      </figure>
-      </p>
-    </section>
-
-    <section class="bcls-section">
-      <h2 id="Access_secondary_pages_from_the_page_list">Access secondary pages from the page list</h2>
-      <p>So far in the document you have accessed details about your secondary page by clicking on the <strong>Secondary page</strong> indicator associated with the playlist added to the main page. You can also access secondary pages from the index page of the <strong>Layout</strong> module. To do so, follow these steps:</p>
-      <ol class="bcls-tasklist-restart">
-        <li>From the index page of the <strong>Layout</strong> module, scroll to the bottom of the page list until you see the <strong>secondary pages</strong> text, which is followed by the number of secondary pages in your experience.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/linked-pages-link.png" alt="">
-          </figure>
-        </li>
-        <li>Click <strong>secondary pages</strong>.</li>
-        <li>Check to be sure you see a list of all the secondary pages you have created.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/viewing-linked-pages.png" alt="viewing linked pages">
-          </figure>
-        </li>
-        <li>Click one one of the links and you see the secondary page's details.
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/page-from-list-of-links.png" alt="page from list of links">
-          </figure>
-        </li>
-        <li>From here you can edit, delete or publish your secondary page. Note that you cannot set availability on secondary pages.</li>
-      </ol>
-    </section>
+  <section class="bcls-section">
+    <h2 id="Access_secondary_pages_from_the_page_list">Access secondary pages from the page list</h2>
+    <p>So far in the document you have accessed details about your secondary page by clicking on the <strong>Secondary page</strong> indicator associated with the playlist added to the main page. You can also access secondary pages from the index page of the <strong>Layout</strong> module. To do so, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>From the index page of the <strong>Layout</strong> module, scroll to the bottom of the page list until you see the <strong>secondary pages</strong> text, which is followed by the number of secondary pages in your experience.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/linked-pages-link.png" alt="">
+        </figure>
+      </li>
+      <li>Click <strong>secondary pages</strong>.</li>
+      <li>Check to be sure you see a list of all the secondary pages you have created.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/viewing-linked-pages.png" alt="viewing linked pages">
+        </figure>
+      </li>
+      <li>Click one one of the links and you see the secondary page's details.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img-temp/secondary-as-view-all/page-from-list-of-links.png" alt="page from list of links">
+        </figure>
+      </li>
+      <li>From here you can edit, delete or publish your secondary page. Note that you cannot set availability on secondary pages.</li>
+    </ol>
+  </section>
 
 </article>
