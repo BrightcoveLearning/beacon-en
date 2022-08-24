@@ -2109,12 +2109,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Overview_of_the_processes">Overview of the processes</h2>
     <p>Using OTT Syndication tools to implement and improve searching for your video assets is a process. The process involves you, Brightcove's OTT delivery team and sometimes the platform vendor themselves. Following are quick overviews for Apple, Google and Roku.</p>
     <h3>Apple</h3>
-    <p>First, you need to work with Brightcove's OTT Delivery Team and Apple to prepare for the universal search implementation. You then generate the CSV files from the <strong>Apple UMC Catalog CSV</strong> and <strong>Apple UMC Availability CSV</strong> templates. The <strong>Apple UMC Catalog CSV</strong> job is run once per asset type: movies, series, seasons and episodes. The data in all the reports needs to match the current state of your catalog. You again work with Brightcove's OTT Delivery Team to be sure the CSV reports are in the correct format. Once the format is verified, you submit the data to Apple. Once the process is working, you periodically submit new data to Apple.</p>
+    <p>First, you need to work with Brightcove's OTT Delivery Team and Apple to prepare for the universal search implementation. Typically, one <strong>Apple UMC Catalog CSV</strong> template is created for each supported asset type (series, season, episode, movie), and a single <strong>Apple UMC Availability CSV</strong> template is created that aggregates availability info for all asset types. The data in all the reports needs to match the current state of your catalog. You again work with Brightcove's OTT Delivery Team to be sure the CSV reports are in the correct format. Once the format is verified, you submit the data to Apple. Once the process is working, you periodically submit new data to Apple.</p>
     <p>Note that the initial setup and verification process can take up to several months.</p>
     <h3>Google Search</h3>
     <p>The <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates work together to improve search results using sitemaps. You generate one or more sitemaps (possibly more than one because of size) and the sitemap index is the top level file that points to your sitemap(s). After these files are generated you submit the resulting file's URLs to Brightcove's OTT Delivery Team and the OTT app is reconfigured to incorporate them. Once the process is working, no further manual submissions are needed, assuming that a stored job was created to automatically refresh the sitemap(s) periodically. As long as the stored job continues to refresh the sitemap(s), Google automatically crawls those sitemaps periodically as well.</p>
     <h3>SEO Page HTML</h3>
-    <p>The <strong>SEO Page HTML</strong> templates work with the <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates to enhance search engine optimization (SEO) as well as other benefits in social media sharing of your assets. When the OTT app backend detects a search crawler trying to load one of the web app pages, it fetches a corresponding SEO-optimized page from the syndication service and return that page content to the crawler instead of the normal, SEO-unfriendly web app page.
+    <p>The <strong>SEO Page HTML</strong> templates work with the <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates to provide enhanced search engine optimization (SEO) as well as other benefits in social media sharing of your assets. When the OTT app backend detects a search crawler trying to load one of the web app pages, it fetches a corresponding SEO-optimized page from the syndication service and return that page content to the crawler instead of the normal, SEO-unfriendly web app page.</p>
+    <p>Unlike other template types, <strong>SEO Page HTML</strong> templates are used to generate asset-specific results in response to on-demand requests from the webapp. As a result, there is no need to create or run stored jobs that include template instances of this type.</p>
     <h4>Benefits</h4>
     <p>The benefits of the SEO optimization are:</p>
     <ul>
@@ -2136,7 +2137,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>To implement this feature, you need to use the <strong>SEO Page HTML</strong>, <strong>Google site map XML</strong> and <strong>Sitemap index XML</strong> templates to generate the required data and pass these reports to Brightcove's OTT Delivery Team. Brightcove personnel then configure your app to use the SEO functionality. Periodically you need to regenerate the data and post to the location directed by Brightcove.</p>
 
     <h3>Roku</h3>
-    <p>You need first to go to the Roku site and complete forms that enable you to submit syndication data. Once completed, you generate data using the <strong>Roku Search Feed</strong> template. Using that data you work with Brightcove's OTT Delivery Team to submit it to Roku. Once the process is working, no further manual submissions are needed, assuming that a stored job was created to automatically refresh the sitemap(s) periodically. As long as the stored job continues to refresh the sitemap(s), Roku automatically, periodically pulls the latest feed from the results URL.</p>
+    <p>You need first to go to the Roku site and complete forms that enable you to submit syndication data. Once completed, you generate data using the <strong>Roku Search Feed</strong> template. Using that data you work with Brightcove's OTT Delivery Team to submit it to Roku. Once the process is working, no further manual submissions are needed, assuming that a stored job was created to automatically refresh the search feed(s) periodically. As long as the stored job continues to refresh the search feed(s), Roku automatically, periodically pulls the latest feed from the results URL.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">Note that for all processes it takes days before you start to see the respective results.</aside>
   </section>
 
@@ -2280,7 +2281,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>Target geography</strong></td>
-              <td>The country for which the template is targeted</td>
+              <td>The countries for which the template is targeted</td>
             </tr>
             <tr>
               <td><strong>Universal link prefix</strong></td>
@@ -2289,7 +2290,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   <li>Pointer to the Beacon app</li>
                   <li>Enables searched assets to open in the app</li>
                   <li>The base URL from your OTT web app</li>
-                  <li>Example: URL from your web app <br><em>https://bcls.brightcove.com/home?api=eyJ1cmwiOiJodHRwczovL2JlYWN</em> <br>the form entry is<br> <strong>https://bcls.brightcove.com</strong></li>
+                  <li>Example: If the asset details URLs from your web app look like <br><em>https://bcls.brightcove.com/details/12345</em>, the form entry should be<br> <strong>https://bcls.brightcove.com</strong></li>
                 </ul>
               </td>
             </tr>
@@ -2342,13 +2343,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   <li>Pointer to the Beacon app</li>
                   <li>Enables searched assets to open in the app</li>
                   <li>The base URL from your OTT web app</li>
-                  <li>Example: URL from your web app <br><em>https://bcls.brightcove.com/home?api=eyJ1cmwiOiJodHRwczovL2JlYWN</em> <br>the form entry is<br> <strong>https://bcls.brightcove.com</strong></li>
+                  <li>Example: If the asset details URLs from your web app look like <br><em>https://bcls.brightcove.com/details/12345</em>, the form entry should be<br> <strong>https://bcls.brightcove.com</strong></strong></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td><strong>Publish to web</strong></td>
-              <td>Publishes sitemap to a specific URL based on Beacon application file name</td>
+              <td>Publishes sitemap to a specific URL based on Beacon application file name. Must be selected in order for the webapp to participate in Beacon's SEO process. Can be unselected if generating sitemaps for other uses.</td>
             </tr>
           </tbody>
         </table>
@@ -2430,7 +2431,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               <td><strong>Default page metadata</strong></td>
               <td>
                 <p>The default meta tag values used for non-asset specific pages that don't have a retrievable title and/or description. Only the description is used when a search crawler asks for a page linked in the web app's top or bottom menu bars. Both the title and description are used if a search crawler asked for any other non-asset specific page. All asset-specific SEO pages (series/season/episode/movie/live events/channels) use the title and description defined in the asset, and default page metadata would not be used.</p>
-                <p>Note that if multiple languages are used in the app, default page metadata needs to be entered for each language.</p>
+                <p>Note that if multiple languages are used in the app, it is preferable to enter default page metadata for each language.</p>
               </td>
             </tr>
           </tbody>
@@ -2474,7 +2475,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </tr>
             <tr>
               <td><strong>Target geography</strong></td>
-              <td>The country for which the template is targeted</td>
+              <td>The countries for which the template is targeted</td>
             </tr>
             <tr>
               <td><strong>Universal link prefix</strong></td>
@@ -2483,13 +2484,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   <li>Pointer to the Beacon app</li>
                   <li>Enables searched assets to open in the app</li>
                   <li>The base URL from your OTT web app</li>
-                  <li>Example: URL from your web app <br><em>https://bcls.brightcove.com/home?api=eyJ1cmwiOiJodHRwczovL2JlYWN</em> <br>the form entry is<br> <strong>https://bcls.brightcove.com</strong></li>
+                  <li>Example: If the asset details URLs from your web app look like <br><em>https://bcls.brightcove.com/details/12345</em>, the form entry should be<br> <strong>https://bcls.brightcove.com</strong></strong></li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td><strong>Publish to web</strong></td>
-              <td>Publishes sitemap to a specific URL based on Beacon application file name</td>
+              <td>Publishes sitemap to a specific URL based on Beacon application file name. Must be selected in order for the webapp to participate in Beacon's SEO process. Can be unselected if generating sitemaps for other uses. You would typically want to select this option so that feeds are generated with a public URL that Roku can use to ingest them.</td>
             </tr>
           </tbody>
         </table>
