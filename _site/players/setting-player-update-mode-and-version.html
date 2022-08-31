@@ -2103,6 +2103,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <section class="bcls-section">
         <h2 id="managed">Managed release</h2>
         <p>Brightcove generally allows about a week for customers to try a pre-release before a managed release begins. Managed release is the process of running a controlled A/B test across production web sites. The managed release system allows loading the new version of the player on a small percentage of page loads for a short period - usually a few hours. During this time, Brightcove collects data so the performance of the old and new versions can be compared. The distribution of number of errors, number of minutes viewed, number of ad starts, and several other metrics are all examined. Brightcove looks at distributional counts and summaries of the data, but also at outliers, sites that have greater than average differences in the tracked metrics. After careful review of all the data, either the update is committed or rolled back. If it is decided to roll it back, small updates may be made to fix an identified problem and then the managed release is re-run.</p>
+        <aside class="bcls-aside bcls-aside--information">
+           <p>The version of the Brightcove Player script used in the Managed Release contains a use of <code translate="no">eval()</code>, which is blocked by many content security policies (CSP) using the <code translate="no">script-src</code> directive. If a CSP like this is in place, the player will be unable to function on any affected site for which that CSP applies.</p> 
+
+           <p>There are two ways to mitigate the impact of a CSP and allow the Brightcove Player to continue functioning during a managed release:</p> 
+
+           <ul>
+                <li>Use <code>unsafe-eval</code> as part of the CSP. More info is available <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src">here.</a></li>
+                <li>Lock the player version and manually update players when appropriate. Locked players will never be updated via a managed release.</li>
+           </ul>
+
+        </aside>
     </section>
     <section class="bcls-section">
         <h2 id="update">Setting the player update mode</h2>
