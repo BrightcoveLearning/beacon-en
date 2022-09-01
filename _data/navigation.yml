@@ -126,6 +126,8 @@
       url: /media/editing-video-properties-using-quick-edit.html
     - name: Editing Series Details
       url: /media/editing-series-details.html
+    - name: Controlling Viewer Access with Roles
+      url: /registered-users/roles-as-rights-studio.html
     - name: Exporting Video Data
       url: /media/exporting-video-data.html
     - name: Generating Captions for Videos
@@ -553,10 +555,12 @@
   name: Registered Users
   url: /registered-users/index.html
   docs:
-    - name: Working with Registered Users
-      url: /registered-users/working-with-registered-users.html
+    - name: Controlling Viewer Access with Roles
+      url: /registered-users/roles-as-rights-studio.html
     - name: Exporting Registered Users
       url: /registered-users/export-registered-users.html
+    - name: Working with Registered Users
+      url: /registered-users/working-with-registered-users.html
     - name: Sending Push Notifications
       url: /registered-users/sending-push-notifications.html
 - section:
