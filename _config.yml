@@ -30,6 +30,9 @@ language: "en-US"
 # local server (for "jekyll serve") will be localhost:{PORT number below}
 port: 4002
 
+# prefixes for submodules
+live_prefix: "/live/"
+
 # Jekyll variables
 product: Brightcove Beacon
 product_short: Beacon
