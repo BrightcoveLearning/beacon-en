@@ -182,6 +182,8 @@
       url: /layout/getting-started-layout-module.html
     #- name: Configuring App Settings
     #  url: /layout/configuring-app-settings.html
+    - name: Adding Pages to Playlists
+      url: /layout/adding-pages-to-playlists.html
     - name: Configuring Page Availability
       url: /layout/configuring-page-availability.html
     - name: Creating and Managing Pages
@@ -190,6 +192,8 @@
       url: /layout/managing-linked-pages.html
     - name: Managing Playlists on Pages
       url: /layout/managing-playlists-on-pages.html
+    - name: Managing Secondary Pages
+      url: /layout/managing-secondary-pages.html
     - name: Page Details Overview
       url: /layout/page-details-overview.html
     - name: Refreshing the App Cache
@@ -198,6 +202,8 @@
       url: /layout/using-core-pages.html
     - name: Using Page Layouts
       url: /layout/using-page-layouts.html
+    - name: Using View All Pages
+      url: /layout/using-view-all.html
 - section:
   name: Managing Channels
   url: '/channels/index.html'
