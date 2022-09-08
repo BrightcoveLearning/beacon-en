@@ -178,3 +178,11 @@
 	path = assets/images/s-registered-users-img
 	url = https://github.com/BrightcoveLearning/s-registered-users-img
   branch = main
+[submodule "_includes/s-brightcove-interactivity"]
+	path = _includes/s-brightcove-interactivity
+	url = https://github.com/BrightcoveLearning/s-brightcove-interactivity
+  branch = main
+[submodule "assets/images/s-brightcove-interactivity-img"]
+	path = assets/images/s-brightcove-interactivity-img
+	url = https://github.com/BrightcoveLearning/s-brightcove-interactivity-img
+  branch = main
