@@ -2157,6 +2157,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>For channels to work in Beacon, you need to <strong>specify Brightcove Live as the destination</strong>.</li>
+      <li>
+        The Live job used for the channel destination should be in the same account as the channel. It is possible to use a live job from another account, but you will need to add <code translate="No">/alive</code> to the RTMP address - for example:
+<pre><code class="language-http" translate="No">rtmp://26bb68bdbe6d40769682e7ec55478818.sep.bcovlive.io:1935/26bb68bdbe6d40769682e7ec55478818<span class="bcls-highlight">/alive</span></code></pre>
+      </li>
       <li>The maximum input bitrate and resolution supported for Cloud Playout is 20MBPS/1080p for VOD and live inputs.</li>
       <li>Brightcove recommends using videos with at least a 2 minute duration to ensure a correct transition between videos and electronic program guide accuracy</li>
       <li>Captions (text tracks) added to videos currently will display in Cloud Playout channels if you have <a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">requested closed captions</a> for MP4 renditions.</li>

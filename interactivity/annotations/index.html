@@ -1,0 +1,29 @@
+---
+title: Annotations
+parent: Interactivity
+description: This section contains information on annotations.
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section" id="page_wrapper">
+    {% for item in site.data.navigation %}
+      {% if item.name == page.parent %}
+      <section>
+        {% for entry in item.docs %}
+          {% if entry.name == page.title %}
+          <div style="display:block">               
+            <ul class="landing-page-item">   
+          {% for subentry in entry.docs %}                    
+                      <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>                    
+            {% endfor %}
+          </ul>
+        </div>
+          {% endif %}
+        {% endfor %}
+      </section>
+      {% endif %}
+    {% endfor %}
+  </section>
+</article>
