@@ -2529,7 +2529,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="DRM_support_details">DRM support details</h2>
     <h3>Browsers</h3>
-    <p>DRM for browsers is for desktop or for mobile web (Chrome on Android 6+ devices; Safari on iOS 11.2+ devices). Brightcove uses MPEG-DASH and common encryption together with Widevine Modular, Apple Fairplay, and Microsoft PlayReady to provide DRM on the desktop - which type is used depends on the browser. This provides a single set of assets that can be played across different browsers while leveraging the native DRM that is available with modern browsers.</p>
+    <p>DRM for browsers is for desktop or for mobile web (Chrome on Android 6+ devices; Safari on iOS 11.2+ devices). Brightcove uses MPEG-DASH and common encryption together with Widevine Modular, Apple FairPlay, and Microsoft PlayReady to provide DRM on the desktop - which type is used depends on the browser. This provides a single set of assets that can be played across different browsers while leveraging the native DRM that is available with modern browsers.</p>
     <h3>iOS and Android applications</h3>
     <p>The information below applies to apps built using the <a href="https://sdks.support.brightcove.com">Brightcove Native Player SDKs</a>. Note that in addition to regular playback, the SDKs also support <a href="#Offline_Playback_with_DRM">offline playback with DRM</a>.</p>
     <h4>iOS</h4>
@@ -2593,9 +2593,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
     <h3>Known issues</h3>
     <ul>
-      <li>For Fairplay playback on mobile devices, and an external screen is used, the audio will play but the video is just a black image.
+      <li>For FairPlay playback on mobile devices, and an external screen is used, the audio will play but the video is just a black image.
         <p>For more information, see <a href="https://sdks.support.brightcove.com/features/content-security-drm-native-player-sdks.html">Content Security (DRM) with the Native Player SDKs</a></p>
       </li>
+      <li>On MacOS, on an external monitor and using Safari videos will sometimes play only audio (depends on HDCP compatibility of the external screen).</li>
     </ul>
   </section>
   <section class="bcls-section">

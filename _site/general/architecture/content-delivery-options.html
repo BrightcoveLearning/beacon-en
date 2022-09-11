@@ -2372,15 +2372,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><a href="#RemoteAssets">Remote assets</a></li>
       <li><a href="#multiple">Multiple choice</a></li>
     </ul>
+  </section>
+  <section id="BYOCDN" class="bcls-subsection">
+    <h3>BYO CDN</h3>
+    <p>You can also choose to use your own choice of CDN (<strong>BYO CDN</strong> or "bring your own bandwidth"). In this case, depending on the agreement with your CDN provider, your videos will be delivered seamlessly through Brightcove Players using either Progressive Download (PD) or streaming mechanisms. If you choose BYO CDN, you can use the Beacon pull-based ingestion to ingest content into your Beacon account, which then gets moved to your CDN provider for delivery to end users through your Brightcove Players.</p>
+    <h4>Does Dynamic Delivery support BYO CDN publishers? </h4>
+    <p>Dynamic Delivery allows publishers to take advantage of their own CDN relationships, however, all video assets must be managed by the Brightcove Origin. Please contact your account manager for more information.</p>
+    <h3>Images</h3>
+    <h4>Playback API (including images displayed in the Brightcove web and SDK players)</h4>
+    <ul>
+      <li>For accounts created <strong>after Mon 10 May 2021 10:23:47 UTC</strong>, images will automatically be returned from the BYO CDN.</li>
+      <li>For older accounts, images are returned from the <a href="#BrightcoveCDN">Brightcove house CDN</a>, which will result in bandwidth charges. You can <a href="https://supportportal.brightcove.com/">submit a request to Support</a> to allow the Playback API to return images from the BYO CDN.</li>
+    </ul>
+    <h4>CMS API</h4>
+    <p>Currently images returned via the CMS API returned from the Brightcove house CDN, and will therefore result in bandwidth charges. Depending on why and how you are retrieving images via the CMS API, you may be able to use the Playback API instead, which could save bandwidth charges (see above).</p>
     <section id="BrightcoveCDN" class="bcls-subsection">
       <h3>Brightcove CDN</h3>
       <p>You can choose to use a <strong>Brightcove </strong><b>CDN</b>. Beacon leverages Akamai, Fastly, and other Tier 1 CDNs to offer both streaming and progressive download delivery for your video content. Generally HLS or DASH streaming is used, and progressive download only used in special cases or to provide a downloadable rendition of the video.</p>
-    </section>
-    <section id="BYOCDN" class="bcls-subsection">
-      <h3>BYO CDN</h3>
-      <p>You can also choose to use your own choice of CDN (<strong>BYO CDN</strong> or "bring your own bandwidth"). In this case, depending on the agreement with your CDN provider, your videos will be delivered seamlessly through Brightcove Players using either Progressive Download (PD) or streaming mechanisms. If you choose BYO CDN, you can use the Beacon pull-based ingestion to ingest content into your Beacon account, which then gets moved to your CDN provider for delivery to end users through your Brightcove Players.</p>
-      <h4>Does Dynamic Delivery support BYO CDN publishers? </h4>
-      <p>Dynamic Delivery allows publishers to take advantage of their own CDN relationships, however, all video assets must be managed by the Brightcove Origin. Please contact your account manager for more information.</p>
     </section>
     <section id="RemoteAssets" class="bcls-subsection">
       <h3>Remote assets</h3>
