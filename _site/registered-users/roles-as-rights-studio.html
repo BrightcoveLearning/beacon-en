@@ -2358,13 +2358,32 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Assigning_roles_to_viewers">Assigning roles to viewers</h2>
     <p>You will use your external Viewer Management System (VMS) to assign viewers with specific roles. For example, you might want your employees and partners to have access to the latest training videos, but not your prospects and customers.</p>
-    <p>Contact your account manager to connect your VMS to Brightcove Beacon.</p>
+    
+    <ol class="bcls-tasklist-restart">
+      <li>Assign user roles in your external Viewer Management System (VMS).</li>
+      <li>Contact your account manager to connect your VMS to Brightcove Beacon.</li>
+      <li>
+        <p>Login to the Beacon Studio. In the left navigation, click <strong>Registered Users</strong> and then <strong>Users</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="List of registered users" src="/assets/images/s-registered-users-img/roles/registered-users-user.png" />
+        </figure> 
+      </li>
+      <li>Click on a user name.</li>
+      <li>
+        <p>In the <strong>Overview</strong> section, any roles assigned to this user will be listed. Note that this is a read-only field, and is defined in your VMS. If no roles are associated with this user, then you will see <strong>N/A</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="User roles" src="/assets/images/s-registered-users-img/roles/user-role.png" />
+        </figure> 
+      </li>
+
+    </ol>
   </section>
 
   <section class="bcls-section">
-    <h2 id="Adding_roles_in_Beacon">Adding roles in Beacon</h2>
-    <p>You will add roles in Beacon Studio.</p>
+    <h2 id="Managing_roles_in_Beacon">Managing roles in Beacon</h2>
+    <p>You will add, update, and delete roles in Beacon Studio.</p>
     <aside class="bcls-aside bcls-aside--information">Roles in Beacon Studio must match the roles defined in your Viewer Management System (VMS).</aside>
+    <h3>Adding roles</h3>
     <ol class="bcls-tasklist-restart">
       <li>
         <p>Login to the Beacon Studio. In the left navigation, click <strong>Registered Users</strong> and then <strong>Roles</strong>.</p> 
@@ -2379,8 +2398,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" alt="Add role" src="/assets/images/s-registered-users-img/roles/add-role.png" />
         </figure> 
       </li>
+    </ol>
+    <h3>Updating roles</h3>
+    <ol class="bcls-tasklist-restart">
       <li>
         <p>To edit an existing role, click <img class="bcls-image--no-border" alt="Edit icon" src="/assets/images/s-registered-users-img/roles/pencil-icon.png" /> associated with the <strong>Role name</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Edit role icon" src="/assets/images/s-registered-users-img/roles/edit-role-list.png" />
+        </figure>
       </li>
       <li>
         <p>In the <strong>Edit</strong> role dialog, update the role name and click <strong>Update</strong>.</p> 
@@ -2389,8 +2414,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure> 
         <aside class="bcls-aside bcls-aside--information">Adding/editing Roles in Beacon does not propagate to your VMS.  You must make role changes in both the Beacon CMS and your VMS, and make sure that they match.</aside>
       </li>
+    </ol>
+    <h3>Deleting roles</h3>
+    <ol class="bcls-tasklist-restart">
       <li>
         <p>To delete an existing role, click <img class="bcls-image--no-border" alt="Delete icon" src="/assets/images/s-registered-users-img/roles/delete-icon.png" /> associated with the <strong>Role name</strong>.</p> 
+        <figure class="bcls-figure">
+          <img class="bcls-image" alt="Delete role icon" src="/assets/images/s-registered-users-img/roles/delete-role-list.png" />
+        </figure>
       </li>
     </ol>
   </section>
