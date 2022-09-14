@@ -2305,30 +2305,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ul>
       <li>Each segment file is encrypted</li>
       <li>The HLS manifest (.m3u8 file) delivered by Beacon contains links to the keys for each segment</li>
-      <li>By default, keys are rotated every 10 minutes; you can specify the <code translate="No">encryption_key_rotation_period</code> in custom ingest profiles.</li>
       <li>To add encryption to your HLS renditions for accounts enabled for <a href="/general/overview-dynamic-delivery.html">Dynamic Delivery</a>, simply submit a request to Brightcove Support to enable HLSe for the account. (For accounts already enabled for HLSe, if your account is enabled for Dynamic Delivery, encryption will continue to be applied to all HLS renditions.)</li>
-      <li>To add encryption to your HLS renditions in accounts using the legacy ingest system (non-Dynamic Delivery), add the <code translate="No">encryption_method</code> and <code translate="No">encryption_key_rotation_period</code> fields to each of the HLS renditions defined in your ingestion profile:
-        <pre class="line-numbers">
-<code class="language-json" translate="No">{
-  "media_type": "video",
-  "reference_id": "ts0",
-  "format": "ts",
-  "type": "segmented",
-  "audio_codec": "aac",
-  "audio_bitrate": 64,
-  "video_codec": "h264",
-  <span class="bcls-highlight">"encryption_method": "aes-128",</span>
-  <span class="bcls-highlight">"encryption_key_rotation_period": 10,</span>
-  "video_bitrate": 450,
-  "decoder_bitrate_cap": 771,
-  "decoder_buffer_size": 1028,
-  "keyframe_rate": 0.5,
-  "max_frame_rate": 30,
-  "width": 480,
-  "height": 270,
-  "h264_profile": "baseline"
-</code></pre>
-      </li>
+      
     </ul>
     <aside class="bcls-aside bcls-aside--information">Note: Video encryption is not by itself a strong form of content protection. If content security is critical for your organization, you should employ <a href="https://player.support.brightcove.com/content-protection/overview-content-protection.html">DRM protection</a>. Contact your Account Manager for details about bundling HLS encryption and DRM protection so that you can secure your content wherever it plays.</aside>
   </section>
@@ -2340,10 +2318,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="limitations">Limitations</h2>
     <ul>
       <li>HLS encryption applies to all non-DRM HLS renditions in your account. If you have promotional or other videos you want to deliver without encryption, you can upload them to a different Beacon account without HLS encryption enabled.</li>
-      <li>For videos ingested using the legacy ingest system, Beacon does not support encrypting HLS renditions uploaded to Beacon before the implementation of HLS encryption. Previously uploaded HLS content remains unencrypted. You must <a href="/media/retranscoding-videos-using-media-module.html">retranscode videos</a> uploaded before HLS encryption to protect them. This does <strong>not</strong> apply to videos ingested using the Dynamic Delivery system.</li>
+      <!-- <li>For videos ingested using the legacy ingest system, Beacon does not support encrypting HLS renditions uploaded to Beacon before the implementation of HLS encryption. Previously uploaded HLS content remains unencrypted. You must <a href="/media/retranscoding-videos-using-media-module.html">retranscode videos</a> uploaded before HLS encryption to protect them. This does <strong>not</strong> apply to videos ingested using the Dynamic Delivery system.</li> -->
       <li>Beacon does not show an indicator to identify HLS encrypted videos in the Media module.</li>
       <li>If a user plays an HLS encrypted video on an Apple device and then attempts to replay it after the TTL has expired, playback will fail to start, and will not provide an alert message to the user.</li>
-      <li>When using the Brightcove Player, HLS playback is not supported on IE8 or IE9. These devices will fall back to MP4.</li>
+      <!-- <li>When using the Brightcove Player, HLS playback is not supported on IE8 or IE9. These devices will fall back to MP4.</li> -->
       <li>HLSe is supported in the <a href="https://sdks.support.brightcove.com/getting-started/brightcove-native-player-sdks.html">Android SDK</a> and will be supported on older versions with the VisualOn component. HLSe should also work on 4.x with the HTML5 player. For more information on the support of HLSe on Android devices, see <a href="http://developer.android.com/guide/appendix/media-formats.html">Android Supported Media Formats</a>.</li>
       <li>For HTML5 players, HLSe support is completely determined by the underlying OS/device.</li>
       <li>If you elect to terminate HLS encryption, encryption will be removed from all videos in the account - no re-transcoding is required.</li>
