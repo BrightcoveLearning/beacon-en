@@ -513,6 +513,11 @@
           url: '/publishing-apps/samsung/installing-samsung-test-build.html'
         - name: 'Submitting to the Samsung Store'
           url: '/publishing-apps/samsung/submitting-to-samsung.html'
+    - name: 'Web'
+      url: '/publishing-apps/web/index.html'
+      docs:
+        - name: 'Brightcove Player Use'
+          url: '/publishing-apps/web/bcp-use.html'
 - section:
   name: 'Publishing Videos & Players'
   url: /publish/index.html
