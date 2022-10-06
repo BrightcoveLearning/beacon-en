@@ -3228,10 +3228,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click on a project to open it.</li>
       <li>Hover over an annotation and click <strong>Edit</strong>.</li>
     </ol>
-    <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/annotations/annotation-options.png"> </figure>
+    <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/annotations/annotation-options.png"> </figure>
     <h3 id="start-time">Start Time</h3>
     <p>The Start Time controls when the annotation begins. You can set the start time ahead one second by clicking on the right arrow and back, by clicking on the left arrow.</p>
-    <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/annotations/start-time-left-right.png"> </figure>
+    <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/annotations/start-time-left-right.png"> </figure>
     <p>Click <strong>Start Time</strong> to fine-tune it down to the thousands of a second or a specific percentage in the video. The <strong>Start Time</strong> field is flexible and accepts the following inputs:</p>
     <ul>
       <li>20 (20 seconds)</li>
@@ -3242,11 +3242,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>-15 (15 seconds before the end of the video)</li>
       <li>-10% (10% before the end of the video) </li>
     </ul>
-    <aside class="bcls-aside bcls-aside--tip language-editable">Tip: % based and negative start times are particularly useful for <a href="templates/creating-and-managing-templates.html">templates</a>.</aside>
+    <aside class="bcls-aside bcls-aside--tip language-editable">Tip: % based and negative start times are particularly useful for <a href="platform/templates/creating-and-managing-templates.html">templates</a>.</aside>
     <h3 id="duration">Duration</h3>
     <p>The duration of time that the annotation remains on screen. If <strong>Pause</strong> is set to Y, the duration of the annotation is the duration it is paused.
     <h3 id="link">Link</h3>
-    <p>The Link can be used to control what happens when a viewer clicks on the annotation. For more information on links, see <a href="annotations/configuring-annotation-links.html" data-is-internal-link="true">Configuring Annotation Links</a>.
+    <p>The Link can be used to control what happens when a viewer clicks on the annotation. For more information on links, see <a href="platform/annotations/configuring-annotation-links.html" data-is-internal-link="true">Configuring Annotation Links</a>.
     <h3 id="pause">Pause</h3>
     <p>Set <strong>Pause</strong> to <strong>Y</strong> to pause the video when it reaches this annotation. &nbsp;Set <strong>Pause</strong> to <strong>N</strong> to not pause the video.</p>
     <aside class="bcls-aside bcls-aside--information">Note: When you set <strong>Pause</strong> to Y<strong>,</strong> the duration of the annotation is the duration it is paused.</aside>
@@ -3256,7 +3256,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <aside class="bcls-aside bcls-aside--information">Note: When Gate is set to Y, ensure Pause is set to N.</aside>
     <h3 id="display-rule-available-to-enterprise-licenses">Display Rule</h3>
     <aside class="bcls-aside bcls-aside--information">Note: This option is only available to Enterprise licenses.</aside>
-    <p>Display Rules are used to display an annotation only under certain conditions (for example only for new viewers). You set the JavaScript Expression under which you'd like the annotation to display (for example, <code>viewer=='new'</code>). You can pass in these JavaScript expressions from an external system using the <a href="https://interactivity.support.brightcove.com/developers/index.html" rel="nofollow noopener noreferrer" target="_blank">HapYak APIs</a> or set it when a viewer clicks on another annotation in the <strong>Link</strong> option (for example, <code>viewer="new"</code>). For more information on display rules, see <a href="custom-annotations/adding-display-rule.html">Adding a Display Rule to a Video</a>.
+    <p>Display Rules are used to display an annotation only under certain conditions (for example only for new viewers). You set the JavaScript Expression under which you'd like the annotation to display (for example, <code>viewer=='new'</code>). You can pass in these JavaScript expressions from an external system using the <a href="https://interactivity.support.brightcove.com/developers/index.html" rel="nofollow noopener noreferrer" target="_blank">HapYak APIs</a> or set it when a viewer clicks on another annotation in the <strong>Link</strong> option (for example, <code>viewer="new"</code>). For more information on display rules, see <a href="platform/custom-annotations/adding-display-rule.html">Adding a Display Rule to a Video</a>.
     <h3 id="add-class-available-to-enterprise-licenses">Add Class</h3>
     <aside class="bcls-aside bcls-aside--information">Note: This option is only available to Enterprise licenses.</aside>
     <p>The <strong>Add Class</strong> option allows you to add a specific CSS class to the project. This is typically used to custom style-specific annotations. Note that you will need to include this CSS class in a custom stylesheet at your <a href="https://interactivity.support.brightcove.com/styling/styling-annotations.html" data-is-internal-link="true">group-level CSS</a> or <a href="https://interactivity.support.brightcove.com/styling/project-level-css.html" data-is-internal-link="true">project-level CSS</a>.</p>
