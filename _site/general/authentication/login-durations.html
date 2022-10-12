@@ -3228,12 +3228,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <summary>In this topic, you will learn about viewer login durations.</summary>
 
   <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--tip language-editable">The token durations discussed in this document are only applicable to Beacon native (OAuth) authentication. If you use third party OIDC authentication, you need to contact that provider for information on implementation and duration settings.</aside>
     <p>The viewer login duration is dependent on the login token and refresh token. Here are the rules for their duration:</p>
     <ul>
       <li>The login token is good for one week.</li>
       <li>The refresh token is good for one month.</li>
     </ul>
   </section>
+  <section class="bcls-section">
+    <h2 id="Token_definitions">Token definitions</h2>
+    <p>If authentication is required, the viewer must use their login credentials to use the Beacon app. The question is then how long is the duration of successful login valid. The answer to this question is controlled by the duration of the login and refresh tokens.</p>
+    <ul>
+      <li>The <strong>login token</strong> duration sets how long the viewer can use the app without re-authenticating. For instance, if the login duration is five days, every five days the viewer will have to use credentials to login again.</li>
+      <li>As a courtesy to viewers, you may wish to not force them to login too frequently, but still insure security. This is where a <strong>refresh token</strong> can be used. The use of the refresh token is as follows:
+        <ul>
+          <li>The viewer's login token expires or somehow becomes invalid.</li>
+          <li>The authorization server will use a valid refresh token to allow the viewer to obtain a new login token.</li>
+          <li>The viewer gets a new login token and can continue to use the Beacon app.</li>
+        </ul>
+        <p>Of course, at some point the refresh token will also expire and the viewer will have to use credentials to log in again.</p>
+  </section>
+
 </article>
 <!-- complete bootstrap layout -->
     </div>
