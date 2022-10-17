@@ -3249,6 +3249,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="engagement">Calculating video engagement</h2>
     <p>Engagement is a measure of views, <strong>not</strong> viewers. In reporting the engagement data, we divide the video into 100 equal parts and count the views in each 100th. There is no distinction between one viewer watching a 100th part 5 times, and five viewers watching it 1 time.</p>
+    <p>Also, engagement is a measure of views at particular points in a video, not video views. Repeated views at a particular point by scrubbing back and watching again will increase engagement at that point but not video views.</p>
     <p>The measurements are rounded in the Analytics UI for presentation. The numbers are a result of counting views by individuals and then normalizing those counts along a percentage of a video's timeline. The export API returns the result of this count. Since these are counted values, there is no simple way to estimate the significance of the value to a specific number of digits.</p>
     <p>Note that engagement statistics for live streams are not reliable, because the duration of the video is not fixed.</p>
     <p>It is possible for the engagement score to be greater than 100. Scrubbing and re-watching a video doesn't trigger new video_view events, but it does track video_engagement. For example, say we have a video in a single video player on a page somewhere. The following events show how the video engagement could vary widely:</p>
