@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to apply templates to projects.">
+  <meta name="description" content="This section contains information on working with templates.">
   
-  <title>Applying Templates to Projects</title>
+  <title>Templates</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -163,11 +163,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item"><a href="/interactivity/templates/">Templates</a></li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/">Platform</a></li>
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Applying Templates to Projects</li>
+        <li class="breadcrumb-item active" aria-current="page">Templates</li>
       
     
   </nav>
@@ -2316,31 +2316,31 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/projects/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Projects</a>
+                      <a href="/interactivity/platform/projects/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Projects</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/projects/branching-overview.html">Branching Overview</a></li>
+                            <li><a href="/interactivity/platform/projects/branching-overview.html">Branching Overview</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/projects/configuring-project-settings.html">Configuring Project Settings</a></li>
+                            <li><a href="/interactivity/platform/projects/configuring-project-settings.html">Configuring Project Settings</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/projects/in-video-branching.html">Creating an In-Video Branching Project</a></li>
+                            <li><a href="/interactivity/platform/projects/in-video-branching.html">Creating an In-Video Branching Project</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/projects/creating-and-managing-projects.html">Creating and Managing Projects</a></li>
+                            <li><a href="/interactivity/platform/projects/creating-and-managing-projects.html">Creating and Managing Projects</a></li>
                             
                           
                         
@@ -2351,19 +2351,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/templates/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Templates</a>
+                      <a href="/interactivity/platform/templates/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Templates</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/templates/applying-templates-projects.html" aria-current="page">Applying Templates to Projects</a></li>
+                            <li><a href="/interactivity/platform/templates/applying-templates-projects.html">Applying Templates to Projects</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/templates/creating-and-managing-templates.html">Creating and Managing Templates</a></li>
+                            <li><a href="/interactivity/platform/templates/creating-and-managing-templates.html">Creating and Managing Templates</a></li>
                             
                           
                         
@@ -2374,25 +2374,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/experiences/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Experiences</a>
+                      <a href="/interactivity/platform/experiences/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Experiences</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/experiences/creating-branching-experience.html">Creating a Branching Experience</a></li>
+                            <li><a href="/interactivity/platform/experiences/creating-branching-experience.html">Creating a Branching Experience</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/experiences/creating-slide-sync-experience.html">Creating a Slide Sync Experience</a></li>
+                            <li><a href="/interactivity/platform/experiences/creating-slide-sync-experience.html">Creating a Slide Sync Experience</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/experiences/experiences-overview.html">Experiences Overview</a></li>
+                            <li><a href="/interactivity/platform/experiences/experiences-overview.html">Experiences Overview</a></li>
                             
                           
                         
@@ -3239,75 +3239,88 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Applying Templates to Projects</h1>
+<h1>Templates</h1>
 <article class="bcls-article">
-  <summary>In this topic you will learn how to apply templates to projects.</summary>
-  <section class="bcls-section">
-    <p>A template is a track (or group) of annotations that can be applied to multiple projects. Templates can be used to quickly apply identical annotations to multiple videos with one click.</p>
-    <p>Multiple template tracks can be added to a project. If the template track is updated, Brightcove Interactivity will automatically update all projects using the template.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="tags">Applying templates using tags</h2>
-    <p>Tags can be added to templates as a way to quickly add annotations to videos that are published using a HapYak-enabled player. If a published video has the same tag that was assigned to the template, the template annotations will be applied. This is a quick and easy way to add the same  annotations to dozens or hundreds of  videos.</p>
-    <p>Follow these steps to use a tag to apply a template to a published video.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Login to Brightcove Interactivity Studio.</li>
-      <li>In the primary navigation, click <strong>Manage</strong>.</li>
-      <li>At the top of the page, click <strong>Templates</strong>.</li>
-      <li>Click on a template to open it.</li>
-      <li>At the top of the page, click<strong> Configure</strong>.</li>
-      <li>Locate the <strong>Tags</strong> field and click it.</li>
-      <li>Add one or more <strong>Tags</strong> to the template and click <span class="button-blue">SAVE</span>.
-        <figure class="bcls-figure"><img src="/assets/images/platform/s-brightcove-interactivity-img/templates/applying-templates/template-tags.png"></figure>
-      </li>
-      <li>Click <span class="button-blue">SUBMIT</span>.</li>
-    </ol>
-    <p>By adding the tag <code>company_logo</code> to the template, any video that is tagged <code>company_logo</code> and published using a HapYak-enabled player will have the template annotations applied. Follow these steps to tag and publish a sample Video Cloud video.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Login to Video Cloud Studio.</li>
-      <li>Open the <strong>Media</strong> module.</li>
-      <li>Click on a video <strong>Name</strong> to open the video properties page.</li>
-      <li>In the Video Information panel, click <span class="button-blue-text-bordered"> <i data-feather="edit-3"></i> Edit</span>.</li>
-      <li>Add the same tag that was used to tag the template.
-        <figure class="bcls-figure"><img src="/assets/images/platform/s-brightcove-interactivity-img/templates/applying-templates/video-tagged.png"></figure>
-      </li>
-      <li>Click <span class="button-blue">Save</span>.</li>
-      <li>Publish the video using a HapYak-enabled player.
-        <aside class="bcls-aside bcls-aside--information language-editable">Note: For information on creating a HapYak-enabled player, see <a href="platform/getting-started/configuring-player-plugin.html">Configuring a Brightcove Player with the HapYak plugin</a>.</aside>
-      </li>
-      <li>Play the video and confirm that the annotation(s) appear.</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="manual">Manually applying a template to a project</h2>
-    <p>It is also possible to manually apply one or more templates to a project using Brightcove Interactivity Studio. To manually apply a template to a project, follow these steps:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Login to Brightcove Interactivity Studio.</li>
-      <li>In the primary navigation click <strong>Manage</strong>.</li>
-      <li>Click on a project title to open it.</li>
-      <li>Click <span class="button-blue">SETTINGS</span>.</li>
-      <li>In the <strong>PROJECT</strong> section, locate the <strong>Templates Applied</strong> setting.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/templates/applying-templates/project-settings.png"> </figure>
-      </li>
-      <li>Click the edit icon to open the <strong>Configure project templates</strong> dialog.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/templates/applying-templates/configure-project-templates-dialog.png"> </figure>
-      </li>
-      <li>Click on one or more templates to apply them to the project. Selected templates will appear at the top of the dialog.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/templates/applying-templates/project-templates-selected.png"> </figure>
-      </li>
-      <li>Click <span class="button-blue">SUBMIT</span>.</li>
-    </ol>
+  <summary>This section contains information on working with templates.</summary>
+  <section class="bcls-section" id="page_wrapper">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      <section>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <div style="display:block">               
+            <ul class="landing-page-item">   
+                              
+                      <li><a href="/interactivity/platform/templates/applying-templates-projects.html">Applying Templates to Projects</a></li>                    
+                                
+                      <li><a href="/interactivity/platform/templates/creating-and-managing-templates.html">Creating and Managing Templates</a></li>                    
+            
+          </ul>
+        </div>
+          
+        
+          
+        
+      </section>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Page Contents</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
       
     </div>
   </div>
@@ -3315,7 +3328,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 06 Oct 2022
+  Page last updated on 08 Sep 2022
 </div>
 
 
