@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to save time by editing multiple annotations at once.">
+  <meta name="description" content="In this topic you will learn about the different options available when adding a link to an annotation.">
   
-  <title>Bulk Editing Annotations</title>
+  <title>Configuring Annotation Links</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -163,11 +163,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item"><a href="/interactivity/annotations/">Annotations</a></li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/">Platform</a></li>
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Bulk Editing Annotations</li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/annotations/">Annotations</a></li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">Configuring Annotation Links</li>
       
     
   </nav>
@@ -2186,79 +2190,79 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Annotations</a>
+                      <a href="/interactivity/platform/annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Annotations</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-chapters-video.html">Adding Interactive Chapters to a Video</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-chapters-video.html">Adding Interactive Chapters to a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-quiz-annotation.html">Adding a Quiz Annotation</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-quiz-annotation.html">Adding a Quiz Annotation</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-image-overlay.html">Adding an Image Overlay</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-image-overlay.html">Adding an Image Overlay</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-text-overlay.html">Adding an Text Overlay</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-text-overlay.html">Adding an Text Overlay</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-time-triggered-action.html">Adding a Time Triggered Action</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-time-triggered-action.html">Adding a Time Triggered Action</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-transparent-overlay.html">Adding an Transparent Overlay</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-transparent-overlay.html">Adding an Transparent Overlay</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/annotation-options.html">Annotation Options</a></li>
+                            <li><a href="/interactivity/platform/annotations/annotation-options.html">Annotation Options</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/bulk-annotation-edit.html" aria-current="page">Bulk Editing Annotations</a></li>
+                            <li><a href="/interactivity/platform/annotations/bulk-annotation-edit.html">Bulk Editing Annotations</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/configuring-annotation-links.html">Configuring Annotation Links</a></li>
+                            <li><a href="/interactivity/platform/annotations/configuring-annotation-links.html" aria-current="page">Configuring Annotation Links</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/looping-back-in-a-video.html">Looping Back in a Video</a></li>
+                            <li><a href="/interactivity/platform/annotations/looping-back-in-a-video.html">Looping Back in a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/reviewing-annotations.html">Reviewing Annotations</a></li>
+                            <li><a href="/interactivity/platform/annotations/reviewing-annotations.html">Reviewing Annotations</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/using-custom-transitions-with-animate-css.html">Using Custom Transitions with Animate.css</a></li>
+                            <li><a href="/interactivity/platform/annotations/using-custom-transitions-with-animate-css.html">Using Custom Transitions with Animate.css</a></li>
                             
                           
                         
@@ -3239,24 +3243,59 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Bulk Editing Annotations</h1>
+<h1>Configuring Annotation Links</h1>
 <article class="bcls-article">
-  <summary>In this topic you will learn how to save time by editing multiple annotations at once.</summary>
+  <summary>In this topic you will learn about the different options available when adding a link to an annotation.</summary>
   <section class="bcls-section">
-    <p>In the Interactivity Editor, you can use the bulk edit feature to update, copy, or delete multiple annotations simultaneously.</p>
-    <p>Follow these steps to bulk edit annotations in a project:</p>
+    <p>Links are the most commonly used annotation, and the foundation of all interactions. Follow these steps to configure a link for an annotation:</p>
     <ol class="bcls-tasklist-restart">
       <li>Login to Brightcove Interactivity Studio.</li>
       <li>In the left navigation, click <strong>Manage</strong>.</li>
       <li>Click on a project to open it.</li>
-      <li>Scroll down to the list of  annotations.</li>
-      <li>Hold down the <b>Command</b> button (on Mac) or <b>CTRL</b> button (on Windows) and click the desired annotations.</li>
+      <li>Hover over an annotation and click <strong>Edit</strong>.</li>
+      <li>Click <strong>Link</strong>.</li>
     </ol>
-    <p>Each selected annotation will highlight when clicked.&nbsp;</p>
-    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/bulk-edit/select-multiple.png"></figure>
-    <p>After selecting all the annotations, release the <b>Command/CTRL</b> button. The Multi-Edit dialog will open. Here you can update the start and end time, copy, or delete the selected annotations.</p>
-    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/bulk-edit/multi-edit.png"></figure>
-    <p>After making your changes, click <b>SUBMIT</b> to apply and save.</p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/annotation-links/link-options.gif"></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="actions">Configuring actions</h2>
+    <p>To configure the actions settings, click <strong>ACTIONS</strong>.</p>
+    <p>Just like you would add a link in a web page, you can now add links in a video. You can load a web page, PDF, document, another video, email program, etc. Enter the URL to open in the <strong>URL</strong> field.</p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/annotation-links/actions.png"> </figure>
+    <h4 id="ensuring-external-urls-open-in-the-same-windowtab2">Ensuring external URLs open in the same window/tab</h4>
+    <p>You can set <i>all links</i> clicked on your videos to open in the same window/tab rather than a new one. This is analogous to setting <strong>target="_self"</strong> or <strong>"open in same window"</strong> in a CMS for example.</p>
+    <p>The limitations are:</p>
+    <ul>
+      <li>The target domain must be on the same domain that the video is hosted on</li>
+      <li>Every link on every project will load in the same window.</li>
+      <li>Must be using native player embed code (not the HapYak player which is an iframe embed code)</li>
+    </ul>
+    <p>If you would like this set simply contact <a href="https://supportportal.brightcove.com">Brightcove Support</a> and ask for <b>localLinks</b> to be provisioned on your group.</p>
+    <p><strong>Jump to video time</strong> can be used to select another annotation you would like to jump to. Select another annotation using the dropdown list. You can also select <strong>Custom time</strong> and then enter a time to jump to.</p>
+    <p>
+      <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/annotation-links/actions-jump.png"> </figure>
+    </p>
+    <h3 id="pro-tip-jump-to-chapters2">Pro Tip: Jump to Chapters</h3>
+    <p>Because you can link to a specific annotation, adding chapter markers to every video is a great idea. Without also adding a Chapter Menu, they are invisible to the viewer and allow you to quickly select times in the video to jump to via this Link to Annotation feature.&nbsp; </p>
+    <p>Also, if you change the start time of the chapter annotation that you are linked to (maybe because  a new version of the video has been uploaded as the <a href="platform/projects/configuring-project-settings.html" data-is-internal-link="true">video source</a>), it will automatically adjust.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="behavior">Configuring behavior settings</h2>
+    <p>To configure the behavior settings, click <strong>BEHAVIOR</strong>.</p>
+    <p><strong>Pause on video click</strong> - When checked, will pause the video when the link is clicked.</p>
+    <p><strong>Release gate on click</strong> - When checked, will release the gate when clicked.</p>
+    <p><strong>Action to take if the viewer doesn't click</strong> - The video can continue playing if the viewer doesn't click or can be looped to the beginning of the annotation to ensure they click. This is helpful for branching video menus.</p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/annotation-links/behavior.png"> </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="action-to-take-if-the-viewer-doesnt-click">Configuring advanced settings</h2>
+    <p>To configure the advanced settings, click <strong>ADVANCED</strong>.</p>
+    <p><strong>Add CSS class</strong> - Used to add a class name and it will activate it if you click/interact with the annotation.</p>
+    <p><strong>JavaScript</strong> - Used to enter a new JavaScript variable name or variable assignment code. When the annotation is clicked by a viewer, the variable assignment code that was entered will be executed. Typically used to change back end variables for dynamic annotations.</p>
+    <p><strong>Addon Type</strong> - Allows you to use the <a href="http://www.hapyak.com/docs/hapyak-addon-api/">Addon API</a>.</p>
+    <p><strong>Command</strong> - Allows you to use the <a href="http://www.hapyak.com/docs/hapyak-addon-api/">Addon API</a>.</p>
+    <p><strong>Command Data</strong> - Allows you to pass data to the <a href="http://www.hapyak.com/docs/hapyak-addon-api/">Addon API</a>.</p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/annotation-links/advanced.png"> </figure>
   </section>
 </article>
 

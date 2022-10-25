@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to add a text overlay to a video.">
+  <meta name="description" content="In this topic you will learn how to add a quiz to a video.">
   
-  <title>Adding a Text Overlay to a Video</title>
+  <title>Adding a Quiz Annotation</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -163,11 +163,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item"><a href="/interactivity/annotations/">Annotations</a></li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/">Platform</a></li>
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Adding a Text Overlay to a Video</li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/annotations/">Annotations</a></li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">Adding a Quiz Annotation</li>
       
     
   </nav>
@@ -2186,79 +2190,79 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Annotations</a>
+                      <a href="/interactivity/platform/annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Annotations</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-chapters-video.html">Adding Interactive Chapters to a Video</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-chapters-video.html">Adding Interactive Chapters to a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-quiz-annotation.html">Adding a Quiz Annotation</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-quiz-annotation.html" aria-current="page">Adding a Quiz Annotation</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-image-overlay.html">Adding an Image Overlay</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-image-overlay.html">Adding an Image Overlay</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-text-overlay.html" aria-current="page">Adding an Text Overlay</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-text-overlay.html">Adding an Text Overlay</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-time-triggered-action.html">Adding a Time Triggered Action</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-time-triggered-action.html">Adding a Time Triggered Action</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-transparent-overlay.html">Adding an Transparent Overlay</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-transparent-overlay.html">Adding an Transparent Overlay</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/annotation-options.html">Annotation Options</a></li>
+                            <li><a href="/interactivity/platform/annotations/annotation-options.html">Annotation Options</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/bulk-annotation-edit.html">Bulk Editing Annotations</a></li>
+                            <li><a href="/interactivity/platform/annotations/bulk-annotation-edit.html">Bulk Editing Annotations</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/configuring-annotation-links.html">Configuring Annotation Links</a></li>
+                            <li><a href="/interactivity/platform/annotations/configuring-annotation-links.html">Configuring Annotation Links</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/looping-back-in-a-video.html">Looping Back in a Video</a></li>
+                            <li><a href="/interactivity/platform/annotations/looping-back-in-a-video.html">Looping Back in a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/reviewing-annotations.html">Reviewing Annotations</a></li>
+                            <li><a href="/interactivity/platform/annotations/reviewing-annotations.html">Reviewing Annotations</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/using-custom-transitions-with-animate-css.html">Using Custom Transitions with Animate.css</a></li>
+                            <li><a href="/interactivity/platform/annotations/using-custom-transitions-with-animate-css.html">Using Custom Transitions with Animate.css</a></li>
                             
                           
                         
@@ -3239,68 +3243,110 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Adding a Text Overlay to a Video</h1>
+<h1>Adding a Quiz Annotation</h1>
 <article class="bcls-article">
-  <summary>In this topic you will learn how to add a text overlay to a video.</summary>
+  <summary>In this topic you will learn how to add a quiz to a video.</summary>
   <section class="bcls-section">
-    <p>Brightcove Interactivity Studio provides the ability to add different types of interactive overlays to videos. Text and image overlays can be displayed on videos during video playback. For example, overlays can display additional text or a company logo on a video. Overlays can also be clickable and open additional web pages if needed.</p>
+    <p>A quiz is a quick and informal way to test a viewer's level of comprehension. Quizzes are used primarily in marketing and eLearning videos.</p>
   </section>
   <section class="bcls-section">
     <h2 id="configure-player">Before you get started</h2>
     <p>Before you can add  interactivity to a player, you need a HapYak-enabled Brightcove Player and you need to make sure a Brightcove Interactivity project has been created. For information on how to do this, see <a href="platform/getting-started/getting-started-interactivity.html">Getting Started with Interactivity</a>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="text-overlay">Adding a text overlay</h2>
-    <p>Text overlays are used to display text on a video during playback. The overlay can also be clickable and open another browser page when clicked. In the following example, the text overlay will appear at the 75% point of the video and display until the end of the video. Clicking the overlay will open a link in a new browser tab and pause the video.</p>
-    <div style="position: relative; display: block; max-width: 960px;">
-      <div style="padding-top: 56.25%;">
-        <iframe src="https://players.brightcove.net/1752604059001/UivhMH9oq_default/index.html?videoId=4817237857001" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
-      </div>
-    </div>
-    <br/>
-    <p>Follow these steps to add a text overlay to a project:</p>
+    <h2 id="adding-a-quiz">Adding a Quiz</h2>
+    <p>Follow these steps to add a quiz to a project:</p>
     <ol class="bcls-tasklist-restart">
       <li>Login to Brightcove Interactivity Studio.</li>
       <li>In the left navigation, click <strong>Manage</strong>.</li>
-      <li> Click on a project to open it.</li>
-      <li>In the bottom toolbar, click on the text overlay button.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/text-overlay/add-text-overlay.png"> </figure>
+      <li>Click on a project to open it.</li>
+      <li>In the bottom toolbar, click on the question button.
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/quiz/add-quiz.png"></figure>
       </li>
-      <li>Click on the <strong>Editor</strong> link in the menu.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/text-overlay/overlay-editor.png"> </figure>
+      <li>Enter the quiz question.</li>
+      <li>Enter the answers. Click <b>+ Choice</b> for an additional multiple choice option.&nbsp; Click <b>+ Input</b> for an additional free response input field. </li>
+      <li>Indicate the <b>correct answer(s)</b> by checking the radio button next to them.
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/quiz/quiz-question.png"></figure>
       </li>
-      <li>Enter  text for the overlay and click <strong>Submit</strong>.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/text-overlay/overlay-text.png"> </figure>
-      </li>
-      <li>Click and drag the overlay to where you want it to appear on the video.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/text-overlay/position-overlay.png"> </figure>
-        <aside class="bcls-aside bcls-aside--information">Note: Make sure the overlay isn't placed at the bottom of the player where it may be covered up by the control bar.</aside>
-      </li>
-      <li>Click  the <strong>Start Time</strong> menu.</li>
-      <li>Enter a <strong>Start time</strong> in seconds, as a percentage or in time format. This example sets the start time to the 75% point of the video. Click <strong>SUBMIT</strong>.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/text-overlay/start-time.png"> </figure>
-      </li>
-      <li>Click the clock icon to set the duration of the overlay. Click <strong>SUBMIT</strong>.</li>
-      <li>Click the <strong>Link</strong> menu.</li>
-      <li>Enter a <strong>URL</strong> to direct to when the overlay is clicked.</li>
-      <li>(Optional) Click the <strong>BEHAVIOR</strong> tab and have the video <strong>Pause on video click</strong>. Click <strong>SUBMIT</strong>.</li>
-      <li>Click <strong>Done</strong>.</li>
+      <li>Click <b>+ Question</b> to add additional questions to the quiz.</li>
+      <li>Click <strong>Done</strong> when done.</li>
     </ol>
-    <p>Publish the video using the Media module and confirm that the overlay appears.</p>
+    <p>To delete any question, choice or input field, click the delete icon (<img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/quiz/icon-delete.png">) associated with the item.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Depending on screen settings and video content, sometimes the delete icon can be difficult to see. It will, however, always be present to the right of the answer choice.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="tips">Tips</h2>
-    <p>By default, the text is center aligned and the size of the box around it adjusts responsively as you type.&nbsp;It is possible to left or right align the text as well. Follow these steps:</p>
+    <h2 id="quiz-options">Configuring quiz options</h2>
+    <p>To access the quiz options, click <strong>Options</strong> on the quiz dialog.</p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/quiz/quiz-options.png"></figure>
+    <ul>
+      <li><strong>Show cancel button</strong> - Adds a <strong>cancel</strong> button to the quiz allowing the viewer to skip and not answer the quiz. Uncheck if you want to ensure a submission. </li>
+      <li><strong>Randomize choices</strong> - Randomly orders the choices for the viewer.<i></i></li>
+      <li><strong>Review screen</strong> - What the viewer sees after they submit. Details <a href="#review-screen">below</a>.</li>
+      <li><strong>Pass/Fail actions</strong> - You can change what the viewer sees next based on correct or incorrect answers to the quiz. This is known as "adaptive quizzing". Details <a href="#passfail-actions">below</a>.</li>
+      <li><strong>Answer types</strong> - By default there is only one correct choice per question. Here you can opt to allow <i>multiple correct choices, </i>and if desired, require all correct choices to be selected for the question to be answered correctly.</li>
+    </ul>
+    <h3 id="review-screen">Review Screen</h3>
+    <p>To access the review screen options, click <strong>Review screen</strong> on the quiz options menu.</p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/quiz/review-screen.png"></figure>
+    <ul>
+      <li><strong>Show review screen</strong> - Uncheck if you would like the video to simply play after a submit.</li>
+      <li><strong>Allow retry</strong><b> - </b>Allows  the viewer to resubmit their answer if they answered incorrectly.</li>
+      <li><strong>Allow viewer to see correct answer(s)</strong> - Allows the viewer to see which answer(s) were correct if they answered incorrectly.</li>
+      <li><strong>Review screen message</strong> - Set a text message that the viewer sees after they submit. Default is "Review your answers." </li>
+    </ul>
+    <h3 id="passfail-actions">Pass/Fail actions</h3>
+    <p>To access the Pass/Fail actions options, click <strong>Pass/Fail actions</strong> on the quiz options menu.</p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/quiz/pass-fail.png"></figure>
+    <p>There are <strong>On Pass</strong> and <strong>On Fail</strong> tabs that can be configured based on whether the viewer passes or fails the  quiz. By default, to "pass" the quiz, the viewer must answer at least 51% of the questions correctly. This can be adjusted by clicking <strong>Set custom pass/fail threshold</strong>.</p>
+    <ul>
+      <li><strong>Load URL </strong> - Automatically load any URL (to a web page, another interactive video, another lesson, a PDF, a supplemental learning resource, a landing page, etc.).</li>
+      <li><strong>Jump to video time</strong> - Go to any annotation in the video or to a specific custom time.</li>
+      <li><strong>Jump to video</strong> (Available for <a href="platform/experiences/experiences-overview.html">experiences</a> only) - Go to any video in an experience. If you have a video and a video time selected it will jump to that time in the new video.</li>
+      <li><strong>Load track ID# </strong><i></i>- (Advanced) Load an entire new track of annotations. This is a rarely used feature.</li>
+      <li><strong>JavaScript</strong> <i>- </i> Set a JavaScript variable. Typically used to update a score in a separate annotation or a separate system like an LMS.</li>
+      <li><strong>Alternate message on pass / fail</strong> - Show a different message depending on how the viewer did on the quiz (for example, "That's not quite right, let's try again...").</li>
+      <li><strong>Reset questions</strong> (On Fail tab only) - You can choose whether or not to show the quiz to the viewer again if they reach that point in the video again (for example, if they were branched back to an earlier part of the video to review a specific section and then you wanted them to answer the quiz again).</li>
+      <li><strong>Set custom pass/fail threshold</strong> - Check to enter a custom passing score</li>
+    </ul>
+    <h4> Notes on setting a custom
+      pass/fail threshold</h4>
+    <p>When quizzes are used for assessment, Brightcove Interactivity records a pass / fail determination for each quiz. Since the quiz annotation supports more than one question, the pass/fail threshold lets you define what percentage of those questions must be answered correctly for the user to "pass."</p>
+    <p>By default, the threshold to pass any quiz is 51%. You can override this percentage to apply your own standards. This is a tricky feature though, here's why. Brightcove Interactivity reports do not currently show "pass/fail" determinations, they only show correct/incorrect at the individual question level. The reason this feature exists is to properly mark the data for customers with a Learning Management System (LMS) integration or who use our APIs directly to access the data.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="quiz-gating">Requiring a user pass a quiz before advancing in a video</h2>
+    <p>A common use case is to require that a viewer &quot;pass&quot; a quiz before they can advance forward in the video. This is referred to as &quot;conditional gating&quot; and this is supported by Brightcove Interactivity.</p>
+    <p>Follow these steps when configuring the quiz:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Copy the URL to this CSS file:<br/>
-        <code>https://interactivity.support.brightcove.com/assets/css/hapyak-css-text-align.css</code> </li>
-      <li>Edit the project and click <span class="button-blue">SETTINGS</span>.</li>
-      <li>Paste the URL into the <strong>Custom Annotation CSS (URL)</strong> field.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/text-overlay/custom-css.png"> </figure>
-      </li>
+      <li>Click <strong>Edit</strong> on the annotation.</li>
+      <li>Click the <strong>Gate</strong> menu to set <strong>Gate:Y</strong>.</li>
+      <li>Click <strong>Options</strong> &gt; <strong>Review screen</strong>.</li>
+      <li>Uncheck<strong> Allow viewer to see correct answer(s)</strong>.</li>
       <li>Click <span class="button-blue">SUBMIT</span>.</li>
+      <li>Click <strong>Options</strong> &gt; <strong>Pass/Fail actions</strong>.</li>
+      <li>Click the <strong>On Fail</strong> tab.</li>
+      <li>Set <strong>Jump to video time</strong> to a <strong>Custom time</strong> of <strong>00:00.000 seconds</strong>.</li>
+      <li>Check <strong>Reset questions</strong>.</li>
+      <li>Click <span class="button-blue">SUBMIT</span>.</li>
+      <li>Click <strong>Done</strong>.</li>
     </ol>
-    <p>This will set the default alignment to left. &nbsp;To set a specific annotation to right or center alignment, on the annotation, click <strong>Edit</strong> &gt; <strong>More...</strong> &gt; <strong>Add Class</strong> and then type <code>text-right</code> or <code>text-center</code>&nbsp; in the <strong>Classes</strong> field.</p>
+    <p>A viewer will not be able to proceed in the video until they have correctly answered the question.&nbsp;View an example <a href="platform/demos/gated-quiz-demo.html" rel="nofollow noopener noreferrer" target="_blank">here</a>. </p> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="free-response-question">Creating a free response question</h2>
+    <p>The default question type is multiple choice. To create a free response question:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Delete the first multiple choice answer option </li>
+      <li>Click "Add Text Input." (Note: Users must click the radio button next to the free response field).</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="show-questions">Configuring how often questions are displayed</h2>
+    <p>You can select to show the quiz annotations to the viewer only once or every time they view the video.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <span class="button-blue">SETTINGS</span>.</li>
+      <li>Locate <strong>Show questions</strong> and click <strong>ONLY ONCE</strong> or <strong>EVERY VIEW</strong>. </li>
+    </ol>
   </section>
 </article>
 

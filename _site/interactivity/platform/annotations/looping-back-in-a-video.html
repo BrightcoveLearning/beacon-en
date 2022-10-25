@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how to add chapters using Brightcove Interactivity.">
+  <meta name="description" content="In this topic you will learn how to loop back over a section of a video.">
   
-  <title>Adding Interactive Chapters to a Video</title>
+  <title>Looping Back in a Video</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -163,11 +163,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item"><a href="/interactivity/annotations/">Annotations</a></li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/">Platform</a></li>
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Adding Interactive Chapters to a Video</li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/annotations/">Annotations</a></li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">Looping Back in a Video</li>
       
     
   </nav>
@@ -2186,79 +2190,79 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Annotations</a>
+                      <a href="/interactivity/platform/annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Annotations</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-chapters-video.html" aria-current="page">Adding Interactive Chapters to a Video</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-chapters-video.html">Adding Interactive Chapters to a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-quiz-annotation.html">Adding a Quiz Annotation</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-quiz-annotation.html">Adding a Quiz Annotation</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-image-overlay.html">Adding an Image Overlay</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-image-overlay.html">Adding an Image Overlay</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-text-overlay.html">Adding an Text Overlay</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-text-overlay.html">Adding an Text Overlay</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-time-triggered-action.html">Adding a Time Triggered Action</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-time-triggered-action.html">Adding a Time Triggered Action</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/adding-transparent-overlay.html">Adding an Transparent Overlay</a></li>
+                            <li><a href="/interactivity/platform/annotations/adding-transparent-overlay.html">Adding an Transparent Overlay</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/annotation-options.html">Annotation Options</a></li>
+                            <li><a href="/interactivity/platform/annotations/annotation-options.html">Annotation Options</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/bulk-annotation-edit.html">Bulk Editing Annotations</a></li>
+                            <li><a href="/interactivity/platform/annotations/bulk-annotation-edit.html">Bulk Editing Annotations</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/configuring-annotation-links.html">Configuring Annotation Links</a></li>
+                            <li><a href="/interactivity/platform/annotations/configuring-annotation-links.html">Configuring Annotation Links</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/looping-back-in-a-video.html">Looping Back in a Video</a></li>
+                            <li><a href="/interactivity/platform/annotations/looping-back-in-a-video.html" aria-current="page">Looping Back in a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/reviewing-annotations.html">Reviewing Annotations</a></li>
+                            <li><a href="/interactivity/platform/annotations/reviewing-annotations.html">Reviewing Annotations</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/annotations/using-custom-transitions-with-animate-css.html">Using Custom Transitions with Animate.css</a></li>
+                            <li><a href="/interactivity/platform/annotations/using-custom-transitions-with-animate-css.html">Using Custom Transitions with Animate.css</a></li>
                             
                           
                         
@@ -3239,82 +3243,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Adding Interactive Chapters to a Video</h1>
+<h1>Looping Back in a Video</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how to add chapters using Brightcove Interactivity.</summary>
+  <summary>In this topic you will learn how to loop back over a section of a video.</summary>
   <section class="bcls-section">
-    <h2 id="Introduction">Introduction</h2>
-    <p>Chapters make it easier for viewers to go to a specific point in a video. This is especially helpful for longer form videos. Rather than scrubbing through the video, the chapter menu can be used to jump to a specific point in the video.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="workingSample">Working Sample</h2>
-    <div style="position: relative; display: block; max-width: 960px;">
-      <div style="padding-top: 56.25%;">
-        <iframe src="https://players.brightcove.net/1752604059001/UivhMH9oq_default/index.html?videoId=4457254747001" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
-      </div>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="configure-player">Before you get started</h2>
-    <p>Before you can add  interactivity to a player, you need a HapYak-enabled Brightcove Player and you need to make sure a Brightcove Interactivity project has been created. For information on how to do this, see <a href="getting-started/getting-started-interactivity.html">Getting Started with Interactivity</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Chapter_menu">Adding a Chapter Menu</h2>
-    <p>To add a Chapter Menu, follow these steps:</p>
-    <ol class="bcls-tasklist">
-      <li>Login to Brightcove Interactivity Studio.</li>
-      <li>In the left navigation, click <strong>Manage</strong>.
-        <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/manage-icon.png" /></figure>
-      </li>
-      <li>A list of projects will appear. Click your video in the project list.
-        <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/projects.png" /></figure>
-      </li>
-      <li>In the bottom toolbar, click the<strong> Chapter Menu.
-        <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/chapter-menu.png" /></figure>
-        </strong></li>
-      <li>You can change the title of the <strong>Chapter Menu</strong> to anything or simply delete the text entirely to show a chapter menu icon.
-        <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/chapters.png" /></figure>
-      </li>
-      <li><strong>Chapters</strong> have several edit options to use:
-        <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/editing-options.png" /></figure>
-        <ol type="a">
-          <li><strong>Start time - </strong>Is the point in the video at which the Chapter Menu will first appear.</li>
-          <li><strong>Duration(10s) - </strong>Is the total time the chapter menu will stay expanded. The default is 10s.</li>
-          <li><strong>Display Rule - </strong>Is an advanced option for more details,<a href="annotations/annotation-options.html"> click here</a>.</li>
-          <li><strong>Add Rule - </strong>Is an advanced option for more details,<a href="annotations/annotation-options.html"> click here</a>.</li>
-          <li><strong>Styles</strong>- Select a Styles option for the chapter menu.  There are two options:
-            <ul>
-              <li><strong>One column:</strong> It shows one column with the list of the Chapters.</li>
-              <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/styles-onecolumn.png" /></figure>
-              <li><strong>Adaptive:</strong> It fills the screen with the list of Chapters.</li>
-              <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/styles-adaptive.png" /></figure>
-            </ul>
-          </li>
-          <li><strong>Initial State- </strong> It is set if you want the Chapter Menu to start expanded to collapsed when it first appears.</li>
-          <li><strong>Position</strong>- You can select the cardinal corner of the Chapters menu. </li>
-          <aside class="bcls-aside bcls-aside--information language-editable"><strong>Note:</strong> Brightcove recommends choosing either <strong>top-left</strong> or <strong>top-right</strong> options to navigate easily into the control bar.</aside>
-        </ol>
-      </li>
-      <li>Click <strong>Done</strong>.</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="Addingchapters">Adding Chapters</h2>
-    <p>To add a new chapters, follow these steps: </p>
+    <p>Looping back over a section of video is a great way to ensure customer interaction. With a loop back, a section of the video will play in a loop until the viewer clicks on something. This technique is commonly used with a branching experience. For example, if you have 30 seconds of ambient music on a branching menu (as opposed to just pausing the video or having silence while the viewer makes a decision) you can have the menu loop back if the viewer doesn't make a choice by the end of the 30 seconds.  This is a more "viewer friendly" approach vs. just automatically going onto the first branch if the viewer doesn't make a choice.</p>
+    <p>Follow these steps to look back in a video.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Play or scrub through the video. When you get to the point where a chapter needs to be added, click <strong>Add a chapter marker</strong>.</li>
-      <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/add-chapter-maker.png" /></figure>
-      <li>Enter a short descriptive name for the chapter. The name will be shown to the viewer in the chapter menu.</li>
-      <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/chapter-name.png" /></figure>
-      <aside class="bcls-aside bcls-aside--information language-editable">Note: The chapter label will only be displayed in the chapter menu, it will not be displayed during video playback.</aside>
-      <li>Continue playing the video and <strong>add a chapter </strong>at each major topic or section of the video.</li>
-      <li>Confirm that all chapters appear in the <strong>Chapter Menu.</strong></li>
-      <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/all-chapters.png" /></figure>
-      <li>Publish the video using the <strong>Media module</strong> and confirm that when the video plays, the chapter menu is visible.</li>
-      <figure class="bcls-figure"><img class="bcls-image" alt="chapters" src="/assets/images/platform/s-brightcove-interactivity-img/annotations/adding-chapters-video/video-with-chapters.png" /></figure>
-    </ol>
+      <li>Create a text, image, or link annotation. </li>
+      <li>Click the <strong>Edit</strong> menu on the annotation.</li>
+      <li>Click <strong>Link</strong>. </li>
+      <li>Click  the <strong>BEHAVIOR</strong> tab.</li>
+      <li>In the <strong>Action to take if the viewer doesn't click</strong> dropdown,  select <strong>Loop Back</strong>.
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/annotations/loop-back.png"> </figure></li>
+        <li>Click <span class="button-blue">SUBMIT</span>.</li>
+        </ol>
   </section>
-</article> 
+</article>
 
 <!-- complete bootstrap layout -->
     </div>
