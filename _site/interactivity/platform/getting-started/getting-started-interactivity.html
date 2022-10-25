@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="An overview of the terminology used in the HapYak Interactive Video portal.">
+  <meta name="description" content="In this topic you will learn how to get started with Brightcove Interactivity.">
   
-  <title>Terminology</title>
+  <title>Getting Started with Interactivity</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -163,11 +163,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item"><a href="/interactivity/getting-started/">Getting started</a></li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/">Platform</a></li>
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Terminology</li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/getting-started/">Getting started</a></li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">Getting Started with Interactivity</li>
       
     
   </nav>
@@ -2151,31 +2155,31 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a>
+                      <a href="/interactivity/platform/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/getting-started/configuring-player-plugin.html">Configuring a Player with the HapYak plugin</a></li>
+                            <li><a href="/interactivity/platform/getting-started/configuring-player-plugin.html">Configuring a Player with the HapYak plugin</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/getting-started/getting-started-interactivity.html">Getting Started with Interactivity</a></li>
+                            <li><a href="/interactivity/platform/getting-started/getting-started-interactivity.html" aria-current="page">Getting Started with Interactivity</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/getting-started/interactive-video-types.html">Interactive Video Types</a></li>
+                            <li><a href="/interactivity/platform/getting-started/interactive-video-types.html">Interactive Video Types</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/getting-started/terminology.html" aria-current="page">Terminology</a></li>
+                            <li><a href="/interactivity/platform/getting-started/terminology.html">Terminology</a></li>
                             
                           
                         
@@ -3239,36 +3243,115 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Terminology</h1>
+<h1>Getting Started with Interactivity</h1>
 <article class="bcls-article">
-  <summary>An overview of the terminology used in the HapYak Interactive Video portal.</summary>
+  <summary>In this topic you will learn how to get started with Brightcove Interactivity.</summary>
   <section class="bcls-section">
-    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1735255182453672963">&nbsp;</div>
-    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script> 
+    <p>The HapYak plugin for the Brightcove Player allows the player to take advantage of the features provided by Brightcove Interactivity. When interactions are added to a Brightcove Interactivity project,  they will automatically appear on the corresponding video. This removes the need to copy and publish embed code within  Brightcove Interactivity Studio.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="what-is-interactive-video">What is interactive video?</h2>
-    <p>Interactive video is video that works like the web. You can click it, you can jump to what you want, and it reacts to your actions, making it more engaging. One of the things that businesses like most about interactive video is that it can be measured, so they have concrete evidence about what's effective and can make informed decisions to make it even better.</p>
+    <h2 id="configure-player">Before you get started</h2>
+    <p>Before you can started with interactivity, you must have a Brightcove Player configured with the HapYak plugin. Adding the HapYak plugin to a Brightcove Player will allow interactivity to be displayed inside of the player during video playback. The HapYak plugin can coexist with other player plugins. For complete steps on creating a HapYak-enabled player, see <a href="configuring-player-plugin.html">Configuring a Brightcove Player with the HapYak plugin</a>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="what-are-annotations">What are annotations?</h2>
-    <p>Anything you add to a video using HapYak; an overlay, a link, or a quiz are all annotations. An annotation enhances the video and is synchronized to it, so it looks like part of the video and shows up while you're watching.</p>
+    <h2 id="project-creation">Creating a Brightcove Interactivity project</h2>
+    <p>When a video is played inside of a HapYak-enabled Brightcove Player, the following things happen: </p>
+    <ul>
+      <li>The Brightcove video ID, title, tags and custom fields are passed to Brightcove Interactivity</li>
+      <li>Brightcove Interactivity attempts to look up the video ID within your group</li>
+      <li><strong>If no matching record is found</strong>, then Brightcove Interactivity creates a  project with the data that was sent</li>
+      <li>Brightcove Interactivity will also set the project properties to indicate that it was "auto created":
+        <ul>
+          <li> The <code>is_published</code> value will be set to <strong>TRUE</strong></li>
+          <li> A tag with the value <code>live</code> will be added</li>
+        </ul>
+      </li>
+    </ul>
+    <p>The following steps will automatically create a Brightcove Interactivity project:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Login to Video Cloud Studio.</li>
+      <li>Open the <strong>Media</strong> module.</li>
+      <li>Select a video to publish by checking the box next to the video thumbnail.</li>
+      <li>Click <span class="button-blue">Publish and embed... ˇ</span> &gt; <strong>Publish to web.</strong></li>
+      <li>Select the player with the HapYak plugin.</li>
+      <li>Click the preview link to open a preview in a new browser tab.
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/gs-interactivity/gsi-vc-publish.png"> </figure>
+      </li>
+      <li>Play the preview video (the video only needs to be played for a few seconds). This will auto-create a project in Brightcove Interactivity.
+        <aside class="bcls-aside bcls-aside--information">Note: You must preview the video using the preview link.  Previewing the video with the preview player in the Media module <strong>will not</strong> auto-create a project.</aside>
+      </li>
+      <li>Login to  Brightcove Interactivity Studio.</li>
+      <li>In the left navigation, click <strong>Manage</strong>.</li>
+      <li>A list of projects will appear. Confirm the video you just published appears in the project list.
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/gs-interactivity/gsi-hapyak-projects-list.png"> </figure>
+        <aside class="bcls-aside bcls-aside--information">Note: The <strong>Tags</strong> column includes all tags associated with the video.  An additional tag of <strong>live</strong> is added to each project automatically created by the plugin.</aside>
+      </li>
+    </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="what-are-tracks">What are tracks?</h2>
-    <p>The term "track" refers to a collection of annotations on a single video. Most people only ever have one track for a video, but in some cases, like branching or personalization, it is possible to have more than one. </p>
+    <h2 id="text-overlay">Adding a text overlay</h2>
+    <p>In this topic a simple text overlay will be added just to validate that the interactivity can be viewed inside of a Brightcove Player.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the Brightcove Interactivity UI, click on the project to open it.</li>
+      <li>In the bottom toolbar, click on the text overlay button.
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/gs-interactivity/gsi-hapyak-add-overlay.png"> </figure>
+      </li>
+      <li>Click on the <strong>Editor</strong> link in the menu.
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/gs-interactivity/gsi-hapyak-overlay-editor.png"> </figure>
+      </li>
+      <li>Enter some sample text for the overlay and click <strong>SUBMIT</strong>.
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/gs-interactivity/gsi-hapyak-overlay-text-added.png"> </figure>
+      </li>
+      <li>Click <strong>Done</strong>.</li>
+    </ol>
+    <p>For detailed information on adding text and image overlays to videos, see: </p>
+    <ul>
+      <li><a href="platform/annotations/adding-text-overlay.html">Adding a Text Overlay to a Video</a></li>
+      <li><a href="platform/annotations/adding-image-overlay.html">Adding an Image Overlay to a Video</a></li>
+      <li><a href="platform/annotations/adding-transparent-overlay.html">Adding a Transparent Overlay to a Video</a></li>
+    </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="what-are-templates">What are templates?</h2>
-    <p>A "template" is a re-usable track that contains annotations you want to show up on dozens or hundreds of videos. Typically a template is used for common interactions, like a call-to-action that isn't specific to one video. </p>
+    <h2 id="preview-publish">Previewing and generating embed code for a video</h2>
+    <p>Once an interaction has been added to a Brightcove Interactivity project, preview the video to ensure the interactivity is working as expected. When a video is loaded in a HapYak-enabled Brightcove Player, the following things happen:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>The Brightcove video ID, title, tags and custom fields are sent to Brightcove Interactivity.</li>
+      <li>Brightcove Interactivity attempts to look up the video ID within your Brightcove Interactivity group.</li>
+      <li><strong>If a matching record is found</strong>, then Brightcove Interactivity filters to the record that has the <code>is_published</code> value set to <strong>TRUE</strong>. The project with both the matching video ID and the <code>is_published</code> value set to <strong>TRUE</strong> will be displayed.</li>
+      <li><strong>If more than one matching record is found</strong>, then Brightcove Interactivity filters to the most recently modified record that has the <code>is_published</code> value set to <strong>TRUE</strong>. The most recently modified project with both the matching video ID and the <code>is_published</code></li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Note: The <code>is_published</code> value can be manually changed using the Settings dialog (click  <strong>SETTINGS</strong> at the top of the page).</aside>
+    <p>Follow these steps to preview and generate the embed code for the video:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong> module.</li>
+      <li>Select the video you used to create the Brightcove Interactivity project and publish it.</li>
+      <li>In the <strong>Select Player</strong> dropdown list, select the HapYak-enabled player. </li>
+      <li>Click the <strong>URL</strong> below the preview player to open it in a new browser tab. Confirm that the interaction appears.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/gs-interactivity/gsi-overlay-sample.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Note: By default, the text overlay is configured to display for 3 seconds.</aside>
+      </li>
+      <li>Copy the embed code and paste it into your web page.</li>
+    </ol>
+    <p>Additionally, in the embed code, you <strong>MUST</strong> add <code>playsinline</code> inside the <code>&lt;video-js&gt;</code> tag. Please reference the examples below:</p>
+    <h3>Standard</h3>
+    <pre><code>
+&lt;div&gt;<br>  style=&quot;position: relative; display: block; max-width: 960px;&quot;&gt;<br>  &lt;div<br>    style=&quot;padding-top: 56.25%;&quot;&gt;<br>    &lt;iframe<br>      src=&quot;//players.brightcove.net/1486906377/dunFq3vI6_default/index.html&quot;  <br>      playsinline<br>      allowfullscreen=&quot;&quot;<br>      allow=&quot;encrypted-media&quot;<br>      style=&quot;position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;&quot;&gt;&lt;/iframe&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;
+    </code></pre>
+    <h3>Advanced</h3>
+    <pre><code>
+&lt;div style=&quot;max-width: 960px;&quot;&gt;<br>  &lt;video-js
+    playsinline<br>    data-account=&quot;1486906377&quot;<br>    data-player=&quot;dunFq3vI6&quot;<br>    data-embed=&quot;default&quot;<br>    controls=&quot;&quot;<br>    data-application-id=&quot;&quot;<br>    class=&quot;vjs-fluid&quot;<br>    style=&quot;padding-top: 56.25%;&quot;&gt;<br>  &lt;/video-js&gt;<br>&lt;/div&gt;<br>&lt;script<br>  src=&quot;//players.brightcove.net/1486906377/dunFq3vI6_default/index.min.js&quot;&gt;<br>&lt;/script&gt;
+</code></pre>
   </section>
   <section class="bcls-section">
-    <h2 id="what-is-a-project">What is a project?</h2>
-    <p>A HapYak project contains one video, the tracks for that video, and any unique configuration - like custom styles or languages settings.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="what-is-an-api">What is an API?</h2>
-    <p>An API is an Application Programming Interface. It's how different software talks to each other. Brightcove Interactivity has a full set of APIs that people use to extend capabilities and to integrate interactivity into their own platforms.</p>
+    <h2 id="notes">Notes</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>Annotations added to a project at the project level (meaning not through templates) should appear in approximately 90 seconds. Annotations added via templates can take up to two hours to appear. </li>
+      <li>Do not manually create Brightcove projects in  Brightcove Interactivity Studio. The plugin will do this automatically.</li>
+      <li>Uploading a new video source files in Video Cloud will preserve the video ID and the connection to Brightcove Interactivity.</li>
+      <li>Do not use the EMBED code generated from the Brightcove Interactivity tools when using the plugin. Instead publish your videos per the normal Brightcove workflow.</li>
+      <li>Workflow-generated projects can be deleted using Brightcove Interactivity Studio. Please note that subsequent loads of the corresponding video through the Brightcove Player will auto-generate a separate project based on the same video source in the portal.</li>
+    </ol>
   </section>
 </article>
 

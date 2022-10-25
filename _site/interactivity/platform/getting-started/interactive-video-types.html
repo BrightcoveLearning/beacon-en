@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to configure a Brightcove Player with the HapYak Plugin.">
+  <meta name="description" content="What's the difference between a Project, Playlist, Template and Experience?">
   
-  <title>Configuring a Brightcove Player with the HapYak Plugin</title>
+  <title>Interactive Video Types</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -163,11 +163,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item"><a href="/interactivity/getting-started/">Getting started</a></li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/">Platform</a></li>
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Configuring a Brightcove Player with the HapYak Plugin</li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/getting-started/">Getting started</a></li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">Interactive Video Types</li>
       
     
   </nav>
@@ -2151,31 +2155,31 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a>
+                      <a href="/interactivity/platform/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/getting-started/configuring-player-plugin.html" aria-current="page">Configuring a Player with the HapYak plugin</a></li>
+                            <li><a href="/interactivity/platform/getting-started/configuring-player-plugin.html">Configuring a Player with the HapYak plugin</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/getting-started/getting-started-interactivity.html">Getting Started with Interactivity</a></li>
+                            <li><a href="/interactivity/platform/getting-started/getting-started-interactivity.html">Getting Started with Interactivity</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/getting-started/interactive-video-types.html">Interactive Video Types</a></li>
+                            <li><a href="/interactivity/platform/getting-started/interactive-video-types.html" aria-current="page">Interactive Video Types</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/getting-started/terminology.html">Terminology</a></li>
+                            <li><a href="/interactivity/platform/getting-started/terminology.html">Terminology</a></li>
                             
                           
                         
@@ -3239,121 +3243,28 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Configuring a Brightcove Player with the HapYak Plugin</h1>
+<h1>Interactive Video Types</h1>
 <article class="bcls-article">
-  <summary>In this topic you will learn how to configure a Brightcove Player with the HapYak Plugin.</summary>
+  <summary>What's the difference between a Project, Playlist, Template and Experience?</summary>
   <section class="bcls-section">
-    <p>The HapYak plugin for the Brightcove Player allows the player to take advantage of the features provided by Brightcove Interactivity. Using the plugin has the following benefits:</p>
-    <ul>
-      <li>Automatic Brightcove Interactivity project creation  for each video viewed in the configured player</li>
-      <li>Programmatic access to video metadata from the HapYak Extension APIs</li>
-      <li>Dynamic loading of Brightcove Interactivity templates</li>
-      <li>Automatic syncing of  project titles with video titles</li>
-    </ul>
-    <p>When interactions are added to a Brightcove Interactivity project,  they will automatically appear on the corresponding video. This removes the need to copy and publish embed code within  Brightcove Interactivity Studio.</p>
+    <p>Brightcove Interactivity is a flexible and extensible platform for creating different types of interactive videos. There are 3 core types of interactive videos.</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note:  You may still see the older "Playlists" feature in your group. That is being deprecated in favor of the <a href="platform/experiences/creating-branching-experience.html">Branching experience</a>.</aside>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/interactivity-header.png"> </figure>
   </section>
   <section class="bcls-section">
-    <h2 id="configure-player">Configuring a  player with the HapYak plugin</h2>
-    <p>Adding the HapYak plugin to a Brightcove Player will allow interactivity to be displayed inside of the player during video playback. The HapYak plugin can coexist with other player plugins. If you have questions on plugin compatibility, please contact <a href="https://supportportal.brightcove.com/">Brightcove Support</a>.</p>
-    <p>To add the HapYak plugin to a Brightcove Player, follow these steps.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Login to Video Cloud Studio.</li>
-      <li>Open the <strong>Players</strong> module.</li>
-      <li>Click <span class="button-blue">+ Add player.</span></li>
-      <li>Name the player <strong>HapYak Player</strong> and then click <span class="button-blue">Save</span>.
-        <aside class="bcls-aside bcls-aside--information">Note: You can also add the HapYak plugin to an existing player.  If you are adding the HapYak plugin to a player with other plugins, please contact <a href="https://supportportal.brightcove.com/">Brightcove Support</a> to verify compatibility.</aside>
-      </li>
-      <li>Click the <strong>HapYak Player</strong> link to open the player properties.</li>
-      <li>Click <strong>Plugins</strong> in the left navigation menu.</li>
-      <li>Click <span class="button-blue">Add a Plugin ˇ</span> &gt; <strong>Custom Plugin</strong>.</li>
-      <li>For the <strong>Plugin Name</strong> use <strong>hapyak</strong>. The name is case-sensitive.</li>
-      <li>For the <strong>JavaScript URL</strong>, use:
-        <pre><code> https://d2qrdklrsxowl2.cloudfront.net/js/partners/brightcoveV2/hapyak-plugin.js</code></pre>
-      </li>
-      <li>If the player is also using the  IMA3 plugin, the following should be added to the <strong>CSS URL</strong>:
-        <pre><code>
-//hapyak-partners.s3.amazonaws.com/brightcove/ima3.css
-</code></pre>
-        <p>This will ensure the IMA3 plugin layer does not cover up any HapYak interactions.</p>
-      </li>
-      <li>For the plugin <strong>Options(JSON)</strong>, you will need the value of your HapYak API Read  Key. To get your API Read Key, login to your Brightcove Interactivity account and click <strong>Integrations</strong> in the primary navigation (or click <a href="http://www.hapyak.com/portal/settings/integrations">here</a>). When you have the key, for the <strong>Options(JSON)</strong> enter:
-        <pre><code>
-{
-"apiKey":"your HapYak API Read Key"
-}
-</code></pre>
-        <aside class="bcls-aside bcls-aside--information language-editable">Note: If you are using subgroups, keep in mind that each subgroup will have a unique API Read Key.</aside>
-      </li>
-      <li>Some mobile devices will strip interactive elements when videos are opened in device-native players such as the  QuickTime player on iOS devices. Brightcove has created a solution that overrides the default behavior of video on iOS and Android devices. By &quot;mocking full screen&quot;,  videos can play  full screen and retain HapYak interactive features. The following parameters can be added to the <strong>Options(JSON)</strong> to improve the experience on mobile devices:
-        <ul>
-          <li><strong><code>&quot;loadFullScreenMobile&quot; : true</code></strong> - Overrides the default fullscreen behavior on iOS devices</li>
-          <li><strong><code>&quot;position&quot;: &quot;middle&quot;</code></strong> - Ensures that the video appears in the middle of the devices display in portrait mode (mimics default behavior of all mobile devices)</li>
-        </ul>
-      </li>
-      <figure class="bcls-figure"><img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/gs-interactivity/gsi-plugin-settings.png"> </figure>
-      </li>
-      <li>If you wish to configure a &quot;read-only&quot; player which will display interactivity on existing Brightcove Interactivity projects but will <strong>NOT</strong> publish any new projects, add the following parameter to the <strong>Options(JSON)</strong>, below the <code>apiKey</code> value:
-        <pre><code>
-“readOnly”: true
-</code></pre>
-      </li>
-      <li>Click <span class="button-blue">Save</span>.</li>
-      <li>To publish the player, click <span class="button-blue">Publish &amp; Embed</span> and then <span class="button-blue">Publish Changes</span>.</li>
-    </ol>
-    <p>The HapYak Player is now ready to use. </p>
-    <p>&nbsp;</p>
+    <h2 id="projects">Projects</h2>
+    <p>A <strong><a href="platform/projects/creating-and-managing-projects.html">Project</a></strong> is a single video with  annotations. This is the most frequently used video type. </p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/project-video-type.png"> </figure>
   </section>
   <section class="bcls-section">
-    <h2 id="advanced">Advanced notes</h2>
-    <ol class="bcls-tasklist-restart">
-      <li>A custom JavaScript method can be provided to capture tracking events as they occur. To do so simply add the location of your JavaScript file in the plugin options.
-        <pre><code>
-{
-  "apiKey": …,
-  "customTracking": "https://dmhl2y7t4r72w.cloudfront.net/brightcove/bcovTrackingHandler.js"
-}
-</code></pre>
-      </li>
-      <li>HapYak loads its own copy of JQuery by default.   If you embed the Brightcove Player with the HapYak plugin enabled, HapYak will override an existing copy of JQuery already on the page when it loads.   To prevent this behavior and preserve an existing copy of JQuery, you must pass the “preserveJQuery” option in plugin options when setting up the plugin.   For example, specifying
-        <pre><code>
-{
-  "apiKey": …,
-  "preserveJQuery": true
-}
-</code></pre>
-        <p>will prevent HapYak from loading its own JQuery as long as there is already one on the page.</p>
-        <table class="bcls-table">
-          <caption class="bcls-caption--table">
-          Summary of HapYak jQuery Loading Behavior
-          </caption>
-          <tbody class="bcls-table__body">
-            <tr>
-              <td></td>
-              <td>preserveJQuery: true</td>
-              <td>preserveJQuery: false</td>
-            </tr>
-            <tr>
-              <td>jQuery present on page</td>
-              <td>Do not load jQuery</td>
-              <td>Load jQuery</td>
-            </tr>
-            <tr>
-              <td>jQuery absent from page</td>
-              <td>Load jQuery</td>
-              <td>Load jQuery</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>HapYak emits a custom event on the Brightcove Player instance that notifies when the HapYak viewer instance is ready. This event is <code>hyViewerLoaded</code> which can be listened for using the following code:
-        <pre><code>
-bcPlayerInstance.on(‘hyViewerLoaded’, function () {
-   console.log(player.hapyakViewer);
-});
-</code></pre>
-        <p>As seen above, you can access the HapYak viewer instance off of the player instance as a property called <code>hapyakViewer</code>.</p>
-      </li>
-    </ol>
+    <h2 id="template">Templates</h2>
+    <p>A <a href="platform/templates/creating-and-managing-templates.html"> <strong>Template</strong> </a> is one set of saved annotations designed to be added many videos. </p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/template-type.png"> </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="experience">Experiences</h2>
+    <p>An <strong><a href="platform/experiences/experiences-overview.html">Experience</a></strong> is a Project combined with other elements (like synced slides or an e-commerce cart) outside the video player that dynamically interact with player. </p>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/getting-started/experience-type.png"> </figure>
   </section>
 </article>
 
