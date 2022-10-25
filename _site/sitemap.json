@@ -10,12 +10,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/app-behavior/account-deletion.html",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/ios-tvos/account-deletion.html",
       "oldURL": "/account-deletion"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/ios-tvos/account-deletion.html",
+      "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/app-behavior/account-deletion.html",
       "oldURL": "/account-deletion"
   },
 
@@ -75,17 +75,17 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/media/adding-chapters-video.html",
-      "oldURL": "/adding-chapters-video"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/interactivity/platform/annotations/adding-chapters-video.html",
       "oldURL": "/adding-chapters-video"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/interactivity/custom-annotations/adding-display-rule.html",
+      "newURL": "https://beacon-help.support.brightcove.com/media/adding-chapters-video.html",
+      "oldURL": "/adding-chapters-video"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/interactivity/platform/custom-annotations/adding-display-rule.html",
       "oldURL": "/adding-display-rule"
   },
 
@@ -110,7 +110,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/interactivity/custom-annotations/adding-poll-video.html",
+      "newURL": "https://beacon-help.support.brightcove.com/interactivity/platform/custom-annotations/adding-poll-video.html",
       "oldURL": "/adding-poll-video"
   },
 
@@ -120,12 +120,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/interactivity/custom-annotations/adding-sentiment-video.html",
+      "newURL": "https://beacon-help.support.brightcove.com/interactivity/platform/custom-annotations/adding-sentiment-video.html",
       "oldURL": "/adding-sentiment-video"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/interactivity/custom-annotations/adding-sign-in-video.html",
+      "newURL": "https://beacon-help.support.brightcove.com/interactivity/platform/custom-annotations/adding-sign-in-video.html",
       "oldURL": "/adding-sign-in-video"
   },
 
@@ -240,12 +240,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/general/authentication-using-oauth.html",
+      "newURL": "https://beacon-help.support.brightcove.com/general/authentication/authentication-using-oauth.html",
       "oldURL": "/authentication-using-oauth"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/general/authentication/authentication-using-oauth.html",
+      "newURL": "https://beacon-help.support.brightcove.com/general/authentication-using-oauth.html",
       "oldURL": "/authentication-using-oauth"
   },
 
@@ -990,7 +990,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/interactivity/custom-annotations/embedding-form-video.html",
+      "newURL": "https://beacon-help.support.brightcove.com/interactivity/platform/custom-annotations/embedding-form-video.html",
       "oldURL": "/embedding-form-video"
   },
 
@@ -1380,22 +1380,12 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/interactivity/experiences/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/get-started/basics/admin/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/get-started/basics/publish/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://beacon-help.support.brightcove.com/interactivity/templates/",
+      "newURL": "https://beacon-help.support.brightcove.com/interactivity/platform/custom-annotations/",
       "oldURL": "/index"
   },
 
@@ -1405,17 +1395,27 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/interactivity/custom-annotations/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://beacon-help.support.brightcove.com/beacon-web-store/",
       "oldURL": "/index"
   },
 
   {
+      "newURL": "https://beacon-help.support.brightcove.com/interactivity/experiences/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/get-started/basics/publish/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://beacon-help.support.brightcove.com/publishing-apps/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://beacon-help.support.brightcove.com/interactivity/templates/",
       "oldURL": "/index"
   },
 
@@ -2805,7 +2805,7 @@
   },
 
   {
-      "newURL": "https://beacon-help.support.brightcove.com/interactivity/custom-annotations/using-custom-widget-library.html",
+      "newURL": "https://beacon-help.support.brightcove.com/interactivity/platform/custom-annotations/using-custom-widget-library.html",
       "oldURL": "/using-custom-widget-library"
   },
 

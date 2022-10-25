@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to add a poll in a video.">
+  <meta name="description" content="In this topic you will learn how to add custom interactions to your videos such as  polls, user sentiment, sign-in forms and custom Forms.">
   
-  <title>Adding a Poll to a Video</title>
+  <title>Using the Custom Widget Library</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -163,11 +163,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item"><a href="/interactivity/custom-annotations/">Custom annotations</a></li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/">Platform</a></li>
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Adding a Poll to a Video</li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/custom-annotations/">Custom annotations</a></li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">Using the Custom Widget Library</li>
       
     
   </nav>
@@ -2269,43 +2273,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/custom-annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Custom Annotations</a>
+                      <a href="/interactivity/platform/custom-annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Custom Annotations</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/adding-display-rule.html">Adding a Display Rule to a Video</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/adding-display-rule.html">Adding a Display Rule to a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/adding-poll-video.html" aria-current="page">Adding a Poll to a Video</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/adding-poll-video.html">Adding a Poll to a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/adding-sign-in-video.html">Adding a Sign In Form to a Video</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/adding-sign-in-video.html">Adding a Sign In Form to a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/adding-sentiment-video.html">Adding User Sentiment to Videos</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/adding-sentiment-video.html">Adding User Sentiment to Videos</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/embedding-form-video.html">Embedding a Form in a Video</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/embedding-form-video.html">Embedding a Form in a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/using-custom-widget-library.html">Using the Custom Widget Library</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/using-custom-widget-library.html" aria-current="page">Using the Custom Widget Library</a></li>
                             
                           
                         
@@ -3239,122 +3243,37 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Adding a Poll to a Video</h1>
+<h1>Using the Custom Widget Library</h1>
 <article class="bcls-article">
-  <summary>In this topic you will learn how to add a poll in a video.</summary>
+  <summary>In this topic you will learn how to add custom interactions to your videos such as  polls, user sentiment, sign-in forms and custom Forms.</summary>
   <section class="bcls-section">
-    <p>The Poll widget is a powerful, versatile tool for data collection. The Poll widget allows you to enter a question or prompt, upload a cover image and create different poll types. A Poll report is available to provide the aggregate data on all of the polls.</p>
+    <p>The custom widget library is a set of more advanced interactions that you can add with one click to your projects. There is no need to write any HTML, JavaScript or CSS code. All custom annotations should be thoroughly tested before going live.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="poll-types">Poll types</h2>
-    <p>The Poll widget can be configured for multiple choice, true or false or picture choice.</p>
-    <h3 id="multiple-choice">Multiple Choice</h3>
-    <p>Multiple choice polls support 2 to 4 answer choices.</p>
-    <figure class="bcls-figure"><img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/example-choice.png"></figure>
-    <h3 id="true-or-false">True or False</h3>
-    <p>True or false polls allow the viewer to choose between True or False, Yes or No, and Like or Dislike.</p>
-    <figure class="bcls-figure"><img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/example-t-f.png"></figure>
-    <h3 id="picture-choice">Picture Choice</h3>
-    <p>Picture choice polls support up to four picture choices.</p>
-    <figure class="bcls-figure"><img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/example-image.png"></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="poll-results">Poll results</h2>
-    <p>After the viewer completes a poll, the poll results screen will be displayed.</p>
-    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/poll-results.png"></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="image-overlay">Adding a poll annotation</h2>
-    <p>Follow these steps to add a poll to a project:</p>
+    <h2 id="adding">Adding a custom widget</h2>
+    <p> Follow these steps to add a custom widget to a project:</p>
     <ol class="bcls-tasklist-restart">
       <li>Login to Brightcove Interactivity Studio.</li>
       <li>In the left navigation, click <strong>Manage</strong>.</li>
-      <li>Click on a project to open it.</li>
-      <li>Click the widget icon in the bottom toolbar.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/add-widget.png"></figure>
+      <li> Click on a project to open it.</li>
+      <li>In the bottom toolbar, click on the widget icon.
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/custom-widget/add-widget.png"> </figure>
       </li>
-      <li>Click the <strong>Poll</strong> widget.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/poll-widget.png"></figure>
+      <li>Click on a widget.
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/custom-widget/widget-library.png"> </figure>
       </li>
-      <li>Click <span class="button-blue">ADD</span>. The poll configuration dialog will open.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/poll-config.png"></figure>
-      </li>
-      <li>(Optional) Configure an image to appear with the poll. Hover over the image icon (<img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/poll-image.png">) to upload an image or enter the URL to  an image.</li>
-      <li>Click on the <strong>Enter question or prompt</strong> text to enter the question for the poll.</li>
-      <li>Click on the <strong>Description</strong> text to enter a description for the poll.</li>
-      <li>Click on an <strong>answer type</strong> for the poll. </li>
-      <ul>
-        <li><a href="#multiple-choice-settings">Multiple Choice</a></li>
-        <li><a href="#true-false-settings">True or False</a></li>
-        <li><a href="#picture-choice">Picture Choice</a></li>
-      </ul>
+      <li>Click <span class="button-blue">ADD</span>. The widget is added on top of the project video.</li>
+      <li>Click and drag the widget to where you would like the text to appear over the video.</li>
     </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="multiple-choice-settings">Configuring a multiple choice poll</h2>
-    <p>The multiple choice poll supports 2 - 4 answer choices. Follow these steps to configure a multiple choice poll.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Enter the choices in the appropriate fields.</li>
-      <li>Click <strong>+</strong> to add additional choices.</li>
-      <li>Click <b>Save</b>. </li>
-    </ol>
-    <figure class="bcls-figure"><img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/multiple-choice.png"></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="true-false-settings">Configuring a true or false poll</h2>
-    <p>The true or false  poll supports True or False, Yes or No, and Like or Dislike. Follow these steps to configure a true or false  poll.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Select the answer type: </li>
-      <ul>
-        <li>True / False</li>
-        <li>Yes / No</li>
-        <li>Like / Dislike</li>
-      </ul>
-      <li>Click <b>Save</b>. </li>
-    </ol>
-    <figure class="bcls-figure"><img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/true-false.png"></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="picture-choice-settings">Configuring a picture choice poll</h2>
-    <p>The picture choice poll supports up to four picture choices. Follow these steps to configure a picture choice poll.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Hover over the image icon (<img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/poll-image.png">) to upload an image or enter the URL to  an image.</li>
-      <li>Click <strong>+</strong> to add additional images.</li>
-      <li>Click <b>Save</b>. </li>
-    </ol>
-    <figure class="bcls-figure"><img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/picture-choice.png"></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="additional-options">Configuring additional poll options</h2>
-    <p>The toolbar below the poll configuration dialog can be used to edit some additional settings, positioning and results page for the poll. Make sure to click <strong>Save</strong> after making any changes to the poll settings.</p>
-    <p>
-      <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/toolbar.png"></figure>
-    </p>
-    <h3>Additional settings</h3>
-    <p> The additional settings are used  to customize the primary and secondary colors and adjust the borders. Click the gear icon (<img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/icon-gear.png">) to expand the settings. Click <strong>X</strong> to close the settings.</p>
-    <p>
-      <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/additional-settings.png"></figure>
-    </p>
-    <h3>Positioning</h3>
-    <p>Click the positioning icon (<img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/positioning-icon.png">) to change the poll positioning (left, right, or center of the screen).</p>
-    <h3>Results page</h3>
-    <p>Click the results icon (<img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/results-icon.png">) to view the results of the poll, along with editable fields for a message and image. This page is displayed after the viewer completes the poll.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="results">Viewing poll results</h2>
-    <p>The Poll Widget Summary report can be used to review all polls available across the group with information on widget usage. To access the report, follow these steps: </p>
-    <ol class="bcls-tasklist-restart">
-      <li>Login to Brightcove Interactivity Studio.</li>
-      <li>In the left navigation, click <strong>Core Reports</strong>.</li>
-      <li>Select a <strong>Date Range</strong> for the report.</li>
-      <li>At the top of the page use the report selector to select the <strong>Poll Widget Summary</strong> report.</li>
-      <li>Click <span class="button-blue">RUN</span>.</li>
-    </ol>
-    <p>The report will display a summary of poll results.</p>
-    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/poll/report.png"> </figure>
+    <p>Review the documentation for information on configuring the widget:</p>
+    <ul>
+      <li><a href="platform/custom-annotations/adding-sentiment-video.html">User Sentiment Widget</a></li>
+      <li><a href="platform/custom-annotations/adding-poll-video.html">Poll Widget</a></li>
+      <li><a href="platform/custom-annotations/embedding-form-video.html">Custom Form Widget</a></li>
+      <li><a href="platform/custom-annotations/adding-sign-in-video.html">Sign-In Widget</a></li>
+    </ul>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">

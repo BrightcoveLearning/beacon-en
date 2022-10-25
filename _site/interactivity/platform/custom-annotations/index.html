@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to display a custom form or other external web content during video playback.">
+  <meta name="description" content="This section contains information on custom annotations.">
   
-  <title>Embedding a Form or Other External Content in a Video</title>
+  <title>Custom Annotations</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -163,11 +163,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item"><a href="/interactivity/custom-annotations/">Custom annotations</a></li>
+        <li class="breadcrumb-item"><a href="/interactivity/platform/">Platform</a></li>
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Embedding a Form or Other External Content in a Video</li>
+        <li class="breadcrumb-item active" aria-current="page">Custom Annotations</li>
       
     
   </nav>
@@ -2269,43 +2269,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                     <li class="submenu-header">
                       
-                      <a href="/interactivity/custom-annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Custom Annotations</a>
+                      <a href="/interactivity/platform/custom-annotations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Custom Annotations</a>
                       
                       <ul role="list" class="sidenav-subsubmenu" style="display:none;">
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/adding-display-rule.html">Adding a Display Rule to a Video</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/adding-display-rule.html">Adding a Display Rule to a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/adding-poll-video.html">Adding a Poll to a Video</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/adding-poll-video.html">Adding a Poll to a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/adding-sign-in-video.html">Adding a Sign In Form to a Video</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/adding-sign-in-video.html">Adding a Sign In Form to a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/adding-sentiment-video.html">Adding User Sentiment to Videos</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/adding-sentiment-video.html">Adding User Sentiment to Videos</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/embedding-form-video.html" aria-current="page">Embedding a Form in a Video</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/embedding-form-video.html">Embedding a Form in a Video</a></li>
                             
                           
                         
                           
                             
-                            <li><a href="/interactivity/custom-annotations/using-custom-widget-library.html">Using the Custom Widget Library</a></li>
+                            <li><a href="/interactivity/platform/custom-annotations/using-custom-widget-library.html">Using the Custom Widget Library</a></li>
                             
                           
                         
@@ -3239,94 +3239,96 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Embedding a Form or Other External Content in a Video</h1>
+<h1>Custom Annotations</h1>
 <article class="bcls-article">
-  <summary>In this topic you will learn how to display a custom form or other external web content during video playback.</summary>
-  <section class="bcls-section">
-    <p>The Custom Form widget allows you to embed a form  from any system such as Google Forms, Mailchimp, Typeform, Calendly, Eventbright and others  on top of a video. The Custom Form widget can also be used to display external web content. In the following example, clicking on the call to action text will open a form over the video.</p>
-    <div style="position: relative; display: block; max-width: 960px;">
-      <div style="padding-top: 56.25%;">
-        <iframe src="https://players.brightcove.net/1752604059001/UivhMH9oq_default/index.html?videoId=1726110077752947878" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
-      </div>
-    </div>
-    <aside class="bcls-aside bcls-aside--information language-editable">Note: Browser security settings may cause forms and external pages to NOT display.</aside>
-    <aside class="bcls-aside bcls-aside--information language-editable">Note: Any form and/or external web content must be &quot;iframeable&quot; to display correctly.</aside>
-  </section>
-  <section class="bcls-section">
-    <h2 id="configure-player">Before you get started</h2>
-    <p>Before you can add  interactivity to a player, you need a HapYak-enabled Brightcove Player and you need to make sure a Brightcove Interactivity project has been created. For information on how to do this, see <a href="platform/getting-started/getting-started-interactivity.html">Getting Started with Interactivity</a>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="custom-form">Adding a custom form widget</h2>
-    <p>The Custom Form widget can be used to display a form during video playback. During playback, call-to-action text will be displayed and when clicked, the form will slide in and be displayed. Using an external form (like a Google Form) has the advantage of sending all the submitted data straight to that system. Note that no data submitted to the form will show up in the standard Brightcove Interactivity reports as it's routed directly to the external system.</p>
-    <p> Follow these steps to add a Custom Form (this topic uses a Google Form) widget to a project:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Login to Brightcove Interactivity Studio.</li>
-      <li>In the left navigation, click <strong>Manage</strong>.</li>
-      <li> Click on a project to open it.</li>
-      <li>In the bottom toolbar, click on the widget icon.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/forms/add-widget.png"> </figure>
-      </li>
-      <li>Click the <strong>Custom Form </strong> widget.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/forms/custom-form-widget.png"> </figure>
-      </li>
-      <li>Click <strong>ADD</strong>. The widget is added on top of the project video.</li>
-      <li>Click and drag the widget to where you would like the text to appear over the video.</li>
-      <li>Click on the <strong>Done</strong> link in the menu.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/forms/form-editor-overlay.png"> </figure>
-      </li>
-      <li>Hover over the <strong>Your Text Here</strong> text and click <strong>CONFIGURE</strong>.</li>
-      <li>In the <strong>FORM SOURCE</strong> field, paste in the form URL.</li>
-      <li>Update the <strong>Button Text</strong>, this is the call-to-action text that the viewer will click to open the form.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/custom-annotations/forms/form-config.png"> </figure>
-      </li>
-      <li>Click <strong>SAVE</strong>.</li>
-      <li>Click <strong>Edit</strong> to open the editor.</li>
-      <li>Click  the <strong>Start Time</strong> menu.</li>
-      <li>Enter a <strong>Start time</strong> in seconds, as a percentage or in time format.  Click <strong>SUBMIT</strong>.
-        <aside class="bcls-aside bcls-aside--tip language-editable">Tip: Consider setting the start time to 5 or 10 seconds (near the beginning) and setting the duration to <strong>Until the end of the video</strong>. This will allow the viewer to click the call-to-action text at any point in the video while keeping the form out of sight.</aside>
-      </li>
-      <li>Click the clock icon to set the duration of the overlay. Click <strong>SUBMIT</strong>.</li>
-      <li>Click <strong>Done</strong>.</li>
-    </ol>
-    <p>Publish the video using the Media module and confirm that the call-to-action and form appear.</p>
-    <aside class="bcls-aside bcls-aside--information language-editable">Note: There may be a short delay  before the Custom Form widget will appear in published Video Cloud videos.</aside>
-  </section>
-  <section class="bcls-section">
-    <h2 id="web-page">Displaying a web page</h2>
-    <p>The Custom Form widget can also be used to display content from another web page. The <a href="#custom-form">steps are the same</a> as when adding a form but for the URL, use the URL of the page to display. In this example, a page from Wikipedia is displayed when the call-to-action text is clicked.</p>
-    <div style="position: relative; display: block; max-width: 960px;">
-      <div style="padding-top: 56.25%;">
-        <iframe src="https://players.brightcove.net/1752604059001/UivhMH9oq_default/index.html?videoId=1722219515744296229" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
-      </div>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="buy-now">Displaying a buy now page</h2>
-    <p>The Custom Form widget can also be used to display a "buy now" type of shopping page. In this example, a shopping page is displayed when the call-to-action text is clicked.</p>
-    <div style="position: relative; display: block; max-width: 960px;">
-      <div style="padding-top: 56.25%;">
-        <iframe src="https://players.brightcove.net/1752604059001/UivhMH9oq_default/index.html?videoId=5045678908001" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
-      </div>
-    </div>
-  </section>
-<section class="bcls-section">
-    <h2 id="tips">Tips</h2>
-    <ul>
-      <li>Using an external form (like Google Forms) with this annotation has the advantage of sending all the submitted data straight to that system. Note that no data submitted to the form will show up in the standard Brightcove Interactivity reports as it's routed directly to the external system.</li>
-      <li>Consider setting the start time to 5 or 10 seconds (near the beginning) and setting the duration to <strong>Until the end of the video</strong>. This will allow the viewer to click the CTA at any point in the video while keeping the form out of sight until the CTA is clicked.</li>
-    </ul>
+  <summary>This section contains information on custom annotations.</summary>
+  <section class="bcls-section" id="page_wrapper">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      <section>
+        
+          
+        
+          
+        
+          
+          <div style="display:block">               
+            <ul class="landing-page-item">   
+                              
+                      <li><a href="/interactivity/platform/custom-annotations/adding-display-rule.html">Adding a Display Rule to a Video</a></li>                    
+                                
+                      <li><a href="/interactivity/platform/custom-annotations/adding-poll-video.html">Adding a Poll to a Video</a></li>                    
+                                
+                      <li><a href="/interactivity/platform/custom-annotations/adding-sign-in-video.html">Adding a Sign In Form to a Video</a></li>                    
+                                
+                      <li><a href="/interactivity/platform/custom-annotations/adding-sentiment-video.html">Adding User Sentiment to Videos</a></li>                    
+                                
+                      <li><a href="/interactivity/platform/custom-annotations/embedding-form-video.html">Embedding a Form in a Video</a></li>                    
+                                
+                      <li><a href="/interactivity/platform/custom-annotations/using-custom-widget-library.html">Using the Custom Widget Library</a></li>                    
+            
+          </ul>
+        </div>
+          
+        
+          
+        
+          
+        
+          
+        
+      </section>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Page Contents</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
       
     </div>
   </div>
@@ -3334,7 +3336,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 06 Oct 2022
+  Page last updated on 08 Sep 2022
 </div>
 
 
