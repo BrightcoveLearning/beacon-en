@@ -3269,12 +3269,44 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h3>Third-party OIDC authentication</h3>
     <p>If you use third party OIDC authentication, you need to contact that provider for information on implementation and duration settings.</p>
   </section>
-
   <section class="bcls-section">
     <h2 id="Change_token_durations">Change token durations</h2>
-    <p></p>
-  </section>
+    <p>Based on your Authentication implementation, you either use <strong> default (OAuth) authentication</strong> or <strong> OIDC authentication</strong>. You can see different screens based on that.</p>
+    <h3>Beacon default (OAuth) authentication</h3> 
+    <p> To configure with <strong>Beacon default (OAuth) authentication</strong>, follow these steps:</p>
+    <ol class="bcls-tasklist">
+      <li>Login to <em>Beacon Studio.</em> </li>
+      <li>In the primary navigation, click <strong>Admin</strong> <img class="ui-image" src="/assets/images/common/gear-blue.png" alt="settings">.
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/s-admin-img/basics/managing-viewer-authentication/click-admin.png" alt="click-admin">
+      </figure>
+    </li> 
+    <li>The <em>App Settings</em> page appears. Click <strong> Authentication</strong>.
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/s-admin-img/basics/managing-viewer-authentication/click-authentication.png" alt="click-authentication">
+      </figure>
+    </li>
+    <li>Note the durations are showing here, but you have to contact <a href="https://supportportal.brightcove.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F">Support</a> to change them.
+      <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-admin-img/basics/managing-viewer-authentication/beacon token.png" alt="beacon-token">
+    </figure>
+   <ul> 
+    <li><em>Authentication token duration:</em> timeframe for authenticated app use by the viewer. </li>
+   <li><em>Refresh token duration:</em> timeframe for automatic reissue of the viewer's authentication token.</li>
+  </ul>
+  <p>To learn more about how authentication and refresh tokens work, <a href="https://beacon-help.support.brightcove.com/admin/managing-viewer-authentication.html">click here</a>.</p>
+  </li>
+  </ol>
+    <h3>Third-party OIDC authentication</h3>
+    <p> To configure with <strong>Third-party OIDC authentication</strong>, contact your provider to request a change to token durations.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-admin-img/basics/managing-viewer-authentication/OIDC-authentication.png" alt="OIDC-authentication">
+    </figure>
+  </li>
+    </ol>
 
+
+  </section>
 </article>
 <!-- complete bootstrap layout -->
     </div>
