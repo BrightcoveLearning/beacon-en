@@ -3241,7 +3241,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>Viewer Authentication Credentials are tokens that determine how long a person can use the app without re-authenticating. Tokens dictate the duration of credentials. Brightcove offers <strong>Beacon default (OAuth) authentication</strong> and <strong> OIDC authentication</strong> that uses the tokens. This document details how to view and set the value for tokens.</p>
+    <p>Viewer Authentication Credentials are tokens that determine how long a person can use the app without re-authenticating. Tokens dictate the duration of credentials. Brightcove offers <strong>Beacon default (OAuth) authentication</strong> and <strong> OIDC authentication</strong>.. This document details how to view and set the value for tokens.</p>
   </section>
 
   <section class="bcls-section">
@@ -3249,7 +3249,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>If authentication is required, the viewer must use their login credentials to use the Beacon app. The question is then how long is the duration of successful login valid. The answer to this question is controlled by the duration of the authorization and refresh tokens.</p>
     <ul>
       <li>The <strong>authorization token</strong> duration sets how long the viewer can use the app without re-authenticating. For instance, if the authentication token duration is valid for five days, every five days the viewer must use their credentials to log in again.</li>
-      <li>As a courtesy to viewers, you may wish to not force them to login too frequently, but still insure security. This is where a <strong>refresh token</strong> can be used. The use of the refresh token is as follows:</li>
+      <li>The <strong>refresh token</strong> can be used as a courtesy to viewers. You may wish not to force them to login too frequently but still insure security. The use of the refresh token is as follows:</li>
       <ul>
         <li>The viewer's authorization token expires or somehow becomes invalid.</li>
         <li>The authorization server uses a valid refresh token to allow the viewer to obtain a new authorization token.</li>
@@ -3276,17 +3276,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p> To configure with <strong>Beacon default (OAuth) authentication</strong>, follow these steps:</p>
     <ol class="bcls-tasklist">
       <li>Login to <em>Beacon Studio.</em> </li>
-      <li>In the primary navigation, click <strong>Admin</strong> <img class="ui-image" src="/assets/images/common/gear-blue.png" alt="settings">.
+      <p><li>In the primary navigation, click <strong>Admin</strong><img class="ui-image" src="/assets/images/common/gear-blue.png" alt="settings">.</p>
       <figure class="bcls-figure">
         <img class="bcls-image" src="/assets/images/s-admin-img/basics/managing-viewer-authentication/click-admin.png" alt="click-admin">
       </figure>
     </li> 
-    <li>The <em>App Settings</em> page appears. Click <strong> Authentication</strong>.
+    <p><li>The <em>App Settings</em> page appears. Click <strong> Authentication</strong>.</p>
       <figure class="bcls-figure">
         <img class="bcls-image" src="/assets/images/s-admin-img/basics/managing-viewer-authentication/click-authentication.png" alt="click-authentication">
       </figure>
     </li>
-    <li>Note the durations are showing here, but you have to contact <a href="https://supportportal.brightcove.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F">Support</a> to change them.
+    <p><li>Note the durations are showing here, but you have to contact <a href="https://supportportal.brightcove.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F">Support</a> to change them.</p>
       <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/s-admin-img/basics/managing-viewer-authentication/beacon token.png" alt="beacon-token">
     </figure>
@@ -3294,7 +3294,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <li><em>Authentication token duration:</em> Timeframe for authenticated app use by the viewer. </li>
    <li><em>Refresh token duration:</em> Timeframe for automatic reissue of the viewer's authentication token.</li>
   </ul>
-  <p>To learn more about how authentication and refresh tokens work, <a href="#Token_definitions_and_durations">click here</a>.</p>
+  <p>To learn more about how authentication and refresh tokens work, see the <a href="#Token_definitions_and_durations"> Token definitions and durations section</a>.</p>
   </li>
   </ol>
     <h3>Third-party OIDC authentication</h3>
