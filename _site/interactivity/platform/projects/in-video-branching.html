@@ -3272,20 +3272,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click on a project to open it.</li>
       <li>Add a chapter marker at each point in the video where a choice begins (the beginning of a branch). The chapter markers will be invisible to viewers.</li>
       <li>For each &quot;choice point&quot;, add a text, image or transparent overlay annotation. This is what the viewer will click on to jump to different parts of the video. Make sure the start time and duration for each of these annotations is identical.</li>
-      <li>On each annotation, set <strong>Link</strong> &gt; <strong>ACTIONS</strong> to <strong>Jump to video time </strong>and select the correct chapter or enter a custom time. In this example, a transparent overlay is configured to jump to a chapter marker  when clicked.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/projects/in-video-branching/jump-to-video-time.png"></figure>
+      <li>On each annotation, set <strong>Link</strong> &gt; <strong>ACTIONS</strong> to <strong>Jump to video time </strong>and select the correct chapter or enter a custom time. In this example, a transparent overlay is configured to jump to a chapter marker when clicked.
+        <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/projects/in-video-branching/jump-to-video-time.png"></figure>
       </li>
       <li>On one of the choice annotations, set <strong>Link</strong> &gt; <strong>BEHAVIOR</strong> &gt; <strong>Action to take if the viewer doesn't click</strong> to <strong>Loop back</strong>.
-        <figure class="bcls-figure"> This will cause the video to loop and display the &quot;main menu&quot; part of the video until one of the transparent overlays is clicked.<img src="/assets/images/platform/s-brightcove-interactivity-img/projects/in-video-branching/annotation-loop-back.png"> </figure>
+        <figure class="bcls-figure"> This will cause the video to loop and display the &quot;main menu&quot; part of the video until one of the transparent overlays is clicked.<img src="/assets/images/s-brightcove-interactivity-img/platform/projects/in-video-branching/annotation-loop-back.png"> </figure>
       </li>
       <li>At the end of each branch, add a time triggered action and set the <strong>Jump to video time</strong> to jump the video back to the &quot;main menu&quot; part of the video so the viewer can make another choice.
-        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/projects/in-video-branching/time-trigger.png"> </figure>
+        <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/projects/in-video-branching/time-trigger.png"> </figure>
         <aside class="bcls-aside bcls-aside--information language-editable">Note: When using a time triggered action, Brightcove recommends that the Start/End Time is configured to last at least one second. Using a shorter time may cause the browser to not execute the time triggered action.</aside>
       </li>
     </ol>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
