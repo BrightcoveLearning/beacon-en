@@ -3248,7 +3248,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <summary>In this topic you will learn how to create a Slide Sync Experience.</summary>
   <section class="bcls-section">
     <p>The Slide Sync Experience displays a video and related PDF in a side by side view. As the video plays, the pages in the PDF will change to correspond to what is being presented in the video. All video interactivity will also display.</p>
-    <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/experiences/slidesync/slide-sync-example.png"></figure>
+    <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/experiences/slidesync/slide-sync-example.png"></figure>
   </section>
   <section class="bcls-section">
     <h2 id="creating-new-experience">Creating a new experience</h2>
@@ -3261,7 +3261,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Enter a name for the experience.</li>
       <li>In the list of experience types, click <strong>Slide Sync</strong>.</li>
       <li>Choose a layout.
-        <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/experiences/slidesync/new-experience.png"> </figure>
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/experiences/slidesync/new-experience.png"> </figure>
       </li>
       <li>Click <span class="button-blue">NEXT</span>.</li>
       <li>Enter a <strong>Title</strong> for the video.</li>
@@ -3274,14 +3274,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </ul>
       </li>
       <li>Click <span class="button-blue">NEXT</span>. The New Experience confirmation dialog will display.
-        <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/experiences/slidesync/new-exp-confirmation.png"></figure>
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/experiences/slidesync/new-exp-confirmation.png"></figure>
       </li>
       <li>Click <span class="button-blue">CREATE</span>. The Interactivity Editor will open with the selected video(s) loaded. </li>
-      <li>Add PDF slides to the experience by dragging a file into the drop zone or by clicking anywhere in drop zone and browsing to select a file.
+      <li>Add PDF slides to the experience by  dragging a file into the drop zone or by clicking anywhere in drop zone and browsing to select a file.
         <ul>
           <li>The slides must be in PDF format</li>
           <li>The first page in the PDF will appear and sync to the 0 second point in the video</li>
-          <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/experiences/slidesync/slidesync-start.png"></figure>
+          <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/experiences/slidesync/slidesync-start.png"></figure>
         </ul>
       </li>
     </ol>
@@ -3293,24 +3293,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Play video to the point where the slide should change.</li>
       <li>Use the arrow icons below the PDF preview to navigate to the page to display for the corresponding place in the video.</li>
       <li>Click the <strong>Sync</strong> button below the PDF preview to sync the PDF with the current place in the video. The time adjuster next to the sync button can b used to adjust the time if necessary.</li>
-      <li>(Optional) To add a chapter marker at the same time as the slide change, click the chapter marker icon after syncing a slide, add the chapter title and then click <strong>Done</strong>.</li>
+      <li>(Optional) To add a chapter marker at the same time as the slide change, click the chapter marker icon  after syncing a slide, add the chapter title and then click <strong>Done</strong>.</li>
       <li>Repeat these steps until all slides are synced for the video.</li>
     </ol>
-    As the PDF is synced with the video, a list of all syncs will appear at the bottom of the Interactivity Editor.
-  </section>
+    As the PDF is synced with the video, a list of all syncs will appear at the bottom of the Interactivity Editor.</section>
   <section class="bcls-section">
     <h2 id="ratio">Changing the size ratio of the video and slides</h2>
     <p>To change the size ratio of the video and the slides, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>Add a time triggered action to the video.
-        <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/experiences/slidesync/time-trigger.png"></figure>
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/experiences/slidesync/time-trigger.png"></figure>
       </li>
       <li>For the <strong>Addon Type</strong>, enter <code>slider</code>.</li>
       <li>For the <strong>Command</strong>, enter <code>change</code>.</li>
       <li>Click <strong>ADD NEW</strong> next to <strong>Command Data</strong>.</li>
       <li>For the <strong>Key</strong>, enter <code>newValue</code> and for the <strong>Value</strong>, enter the percent of the width that the video should consume
         <aside class="bcls-aside bcls-aside--information">Note: Using a small number (&lt; 15) can make the annotation difficult to edit.</aside>
-        <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/platform/experiences/slidesync/zoom.png"></figure>
+        <figure class="bcls-figure"> <img src="/assets/images/platform/s-brightcove-interactivity-img/experiences/slidesync/zoom.png"></figure>
       </li>
       <li>Click <span class="button-blue">SUBMIT</span>.</li>
     </ol>
@@ -3359,8 +3358,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Add an Access Gate.</li>
       <li>Add the redirect URL for the registration form.</li>
       <li>Ensure your registration form or other validation form redirects the user back to the experience after completing registration/login.
-        <aside class="bcls-aside bcls-aside--information language-editable">Note: We recommend using the referrer URL.</aside>
-      </li>
+          <aside class="bcls-aside bcls-aside--information language-editable">Note: We recommend using the referrer URL.</aside></li>
     </ol>
     <h3 id="generating-links">Generating links to the Slide Sync Experience (optional/extra)</h3>
     <aside class="bcls-aside bcls-aside--information">Note: This feature does not come with standard Slide Sync. Contact your Brightcove Account Manager for details.</aside>
@@ -3387,17 +3385,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol class="bcls-tasklist-restart">
       <li>Click <span class="button-blue">SHARE</span> at the top right of the page.</li>
       <li>Select a <strong>Share Type</strong>.
-        <ul>
-          <li><strong>Embed Only</strong> - Generate embed code to place in an existing web page</li>
-          <li><strong>Landing Page</strong> - Create a landing page to host the experience</li>
-        </ul>
-      </li>
+      <ul>
+        <li><strong>Embed Only</strong> - Generate embed code to place in an existing web page</li>
+        <li><strong>Landing Page</strong> - Create a landing page to host the experience</li>
+      </ul></li>
       <li>Select the option to <strong>Use Native Controls?</strong> Selecting <strong>No</strong> will display the HapYak controls in the player. Selecting <strong>Yes</strong> will display the native controls based upon the type of video that is being published. For example, if you are using Brightcove videos, the player will display Brightcove Player native controls (the player will look like a regular Brightcove Player).</li>
       <li>Select <span class="button-blue">COPY</span> to copy the embed code or link or click <span class="button-blue">VIEW</span> to open a preview of the experience in another browser tab.</li>
     </ol>
     <aside class="bcls-aside bcls-aside--information">Note: This is a Proof of Concept only provided to show the possibilities of the Brightcove Interactivity Platform and should not be taken as an offer to create, edit or maintain custom integration or development.</aside>
   </section>
 </article>
+
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
