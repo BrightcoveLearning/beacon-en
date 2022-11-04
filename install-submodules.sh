@@ -43,8 +43,9 @@ git submodule add https://github.com/BrightcoveLearning/s-audience-insights-img
 git submodule add https://github.com/BrightcoveLearning/s-live-img
 git submodule add https://github.com/BrightcoveLearning/s-web-conferencing-img
 git submodule add https://github.com/BrightcoveLearning/s-registered-users-img
+cd platform
 git submodule add https://github.com/BrightcoveLearning/s-brightcove-interactivity-img
-cd ..
+cd ../..
 git submodule add https://github.com/BrightcoveLearning/s-site-assets-favicons
 git submodule add https://github.com/BrightcoveLearning/s-site-assets-stylesheets
 git submodule add https://github.com/BrightcoveLearning/s-site-assets-scripts
