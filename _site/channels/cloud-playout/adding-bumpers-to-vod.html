@@ -3257,34 +3257,35 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><code translate="no">cp-postroll-bumper</code></li>
     </ul>
     <aside class="bcls-aside bcls-aside--warning">Potential problems:
-			<ul>
-				<li>If you add both of these tags to the same video, it will still work as a bumper, but the <a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">EPG</a> will be inaccurate.</li>
-				<li>Similarly, for SSAI-enabled channels, ad placeholders are treated as post-roll ads. You should not have a pre-roll bumper followed by an ad placeholder, as this effectively creates a pre-roll<i data-feather="arrow-right"></i>post-roll sequence that will cause the EPG to be inaccurate.</li>
-			</ul>
-			</aside>
+      <ul>
+        <li>If you add both of these tags to the same video, it will still work as a bumper, but the <a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">EPG</a> will be inaccurate.</li>
+        <li>Similarly, for SSAI-enabled channels, ad placeholders are treated as post-roll ads. You should not have a pre-roll bumper followed by an ad placeholder, as this effectively creates a pre-roll<i data-feather="arrow-right"></i>post-roll sequence that will cause the EPG to be inaccurate.</li>
+      </ul>
+      </aside>
   </section>
   <section class="bcls-section">
     <h2 id="inserting-bumpers">Inserting bumpers</h2>
     <ol class="bcls-tasklist-restart">
       <li>Before you can insert bumpers, you must <a href="cloud-playout-stream-vod.html#add_videos">add videos and/or live events to the channel</a> and <strong>save</strong> the changes.</li>
+      <li>Go to <strong>Program Items</strong> (if this is <a href="/cloud-playout/managing-programs.html">non-looping channel with multiple programs</a>, you will need to select the program you want to edit).</li>
       <li>
-        Select one or more videos and/or live events and click <span class="button-blue">Insert Bumpers</span>.<sup><strong><a href="#note1-1">[1-1]</a></strong></sup>
+        Select one or more videos and/or live events and click <span class="button-blue-text-bordered">Insert Bumpers</span>.<sup><strong><a href="#note1-1">[1-1]</a></strong></sup>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/select-videos-for-bumper.png" alt="Select Videos for Bumper">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/select-videos-for-bumper.webp" alt="Select Videos for Bumper">
           <figcaption class="bcls-caption--image">Select Videos for Bumper</figcaption>
         </figure>
       </li>
       <li>
         In the <strong>Bumpers</strong> dialog select <strong>Pre-Roll</strong> or <strong>Post-Roll</strong> and then click <span class="button-blue">Insert</span> beside the bumper video you want to insert.<sup><strong><a href="#note1-2">[1-2]</a></strong></sup>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/bumper-dialog.png" alt="Bumper Dialog">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/bumper-dialog.webp" alt="Bumper Dialog">
           <figcaption class="bcls-caption--image">Bumper Dialog</figcaption>
         </figure>
       </li>
       <li>
         You will now see the bumpers appear in the program list:
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/bumper-in-program-list.png" alt="Bumper in Program List">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/bumper-in-program-list.webp" alt="Bumper in Program List">
           <figcaption class="bcls-caption--image">Bumper in Program List</figcaption>
         </figure>
       </li>
@@ -3300,7 +3301,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Drag and drop bumpers to move them to new locations in the program list.</p>
     <p>To remove a bumper, just select it, click <strong>Delete</strong>, and then click <strong>Delete</strong> again in the confirmation dialog.</p>
     <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-cloudplayout-img/delete-bumper.png" alt="Delete Bumper">
+      <img class="bcls-image" src="/assets/images/s-cloudplayout-img/delete-bumper.webp" alt="Delete Bumper">
       <figcaption class="bcls-caption--image">Delete Bumper</figcaption>
     </figure>
   </section>
