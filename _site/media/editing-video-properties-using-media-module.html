@@ -3353,7 +3353,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Episode Number</strong> - Enter the episode number (Episodes only)</li>
       <li><strong>Season</strong> - Season the episode has been associated with (Episodes only)</li>
     </ul>
-    <p><aside class="bcls-aside bcls-aside--warning">Videos will not be synced to Beacon if a custom field named <code>beacon_video_type </code> and<code> beacon_agerating </code> do not have a value. This value is automatically set when you edit the video's details in Beacon Studio. If you ingest videos programmatically via an API it is possible that this value may not be set.</p></aside>
+    <aside class="bcls-aside bcls-aside--warning">Videos will not be synced to Brightcove Beacon if a custom field named <code>beacon_video_type </code> and<code> beacon_agerating </code> do not have a value. This value is automatically set when you edit the video's details in Beacon Studio. If you ingest videos programmatically via an API it is possible that this value may not be set.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="cast">Cast</h2>
@@ -3388,7 +3388,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="videofiles">Video Files</h2>
-    <p>The <strong>Video Files</strong> section displays the source file name, the transcoding technology that was used and details on the video renditions that were created. It also provides the ability to:</p>
+    <p>The <strong>Video Files</strong> section displays the:</p>
+    <ul>
+      <li> Source file name</li>
+      <li>Ingest profile that was used (for videos uploaded or retrancoded after Nov. 16, 2022)</li>
+      <li>Transcoding technology that was used</li>
+      <li>Details on the video renditions that were created. </li>
+    </ul>
+    <p>It also provides the ability to:</p>
     <ul>
       <li><a href="/media/replacing-video-source-file.html">Replace the Video Source File</a></li>
       <li><a href="/media/retranscoding-videos-using-media-module.html">Retranscode the Video</a></li>
