@@ -3330,7 +3330,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               <li><strong>Smart TV</strong> - If checked, full HD Output (RTMP or HLS single bitrate)</li>
             </ul>
           </li>
-          <li><strong>Output Region</strong> - The region where the channel will be created. Brightcove recommends selecting a region geographically closest to where the majority of your audience is expected.</li>
+          <li>
+            <strong>Output Region</strong> - The region where the channel will be created. Brightcove recommends selecting a region geographically closest to where the majority of your audience is expected.
+            <p>There are some additional factors that will govern the region selection</p>
+            <ul>
+              <li>Since Cloud Playout pulls MP4 from the configured CDN, the MP4 must be available/accessed from the selected region.</li>
+              <li>If there are true Live segments provisioned on hte Cloud Playout channel, the region must be closer to your contribution encoder.</li>
+              <li>Select a region closer to the origin (or audience) from where the Live stream will be delivered for playback.</li>
+              <li>If you have a CDN with geo-restriction for for VOD, the region used needs to be within the allowed countries/regions under geo-restriction.</li>
+            </ul>
+          </li>
           <li><strong>Output to</strong> - Select an output method for the channel
             <ul>
               <li><strong>Brightcove Live Event</strong> - Create or use a previously created Brightcove Live Channel. When creating a new channel, the region of the channel will be optimized based upon the <strong>Output Region</strong> that was selected.
