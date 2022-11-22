@@ -3246,12 +3246,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="rules">Determining the rendition to publish</h2>
     <p>In order to distribute videos to a social platform, videos should have at least one MP4 rendition or a video master available. Videos uploaded using one of the Brightcove provided, standard ingest profiles will save a master by default. For more information on archiving masters, see the <a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a> document.</p>
-    <p>When distributing videos to a social platform, Brightcove Social will attempt to distribute the highest quality rendition that meets the rules applied by the individual social platform. If the rendition sent to the social platform is rejected, there is no attempt to send another rendition.</p>
+    <p>When distributing videos to a social platform, Brightcove Social will attempt to distribute the highest quality rendition (based on bitrate) that meets the rules applied by the individual social platform. If the rendition sent to the social platform is rejected, there is no attempt to send another rendition.</p>
     <p>The rules to rank videos are as follows:</p>
     <ul>
       <li>MP4 assets are better than any other video container. No attempt is made to order the other types of video containers.</li>
-      <li>If the video containers are of equivalent quality, the video with the higher encoding rate is considered better.</li>
-      <li>If the encoding rates are of equivalent quality, the video with the higher resolution is considered better. Note that because not all renditions of a video necessarily have the same aspect ratio, we compare videos based on a computed 'compound' proxy for the resolution by using the product of the height and the width of the respective videos.</li>
+      <li>If the video containers are of equivalent quality, the video with the higher resolution (pixel width x height) is considered better.</li>
+      <li>If the encoding rates are of equivalent quality, the video with the higher resolution (pixel width x height) is considered better. Note that because not all renditions of a video necessarily have the same aspect ratio, we compare videos based on a computed 'compound' proxy for the resolution by using the product of the height and the width of the respective videos.</li>
     </ul>
     <p>Note that if one of the video assets is lacking any of the above information necessary to make the comparison, that video is considered 'worse' than the video that has all of the necessary information.</p>
   </section>
