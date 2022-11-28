@@ -3299,24 +3299,32 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td>Chrome Desktop</td>
           <td>HLS with Widevine</td>
-          <td>Native HLS</td>
+          <td>EME</td>
           <td>HLS</td>
         </tr>
         <tr>
           <td>Chrome Mobile<sup>1</sup></td>
-          <td>HLS with Widevine</td>
-          <td>Native HLS</td>
+          <td>
+            <p>HLS with FairPlay (iOS)</p>
+            <p>HLS with Widevine (Android)</p>
+          </td>
+          <td>
+            <p>Native</p>
+            <p>EME</p>
+          </td>
           <td>HLS</td>
         </tr>
         <tr>
           <td>Internet Explorer</td>
-          <td colspan="3">No versions of IE are supported by Brightcove</td>
+          <td>No versions of IE are supported by Brightcove</td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-          <td>Edge</td>
-          <td>DASH with PlayReady</td>
-          <td>Native/EME</td>
-          <td>MPEG-DASH</td>
+          <td>Edge<sup>2</sup></td>
+          <td>HLS with Widevine</td>
+          <td>EME</td>
+          <td>HLS</td>
         </tr>
         <tr>
           <td>Safari</td>
@@ -3327,13 +3335,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <tr>
           <td>Firefox</td>
           <td>HLS with Widevine</td>
-          <td>Native HLS</td>
+          <td>EME</td>
           <td>HLS</td>
         </tr>
       </tbody>
     </table>
     <p><em><sup>1</sup>DRM playback using Chrome Mobile on iOS is not supported.</em></p>
     <aside class="bcls-aside bcls-aside--information">Widevine can be applied to DASH outputs instead of HLS. To make Widevine with DASH the default requires an account-level override. Contact Support if you want this override applied to your account.</aside>
+    <p><em><sup>2</sup>DASH + PlayReady using Edge on iOS is not supported.</em></p>
+    <aside class="bcls-aside bcls-aside--information">DASH + PlayReady will work with Edge on Windows but not on IOS, but our Brightcove Player will prefer Widevine if it’s available.</aside>
     <p>To enable DRM for your Live content follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>When creating a live event, in Advanced Options &gt; Content Encryption. Select <strong> Digital Rights Management(DRM) </strong> from the Encryption dropdown.

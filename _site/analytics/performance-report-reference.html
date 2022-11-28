@@ -3257,6 +3257,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li>an autoplay event</li>
           <li>the viewer scrubbing or clicking on the playback timeline (which pauses and restarts the video automatically)</li>
         </ul>
+          <aside class="bcls-aside bcls-aside--information language-editable">Note: With Brightcove Player version 7, the <code>play_request</code> event is dispatched once per media source on the first playback request.  Pausing a video and then restarting will not trigger another <code>play_request</code> event to  occur.</aside>
       </li>
       <li><strong>Play Rate</strong> - The percentage of videos that were loaded that were actually played (video views / video impressions)</li>
       <li><strong>Viewed Minutes</strong> - Number of minutes the video was watched</li>
