@@ -3262,7 +3262,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <ul>
         <li>SRT, SCC and DFXP captions will be automatically converted to WebVTT for Dynamic Delivery accounts</li>
         <li>The text of the captions must be encoded UTF-8 to display properly for double-byte languages such as Japanese and Korean</li>
-        <li>Because the captions are displayed in HTML, any text insidebrackets will be interpreted as a tag and not displayed</li>
+        <li>Because the captions are displayed in HTML, any text inside brackets will be interpreted as a tag and not displayed</li>
         <li>If "&lt;" is used within  a WebVTT file without a trailing whitespace, captions will not be displayed by the Android SDK</li>
       </ul>
     </aside>
@@ -3393,7 +3393,7 @@ you can accomplish using it.
       </li>
       <li>There is no technical limit to the length of a caption, but in order for the full caption to be visible, the player must be large enough to display that much text</li>
       <li>The player recognizes all Text Tracks contained within a content manifest as <code translate="No">subtitles</code>. So those created in the Media Module with kind: <code translate="No">captions</code> and delivered in-manifest will be reported by the player as having kind: <code translate="No">subtitles</code>.</li>
-      <li>Because Safari uses the native capabilities for styling captions, the <strong>Captions Settings</strong> menu option is not available in the the <strong>CC</strong> menu on Safari browsers (both iOS and macOS).</li>
+      <li>Because Safari and Chrome mobile use the native browser capabilities for styling captions, the <strong>Captions Settings</strong> menu option is not available in the  <strong>CC</strong> menu on these browsers.</li>
       <li>If you ingest an invalid WebVTT file in Studio, the file will "process", but will not be added to the video. <strong>Workaround</strong>: you can validate your WebVTT files using <a href="https://quuz.org/webvtt/">this online validator</a>.</li>
     </ul>
   </section>
