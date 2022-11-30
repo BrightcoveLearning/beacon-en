@@ -3264,24 +3264,34 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>Beacon web apps use Brightcove Player in all instances of where a player is used. Brightcove Player is enhanced using plugins. The table below details which plugins are implemented with each player instance.</p>
+    <p>Beacon web apps use Brightcove Player in all instances of where a player is used. In the Beacon UI the Brightcove Player is referred to as <strong>Player E</strong>. Brightcove Player is enhanced using plugins. The <a href="#Feature_availability_table">Feature availability table</a> later in this document details which plugins are implemented with each player instance.</p>
   </section>
 
   <section class="bcls-section">
     <h2 id="Player_instance_details">Player instance details</h2>
-    <p>The following video shows each player instance used in a Beacon app:</p>
+    <p>Four instance of Brightcove Player are used in Beacon web apps. Those instanced are located in these locations:
+    <p>
+    <ol>
+      <li>Autoplay page layout</li>
+      <li>Live TV preview</li>
+      <li>EPG preview</li>
+      <li>Player E VOD</li>
+    </ol>
+
+    <p>The following video shows each player instance in a Beacon app:</p>
+
 
   </section>
 
   <section class="bcls-section">
-    <h2 id="Feature_availability_matrix">Feature availability matrix</h2>
+    <h2 id="Feature_availability_table">Feature availability table</h2>
     <p></p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
           <th>Plugin<br>▼</th>
           <th>Player E VOD</th>
-          <th>Player E Live</th>
+          <!-- <th>Player E Live</th> -->
           <th>Auto Play</th>
           <th>EPG Preview</th>
           <th>Live TV Preview</th>
@@ -3292,7 +3302,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>Brightcove<br>Interactivity</strong></td>
           <td></td>
           <td></td>
-          <td></td>
+          <!-- <td></td> -->
           <td></td>
           <td></td>
         </tr>
@@ -3300,7 +3310,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>Analytics</strong></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
-          <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
+          <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
         </tr>
@@ -3308,7 +3318,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>DRM</strong></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
-          <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
+          <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
         </tr>
@@ -3316,7 +3326,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>SSAI</strong></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
-          <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
+          <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
         </tr>
@@ -3324,7 +3334,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>Chromecast</strong></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
-          <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
+          <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/cross-mark-48.png" alt="No"></td>
           <td><img src="/assets/images/common/cross-mark-48.png" alt="No"></td>
         </tr>
@@ -3332,7 +3342,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>Apple<br>Airplay</strong></td>
           <td></td>
           <td></td>
-          <td></td>
+          <!-- <td></td> -->
           <td></td>
           <td></td>
         </tr>
@@ -3340,7 +3350,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>IMA3</strong></td>
           <td></td>
           <td></td>
-          <td></td>
+          <!-- <td></td> -->
           <td></td>
           <td></td>
         </tr>
@@ -3348,7 +3358,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>Thumbnail<br>Scrubbing</strong></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
-          <td><img src="/assets/images/common/cross-mark-48.png" alt="No"></td>
+          <!-- <td><img src="/assets/images/common/cross-mark-48.png" alt="No"></td> -->
           <td><img src="/assets/images/common/cross-mark-48.png" alt="No"></td>
           <td><img src="/assets/images/common/cross-mark-48.png" alt="No"></td>
         </tr>
@@ -3356,7 +3366,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>Google<br>Tag<br>Manager</strong></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
-          <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
+          <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
         </tr>
@@ -3364,7 +3374,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>Open<br>Measurement<br>SDK</strong></td>
           <td></td>
           <td></td>
-          <td></td>
+          <!-- <td></td> -->
           <td></td>
           <td></td>
         </tr>
@@ -3372,7 +3382,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>Campaign</strong></td>
           <td></td>
           <td></td>
-          <td></td>
+          <!-- <td></td> -->
           <td></td>
           <td></td>
         </tr>
