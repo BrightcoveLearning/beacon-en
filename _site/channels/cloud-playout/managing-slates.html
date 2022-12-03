@@ -3251,6 +3251,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="introduction">Introduction</h2>
     <p>Brightcove provides a default slate to all accounts. You can use a custom slate instead, by hosting an MP4 video on a permanent URL and adding it as an asset to your account to be used on as many Cloud Playout channels as you like.</p>
+    <aside class="bcls-aside bcls-aside--warning language-editable">
+      Important notes:
+      <ul>
+        <li>Cloud Playout slates are used only to fill time for scheduled live events when no live input is available, and to fill time before a <a href="cloud-playout/hard-start.html">Hard Start</a>. These slates are <strong>not</strong> used to fill unused ad time slots. Ad slates are created and managed in the <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html#fill_slate">SSAI configuration</a>.</li>
+        <li>The Cloud Playout slate <strong>must be configured before the channel is started</strong> and cannot be changed after the channel starts playing.</li>
+      </ul>
+    </aside>
   </section>
 
   <section class="bcls-section">
