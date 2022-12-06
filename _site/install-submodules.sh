@@ -24,6 +24,7 @@ git submodule add https://github.com/BrightcoveLearning/s-live
 git submodule add https://github.com/BrightcoveLearning/s-web-conferencing
 git submodule add https://github.com/BrightcoveLearning/s-registered-users
 git submodule add https://github.com/BrightcoveLearning/s-brightcove-interactivity
+git submodule add https://github.com/BrightcoveLearning/s-template-page-includes
 cd ..
 cd assets/images
 git submodule add https://github.com/BrightcoveLearning/s-ott-plugins-img
