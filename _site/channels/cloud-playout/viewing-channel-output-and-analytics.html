@@ -3258,7 +3258,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ul>
       <li><strong>Network In</strong> - Average bytes per second in the last minute</li>
       <li><strong>Network Out</strong> - Average bytes per second in the last minute</li>
-      <li><strong>Frames Dropped</strong> - Percent of frames dropped in the last minute</li>
+      <li><strong>Frames Dropped</strong> - Percent of frames dropped in the last minute - The <strong>Frames Dropped</strong> shows you when the Cloud Playout encoder is unable to keep up with the live input stream in real time</li>
     </ul>
     <p>The <strong>Network In</strong> analytics are particularly useful for detecting when the stream for a live event has failed (you should also see the slate video playing in the output rather than the live stream):
       <figure class="bcls-figure">
@@ -3266,6 +3266,46 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <figcaption class="bcls-caption--image">Network In Analytics</figcaption>
       </figure>
     </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="live_stream_indicator">Live stream indicator</h2>
+    <p>While the channel is playing, a live stream indicator shows whether the channel is receiving live input for any schedule live events in the program:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-cloudplayout-img/live-stream-indicator.webp" alt="Live Stream Indicator">
+      <figcaption class="bcls-caption--image">Live Stream Indicator</figcaption>
+    </figure>
+    <p>The background color for the indicator changes according to the state:</p>
+    <div style="overflow-x: scroll;">
+      <table class="bcls-table">
+          <caption class="bcls-caption--table">Live Indicator Meaning</caption>
+          <thead class="bcls-table__head">
+              <tr>
+                  <th>Live Indicator</th>
+                  <th>Meaning</th>
+              </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+              <tr>
+                  <td>
+                    <img src="/assets/images/s-cloudplayout-img/live-icon-grey.webp" alt="Live Indicator Gray" />
+                  </td>
+                  <td>No live stream received but no live event is currently playing</td>
+              </tr>
+              <tr>
+                  <td>
+                    <img src="/assets/images/s-cloudplayout-img/live-icon-green.webp" alt="Live Indicator Green" />
+                  </td>
+                  <td>The channel is receiving a live stream input - a live event may or may not be playing</td>
+              </tr>
+              <tr>
+                  <td>
+                    <img src="/assets/images/s-cloudplayout-img/live-icon-red.webp" alt="Live Indicator Gray" />
+                  </td>
+                  <td>A scheduled live event is playing, but no live input stream is being received (therefore the slate is being displayed)</td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
   </section>
     <section class="bcls-section">
       <h2 id="Playing_a_program-item_next">The currently playing item</h2>
