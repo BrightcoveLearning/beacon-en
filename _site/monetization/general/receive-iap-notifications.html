@@ -3360,12 +3360,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td><strong>new</strong>, <strong>renew</strong>, <strong>cancel</strong>, <strong>pause</strong>, <strong>hold</strong>, <strong>resume</strong></td>
           <td>
             <li><strong>new</strong> - Issued for a new subscription</li>
-            <li><strong>renew</strong> - Used to renew an existing subscription (extend the subscription)</li>
+            <li><strong>renew</strong> - Used to renew an existing subscription (extend the subscription<strong><sup>✝︎</sup></strong>)</li>
             <li><strong>cancel</strong> - Cancel an existing purchase</li>
             <li><strong>hold</strong> - Subscription was put on hold due to non payment</li>
             <li><strong>pause</strong> - Subscription is paused by user</li>
             <li><strong>resume</strong> - Subscription transition from hold or pause to continue</li>
           </td>
+        </tr>
+        <tr>
+          <td colspan="5"><strong><sup>✝︎</sup></strong>This is not always true for Apple. Apple uses <strong>renew</strong> to indicate a cancellation of <em><strong>future</strong></em> renewal. Apple also uses a <strong>cancel</strong> to indicate and immediate cancellation of the subscription. See Apple's <a href="https://developer.apple.com/documentation/appstoreservernotifications/notification_type">notification_type</a> documentation for full details.</td>
         </tr>
         <tr>
           <td>external_user_id</td>
