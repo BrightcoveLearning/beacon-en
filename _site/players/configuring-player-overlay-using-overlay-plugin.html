@@ -3275,12 +3275,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     {
       "start": 2,
       "end": 6,
-      "content": "&lt;a href='https://www.brightcove.com' target='_blank'&gt;&lt;img src='http://solutions.brightcove.com/bcls/assets/images/brightcove-logo.png'&gt;&lt;/a&gt;",
+      "content": "&lt;a href='https://www.brightcove.com' target='_blank'&gt;
+      &lt;img alt='Brightcove Logo' src='http://solutions.brightcove.com/bcls/assets/images/brightcove-logo.png'&gt;&lt;/a&gt;",
       "align": "bottom-right"
     }
   ]
 }
   </code></pre>
+  <p>Note that in the content you can include any appropriate HTML tags and their attributes (notice, for example, the <code translate="No">alt</code> text provided for the image in the example above).</p>
   </section>
   <section class="bcls-section">
     <h2 id="configure">Configuring a player overlay</h2>
@@ -3298,20 +3300,20 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>For the <strong>CSS URL</strong>, enter:
         <pre>
 <code translate="No">//players.brightcove.net/videojs-overlay/2/videojs-overlay.css</code>
-	</pre>
+  </pre>
       </li>
       <li>Enter the <strong>Options(JSON)</strong>. The example below will display a clickable image at the bottom of the player starting at the 2 second mark and ending at the 6 second mark.
         <pre>
 <code translate="No">{
-	  "overlays": [
-	    {
-	      "start": 2,
-	      "end": 6,
-	      "content": "&lt;a href='https://www.brightcove.com' target='_blank'&gt;&lt;img src='http://solutions.brightcove.com/bcls/assets/images/brightcove-logo.png'&gt;&lt;/a&gt;",
-	      "align": "bottom-right"
-	    }
-	  ]
-	}</code></pre>
+    "overlays": [
+      {
+        "start": 2,
+        "end": 6,
+        "content": "&lt;a href='https://www.brightcove.com' target='_blank'&gt;&lt;img src='http://solutions.brightcove.com/bcls/assets/images/brightcove-logo.png'&gt;&lt;/a&gt;",
+        "align": "bottom-right"
+      }
+    ]
+  }</code></pre>
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/node16311-overlay-plugin.png" /></figure>
       </li>
       <li>Click <span class="button-blue">Save</span> and <strong>Publish</strong> the player. Note that it may take up to 5 minutes for the changes to appear in published players.</li>
