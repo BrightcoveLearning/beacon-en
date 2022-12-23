@@ -3247,12 +3247,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <p>Ingest profiles contain the transcode settings that will be used when videos are uploaded using the <a href="/media/uploading-videos-using-upload-module.html">Upload module</a> or the <a href="https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html">Dynamic Ingest API</a>. The ingest profile editor that is displayed will change based upon the transcoding options that have been configured for the account.</p>
     <aside class="bcls-aside bcls-aside--information">
-			Notes:
-			<ul>
-				<li>The ability to create and edit ingest profiles is available only to publishers with Enterprise and Professional accounts.</li>
-				<li>If you want to be able to retranscode videos ingested with a custom profile, you <strong>must archive the digital master</strong> (as all standard profiles do). See <a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a> for details on how to do this.</li>
-			</ul>
-		</aside>
+      Notes:
+      <ul>
+        <li>The ability to create and edit ingest profiles is available only to publishers with Enterprise and Professional accounts.</li>
+        <li>If you want to be able to retranscode videos ingested with a custom profile, you <strong>must archive the digital master</strong> (as all standard profiles do). See <a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a> for details on how to do this.</li>
+        <li>The <code translate="No">dynamic_profile_options</code> block must be less than 8000 characters (there are many online and desktop tools for counting characters - <a href="https://www.charactercountonline.com/">this one, for example</a>.</li>
+      </ul>
+    </aside>
     <p>To access the Ingest Profiles administration page, click the <strong>Admin</strong>   link and then <strong>Ingest Profiles</strong>. A list of ingest profiles will appear.</p>
     <aside class="bcls-aside bcls-aside--information">Note: To access the Ingest Profiles page, you must be a Brightcove Beacon user with the Administrator role.</aside>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-admin-img/node18434-profile-list.png" /></figure>
