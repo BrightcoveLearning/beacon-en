@@ -3253,9 +3253,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Introduction">Introduction</h2>
     <p>Once you have created your Cloud Playout channel, there are three steps you need to perform in order to make it part of your Beacon app. They are:</p>
     <ol>
-      <li><a href="#Get_information_for_the_ott_Channel">Get information for the Beacon Channel</a></li>
-      <li><a href="#create_ott_channel">Create a Beacon Channel</a></li>
-      <li><a href="#Add_channel_to_playlist">Add the channel to a playlist</a></li>
+      <li><a href="#Get_information_for_the_ott_Channel">Get information for the Beacon Channel</a> - This assumes you have created a channel and here you get ID numbers you will need later. For instructions on creating a channel see the <a href="/channels/cloud-playout/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a> document. This task is performed in Beacon Studio.</li>
+      <li><a href="#create_ott_channel">Create a Beacon Channel</a> - In Beacon Classic you create a Beacon Channel using the information gathered in step 1.</li>
+      <li><a href="#Add_channel_to_playlist">Add the channel to a playlist</a> - In Beacon Studio you create a playlist and add the newly created channel to the playlist.</li>
     </ol>
     <p>Details follow in the sections below.</p>
   </section>
@@ -3263,11 +3263,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Get_information_for_the_ott_Channel">Get information for the Beacon Channel</h2>
     <p>Before you proceed you will want to capture information that you will need in setting up your Beacon channel and playlist.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Go to the channel details page by clicking on the channel in the channel list.</li>
+      <li>In the <strong>Cloud Playout</strong> module, the the <strong>Channels</strong> list, view your channel details page by clicking on your channel.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/navigate-to-channel.png" alt="Navigate to channel list">
+          <figcaption class="bcls-caption--image">Video List</figcaption>
+        </figure>
+      </li>
       <li>If you have not already done so, click <span class="button-red-text-border"><i data-feather="play" class="button-icon"></i> Activate</span> to activate the channel. See <a href="using-channel-actions.html">Using Channel Actions</a> for more details.</li>
       <li>After the channel has activated, use the main navigation to go to the <strong>Media</strong> module.</li>
       <li>
-        At the top of the video list, you should see a new live video that was created for your Cloud Playout channel:
+        Locate your channel in the list. You should see a <strong>LIVE</strong> video that was created from your Cloud Playout channel:
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-cloudplayout-img/video-list.webp" alt="Video List">
           <figcaption class="bcls-caption--image">Video List</figcaption>
