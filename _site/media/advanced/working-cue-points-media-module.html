@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to organize videos using folders.">
+  <meta name="description" content="In this topic you will learn about cue points and how to add, edit and delete them.">
   
-  <title>Organizing Videos Using Folders</title>
+  <title>Working with Cue Points</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -168,7 +168,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Organizing Videos Using Folders</li>
+        <li class="breadcrumb-item"><a href="/media/advanced/">Advanced</a></li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">Working with Cue Points</li>
       
     
   </nav>
@@ -574,7 +578,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     
-                    <li><a href="/media/organizing-videos-using-folders.html" aria-current="page">Organizing Videos Using Folders</a></li>
+                    <li><a href="/media/organizing-videos-using-folders.html">Organizing Videos Using Folders</a></li>
                     
                   
                 
@@ -3241,113 +3245,72 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Organizing Videos Using Folders</h1>
-  <summary>In this topic you will learn how to organize videos using folders.</summary>
-  <section class="bcls-section"> 
-    <p>Folders can be created inside of the <strong>Media</strong> module and can be used to organize videos. You may choose to organize videos by subject, author, product, region, etc. Having videos in folders makes them easier to manage in an account with hundreds or thousands of videos. Folders are displayed in the side navigation panel. The number of videos in each folder is displayed next to the folder name. Click the side navigation button <img alt="" src="/assets/images/s-media-img/node15095-side-nav-button.png" /> to hide or show the side navigation panel.</p>
+  <h1>Working with Cue Points</h1>
+  <summary>In this topic you will learn about cue points and how to add, edit and delete them.</summary>
+  <section class="bcls-section">
+    <p>A cue point is a marker at a precise time point in the duration of a video. You can use cue points to trigger mid-roll ads (that is, ads that occur during playback of the video content, like a commercial break) or to separate chapters or scenes in a long-form video.</p>
+    <p>There are two types of cue points, but both simply supply a string value to the <strong>type</strong> property of the cue point object. The appropriate value is helpful only if used in custom JavaScript while processing the cue point information.&nbsp;</p>
+    <ul>
+      <li><strong>Ad</strong> - Assigns the string value of <strong>AD</strong> to the <strong>type</strong> property</li>
+      <li><strong>Code</strong> - Assigns the string value of <strong>CODE</strong> to the <strong>type</strong> property</li>
+    </ul>
+    <p>Cue points can be added to videos using the Media module or by using the Catalog API. For more information on adding cue points using the Catalog API, see the developer document <a href="https://player.support.brightcove.com/general/implementing-cue-points-programmatically.html">Implementing Cue Points Programmatically</a>.</p>
+    <aside class="bcls-aside bcls-aside--information">Notes: 
+      <li>Cue points cannot be added to live remote asset videos</li>
+      <li>Cue points need to be separated by at least one second.</li></aside>
     
-    
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/folders-list-beacon.png" /></figure>
-    
-    <aside class="bcls-aside bcls-aside--information">Notes:
-      <ul>
-        <li>Nested folders are not supported.</li>
-        <li>A maximum of 100 videos can be moved to a folder at the same time.</li>
-        <li>Each account can have a maximum of 1000 folders.</li>
-      </ul>
-    </aside>
   </section>
   <section class="bcls-section">
-    <h2 id="create">Creating folders</h2>
-    <p>To create a new folder, follow these steps:</p>
+    <h2 id="add">Adding cue points</h2>
+    <p>To add cue points to a video, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Open the <i data-feather="video"></i> <strong>Media</strong> module.</li>
-      <li>Click <strong>Create folder</strong> in the side navigation panel.</li>
-      <li>Enter a name for the folder using the following guidelines. Press enter.
+    <li>Open the <strong>Media</strong> module.</li>
+      <li>Click the video title link to open the video properties page.</li>
+      <li>Use the preview player to play the video. Pause the video at the point where you want to add a cue point.</li>
+      <li>Click <span class="button-blue-text-bordered"> Add cue point</span>.</li>
+      <li>If needed, adjust the <strong>Timecode (hh:mm:ss)</strong> values for the cue point. Note that the <strong>seconds</strong> field supports milliseconds after the decimal point.</li>
+      <li>Select the <strong>Type</strong> of cue point and then add the appropriate metadata.
         <ul>
-          <li>Name is limited to 100 characters</li>
-          <li>Folder names must be unique within an account</li>
-          <li>Illegal character: /</li>
+          <li><strong>ad</strong> - An ad request will be made. When using ad cue points, the player should be <a href="/players/configuring-player-advertising-using-players-module.html">configured for advertising</a>.</li>
+          <li><strong>code</strong> - Cue points will be handled programmatically. See the <a href="https://player.support.brightcove.com/general/implementing-cue-points-programmatically.html">Implementing Cue Points Programmatically</a> developer document for more information.</li>
         </ul>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15095-new-folder.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/advanced/node15151-add-code-cue-point.png" /></figure>
+      </li>
+      <li>Enter a <strong>Name</strong> for the cue point. The name value can be accessed <a href="https://player.support.brightcove.com/general/implementing-cue-points-programmatically.html">programmatically</a>.</li>
+      <li>Enter <strong>Metadata</strong> (for code cue points) or <strong>Key/Value Pairs</strong> (for ad cue points).
+        <ul>
+          <li><strong>Metadata</strong> - Optional metadata that is stored with the cue point. Metadata can be accessed <a href="https://player.support.brightcove.com/general/implementing-cue-points-programmatically.html">programmatically</a>. One example of when you might want to use a code cue point and pass metadata is when you want to display different calls to action as the video is playing. See the <a href="https://player.support.brightcove.com/code-samples/brightcove-player-sample-cue-points-display-cta.html">Brightcove Player Sample: Cue Points Display CTA</a> for an example.</li>
+          <li><strong>Key/Value Pairs</strong> - Key/value pairs that can be passed to an ad request. A key-value pair is a set of two linked data items: a key, which is a unique identifier for some item of data, and the value, which is either the data that is identified or a pointer to the location of that data. Key/value pairs can be used to help provide more targeted advertisements. Whatever is entered here will be copied into the ad tag where the <code translate="No">{mediainfo.ad_keys}</code> macro is inserted. For more information, see <a href="https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html#Ad_macros_and_the_serverUrl">Advertising with the IMA3 Plugin</a>.</li>
+        </ul>
       </li>
     </ol>
-    <aside class="bcls-aside bcls-aside--information">Note: A maximum of 1000 folders can be created.</aside>
-    <p>To quickly delete the folder, click the <strong>X</strong> after the folder name.</p>
+    <p>After cue points are added to a video, at runtime, the cue points are converted into HTML5 WebVTT cue elements. When this conversion takes place, some of the cue point data, like type and cue point time, are converted into the text track. The cue point time value will be mapped into the WebVTT cue <code translate="No">startTime</code> and <code translate="No">endTime</code> properties. See <a href="https://dev.w3.org/html5/webvtt/#the-vttcue-interface">this document</a> for more information on the VTTCue interface.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="add">Adding videos to folders</h2>
-    <p>There are a couple of ways to add videos to a folder. You can:</p>
-    <ul>
-      <li><a href="#multipleadd">Add multiple videos to a folder</a></li>
-      <li><a href="#propertiesadd">Edit the video properties to assign a folder</a></li>
-    </ul>
-    <aside class="bcls-aside bcls-aside--information">Note: There is no limit to the number of videos that can be in a folder.</aside>
-    <div class="BCL-subsection" id="multipleadd">
-      <h3>Adding multiple videos to a folder</h3>
-      <p>Multiple videos at a time can be added to a folder by following these steps.</p>
-      <ol class="bcls-tasklist-restart">
-        <li>Open the <i data-feather="video"></i> <strong>Media</strong> module. </li>
-        <li> Click <strong>All videos</strong> in the side navigation panel to display all the videos.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15095-select-videos.png" /></figure>
-          <aside class="bcls-aside bcls-aside--information">Note: The number after the folder name indicates how many videos are in that folder.</aside>
-        </li>
-        <li>Select the videos to add to a folder by clicking the checkbox next to the video thumbnail. Click <strong>More &gt; Move to Folder</strong>.</li>
-        <li>Select a folder and click <span class="button-blue"> Move</span>
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15095-move-to-folder.png" /></figure>
-        </li>
-      </ol>
-    </div>
-    <div class="BCL-subsection" id="propertiesadd">
-      <h3>Editing the video properties to assign a folder</h3>
-      <p>Videos can be added to a folder by editing the video properties and assigning a folder.</p>
-      <ol class="bcls-tasklist-restart">
-        <li>Open the <i data-feather="video"></i> <strong>Media</strong> module.</li>
-        <li>Click the link for the video.</li>
-        <li>In the <strong>Categorization</strong> section, select a <strong>Folder</strong>. You can also create a new folder by clicking on <strong>+ Create folder</strong>.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15095-video-info-folder.png" /></figure>
-        </li>
-      </ol>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="view">Viewing videos in a folder</h2>
-    <p>To view the videos in a folder, click on a folder name.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15095-videos-in-folder.png" /></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="remove">Removing videos from folders</h2>
-    <p>You can <a href="#removedel">remove multiple videos from a folder</a> or remove a single video from a folder by <a href="#propertiesdel">editing the video properties</a>.</p>
-    <div class="BCL-subsection" id="removedel">
-      <h3>Removing multiple videos from a folder</h3>
-      <p>Multiple videos can be removed from a folder by following these steps.</p>
-      <ol class="bcls-tasklist-restart">
-        <li>Open the <i data-feather="video"></i> <strong>Media</strong></li>
-        <li>Click the link for the folder.</li>
-        <li>Check the checkboxes next to the videos to remove and click <strong>Remove Videos &gt; Remove Videos from Folder</strong>.</li>
-      </ol>
-    </div>
-    <div class="BCL-subsection" id="propertiesdel">
-      <h3>Editing the video properties</h3>
-      <p>Videos can be removed from a folder by editing the video properties and removing the folder in the Video Information panel.</p>
-      <ol class="bcls-tasklist-restart">
-        <li>Open the <i data-feather="video"></i> <strong>Media</strong></li>
-        <li>Click the link for the folder.</li>
-        <li>In the<strong> Categorization </strong>section, <strong>s</strong>et the <strong>Folder</strong> to <strong>---</strong>.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15095-clear-folder.png" /></figure>
-        </li>
-      </ol>
-      <p>Note that this method can also be used to select another folder to move the video to.</p>
-    </div>
-  </section>
-  <section class="bcls-section">
-    <h2 id="delete">Deleting and renaming folders</h2>
-    <p>Folders can be renamed or deleted by following these steps:</p>
+    <h2 id="edit">Editing cue points</h2>
+    <p>To edit cue points in a video, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Click the folder to be renamed or deleted. </li>
-      <li>Click the down arrow next to the folder and click <strong>Rename</strong> or <strong>Delete</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15095-delete-folder.png" /></figure>
+      <li>Open the <strong>Media</strong> module.</li>
+      <li>Click the video title link to open the video properties page.</li>
+      <li>Click the cue point to edit in the timeline.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/advanced/node15151-select-cue-point.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Note: Once in edit mode, the <strong>Previous</strong> and <strong>Next</strong> buttons can be used to navigate to other cue points.</aside>
       </li>
+      <li>Edit the cue point properties and then click <span class="button-blue"> Save</span> .</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Note: It is not possible to have multiple cue points with the same timecode.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete">Deleting cue points</h2>
+    <p>To delete cue points, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong> module.</li>
+      <li>Click the video title link to open the video properties page.</li>
+      <li>Click the cue point to delete in the timeline.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/advanced/node15151-select-cue-point.png" /></figure>
+      </li>
+      <li>Click the Delete icon (<img alt="" src="/assets/images/s-media-img/advanced/node15151-delete-icon.png" />) next to the cue point properties.</li>
+      <li>Confirm the deletion.</li>
     </ol>
   </section>
 </article>
@@ -3367,7 +3330,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 04 May 2022
+  Page last updated on 04 Jan 2023
 </div>
 
 

@@ -3252,14 +3252,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Buttons at the top of the video details page provide the ability to:</p>
     <ul>
       <li><a href="/media/capturing-poster-and-thumbnail-images.html">Capture new poster and thumbnail images</a></li>
-      <li><a href="/media/organizing-videos-using-folders.html">Add the video to a folder</a> or <a href="/media/creating-and-managing-playlists.html">add it to a playlist</a></li>
+      <li><a href="/media/organize/organizing-videos-using-folders.html">Add the video to a folder</a> or <a href="/media/organize/creating-and-managing-playlists.html">add it to a playlist</a></li>
       <li><a href="/publish/publishing-videos-and-playlists-media-module.html">Publish a video</a></li>
       <li>Deactivate/activate videos</li>
       <li>Delete the video</li>
     </ul>
     <p>If the video is activated, the <strong>Deactivate</strong> button can be used to deactivate the video. If the video is deactivated, the <strong>Activate</strong> button can be used to activate the video. Videos that are deactivated cannot be played in a Brightcove Player.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/video-details-deactivate-publish.png" /></figure>
-    <p>The preview player at the top of the page can be used to view the video. The <a href="/media/working-cue-points-media-module.html">cue point timeline</a> will display any cue points that have been added to the video.</p>
+    <p>The preview player at the top of the page can be used to view the video. The <a href="/media/advanced/working-cue-points-media-module.html">cue point timeline</a> will display any cue points that have been added to the video.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/video-details-cue-point.png" /></figure>
     <p>Tabs below the cue point timeline organize the video details into sections:</p>
     <ul>
@@ -3287,7 +3287,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="required">Required fields</h2>
-    <p>Your Brightcove Beacon account may be configured with required metadata fields. If a video is inactive, you can freely edit and save its metadata without supplying all required metadata. Also, videos can't be activated until all required metadata has been entered. If a video is already active, you cannot save any edits in the section you are editing unless you supply all required metadata in that section or deactivate the video. For more information on working with required fields, see <a href="/media/setting-required-fields-videos.html">Setting Required Fields for Videos</a>.</p>
+    <p>Your Brightcove Beacon account may be configured with required metadata fields. If a video is inactive, you can freely edit and save its metadata without supplying all required metadata. Also, videos can't be activated until all required metadata has been entered. If a video is already active, you cannot save any edits in the section you are editing unless you supply all required metadata in that section or deactivate the video. For more information on working with required fields, see <a href="/media/advanced/setting-required-fields-videos.html">Setting Required Fields for Videos</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="videoinfo">Video Information</h2>
@@ -3330,7 +3330,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </ul>
       </li>
       <li><strong>Ad Keys</strong> - Passed as part of the ad server URL. For example, to pass <code translate="no">section=blog</code> and <code translate="no">anotherKey=value1</code>, you would enter <code translate="no">section=blog&amp;anotherKey=value1</code>. See the <a href="https://support.google.com/dfp_premium/answer/1080597">DoubleClick for Publishers Help</a> for information on adding key-value pairs. When using ad keys, ad macros should be added to the ad server URL (configured as part of the <a href="/players/configuring-player-advertising-using-players-module.html">player advertising properties</a>). Ad macros support variables in the server URL for which the IMA3 plugin will substitute appropriate values. For more information, see the <a href="https://player.support.brightcove.com/plugins/advertising-ima3-v3-plugin.html#Ad_macros_and_the_serverUrl">IMA3 developer documentation</a>.</li>
-      <li><strong>Sharing</strong> - Indicates if the video has been shared to another account. For more information, see <a href="/media/media-sharing-using-media-module.html">Sharing Videos to Other Accounts</a>.</li>
+      <li><strong>Sharing</strong> - Indicates if the video has been shared to another account. For more information, see <a href="/media/advanced/media-sharing-using-media-module.html">Sharing Videos to Other Accounts</a>.</li>
     </ul>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/video-details-video-information-edit.png" /></figure>
     <p>Click <strong>Save</strong> to save changes.</p>
@@ -3364,8 +3364,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>The <strong>Categorization</strong> section can be used to configure the following details:</p>
     <ul>
       <li><strong>Genres</strong> - The genres for the video</li>
-      <li><strong>Manual Playlists</strong> - Playlists that this video belongs to. For more information, see <a href="/media/creating-and-managing-playlists.html">Creating and Managing Playlists</a>.</li>
-      <li><strong>Folder</strong> - Folder the video is assigned to. See <a href="/media/organizing-videos-using-folders.html">Organizing Videos Using Folders</a> for more information.</li>
+      <li><strong>Manual Playlists</strong> - Playlists that this video belongs to. For more information, see <a href="/media/organize/creating-and-managing-playlists.html">Creating and Managing Playlists</a>.</li>
+      <li><strong>Folder</strong> - Folder the video is assigned to. See <a href="/media/organize/organizing-videos-using-folders.html">Organizing Videos Using Folders</a> for more information.</li>
     </ul>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/video-details-categorization.png" /></figure>
   </section>
@@ -3395,8 +3395,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ul>
     <p>It also provides the ability to:</p>
     <ul>
-      <li><a href="/media/replacing-video-source-file.html">Replace the Video Source File</a></li>
-      <li><a href="/media/retranscoding-videos-using-media-module.html">Retranscode the Video</a></li>
+      <li><a href="/media/manage/replacing-video-source-file.html">Replace the Video Source File</a></li>
+      <li><a href="/media/manage/retranscoding-videos-using-media-module.html">Retranscode the Video</a></li>
     </ul>
     <p>To download a rendition, right-click on the format link for the rendition. Note that only MP4 renditions can be downloaded.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/video-details-video-files.png" /></figure>
@@ -3404,7 +3404,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="mediasharing">Media Sharing</h2>
-    <p>The <strong>Media Sharing</strong> section lists the affiliate accounts the video has been shared to (if any). For more information on media sharing, see <a href="/media/media-sharing-using-media-module.html">Sharing Videos to Other Accounts</a>.</p>
+    <p>The <strong>Media Sharing</strong> section lists the affiliate accounts the video has been shared to (if any). For more information on media sharing, see <a href="/media/advanced/media-sharing-using-media-module.html">Sharing Videos to Other Accounts</a>.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/video-details-media-sharing.png" /></figure>
   </section>
   <section class="bcls-section">

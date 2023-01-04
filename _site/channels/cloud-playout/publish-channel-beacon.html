@@ -3251,7 +3251,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>Once you have created your Cloud Playout channel, there are three steps you need to perform in order to make it part of your Beacon app. These are detailed in the sections that follow.</p>
+    <p>Once you have created your Cloud Playout channel, there are three steps you need to perform in order to make it part of your Beacon app. They are:</p>
+    <ol>
+      <li><a href="#Get_information_for_the_ott_Channel">Get information for the Beacon Channel</a></li>
+      <li><a href="#create_ott_channel">Create a Beacon Channel</a></li>
+      <li><a href="#Add_channel_to_playlist">Add the channel to a playlist</a></li>
+    </ol>
+    <p>Details follow in the sections below.</p>
   </section>
   <section class="bcls-section">
     <h2 id="Get_information_for_the_ott_Channel">Get information for the Beacon Channel</h2>
@@ -3269,10 +3275,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <p>Note that it will be a Live video with no associated image.</p>
       </li>
       <li>Click on the video name to open the details.</li>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/video-id-and-channel-id.webp" alt="Video for Cloud Playout">
-          <figcaption class="bcls-caption--image">Video for Cloud Playout</figcaption>
-        </figure>
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/s-cloudplayout-img/video-id-and-channel-id.webp" alt="Video for Cloud Playout">
+        <figcaption class="bcls-caption--image">Video for Cloud Playout</figcaption>
+      </figure>
       <li>Save both the <strong>video ID</strong> and the <strong>channel ID</strong> (the long alphanumeric string that follows <strong>cloud-playout:</strong> in the Tags).</li>
     </ol>
     <p>Note that the channel ID is also available in the Channel Details in the Cloud Playout module:
@@ -3423,7 +3429,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>The last step in putting your Cloud Playout channel into your Beacon app is the simplest one: all you need to do is add your playlist containing the channel video to page. See <a href="/layout/managing-playlists-on-pages.html">Managing Playlists on Pages</a> for details.</p>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">

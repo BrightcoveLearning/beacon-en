@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic you will learn how to export video data using the Media module.">
+  <meta name="description" content="This topic describes how to create remote asset videos.">
   
-  <title>Exporting Video Data</title>
+  <title>Working with Remote Asset Videos</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -168,7 +168,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Exporting Video Data</li>
+        <li class="breadcrumb-item"><a href="/media/manage/">Manage</a></li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">Working with Remote Asset Videos</li>
       
     
   </nav>
@@ -526,7 +530,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     
-                    <li><a href="/media/exporting-video-data.html" aria-current="page">Exporting Video Data</a></li>
+                    <li><a href="/media/exporting-video-data.html">Exporting Video Data</a></li>
                     
                   
                 
@@ -3241,193 +3245,74 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Exporting Video Data</h1>
-  <summary>In this topic you will learn how to export video data using the Media module.</summary>
+  <h1>Working with Remote Asset Videos</h1>
+  <summary>This topic describes how to create remote asset videos.</summary>
   <section class="bcls-section">
-    <p>The Media module provides the ability to export video metadata for all of your videos or a subset of videos. When using this feature, keep the following in mind:</p>
-    <ul>
-      <li>Brightcove recommends exporting less than 15K videos at a time. If you need to export more than 15K videos, use the search feature to return a subset of videos and export multiple "batches" at a time.</li>
-      <li>URLs for renditions and images are not fixed. Brightcove reconfigures the storage of media assets from time to time and when this happens, URLs for specific assets will change. If you are relying on hard-coded URLs to these assets, the links may break at some point. The best way to prevent links to media from breaking is to retrieve them from Beacon at runtime using the <a href="https://apis.support.brightcove.com/cms/getting-started/overview-cms-api.html">CMS API</a>.</li>
-      <li>Double-byte characters such as Korean and Japanese will not display properly if opened in Excel. This is caused by the fact that the generated .csv file is encoded by UTF-8 and Excel does not support it properly. To fix this, the .csv file should be re-encoded by ANSI, then, it will be displayed properly in Excel.</li>
-    </ul>
-    <p>To export video metadata, follow these steps.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Media</strong>  module.</li>
-      <li>If you want to export data for specific videos, check the checkbox next to the videos.</li>
-      <li>Click <strong>Export</strong> at the top of the page.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18703-export-data.png" /></figure>
-      </li>
-      <li>Select the videos to export:
-        <ul>
-          <li><strong>All videos in this list</strong> - Exports video metadata for all videos in the account</li>
-          <li><strong>x selected videos</strong> - Exports video metadata for only the selected videos</li>
-        </ul>
-      </li>
-      <li>Check <strong>Include current URLs for video renditions</strong> to include the video rendition URLs. Checking this option with a large number of videos selected will increase the time required to generate the export file.
-        <aside class="bcls-aside bcls-aside--information">Note: When this option is selected, video metadata for a maximum of 1000 videos can be exported.</aside>
-      </li>
-      <li>Click <strong>Export Data</strong>. The data export will begin.</li>
-      <li>When the export file is ready, click <strong>Download File</strong> to download the video data file to your local computer.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node18703-export-done.png" /></figure>
-      </li>
-    </ol>
-    <p>The .csv file will be named with the Beacon account number. A third-party spreadsheet program can be used to view the exported video data.</p>
+    <p>Typically, videos are uploaded to Beacon using the Upload module. These files are then maintained by Brightcove. With remote assets, you maintain your video files on your own or a third-party system and then provide Beacon with the URL of the video file.</p>
+    <p>Remote asset videos can also be created using the CMS API. For information, see the <a href="https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-remote-assets.html">developer documentation</a>. Remote asset videos created using the <span translate="No">CMS API</span> can then be managed using the Media module.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="add">Exported video data details</h2>
-    <p>The table below outlines the video data fields that are exported. For more information on the video data fields, see the <a href="https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference.html">CMS API Video Fields Reference</a>.</p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th width="12%" style="width: 24%;">Field</th>
-          <th width="88%" style="width: 33%;"><strong>Description</strong></th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>id</td>
-          <td valign="top"><p>Video ID</p></td>
-        </tr>
-        <tr>
-          <td>account_id</td>
-          <td valign="top"><p>Beacon account ID</p></td>
-        </tr>
-        <tr>
-          <td>ad_keys</td>
-          <td valign="top">String representing the ad key/value pairs assigned to the video.</td>
-        </tr>
-        <tr>
-          <td>clip_source_video_id</td>
-          <td valign="top">Source video ID used to create this video clip</td>
-        </tr>
-        <tr>
-          <td>complete</td>
-          <td valign="top">Indicates whether processing is complete</td>
-        </tr>
-        <tr>
-          <td>created_at</td>
-          <td valign="top">When the video was created in the Beacon system</td>
-        </tr>
-        <tr>
-          <td>created_by</td>
-          <td valign="top">Information about the user who created the video:
-            <ul>
-              <li>if created by API, the <code translate="No">type</code> will be <code translate="No">api_key</code></li>
-              <li>if created before the auditing feature was enabled on December 7, 2018, the <code translate="No">type</code> will be <code translate="No">unknown</code></li>
-              <li>if created by a user and the user has been removed from the account, their user ID will still appear here</li>
-            </ul></td>
-        </tr>
-        <tr>
-          <td>cue_points</td>
-          <td valign="top">Video cue points</td>
-        </tr>
-        <tr>
-          <td>custom_fields</td>
-          <td valign="top">Video custom fields</td>
-        </tr>
-        <tr>
-          <td>delivery_type</td>
-          <td valign="top">Defines how the video is delivered</td>
-        </tr>
-        <tr>
-          <td>description</td>
-          <td valign="top">Video short description</td>
-        </tr>
-        <tr>
-          <td>digital_master_id</td>
-          <td valign="top">System ID for the digital master</td>
-        </tr>
-        <tr>
-          <td>duration</td>
-          <td valign="top">Duration of the video in milliseconds</td>
-        </tr>
-        <tr>
-          <td>economics</td>
-          <td valign="top">Either "AD_SUPPORTED" (default) or "FREE"</td>
-        </tr>
-        <tr>
-          <td>folder_id</td>
-          <td valign="top">ID of folder to which video belongs</td>
-        </tr>
-        <tr>
-          <td>geo</td>
-          <td valign="top">Geo-restriction properties for the video</td>
-        </tr>
-        <tr>
-          <td>has_digital_master</td>
-          <td valign="top">Whether video has an archived master than can be used for retranscoding</td>
-        </tr>
-        <tr>
-          <td>images</td>
-          <td valign="top">Information about the poster and thumbnail images</td>
-        </tr>
-        <tr>
-          <td>link</td>
-          <td valign="top">Related link</td>
-        </tr>
-        <tr>
-          <td>long_description</td>
-          <td valign="top">Video long description</td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td valign="top">Video name</td>
-        </tr>
-        <tr>
-          <td>original_filename</td>
-          <td valign="top">Original filename when video was uploaded</td>
-        </tr>
-        <tr>
-          <td>projection</td>
-          <td valign="top">The mapping projection for 360° videos</td>
-        </tr>
-        <tr>
-          <td>published_at</td>
-          <td valign="top">Date/Time the video was published</td>
-        </tr>
-        <tr>
-          <td>reference_id</td>
-          <td valign="top">Video reference ID</td>
-        </tr>
-        <tr>
-          <td>schedule</td>
-          <td valign="top">Map of start and end date-times for the video availability</td>
-        </tr>
-        <tr>
-          <td>sharing</td>
-          <td valign="top">Map of the sharing properties for the video</td>
-        </tr>
-        <tr>
-          <td>state</td>
-          <td valign="top">ACTIVE, INACTIVE, PENDING, DELETED</td>
-        </tr>
-        <tr>
-          <td>tags</td>
-          <td valign="top">Array of tags assigned to the video</td>
-        </tr>
-        <tr>
-          <td>text_tracks</td>
-          <td valign="top">Array of text tracks (WebVTT files) assigned to the video</td>
-        </tr>
-        <tr>
-          <td>updated_at</td>
-          <td valign="top">Date/Time the video was updated</td>
-        </tr>
-        <tr>
-          <td>updated_by</td>
-          <td valign="top">Information about the user last updated the video:
-            <ul>
-              <li>if created by API, the <code translate="No">type</code> will be <code translate="No">api_key</code></li>
-              <li>if created before the auditing feature was enabled on December 7, 2018, the <code translate="No">type</code> will be <code translate="No">unknown</code></li>
-              <li>if the video was not modified after ingestion, the <code translate="No">type</code> will be <code translate="No">internal</code></li>
-            </ul></td>
-        </tr>
-        <tr>
-          <td>offline_enabled</td>
-          <td valign="top">Whether the video is enabled for offline playback</td>
-        </tr>
-      </tbody>
-    </table>
+    <h2 id="access">Accessing remote assets</h2>
+    <p>All of your remote asset files must be available at a public URL without any requirements for authentication or access control. If your remote assets are hosted by a CDN, the URL of the remote assets should be the URL of the assets in the CDN and not the URL on the origin server.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create">Creating a remote asset video</h2>
+    <p>To create a remote asset video, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong>  module.</li>
+      <li>Click <strong>Add remote video</strong> in the side navigation panel. The Add Remote Video dialog will open.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node16244-add-remote-video.png" /></figure>
+      </li>
+      <li>Enter a <strong>Video Name</strong>. The video name will be displayed in the Media module and also in the player.</li>
+      <li>Select the <strong>Video Type</strong>, <strong>Live</strong> or <strong>On Demand</strong>.</li>
+      <aside class="bcls-aside bcls-aside--information">Please note that <strong>Live</strong> supports only HLS and <strong>On Demand</strong> supports HLS, MP4, and DASH.</aside>
+      <li>For <strong>On Demand</strong> video types, enter the <strong>Duration</strong> in hh:mm:ss format.</li>
+      <li>For each rendition, enter the <strong>Rendition URL</strong> and <strong>Format</strong>. Click  <span class="button-blue"> Add Rendition</span> .</li>
+        <aside class="bcls-aside bcls-aside--information">Note: Protocol relative URLs are supported.</aside>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node16244-remote-video-props.png" /></figure>
+      </li>
+      <li>Click  <span class="button-blue"> Save</span> to save the remote asset. The remote asset video will be listed in the Media module after the page is refreshed.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node16244-media-module.png" /></figure>
+      </li>
+    </ol>
+    <p>Remote asset videos will not have poster or thumbnail images, however, images can be uploaded. For information on uploading poster and thumbnail images, see <a href="/media/uploading-poster-and-thumbnail-images.html">Uploading Poster and Thumbnail Images</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">Editing a remote asset video</h2>
+    <p>To edit a remote asset video, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Media</strong>  module.</li>
+
+      <li>Click <strong>All videos</strong> in the panel navigation.</li>
+
+      <li>Click the remote asset video title to open the video properties.</li>
+
+      <li>Click the <strong>Video and Tracks</strong> tab.</li>
+
+      <li>Locate the <strong>Video Files - Remote Assets</strong> section and click <span class="button-blue-text-bordered"> <i data-feather="edit-3"></i> Edit</span>.</li>
+      <li>Click on a <strong>Source</strong> row to select it. Clicking on the source URL will open it in another browser tab.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node16244-edit-remote-asset.png" /></figure>
+      </li>
+      <li>Update the <strong>URL </strong> and <strong>Duration</strong> as needed. Click  <span class="button-blue"> Save</span> to save the changes.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="limitations">Limitations</h2>
+    <ul>
+      <li>You cannot use the image capture feature to create video still and thumbnail images for remote asset videos, however, video still and thumbnail images can be uploaded for remote asset videos</li>
+      <li>Remote asset videos created in <strong>Basic</strong> accounts cannot be edited after they are created</li>
+      <li>SSAI is not supported for remote assets</li>
+      <li>DRM is supported only if you can customize the player to communicate with the DRM license server. This is possible with the Brightcove Player through a plugin. For other players, you will need to consult the player documentation.</li>
+      <li>Analytics: the Brightcove Analytics system depends on system-generated video metadata, such as the video duration. Analytics data for remote assets will be less rich unless you can provide this metadata for the remote asset.</li>
+      <li>Playback guarantee: all videos ingested into Beacon can be played back in the Brightcove Player. This is true for almost all remote assets, but there are some edge cases where videos may not play. There are a few advanced features of DASH and HLS that we do not yet support for example. For non-Brightcove players, you will need to verify that the video format is fully supported by that player.</li>
+      <li>Viewers may not be able play remote asset videos if their computer's clock time is set ahead of the actual time</li>
+      <li>Cue points cannot be added to live remote asset videos</li>
+      <li>It is not possible to convert an existing normal VOD asset to a remote asset</li>
+
+      <li>Remote assets can be created/added to Video Cloud playlists but cannot be ingested/added to Beacon/OTT playlists in  Beacon Studio.</li>
+    <li>Live assets can be created/added to Video Cloud playlists but cannot be ingested/added to Beacon/OTT playlists in  Beacon Studio.</li>
+
+    </ul>
   </section>
 </article>
 
@@ -3446,7 +3331,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 02 May 2022
+  Page last updated on 04 Jan 2023
 </div>
 
 

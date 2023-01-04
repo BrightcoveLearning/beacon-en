@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="This topic shows you how to retranscode an existing video in your account to produce a new set of renditions.">
+  <meta name="description" content="In this topic you will learn how to create and manage playlists in Brightcove Beacon.">
   
-  <title>Retranscoding Videos</title>
+  <title>Creating and Managing Playlists</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
@@ -168,7 +168,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
     
       
-        <li class="breadcrumb-item active" aria-current="page">Retranscoding Videos</li>
+        <li class="breadcrumb-item"><a href="/media/organize/">Organize</a></li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">Creating and Managing Playlists</li>
       
     
   </nav>
@@ -592,7 +596,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     
-                    <li><a href="/media/retranscoding-videos-using-media-module.html" aria-current="page">Retranscoding Videos</a></li>
+                    <li><a href="/media/retranscoding-videos-using-media-module.html">Retranscoding Videos</a></li>
                     
                   
                 
@@ -3241,38 +3245,310 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 <article class="bcls-article">
-  <h1>Retranscoding Videos</h1>
-  <summary>This topic shows you how to retranscode an existing video in your account to produce a new set of renditions.</summary>
+  <h1>Creating and Managing Playlists</h1>
+  <summary>In this topic you will learn how to create and manage playlists in Brightcove Beacon.</summary>
   <section class="bcls-section">
-    
-    <p>Brightcove reserves the right to update the default ingest profiles associated with Beacon accounts. You may also have the need to update your own, custom ingest profiles. When ingest profiles change, you may wish to have existing videos in your account retranscoded so that they have renditions that correspond to the new ingest profile settings.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: The ability to retranscode existing videos is available only for Professional and Enterprise accounts. If you are interested in this feature, please contact your Customer Success Manager.</aside>
-    <p>Videos can be retranscoded using the Media module or by using the Dynamic Ingest API. Using the <span translate="No">Dynamic Ingest API</span> may be a better solution when you have a large number of videos that require retranscoding. To retranscode videos using the Dynamic Ingest API, see the <a href="https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html">Dynamic Ingest API Overview</a> developer document.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: You cannot retranscode videos that have been shared to your account.</aside>
-    <aside class="bcls-aside bcls-aside--information">Note: Only videos that were uploaded using the Upload module or using the Dynamic Ingest API, can be retranscoded. If the video can't be retranscoded, the retranscode will fail.</aside>
-    <aside class="bcls-aside bcls-aside--information">Note: videos can only be retranscoded if the video master was archived when the video was added to the account. Older videos may not have a master, depending on the ingest profile that was used.</aside>
+    <p>A playlist is a collection of related videos or other media assets (i.e. seasons, live events, etc) that are grouped together in a particular order for playback in a player. The Media module makes it easy to create playlists and add assets to a playlist. After playlists have been created, you can:</p>
+    <ul>
+      <li>Add playlists to pages used in Beacon apps - <span class="BCL-objective">For information, see <a href="/layout/managing-playlists-on-pages.html">Managing Playlists on Pages</a></span></li>
+      <li>Publish a playlist to a player to display on a web page - <span class="BCL-objective">For information, see <a href="/publish/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists with the Media Module</a></span></li>
+    </ul>
+    <p><span class="BCL-objective">For general information about playlists, including best practices and tips for using them effectively, see <a href="/media/organize/introduction-playlists.html">Introduction to Playlists</a>.</span></p>
   </section>
   <section class="bcls-section">
-    <h2 id="steps">Steps to retranscode a video</h2>
-    <p>Follow these steps to replace the existing renditions for a video.</p>
+    <h2 id="types">Types of playlists</h2>
+    <p>There are two types of playlists:</p>
+    <ul>
+      <li><strong>Manual</strong> - With a manual playlist, you assign specific videos or media assets to the playlist and re-order them manually</li>
+      <li><strong>Smart</strong> - With a smart playlist, the videos or media assets in the playlist are constructed automatically, based on  tags or other metadata associated with the asset. Smart playlists are dynamic and automatically update based upon the assets in your media library and the rules that define the playlist.</li>
+    </ul>
+    <p>There are Video Cloud and OTT variations of both playlist types.</p>
+    <ul>
+      <li> <strong>Video Cloud playlists</strong> - Can <strong>only</strong> contain videos</li>
+      <li> <strong>OTT playlists</strong> - Can contain videos and other entities (i.e. live events, series, seasons, etc.). </li>
+    </ul>
+    <p>Brightcove recommends that playlists that contain only videos be created as Video Cloud playlists even though OTT playlists can contain only videos. There is no limit to the number of playlists that can be created. The assets that are initially loaded into a playlist in the player is determined by the type of playlist:</p>
+    <ul>
+      <li><strong>Manual </strong> - Assets are loaded into the playlist based upon the order of the items in the  playlist</li>
+      <li><strong>Smart </strong> - Assets are loaded into the playlist based upon the <strong>Play Order</strong> playlist setting </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="view">Viewing all  playlists</h2>
+    <p>To view all the playlists in the account, in the side navigation panel, click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong>. <strong>All Video Cloud playlists</strong> will display all the Video Cloud playlists that have been created. <strong>All OTT playlists</strong> will display all the OTT playlists <strong>AND</strong> the Video Cloud playlists that have been ingested to Beacon (<strong>Beacon ingest</strong> column with a <img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/icon-green-check.png" />). </p>
+    <p>For Video Cloud playlists, the page will display:</p>
+    <ul>
+      <li><strong>Playlist name</strong> - Name of the playlist</li>
+      <li><strong>Reference ID</strong> - Reference ID for the playlist</li>
+      <li><strong>Parameters</strong> - Parameters used to create the playlist (smart playlists only)</li>
+      <li><strong>Updated date</strong> - Date the playlist was last updated</li>
+      <li><strong>Video Count</strong> - Number of videos in the playlist</li>
+    </ul>
+    <p>For OTT playlists, the page will display:</p>
+    <ul>
+      <li><strong>Playlist name</strong> - Name of the playlist</li>
+      <li><strong>Status</strong> - Published (<img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/icon-green-eye.png" />) or unpublished (<img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/icon-red-eye.png" />)</li>
+      <li><strong>Media count</strong> - Number of assets in the playlist</li>
+      <li><strong>Media Type</strong> - Types of media in the playlist</li>
+      <li><strong>Parameters</strong> - Parameters used to create the playlist (smart playlists only)</li>
+      <li><strong>Updated date</strong> - Date the playlist was last updated</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create">Creating a playlist</h2>
+    <p>To create a playlist, open the Media module and follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Open the <strong>Media</strong>  module.</li>
-      <li>Click on the video you want to retranscode.</li>
-
-      <li>Click the <strong>Video and Tracks</strong> tab.</li>
-
-      <li>In the <strong>Video Files</strong> section, click  <span class="button-blue-text-bordered">Retranscode</span>.</li>
-      <li>Select an ingest profile to use.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/node15921-retranscode-settings.png" /></figure>
-        <!-- <aside class="bcls-aside bcls-aside--information">Note: Videos that were initially transcoded using a Dynamic Delivery or Context Aware ingest profile can only be retranscoded using one of those ingest profile types. Videos transcoded using a Legacy ingest profile can be retranscoded with any type of profile.</aside> --> 
+      <li>In the side navigation panel, click <strong>Create playlist</strong>. The <strong>Create a playlist</strong> dialog will open.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-create-panel.png" /></figure>
       </li>
-      <li> Check <strong>Keep existing thumbnail and poster images</strong> to keep the existing images. If you uncheck this box, new images will be generated based upon the image settings in the selected ingest profile.
-        <aside class="bcls-aside bcls-aside--information">Note that if you check the box, the existing images will be preserved - however, <strong>the image URLs will change</strong>.</aside>
-        <aside class="bcls-aside bcls-aside--information">Note: If the account is enabled for forensic watermarking, there will be an option to either add a forensic watermark or keep the existing forensic watermark.</aside>
+      <li>Enter a <strong>Playlist name</strong>.</li>
+      <li>Click on a <strong>Playlist type</strong>.</li>
+      <li>Click <strong>Create playlist</strong>. The panel will close and reopen.</li>
+      <li>Click the <strong>Overview</strong> tab and configure the <strong>Overview</strong> settings as needed.
+        <ul>
+          <li><strong>Language View</strong> (Beacon only) - Select a language to enter Overview settings in a localized language</li>
+          <li><strong>Name</strong> - Playlist name</li>
+          <li><strong>Title</strong> (OTT playlists only) - Playlist title displayed in Beacon apps</li>
+          <li><strong>Reference ID</strong> (Video Cloud playlists only) - A unique ID assigned by a publisher to a playlist</li>
+          <li><strong>Description</strong> - Playlist description</li>
+          <li><strong>Show Playlist in Sidebar</strong> (Video Cloud playlists only) - If checked, the playlist will appear in the sidebar
+            <aside class="bcls-aside bcls-aside--information">Note: A maximum of 100 playlists can appear in the sidebar.</aside>
+          </li>
+        </ul>
       </li>
-      <li>Click <span class="button-blue"> Retranscode</span> .</li>
+      <li>The playlist panel will contain other settings that can be configured based upon the type of playlist:
+        <ul>
+          <li>Smart (available for <a href="#vc-smart-props">Video Cloud</a> and <a href="#beacon-smart-props">OTT </a> playlists)</li>
+          <li><a href="#availability">Availability</a> (OTT playlists only)</li>
+        </ul>
+      </li>
     </ol>
-    <p>While the new renditions are being created, the video will remain playable using the existing renditions.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="beacon-smart-props">Configuring OTT smart playlist settings</h2>
+    <p>If you are creating a OTT smart playlist, click the <strong>Smart</strong> tab to configure the smart playlist settings. The <strong>Parameters</strong> section is used to define which assets will appear in the playlist. The following parameters are supported.</p>
+    <ul>
+      <li><strong>Actors, Directors, Writers, Singers, Music composers, Song Writers</strong> - The value of one of these fields is used to define the videos in the playlist</li>
+      <li><strong>Tags</strong> - Tags are used to define the videos that will appear in the playlist. Enter one or more tags (separated by commas). </li>
+      <li><strong>Genres</strong> - Genres are used to define the videos that will appear in the playlist. Enter one or more genres (separated by commas). </li>
+      <li><strong>Content type</strong> - Select the asset types to include in the playlist</li>
+      <li><strong>Title</strong> - The video title is used to define the videos that will appear in the playlist. Enter a title to search for.
+        <ul>
+          <li><strong>Text to include </strong>- Include videos with the entered title </li>
+          <li><strong>Text to exclude </strong>- Exclude videos with the entered title</li>
+        </ul>
+      </li>
+    </ul>
+    <p>All of the parameters (except Content type and  title) support these options:</p>
+    <ul>
+      <li><strong>Match all</strong> - Require that all the assets have all the values that are listed</li>
+      <li><strong>Exclude</strong> - Exclude assets with the entered values</li>
+    </ul>
+    <h3>Using multiple parameters</h3>
+    <p>Multiple parameters can be entered by clicking <strong>Add a parameter</strong> and then entering an additional parameter. By default, multiple parameters will be evaluated using an <strong>AND</strong> operation. To change how multiple parameters are evaluated, click the selector icon (<img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-icon-parameters.png" />) next to the <strong>Parameters</strong> heading.</p>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-combine-parameters.png" /></figure>
+    </p>
+    <p>In the following example, all videos that have a <strong>Director</strong> of <strong>Megan Long</strong> and are tagged <strong>birds</strong> will be added to the playlist.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-beacon-smart-example.png" /></figure>
+    <p>Click <strong>Apply</strong> to save the changes. </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="beacon-manual-add">Adding assets to a OTT manual playlist</h2>
+    <p>To add videos to a OTT manual playlist, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the side navigation panel, click <strong>OTT playlists</strong>.</li>
+      <li>Click on a playlist name to open the playlist details.</li>
+      <li>Click <strong>Add content</strong>.</li>
+      <li>Click on assets to select them. Click on the tabs at the top of the dialog to filter by content type. The search field can be used to search for assets.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-beacon-manual-add-content.png" /></figure>
+      </li>
+      <li>Click<strong> Add</strong>. Videos added to a manual playlist will be added to the end of the playlist.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="availability">Configuring OTT playlist availability</h2>
+    <p>Playlist availability details can be used to restrict access to OTT playlists based upon date, locations and devices. To view and edit the availability details for a OTT playlist, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>OTT playlists</strong> in the panel navigation.</li>
+      <li>Click on a playlist name to open the playlist details page.</li>
+      <li>Click <strong>Edit Settings</strong>.</li>
+      <li>Click the <strong>Availability</strong> tab.</li>
+    </ol>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-beacon-availability.png" /></figure>
+    </p>
+    <p>The availability settings are controlled using rule sets. All playlists must have at least one rule set. Rule sets are created to control access to a video based upon:</p>
+    <ul>
+      <li>Start/end dates</li>
+      <li>Locations</li>
+      <li>Devices</li>
+    </ul>
+    For information on creating and managing rule sets, see <a href="../creating-managing-rule-sets.html">Creating and Managing Rule Sets</a>. </section>
+  <section class="bcls-section">
+    <h2 id="vc-smart-props">Configuring Video Cloud smart playlist settings</h2>
+    <p>If you are creating a Smart playlist, click the <strong>Smart</strong> tab to configure the following settings.</p>
+    <ul>
+      <li><strong>Play Order</strong> - Controls the order in which videos in the playlist are played. The following options are available.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th width="35%">Play Order</th>
+              <th width="65%">Description</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Activated Date (Oldest First)</td>
+              <td>Based on the date the video was activated, oldest videos first</td>
+            </tr>
+            <tr>
+              <td>Activated Date (Newest First)</td>
+              <td>Based on the date the video was activated, newest videos first</td>
+            </tr>
+            <tr>
+              <td>Video Name (A - Z)</td>
+              <td>Alphabetical by video name</td>
+            </tr>
+            <tr>
+              <td>Total Plays</td>
+              <td>Based on the total video plays</td>
+            </tr>
+            <tr>
+              <td>Trailing Week Plays</td>
+              <td>Based on the trailing week total video plays. Note that the trailing week plays data maintained in the video metadata may be up to 2 days old so the videos you get may not match what you see if you look at video views over the past 7 days in the Analytics module.</td>
+            </tr>
+            <tr>
+              <td>Start Date (Oldest First)</td>
+              <td>Based on the date the video was scheduled to start, oldest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
+            </tr>
+            <tr>
+              <td>Start Date (Newest First)</td>
+              <td>Based on the date the video was scheduled to start, newest videos first. If a video does not have a start date specified, then it will not appear in a playlist ordered by start date. Note: Video scheduling is available only to Video Cloud Enterprise accounts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><strong>Limit Number of Videos</strong> - Enter the maximum number of videos that should be in the playlist (default is 100, maximum is 1,000)</li>
+    </ul>
+    <h3>Smart playlist parameters</h3>
+    <p>The <strong>Parameters</strong> section is used to define which videos will appear in the playlist. The following parameters are supported.</p>
+    <ul>
+      <li><strong>Tags</strong> - Video tags are used to define the videos that will appear in the playlist. Enter one or more tags (separated by commas). The <strong>Tags</strong> dropdown provides these options:
+        <ul>
+          <li><strong>Match any</strong> - Include videos that have one or more of the tags listed</li>
+          <li><strong>Match all</strong> - Require that all the videos in the playlist have all the tags that are listed</li>
+        </ul>
+      </li>
+      <li><strong>Name</strong> - The video name is used to define the videos that will appear in the playlist. Enter a video name to search for.</li>
+      <li><strong>Description</strong> - The video's short and long description are used to define the videos that will appear in the playlist. Enter a description to search for.</li>
+      <li><strong>Custom fields </strong> - The video's custom fields are used to define the videos that will appear in the playlist.
+        Select a custom field from the dropdown list and then select/enter a custom field value.
+        <ul>
+          <li><strong>Match any</strong> - Include videos that have any of the custom field values listed</li>
+          <li><strong>Exclude </strong>- Exclude videos with the selected custom field values  listed</li>
+        </ul>
+      </li>
+      
+      <li><strong>Updated date</strong> - Date the video was updated</li>
+      <li><strong>Created date</strong> - Date the video was created</li>
+      <li><strong>Last activated date</strong> - Date the video was last activated</li>
+    </ul>
+    <p>The <strong>Name</strong>, <strong>Description</strong> and <strong>Custom field</strong> (<strong>Text</strong> type) options support these options:</p>
+    <ul>
+      <li><strong>Text to include </strong>- Include videos that have the text in the name, short or long description or custom field</li>
+      <li><strong>Text to exclude </strong>- Exclude videos that have the text in the name,  short or long description fields or custom field</li>
+      <li></li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-vc-smart.png" /></figure>
+    <h3>Using multiple parameters</h3>
+    <p>Multiple parameters can be entered by clicking <strong>Add a parameter</strong> and then entering an additional parameter. By default, multiple parameters will be evaluated using an <strong>OR</strong> operation. To change how multiple parameters are evaluated, click the selector icon (<img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-icon-parameters.png" />) next to the <strong>Parameters</strong> heading.</p>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-combine-parameters.png" /></figure>
+    </p>
+    <p>In the following example, all videos that are tagged <strong>birds</strong> or <strong>animals</strong> or have a <strong>Subject</strong> custom field value of <strong>Animals</strong> will be added to the playlist.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-vc-parameter-example.png" /></figure>
+    <p>Click <strong>Apply</strong> to save the changes. </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="addmanual">Adding videos to a Video Cloud manual playlist</h2>
+    <p>To add videos to a manual playlist, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the side navigation panel, click <strong>All videos</strong>.</li>
+      <li>Check the boxes next to the videos that should be added to the playlist.</li>
+      <li>Click <strong>More &gt; Add to Playlist</strong> at the top of the page.</li>
+      <li>Select the playlist to add the videos to.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-add-videos-vc-manual-playlist.png" /></figure>
+      </li>
+      <li>Click<strong> Add</strong>. Videos added to a manual playlist will be added to the top of the playlist.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="order">Changing the order of videos in a playlist</h2>
+    <p>To change the order of the videos in a playlist, follow the steps based upon the type of playlist you are working with.</p>
+    <div class="BCL-subsection">
+      <h3>Changing the order of videos in a manual playlist</h3>
+      <p>To change the order of the videos in a Beacon manual playlist or a Video Cloud manual playlist, follow these steps.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Open the playlist using one of these methods:
+          <ul>
+            <li>Click on the playlist name in the side navigation panel</li>
+            <li>Click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong> in the side navigation panel, locate the playlist and click on the playlist name.</li>
+          </ul>
+        </li>
+        <li>Confirm a list of videos in the playlist appears.</li>
+        <li>Click on a video asset and drag it to its new location in the list.</li>
+      </ol>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-media-img/organize/playlist-beacon-manual-change-order.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">Note: You can also change the video order by editing the <strong>Play Order</strong> field.</aside>
+    </div>
+    <div class="BCL-subsection">
+      <h3>Changing the order of videos in a smart playlist</h3>
+      <aside class="bcls-aside bcls-aside--information">Note: Currently, with Beacon smart playlists, assets can only be sorted by created date.</aside>
+      <ol class="bcls-tasklist-restart">
+        <li>If the playlist is displayed in the side navigation panel, click on the playlist and then click the down arrow next to the playlist and click<strong> Edit Settings</strong>.</li>
+        <li>If the playlist is not displayed in the sidebar, click <strong>All Video Cloud playlists</strong> in the side navigation panel, locate the playlist, click on the playlist name  and then click <strong>Edit Settings</strong>.</li>
+        <li>Select a new <strong>Play Order</strong> for the playlist.</li>
+        <li>Click <strong>Save</strong>.</li>
+      </ol>
+      <p>Smart playlists are created dynamically when the player is loaded from the available video information so the order should always reflect current state. However, the player always gets its info via the Playback API which uses data cached for up to 20 min. Playlists may take that long to refresh and may be behind what the <span translate="No">CMS API</span> would show.</p>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">Editing playlist settings</h2>
+    <p>To edit the settings for a manual or smart playlist, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>If the playlist is displayed in the side navigation panel, click on the playlist and then click the down arrow next to the playlist and click<strong> Edit Settings</strong>.</li>
+      <li>If the playlist is not displayed in the sidebar, click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong> in the side navigation panel, locate the playlist and click the on the playlist name  and then click <strong>Edit Settings</strong>.</li>
+      <li>Edit the playlist settings and then click <strong>Apply</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete">Deleting a playlist</h2>
+    <p>To delete a playlist, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click <strong>All Video Cloud playlists</strong> or <strong> OTT playlists</strong> in the side navigation panel.</li>
+      <li>Click the checkbox next to the playlist to delete.</li>
+      <li>Click the delete button (<img alt="" src="/assets/images/s-media-img/icon-delete.png" />).</li>
+      <li>Click <strong>Delete </strong> to confirm the deletion.</li>
+    </ol>
+    <p>If the playlist is displayed in the side navigation panel, you can click on the playlist and then click the down arrow next to the playlist and click<strong> Delete</strong>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="remove">Removing videos from a manual playlist</h2>
+    <p>To remove a video from a manual playlist, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the manual playlist using one of these methods:
+        <ul>
+          <li>Click on the playlist name in the side navigation panel</li>
+          <li>Click <strong>All Video Cloud playlists</strong> or <strong>OTT playlists</strong> in the side navigation panel, locate the playlist and click on the playlist name.</li>
+        </ul>
+      </li>
+      <li>Confirm that the list of videos in the playlist  appears.</li>
+      <li>Click the checkbox next to the asset(s) to remove.</li>
+      <li>Click <strong>Remove Videos &gt; Remove from playlist</strong>.</li>
+    </ol>
+    <p>You can also remove a video from a manual playlist by editing the video properties. In the <strong>Categorization</strong> section, delete the playlist  from the <strong>Manual Playlists</strong> section.</p>
   </section>
 </article>
 
@@ -3291,7 +3567,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 03 May 2022
+  Page last updated on 04 Jan 2023
 </div>
 
 
