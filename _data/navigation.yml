@@ -94,88 +94,114 @@
   name: Managing Media
   url: /media/index.html
   docs:
-    - name: Adding Audio Tracks to Videos
-      url: /media/adding-audio-tracks-videos-using-media-module.html
-    - name: Adding Captions to Videos
-      url: /media/adding-captions-videos-using-media-module.html
-    - name: Adding Chapters to a Video
-      url: /media/adding-chapters-video.html
-    - name: Capturing Poster and Thumbnail Images
-      url: /media/capturing-poster-and-thumbnail-images.html
-    - name: Configuring Playlist Availability
-      url: /media/configuring-playlist-availability.html
-    - name: Configuring Season Availability
-      url: /media/configuring-season-availability.html
-    - name: Configuring Series Availability
-      url: /media/configuring-series-availability.html
-    - name: Configuring Video Availability
-      url: /media/configuring-video-availability.html
-    - name: Creating and Managing Playlists
-      url: /media/creating-and-managing-playlists.html
-    - name: Creating and Managing Rule Sets
-      url: /media/creating-managing-rule-sets.html
-    - name: 'Creating Series, Seasons & Episodes'
-      url: /media/creating-series-seasons-episodes.html
-    - name: Downloading Videos
-      url: /media/downloading-videos-video-cloud.html
-    - name: Editing Series Details
-      url: /media/editing-series-details.html
-    - name: Editing Video Details
-      url: /media/editing-video-properties-using-media-module.html
-    - name: Editing Details using Quick Edit
-      url: /media/editing-video-properties-using-quick-edit.html
-    - name: Editing Series Details
-      url: /media/editing-series-details.html
-    - name: Controlling Viewer Access with Roles
-      url: /registered-users/roles-as-rights-studio.html
-    - name: Exporting Video Data
-      url: /media/exporting-video-data.html
-    - name: Generating Captions for Videos
-      url: /media/generating-captions-videos.html
+  - name: Using the Media Module
+    url: /media/module/index.html
+    docs:
     - name: Getting Started with the Media Module
-      url: /media/getting-started-media-module.html
-    - name: Increasing the Quality of Poster Images
-      url: /media/increasing-quality-poster-and-thumbnail-images.html
-    - name: Introduction to Playlists
-      url: /media/introduction-playlists.html
-    - name: Managing Series
-      url: /media/managing-series.html
-    - name: Managing Videos
-      url: /media/managing-videos.html
-    - name: Offline Playback
-      url: /media/offline-playback-beacon.html
-    - name: Organizing Videos Using Folders
-      url: /media/organizing-videos-using-folders.html
-    - name: 'Overview: Adding Captions to a Video'
-      url: /media/overview-adding-captions-video.html
-    - name: Replacing a Video Source File
-      url: /media/replacing-video-source-file.html
-    - name: Retranscoding Videos
-      url: /media/retranscoding-videos-using-media-module.html
+      url: /media/module/getting-started-media-module.html
     - name: Searching Videos and Playlists
-      url: /media/how-search-videos-and-playlists-media-module.html
-    - name: Setting Required Fields
-      url: /media/setting-required-fields-videos.html
-    - name: Sharing Videos
-      url: /media/media-sharing-using-media-module.html
-    - name: Styling Captions
-      url: /media/styling-captions.html
-    - name: Syncing with Video Cloud Catalog
-      url: /media/syncing-video-cloud-catalog.html
+      url: /media/module/how-search-videos-and-playlists-media-module.html
+  - name: Managing Video Files
+    url: /media/manage/index.html
+    docs:
+    - name: Downloading Videos
+      url: /media/manage/downloading-videos-video-cloud.html
+    - name: Replacing a Video Source File
+      url: /media/manage/replacing-video-source-file.html
+    - name: Retranscoding Videos
+      url: /media/manage/retranscoding-videos-using-media-module.html
     - name: Uploading Videos
-      url: /media/uploading-videos-using-upload-module.html
-    - name: Uploading Video Images
-      url: /media/uploading-poster-and-thumbnail-images.html
+      url: /media/manage/uploading-videos-using-upload-module.html
     - name: Uploading Videos Remote URLs
-      url: /media/uploading-videos-remote-urls.html
-    - name: Using the Caption Editor
-      url: /media/using-the-caption-editor.html
-    - name: Working with Cue Points
-      url: /media/working-cue-points-media-module.html
-    - name: Working with Multi-Lingual Metadata
-      url: /media/working-multi-lingual-metadata.html
+      url: /media/manage/uploading-videos-remote-urls.html
     - name: Working with Remote Asset Videos
-      url: /media/working-remote-asset-videos.html
+      url: /media/manage/working-remote-asset-videos.html
+  - name: Video Properties
+    url: '/media/properties/index.html'
+    docs:
+    - name: Capturing Poster and Thumbnail Images
+      url: /media/properties/capturing-poster-and-thumbnail-images.html
+    - name: Configuring Video Availability
+      url: /media/properties/configuring-video-availability.html
+    - name: Editing Video Details
+      url: /media/properties/editing-video-properties-using-media-module.html
+    - name: Editing Details using Quick Edit
+      url: /media/properties/editing-video-properties-using-quick-edit.html
+    - name: Managing Videos
+      url: /media/properties/managing-videos.html
+    - name: Uploading Video Images
+      url: /media/properties/uploading-poster-and-thumbnail-images.html
+  - name: Series and Seasons
+    url: '/media/series-seasons/index.html'
+    docs:
+    - name: Configuring Season Availability
+      url: /media/series-seasons/configuring-season-availability.html
+    - name: Configuring Series Availability
+      url: /media/series-seasons/configuring-series-availability.html
+    - name: Creating and Managing Rule Sets
+      url: /media/series-seasons/creating-managing-rule-sets.html
+    - name: 'Creating Series, Seasons & Episodes'
+      url: /media/series-seasons/creating-series-seasons-episodes.html
+    - name: Editing Series Details
+      url: /media/series-seasons/editing-series-details.html
+    - name: Managing Series
+      url: /media/series-seasons/managing-series.html
+  - name: Organizing Videos
+    url: '/media/organize/index.html'
+    docs:
+    - name: Configuring Playlist Availability
+      url: /media/organize/configuring-playlist-availability.html
+    - name: Creating a Beacon Classic Playlist
+      url: /media/organize/creating-beacon-playlist.html
+    - name: Creating and Managing Playlists
+      url: /media/organize/creating-and-managing-playlists.html
+    - name: Introduction to Playlists
+      url: /media/organize/introduction-playlists.html
+    - name: Organizing Videos Using Folders
+      url: /media/organize/organizing-videos-using-folders.html
+  - name: Captions and Audio Files
+    url: '/media/captions/index.html'
+    docs: 
+    - name: Adding Audio Tracks to Videos
+      url: /media/captions/adding-audio-tracks-videos-using-media-module.html
+    - name: Adding Captions to Videos
+      url: /media/captions/adding-captions-videos-using-media-module.html
+    - name: Adding Chapters to a Video
+      url: /media/captions/adding-chapters-video.html
+    - name: Generating Captions for Videos
+      url: /media/captions/generating-captions-videos.html
+    - name: 'Overview: Adding Captions to a Video'
+      url: /media/captions/overview-adding-captions-video.html
+    - name: Styling Captions
+      url: /media/captions/styling-captions.html
+    - name: Using the Caption Editor
+      url: /media/captions/using-the-caption-editor.html
+  - name: Publishing Videos
+    url: '/publish/index.html'
+    docs: 
+    - name: Choosing the Correct Embed Code
+      url: /publish/choosing-correct-embed-code.html
+    - name: Publishing Videos and Playlists
+      url: /publish/publishing-videos-and-playlists-media-module.html
+  - name: General Information
+    url: '/media/general/index.html'
+    docs: 
+    - name: Exporting Video Data
+      url: /media/general/exporting-video-data.html
+    - name: Increasing the Quality of Poster Images
+      url: /media/general/increasing-quality-poster-and-thumbnail-images.html
+    - name: Offline Playback
+      url: /media/general/offline-playback-beacon.html
+    - name: Setting Required Fields
+      url: /media/general/setting-required-fields-videos.html
+    - name: Sharing Videos
+      url: /media/general/media-sharing-using-media-module.html
+    - name: Syncing with Video Cloud Catalog
+      url: /media/general/syncing-video-cloud-catalog.html
+    - name: Working with Cue Points
+      url: /media/general/working-cue-points-media-module.html
+    - name: Working with Multi-Lingual Metadata
+      url: /media/general/working-multi-lingual-metadata.html
 - section:
   name: Managing Pages
   url: '/layout/index.html'
