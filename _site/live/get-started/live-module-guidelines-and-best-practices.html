@@ -3559,6 +3559,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>Baseline</strong> profile only supports I and P frames and CAVLC entropy encoding</li>
       <li><strong>Main</strong> and <strong>High</strong> support I, B and P frames and CABAC entropy encoding</li>
     </ol>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note that support for I/B/P frames depend on the H264 profile of the <strong>ingest profile</strong> of the live job, <strong>not</strong> the input source (live feed).</aside>
     <p>Main and High profiles generally result in better compression at better quality but also require additional computation to encode and decode, as such may be more susceptible to skipped frames. In addition, as these profiles use B (bi-directional) frames, they induce some delay in the encoding process.</p>
     <p>Baseline profile requires less CPU to encode and decode, but as it offers less compression, it requires a higher bitrate to maintain quality and as such is more susceptible to network issues.</p>
     <h3>Notes on frame types and their likely impact on performance:</h3>
