@@ -1,3 +1,10 @@
+/* Header styles */
+
+body > div.page-header.theme-bg-dark.py-5.text-center.position-relative > div.container > div.page-intro.single-col-max.mx-auto a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
 /* Footer styles */
 .a-text,
 .h5-text {
@@ -68,7 +75,8 @@ li li.nav-item {
 /* Page Contents Menu Styles */
 
 #right_side_nav {
-    max-width: 20%;
+    max-width: 250px;
+    font-size: .9rem;
     top: 230px;
     right: 5%;
     display: inline-block;

@@ -3416,13 +3416,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <p>To find the Cloud Playout channel ID, see <a href="cloud-playout-stream-vod.html#Get_information_for_the_ott_Channel">Get information for the Beacon Channel</a>.</p>
       </li>
       <li>In the <strong>Content Rating</strong> dropdown menu, select your channel's content rating based on the Content Rating System of the country where your channel will be streaming. In the example image, it is for the US <strong>TV-Y</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" src="/assets/images/s-cloudplayout-img/2.2-basic-data-options.webp" alt="Channel Data Options" />
-        </figure>
       </li>
-      <li>In the <strong>Genres Details</strong> section, click the <strong>Genres</strong> dropdown menu to select a genre for your channel. (Example: Horror, Drama, etc..)</li>
+      <li>In the <strong>Genres Details</strong> section, click the <strong>Genres</strong> dropdown menu to select a genre for your channel (Example: Horror, Drama, etc..) and the <strong>Genres Language Preview</strong> setting.</li>
       <li>If you don’t find the correct genre for your channel, you can create additional ones by clicking the <strong>Create Genre</strong> button.</li>
-      <aside class="bcls-aside bcls-aside--information">The <strong>Sub-Genres</strong> dropdown menu is not functional at this time.</aside>
     </ol>
     <h3 id="textual-data">Textual Data</h3>
     <p>The <strong>Textual Data</strong> section allows you to add displayable text for your Channel.</p>
@@ -3493,16 +3489,36 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Add_channel_to_playlist">Add the channel to a playlist</h2>
     <p>Because Beacon pages use <strong>playlists</strong> for content, you need to add your Cloud Playout channel to a playlist. The playlist can contain other videos, but typically it will contain only the channel so that it comprises the page contents.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Go to the Media module in Beacon Studio</li>
+      <li>Go to the <strong>Media</strong> module in <strong>Beacon Studio</strong>.</li>
       <li>
-        Click <strong>Add New Playlist</strong>
+        Click <strong>Create Playlist</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-cloudplayout-img/publish-create-playlist.webp" alt="Add New Playlist">
-          <figcaption class="bcls-caption--image">Create New Playlist</figcaption>
+          <figcaption class="bcls-caption--image">Add playlist</figcaption>
         </figure>
       </li>
+      <li>In the <em>Create a playlist</em> dialog, enter a name for your playlist then select <strong>OTT manual playlist</strong> for the playlist type.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-cloudplayout-img/create-a-playlist-dialog.webp" alt="create Playlist">
+          <figcaption class="bcls-caption--image">Create playlist</figcaption>
+        </figure>
+      </li>
+      <li>Click <span class="button-blue">Create playlist</span>.</li>
+      <li>Make any desired changed to the <strong>Playlist settings</strong> dialog. The defaults are usually satisfactory.</li>
+      <li>Close the <strong>Playlist settings</strong> dialog.</li>
+
+
+
+
+
+
+
+
+
+
+
       <li>
-        In the Create playlist dialog, enter a <strong>name</strong> for the playlist and select the <strong>Manual</strong> type. You can also add a reference ID and description, and have it show up in the sidebar if you wish.
+        In the <em>Create a playlist</em> dialog, enter a <strong>name</strong> for the playlist and select the <strong>Manual</strong> type. You can also add a reference ID and description, and have it show up in the sidebar if you wish.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-cloudplayout-img/publish-create-playlist-dialog.webp" alt="New Playlist Dialog">
           <figcaption class="bcls-caption--image">Create playlist Dialog</figcaption>
