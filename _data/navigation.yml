@@ -291,45 +291,66 @@
 - section:
   name: Managing Players
   url: /players/index.html
+  icon: fa-regular fa-play
   docs:
-    - name: Adding Thumbnail Seeking
-      url: /players/adding-thumbnail-seeking-player.html
-    - name: Configuring a Player Overlay
-      url: /players/configuring-player-overlay-using-overlay-plugin.html
-    - name: Configuring a Playlist Endscreen
-      url: /players/configuring-playlist-endscreen-using-plugin.html
-    - name: Configuring Adobe Analytics Event Tracking
-      url: /players/configuring-adobe-analytics-event-tracking.html
-    - name: Configuring Google Analytics Event Tracking
-      url: /players/configuring-google-analytics-event-tracking.html
-    - name: Configuring Player Advertising
-      url: /players/configuring-player-advertising-using-players-module.html
-    - name: Configuring Player Content Restrictions
-      url: /players/configuring-player-content-restrictions.html
-    - name: Configuring Player Controls
-      url: /players/configuring-player-controls.html
-    - name: Configuring the Player Endscreen
-      url: /players/configuring-player-endscreen.html
-    - name: Configuring Player Localization
-      url: /players/configuring-player-localization.html
-    - name: Configuring Player Playback Properties
-      url: /players/configuring-player-playback-properties.html
-    - name: Configuring Player Plugins
-      url: /players/configuring-player-plugins.html
-    - name: Configuring the Social Properties
-      url: /players/configuring-social-properties-player.html
-    - name: Generating Player Embed Code
-      url: /players/generating-player-embed-code.html
+  - name: Using the Players Module
+    url: /players/module/index.html
+    icon: fa-regular fa-play
+    docs:
     - name: Getting Started with the Players Module
-      url: /players/getting-started-players-module.html
-    - name: Setting Player Information Properties
-      url: /players/setting-player-information-properties.html
+      url: /players/module/getting-started-players-module.html
+    - name: 'Step-by-Step:  Creating and Publishing a Player'
+      url: /publish/step-step-using-players-module-create-and-publish-player.html
+  - name: Player Properties
+    url: /players/properties/index.html
+    icon: fa-regular fa-play
+    docs:
     - name: Setting Player Properties
-      url: /players/setting-player-properties.html
+      url: /players/properties/setting-player-properties.html    
+    - name: Setting Player Information Properties
+      url: /players/properties/setting-player-information-properties.html
+    - name: Configuring Player Content Restrictions
+      url: /players/properties/configuring-player-content-restrictions.html
+    - name: Configuring Player Playback Properties
+      url: /players/properties/configuring-player-playback-properties.html
     - name: Setting the Player Update Mode
-      url: /players/setting-player-update-mode-and-version.html
+      url: /players/properties/setting-player-update-mode-and-version.html
+  - name: Appearance and Controls
+    url: /players/appearance/index.html
+    icon: fa-regular fa-play
+    docs:
+    - name: Adding Thumbnail Seeking
+      url: /players/appearance/adding-thumbnail-seeking-player.html
+    - name: Configuring a Player Overlay
+      url: /players/appearance/configuring-player-overlay-using-overlay-plugin.html
+    - name: Configuring a Playlist Endscreen
+      url: /players/appearance/configuring-playlist-endscreen-using-plugin.html
+    - name: Configuring Player Controls
+      url: /players/appearance/configuring-player-controls.html
+    - name: Configuring the Player Endscreen
+      url: /players/appearance/configuring-player-endscreen.html
+    - name: Configuring Player Localization
+      url: /players/appearance/configuring-player-localization.html
+    - name: Configuring the Social Properties
+      url: /players/appearance/configuring-social-properties-player.html
     - name: Styling Players
-      url: /players/styling-players.html
+      url: /players/appearance/styling-players.html
+  - name: General Information
+    url: /players/general/index.html
+    icon: fa-regular fa-play
+    docs:
+    - name: Configuring Adobe Analytics Event Tracking
+      url: /players/general/configuring-adobe-analytics-event-tracking.html
+    - name: Configuring Google Analytics Event Tracking
+      url: /players/general/configuring-google-analytics-event-tracking.html
+    - name: Configuring Player Advertising
+      url: /players/general/configuring-player-advertising-using-players-module.html
+    - name: Configuring Player Plugins
+      url: /players/general/configuring-player-plugins.html
+    - name: Generating Player Embed Code
+      url: /players/general/generating-player-embed-code.html
+    - name: 'Support for Brightcove Player 5'
+      url: /players/general/v5-players-support.html
 - section:
   name: 'Monetizing Content'
   url: '/monetization/index.html'
