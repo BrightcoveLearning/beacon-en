@@ -3442,11 +3442,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       Brightcove Beacon supports Server-Side Ad Insertion (SSAI) in Live events so server-side ads can be requested and displayed during a Live stream. Note: if you are using redundancy with SSAI, you must insert ads into all jobs in the group at the same time.
     </p>
     <p>A high-level view of the process is:</p>
-    <ol class="bcls-tasklist">
-      <li>Create an Ad Configuration in Studio.</li>
-      <li>Create a fill slate for your Live event.</li>
-      <li>Create a Live event with SSAI enabled.</li>
-      <li>Publish the Live event to Brightcove Beacon.</li>
+    <ol>
+      <li>Create Ad Configuration(s) in Beacon Studio.</li>
+      <li>Create a fill slate for your Live event in Beacon Studio.</li>
+      <li>Create Live event(s) with SSAI enabled in Beacon Studio.</li>
+      <li>Create ad configuration(s) in Beacon Classic.</li>
+      <li>Create a channel that uses the ad configuration(s) in Beacon Classic.</li>
+      <li>Publish the Live event to Brightcove Beacon in Beacon Studio.</li>
     </ol>
     <aside class="bcls-aside bcls-aside--information"> This document is complementary to the
       <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Streaming a Live Event</a> documentation to guide you into add SSAI to your live events. For detailed information on how to create an event, please see the section on <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#create" target="_blank">Creating a live event in Brightcove Beacon</a>.
@@ -3460,21 +3462,20 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         Ads are inserted at cue points sent from your encoder or you can create an instant cue point using the Live module Control Room.
       </li>
       <li>
-        You can configure
-        <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html#fill_slate" target="_blank">fill slates</a> to fill any unused ad time.
+        You can configure fill slates to fill any unused ad time.
       </li>
     </ul>
   </section>
   <section class="bcls-section">
     <h2 id="Configuring_Server-Side_Ad_Settings">Configuring Server-Side Ad Settings</h2>
     <p>
-      Here you will create an SSAI Ad Configuration to be used as your set of ads that will be displayed in your Brightcove Beacon Live event.
-    <aside class="bcls-aside bcls-aside--warning">If you will use Roku with your OTT apps you will need to create TWO SSAI Live ad configurations. One for Roku and one for all other platforms. This document will create both configurations, but the steps not needed for the Roku configuration will be noted and need not be completed for those not having Roku as a targeted platform.</aside>
+      Here you create an SSAI Ad Configuration to be used as your set of ads that are displayed in your Brightcove Beacon Live event.
+    <aside class="bcls-aside bcls-aside--warning">If you use Roku with your OTT apps, you need to create TWO SSAI Live ad configurations. One for Roku and one for all other platforms. This document creates both configurations, but the steps not needed for the Roku configuration are noted and need not be completed for those not having Roku as a targeted platform.</aside>
     </p>
-    <ol class="bcls-tasklist-restart">
+    <ol class="bcls-tasklist">
       <li>Log in to Beacon Studio.</li>
       <li>
-        In the navigation header, click <strong>ADMIN</strong> and select <strong>Server-Side Ad Settings</strong>. A list of all ad configurations will be displayed.
+        In the navigation header, click <strong>ADMIN</strong> and select <strong>Server-Side Ad Settings</strong>. A list of all ad configurations are displayed.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/1-studio-ssai-settings.png" />
         </figure>
@@ -3484,8 +3485,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/2-create-ad-configuration.png" />
         </figure>
-        <aside class="bcls-aside bcls-aside--information"> Server-side Live ad configurations can also be managed using the Live API. For information, see <a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Create_an_ad_configuration" target="_blank">Brightcove Live API: Server-Side Ad Insertion (SSAI)</a>.
-        </aside>
       </li>
       <li>
         Check to be sure you are seeing the <strong>Server-Side Ad Settings</strong> form.
@@ -3493,7 +3492,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/4-ad-config-form.png" />
         </figure>
       </li>
-      <li>Give your ad configuration a <strong>Name</strong>. If Roku is a targeted platform, you will need to create two configurations. Naming them appropriately would be a best practice. For instance:
+      <li>Give your ad configuration a <strong>Name</strong>. If Roku is a targeted platform, you need to create two configurations. Naming them appropriately would be a best practice. For instance:
         <ul>
           <li>Live - No DVR - All except Roku</li>
           <li>Live - No DVR - Roku</li>
@@ -3511,31 +3510,32 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Enter the <strong>Ad Tag (server URL)</strong>.</li>
       <li>Click the <strong>Save</strong> button.</li>
       <li id="Ad_Configuration_ID">
-        Record the value(s) of your Ad Configuration ID(s). You will use this in a <a href="#Live_Ad_Config_ID">later step</a>.
+        Record the value(s) of your Ad Configuration ID(s). You use this in a later step.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="Ad configuration ID" src="/assets/images/s-monetization-img/live-ssai/ad-config-id.png" />
         </figure>
       </li>
     </ol>
   </section>
+
   <section class="bcls-section">
     <h2 id="Configuring_a_Fill_Slate">Configuring a Fill Slate</h2>
     <p>
-      Fill slates are videos that will be displayed when there are gaps in a Live stream ad break that cannot be filled with a dynamically-served ad. If the requested ad is shorter than the Ad break time, the fill slate will be displayed so viewers don't see a blank player.
+      Fill slates are videos that are displayed when there are gaps in a Live stream ad break that cannot be filled with a dynamically-served ad. If the requested ad is shorter than the Ad break time, the fill slate is displayed so viewers don't see a blank player.
     </p>
     <aside class="bcls-aside bcls-aside--information"> You should configure at least one fill slate before requesting a server-side ad.
     </aside>
     <p>To add a fill slate, follow these steps:</p>
-    <ol class="bcls-tasklist">
+    <ol class="bcls-tasklist-restart">
       <li>
-        Click the <strong>ADMIN</strong> &gt; <strong>Live Settings</strong> link in the Studio header.
+        Click the <strong>ADMIN</strong> &gt; <strong>Live Settings</strong> link in the Beacon Studio.
       </li>
       <li>
         Click <strong>+ Add Fill Slate</strong>.
       </li>
       <li>Enter a <strong>Name</strong> for your fill slate.</li>
       <li>Enter the <strong>Source URL</strong> for the slate.</li>
-      <li>Click <strong>Save</strong>. The ingestion process for the slate will begin.</li>
+      <li>Click <strong>Save</strong>. The ingestion process for the slate begins.</li>
       <li>Be sure your fill slate has been added by checking the list:
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/live-ssai/5-fill-slate.png" alt="fill slate list">
@@ -3550,26 +3550,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </p>
     <p>
       Follow these steps to create an Event that supports SSAI ads in Brightcove Beacon: </p>
-    <ol class="bcls-tasklist">
-      <li>Open the <strong>Live</strong> module in Studio.</li>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Live</strong> module in Beacon Studio.</li>
       <li>From the <strong>Manage Events</strong> page, click <strong>Create Event</strong>.</li>
       <li>
         Enter your event details. For complete information on creating a live event using the Live module, please see <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html" target="_blank"> Creating and Managing Live Events using the Live Module</a>.
       </li>
       <li>Click <strong>ADVANCED OPTIONS</strong> to expand the advanced options.</li>
-      <li>Check <strong>Enable Server-Side Ad Insertion (SSAI)</strong>. This will enable server-side ad insertion.</li>
+      <li>Check <strong>Enable Server-Side Ad Insertion (SSAI)</strong>. This enables server-side ad insertion.</li>
       <li>
-        Select a <strong>Fill Slate</strong>. The fill slate will be displayed when there are gaps in a live stream ad break that cannot be filled with a dynamically-served ad.
+        Select a <strong>Fill Slate</strong>. The fill slate is displayed when there are gaps in a live stream ad break that cannot be filled with a dynamically-served ad.
       </li>
       <li>
-        When the <strong>Ad Audio</strong> setting is checked, the audio levels on ads will be normalized based on the adjustment that is set. This can be used as a way to help make sure ads aren’t significantly louder than the content. Brightcove recommends selecting this option.
+        When the <strong>Ad Audio</strong> setting is checked, the audio levels on ads are normalized based on the adjustment that is set. This can be used as a way to help make sure ads aren’t significantly louder than the content. Brightcove recommends selecting this option.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" width="450" height="700" src="/assets/images/s-monetization-img/live-ssai/6-ssai-check.png" />
         </figure>
       </li>
       <li>Click <strong>Create Event</strong></li>
       <li>
-        The <strong>Control Room</strong> page will open with details about the Live event including the <strong>Streaming Endpoint (RTMP URL)</strong> and <strong>Stream Name</strong>. These values will be used by the encoder.
+        The <strong>Control Room</strong> page opens with details about the Live event including the <strong>Streaming Endpoint (RTMP URL)</strong> and <strong>Stream Name</strong>. These values are used by the encoder.
       </li>
       <li>Click <strong>Publish and Embed</strong>.
         <figure class="bcls-figure">
@@ -3578,22 +3578,22 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
       <li>As highlighted in the screenshot just above, select your <strong>Available Player</strong>.</li>
       <li>As highlighted in the screenshot just above, select your <strong>Ad Configuration</strong>.</li>
-      <li>Record your <strong>Player URL</strong> as it will be needed later.
+      <li id="record-url">Record your <strong>Player URL</strong> as it are needed later.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/live-ssai/player-url.png" alt="player url">
         </figure>
       </li>
-      <li>If you are targeting the Roku platform, add another event user your second, Roku only, ad configuration. Repeats steps 12 to 23.</li>
+      <li>If you are targeting the Roku platform, add another event user your second, Roku only, ad configuration. Repeats steps 2 to 13.</li>
     </ol>
   </section>
 
   <section class="bcls-section">
     <h2 id="Configure_encoder">Configure encoder</h2>
     <p><strong>IF</strong> you are using an encoder and wish to start it, the steps in the section lead you through that process.</p>
-    <ol class="bcls-tasklist">
+    <ol class="bcls-tasklist-restart">
       <li>
         Configure your encoder and start the Live stream.
-        <aside class="bcls-aside bcls-aside--information"> To start streaming in the Live platform, you will need an Encoder, for information on how to use an encoder please read the following the documentation: <p>
+        <aside class="bcls-aside bcls-aside--information"> To start streaming in the Live platform, you need an Encoder, for information on how to use an encoder please read the following the documentation: <p>
             <a href="https://live.support.brightcove.com/get-started/step-step-using-live-module-telestream-wirecast.html" target="_blank">Step-by-Step: Using the Live Module with Telestream Wirecast</a>
           </p>
           <p>
@@ -3602,13 +3602,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </aside>
       </li>
       <li>
-        By default, the <strong>Control Room</strong> preview player shows the ad-free stream. Ads will not be shown in the <strong>Control Room</strong> unless a Live ad configuration is selected. Use the dropdown below to the player to select an ad configuration.
+        By default, the <strong>Control Room</strong> preview player shows the ad-free stream. Ads are not shown in the <strong>Control Room</strong> unless a Live ad configuration is selected. Use the dropdown below to the player to select an ad configuration.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/7-select-ad-config.png" />
         </figure>
       </li>
       <li>
-        (Optional) Click the plus button (<img alt="" src="/assets/images/s-monetization-img/live-ssai/node18753-plus-icon.png" />) to select an additional ad configuration. Doing this will add another preview player on the <strong>Control Room</strong> page.
+        (Optional) Click the plus button (<img alt="" src="/assets/images/s-monetization-img/live-ssai/node18753-plus-icon.png" />) to select an additional ad configuration. Doing this adds another preview player on the <strong>Control Room</strong> page.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/8-two-preview-players.png" />
         </figure>
@@ -3621,9 +3621,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
   <section class="bcls-section">
     <h2 id="Create_ad_configuration">Create ad configuration(s)</h2>
-    <p>You will create one or two ad configurations, based on your Roku requirements, then in the next section you create a channel that uses the ad configuration(s).</p>
+    <p>You create one or two ad configurations, based on your Roku requirements, then in the next section you create a channel that uses the ad configuration(s).</p>
     <aside class="bcls-aside bcls-aside--information">You must work in Beacon Classic in this section.</aside>
-    <ol class="bcls-tasklist">
+    <ol class="bcls-tasklist-restart">
       <li>Log into Beacon Classic.</li>
       <li>
         In Brightcove Beacon, in the upper menu, click the <strong>Advertisement</strong> tab.
@@ -3640,10 +3640,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image--no-border" alt="New Advertisement form" src="/assets/images/s-monetization-img/live-ssai/15-newadconfig-settings.png" />
         </figure>
       </li>
-      <li>Give your new advertisement configuration a <strong>Name</strong>. If you are using Roku, you will be creating two advertisement configurations so be sure the names reflect an add configuration with and without Roku.</li>
+      <li>Give your new advertisement configuration a <strong>Name</strong>. If you are using Roku, you are creating two advertisement configurations so be sure the names reflect an add configuration with and without Roku.</li>
       <li>The defaults for <strong>Provider</strong> and <strong>Ad-Target</strong> remain.</li>
       <li id="Live_Ad_Config_ID">
-        In step 23 you recorded one or two player URLs, base on Roku needs. An example URL appears as:
+        In step 13 from the <em>Creating a Live event that supports SSAI</em> section above, you recorded one or two player URLs, based on Roku needs. An example URL appears as:
         <pre class="line-numbers"><code class="language-javascript" translate="No">https://players.brightcove.net/3676484086001/05eE9ou1hh_default/index.html?videoId=6318520526112&adConfigId=live.UtIrzniPFMiip415KQM_YNv2W8HMH79otvpQUsNeBaqe7QU0buFmq6DPUa2rHeV-k-F3tIZu1bXYBIafVamvirwzObGGUXVj7eDtP1j-4gOpsm0GRqUnOiMm</code></pre>
         <p>In the URL locate the <strong>adConfigId</strong> query parameter and copy everything after the equals sign. The copied string starts with <strong>live</strong>. For instance, from the URL above the copied string is:</p>
         <pre class="line-numbers"><code class="language-javascript" translate="No">live.UtIrzniPFMiip415KQM_YNv2W8HMH79otvpQUsNeBaqe7QU0buFmq6DPUa2rHeV-k-F3tIZu1bXYBIafVamvirwzObGGUXVj7eDtP1j-4gOpsm0GRqUnOiMm</code></pre>
@@ -3658,13 +3658,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>Click <strong>Create New Advertisement</strong>.</li>
-      <li>If Roku is a targeted platform, repeat steps 30-37 to create a second ad configuration for Roku only.</li>
+      <li>If Roku is a targeted platform, repeat steps 2-11 to create a second ad configuration for Roku only.</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="section-name">Create a channel</h2>
-    <p>In this section you will create a single channel with either one for two <strong>Right</strong> sets. You will create two if you are targeting the Roku platform.</p>
-    <ol class="bcls-tasklist">
+    <p>In this section you create a single channel with either one for two <strong>Right</strong> sets. You create two if you are targeting the Roku platform.</p>
+    <ol class="bcls-tasklist-restart">
       <li>In Beacon Classic, in the top menu click <strong>Channels</strong>.</li>
       <li>On the <strong>Basic Data</strong> tab give the channel a name. In this document the name <strong>Live SSAI - No DVR - Channel</strong> is used.</li>
       <li>For the <strong>CloudPlayOut Channel ID</strong> enter your appropriate ID.</li>
@@ -3677,11 +3677,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li><em>If Roku is a targeted platform</em>, click <strong>Add new Right</strong>.</li>
-      <li>Complete the form. The key values are highlighted. Note the values shown are for the all but Roku use case.
+      <li>Complete the form. The key values are highlighted. Note the values shown are for the Roku use case.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/live-ssai/channel-rights-with-roku.png" alt="channel right with roku">
         </figure>
       </li>
+      <li>Click <strong>Create New Channel</strong> or <strong>Update Channel</strong> if you have previously saved.</li>
     </ol>
   </section>
 
@@ -3719,7 +3720,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Requesting_an_ad">Requesting an ad</h2>
     <p>
       Follow these steps to request an ad in the Live <strong>Control Room</strong>: </p>
-    <ol class="bcls-tasklist">
+    <ol class="bcls-tasklist-restart">
       <li>
         Click <strong>Insert Ad</strong> and from the dropdown choose the length of your desired ad break.
         <figure class="bcls-figure">
@@ -3727,11 +3728,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>
-        Click <strong>Insert</strong> to insert an ad break into the live stream. If the ad doesn't fill the entire ad break time, the fill slate (being selected when the event was created) will be displayed.
+        Click <strong>Insert</strong> to insert an ad break into the live stream. If the ad doesn't fill the entire ad break time, the fill slate (being selected when the event was created) is displayed.
       </li>
     </ol>
     <p>
-      Ads will be seen in the <strong>Control Room</strong> preview player and in players that are published using the Live module. This example shows 2 ads being displayed in the <strong>Control Room</strong>.
+      Ads are seen in the <strong>Control Room</strong> preview player and in players that are published using the Live module. This example shows 2 ads being displayed in the <strong>Control Room</strong>.
     </p>
     <figure class="bcls-figure">
       <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/10-adsplayer.png" />
@@ -3741,7 +3742,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Publishing_a_Live_event">Publishing a Live event in Brightcove Beacon</h2>
     <p>
       To publish your Live event with server-side ads in Brightcove Beacon, follow these steps: </p>
-    <ol class="bcls-tasklist">
+    <ol class="bcls-tasklist-restart">
       <li>In the Live <strong>Control Room</strong> click <strong>Publish and Embed</strong> in the left navigation.
         <figure class="bcls-figure">
           <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/11-controlroom.png" />
@@ -3755,7 +3756,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>
-        After selecting your <strong>Available Player</strong> and <strong>Ad Configuration</strong>, a new Player URL will be generated.
+        After selecting your <strong>Available Player</strong> and <strong>Ad Configuration</strong>, a new Player URL is generated.
       </li>
       <!-- <li>
  Copy the selected part of the URL as shown
@@ -3779,7 +3780,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ol>
     <p>
-      Once your event ends, you can save all or part of it as a clip that becomes a video asset in Video Cloud or a playable stream that can be shown in Brightcove Beacon. The Ads of the Live event will not be saved, but the cue points from where the ads were transmitted will be registered so that you can add new ads in a later VOD of your recorded Live event.
+      Once your event ends, you can save all or part of it as a clip that becomes a video asset in Video Cloud or a playable stream that can be shown in Brightcove Beacon. The Ads of the Live event are not saved, but the cue points from where the ads were transmitted are registered so that you can add new ads in a later VOD of your recorded Live event.
     </p>
     <p>
       For more information on how to create a clip, please see the <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#Clip" target="_blank">Creating a Clip from your Live event</a> section from the <em>Streaming a Live Event</em> document.
