@@ -3576,14 +3576,21 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" src="/assets/images/s-monetization-img/live-ssai/publish-and-embed.png" alt="publish and embed">
         </figure>
       </li>
+      <li>As highlighted in the screenshot just above, select your <strong>Available Player</strong>.</li>
+      <li>As highlighted in the screenshot just above, select your <strong>Ad Configuration</strong>.</li>
       <li>Record your <strong>Player URL</strong> as it will be needed later.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/live-ssai/player-url.png" alt="player url">
         </figure>
       </li>
-      <li>As highlighted in the screenshot just above, select your <strong>Available Player</strong>.</li>
-      <li>As highlighted in the screenshot just above, select your <strong>Ad Configuration</strong>.</li>
-      <li>If you are targeting the Roku platform, add another event user your second, Roku only, ad configuration. Repeats steps X to X.</li>
+      <li>If you are targeting the Roku platform, add another event user your second, Roku only, ad configuration. Repeats steps 12 to 23.</li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Configure_encoder">Configure encoder</h2>
+    <p><strong>IF</strong> you are using an encoder and wish to start it, the steps in the section lead you through that process.</p>
+    <ol class="bcls-tasklist">
       <li>
         Configure your encoder and start the Live stream.
         <aside class="bcls-aside bcls-aside--information"> To start streaming in the Live platform, you will need an Encoder, for information on how to use an encoder please read the following the documentation: <p>
@@ -3613,12 +3620,92 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
 
   <section class="bcls-section">
-    <h2 id="section-name">Create ad configurations and a channel</h2>
-    <p>You will create one or two ad configurations, based on your Roku requirements, then create a channel that uses the ad configuration(s).</p>
+    <h2 id="Create_ad_configuration">Create ad configuration(s)</h2>
+    <p>You will create one or two ad configurations, based on your Roku requirements, then in the next section you create a channel that uses the ad configuration(s).</p>
     <aside class="bcls-aside bcls-aside--information">You must work in Beacon Classic in this section.</aside>
-    <p></p>
+    <ol class="bcls-tasklist">
+      <li>Log into Beacon Classic.</li>
+      <li>
+        In Brightcove Beacon, in the upper menu, click the <strong>Advertisement</strong> tab.
+      </li>
+      <li>
+        Click the <strong>Add New Configuration</strong> button.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/14-newadconfig.png" />
+        </figure>
+      </li>
+      <li>
+        Check to be sure you are seeing the <strong>New Advertisement</strong> form.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="New Advertisement form" src="/assets/images/s-monetization-img/live-ssai/15-newadconfig-settings.png" />
+        </figure>
+      </li>
+      <li>Give your new advertisement configuration a <strong>Name</strong>. If you are using Roku, you will be creating two advertisement configurations so be sure the names reflect an add configuration with and without Roku.</li>
+      <li>The defaults for <strong>Provider</strong> and <strong>Ad-Target</strong> remain.</li>
+      <li id="Live_Ad_Config_ID">
+        In step 23 you recorded one or two player URLs, base on Roku needs. An example URL appears as:
+        <pre class="line-numbers"><code class="language-javascript" translate="No">https://players.brightcove.net/3676484086001/05eE9ou1hh_default/index.html?videoId=6318520526112&adConfigId=live.UtIrzniPFMiip415KQM_YNv2W8HMH79otvpQUsNeBaqe7QU0buFmq6DPUa2rHeV-k-F3tIZu1bXYBIafVamvirwzObGGUXVj7eDtP1j-4gOpsm0GRqUnOiMm</code></pre>
+        <p>In the URL locate the <strong>adConfigId</strong> query parameter and copy everything after the equals sign. The copied string starts with <strong>live</strong>. For instance, from the URL above the copied string is:</p>
+        <pre class="line-numbers"><code class="language-javascript" translate="No">live.UtIrzniPFMiip415KQM_YNv2W8HMH79otvpQUsNeBaqe7QU0buFmq6DPUa2rHeV-k-F3tIZu1bXYBIafVamvirwzObGGUXVj7eDtP1j-4gOpsm0GRqUnOiMm</code></pre>
+      </li>
+      <li>In the <strong>Live Ad Config ID</strong>, paste the copied value.
+        <aside class="bcls-aside bcls-aside--information">When using a Live stream, the Beacon <strong>Live Ad Config ID</strong> value is the Live playback token.</aside>
+      </li>
+      <li>From the <strong>Provider</strong> menu select <strong>Brightcove SSAI</strong>.</li>
+      <li>Check to be sure our completed form appears similar to the following:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/live-ssai/new-advertisement-form.png" alt="filled in ad form">
+        </figure>
+      </li>
+      <li>Click <strong>Create New Advertisement</strong>.</li>
+      <li>If Roku is a targeted platform, repeat steps 30-37 to create a second ad configuration for Roku only.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="section-name">Create a channel</h2>
+    <p>In this section you will create a single channel with either one for two <strong>Right</strong> sets. You will create two if you are targeting the Roku platform.</p>
+    <ol class="bcls-tasklist">
+      <li>In Beacon Classic, in the top menu click <strong>Channels</strong>.</li>
+      <li>On the <strong>Basic Data</strong> tab give the channel a name. In this document the name <strong>Live SSAI - No DVR - Channel</strong> is used.</li>
+      <li>For the <strong>CloudPlayOut Channel ID</strong> enter your appropriate ID.</li>
+      <li>Add <strong>Textual Data</strong> and <strong>Non-Textual Data</strong> as desired.</li>
+      <li>Do not make changes to <strong>Tags</strong> or <strong>Streams</strong>.</li>
+      <li>Click the <strong>Rights & Scheduling</strong> tab.
+      <li></li>
+      </li>
+    </ol>
   </section>
 
+
+  <!--   NOT SURE IF NEEDED ANY LONGER
+  <section class="bcls-section">
+    <h2 id="section-name">section-title</h2>
+    <p></p>
+    <ol class="bcls-tasklist">
+      <li>
+        Click the upper menu <strong>Events</strong> tab and create or select your Live event. For more information in how to create a Brightcove Beacon Live Event, please see the
+        <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Streaming a Live Event</a> document.
+        <aside class="bcls-aside bcls-aside--information"> For the Live event to stream successfully in Brightcove Beacon, the <strong>Job ID</strong> and <strong>Stream Video ID</strong> must match the IDs of the current Live event.
+        </aside>
+      </li>
+      <li>
+        In you Brightcove Beacon Live Event click the <strong>Rights & Scheduling</strong> tab.
+      </li>
+      <li>
+        In the <strong>Rights Type</strong> dropdown menu, select <strong>Advertising - AVOD</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/16-ad-avod.png" />
+        </figure>
+      </li>
+      <li>
+        In the <strong>Advertisement Configuration</strong> bottom menu, select your previously created advertisement configuration.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/17-ad-configuration.png" />
+        </figure>
+      </li>
+      <li>Click the <strong>Update Event</strong> button.</li>
+  </section>
+ -->
   <section class="bcls-section">
     <h2 id="Requesting_an_ad">Requesting an ad</h2>
     <p>
@@ -3666,51 +3753,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
  in the image, starting from the word <strong>live</strong>. Example: <strong>live.xxxxxxx</strong> <figure class="bcls-figure">
  <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/13-player-url.png" /> </figure>
  </li> -->
-      <li>Go to the Brightcove Beacon Platform.</li>
-      <li>
-        In Brightcove Beacon, in the upper menu, click the <strong>Advertisement</strong> tab.
-      </li>
-      <li>
-        Click the <strong>Add New Configuration</strong> button.
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/14-newadconfig.png" />
-        </figure>
-      </li>
-      <li>
-        Check to be sure you are seeing the <strong>New Advertisement</strong> form.
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="New Advertisement form" src="/assets/images/s-monetization-img/live-ssai/15-newadconfig-settings.png" />
-        </figure>
-      </li>
-      <li>Give your new advertisement configuration a <strong>Name</strong>.</li>
-      <li id="Live_Ad_Config_ID">
-        In the <strong>Live Ad Config ID</strong>, paste your <strong>Ad Configuration ID</strong> that you created in a <a href="#Ad_Configuration_ID">previous step</a>.
-        <aside class="bcls-aside bcls-aside--information">When using Live events, the Beacon <strong>Live Ad Config ID</strong> value is the Ad Configuration ID instead of the Live playback token.</aside>
-      </li>
-      <li>From the <strong>Provider</strong> menu select <strong>Brightcove SSAI</strong>.</li>
-      <li>Click the <strong>Create New Advertisement</strong> button.</li>
-      <li>
-        Click the upper menu <strong>Events</strong> tab and create or select your Live event. For more information in how to create a Brightcove Beacon Live Event, please see the
-        <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Streaming a Live Event</a> document.
-        <aside class="bcls-aside bcls-aside--information"> For the Live event to stream successfully in Brightcove Beacon, the <strong>Job ID</strong> and <strong>Stream Video ID</strong> must match the IDs of the current Live event.
-        </aside>
-      </li>
-      <li>
-        In you Brightcove Beacon Live Event click the <strong>Rights & Scheduling</strong> tab.
-      </li>
-      <li>
-        In the <strong>Rights Type</strong> dropdown menu, select <strong>Advertising - AVOD</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/16-ad-avod.png" />
-        </figure>
-      </li>
-      <li>
-        In the <strong>Advertisement Configuration</strong> bottom menu, select your previously created advertisement configuration.
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/s-monetization-img/live-ssai/17-ad-configuration.png" />
-        </figure>
-      </li>
-      <li>Click the <strong>Update Event</strong> button.</li>
       <li>
         Click on the <strong>Tools</strong> (wrench) button in the upper right of the screen. Then clear the cache.
         <figure class="bcls-figure">
