@@ -3433,7 +3433,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <h1>Publishing Videos to Social Media Platforms</h1>
   <summary>In this topic you will learn how to publish videos to social media using Brightcove Social.</summary>
   <section class="bcls-section"> 
-    <p>Brightcove Social allows you to easily publish videos in your Beacon account out to YouTube, Facebook and Twitter. Before you can publish videos, you must create publishing destinations for the social accounts you wish to publish videos to. For information on creating publishing destinations, see <a href="/social/creating-social-media-publishing-destinations.html">Creating Social Media Publishing Destinations</a>.</p>
+    <p>Brightcove Social allows you to easily publish videos in your Beacon account out to YouTube, Facebook and Twitter. Before you can publish videos, you must create publishing destinations for the social accounts you wish to publish videos to. For information on creating publishing destinations, see <a href="/social/module/creating-social-media-publishing-destinations.html">Creating Social Media Publishing Destinations</a>.</p>
     <p>Note that using Auto Sync and manually publishing videos using the Social module are independent operations. Auto Sync is not aware of which videos have been manually published using the Social module. If a video is tagged in a way that causes Auto Sync to publish it to one of your social destinations, it will do that regardless if that video has previously been manually published using the Social module.</p>
   </section>
   <section class="bcls-section">
@@ -3450,7 +3450,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="publish">Publishing videos to social media</h2>
-    <p>Once you have <a href="/social/creating-social-media-publishing-destinations.html">created publishing destinations</a>, follow these steps to publish videos to social media.</p>
+    <p>Once you have <a href="/social/module/creating-social-media-publishing-destinations.html">created publishing destinations</a>, follow these steps to publish videos to social media.</p>
     <ol class="bcls-tasklist-restart">
       <li>Open the<strong> Social </strong>Module.</li>
       <li>Click <strong>Videos</strong> in the left navigation. A list of videos in your Beacon account will display. Videos that haven't been published to a social media account will display a <strong>Status</strong> of <strong>Never Published</strong>. Videos that have been published will display <strong>Check Status</strong>. Click the link to see the publishing status of the video on the social media destinations.
@@ -3459,7 +3459,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Click on a video to publish and then click <span class="button-blue">Publish</span>.
         <aside class="bcls-aside bcls-aside--information">Note: Videos that are DRM enabled will display a lock icon in the video thumbnail. DRM enabled videos that were ingested using a Dynamic Delivery ingest profile can be published, however, they can't be downloaded or have clips created. These buttons will be disabled when a DRM enabled video is selected.</aside>
       </li>
-      <li>Select the destination(s) to publish the video to. You can also click <strong>Add New Destination</strong> to <a href="/social/creating-social-media-publishing-destinations.html">create a new destination</a>.
+      <li>Select the destination(s) to publish the video to. You can also click <strong>Add New Destination</strong> to <a href="/social/module/creating-social-media-publishing-destinations.html">create a new destination</a>.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16344-publish-preview.png" /></figure>
         <aside class="bcls-aside bcls-aside--information">Note: Destinations with an error will display an error icon (<img alt="" src="/assets/images/s-social-img/node16344-error-icon.png" />) next to the name. Select the destination and then click <strong>Reconnect</strong> to resolve the issue.</aside>
       </li>
@@ -3471,13 +3471,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li><a href="#linkedin">LinkedIn</a></li>
         </ul>
       </li>
-      <li>Click the <span class="button-blue">Publish to Destination</span> button to publish the videos. Monitor the distribution status by clicking <strong>Published</strong> in the left navigation. For information on viewing the status of publishing streams, see <a href="/social/viewing-videos-published-social-media.html">Viewing Your Social Media Publishing Streams</a>.</li>
+      <li>Click the <span class="button-blue">Publish to Destination</span> button to publish the videos. Monitor the distribution status by clicking <strong>Published</strong> in the left navigation. For information on viewing the status of publishing streams, see <a href="/social/general/viewing-videos-published-social-media.html">Viewing Your Social Media Publishing Streams</a>.</li>
     </ol>
     <p>Publishing videos using the Publish button is a one-time publishing operation. Videos published using this method will not receive any metadata updates from the Social module after the initial upload.</p>
   </section>
   <section class="bcls-section">
     <h2 id="youtube">Setting video properties for YouTube</h2>
-    <p>By default, videos that are up to 15 minutes long can be uploaded to YouTube. For information on uploading longer videos, see <a href="/social/enabling-longer-videos-youtube.html">Enabling Longer Videos In YouTube</a>. After a video is published to YouTube, any updates to the source video in Studio will not update on the YouTube side.</p>
+    <p>By default, videos that are up to 15 minutes long can be uploaded to YouTube. For information on uploading longer videos, see <a href="/social/general/enabling-longer-videos-youtube.html">Enabling Longer Videos In YouTube</a>. After a video is published to YouTube, any updates to the source video in Studio will not update on the YouTube side.</p>
     <p>When choosing a YouTube destination, the following video properties can be configured:</p>
     <ul>
       <li><a href="#ytthumb">Thumbnail Source</a></li>
@@ -3555,7 +3555,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <li><strong>Unlisted</strong> - Anyone who has the link to the video can view it</li>
         <li><strong>Private</strong> - Video can only be seen by you and the users you select</li>
       </ul>
-      <aside class="bcls-aside bcls-aside--information">Note: With YouTube destinations, it is possible to dynamically assign the privacy setting using a custom field associated with the video. For information, see <a href="/social/setting-privacy-status-video.html">Setting the Privacy Status for a Video</a>.</aside>
+      <aside class="bcls-aside bcls-aside--information">Note: With YouTube destinations, it is possible to dynamically assign the privacy setting using a custom field associated with the video. For information, see <a href="/social/general/setting-privacy-status-video.html">Setting the Privacy Status for a Video</a>.</aside>
       <p>There is also a setting to <strong>Notify subscribers when video is posted to YouTube</strong>. If checked, your subscribers will see your videos in their Subscriptions feed and may receive a notification that the video was uploaded.</p>
       <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/node16344-yt-privacy-info.png" /></figure>
       <aside class="bcls-aside bcls-aside--information">Note: For more information on the YouTube Privacy settings, see the <a href="https://support.google.com/youtube/answer/157177">YouTube documentation</a>.</aside>
@@ -3761,7 +3761,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="clip">Creating a clip</h2>
-    <p>Brightcove Social provides the ability to create video clips from existing videos in your Beacon account. Clips can be used as short, teaser videos that can be posted to social media. To create a clip, click <strong>Create Clip</strong>. For information on creating a clip, see <a href="/social/creating-video-clip-using-brightcove-social.html">Creating a Video Clip Using Brightcove Social</a>.</p>
+    <p>Brightcove Social provides the ability to create video clips from existing videos in your Beacon account. Clips can be used as short, teaser videos that can be posted to social media. To create a clip, click <strong>Create Clip</strong>. For information on creating a clip, see <a href="/social/general/creating-video-clip-using-brightcove-social.html">Creating a Video Clip Using Brightcove Social</a>.</p>
   </section>
   <section class="bcls-section">
     <h2 id="download">Downloading videos</h2>
