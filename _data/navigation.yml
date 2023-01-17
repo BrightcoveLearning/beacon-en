@@ -410,53 +410,53 @@
   url: /analytics/index.html
   docs:
     - name: Using the Analytics Module
-      url: /analytics/index.html
+      url: /analytics/module/index.html
       docs:
         - name: Getting Started with the Analytics Module
-          url: /analytics/getting-started-analytics-module.html
+          url: /analytics/module/getting-started-analytics-module.html
         - name: Analytics Module UI Glossary
-          url: /analytics/analytics-module-ui-glossary.html
+          url: /analytics/module/analytics-module-ui-glossary.html
         - name: How to Search for Videos
-          url: /analytics/how-search-videos-analytics-module.html
+          url: /analytics/module/how-search-videos-analytics-module.html
         - name: 'FAQ: Analytics Module'
-          url: /analytics/faq-analytics-module.html
+          url: /analytics/module/faq-analytics-module.html
     - name: Analytics Reports
-      url: /analytics/index.html
+      url: /analytics/reports/index.html
       docs:
         - name: Analytics Report Reference
-          url: /analytics/analytics-report-reference.html
+          url: /analytics/reports/analytics-report-reference.html
         - name: Creating Custom Analytics Reports
-          url: /analytics/creating-custom-analytics-reports.html
+          url: /analytics/reports/creating-custom-analytics-reports.html
         - name: Engagement Report Reference
-          url: /analytics/engagement-report-reference.html
+          url: /analytics/reports/engagement-report-reference.html
         - name: Managing Scheduled Reports
-          url: /analytics/managing-scheduled-reports.html
+          url: /analytics/reports/managing-scheduled-reports.html
         - name: Performance Report Reference
-          url: /analytics/performance-report-reference.html
+          url: /analytics/reports/performance-report-reference.html
+        - name: SSAI Performance Analytics
+          url: /analytics/reports/ssai-performance-data.html
     - name: General Information
-      url: /analytics/index.html
+      url: /analytics/general/index.html
       docs:
         - name: Analytics Overview
-          url: /analytics/analytics-overview.html
+          url: /analytics/general/analytics-overview.html
         - name: Beacon Analytics Business Metrics
-          url: /analytics/analytics-business-metrics.html
+          url: /analytics/general/analytics-business-metrics.html
         - name: Calculating Video Engagement Score
-          url: /analytics/calculating-video-engagement-score.html
+          url: /analytics/general/calculating-video-engagement-score.html
         - name: Exporting Data
-          url: /analytics/exporting-data-analytics-module.html
+          url: /analytics/general/exporting-data-analytics-module.html
         - name: Resources for Analytics
-          url: /analytics/resources.html
-        - name: SSAI Performance Analytics
-          url: /analytics/ssai-performance-data.html
+          url: /analytics/general/resources.html
     - name: Third-Party Analytics
       url: /analytics/index.html
       docs:
         - name: Google Analytics Self Configuration
-          url: /analytics/ga-self-configuration.html
+          url: /analytics/third-party/ga-self-configuration.html
         - name: Reviewing Player Event Data in Google Analytics
-          url: /analytics/reviewing-player-event-data-google-analytics.html
+          url: /analytics/third-party/reviewing-player-event-data-google-analytics.html
         - name: Viewing Analytics Data in Google Analytics
-          url: /analytics/viewing-analytics-data-google.html
+          url: /analytics/third-party/viewing-analytics-data-google.html
 - section:
   name: Protecting Content
   url: /protecting-content/index.html
