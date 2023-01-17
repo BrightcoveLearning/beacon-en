@@ -946,45 +946,60 @@
 - section:
   name: Administering Accounts
   url: /admin/index.html
+  icon: fa-regular fa-gear
   docs:
+  - name: General Information
+    url: /admin/general/index.html
+    icon: fa-regular fa-circle-info
+    docs:
+    - name: Authenticating Studio Users using SSO
+      url: /admin/general/authenticating-studio-users-using-single-sign.html
     - name: Configuring Language Settings
-      url: /admin/configuring-language-settings.html
+      url: /admin/general/configuring-language-settings.html
     - name: Configuring Server-Side Ad Settings
-      url: /admin/configuring-server-side-ad-settings.html
-    - name: Creating Custom Live Ingest Profiles
-      url: /admin/creating-custom-live-ingest-profiles.html
+      url: /admin/general/configuring-server-side-ad-settings.html
     - name: Creating Custom Metadata Fields
-      url: /admin/creating-custom-metadata-fields.html
-    - name: Creating Ingest Profiles for Context Aware Encoding
-      url: /admin/creating-ingest-profiles-context-aware-encoding.html
-    - name: Creating Ingest Profiles for Dynamic Delivery
-      url: /admin/creating-ingest-profiles-dynamic-delivery.html
-    - name: Fields for Live Ingest Profiles
-      url: /admin/fields-custom-live-ingest-profiles.html
-    - name: Ingest Profiles Best Practices
-      url: /admin/ingest-profiles-best-practices.html
+      url: /admin/general/creating-custom-metadata-fields.html
     - name: Managing Account Information
-      url: /admin/managing-account-information.html
+      url: /admin/general/managing-account-information.html
     - name: Managing Account Settings
-      url: /admin/managing-account-settings.html
+      url: /admin/general/managing-account-settings.html
     - name: Managing API Authentication Credentials
-      url: /admin/managing-api-authentication-credentials.html
-    - name: Managing Ingest Profiles
-      url: /admin/managing-ingest-profiles.html
-    - name: Managing Live Settings
-      url: /admin/managing-live-settings.html
+      url: /admin/general/managing-api-authentication-credentials.html
     - name: Managing Media Sharing Settings
-      url: /admin/managing-media-sharing-settings.html
+      url: /admin/general/managing-media-sharing-settings.html
+    - name: Managing Live Settings
+      url: /admin/general/managing-live-settings.html
+    - name: Managing Playback Rights
+      url: /admin/general/managing-playback-rights.html
     - name: Managing Profile Information
-      url: /admin/managing-profile-information.html
+      url: /admin/general/managing-profile-information.html
     - name: Managing Users
-      url: /admin/managing-users.html
-    - name: Managing Viewer Authentication
-      url: /admin/managing-viewer-authentication.html
+      url: /admin/general/managing-users.html
+    - name: Using the Directed Migration Tool
+      url: /admin/general/using-directed-migration-tool-migrate-brightcove-smart-players.html
+    - name: Viewing Billing Information
+      url: /admin/general/viewing-billing-information.html
+  - name: Managing Ingest Profiles
+    url: /admin/ingest-profiles/index.html
+    icon: fa-regular fa-sliders
+    docs:
+    - name: Creating Custom Live Ingest Profiles
+      url: /admin/ingest-profiles/creating-custom-live-ingest-profiles.html
+    - name: Creating Ingest Profiles for Context Aware Encoding
+      url: /admin/ingest-profiles/creating-ingest-profiles-context-aware-encoding.html
+    - name: Creating Ingest Profiles for Dynamic Delivery
+      url: /admin/ingest-profiles/creating-ingest-profiles-dynamic-delivery.html
+    - name: Fields for Live Ingest Profiles
+      url: /admin/ingest-profiles/fields-custom-live-ingest-profiles.html
+    - name: Ingest Profiles Best Practices
+      url: /admin/ingest-profiles/ingest-profiles-best-practices.html
+    - name: Managing Ingest Profiles
+      url: /admin/ingest-profiles/managing-ingest-profiles.html
     - name: 'Standard Ingest Profiles (DD & CAE)'
-      url: /admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
+      url: /admin/ingest-profiles/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
     - name: Standard Live Ingest Profiles
-      url: /admin/standard-live-ingest-profiles.html
+      url: /admin/ingest-profiles/standard-live-ingest-profiles.html
 - section:
   name: 'General Information'
   url: '/general/index.html'
