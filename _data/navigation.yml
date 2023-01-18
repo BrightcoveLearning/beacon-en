@@ -639,33 +639,60 @@
 - section:
   name: Social Sharing
   url: /social/index.html
+  icon: fa-regular fa-share-nodes
   docs:
-    - name: Adding a Facebook Like Button to a Player
-      url: /social/adding-facebook-button-brightcove-player.html
-    - name: Creating Publishing Destinations
-      url: /social/creating-social-media-publishing-destinations.html
-    - name: Creating a Video Clip
-      url: /social/creating-video-clip-using-brightcove-social.html
-    - name: Enabling Longer Videos In YouTube
-      url: /social/enabling-longer-videos-youtube.html
+  - name: Getting Started
+    url: /social/module/index.html
+    icon: fa-regular fa-map-pin
+    docs:
     - name: Getting Started with Social
-      url: /social/getting-started-brightcove-social.html
+      url: /social/module/getting-started-brightcove-social.html
+    - name: Creating Publishing Destinations
+      url: /social/module/creating-social-media-publishing-destinations.html
+  - name: General Information
+    url: /social/general/index.html
+    icon: fa-regular fa-circle-info
+    docs:    
+    - name: Adding a Facebook Like Button to a Player
+      url: /social/general/adding-facebook-button-brightcove-player.html
+    - name: Creating a Video Clip
+      url: /social/general/creating-video-clip-using-brightcove-social.html
+    - name: Enabling Longer Videos In YouTube
+      url: /social/general/enabling-longer-videos-youtube.html
     - name: Publishing Videos to Social Media
-      url: /social/publishing-videos-social-media-platforms.html
-    - name: Reviewing Social Analytics
-      url: /social/reviewing-social-analytics.html
-    - name: Reviewing Social Engagement Analytics
-      url: /social/reviewing-social-engagement-analytics.html
-    - name: Reviewing Social Views Analytics
-      url: /social/reviewing-social-views-analytics.html
+      url: /social/general/publishing-videos-social-media-platforms.html
+    - name: Publishing a Live Event to Facebook
+      url: /social/general/publishing-live-event-facebook.html
+    - name: Publishing a Live Event to YouTube
+      url: /social/general/publishing-live-event-youtube.html
     - name: Setting the Privacy Status for a Video
-      url: /social/setting-privacy-status-video.html
+      url: /social/general/setting-privacy-status-video.html
     - name: Sharing Videos to Twitter Player Cards
-      url: /social/sharing-videos-twitter-player-cards.html
+      url: /social/general/sharing-videos-twitter-player-cards.html
     - name: Using Auto Sync
-      url: /social/using-auto-sync-synchronize-videos-social-media-accounts.html
+      url: /social/general/using-auto-sync-synchronize-videos-social-media-accounts.html
     - name: Viewing Published Videos
-      url: /social/viewing-videos-published-social-media.html
+      url: /social/general/viewing-videos-published-social-media.html
+  - name: Reviewing Analytics
+    url: /social/analytics/index.html
+    icon: fa-regular fa-chart-line-up
+    docs:
+    - name: Reviewing Social Analytics
+      url: /social/analytics/reviewing-social-analytics.html
+    - name: Reviewing Social Engagement Analytics
+      url: /social/analytics/reviewing-social-engagement-analytics.html
+    - name: Reviewing Social Views Analytics
+      url: /social/analytics/reviewing-social-views-analytics.html
+  - name: Developers
+    url: /social/index.html
+    icon: fa-regular fa-rectangle-code
+    docs:
+    - name: 'Quick Start: Social API'
+      url: 'https://apis.support.brightcove.com/social/getting-started/quick-start-social-api.html'
+    - name: Social API Reference
+      url: 'https://apis.support.brightcove.com/social/references/reference.html'
+    - name: 'Social API: Error Reference'
+      url: 'https://apis.support.brightcove.com/social/references/social-api-error-reference.html'
 - section:
   name: Live Streaming
   url: /live/index.html
