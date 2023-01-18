@@ -224,6 +224,8 @@
       url: /layout/ott-catalog-export.html
     - name: Page Details Overview
       url: /layout/page-details-overview.html
+    - name: Player E Selection and Features
+      url: /layout/e-selection-features.html
     - name: Refreshing the App Cache
       url: /layout/clearing-cache.html
     - name: Using Content Layouts
@@ -1036,6 +1038,8 @@
       docs:
         - name: 'Best Practices: Transcoding and Uploading'
           url: /general/references/best-practices-video-creating-transcoding-and-uploading-workflow.html
+        - name: 'Brightcove Player Plugin Compatibility'
+          url: '/general/references/bcp-plugin-compatibility.html'
         - name: 'Common Required Information for Submitting Apps'
           url: '/publishing-apps/general/common-required-info.html'
         - name: Glossary
