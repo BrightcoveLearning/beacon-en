@@ -4,30 +4,35 @@ description: Brightcove Interactivity allows you to add many kinds of interactiv
 parent: Home
 ---
 
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.description }}</summary>
-  <aside class="bcls-aside bcls-aside--information language-editable">Interactivity currently works for the Brightcove Web Player only.</aside>
-  <section class="bcls-section" id="page_wrapper">
-    {% for item in site.data.navigation %}
-      {% if item.name == page.title %}
-      <section class="flex-container">
-        {% for entry in item.docs %}
-        <div>
-            {% if entry.docs %}
-                <h3><a href="{{ entry.url }}">{{ entry.name }}</a></h3>
-                <ul>
+<!-- Template for section that just has sub-sections -->
+{% for item in site.data.navigation %}
+  {% if item.name == page.title %}
+    <h1><i class="{{ item.icon }}"></i> {{ page.title }}</h1>
+    <article class="bcls-article">
+    <summary>{{ page.description }}</summary>
+    <div class="row">
+      {% for entry in item.docs %}
+        <div class="col-12 col-lg-4 py-3">
+          <div class="card shadow-sm" style="background: white" onclick="window.location.href = '{{ entry.url }}'">
+            <div class="card-body">
+              <div>
+                {% if entry.docs %}
+                <h5 class="card-title text-center m-2">{{ entry.name }}</h5>
+                <ul class="list-group list-group-flush">
                   {% for subdoc in entry.docs %}
-                  <li><a href="{{ subdoc.url }}">{{ subdoc.name }}</a></li>
+                  <li class="list-group-item"><a href="{{ subdoc.url }}" style="text-decoration: none;">{{ subdoc.name }}</a></li>
                   {% endfor %}
                 </ul>
-            {% else %}
-            <p style="display:block"><a href="{{ entry.url }}">{{ entry.name }}</a></>
-            {% endif %}
+                {% else %}
+                <h5 class="card-title">{{ entry.name }}</h5>
+                {% endif %}
+            </div>
           </div>
-          {% endfor %}
-      </section>
-      {% endif %}
-    {% endfor %}
-  </section>
-</article>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </article>
+  {% endif %}
+{% endfor %}
+

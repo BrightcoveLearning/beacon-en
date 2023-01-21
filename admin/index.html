@@ -2,58 +2,34 @@
 title: Administering Accounts
 parent: Home
 ---
-<style translate="no">
-  td li {
-    margin-left: -2rem;
-    ;
-  }
-</style>
-<article class="bcls-article">
-  <h1>Administering Accounts</h1>
-  <summary>Learn how to create users and manage account settings.</summary>
-  <br />
-  <section class="bcls-section">
-    <table width="100%" border="0">
-      <tbody>
-        <tr>
-          <th width="56%" scope="col">
-            <h4>General Information</h4>
-          </th>
-          <th width="1%" scope="col">&nbsp;</th>
-          <th width="43%" scope="col">
-            <h4>Managing Ingest Profiles</h4>
-          </th>
-        </tr>
-        <tr>
-          <td style="vertical-align:top;">
-            <ul>
-              <li><a href="/admin/general/configuring-language-settings.html">Configuring Language Settings</a></li>
-              <li><a href="/admin/general/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a></li>
-              <li><a href="/admin/general/managing-account-information.html">Managing Account Information</a></li>
-              <li><a href="/admin/general/managing-account-settings.html">Managing Account Settings</a></li>
-              <li><a href="/admin/general/managing-api-authentication-credentials.html">Managing API Authentication Credentials</a></li>
-              <li><a href="/admin/general/managing-live-settings.html">Managing Live Settings</a></li>
-              <li><a href="/admin/general/managing-media-sharing-settings.html">Managing Media Sharing Settings</a></li>
-              <li><a href="/admin/general/managing-profile-information.html">Managing Profile Information</a></li>
-              <li><a href="/admin/general/managing-users.html">Managing Users</a></li>
-              <li><a href="/admin/general/managing-viewer-authentication.html">Managing Viewer Authentication</a></li>
-            </ul>
-          </td>
-          <td>&nbsp;</td>
-          <td style="vertical-align:top;">
-            <ul>
-              <li><a href="/admin/creating-custom-live-ingest-profiles">Creating Custom Live Ingest Profiles</a></li>
-              <li><a href="/admin/ingest-profiles/creating-ingest-profiles-context-aware-encoding.html">Creating Ingest Profiles for Context Aware Encoding</a></li>
-              <li><a href="/admin/ingest-profiles/creating-ingest-profiles-dynamic-delivery.html">Creating Ingest Profiles for Dynamic Delivery</a></li>
-              <li><a href="/admin/ingest-profiles/fields-custom-live-ingest-profiles.html">Fields for Custom Live Ingest Profiles</a></li>
-              <li><a href="/admin/ingest-profiles/ingest-profiles-best-practices.html">Ingest Profiles Best Practices</a></li>
-              <li><a href="/admin/ingest-profiles/managing-ingest-profiles.html">Managing Ingest Profiles</a></li>
-              <li><a href="/admin/standard-live-ingest-profiles">Standard Live Ingest Profiles</a></li>
-              <li><a href="/admin/ingest-profiles/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles for Dynamic Delivery and Context Aware Encoding</a></li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-</article>
+<!-- Template for section that just has sub-sections -->
+{% for item in site.data.navigation %}
+  {% if item.name == page.title %}
+    <h1><i class="{{ item.icon }}"></i> {{ page.title }}</h1>
+    <article class="bcls-article">
+    <summary>{{ page.description }}</summary>
+    <div class="row">
+      {% for entry in item.docs %}
+        <div class="col-12 col-lg-4 py-3">
+          <div class="card shadow-sm" style="background: white" onclick="window.location.href = '{{ entry.url }}'">
+            <div class="card-body">
+              <div>
+                {% if entry.docs %}
+                <h5 class="card-title text-center m-2">{{ entry.name }}</h5>
+                <ul class="list-group list-group-flush">
+                  {% for subdoc in entry.docs %}
+                  <li class="list-group-item"><a href="{{ subdoc.url }}" style="text-decoration: none;">{{ subdoc.name }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% else %}
+                <h5 class="card-title">{{ entry.name }}</h5>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </article>
+  {% endif %}
+{% endfor %}

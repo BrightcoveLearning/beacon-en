@@ -1,0 +1,41 @@
+---
+title: Managing Channel Content
+description: Adding and managing content for your Cloud Playout channels.
+parent: Cloud Playout Channels
+grandparent: Managing Channels
+---
+
+<!-- Template for sub-sub-section that has just pages -->
+<!-- Note that the page must have the correct parent and grandparent values -->
+{% for item in site.data.navigation %}
+  {% if item.name == page.grandparent %}
+    {% for section in item.docs %}
+      {% if section.name == page.parent %}
+        {% for subsection in section.docs %}
+          {% if subsection.name == page.title %}
+            <h1><i class="{{ item.icon }}"></i> {{ page.title }}</h1>
+            <article class="bcls-article">
+              <summary>{{ page.description }}</summary>
+
+              <div class="col-12 col-lg-4 py-3">
+                <div class="card shadow-sm" style="background: white" onclick="window.location.href = '{{ item.url }}'">
+                  <div class="card-body">
+                    <section class="flex-container">
+                      <div>
+                        <ul class="list-group list-group-flush">
+                          {% for entry in subsection.docs %}
+                          <li class="list-group-item"><a href="{{ entry.url }}" style="text-decoration: none;">{{ entry.name }}</a></li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}

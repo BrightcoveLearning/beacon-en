@@ -48,11 +48,18 @@ talla_appID: '00c26be3-4421-41e6-bb00-1dee68740f67'
 talla_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODI4MDQzNDF9.RYf2x65FXvdDURzM h00i76KfUrYlsDLsw6mVuEv6zmE'
 talla_knowledgegroup: 'd4105468-75a8-4bbb-89ac-33df9e3b5173'
 defaults:
-  - scope:
-      path: ''
-      type: 'pages'
+  -
+    scope:
+      path: ""
+      type: "pages"
     values:
-      layout: 'page'
+      layout: "doc_pages"
+  -
+    scope:
+      path: "*/index.html"
+      type: "pages"
+    values:
+      layout: "index_pages"
 # plugins
 plugins:
   - jekyll-last-modified-at

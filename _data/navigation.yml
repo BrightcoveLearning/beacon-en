@@ -4,6 +4,8 @@
 - section:
   name: Getting Started
   url: /get-started/index.html
+  icon: fa-regular fa-map-pin
+  description: This section provides guides to help you get started with Brightcove Beacon.
   docs:
     - name: Brightcove Beacon Learning Guide
       url: /get-started/learning-guide-bc-beacon.html
@@ -17,8 +19,6 @@
       url: /get-started/design-best-practices.html
     - name: App Design Considerations
       url: /get-started/app-design-considerations.html
-    - name: Training
-      url: /get-started/training/index.html
     - name: Learn the Basics
       url: '/get-started/basics/index.html'
       docs:
@@ -90,9 +90,20 @@
           docs:
             - name: Adding Users to an Account
               url: /get-started/basics/admin/adding-user-account.html
+    - name: Training
+      url: /get-started/training/index.html
+      docs:
+        - name: Register for Instructor-led Training
+          url: /get-started/training/register-training.html
+        - name: Online Training Courses
+          url: /get-started/training/online-training-courses.html
+        - name: Brightcove Academy
+          url: /get-started/training/brightcove-university.html
 - section:
   name: Managing Media
   url: /media/index.html
+  icon: fa-regular fa-photo-film
+  description: Learn how to manage the videos, series and seasons in your account.
   docs:
   - name: Using the Media Module
     url: /media/module/index.html
@@ -205,6 +216,8 @@
 - section:
   name: Managing Pages
   url: '/layout/index.html'
+  icon: fa-regular fa-files
+  description: Learn how to create and manage pages.
   docs:
     - name: Getting Started with the Layout Module
       url: /layout/getting-started-layout-module.html
@@ -239,9 +252,12 @@
 - section:
   name: Managing Channels
   url: '/channels/index.html'
+  icon: fa-regular fa-table-list
+  description: Documents to help you create and manage Beacon and Cloud Playout channels.
   docs:
     - name: Beacon Channels
       url: /channels/beacon-channels/index.html
+      icon: fa-regular fa-table-list
       docs:
         - name: Creating a Beacon Channel
           url: /channels/beacon-channels/creating-a-channel.html
@@ -251,49 +267,66 @@
           url: /channels/beacon-channels/streaming-vods-to-a-channel.html
     - name: Cloud Playout Channels
       url: /channels/cloud-playout/index.html
+      icon: fa-regular fa-cloud-bolt
       docs:
-        - name: 'Overview: Cloud Playout'
-          url: /channels/cloud-playout/cloud-playout-overview.html
-        - name: Creating a Cloud Playout Channel
-          url: /channels/cloud-playout/cloud-playout-stream-vod.html
-        - name: Configuring S3 Buckets
-          url: /channels/cloud-playout/configuring-s3-buckets.html
-        - name: Using Live Redundancy with Channels
-          url: /channels/cloud-playout/channel-live-redundancy.html
-        - name: Managing the Channel Program
-          url: /channels/cloud-playout/cloud-playout-add-content.html
-        - name: Managing Multiple Programs
-          url: /channels/cloud-playout/managing-programs.html
-        - name: Managing Slates
-          url: /channels/cloud-playout/managing-slates.html
-        - name: Adding Static Image Overlays
-          url: /channels/cloud-playout/static-image-overlays.html
-        - name: Adding Dynamic Overlays
-          url: /channels/cloud-playout/dynamic-overlays.html
-        - name: Adding Bumpers to Cloud Playout
-          url: /channels/cloud-playout/adding-bumpers-to-vod.html
-        - name: Importing Captions
-          url: /channels/cloud-playout/import-captions.html
-        - name: Monetizing Cloud Playout
-          url: /channels/cloud-playout/enabling-server-side-ads.html
-        - name: Adding Mid-Roll Ads to a Channel
-          url: /channels/cloud-playout/mid-roll-ad-insertion.html
-        - name: Setting a Hard Start for a Channel
-          url: /channels/cloud-playout/hard-start.html
-        - name: Searching for Channels
-          url: /channels/cloud-playout/searching-for-channels.html
-        - name: Publishing a Cloud Playout Channel
-          url: /channels/cloud-playout/publish-channel-beacon.html
-        - name: Using Channel Actions
-          url: /channels/cloud-playout/using-channel-actions.html
-        - name: Viewing Channel Output and Analytics
-          url: /channels/cloud-playout/viewing-channel-output-and-analytics.html
+        - name: 'Getting Started'
+          url: /channels/cloud-playout/getting-started/index.html
+          docs:
+          - name: 'Overview: Cloud Playout'
+            url: /channels/cloud-playout/cloud-playout-overview.html
+          - name: Creating a Cloud Playout Channel
+            url: /channels/cloud-playout/cloud-playout-stream-vod.html
+        - name: General Information
+          url: /channels/cloud-playout/general/index.html
+          docs:
+          - name: Configuring S3 Buckets
+            url: /channels/cloud-playout/configuring-s3-buckets.html
+          - name: Using Live Redundancy with Channels
+            url: /channels/cloud-playout/channel-live-redundancy.html
+          - name: Managing Slates
+            url: /channels/cloud-playout/managing-slates.html
+          - name: Searching for Channels
+            url: /channels/cloud-playout/searching-for-channels.html
+        - name: Managing Channel Content
+          url: /channels/cloud-playout/managing-content/index.html
+          docs:
+          - name: Managing the Channel Program
+            url: /channels/cloud-playout/cloud-playout-add-content.html
+          - name: Managing Multiple Programs
+            url: /channels/cloud-playout/managing-programs.html
+          - name: Adding Static Image Overlays
+            url: /channels/cloud-playout/static-image-overlays.html
+          - name: Adding Dynamic Overlays
+            url: /channels/cloud-playout/dynamic-overlays.html
+          - name: Adding Bumpers to Cloud Playout
+            url: /channels/cloud-playout/adding-bumpers-to-vod.html
+          - name: Importing Captions
+            url: /channels/cloud-playout/import-captions.html
+        - name: Monetizing Channels
+          url: /channels/cloud-playout/monetization/index.html
+          docs:
+          - name: Monetizing Cloud Playout
+            url: /channels/cloud-playout/enabling-server-side-ads.html
+          - name: Adding Mid-Roll Ads to a Channel
+            url: /channels/cloud-playout/mid-roll-ad-insertion.html
+        - name: Publishing Channels
+          url: /channels/cloud-playout/publishing/index.html
+          docs:
+          - name: Setting a Hard Start for a Channel
+            url: /channels/cloud-playout/hard-start.html
+          - name: Publishing a Cloud Playout Channel
+            url: /channels/cloud-playout/publish-channel-beacon.html
+          - name: Using Channel Actions
+            url: /channels/cloud-playout/using-channel-actions.html
+          - name: Viewing Channel Output and Analytics
+            url: /channels/cloud-playout/viewing-channel-output-and-analytics.html
     #    - name: Generating the Channel Embed Code
     #      url: /channels/cloud-playout/generating-channel-embed-code.html
 - section:
   name: Managing Players
   url: /players/index.html
   icon: fa-regular fa-play
+  description: Learn how to manage the players in your account.
   docs:
   - name: Using the Players Module
     url: /players/module/index.html
@@ -356,6 +389,8 @@
 - section:
   name: 'Monetizing Content'
   url: '/monetization/index.html'
+  icon: fa-regular fa-money-bills
+  description: Documents to help you implement monetizing your content.
   docs:
     - name: 'General'
       url: '/monetization/general/index.html'
@@ -400,6 +435,8 @@
 - section:
   name: 'Beacon Web Store'
   url: '/beacon-web-store/index.html'
+  icon: fa-regular fa-store
+  description: The Beacon Web Store is a service that enables Beacon licensees to implement subscriptions in Bring Your Own (BYO) web stores.
   docs:
     - name: 'Overview: Brightcove Beacon Web Store'
       url: '/beacon-web-store/beacon-webstore-overview.html'
@@ -410,6 +447,8 @@
 - section:
   name: Reviewing Analytics
   url: /analytics/index.html
+  icon: fa-regular fa-chart-line-up
+  description: Learn how to use video analytics to check the performance and engagement of your videos.
   docs:
     - name: Using the Analytics Module
       url: /analytics/module/index.html
@@ -439,6 +478,7 @@
           url: /analytics/reports/ssai-performance-data.html
     - name: General Information
       url: /analytics/general/index.html
+      icon: fa-regular fa-chart-line-up
       docs:
         - name: Analytics Overview
           url: /analytics/general/analytics-overview.html
@@ -462,6 +502,8 @@
 - section:
   name: Protecting Content
   url: /protecting-content/index.html
+  icon: fa-regular fa-lock
+  description: Learn how to protect your video content from unauthorized viewing.
   docs:
     - name: DRM Output Protection Settings
       url: /general/drm-output-protection-settings.html
@@ -472,6 +514,8 @@
 - section:
   name: 'App Publishing and Behavior'
   url: '/publishing-apps/index.html'
+  icon: fa-regular fa-display-code
+  description: This section provides guidance on submitting your apps to the app stores and behaviors of your OTT apps.
   docs:
     - name: 'General Information'
       url: '/publishing-apps/general/index.html'
@@ -575,6 +619,7 @@
   name: 'Publishing Videos & Players'
   url: /publish/index.html
   icon: fa-regular fa-display-code
+  description: Learn different ways of publishing your videos and players.
   docs:
   - name: Publishing
     url: /publish/publishing/index.html
@@ -629,6 +674,8 @@
 - section:
   name: Registered Users
   url: /registered-users/index.html
+  icon: fa-regular fa-users
+  description: Quickly view account details, subscription plans and viewing history for the registered users in your account.
   docs:
     - name: Controlling Viewer Access with Roles
       url: /registered-users/roles-as-rights-studio.html
@@ -642,6 +689,7 @@
   name: Social Sharing
   url: /social/index.html
   icon: fa-regular fa-share-nodes
+  description: Learn how to share videos out to social media accounts.
   docs:
   - name: Getting Started
     url: /social/module/index.html
@@ -698,6 +746,8 @@
 - section:
   name: Live Streaming
   url: /live/index.html
+  icon: fa-regular fa-satellite-dish
+  description: The Live module is used to broadcast live events to both desktop and mobile devices. After entering your event information into the Live module, you will be provided with a set of encoder settings that you plug into your on-site encoder. All transcoding is done in the cloud so you don't need a hardware-based transcoder.
   docs:
   - name: Getting Started
     url: /live/get-started/index.html
@@ -768,6 +818,8 @@
 - section:
   name: Styling & Appearance
   url: /styling/index.html
+  icon: fa-regular fa-brush
+  description: Documents to help you change the appearance of your Brightcove Beacon apps.
   docs:
     - name: Branding Brightcove Beacon Apps
       url: /styling/branding-beacon-apps.html
@@ -776,6 +828,8 @@
 - section:
   name: Interactivity
   url: /interactivity/index.html
+  icon: fa-regular fa-hand-back-point-up
+  description: Brightcove Interactivity allows you to add many kinds of interactivity to players, including call to action, chapters, click-to-buy, branching, and polls.
   docs:
       - name: 'Getting Started'
         url: '/interactivity/platform/getting-started/index.html'
@@ -860,6 +914,8 @@
 - section:
   name: Marketing Automation
   url: /campaign/index.html
+  icon: fa-regular fa-chart-network
+  description: Learn how to connect Video Cloud with popular marketing automation platforms to track viewer engagement.
   docs:
   - name: Getting Started
     url: /campaign/get-started/index.html
@@ -905,6 +961,8 @@
         url: /campaign/general/viewing-viewer-profile-information.html
       - name: Working with UTM Fields
         url: /campaign/general/working-utm-fields-campaign-module.html
+      - name: Developers (Audience API)
+        url: 'https://apis.support.brightcove.com/audience/index.html'
   - name: Integrations
     url: /campaign/integrations/index.html
     docs:
@@ -970,12 +1028,11 @@
         url: /campaign/admin/managing-viewer-data.html
       - name: Troubleshooting Campaign Issues
         url: /campaign/admin/troubleshooting-campaign-issues.html
-  - name: Developers (Audience API)
-    url: 'https://apis.support.brightcove.com/audience/index.html'
 - section:
   name: Administering Accounts
   url: /admin/index.html
   icon: fa-regular fa-gear
+  description: Learn how to create users and manage account settings.
   docs:
   - name: General Information
     url: /admin/general/index.html
@@ -1032,6 +1089,8 @@
 - section:
   name: 'General Information'
   url: '/general/index.html'
+  icon: fa-regular fa-circle-info
+  description: General Information about Brightcove Beacon.
   docs:
     - name: 'References'
       url: '/general/references/index.html'
@@ -1118,6 +1177,8 @@
 - section:
   name: Beacon Plugins
   url: /ott-plugins/index.html
+  icon: a-regular fa-plug
+  description: This section contains topics on Beacon plugins.
   docs:
     - name: 'Learning Guide: Beacon Plugins'
       url: /ott-plugins/learning-guide-beacon-plugins.html
@@ -1142,12 +1203,16 @@
 - section:
   name: Release Notes
   url: /release-notes/index.html
+  icon: fa-regular fa-memo-pad
+  description: Learn different the changes and new features added to Beacon Studio.
   docs:
     - name: Product Release Notes
       url: /release-notes/product-updates.html
 - section:
   name: 'Support'
   url: '/support/index.html'
+  icon: fa-regular fa-comments-question-check
+  description: Learn how to get help from Brightcove Support
   docs:
     - name: 'Viewing the Brightcove System Status Page'
       url: '/support/viewing-brightcove-system-status-page.html'

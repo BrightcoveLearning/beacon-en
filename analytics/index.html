@@ -3,29 +3,35 @@ title: Reviewing Analytics
 parent: Home
 description: Learn how to use video analytics to check the performance and engagement of your videos.
 ---
-<h1>Reviewing Analytics</h1>
-<aside class="bcls-aside bcls-aside--information language-editable">Note: Brightcove Analytics reflect data sent from Brightcove web or SDK (iOS, tvOS, Android) to the Brightcove data collector. The data you see here will only reflect the performance of videos when they are viewed in these players. Some OTT platforms require the use of their own proprietary players, and therefore analytics for those apps will not be reflected here.</aside>
+<!-- Template for section that just has sub-sections -->
+{% for item in site.data.navigation %}
+{% if item.name == page.title %}
+<h1><i class="{{ item.icon }}"></i> {{ page.title }}</h1>
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
-  <section class="bcls-section">
-    <h2 id="Topics_in_this_section">Topics</h2>
-      <section class="card-wrapper">
-    {% for item in site.data.navigation %}
-    {% if item.name == page.title %}
-    {% for subsection in item.docs %}
-    <section class="bcls-card-small" onclick="window.location.href='{{subsection.url}}'">
-      <div class="card-content">
-        <h2>{{ subsection.name }}</h2>
-        <ul  class="bcls-topic-list">
-          {% for doc in subsection.docs %}
-          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
-          {% endfor %}
-        </ul>
+  <aside class="bcls-aside bcls-aside--information language-editable">Note: Brightcove Analytics reflect data sent from Brightcove web or SDK (iOS, tvOS, Android) to the Brightcove data collector. The data you see here will only reflect the performance of videos when they are viewed in these players. Some OTT platforms require the use of their own proprietary players, and therefore analytics for those apps will not be reflected here.</aside>
+    <div class="row">
+      {% for entry in item.docs %}
+        <div class="col-12 col-lg-4 py-3">
+          <div class="card shadow-sm" style="background: white" onclick="window.location.href = '{{ entry.url }}'">
+            <div class="card-body">
+              <div>
+                {% if entry.docs %}
+                <h5 class="card-title text-center m-2">{{ entry.name }}</h5>
+                <ul class="list-group list-group-flush">
+                  {% for subdoc in entry.docs %}
+                  <li class="list-group-item"><a href="{{ subdoc.url }}" style="text-decoration: none;">{{ subdoc.name }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% else %}
+                <h5 class="card-title">{{ entry.name }}</h5>
+                {% endif %}
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-    {% endfor %}
-    {% endif %}
-    {% endfor %}
-  </section>
-  </section>
-</article>
+      {% endfor %}
+    </div>
+  </article>
+  {% endif %}
+{% endfor %}
