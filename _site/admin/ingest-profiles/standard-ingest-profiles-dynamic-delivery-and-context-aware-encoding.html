@@ -4082,10 +4082,6 @@
               <th>Audio Bit Rate (kbps)</th>
               <th>Audio Channels</th>
               <th>Audio Codec</th>
-              <th>Forced Keyframe Rate</th>
-              <th>Fragment Duration (ms)</th>
-              <th>Fragment Track Timescale</th>
-              <th>Segment Length (sec)</th>
             </tr>
           </thead>
           <tbody class="bcls-table__body" id="audioTableBody">
@@ -4112,7 +4108,6 @@
               <th>Audio Bit Rate (kbps)</th>
               <th>Audio Channels</th>
               <th>Audio Codec</th>
-              <th>Forced AAC Profile</th>
               <th>Skip Video</th>
             </tr>
           </thead>
@@ -4141,12 +4136,7 @@
               <th>Aspect Mode</th>
               <th>Decoder Bitrate Cap</th>
               <th>Decoder Buffer Size</th>
-              <th>Forced Keyframe Rate</th>
-              <th>Fragment Duration (ms)</th>
-              <th>H264 b-frames</th>
               <th>H264 Profile</th>
-              <th>Segment Length (sec)</th>
-              <th>Speed</th>
               <th>Video Codec</th>
             </tr>
           </thead>
@@ -4174,8 +4164,6 @@
                 <th>Decoder Bitrate Cap</th>
                 <th>Decoder Buffer Size</th>
                 <th>Keyframe Rate</th>
-                <th>Fragment Duration (ms)</th>
-                <th>Speed</th>
                 <th>Video Codec</th>
               </tr>
             </thead>
@@ -4191,7 +4179,6 @@
         <li id="note4-4"><sup><strong>[4-4]</strong></sup> In addition to those shown in the table, HEVC renditions have the following properties:
           <ul>
             <li><code translate="No">fixed_keyframe_interval: true</code></li>
-            <li><code translate="No">segment_seconds: 2</code></li>
             <li><code translate="No">video_bframes: 3</code></li>
             <li><code translate="No">video_codec_profile: main</code></li>
             <li><code translate="No">video_reference_frames: 6</code></li>
@@ -4224,7 +4211,6 @@
         <li id="note5-0"><sup><strong>[5-0]</strong></sup> In addition to the properties shown above, all progressive renditions have the following settings:
           <ul>
             <li>Aspect Mode: Preserve</li>
-            <li>Speed: 3</li>
             <li>Video Codec: h264</li>
             <li>Upscale: false</li>
             <li>Audio Codec: aac</li>
