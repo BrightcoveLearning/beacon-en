@@ -273,53 +273,53 @@
           url: /channels/cloud-playout/getting-started/index.html
           docs:
           - name: 'Overview: Cloud Playout'
-            url: /channels/cloud-playout/cloud-playout-overview.html
+            url: /channels/cloud-playout/getting-started/cloud-playout-overview.html
           - name: Creating a Cloud Playout Channel
-            url: /channels/cloud-playout/cloud-playout-stream-vod.html
+            url: /channels/cloud-playout/getting-started/cloud-playout-stream-vod.html
         - name: General Information
           url: /channels/cloud-playout/general/index.html
           docs:
           - name: Configuring S3 Buckets
-            url: /channels/cloud-playout/configuring-s3-buckets.html
+            url: /channels/cloud-playout/general/configuring-s3-buckets.html
           - name: Using Live Redundancy with Channels
-            url: /channels/cloud-playout/channel-live-redundancy.html
+            url: /channels/cloud-playout/general/channel-live-redundancy.html
           - name: Managing Slates
-            url: /channels/cloud-playout/managing-slates.html
+            url: /channels/cloud-playout/general/managing-slates.html
           - name: Searching for Channels
-            url: /channels/cloud-playout/searching-for-channels.html
+            url: /channels/cloud-playout/general/searching-for-channels.html
         - name: Managing Channel Content
           url: /channels/cloud-playout/managing-content/index.html
           docs:
           - name: Managing the Channel Program
-            url: /channels/cloud-playout/cloud-playout-add-content.html
+            url: /channels/cloud-playout/managing-content/cloud-playout-add-content.html
           - name: Managing Multiple Programs
-            url: /channels/cloud-playout/managing-programs.html
+            url: /channels/cloud-playout/managing-content/managing-programs.html
           - name: Adding Static Image Overlays
-            url: /channels/cloud-playout/static-image-overlays.html
+            url: /channels/cloud-playout/managing-content/static-image-overlays.html
           - name: Adding Dynamic Overlays
-            url: /channels/cloud-playout/dynamic-overlays.html
+            url: /channels/cloud-playout/managing-content/dynamic-overlays.html
           - name: Adding Bumpers to Cloud Playout
-            url: /channels/cloud-playout/adding-bumpers-to-vod.html
+            url: /channels/cloud-playout/managing-content/adding-bumpers-to-vod.html
           - name: Importing Captions
-            url: /channels/cloud-playout/import-captions.html
+            url: /channels/cloud-playout/managing-content/import-captions.html
         - name: Monetizing Channels
           url: /channels/cloud-playout/monetization/index.html
           docs:
           - name: Monetizing Cloud Playout
-            url: /channels/cloud-playout/enabling-server-side-ads.html
+            url: /channels/cloud-playout/monetization/enabling-server-side-ads.html
           - name: Adding Mid-Roll Ads to a Channel
-            url: /channels/cloud-playout/mid-roll-ad-insertion.html
+            url: /channels/cloud-playout/monetization/mid-roll-ad-insertion.html
         - name: Publishing Channels
           url: /channels/cloud-playout/publishing/index.html
           docs:
           - name: Setting a Hard Start for a Channel
-            url: /channels/cloud-playout/hard-start.html
+            url: /channels/cloud-playout/publishing/hard-start.html
           - name: Publishing a Cloud Playout Channel
-            url: /channels/cloud-playout/publish-channel-beacon.html
+            url: /channels/cloud-playout/publishing/publish-channel-beacon.html
           - name: Using Channel Actions
-            url: /channels/cloud-playout/using-channel-actions.html
+            url: /channels/cloud-playout/publishing/using-channel-actions.html
           - name: Viewing Channel Output and Analytics
-            url: /channels/cloud-playout/viewing-channel-output-and-analytics.html
+            url: /channels/cloud-playout/publishing/viewing-channel-output-and-analytics.html
     #    - name: Generating the Channel Embed Code
     #      url: /channels/cloud-playout/generating-channel-embed-code.html
 - section:
