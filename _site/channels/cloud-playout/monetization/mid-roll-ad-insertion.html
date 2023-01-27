@@ -230,7 +230,7 @@
               
               
               
-              <li class="nav-item"><a class="nav-link" href="/general/beacon-studio-or-classic.html">When to Use Beacon Studio and/or Beacon Classic</a></li>
+              <li class="nav-item"><a class="nav-link" href="/general/references/beacon-studio-or-classic.html">When to Use Beacon Studio and/or Beacon Classic</a></li>
               
               
               
@@ -4037,7 +4037,7 @@
   <summary>This topic covers adding mid-roll ads to VOD content in Cloud Playout channels.</summary>
   <section class="bcls-section">
     <h2 id="introduction">Introduction</h2>
-    <p>Before reading this topic, you should look at <a href="monetization/enabling-server-side-ads.html">Monetizing Cloud Playout</a>, which covers enabling a Cloud Playout channel for SSAI and setting up pre-roll and post-roll ad insertion.</p>
+    <p>Before reading this topic, you should look at <a href="/channels/cloud-playout/monetization/enabling-server-side-ads.html">Monetizing Cloud Playout</a>, which covers enabling a Cloud Playout channel for SSAI and setting up pre-roll and post-roll ad insertion.</p>
     <p>As you will see below, mid-roll ads work a bit differently.</p>
   </section>
   <section class="bcls-section">
@@ -4057,7 +4057,7 @@
     <h2 id="How_mid-rolls_work_in_Cloud_Playout">How mid-rolls work in Cloud Playout</h2>
     <ul>
       <li>Cloud Playout only sets ad positions based on ad cuepoints (code cuepoints are ignored).</li>
-      <li>The pre-roll and post-roll ad cuepoints automatically created by Video Cloud are ignored as pre-roll and post-roll ads are managed differently in Cloud Playout - see <a href="monetization/enabling-server-side-ads.html#ads">Enabling Server-Side Ads</a>.</li>
+      <li>The pre-roll and post-roll ad cuepoints automatically created by Video Cloud are ignored as pre-roll and post-roll ads are managed differently in Cloud Playout - see <a href="/channels/cloud-playout/monetization/enabling-server-side-ads.html#ads">Enabling Server-Side Ads</a>.</li>
       <li>Only the timestamps for the ad cuepoints are used to determine mid-roll ad timings. Cuepoint metadata is ignored.</li>
       <li>
         The default duration for mid-roll is 30 seconds. This can be changed in the channel settings: minimum duration: 30 seconds; maximum duration: 10 minutes.
@@ -4074,7 +4074,7 @@
           </ul>
           </aside>
       </li>
-      <li>Mid-roll ads can only be inserted in VOD content, not in ad placeholders for <a href="managing-content/adding-bumpers-to-vod.html">bumpers</a> or <a href="monetization/enabling-server-side-ads.html">pre-roll and post-roll ads</a>.</li>
+      <li>Mid-roll ads can only be inserted in VOD content, not in ad placeholders for <a href="/channels/cloud-playout/managing-content/adding-bumpers-to-vod.html">bumpers</a> or <a href="/channels/cloud-playout/monetization/enabling-server-side-ads.html">pre-roll and post-roll ads</a>.</li>
       <li>The start and end times, and the duration of assets in the program in the Cloud Playout UI and in the EPG, will reflect the mid-roll ad content.</li>
       <li>
         Importing cuepoint data for mid-roll ads can be enabled or disabled at any time, regardless of the current state of the channel.
