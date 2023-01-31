@@ -6,6 +6,7 @@ var BCLS = (function (window, document) {
     writePropsButton = document.getElementById('writePropsButton'),
     rokuRadioButtons = document.getElementById('rokuRadioButtons'),
     notRokuRadioButtons = document.getElementById('notRokuRadioButtons'),
+    summaryResponse = document.getElementById('summaryResponse'),
     proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/live-proxy.php',
     regions = ['us-west-2', 'us-east-1', 'ap-northeast-1', 'ap-southeast-1', 'ap-southeast-2', 'ap-south-1', 'eu-central-1', 'eu-west-1', 'sa-east-1'],
     apiKey = '',
@@ -61,8 +62,9 @@ var BCLS = (function (window, document) {
     makeRequest(options, function(response) {
       if (isJson(response)) {
         responseDecodedUpdate = JSON.parse(response);
-        console.log('responseDecodedUpdate', responseDecodedUpdate);
+        //console.log('responseDecodedUpdate', responseDecodedUpdate);
         apiResponse.textContent = JSON.stringify(responseDecodedUpdate, null, '  ');
+        summaryResponse = responseDecodedUpdate.application.application_description + ': ' + responseDecodedUpdate.action;
       } else {
         apiResponse.textContent = response;
       }
