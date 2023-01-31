@@ -49,7 +49,7 @@ var BCLS = (function (window, document) {
     } else {
       console.log('Changing not Roku');
       adConfig.application_ad_configuration.enable_roku_workarounds = false;
-      adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = false;
+      adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = true;
       delete adConfig.application_type;
   }
     urlWithID = 'https://api.bcovlive.io/v1/ssai/applications/application/' + IDValue;
@@ -63,7 +63,8 @@ var BCLS = (function (window, document) {
       if (isJson(response)) {
         responseDecodedUpdate = JSON.parse(response);
         //console.log('responseDecodedUpdate', responseDecodedUpdate);
-        summaryResponse += responseDecodedUpdate.application.application_description + ': ' + responseDecodedUpdate.action + '<br>';
+        summaryResponse.innerHTML +=
+          responseDecodedUpdate.application.application_description + ": " + responseDecodedUpdate.action + "<br>";
         //apiResponse.textContent += JSON.stringify(responseDecodedUpdate, null, '  ') + '<br>';
       } else {
         apiResponse.textContent = response;
