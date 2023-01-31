@@ -63,8 +63,8 @@ var BCLS = (function (window, document) {
       if (isJson(response)) {
         responseDecodedUpdate = JSON.parse(response);
         //console.log('responseDecodedUpdate', responseDecodedUpdate);
-        apiResponse.textContent += JSON.stringify(responseDecodedUpdate, null, '  ') + '<br>';
         summaryResponse += responseDecodedUpdate.application.application_description + ': ' + responseDecodedUpdate.action + '<br>';
+        //apiResponse.textContent += JSON.stringify(responseDecodedUpdate, null, '  ') + '<br>';
       } else {
         apiResponse.textContent = response;
       }
