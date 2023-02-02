@@ -177,8 +177,6 @@
       url: /media/captions/adding-audio-tracks-videos-using-media-module.html
     - name: Adding Captions to Videos
       url: /media/captions/adding-captions-videos-using-media-module.html
-    - name: Adding Chapters to a Video
-      url: /media/captions/adding-chapters-video.html
     - name: Generating Captions for Videos
       url: /media/captions/generating-captions-videos.html
     - name: 'Overview: Adding Captions to a Video'
@@ -615,62 +613,6 @@
       docs:
         - name: 'Brightcove Player Use'
           url: '/publishing-apps/web/bcp-use.html'
-- section:
-  name: 'Publishing Videos & Players'
-  url: /publish/index.html
-  icon: fa-regular fa-display-code
-  description: Learn different ways of publishing your videos and players.
-  docs:
-  - name: Publishing
-    url: /publish/publishing/index.html
-    icon: fa-regular fa-display-code
-    docs:
-    - name: Adding an Application ID to the Embed Code
-      url: /publish/publishing/adding-application-id-player-embed-code.html
-    - name: Changing a Video in a Player
-      url: /publish/publishing/changing-video-player-without-changing-embed-code.html
-    - name: Choosing the Correct Embed Code
-      url: /publish/publishing/choosing-correct-embed-code.html
-    - name: Publishing a Video to Email
-      url: /publish/publishing/publishing-video-email.html
-    - name: Publishing Videos and Playlists
-      url: /publish/publishing/publishing-videos-and-playlists-media-module.html
-    - name: Publishing Videos to an In-Page Experience
-      url: /publish/publishing/publishing-videos-page-experience.html
-  - name: Publishing to Third-Party Apps
-    url: /publish/third-party/index.html
-    icon: fa-regular fa-display-code
-    docs:
-    - name: Adding a Player to a Facebook Fan Page
-      url: /publish/third-party/adding-brightcove-player-facebook-fan-page.html
-    - name: Embedding a Player on a Google Sites Page
-      url: /publish/third-party/embedding-brightcove-player-google-sites-page.html
-    - name: Publishing a Player in a Wordpress Page
-      url: /publish/third-party/publishing-brightcove-player-wordpress-page.html
-    - name: Publishing Players in Facebook Instant Articles
-      url: /publish/third-party/publishing-brightcove-players-facebook-instant-articles.html
-    - name: Publishing Players in Joomla
-      url: /publish/third-party/publishing-brightcove-players-joomla.html
-  - name: General Information
-    url: /publish/general/index.html
-    icon: fa-regular fa-circle-info
-    docs:
-    - name: Adding a 3Play Media Interactive Transcript
-      url: /publish/general/adding-3play-media-interactive-transcript-video.html
-    - name: Deep Linking
-      url: /publish/general/deep-linking.html
-    - name: Driving Video Views Through Email
-      url: /publish/general/driving-video-views-through-email.html
-    - name: Dynamically Assigning Videos to a Player
-      url: /publish/general/dynamically-assigning-videos-player.html
-    - name: 'Step-by-Step:  Creating and Publishing a Player'
-      url: /publish/general/step-step-using-players-module-create-and-publish-player.html
-    - name: Creating and Publishing High Quality Screencasts
-      url: /publish/general/creating-and-publishing-high-quality-screencasts.html
-    - name: Using Multiple Players on One Page
-      url: /publish/general/using-multiple-players-one-page.html
-    - name: Using Reference IDs
-      url: /publish/general/using-reference-ids.html
 - section:
   name: Registered Users
   url: /registered-users/index.html
