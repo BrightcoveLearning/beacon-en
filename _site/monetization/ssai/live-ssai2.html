@@ -3891,18 +3891,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
  -->
 
 
-
   <section class="bcls-section">
     <h2 id="Updating_the_ad_configurations">Updating the ad configurations</h2>
-    <p>There are two properties and associated values that need to be set on your configured ad configurations. The only way to do this is using the Live API. The following form requires you to provide some information, then calls the Live API to set the values for you.</p>
+    <p>There are two properties and associated values that need to be set on your ad configurations. The only way to do this is using the Live API. The following form requires you to provide some information, then calls the Live API to set the values for you.</p>
     <p>The process will be as follows:</p>
     <ol>
       <li>Contact <a href="https://supportportal.brightcove.com/s/">Brightcove Support</a> and create a case to retrieve your <strong>Live API Key</strong>. Be sure you mention that you will be setting the property <code>ad_configuration_client_sdk_enabled</code> to <code>true</code>, so you will need Client SDK integration.</li>
       <li>Paste your API key into the form, then click the <strong>Retrieve Ad Configurations</strong> button.</li>
       <li>You will see radio buttons appear in the <em>Choose your Roku ad configuration</em> and <em>Choose your All Except Roku ad configuration</em> sections of the form.</li>
       <li>Check the appropriate button for either/both, then click the <strong>Assign Property Values</strong> button.</li>
-      <li>Hopefully you will see success message for the number of buttons you selected. If you see errors, please contact WHAT HERE.</li>
+      <li>Hopefully you will see updated messages for the number of buttons you selected. If you see errors, please contact Brightcove Support.</li>
     </ol>
+    <aside class="bcls-aside bcls-aside--information language-editable">You will need to use this form on initial setup irregardless if you have created just a Roku, just a non-Roku, or both types of ad configurations. If you have NOT created one of the types, simply do not click a button in the grouping.</aside>
     <p>If you have any doubts about the process, or just want to see an example, watch the following short (1:24) video:</p>
     <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1756646802340122144">&nbsp;</div>
     <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
@@ -3917,7 +3917,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
       <p><button id="sendButton" class="bcls-button">Retrieve Ad Configurations</button></p>
 
-      <h3>Choose your Roku ad configuration</h3>
+      <h3>Choose your Roku +
+        ad configuration</h3>
       <div id="rokuRadioButtons">
       </div>
 
