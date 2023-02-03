@@ -117,6 +117,8 @@
     docs:
     - name: Downloading Videos
       url: /media/manage/downloading-videos-video-cloud.html
+    - name: Exporting Video Data
+      url: /media/manage/exporting-video-data.html
     - name: Replacing a Video Source File
       url: /media/manage/replacing-video-source-file.html
     - name: Retranscoding Videos
@@ -195,8 +197,6 @@
   - name: General Information
     url: '/media/general/index.html'
     docs: 
-    - name: Exporting Video Data
-      url: /media/general/exporting-video-data.html
     - name: Increasing the Quality of Poster Images
       url: /media/general/increasing-quality-poster-and-thumbnail-images.html
     - name: Offline Playback
