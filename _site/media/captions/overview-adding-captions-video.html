@@ -3875,13 +3875,7 @@
       <li><strong>Uploaded using Beacon</strong> (<strong>ingested</strong>) - In this case, the WebVTT file is uploaded (ingested) to Beacon. This can be done using the Media module or using the APIs.</li>
     </ol>
     <aside class="bcls-aside bcls-aside--information">
-      <p>Note: If the video source file you ingest into Beacon has embedded 608 captions, they will be ignored during the processing of the video, and <strong>not</strong> present in the video renditions. To have captions with your videos, you have a few options:</p>
-      <ul>
-        <li><a href="/media/captions/generating-captions-videos.html">Let Beacon generate caption files</a></li>
-        <li><a href="/media/captions/adding-captions-videos-using-media-module.html">Manually add captions</a></li>
-        <li><a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Use the Dynamic Ingest API</a></li>
-        <li><a href="https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-add-webvtt-captions-text-tracks.html">Use the CMS API (for remotely hosted captions)</a></li>
-      </ul>
+      <p>Note: If the video source file you ingest into Beacon has embedded 608 captions, they will be passed through and <strong>will be</strong> present in the video renditions.</p>
     </aside>
   </section>
   <section class="bcls-section">
