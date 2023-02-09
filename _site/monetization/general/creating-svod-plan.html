@@ -3882,7 +3882,7 @@
     
   </section>
   <section class="bcls-section">
-    <h2 id="Steps to create a package">Steps to create a package</h2>
+    <h2 id="Creating_SVOD_plans_in_Beacon_Classic">Creating SVOD plans in Beacon Classic</h2>
     <p>Step through the following steps to create a new package:</p>
     <ol class="bcls-tasklist">
       <li>
@@ -3891,11 +3891,13 @@
           <img class="bcls-image" src="/assets/images/s-monetization-img/creating-subscription-package/initial-menu-selections.png" alt="initial menu selections" />
         </figure>
       </li>
+      <!-- Begin Evergent SVOD -->
       <!-- <li>
         <p>For the <strong>Package</strong> tab, enter details for your SVOD Plan.</p>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/creating-subscription-package/new-svod-plan.webp" alt="New SVOD plan" />
         </figure>
+
         <p>This table contains the fields you will find in the <strong>Package</strong> tab: </p>
         <table class="bcls-table">
           <thead class="bcls-table__head">
@@ -3982,7 +3984,90 @@
             </tr>
           </tbody>
         </table>
+      </li>
+      <li>
+        <p>If you are using Evergent, select <strong>Evergent</strong> to see <strong>Payment methods details</strong>.</p>
+        <aside class="bcls-aside bcls-aside--tip">Availability is for the SVOD package. For example, if the <strong>Permitted locations</strong> is set for the US, then all viewers will be able play a movie or asset associated with this package, but only viewers in the US can subscribe to the asset.</aside>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-monetization-img/creating-subscription-package/evergent-payment-details.webp" alt="Evergent payment details">
+        </figure> 
+        <p>
+          This table contains the fields for Evergent payment details: </p>
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td><strong>Start Time</strong></td>
+              <td>Yes</td>
+              <td>Schedule a starting date this package will be available</td>
+            </tr>
+            <tr>
+                <td><strong>End Time</strong></td>
+                <td>Yes</td>
+                <td>
+                    Schedule an ending date when this package will no longer be available
+                </td>
+            </tr>
+            <tr>
+              <td><strong>Devices to publish</strong></td>
+              <td>Yes</td>
+              <td>
+                  <p>Add the devices you wish to publish to. Select the <strong>Select / Unselect All Devices</strong> to see a list of available devices.</p>
+                  <aside class="bcls-aside bcls-aside--information">
+                    Currenty, the only device supported for TVOD is <strong>web</strong>.
+                </aside>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Permitted locations</strong></td>
+              <td>Yes</td>
+              <td>
+                <p>Select the locations where you want to stream your content, if no restrictions enter <strong>World</strong>.</p>
+                <aside class="bcls-aside bcls-aside--information">
+                    <p>If you don't specify at least 1 permitted location, then you may see this message from your app:</p>
+                    <figure class="bcls-figure">
+                        <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/no-content.jpg" alt="No content" /> </figure>
+                </aside>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Denied locations</strong></td>
+              <td>No</td>
+              <td>
+                  Select the locations where you DO NOT want to stream your content. Enter <strong>World</strong> if you have no restrictions.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Price</strong></td>
+              <td>Yes</td>
+              <td>
+                  Specify the price that users must pay to view content associated with this package.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Currency</strong></td>
+              <td>Yes</td>
+              <td>
+                  Specify the currency type for the package price.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Evergent ID</strong></td>
+              <td>Yes</td>
+              <td>
+                Evergent ID is sent to Evergent so that you can identify the package.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </li> -->
+       <!-- End Evergent SVOD -->
       <li>
         On the <strong>Package</strong> tab (screenshot below), complete the following:
         <ul>
