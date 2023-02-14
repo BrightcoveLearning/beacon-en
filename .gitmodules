@@ -203,10 +203,10 @@
   url = https://github.com/BrightcoveLearning/s-site-assets-template-stylesheets
   branch = main
 [submodule "_includes/s-integrations"]
-  path = _includes/s-integrations
-  url = https://github.com/BrightcoveLearning/s-integrations
+	path = _includes/s-integrations
+	url = https://github.com/BrightcoveLearning/s-integrations
   branch = main
 [submodule "assets/images/s-integrations-img"]
-  path = assets/images/s-integrations-img
-  url = https://github.com/BrightcoveLearning/s-integrations-img
+	path = assets/images/s-integrations-img
+	url = https://github.com/BrightcoveLearning/s-integrations-img
   branch = main
