@@ -579,8 +579,10 @@
     - name: 'LG'
       url: '/publishing-apps/lg/index.html'
       docs:
-        - name: 'Submitting to the LG (webOS) Store'
+        - name: 'Submitting to the LG Store'
           url: '/publishing-apps/lg/submitting-to-lg.html'
+        - name: 'Installing LG Test Build'
+          url: '/publishing-apps/lg/installing-lg-webos-test-build.html'
     #- name: 'Panasonic'
     #  url: '/publishing-apps/panasonic/index.html'
     #  docs:
