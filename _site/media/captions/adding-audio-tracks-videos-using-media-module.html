@@ -37,6 +37,7 @@
 
         gtag('config', 'G-XBJC11HF8Z');
         </script>
+        <script src="/assets/s-site-assets-scripts/sixth-sense.js"></script>
         <script src="/assets/s-site-assets-scripts/sajari-head.js"></script>
         <script src="/assets/s-site-assets-scripts/feather.min.js"></script>
 
@@ -3885,7 +3886,7 @@
         <li>When a video is uploaded using a Dynamic Delivery ingest profile, the source audio for the video will be transcoded according to the ingest profile and will appear in the <strong>Audio Tracks</strong> section for the video in the Media module. By default, the audio <strong>Language</strong> is set to <strong>English</strong> with a <strong>Variant</strong> type of <strong>main</strong>. The defaults can be changed by Brightcove Support. Additional audio tracks can then be added.</li>
         <li>When you add additional audio tracks to a video, they must all have the same bitrate/rendition profile to ensure successful playback in HLS (DASH playback will still work).</li>
         <li>When you add an audio track to a video, and then add a duplicate before the first one has finished uploading, one of the tracks may be corrupted, silently, <strong>causing playback of the video to fail</strong>. Be sure to wait until each track has fully uploaded before uploading another one.</li>
-        <li>Brightcove has seen cases where Safari will not always loading the audio track marked as default. Due to Safari loading content natively, the language settings of the device will take priority when determining the audio track to load.</li>
+        <li>Brightcove has seen cases where Safari will not always loadi ng the audio track marked as default. Due to Safari loading content natively, the language settings of the device will take priority when determining the audio track to load.</li>
         <li>Cloud Playout doesn't support <strong>Multiple Audio Track</strong>.</li>
       </ul>
     </aside>
@@ -3909,7 +3910,7 @@
       <li>Select if the audio track file will be uploaded from the local file system or from an external URL.
         <ul>
           <li><strong>File Upload</strong> - Click <strong>Browse</strong> and select the audio track file from the local file system. The file will be uploaded to Beacon.</li>
-          <li><strong>URL Upload</strong> - Enter the public URL where the audio track file resides and then click <strong>Upload</strong>. The file will be uploaded to Beacon.
+          <li><strong>URL Upload</strong> - Enter the public URL where the audio track file resides and then click <span class="button-blue">Upload</span>. The file will be uploaded to Beacon.
             <aside class="bcls-aside bcls-aside--information">Note: Audio track file names with parentheses, question marks, quotation marks, spaces and other special characters will silently fail when uploading. Brightcove recommends using file names without special characters.</aside>
           </li>
         </ul>
