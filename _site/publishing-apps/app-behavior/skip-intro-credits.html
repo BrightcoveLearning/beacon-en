@@ -3874,22 +3874,23 @@
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>On videos you can set cue points that cause Beacon to display a button for the viewer to skip a video's introduction and/or credits. You have the option to set four points in a video that control when the appropriate button appears:</p>
+    <p>In your Beacon apps' movies and episodic content you can set cue points that cause Beacon to display a button for the viewer to skip a video's introduction and/or credits. You have the option to set four cue points in a video that control when the appropriate button appears:</p>
     <ul>
       <li><code>skip_intro_start</code></li>
       <li><code>skip_intro_end</code></li>
       <li><code>skip_credits_start</code></li>
       <li><code>skip_credits_end</code></li>
     </ul>
-    <p>The following list the behavior of the points and buttons:</p>
+    <p>The following list the behavior of the cue points and buttons:</p>
     <ul>
-      <li>skip intro end, and not start, beginning of video assumed to be begin</li>
-      <li>skip credit start no end, end assumed to be end of video</li>
-      <li>If end comes before start, nothing happens</li>
-      <li>Duplication of points the second one ignored</li>
-      <li>No validation at this time</li>
-      <li>Pre-roll and post-roll ads will play</li>
-      <li>by default the button will appear for 10 seconds, can change contact Brightcove's OTT Delivery Team </li>
+      <li>If you set a <code>skip_intro_end</code>, but not <code>skip_intro_start</code>, the beginning of video assumed to be the starting point.</li>
+      <li>If you set a <code>skip_credit_start</code>, but not <code>skip_credit_end</code>, the end of video assumed to be the ending point.</li>
+      <li>If an end cue point comes before a corresponding start cue point, nothing happens.</li>
+      <li>If there is a duplication of any cue points, the second one is ignored.</li>
+      <li>There is no validation of logical placement of cue points at this time.</li>
+      <li>Pre-roll and post-roll ads play irregardless of cue point placement.</li>
+      <li>If the skip credits button is clicked, and there is an ad inserted before the end of the credits, all ads play.</li>
+      <li>By default, the skip buttons are displayed for 10 seconds before they disappear. This default can be changed by contacting Brightcove's OTT Delivery Team.</li>
       <li></li>
       <li></li>
       <li></li>
@@ -3902,7 +3903,7 @@
     <ol class="bcls-tasklist">
       <li>Log in to <strong>Beacon Studio</strong>.</li>
       <li>Go to the <strong>Media</strong> module.</li>
-      <li>Click the video on which you wish to implement skip functionality. This will display the video's details.</li>
+      <li>Click the video on which you wish to implement skip functionality. This displays the video's details.</li>
       <li></li>
       <li></li>
     </ol>
