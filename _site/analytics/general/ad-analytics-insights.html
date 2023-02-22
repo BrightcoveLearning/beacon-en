@@ -3893,33 +3893,18 @@
   </section>
   
   <section class="bcls-section">
-    <h2 id="Data_availability">Data availability</h2>
+    <h2 id="Glossary_of_terms">Glossary of terms</h2>
+    <p>Here is the glossary of terms for Ad analytics metrics:</p>
+    <h3>Data availability</h3>
     <p>Data availability for these metrics is as follows:</p>
     <ul>
       <li>The data must be retained and available for at least three years.</li>
       <li>The data is available via queryable APIs in CSV or JSON format.</li>
       <li>The data can be exported from the UI based on the filters and aggregations at an export time in CSV format.</li>
     </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Response time">Response time</h2>
+    <h3>Response time</h3>
     <p>All the data must be one hour fresh.</p>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Dimensions">Dimensions</h2>
-    <p>Ad Analytics must be able to collect, aggregate and filter on the following metrics:</p>
-    <ul>
-      <li><strong>Account:</strong> Account level metrics showing the total across all dimensions.</li>
-      <li><strong>Video:</strong>  Aggregation by video ID.</li>
-      <li><strong>Ad config:</strong> SSAI Ad Configuration identifier. The UI should display the AdConfig Name and should be enriched with the adTag’s domain.</li>
-      <li><strong>Ad provider:</strong> The domain of the ad server.</li>
-    </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Metrics">Metrics</h2>
+    <h3>Metrics</h3>
     <p>Ad analytics should be able to collect and report on the following metrics:
     </p>
     <ul>
@@ -3930,8 +3915,64 @@
       <li><strong>Ad impression rate:</strong> Ad Impressions/Ad Slots.</li>
       <li><strong>Last ad view:</strong>  The time of the most recent ad impression.</li>
     </ul>
+    <h3>Dimensions</h3>
+    <p>Ad Analytics must be able to collect, aggregate and filter on the following metrics:</p>
+    <ul>
+      <li><strong>Account:</strong> Account level metrics showing the total across all dimensions.</li>
+      <li><strong>Video:</strong>  Aggregation by video ID.</li>
+      <li><strong>Ad config:</strong> SSAI Ad Configuration identifier. The UI should display the AdConfig Name and should be enriched with the adTag’s domain.</li>
+      <li><strong>Ad provider:</strong> The domain of the ad server.</li>
+    </ul>
   </section>
- 
+
+  <section class="bcls-section">
+    <h2 id="VOD_Ad_Performance">VOD Ad Performance</h2>
+    <p>VOD Ad Performance metrics help users get information about the performance of their ads.</p>
+    <h3>Charts</h3>
+    <p>The following charts trend over time, at a daily or hourly interval (depending on time range). Only one graph will display at a time, with totals for each metric displayed at top.</p>
+    <h3>Ad Slots</h3>
+    <h3>Ads Inserted</h3>
+    <h3>Ad Impressions</h3>
+    <h3>Impression Rate</h3>
+    <h3>Performance by dimension</h3>
+    <h3>Funnel by Ad Completion</h3>
+    <p>This chart illustrates the drop-off of viewing from initial impressions to ad completion. The funnel presentation will show the following step functions:</p>
+    <ul>
+      <li>Impressions</li>
+      <li>1st ad quartile</li>
+      <li>Ad midpoint</li>
+      <li>3rd ad quartile</li>
+      <li>Ad completion</li>
+    </ul>
+    <h3>Account Applicability</h3>
+
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="SSAI_performances">SSAI performance</h2>
+    <p>SSAI performance metrics help users track their ad information.</p>
+    <h3>Metrics</h3>
+    <p>SSAI performance metrics must be able to collect and report on the following metrics:</p>
+    <ul>
+      <li><strong>Ads request call count:</strong> Number of Ad request HTTP calls.</li>
+      <li><strong>Ads tracking call count:</strong>  Number of Ad Tracking HTTP calls.</li>
+      <li><strong>Ad error call counts:</strong> Number of HTTP.</li>
+      <li><strong>Ad error code:</strong> HTTP Error Response code.</li>
+    </ul>
+    <h3>Dimensions</h3>
+    <p>SSAI performance metrics must be able to collect, aggregate and filter on the following metrics:</p>
+    <ul>
+      <li><strong>Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier. The UI displays the AdConfig Name and should be enriched with the adTag’s domain.
+      </li>
+      <li><strong>Ad provider:</strong> The domain of the Ad server.</li>
+    </ul>
+    <h3>Granularity</h3>
+    <p>Here is the granularity for SSAI performances metrics: </p>
+    <ul>
+      <li><strong>Time aggregation:</strong> Hour, day, month.</li>
+      <li><strong>Ads:</strong> 1K, 1M. </li>
+    </ul>
+  </section> 
 
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
