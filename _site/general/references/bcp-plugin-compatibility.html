@@ -3916,7 +3916,12 @@
 
   <section class="bcls-section">
     <h2 id="Feature_availability_table">Feature availability table</h2>
-    <p>This table displays which plugins are implemented in each player instance. The <strong>N/A</strong> signifies <em>Not Applicable</em>. For instance, it just does not make sense to have thumbnail scrubbing on a small preview player.</p>
+    <p>This table displays which plugins are implemented in each player instance. The following codes are used in the table:</p>
+    <ul>
+      <li>The <strong>N/A</strong> signifies <em>Not Applicable</em>. For instance, it just does not make sense to have thumbnail scrubbing on a small preview player.</li>
+      <li>The <strong>L/A</strong> signifies <em>Limited Availability</em>. This means the plugin is functional, with some reservations.</li>
+    </ul>
+
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -3926,6 +3931,7 @@
           <th>Auto Play</th>
           <th>EPG Preview</th>
           <th>Live TV Preview</th>
+          <th>Player E Live</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
@@ -3944,6 +3950,7 @@
           <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
+          <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
         </tr>
         <tr>
           <td><strong>DRM</strong></td>
@@ -3952,6 +3959,7 @@
           <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
+          <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
         </tr>
         <tr>
           <td><strong>SSAI</strong></td>
@@ -3960,12 +3968,14 @@
           <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
           <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
+          <td><img src="/assets/images/common/limited-availability.webp" alt="LA"><strong><sup>1</sup></strong></td>
         </tr>
         <tr>
           <td><strong>Chromecast</strong></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
           <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
+          <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
           <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
           <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
         </tr>
@@ -3983,13 +3993,15 @@
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
-          <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
+          <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
+          <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
         </tr>
         <tr>
           <td><strong>Thumbnail<br>Scrubbing</strong></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
           <!-- <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td> -->
+          <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
           <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
           <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
         </tr>
@@ -3999,6 +4011,7 @@
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
           <!-- <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td> -->
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
+          <td><img src="/assets/images/common/na.webp" alt="Not Applicable"></td>
           <td><img src="/assets/images/common/check-mark-48.png" alt="Yes"></td>
         </tr>
         <!--         <tr>
@@ -4019,6 +4032,11 @@
         </tr> -->
       </tbody>
     </table>
+    <h4>Table notes:</h4>
+    <ol>
+      <li>SSAI supported, but does not report beacons.</li>
+    </ol>
+    <h4>Automatically enabled plugins</h4>
     <p>By default the following plugins are automatically enabled:</p>
     <ul>
       <li>Analytics</li>
