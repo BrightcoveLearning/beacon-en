@@ -3934,7 +3934,7 @@
     <ul>
       <li><strong>Account:</strong> Account level metrics showing the total across all dimensions.</li>
       <li><strong>Video:</strong>  Aggregation by video ID.</li>
-      <li><strong>Ad config:</strong> SSAI Ad Configuration identifier.</li>
+      <li><strong>Ad config:</strong> Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
       <li><strong>Ad provider:</strong> The domain of the ad server.</li>
     </ul>
       <h3>Time range</h3>
@@ -4016,17 +4016,45 @@
     <ul>
       <li><strong>Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
       <li><strong>Ad provider:</strong> The domain of the Ad server.</li>
-      <li><strong>SSAI error:</strong> SSAI error track.</li>
+      <li><strong>SSAI error:</strong> SSAI errors tracker.</li>
+      <li><strong>Request error:</strong> Requests errors tracker.</li>
+      <li><strong>Impression error:</strong> Impression errors tracker.</li>
     </ul>
   </section>
 
   <section class="bcls-section">
     <h2 id="Ad_Provider_Performance">Ad Provider Performance</h2>
+    <p>Ad provider performance metrics help users get information about the performance of their Ad provider.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="QoE analytics" src="/assets/images/s-analytics-img/module/ad-analytics/ad-provider-performance.webp" />
+      <figcaption class="bcls-caption--image">Ad Provider Performance</figcaption> 
+    </figure>
+    <h3>Dimensions</h3>
+    <p>Ad provider performance metrics must be able to collect, aggregate and filter on the following metrics:</p>
+    <ul>
+      <li><strong>Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
+      <li><strong>Ad request:</strong> Ad request tracker.</li>
+      <li><strong>Calls:</strong> Number of calls.</li>
+      <li><strong>Impressions:</strong> Impression tracker.</li>
+      
+    </ul>
    
   </section>
 
   <section class="bcls-section">
     <h2 id="Ad_Config_Performance">Ad Config Performance</h2>
+    <p>Ad config performance metrics help users get information about the performance of their Ad configuration.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="QoE analytics" src="/assets/images/s-analytics-img/module/ad-analytics/ad-config-performance.webp" />
+      <figcaption class="bcls-caption--image">Ad Config Performance</figcaption> 
+    </figure>
+    <h3>Dimensions</h3>
+    <p>Ad config performance metrics must be able to collect, aggregate and filter on the following metrics:</p>
+    <ul>
+      <li><strong>Ad provider:</strong> The domain of the Ad server.</li>
+      <li><strong>Ad request:</strong> Ad request tracker.</li>
+      <li><strong>Calls:</strong> Number of calls.</li>
+      <li><strong>Impressions:</strong> Impression tracker.</li>
+      
+    </ul>
    
   </section>
 

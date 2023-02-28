@@ -3908,7 +3908,8 @@
     </aside>
     <p>The report switcher below the chart can be used to quickly switch to another report.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/s-analytics-img/reports/node10104-report-switcher.png" /></figure>
-    <p>The dropdown list to the right of the report switcher can be used to select a report dimension. The following dimensions are available with the Performance Report:<sup><strong><a href="#note1-1">[1-1]</a></strong></sup></p>
+    <p>The dropdown list to the right of the report switcher can be used to select a report dimension. <span style="list-style: none;">The bottom of the report has controls which let you select how many rows should be displayed and for navigating to other pages.</span></p>
+    <p>The following dimensions are available with the Performance Report:<sup><strong><a href="#note1-1">[1-1]</a></strong></sup></p>
     <ul>
       <li><a href="#video">Video</a></li>
       <li><a href="#player">Player</a></li>
@@ -3925,7 +3926,7 @@
     </ul>
     <p>Notes:
       <ul>
-        <li id="note1-1" style="list-style: none;"><sup><strong>[1-1]</strong></sup> The available dimensions will change based upon the report that is selected. The bottom of the report has controls which let you select how many rows should be displayed and for navigating to other pages.</li>
+        <li id="note1-1" style="list-style: none;"><sup><strong>[1-1]</strong></sup> The available dimensions will change based upon the report that is selected.</li>
         <li id="note1-2" style="list-style: none;"><sup><strong>[1-2]</strong></sup> If the Viewer dimension has been enabled for the account. Also note that for the dimension Viewer, <strong>Today</strong> is not supported as a date range.</li>
       </ul>
        </p>
@@ -3948,6 +3949,7 @@
       <li><strong>Engagement Score</strong> - The average percent watched per video view (calculated by adding all the percentage watched divided by the number of Video Views)</li>
     </ul>
     <p>The <strong>Video</strong> and <strong>Day</strong> dimensions will also display the <strong>Daily Unique Viewers</strong> which is the average daily unique viewers for the time period selected. This is calculated using the IP address and user agent of viewers.</p>
+    <p>The Viewer dimension will display the <strong>Total Time Watched</strong>, the number of <strong>Videos Completed</strong> (number of videos where the viewer watched at least 90%) and the <strong>Last Viewed</strong> date.</p>
     <h3 id="traffic_sources">Traffic Sources</h3>
     <p>When viewing the Performance by Source of Traffic, possible traffic sources are:</p>
     <ul>
@@ -4090,6 +4092,14 @@
     <h2 id="day">Viewing day analytics</h2>
     <p>When the <strong>Day</strong> dimension is selected, a graph will display the number of video views per day for the time period selected. The body of the report will display the performance data for each day. Only days which have data within the time period selected will be displayed.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Day  Performance" src="/assets/images/s-analytics-img/reports/node10104-day-performance.png" /></figure>
+  </section>
+<section class="bcls-section">
+    <h2 id="viewer">Viewing viewer analytics</h2>
+    <p>When the <strong>Viewer</strong> dimension is selected, a graph will display the number of video views per day for the time period selected. The body of the report will display the performance data for each viewer. Only days which have data within the time period selected will be displayed.</p>
+    <p>If viewer IDs are not sent to the analytics data collector from the player, we will try to construct a viewer ID from the viewer's IP address and user-agent. Viewer analytics are most useful if you have logged in viewers and therefore can identify them reliably. For information on sending a viewer ID, see the <a href="https://apis.support.brightcove.com/analytics/general/analytics-api-unique-users.html#identifyUsers">Analytics API documentation</a>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Day  Performance" src="/assets/images/s-analytics-img/reports/node10104-viewer-performance.png" /></figure>
+    <p>Clicking on a viewer will display the details for the viewer.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Day  Performance" src="/assets/images/s-analytics-img/reports/node10104-viewer-details.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="filter">Using filters</h2>
