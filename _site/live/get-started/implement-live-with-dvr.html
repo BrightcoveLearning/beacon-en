@@ -3874,7 +3874,14 @@
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>The steps in this document are focused on implementing Live with DVR. Therefore the steps only focus on this particular task and do not discuss every option available in every page of the tool in which you are working.</p>
+    <p>Creating a live event with DVR enabled involves a number of steps. At a high-level these steps are:</p>
+    <ol>
+      <li>In <strong>Beacon Studio</strong>, create a live event in the <em>Live</em> module. In the creation of this event you ensure DVR functionality is enabled.</li>
+      <li>Create a live stream. In this document the free software tool <em>OBS Studio</em> is used.</li>
+      <li>In <strong>Beacon Classic</strong>, create an event linked to the live event created in <em>Beacon Studio</em>.</li>
+      <li>In <strong>Beacon Studio</strong>, publish the live event by adding the event to an OTT playlist and placing that playlist on a Beacon app page.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information language-editable">The steps in this document are focused on implementing Live with DVR. Therefore the steps only focus on this particular task and do not discuss every option available in every page of the tool in which you are working.</aside>
   </section>
 
   <section class="bcls-section">
@@ -3885,10 +3892,10 @@
       <li>In the top-right of the page click <strong>Create Event</strong>.</li>
       <li>Give the event a <strong>Event Name</strong>.</li>
       <li>For the <strong>Live Ingest Profile</strong> select the appropriate value for your environment.</li>
-      <li>By default the <strong>Convert event to video asset when complete</strong> is checked. Uncheck this if you do not wish to have the live event as a VOD asset after the event concludes.</li>
+      <li>By default, the <strong>Convert event to video asset when complete</strong> is checked. Uncheck this if you do not wish to have the live event as a VOD asset after the event concludes.</li>
       <li>Open the <strong>Advanced Options</strong> section.</li>
       <li>Check the <strong>Create Cloud DVR</strong> checkbox.</li>
-      <li>Supply a value for the <strong>DVR Window</strong>. This value is in seconds with a maximum of 24 hours, which is <em>86400</em> seconds.</li>
+      <li>Supply a value for the <strong>DVR Window</strong>. This value is in seconds with a maximum of 24 hours, which is <em>86400</em> seconds, allowed.</li>
       <li>Check the <strong>Enable stream status notifications</strong> checkbox.</li>
       <li>Enter a URL based on the form:
         <pre class="line-numbers"><code class="language-html" translate="No">https://YourBeaconClassicDomain/<span class="bcls-highlight">webhook/live_api_notification</span></code></pre>
@@ -3900,7 +3907,7 @@
         </figure>
       </li>
       <li>Click <strong>Create Event</strong>.</li>
-      <li>Check to be sure you are taken to the <strong>Control Room</strong> for your live event and note it is in the <em>Waiting</em> status.
+      <li>Check to be sure you are taken to the <strong>Control Room</strong> for your live event. Note the event is in the <em>Waiting</em> status.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/control-room.webp" alt="control room">
         </figure>
@@ -3911,7 +3918,7 @@
           <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/live-player-options.webp" alt="live player options">
         </figure>
       </li>
-      <li>BE SURE record from the <em>Control Room</em> main page the following values:
+      <li>In a text file, <u>BE SURE</u> to document from the <em>Control Room</em> main page the following properties and associated values:
         <ul>
           <li><strong>Live with DVR Endpoint (RTMP URL)</strong></li>
           <li><strong>Stream Name</strong></li>
@@ -3925,7 +3932,7 @@
         These values are needed later in the implementation steps.
       </li>
     </ol>
-    <p>Note that the event is also appearing in the <strong>Media</strong> module as a video:</p>
+    <p>Note that the event also appears in the <strong>Media</strong> module as VOD content:</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/event-in-media-module.webp" alt="event in media module">
     </figure>
@@ -3935,14 +3942,14 @@
   <section class="bcls-section">
     <h2 id="Stream_a_video">Stream a video</h2>
     <p>In this section you setup a live stream. These steps use the free video streaming tool <a href="https://obsproject.com/">OBS Studio</a>. For more information on OBS Studio and its configuration, see the <a href="/live/get-started/step-step-using-live-module-open-broadcaster-software-obs.html#encoder">Step-by-Step: Using the Live Module with Open Broadcaster Software (OBS)</a> document.</p>
-    <p>Of course, the setup will depend upon the streaming hardware or software you are using.</p>
+    <p>Of course, the setup depends upon the streaming hardware or software you are using.</p>
     <ol class="bcls-tasklist">
       <li>In <em>OBS Studio</em>, in the <em>Sources</em> panel, add your <strong>Video Capture Device</strong>.</li>
       <li>In the <em>Controls</em> panel, click <strong>Settings</strong>.</li>
       <li>In the <em>Settings</em> dialog, click <strong>Stream</strong>.</li>
       <li>From the <em>Service</em> dropdown, select <strong>Custom...</strong></li>
-      <li>For the <em>Server</em> value, paste in the <strong>Live with DVR Endpoint (RTMP URL)</strong> recorded earlier.</li>
-      <li>For the <em>Stream Key</em> paste in the <strong>Stream Name</strong> recorded earlier.</li>
+      <li>For the <em>Server</em> value, paste in the <strong>Live with DVR Endpoint (RTMP URL)</strong> documented earlier.</li>
+      <li>For the <em>Stream Key</em> paste in the <strong>Stream Name</strong> documented earlier.</li>
       <li>Click <strong>OK</strong>.</li>
       <li>Check to be sure OBS is streaming your video.</li>
     </ol>
@@ -3950,28 +3957,28 @@
 
   <section class="bcls-section">
     <h2 id="Create_an_event_in_Beacon_Classic">Create an event in Beacon Classic</h2>
-    <p></p>
+    <p>You now create an event in Beacon Classic that can be added to an OTT playlist. Then that playlist is added to a page so the event appears in your Beacon app.</p>
     <ol class="bcls-tasklist">
       <li>Log in to <em>Beacon Classic</em>.</li>
-      <li>In the top navigation select <strong>Events</strong>.</li>
+      <li>In the top navigation, select <strong>Events</strong>.</li>
       <li>Click <strong>Ad new event</strong>.</li>
       <li>In the <em>Basic Data</em> tab, enter an event <em>Name</em>.</li>
       <li>Choose a date and time for the <em>Event Start Date</em>.</li>
-      <li>For the <em>Job ID</em> paste in the <strong>Job ID</strong> recorded earlier.</li>
+      <li>For the <em>Job ID</em> paste in the <strong>Job ID</strong> documented earlier.</li>
       <li>Change to the <em>Textual Data</em> tab.</li>
       <li>Enter a <em>Title</em>.</li>
       <li>Change the <em>Streams</em> tab.</li>
       <li>Click <strong>Add new stream</strong>.</li>
-      <li>In the <em>Stream Video ID</em>, paste in the value for <strong>Video ID</strong> recorded earlier.</li>
+      <li>In the <em>Stream Video ID</em>, paste in the value for <strong>Video ID</strong> documented earlier.</li>
       <li>Select all for the <em>Devices to publish</em>.</li>
       <li>From the <em>Stream Type</em> dropdown, select <strong>Live</strong>.</li>
-      <li>View the value recorded earlier for the <strong>Player URL</strong>.</li>
+      <li>View the value documented earlier for the <strong>Player URL</strong>.</li>
       <li>Look for the string <strong>adConfigId</strong> (highlighted in red) in the URL and then copy the remaining value (highlighted in yellow).
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/playback-query-parameters.webp" alt="playback query parameters">
         </figure>
       </li>
-      <li>In the <em>Player Query Parameters</em> enter the string <strong>ad_config_id=</strong> then paste in the value just copied. The value in the form should resemble:
+      <li>In the <em>Player Query Parameters</em>, enter the string <strong>ad_config_id=</strong> then paste in the value just copied. The completed value in the form should resemble:
         <pre class="line-numbers"><code class="language-html" translate="No">ad_config_id=live.RxOHVhcnaQVSh2MgDow3phDndV_CZKYijFlfQlc1zFivy54hoqywi8xny3hukJzJmVAbZxcSngK037JgPMX1HEt5uHP5XQcO9b3SsSgHHfPWcao5LSW4BIk</code></pre>
       </li>
       <li>Check to be sure your form appears similar to the following:
@@ -3995,22 +4002,18 @@
 
 
   <section class="bcls-section">
-    <h2 id="Values_to_record_for_later_use">Values to record for later use</h2>
-    <p></p>
-    <ul>
-      <li><strong>Live with DVR Endpoint (RTMP URL)</strong> from the <em>Control Room</em></li>
-      <li><strong>Stream Name</strong> from the <em>Control Room</em></li>
-      <li><strong></strong></li>
-      <li><strong></strong></li>
-      <li><strong></strong></li>
-      <li><strong></strong></li>
-      <li><strong></strong></li>
-      <li><strong></strong></li>
-      <li><strong></strong></li>
-    </ul>
-
+    <h2 id="Publish_live_event">Publish live event</h2>
+    <p>Once you have created your event in Beacon Classic, it needs to be published so it appears in your Beacon app. This process is dependant on if the page and/or playlist you wish to you use is/are already created. The steps below give a high level view of the process.</p>
+    <ol class="bcls-tasklist">
+      <li>Designate or create the page on which you wish the event created in Beacon Classic to appear.</li>
+      <li>Designate or create the OTT playlist in which the event created in Beacon Classic is placed.</li>
+      <li>Add the event created in Beacon Classic to your OTT playlist.</li>
+      <li>Add the newly changed playlist to your designated page. Of course, if the playlist previously existed, it may already be assigned to a page.</li>
+      <li>If you created a new page, be sure it is published.</li>
+      <li>Refresh the app's cache.</li>
+    </ol>
+    <p>That's it, you have now created and published a live event with DVR functionality enabled.</p>
   </section>
-
 
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
