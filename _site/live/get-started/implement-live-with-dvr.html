@@ -3879,7 +3879,7 @@
 
   <section class="bcls-section">
     <h2 id="Create_a_Live_Event_in_Studio">Create a Live event in Studio</h2>
-    <p>The steps in this section lead you through the process of creating a Live event in Beacon Studio.</p>
+    <p>The steps in this section lead you through the process of creating a Live event in <em>Beacon Studio</em>.</p>
     <ol class="bcls-tasklist">
       <li>Log in to Beacon Studio and select the <strong>Live</strong> module.</li>
       <li>In the top-right of the page click <strong>Create Event</strong>.</li>
@@ -3889,9 +3889,22 @@
       <li>Open the <strong>Advanced Options</strong> section.</li>
       <li>Check the <strong>Create Cloud DVR</strong> checkbox.</li>
       <li>Supply a value for the <strong>DVR Window</strong>. This value is in seconds with a maximum of 24 hours, which is <em>86400</em> seconds.</li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>Check the <strong>Enable stream status notifications</strong> checkbox.</li>
+      <li>Enter a URL based on the form:
+        <pre class="line-numbers"><code class="language-html" translate="No">https://YourBeaconClassicDomain/<span class="bcls-highlight">webhook/live_api_notification</span></code></pre>
+        where, as indicated, the domain of the URL points to the location of your Beacon Classic domain.
+      </li>
+      <li>Check to be sure the two values are changed, with your values, for the <strong>Advanced Options</strong>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/advanced-options.webp" alt="advanced options">
+        </figure>
+      </li>
+      <li>Click <strong>Create Event</strong>.</li>
+      <li>Check to be sure you are taken to the <strong>Control Room</strong> for your live event and note it is in the <em>Waiting</em> status.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/control-room.webp" alt="control room">
+        </figure>
+      </li>
     </ol>
   </section>
 
