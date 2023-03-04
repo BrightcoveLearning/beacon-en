@@ -3881,7 +3881,7 @@
     <h2 id="Create_a_Live_Event_in_Studio">Create a Live event in Studio</h2>
     <p>The steps in this section lead you through the process of creating a Live event in <em>Beacon Studio</em>.</p>
     <ol class="bcls-tasklist">
-      <li>Log in to Beacon Studio and select the <strong>Live</strong> module.</li>
+      <li>Log in to <em>Beacon Studio</em> and select the <strong>Live</strong> module.</li>
       <li>In the top-right of the page click <strong>Create Event</strong>.</li>
       <li>Give the event a <strong>Event Name</strong>.</li>
       <li>For the <strong>Live Ingest Profile</strong> select the appropriate value for your environment.</li>
@@ -3905,7 +3905,104 @@
           <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/control-room.webp" alt="control room">
         </figure>
       </li>
+      <li>Click on the <strong>Publish and Embed</strong> link to open that section of the page.</li>
+      <li>In the <em>Live Player Options</em> details, be sure <strong>Allow DVR</strong> is checked.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/live-player-options.webp" alt="live player options">
+        </figure>
+      </li>
+      <li>BE SURE record from the <em>Control Room</em> main page the following values:
+        <ul>
+          <li><strong>Live with DVR Endpoint (RTMP URL)</strong></li>
+          <li><strong>Stream Name</strong></li>
+          <li><strong>Job ID</strong></li>
+          <li><strong>Video ID</strong></li>
+        </ul>
+        And from the <em>Control Room</em>'s <em>Publish and Embed</em> page the following value:
+        <ul>
+          <li><strong>Player URL</strong> - Note you use only part of this value later</li>
+        </ul>
+        These values are needed later in the implementation steps.
+      </li>
     </ol>
+    <p>Note that the event is also appearing in the <strong>Media</strong> module as a video:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/event-in-media-module.webp" alt="event in media module">
+    </figure>
+
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Stream_a_video">Stream a video</h2>
+    <p>In this section you setup a live stream. These steps use the free video streaming tool <a href="https://obsproject.com/">OBS Studio</a>. For more information on OBS Studio and its configuration, see the <a href="/live/get-started/step-step-using-live-module-open-broadcaster-software-obs.html#encoder">Step-by-Step: Using the Live Module with Open Broadcaster Software (OBS)</a> document.</p>
+    <p>Of course, the setup will depend upon the streaming hardware or software you are using.</p>
+    <ol class="bcls-tasklist">
+      <li>In <em>OBS Studio</em>, in the <em>Sources</em> panel, add your <strong>Video Capture Device</strong>.</li>
+      <li>In the <em>Controls</em> panel, click <strong>Settings</strong>.</li>
+      <li>In the <em>Settings</em> dialog, click <strong>Stream</strong>.</li>
+      <li>From the <em>Service</em> dropdown, select <strong>Custom...</strong></li>
+      <li>For the <em>Server</em> value, paste in the <strong>Live with DVR Endpoint (RTMP URL)</strong> recorded earlier.</li>
+      <li>For the <em>Stream Key</em> paste in the <strong>Stream Name</strong> recorded earlier.</li>
+      <li>Click <strong>OK</strong>.</li>
+      <li>Check to be sure OBS is streaming your video.</li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Create_an_event_in_Beacon_Classic">Create an event in Beacon Classic</h2>
+    <p></p>
+    <ol class="bcls-tasklist">
+      <li>Log in to <em>Beacon Classic</em>.</li>
+      <li>In the top navigation select <strong>Events</strong>.</li>
+      <li>Click <strong>Ad new event</strong>.</li>
+      <li>In the <em>Basic Data</em> tab, enter an event <em>Name</em>.</li>
+      <li>Choose a date and time for the <em>Event Start Date</em>.</li>
+      <li>For the <em>Job ID</em> paste in the <strong>Job ID</strong> recorded earlier.</li>
+      <li>Change to the <em>Textual Data</em> tab.</li>
+      <li>Enter a <em>Title</em>.</li>
+      <li>Change the <em>Streams</em> tab.</li>
+      <li>Click <strong>Add new stream</strong>.</li>
+      <li>In the <em>Stream Video ID</em>, paste in the value for <strong>Video ID</strong> recorded earlier.</li>
+      <li>Select all for the <em>Devices to publish</em>.</li>
+      <li>From the <em>Stream Type</em> dropdown, select <strong>Live</strong>.</li>
+      <li>View the value recorded earlier for the <strong>Player URL</strong>.</li>
+      <li>Look for the string <strong>adConfigId</strong> (highlighted in red) in the URL and then copy the remaining value (highlighted in yellow).
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/playback-query-parameters.webp" alt="playback query parameters">
+        </figure>
+      </li>
+      <li>In the <em>Player Query Parameters</em> enter the string <strong>ad_config_id=</strong> then paste in the value just copied. The value in the form should resemble:
+        <pre class="line-numbers"><code class="language-html" translate="No">ad_config_id=live.RxOHVhcnaQVSh2MgDow3phDndV_CZKYijFlfQlc1zFivy54hoqywi8xny3hukJzJmVAbZxcSngK037JgPMX1HEt5uHP5XQcO9b3SsSgHHfPWcao5LSW4BIk</code></pre>
+      </li>
+      <li>Check to be sure your form appears similar to the following:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-live-img/get-started/implement-live-with-dvr/stream-form-complete.webp" alt="stream form complete">
+        </figure>
+      </li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="Values_to_record_for_later_use">Values to record for later use</h2>
+    <p></p>
+    <ul>
+      <li><strong>Live with DVR Endpoint (RTMP URL)</strong> from the <em>Control Room</em></li>
+      <li><strong>Stream Name</strong> from the <em>Control Room</em></li>
+      <li><strong></strong></li>
+      <li><strong></strong></li>
+      <li><strong></strong></li>
+      <li><strong></strong></li>
+      <li><strong></strong></li>
+      <li><strong></strong></li>
+      <li><strong></strong></li>
+    </ul>
+
   </section>
 
 
