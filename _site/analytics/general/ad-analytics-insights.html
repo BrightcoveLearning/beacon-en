@@ -3900,22 +3900,19 @@
     <h2 id="Introduction">Introduction</h2>
     <p>Ad analytics is a free-of-charge offering that provides Brightcove customers with a transparent, meaningful, and comprehensive set of ad metrics. These metrics will focus on the following:</p>
     <ul>
-      <li> <strong>Troubleshooting:</strong> What ad configurations and partners are serving ads more efficiently? What are the technical errors preventing ad impressions?</li>
+      <li> <strong>Troubleshooting:</strong> What ad configurations and partners are serving ads more efficiently? Where in the workflow are we loosing revenue?</li>
       <li> <strong>Reporting/Impact:</strong> Tracking Ad Impressions, fill rate, and how the audience consumes the impressions. What are the impact of ad blockers and firewalls on your ad operation?</li>
     </ul>
 
     <h3 id="Availability">Availability</h3>
-    <p>Ad Analytics are available free of charge to Brightcove customers to provide transparent, meaningful and comprehensive set of ad metrics. You can find them on the following platforms:</p>
+    <p>Ad Analytics is available free of charge to Brightcove customers monetizing their VODs with SSAI. You can find them on the following platforms:</p>
     <ul>
       <li>Video Cloud Studio</li>
       <li>Beacon Studio</li>
     </ul>
 
-    <p>Ad metrics are available for the following:</p>
-    <ul>
-      <li>Video On Demand (VOD) content</li>
-      <li>Ads served using Brightcove's Server-side Advertising (SSAI)</li>
-    </ul>
+    <p>Ad metrics are available for Video on Demand (VOD) content monetizing with SSAI.</p>
+    
   </section>
 
   <section class="bcls-section">
@@ -3928,44 +3925,6 @@
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="QoE analytics" src="/assets/images/s-analytics-img/module/ad-analytics/ad-analytics.png" />
       <figcaption class="bcls-caption--image">Ad analytics</figcaption> 
     </figure>
-  </section>
-  
-  <section class="bcls-section">
-    <h2 id="Glossary_of_terms">Glossary of terms</h2>
-    <p>Here is the glossary of terms for Ad analytics metrics:</p>
-    <h3>Data availability</h3>
-    <p>Data availability for these metrics is as follows:</p>
-    <ul>
-      <li>The data must be retained and available for at least three years.</li>
-      <li>The data is available via queryable APIs in CSV or JSON format.</li>
-      <li>The data can be exported from the UI based on the filters and aggregations at an export time in CSV format.</li>
-    </ul>
-    <h3>Response time</h3>
-    <p>All the data must be one hour fresh.</p>
-    <h3>Metrics</h3>
-    <p>Ad analytics should be able to collect and report on the following metrics:
-    </p>
-    <ul>
-      <li><strong>Ads scheduled:</strong> Total number of scheduled ads across all the breaks.</li>
-      <li><strong>Ads inserted:</strong>  Number of creatives stitched into a VOD or Live Stream.</li>
-      <li><strong>Ad impressions:</strong> Number of creatives that were played.</li>
-      <li><strong>Ad completion:</strong> Number of creatives watched until completion.</li>
-      <li><strong>Ad impression rate:</strong> Ad Impressions/Ad Slots.</li>
-      <li><strong>Last ad view:</strong>  The time of the most recent ad impression.</li>
-    </ul>
-    <h3>Dimensions</h3>
-    <p>Ad Analytics must be able to collect, aggregate and filter on the following metrics:</p>
-    <ul>
-      <li><strong>Account:</strong> Account level metrics showing the total across all dimensions.</li>
-      <li><strong>Video:</strong>  Aggregation by video ID.</li>
-      <li><strong>Ad config:</strong> Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
-      <li><strong>Ad provider:</strong> The domain of the ad server.</li>
-    </ul>
-      <h3>Time range</h3>
-      <p>Click <strong>DATE</strong> to expand the dropdown menu. Select the time range for your reporting data.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Time range" src="/assets/images/s-analytics-img/module/qoe/time-period.webp" />
-        <figcaption class="bcls-caption--image">Time range</figcaption> 
-      </figure>
   </section>
 
   <!-- <section class="bcls-section">
@@ -3998,7 +3957,7 @@
       <figcaption class="bcls-caption--image">SSAI Performance</figcaption> 
     </figure>
     <h3>Metrics</h3>
-    <p>SSAI performance metrics must be able to collect and report on the following metrics:</p>
+    <p>SSAI Performance Metrics collects and reports on the following metrics:</p>
     <ul>
       <li><strong>SSAI request codes:</strong> Response code for the SSAI requests.</li>
       <li><strong>Ad request errors by Ad provider:</strong> Errors for the Ad requests by Ad provider.</li>
@@ -4011,7 +3970,7 @@
       <li><strong>Ad error code:</strong> HTTP Error Response code.</li> -->
     </ul>
     <h3>Dimensions</h3>
-    <p>SSAI performance metrics must be able to collect, aggregate and filter on the following metrics:</p>
+    <p>SSAI Performance Metrics collects, aggregates, and filters the following metrics:</p>
     <ul>
       <li><strong>Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
       <li><strong>Ad provider:</strong> The domain of the Ad server.</li>
@@ -4031,12 +3990,12 @@
       <figcaption class="bcls-caption--image">SSAI Errors</figcaption> 
     </figure>
     <h3>Metrics</h3>
-    <p>SSAI errors metrics must be able to collect and report on the following metrics:</p>
+    <p>SSAI errors metrics collects and reports on the following metrics:</p>
     <ul>
       <li><strong>SSAI errors:</strong> Server-side ad insertion errors. </li>
     </ul>
     <h3>Dimensions</h3>
-    <p>SSAI errors metrics must be able to collect, aggregate and filter on the following metrics:</p>
+    <p>SSAI errors metrics collects, aggregates, and filters the following metrics:</p>
     <ul>
       <li><strong>Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
       <li><strong>Ad provider:</strong> The domain of the Ad server.</li>
@@ -4053,11 +4012,12 @@
       <figcaption class="bcls-caption--image">Ad Provider Performance</figcaption> 
     </figure>
     <h3>Dimensions</h3>
-    <p>Ad provider performance metrics must be able to collect, aggregate and filter on the following metrics:</p>
+    <p>Ad provider performance collects, aggregates, and filters the following metrics:</p>
     <ul>
       <li><strong>Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
+      <li><strong>Request type:</strong> The moment the call was sent in the Ad fulfillment cycle.</li>
       <li><strong>Ad request:</strong> Ad request tracker.</li>
-      <li><strong>Calls:</strong> Number of calls.</li>
+      <li><strong>Calls:</strong> Number of calls from Brightcove SSAI to Ad Server.</li>
       <li><strong>Impressions:</strong> Impression tracker.</li>
       
     </ul>
@@ -4080,6 +4040,44 @@
       
     </ul>
    
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Glossary_of_terms">Glossary of terms</h2>
+    <p>Here is the glossary of terms for Ad analytics metrics:</p>
+    <h3>Data availability</h3>
+    <p>Data availability for these metrics is as follows:</p>
+    <ul>
+      <li>The data will be retained and available for three years.</li>
+      <!-- <li>The data is available via queryable APIs in CSV or JSON format.</li> -->
+      <li>The data can be exported from the UI based on the filters and aggregations at an export time in CSV format.</li>
+    </ul>
+    <h3>Response time</h3>
+    <p>All the data must be two hours fresh.</p>
+    <h3>Metrics</h3>
+    <p>Ad analytics should be able to collect and report on the following metrics:
+    </p>
+    <ul>
+      <li><strong>Ads scheduled:</strong> Total number of scheduled ads across all the breaks.</li>
+      <li><strong>Ads inserted:</strong>  Number of creatives stitched into a VOD or Live Stream.</li>
+      <li><strong>Ad impressions:</strong> Number of creatives that were played.</li>
+      <li><strong>Ad completion:</strong> Number of creatives watched until completion.</li>
+      <li><strong>Ad impression rate:</strong> Ad Impressions/Ad Scheduled.</li>
+      <li><strong>Last ad view:</strong>  The time of the most recent ad impression.</li>
+    </ul>
+    <h3>Dimensions</h3>
+    <p>Ad Analytics collects, aggregates, and filters the following metrics:</p>
+    <ul>
+      <li><strong>Account:</strong> Account level metrics showing the total across all dimensions.</li>
+      <li><strong>Video:</strong>  Aggregation by video ID.</li>
+      <li><strong>Ad config:</strong> Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
+      <li><strong>Ad provider:</strong> The domain of the ad server.</li>
+    </ul>
+      <h3>Time range</h3>
+      <p>Click <strong>DATE</strong> to expand the dropdown menu. Select the time range for your reporting data.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Time range" src="/assets/images/s-analytics-img/module/qoe/time-period.webp" />
+        <figcaption class="bcls-caption--image">Time range</figcaption> 
+      </figure>
   </section>
 
   
