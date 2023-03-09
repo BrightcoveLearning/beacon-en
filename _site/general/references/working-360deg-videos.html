@@ -3957,18 +3957,22 @@
         <li>Open the <strong>Players</strong> module.</li>
         <li>Create a new player.</li>
         <li>Click the player name to open the player properties.</li>
-        <li>Click <strong>Plugins</strong> in the left navigation.
-          <aside class="bcls-aside bcls-aside--information">Note: This plugin is compatible with Brightcove Player version 6.x only.</aside>
-        </li>
+        <li>Click <strong>Plugins</strong> in the left navigation.</li>
         <li>Click <span class="button-blue">Add a Plugin ˇ</span> &gt; <strong>Custom Plugin</strong>.</li>
         <li>For the <strong>Plugin Name</strong>, enter <strong>vr</strong>.</li>
-        <li>For the <strong>JavaScript URL</strong>, enter:
+        <li>For the <strong>JavaScript</strong> URL, enter:
           <pre>
-<code class="language-javascript" translate="No">//players.brightcove.net/videojs-vr/1/videojs-vr.min.js</code></pre>
+  <code class="language-javascript" translate="No">//https://players.brightcove.net/videojs-vr/2/videojs-vr.min.js</code></pre>
+            <p>If you are using <strong>Brightcove Player 6</strong>, use this URL instead:</p>
+            <pre>
+              <code class="language-javascript" translate="No">//https://players.brightcove.net/videojs-vr/1/videojs-vr.min.js</code></pre>
         </li>
-        <li>For the <strong>CSS URL</strong>, enter:
+        <li>For the <strong>CSS</strong> URL, enter:
           <pre>
-<code class="language-javascript" translate="No">//players.brightcove.net/videojs-vr/1/videojs-vr.css</code></pre>
+  <code class="language-javascript" translate="No">//https://players.brightcove.net/videojs-vr/2/videojs-vr.css</code></pre>
+          <p>If you are using <strong>Brightcove Player 6</strong>, use this URL instead:</p>
+          <pre>
+            <code class="language-javascript" translate="No">//https://players.brightcove.net/videojs-vr/1/videojs-vr.css</code></pre>
         </li>
         <li>No <strong>Options(JSON)</strong> are needed.</li>
         <li>Click <span class="button-blue">Save</span> and then publish the player.</li>
