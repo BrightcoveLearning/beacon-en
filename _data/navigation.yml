@@ -397,6 +397,8 @@
     - name: 'General'
       url: '/monetization/general/index.html'
       docs:
+        - name: Brightcove Ad Monetization
+          url: /monetization/general/bc-ad-monetization.html
         - name: Creating a Stripe Account
           url: /monetization/general/creating-stripe-account.html
         - name: Creating an SVOD Plan
