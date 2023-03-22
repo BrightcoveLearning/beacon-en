@@ -3928,7 +3928,7 @@
       <li>In the primary navigation, click <strong>Analytics</strong>.</li>
       <li>In the panel navigation, click <strong>Ad analytics</strong>.</li>
     </ol>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="QoE analytics" src="/assets/images/s-analytics-img/module/ad-analytics/ad-analytics.png" />
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad analytics" src="/assets/images/s-analytics-img/module/ad-analytics/ad-analytics.webp" />
       <figcaption class="bcls-caption--image">Ad analytics</figcaption> 
     </figure>
   </section>
@@ -3958,29 +3958,30 @@
 
   <section class="bcls-section">
     <h2 id="SSAI_Performance">SSAI Performance</h2>
-    <p>SSAI performance metrics help users track their ad performance information.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="QoE analytics" src="/assets/images/s-analytics-img/module/ad-analytics/ssai-performance.webp" />
+    <p>The SSAI Performance metrics provides a summary of ad requests, both success and errors.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="SSAI Performance" src="/assets/images/s-analytics-img/module/ad-analytics/ssai-performance.webp" />
       <figcaption class="bcls-caption--image">SSAI Performance</figcaption> 
     </figure>
+    <h3>Dimensions</h3>
+    <p>SSAI Performance Metrics collects, aggregates, and filters the following metrics:</p>
+    <ul>
+      <li><strong>Time range:</strong> Time range to filter the data.</li>
+   </ul>
+    
     <h3>Metrics</h3>
     <p>SSAI Performance Metrics collects and reports on the following metrics:</p>
     <ul>
-      <li><strong>SSAI request codes:</strong> Response code for the SSAI requests.</li>
-      <li><strong>Ad request errors by Ad provider:</strong> Errors for the Ad requests by Ad provider.</li>
-      <li><strong>Ad request errors by Ad configuration:</strong> Errors for the Ad requests by Ad configuration.</li>
-      <li><strong>Tracker errors by Ad provider:</strong> Tracking of errors by Ad provider.</li>
-      <li><strong>Tracker errors by Ad configuration:</strong> Tracking of errors by Ad configuration.</li>
+      <li><strong>SSAI request codes:</strong> All of the response codes from each request to your ad server, including success and error codesAll of the response codes from each request to your ad server, including success and error codes.</li>
+      <li><strong>Ad request errors by Ad provider:</strong> A list of request errors sorted by ad provider.</li>
+      <li><strong>Ad request errors by Ad configuration:</strong> A list of request errors sorted by ad configuration.</li>
+      <li><strong>Tracker errors by Ad provider:</strong> A list of tracker errors sorted by ad provider.</li>
+      <li><strong>Tracker errors by Ad configuration:</strong> A list of tracker errors sorted by ad configuration.</li>
       <!-- <li><strong>Ads request call count:</strong> Number of Ad request HTTP calls.</li>
       <li><strong>Ads tracking call count:</strong>  Number of Ad Tracking HTTP calls.</li>
       <li><strong>Ad error call counts:</strong> Number of HTTP.</li>
       <li><strong>Ad error code:</strong> HTTP Error Response code.</li> -->
     </ul>
-    <h3>Dimensions</h3>
-    <p>SSAI Performance Metrics collects, aggregates, and filters the following metrics:</p>
-    <ul>
-      <li><strong>Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
-      <li><strong>Ad provider:</strong> The domain of the Ad server.</li>
-    </ul>
+    
     <!-- <h3>Granularity</h3>
     <p>Here is the granularity for SSAI performances metrics: </p>
     <ul>
@@ -3991,61 +3992,87 @@
   
   <section class="bcls-section">
     <h2 id="SSAI_Errors">SSAI Errors</h2>
-    <p>SSAI errors metrics help users track their Server-side Advertising (SSAI) errors information.</p>
+    <p>SSAI Errors metrics help users track their Server-side Advertising (SSAI) errors information.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="QoE analytics" src="/assets/images/s-analytics-img/module/ad-analytics/SSAI-errors.webp" />
       <figcaption class="bcls-caption--image">SSAI Errors</figcaption> 
     </figure>
+    <h3>Dimensions</h3>
+    <p>SSAI errors metrics collects, aggregates, and filters the following metrics:</p>
+    <ul>
+      <li><strong>Time range:</strong> Time range to filter the data.</li>
+      <li><strong>Ad providers:</strong> The domain of the Ad server.</li>
+      <li><strong>Ad configurations:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
+       <li><strong>SSAI errors:</strong> SSAI errors tracker.</li>
+      <li><strong>Ad request errors:</strong> Requests errors tracker.</li>
+      <li><strong>Ad tracker impression errors:</strong> Impression errors tracker.</li>
+    </ul>
     <h3>Metrics</h3>
     <p>SSAI errors metrics collects and reports on the following metrics:</p>
     <ul>
       <li><strong>SSAI errors:</strong> Server-side ad insertion errors. </li>
     </ul>
-    <h3>Dimensions</h3>
-    <p>SSAI errors metrics collects, aggregates, and filters the following metrics:</p>
+
+    <h3>Data view</h3>
     <ul>
-      <li><strong>Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
-      <li><strong>Ad provider:</strong> The domain of the Ad server.</li>
-      <li><strong>SSAI error:</strong> SSAI errors tracker.</li>
-      <li><strong>Request error:</strong> Requests errors tracker.</li>
-      <li><strong>Impression error:</strong> Impression errors tracker.</li>
+      <li><strong>Request code:</strong> The error code returned from the ad provider.</li>
+      <li><strong># of requests:</strong> The number of requests associated with the error code.</li>
     </ul>
   </section>
 
   <section class="bcls-section">
     <h2 id="Ad_Provider_Performance">Ad Provider Performance</h2>
-    <p>Ad provider performance metrics help users get information about the performance of their Ad provider.</p>
+    <p>Ad Provider Performance metrics shows the number of successful ad requests and the number of errors associated with each ad provider. This allows you to quickly see the percentage of ad errors for each provider.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="QoE analytics" src="/assets/images/s-analytics-img/module/ad-analytics/ad-provider-performance.webp" />
       <figcaption class="bcls-caption--image">Ad Provider Performance</figcaption> 
     </figure>
     <h3>Dimensions</h3>
     <p>Ad provider performance collects, aggregates, and filters the following metrics:</p>
     <ul>
-      <li><strong>Ad config:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
-      <li><strong>Request type:</strong> The moment the call was sent in the Ad fulfillment cycle.</li>
-      <li><strong>Ad request:</strong> Ad request tracker.</li>
+      <li><strong>Time range:</strong> Time range to filter the data.</li>
+      <li><strong>Ad configurations:</strong> SSAI <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Ad Configuration</a> identifier.</li>
       <li><strong>Calls:</strong> Number of calls from Brightcove SSAI to Ad Server.</li>
-      <li><strong>Impressions:</strong> Impression tracker.</li>
+      <li><strong>Tracker impressions:</strong> Impression tracker.</li>
+      <li><strong>Ad requests:</strong> Ad request tracker.</li>
       
     </ul>
+
+    <h3>Data view</h3>
+    <ul>
+      <li><strong>Ad provider:</strong> Your ad provider.</li>
+      <li><strong>Total calls:</strong> Total number of ad request calls.</li>
+      <li><strong>Errors:</strong> Number of ad request errors associated with the ad provider.</li>
+      <li><strong>Success:</strong> Number of successful ad request calls to the ad provider.</li>
+      <li><strong>Percent of total errors:</strong> The ratio of the total number of errors/total number of ad requests</li>
+    </ul>
+   
    
   </section>
 
   <section class="bcls-section">
     <h2 id="Ad_Config_Performance">Ad Config Performance</h2>
-    <p>Ad config performance metrics help users get information about the performance of their Ad configuration.</p>
+    <p>Ad Config Performance metrics shows the number of successful ad requests and the number of errors associated with each ad configuration. This allows you to quickly see the percentage of ad errors for each configuration.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="QoE analytics" src="/assets/images/s-analytics-img/module/ad-analytics/ad-config-performance.webp" />
       <figcaption class="bcls-caption--image">Ad Config Performance</figcaption> 
     </figure>
     <h3>Dimensions</h3>
     <p>Ad config performance metrics must be able to collect, aggregate and filter on the following metrics:</p>
     <ul>
-      <li><strong>Ad provider:</strong> The domain of the Ad server.</li>
-      <li><strong>Ad request:</strong> Ad request tracker.</li>
+      <li><strong>Time range:</strong> Time range to filter the data.</li>
+      <li><strong>Ad providers:</strong> The domain of the Ad server.</li>
       <li><strong>Calls:</strong> Number of calls.</li>
-      <li><strong>Impressions:</strong> Impression tracker.</li>
-      
+      <li><strong>Tracker impressions:</strong> Impression tracker.</li>
+      <li><strong>Ad requests:</strong> Ad request tracker.</li>
     </ul>
-   
+
+    <h3>Data view</h3>
+    <ul>
+      <li><strong>Ad configurations:</strong> A list of your ad configurations being used.</li>
+      <li><strong>Total calls:</strong> Total number of ad request calls.</li>
+      <li><strong>Errors:</strong> Number of ad request errors associated with the ad configuration.</li>
+      <li><strong>Success:</strong> Number of successful ad request calls associated with the ad configuration.</li>
+      <li><strong>Percent of total errors:</strong> The ratio of the total number of errors/total number of ad requests.</li>
+    </ul>
+
   </section>
 
   <section class="bcls-section">
@@ -4126,7 +4153,7 @@
           <h5 class="h5-text">Brightcove</h5>
           <ul class="list-unstyled text-small">
             <li><a class="a-text" href="https://www.brightcove.com">Brightcove.com</a></li>
-            <li><a class="a-text" href="https://community.brightcove.com/s/">Bright Spot Community Forum</a></li>
+            <li><a class="a-text" href="https://community.brightcove.com/s/">Bright Spot Community</a></li>
             <li><a class="a-text" href="https://support.brightcove.com/product-updates.html">Product release notes</a></li>
             <li><a class="a-text" href="https://support.brightcove.com/doc-updates.html">Documentation updates</a></li>
           </ul>
