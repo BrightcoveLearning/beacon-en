@@ -1,0 +1,62 @@
+---
+title: Verizon
+description: 
+parent: Getting Started
+---
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 75%;
+}
+
+.right {
+  width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <div class="row">
+      <div class="column left">
+        <div style="max-width: 960px;">
+          <style>
+video-js.video-js.vjs-fluid:not(.vjs-audio-only-mode) {padding-top: 56.25%;}
+</style>
+          <video-js data-account="1752604059001"  id="myPlayerID" data-player="tTstQb2r7E" data-embed="default" controls="" data-video-id="1742506883780922249" data-playlist-id="" data-application-id="" class="vjs-fluid"></video-js>
+        </div>
+        <script src="https://players.brightcove.net/1752604059001/tTstQb2r7E_default/index.min.js"></script> 
+      </div>
+      <div class="column right"> <img src="/assets/images/s-brightcove-interactivity-img/examples/verizon-logo.jpeg">
+        <p><br/>
+          <strong>Categories:</strong> Training &amp; Education, Communications</p>
+        <p><strong>Featured Annotations:</strong></p>
+        <p><button type="button" class="bcls-button" onclick="myPlayer.currentTime(17);">Call to Action</button></p>
+        <p><button type="button" class="bcls-button" onclick="myPlayer.currentTime(28);">Links</button></p>
+      </div>
+    </div>
+  </section>
+</article>
+<script>
+  var myPlayer;
+  videojs('myPlayerID').ready(function () {
+    myPlayer = this;
+  });
+
+</script>

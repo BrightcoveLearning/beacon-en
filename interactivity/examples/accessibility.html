@@ -1,0 +1,56 @@
+---
+title: Accessibility
+description: 
+parent: Getting Started
+---
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 75%;
+}
+
+.right {
+  width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <div class="row">
+      <div class="column left">
+        <div style="position: relative; display: block; max-width: 960px;">
+          <div style="padding-top: 56.25%;">
+            <video id="hapyak-player-157199-8825_html5_api" class="vjs-tech" playsinline="playsinline" webkit-playsinline="webkit-playsinline">
+              <source src="https://sample.hapyak-hosted.com/group_uploads/23/16673/videos/862f7e32a9b94974b98f004ae49fa9ef/Sample-Video-with-sound.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column right"> <img src="/assets/images/s-brightcove-interactivity-img/examples/hapyak_nav_logo.png">
+        <p><br/>
+          <strong>Categories:</strong> Accessibility</p>
+        <p><strong>Featured Annotations:</strong></p>
+        <p><span class="button-blue-text-bordered"> <i data-feather="thumbs-up"></i> CHAPTERS</span></p>
+        <p><span class="button-blue-text-bordered"> <i data-feather="help-circle"></i> QUIZ</span></p>
+        <p><span class="button-blue-text-bordered"> <i data-feather="type"></i> TEXT</span></p>
+      </div>
+    </div>
+  </section>
+</article>

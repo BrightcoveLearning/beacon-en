@@ -1,0 +1,4419 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <title>Using Dynamic Annotations</title>
+        
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="In this topic you will learn how to create variables and add a display rule to a video.">
+        
+        <!-- Google Font -->
+        <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+        <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+        
+        <!-- FontAwesome JS-->
+        
+        <script src="https://kit.fontawesome.com/d67c74a882.js" crossorigin="anonymous"></script>  
+        
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.css">
+
+        <!-- Theme CSS -->  
+        <link id="theme-style" rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/css/theme.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/prism.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/custom-css/styles.css">
+
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+        <script translate="no">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XBJC11HF8Z');
+        </script>
+        <script src="/assets/s-site-assets-scripts/sixth-sense.js"></script>
+        <script src="/assets/s-site-assets-scripts/sajari-head.js"></script>
+        <script src="/assets/s-site-assets-scripts/feather.min.js"></script>
+
+    </head> 
+
+    <body class="docs-page">
+        
+
+<header class="header fixed-top">
+  <div class="branding docs-branding">
+    <div class="container-fluid position-relative py-2">
+      <div class="docs-logo-wrapper">
+        <button id="docs-sidebar-toggler" class="docs-sidebar-toggler"
+          type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="site-logo"><a class="navbar-brand"
+            href="https://support.brightcove.com/"
+            style="margin-left: 15px;">
+            <img class="logo-icon me-2"
+              src="/assets/s-site-assets-template-stylesheets/images/bc_logo_black_1@1x.png"
+              alt="logo" style="margin-bottom: 9px;">
+            <!-- <span class="logo-text">BRIGHTCOVE</span> -->
+          </a></div>
+      </div><!--//docs-logo-wrapper-->
+
+      <div class="docs-top-utilities d-flex justify-content-end
+        align-items-center">
+        
+        <!-- Search bar -->
+        <div id="nav-search-box" class="top-search-box d-none d-lg-flex" style="margin-right: 10px ;"></div>
+
+<select id="site_select" class="form-select select-focus" style="width:
+          20%; margin-right: 10px;" translate="no">
+          <option value="">Other Brightcove Docs</option>
+          
+          
+          <option value="https://support.brightcove.com" translate="no">Documentation Home</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD --</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+          
+          
+          
+          <option value="https://mstudio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Marketing Studio</option>
+          
+          
+          
+          <option value="https://player.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
+          
+          
+          
+          <option value="https://apis.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
+          
+          
+          
+          <option value="https://sdks.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
+          
+          
+          
+          <option value="https://integrations.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
+          
+          
+          
+          <option value="https://general.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO ESSENTIALS --</option>
+          
+          
+          
+          <option value="https://audience-insights.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Audience Insights</option>
+          
+          
+          
+          <option value="https://beacon-help.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Studio</option>
+          
+          
+          
+          <option value="https://beacon.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Classic</option>
+          
+          
+          
+          <option value="https://corptv.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;CorpTV</option>
+          
+          
+          
+          <option value="https://live.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+          
+          
+          
+          <option value="https://zencoder.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD ADD-ONS --</option>
+          
+          
+          
+          <option value="https://gallery.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com/social/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+          
+          
+          
+          <option value="https://interactivity.support.brightcove.com/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Interactivity</option>
+          
+          
+          
+          <option value="https://ssai.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+          
+          
+          
+          <option value="https://campaign.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
+          
+          
+        </select>
+
+        <select id="language_select" class="form-select select-focus" style="width: 10%;"
+          onchange="doGTranslate(this);" translate="no">
+          <!-- <option value="">Select Language</option> -->
+          <option value="en|en" translate="No">English</option>
+          <option value="en|zh-TW" translate="No">繁體中文</option>
+          <option value="en|fr" translate="No">Français</option>
+          <option value="en|de" translate="No">Deutsche</option>
+          <option value="en|ja" translate="No">日本語</option>
+          <option value="en|ko" translate="No">한국어</option>
+          <option value="en|es" translate="No">Español</option>
+        </select>
+
+        <script translate="no">
+          /* <![CDATA[ */
+          function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+          /* ]]> */
+        </script>
+      </div>
+    </div>
+  </div>
+</header><!--//header-->
+
+<div class="docs-wrapper">
+  <div id="docs-sidebar" class="docs-sidebar" style="padding-right: 15px;">
+    <div id="nav-search-box" class="top-search-box d-lg-none p-3"></div>
+    <div class="row">
+      
+        <div id="side_nav" style="margin-left: 1em; display: inline-block; border-right: 1px solid #e5e5e6; padding-right: 1em;">
+          
+          <nav class="docs-nav sidenav" aria-label="Main">
+            <ul class="site-nav" style="list-style-type: none;">
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/index.html">Home</a></li>
+            
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/get-started/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Getting Started</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/learning-guide-bc-beacon.html">Brightcove Beacon Learning Guide</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/implementation-phases.html">Implementation Phases</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/getting-started-beacon-studio.html">Getting Started with Beacon Studio</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/general/references/beacon-studio-or-classic.html">When to Use Beacon Studio and/or Beacon Classic</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/design-best-practices.html">App Design Best Practices</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/app-design-considerations.html">App Design Considerations</a></li>
+              
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/get-started/basics/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Learn the Basics</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/get-started/basics/layout/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Layout</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/layout/archiving-pages.html">Archiving Pages</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/layout/availability-date.html">Configuring Calendar Restrictions</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/layout/availability-device.html">Configuring Device Restrictions</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/layout/availability-location.html">Configuring Location Restrictions</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/layout/creating-page.html">Creating a Page</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/get-started/basics/media/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Media</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/activating-and-deactivating-video.html">Activating Videos</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/adding-episode-season.html">Adding an Episode to a Season</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/capturing-video-poster-thumbnail-images.html">Capturing Video Poster Images</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/creating-manual-playlist.html">Creating a Manual Playlist</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/creating-season.html">Creating a Season</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/creating-series.html">Creating a Series</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/creating-smart-playlist.html">Creating a Smart Playlist</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/editing-basic-video-details.html">Editing Basic Video Details</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/editing-video-properties-multiple-videos.html">Editing Multiple Videos</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/organizing-videos-using-folders.html">Using Folders</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/uploading-video-poster-thumbnail-images.html">Uploading Video Images</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/media/uploading-videos.html">Uploading Videos</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/get-started/basics/players/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Players</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/players/creating-player.html">Creating a Player</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/players/creating-playlist-player.html">Creating a Playlist Player</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/players/styling-player.html">Styling Players</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/get-started/basics/publish/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Publish</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/publish/publishing-playlist-web.html">Publishing Playlists</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/publish/publishing-single-video-web.html">Publishing Videos</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/get-started/basics/analytics/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Analytics</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/analytics/determining-how-much-video-being-watched.html">Determining How Much of a Video is Watched</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/analytics/determining-which-videos-have-most-views.html">Determining Which Videos Have the Most Views</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/get-started/basics/admin/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Administration</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/get-started/basics/admin/adding-user-account.html">Adding Users to an Account</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/get-started/training/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Training</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/training/register-training.html">Register for Instructor-led Training</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/training/online-training-courses.html">Online Training Courses</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/training/brightcove-university.html">Brightcove Academy</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/media/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Managing Media</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/module/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Using the Media Module</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/module/getting-started-media-module.html">Getting Started with the Media Module</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/module/how-search-videos-and-playlists-media-module.html">Searching Videos and Playlists</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/manage/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Managing Video Files</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/downloading-videos-video-cloud.html">Downloading Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/exporting-video-data.html">Exporting Video Data</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/replacing-video-source-file.html">Replacing a Video Source File</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/retranscoding-videos-using-media-module.html">Retranscoding Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/uploading-videos-using-upload-module.html">Uploading Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/uploading-videos-remote-urls.html">Uploading Videos Remote URLs</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/working-remote-asset-videos.html">Working with Remote Asset Videos</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/properties/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Video Properties</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/capturing-poster-and-thumbnail-images.html">Capturing Poster and Thumbnail Images</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/configuring-video-availability.html">Configuring Video Availability</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/editing-video-properties-using-media-module.html">Editing Video Details</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/editing-video-properties-using-quick-edit.html">Editing Details using Quick Edit</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/managing-videos.html">Managing Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/uploading-poster-and-thumbnail-images.html">Uploading Video Images</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/series-seasons/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Series and Seasons</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/series-seasons/configuring-season-availability.html">Configuring Season Availability</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/series-seasons/configuring-series-availability.html">Configuring Series Availability</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/series-seasons/creating-managing-rule-sets.html">Creating and Managing Rule Sets</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/series-seasons/creating-series-seasons-episodes.html">Creating Series, Seasons & Episodes</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/series-seasons/editing-series-details.html">Editing Series Details</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/series-seasons/managing-series.html">Managing Series</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/organize/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Organizing Videos</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/organize/configuring-playlist-availability.html">Configuring Playlist Availability</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/organize/creating-beacon-playlist.html">Creating a Beacon Classic Playlist</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/organize/creating-and-managing-playlists.html">Creating and Managing Playlists</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/organize/introduction-playlists.html">Introduction to Playlists</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/organize/organizing-videos-using-folders.html">Organizing Videos Using Folders</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/captions/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Captions and Audio Files</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/adding-audio-tracks-videos-using-media-module.html">Adding Audio Tracks to Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/adding-captions-videos-using-media-module.html">Adding Captions to Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/generating-captions-videos.html">Generating Captions for Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/overview-adding-captions-video.html">Overview: Adding Captions to a Video</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/styling-captions.html">Styling Captions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/using-the-caption-editor.html">Using the Caption Editor</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publish/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Publishing Videos</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/publishing/choosing-correct-embed-code.html">Choosing the Correct Embed Code</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/publishing-videos-and-playlists-media-module.html">Publishing Videos and Playlists</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General Information</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/increasing-quality-poster-and-thumbnail-images.html">Increasing the Quality of Poster Images</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/offline-playback-beacon.html">Offline Playback</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/setting-required-fields-videos.html">Setting Required Fields</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/media-sharing-using-media-module.html">Sharing Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/syncing-video-cloud-catalog.html">Syncing with Video Cloud Catalog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/working-cue-points-media-module.html">Working with Cue Points</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/working-multi-lingual-metadata.html">Working with Multi-Lingual Metadata</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/layout/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Managing Pages</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/getting-started-layout-module.html">Getting Started with the Layout Module</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/configuring-app-settings.html">Configuring App Settings</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/adding-pages-to-playlists.html">Adding Pages to Playlists</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/configuring-page-availability.html">Configuring Page Availability</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/creating-managing-pages.html">Creating and Managing Pages</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/managing-playlists-on-pages.html">Managing Playlists on Pages</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/managing-secondary-pages.html">Managing Secondary Pages</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/ott-catalog-export.html">OTT Catalog Export</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/page-details-overview.html">Page Details Overview</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/e-selection.html">Player E Selection</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/e-live-features.html">Player E Live Features</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/e-vod-features.html">Player E VOD Features</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/clearing-cache.html">Refreshing the App Cache</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/using-content-layouts.html">Using Content Layouts</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/using-core-pages.html">Using Core Pages</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/using-page-layouts.html">Using Page Layouts</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/layout/using-view-all.html">Using View All Pages</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/channels/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Managing Channels</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/channels/beacon-channels/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Beacon Channels</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/channels/beacon-channels/creating-a-channel.html">Creating a Beacon Channel</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/channels/beacon-channels/electronic-program-guides.html">Creating an EPG</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/channels/beacon-channels/streaming-vods-to-a-channel.html">Streaming VODs to a Channel</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/channels/cloud-playout/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Cloud Playout Channels</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/getting-started/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Getting Started</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/getting-started/cloud-playout-overview.html">Overview: Cloud Playout</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/getting-started/cloud-playout-stream-vod.html">Creating a Cloud Playout Channel</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/general/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;General Information</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/general/configuring-s3-buckets.html">Configuring S3 Buckets</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/general/channel-live-redundancy.html">Using Live Redundancy with Channels</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/general/managing-slates.html">Managing Slates</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/general/searching-for-channels.html">Searching for Channels</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/managing-content/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Managing Channel Content</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/cloud-playout-add-content.html">Managing the Channel Program</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/managing-programs.html">Managing Multiple Programs</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/static-image-overlays.html">Adding Static Image Overlays</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/dynamic-overlays.html">Adding Dynamic Overlays</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/adding-bumpers-to-vod.html">Adding Bumpers to Cloud Playout</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/import-captions.html">Importing Captions</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/monetization/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Monetizing Channels</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/monetization/enabling-server-side-ads.html">Monetizing Cloud Playout</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/monetization/mid-roll-ad-insertion.html">Adding Mid-Roll Ads to a Channel</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/publishing/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Publishing Channels</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/publishing/hard-start.html">Setting a Hard Start for a Channel</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/publishing/publish-channel-beacon.html">Publishing a Cloud Playout Channel</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/publishing/using-channel-actions.html">Using Channel Actions</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/publishing/viewing-channel-output-and-analytics.html">Viewing Channel Output and Analytics</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/players/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Managing Players</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/players/module/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Using the Players Module</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/module/getting-started-players-module.html">Getting Started with the Players Module</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/step-step-using-players-module-create-and-publish-player.html">Step-by-Step:  Creating and Publishing a Player</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/players/properties/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Player Properties</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/setting-player-properties.html">Setting Player Properties</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/setting-player-information-properties.html">Setting Player Information Properties</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/configuring-player-content-restrictions.html">Configuring Player Content Restrictions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/configuring-player-playback-properties.html">Configuring Player Playback Properties</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/setting-player-update-mode-and-version.html">Setting the Player Update Mode</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/players/appearance/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Appearance and Controls</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/adding-thumbnail-seeking-player.html">Adding Thumbnail Seeking</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-player-overlay-using-overlay-plugin.html">Configuring a Player Overlay</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-playlist-endscreen-using-plugin.html">Configuring a Playlist Endscreen</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-player-controls.html">Configuring Player Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-player-endscreen.html">Configuring the Player Endscreen</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-player-localization.html">Configuring Player Localization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-social-properties-player.html">Configuring the Social Properties</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/styling-players.html">Styling Players</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/players/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General Information</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/configuring-adobe-analytics-event-tracking.html">Configuring Adobe Analytics Event Tracking</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/configuring-google-analytics-event-tracking.html">Configuring Google Analytics Event Tracking</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/configuring-player-advertising-using-players-module.html">Configuring Player Advertising</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/configuring-player-plugins.html">Configuring Player Plugins</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/generating-player-embed-code.html">Generating Player Embed Code</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/v5-players-support.html">Support for Brightcove Player 5</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/monetization/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Monetizing Content</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/monetization/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/bc-ad-monetization.html">Brightcove Ad Monetization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/creating-stripe-account.html">Creating a Stripe Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/creating-svod-plan.html">Creating an SVOD Plan</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/creating-tvod-plan.html">Creating an TVOD Plan</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/promo-codes.html">Creating Promo Coupons</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/vc-custom-fields.html">Custom Fields for Monetization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/implementing-authvod.html">Implementing AuthVOD</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/receive-iap-notifications.html">Receiving In-App Purchase Notifications</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/resources.html">Resources for Monetization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/stripe-custom-metadata.html">Retrieving Stripe Subscription Info</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/monetization-options.html">Understanding Monetization Options</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/using-svod-plan.html">Using an SVOD Plan</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/general/using-tvod-plan.html">Using an TVOD Plan</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/monetization/ssai/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;SSAI</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/ssai/advertisement.html">Creating an Advertisement</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/ssai/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/ssai/live-ssai.html">Implementing Live SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/ssai/vod-ssai.html">Implementing VOD SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/monetization/ssai/beacon-apps-ad-targeting.html">Beacon Apps Ad Targeting</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/beacon-web-store/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Beacon Web Store</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/beacon-web-store/beacon-webstore-overview.html">Overview: Brightcove Beacon Web Store</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/beacon-web-store/integration-details.html">Integrating with the Beacon Web Store</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/beacon-web-store/beacon-store-webhook-reference.html">Beacon Store Webhook Reference</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/analytics/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Reviewing Analytics</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/analytics/module/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Using the Analytics Module</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/module/getting-started-analytics-module.html">Getting Started with the Analytics Module</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/module/analytics-module-ui-glossary.html">Analytics Module UI Glossary</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/module/how-search-videos-analytics-module.html">How to Search for Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/module/faq-analytics-module.html">FAQ: Analytics Module</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/analytics/reports/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Analytics Reports</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/analytics-report-reference.html">Analytics Report Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/creating-custom-analytics-reports.html">Creating Custom Analytics Reports</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/overview-audience-insights-essentials.html">Audience Insights Essentials</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/engagement-report-reference.html">Engagement Report Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/managing-scheduled-reports.html">Managing Scheduled Reports</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/performance-report-reference.html">Performance Report Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/ssai-performance-data.html">SSAI Performance Analytics</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/analytics/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General Information</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/general/analytics-overview.html">Analytics Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/general/analytics-business-metrics.html">Beacon Analytics Business Metrics</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/general/calculating-video-engagement-score.html">Calculating Video Engagement Score</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/general/exporting-data-analytics-module.html">Exporting Data</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/general/resources.html">Resources for Analytics</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/analytics/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Third-Party Analytics</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/third-party/ga-self-configuration.html">Google Analytics Self Configuration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/third-party/reviewing-player-event-data-google-analytics.html">Reviewing Player Event Data in Google Analytics</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/third-party/viewing-analytics-data-google.html">Viewing Analytics Data in Google Analytics</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/protecting-content/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Protecting Content</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/general/drm-output-protection-settings.html">DRM Output Protection Settings</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/protecting-content/forensic-watermarking-with-beacon.html">Forensic Watermarking</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/general/protecting-videos-hls-encryption.html">Protecting Videos with HLS Encryption</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/publishing-apps/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;App Publishing and Behavior</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publishing-apps/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General Information</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/general/common-required-info.html">Common Required Information for Submitting Apps</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/general/demo-apps-access.html">Demo Apps Access</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/general/device-apps-validation-guide.html">Device Apps Validation Guide</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/general/in-app-subscription-resources.html">In-App Subscription Resources</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/general/links-subscriptions.html">Links to the App Stores Subscriptions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/general/schedule-apps.html">Scheduling App Releases in the App Stores</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publishing-apps/app-behavior/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;App Behavior</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/app-behavior/account-deletion.html">Account Deletion</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/app-behavior/parental-controls.html">Parental Controls</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publishing-apps/android/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Android</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/android/submitting-to-android.html">Submitting New Apps to the Android Store</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/android/updating-android-apps-to-bcb.html">Updating Android Apps to Brightcove Beacon</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/android/adding-subscriptions-in-android.html">Adding Subscriptions to Android</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/android/improving-relevance-android.html">Improving Search Relevance in the Android Play Store</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/android/installing-android-test-build.html">Installing an Android Test Build</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/android/managing-google-subscriptions-1.html">Managing Google Subscriptions Part 1</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/android/managing-google-subscriptions-2.html">Managing Google Subscriptions Part 2</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publishing-apps/fire-tv/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Fire TV</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/fire-tv/add-bc-email.html">Add Brightcove Email to Amazon Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/fire-tv/installing-fire-tv-test-build.html">Installing a Fire TV Test Build</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/fire-tv/submitting-to-amazon.html">Submitting to the Amazon Store</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publishing-apps/ios-tvos/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;iOS/tvOS</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/ios-tvos/account-deletion.html">Account Deletion</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/ios-tvos/fairplay-certificate.html">FairPlay Certificate Registration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/ios-tvos/installing-ios-test-build.html">Installing an iOS/tvOS Test Build</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/ios-tvos/resources.html">Resources</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/ios-tvos/submitting-to-apple.html">Submitting to the Apple Store</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publishing-apps/lg/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;LG</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/lg/submitting-to-lg.html">Submitting to the LG Store</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/lg/installing-lg-webos-test-build.html">Installing LG Test Build</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publishing-apps/roku/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Roku</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/roku/add-bc-user.html">Add Brightcove User to Roku Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/roku/configuring-inchannel-products.html">Configuring In-Channel Products in Roku</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/roku/configuring-roku-search.html">Configuring Roku Search</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/roku/installing-roku-test-build.html">Installing a Roku Test Build</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/roku/submitting-to-roku.html">Submitting to the Roku Store</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publishing-apps/samsung/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Samsung</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/samsung/samsung-partner.html">Becoming a Samsung Partner</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/samsung/installing-samsung-test-build.html">Installing the Samsung Test Build</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/samsung/submitting-to-samsung.html">Submitting to the Samsung Store</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publishing-apps/web/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Web</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/web/bcp-use.html">Brightcove Player Use</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/registered-users/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Registered Users</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/registered-users/roles-as-rights-studio.html">Controlling Viewer Access with Roles</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/registered-users/export-registered-users.html">Exporting Registered Users</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/registered-users/working-with-registered-users.html">Working with Registered Users</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/registered-users/sending-push-notifications.html">Sending Push Notifications</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/social/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Social Sharing</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/social/module/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Getting Started</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/module/getting-started-brightcove-social.html">Getting Started with Social</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/module/creating-social-media-publishing-destinations.html">Creating Publishing Destinations</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/social/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General Information</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/adding-facebook-button-brightcove-player.html">Adding a Facebook Like Button to a Player</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/creating-video-clip-using-brightcove-social.html">Creating a Video Clip</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/enabling-longer-videos-youtube.html">Enabling Longer Videos In YouTube</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/publishing-videos-social-media-platforms.html">Publishing Videos to Social Media</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/publishing-live-event-facebook.html">Publishing a Live Event to Facebook</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/publishing-live-event-youtube.html">Publishing a Live Event to YouTube</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/setting-privacy-status-video.html">Setting the Privacy Status for a Video</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/sharing-videos-twitter-player-cards.html">Sharing Videos to Twitter Player Cards</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/using-auto-sync-synchronize-videos-social-media-accounts.html">Using Auto Sync</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/viewing-videos-published-social-media.html">Viewing Published Videos</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/social/analytics/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Reviewing Analytics</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/analytics/reviewing-social-analytics.html">Reviewing Social Analytics</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/analytics/reviewing-social-engagement-analytics.html">Reviewing Social Engagement Analytics</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/analytics/reviewing-social-views-analytics.html">Reviewing Social Views Analytics</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/social/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Developers</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/social/getting-started/quick-start-social-api.html">Quick Start: Social API</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/social/references/reference.html">Social API Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/social/references/social-api-error-reference.html">Social API: Error Reference</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/live/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Live Streaming</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/live/get-started/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Getting Started</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/delivering-live-streams.html">Delivering Live Streams</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/live-module-guidelines-and-best-practices.html">Brightcove Live: Best Practices</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/implement-live-with-dvr.html">Implementing Live with DVR</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/step-step-live-srt.html">Step-by-Step: SRT Live event</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/step-step-using-live-module-open-broadcaster-software-obs.html">Step-by-Step: Using the Live Module with OBS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/step-step-using-live-module-telestream-wirecast.html">Step-by-Step: Using the Live Module with Wirecast</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/live/live-module/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Using the Live Module</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/client-side-preroll-with-live-ssai.html">Client-Side Pre-roll Ads with Live SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/creating-and-managing-live-events-using-live-module.html">Creating and Managing Live Events using the Live Module</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/creating-video-clip-using-live-module.html">Creating a Video Clip</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/implementing-server-side-ads-live-module.html">Implementing Server-Side Ads</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/live-redundancy.html">Live Redundancy</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/multi-language-audio.html">Multi Language Audio</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/playback-restrictions-live-module.html">Playback Restrictions with Live Events</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/reviewing-live-analytics.html">Reviewing Live Analytics</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/scheduling-clips.html">Scheduling Clips</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/scheduling-live-event.html">Scheduling Live Events</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/using-live-rtmp-outputs-stream-facebook-and-youtube.html">Streaming to Facebook and YouTube</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/live/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General Information</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/captions-with-live-streams.html">Captions with Live Streams</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/forensic-watermarking-live.html">Forensic Watermarking with Live Streams</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/live-drm.html">Live DRM</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/live-events-states.html">Live Event States</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/live-video-glossary.html">Live Video Glossary</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/reducing-latency-live-streams.html">Reducing Latency for Live Streams</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/streaming-live-event.html">Streaming a Live Event using Beacon Classic</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/supported-encoders-live-events.html">Supported Encoders for Live Events</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/live/web-conferencing/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Web Conferencing</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/web-conferencing/host-avaya-conference-brightcove-live.html">Hosting an Avaya Conference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/web-conferencing/host-cisco-webex-conference-brightcove-live.html">Hosting a Cisco Webex Conference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/web-conferencing/host-inxpo-live.html">Hosting an INXPO Event</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/web-conferencing/host-zoom-conference-brightcove-live.html">Hosting a Zoom Conference</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/styling/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Styling & Appearance</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/styling/branding-beacon-apps.html">Branding Brightcove Beacon Apps</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/styling/image-requirements.html">Image Specifications</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/interactivity/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Interactivity</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/getting-started/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Getting Started</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/getting-started/getting-started-interactivity-module.html">Getting Started with the Interactivity Module</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/getting-started/configuring-player-plugin.html">Configuring the Player Plugin</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/getting-started/interactive-video-types.html">Interactive Video Types</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/getting-started/getting-started-video-interactivity.html">Getting Started with Video Interactivity</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/examples/index.html">Interactive Examples Gallery</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/getting-started/terminology.html">Terminology</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/getting-started/interactivity-training-videos.html">Interactivity Training Videos</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/annotations/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Annotations</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/adding-text-overlay.html">Adding an Text Overlay</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/adding-image-overlay.html">Adding an Image Overlay</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/adding-transparent-overlay.html">Adding an Transparent Overlay</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/adding-drawing.html">Adding an Drawing</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/adding-chapters-video.html">Adding Chapters to a Video</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/adding-quiz.html">Adding a Quiz Annotation</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/adding-time-triggered-action.html">Adding a Time Triggered Action</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/annotation-options.html">Annotation Options</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/configuring-annotation-links.html">Configuring Annotation Links</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/looping-back-in-video.html">Looping Back in a Video</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/reviewing-annotations.html">Reviewing Annotations</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/annotations/styling-annotations.html">Styling Annotations</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item section-doc"><a class="nav-link" href="/interactivity/annotations/using-dynamic-annotations.html" aria-current="page">Using Dynamic Annotations</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/widgets/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Widgets</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/widgets/adding-poll-video.html">Adding a Poll to a Video</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/widgets/adding-sign-in-video.html">Adding a Sign In Form to a Video</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/widgets/adding-sentiment-video.html">Adding User Sentiment to a Video</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/widgets/embedding-form-video.html">Embedding a Form in a Video</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/widgets/using-custom-widget-library.html">Using the Custom Widget Library</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/projects/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Projects</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/projects/creating-and-managing-projects.html">Creating and Managing Projects</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/projects/branching-overview.html">Branching Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/projects/configuring-project-settings.html">Configuring Project Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/projects/in-video-branching.html">In-Video Branching</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/projects/generating-embed-code.html">Generating Embed Code</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/templates/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Templates</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/templates/creating-and-managing-templates.html">Creating and Managing Templates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/templates/applying-templates-projects.html">Applying Templates to Projects</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/experiences/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Experiences</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/experiences/experiences-overview.html">Overview of Experiences</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/experiences/creating-and-managing-experiences.html">Creating and Managing Experiences</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/experiences/creating-branching-experience.html">Creating a Branching Experience</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/experiences/creating-slide-sync-experience.html">Creating a Slide Sync Experience</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/experiences/creating-chapters-menu-experience.html">Creating an Off-Video Chapter Menu</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/experiences/creating-lesson-experience.html">Creating a Lesson Experience</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/experiences/generating-embed-code.html">Generating Embed Code</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/analytics/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Analytics</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/analytics/interactivity-reports-reference.html">Interactivity Reports Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/analytics/core-reports-reference.html">Core Reports Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/analytics/question-report-reference.html">Question Report Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/analytics/gradebook-report-reference.html">Gradebook Report Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/analytics/interactive-video-tracking-events.html">Interactive Video Tracking Events</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General Information</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/general/working-with-folders.html">Working with Folders</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/general/understanding-scorm-integration.html">Understanding SCORM Integration</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/settings/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Settings</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/settings/configuring-settings.html">Configuring Interactivity Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/settings/using-style-editor.html">Using the Style Editor</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="https://apis.support.brightcove.com/interactivity/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Developers</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/interactivity/addon-api/reference.html">Addon API</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/interactivity/annotation-api/reference.html">Annotations API</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html">Embed API</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/interactivity/extension-api/reference.html">Extension API</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/interactivity/accessing-reporting-endpoints.html">Accessing Reporting Endpoints</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/campaign/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Marketing Automation</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/campaign/get-started/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Getting Started</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/get-started/getting-started-campaign-module.html">Getting Started with Campaign</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/get-started/overview-video-content-types.html">Overview of Video Content Types</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/get-started/using-hud.html">Using the Chrome Extension</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/campaign/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General Information</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/campaign-faq.html">Campaign FAQ</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/campaign-fields-and-data-definitions.html">Campaign Fields and Data Definitions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/campaign-plugin-faq.html">Campaign Plugin FAQ</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/configuring-campaign-settings.html">Configuring Campaign Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/creating-campaign-lead-form.html">Creating a Campaign Lead Form</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/how-campaign-module-identifies-viewers.html">How Campaign Identifies Viewers</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/how-vbs-calculated.html">How Video Benchmark Score is Calculated</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/overview-video-content-types.html">Overview of Video Content Types</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/publishing-video-email-using-campaign-module.html">Publishing a Video to Email</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/using-custom-metrics-and-events.html">Using Custom Metrics and Events</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/viewing-player-events-campaign-module.html">Viewing Player Events</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/viewing-video-activity.html">Viewing Video Activity</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/viewing-viewer-profile-information.html">Viewing Viewer Profile Information</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/working-utm-fields-campaign-module.html">Working with UTM Fields</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/audience/index.html">Developers (Audience API)</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/campaign/integrations/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Integrations</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/eloqua/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Eloqua</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html">Creating Custom Lead Forms</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/eloqua/eloqua-integration-testing-guide.html">Eloqua Integration Testing Guide</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/eloqua/embedding-video-cloud-video-eloqua-landing-page.html">Embedding a Video on a Landing Page</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">Integrating with Oracle Eloqua</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/hubspot/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;HubSpot</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html">Creating Custom Lead Forms</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/hubspot/hubspot-rest-api-integration-testing-guide.html">HubSpot REST API Testing Guide</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">Integrating with HubSpot (Client-Side APIs)</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">Integrating with HubSpot (REST APIs)</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/marketo/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Marketo</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/marketo/creating-custom-lead-forms-marketo.html">Creating Custom Lead Forms</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">Integrating with Marketo (Munchkin)</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">Integrating with Marketo (REST APIs)</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/marketo/marketo-rest-integration-testing-guide.html">Marketo REST Integration Testing Guide</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/non-map/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Non-MAP</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">Creating Custom Integrations</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/non-map/integrating-campaign-single-sign.html">Integrating with Single Sign-On</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/non-map/using-campaign-module-track-viewers.html">Using Campaign to Track Viewers</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/salesforce/index.html"><span class="theme-icon-holder me-2">
+                      <i class="fa-solid fa-minus"></i><span>&nbsp;Salesforce</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/salesforce/creating-custom-lead-forms-salesforce.html">Creating Custom Lead Forms</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/salesforce/creating-salesforce-object-pardot.html">Creating Salesforce Object for Pardot</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html">Integrating with Salesforce</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/campaign/admin/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Administering Campaign</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exporting Data from Campaign</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/admin/exporting-gallery-lead-data.html">Exporting Gallery Lead Data</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/admin/managing-viewer-data.html">Managing Viewer Data</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/admin/troubleshooting-campaign-issues.html">Troubleshooting Campaign Issues</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/admin/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Administering Accounts</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/admin/general/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;General Information</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/authenticating-studio-users-using-single-sign.html">Authenticating Studio Users using SSO</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/configuring-language-settings.html">Configuring Language Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/creating-custom-metadata-fields.html">Creating Custom Metadata Fields</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-account-information.html">Managing Account Information</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-account-settings.html">Managing Account Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-api-authentication-credentials.html">Managing API Authentication Credentials</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-media-sharing-settings.html">Managing Media Sharing Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-live-settings.html">Managing Live Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-playback-rights.html">Managing Playback Rights</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-profile-information.html">Managing Profile Information</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-users.html">Managing Users</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/using-directed-migration-tool-migrate-brightcove-smart-players.html">Using the Directed Migration Tool</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/viewing-billing-information.html">Viewing Billing Information</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/admin/ingest-profiles/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Managing Ingest Profiles</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/creating-custom-live-ingest-profiles.html">Creating Custom Live Ingest Profiles</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/creating-ingest-profiles-context-aware-encoding.html">Creating Ingest Profiles for Context Aware Encoding</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/creating-ingest-profiles-dynamic-delivery.html">Creating Ingest Profiles for Dynamic Delivery</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/fields-custom-live-ingest-profiles.html">Fields for Live Ingest Profiles</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/ingest-profiles-best-practices.html">Ingest Profiles Best Practices</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/managing-ingest-profiles.html">Managing Ingest Profiles</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles (DD & CAE)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/standard-live-ingest-profiles.html">Standard Live Ingest Profiles</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/general/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;General Information</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/general/references/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;References</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/best-practices-video-creating-transcoding-and-uploading-workflow.html">Best Practices: Transcoding and Uploading</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/bcp-plugin-compatibility.html">Brightcove Player Plugin Compatibility</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/general/common-required-info.html">Common Required Information for Submitting Apps</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/glossary.html">Glossary</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/known-issues.html">Known Issues</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/marketplace.html">Marketplace</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/optimal-video-dimensions.html">Optimal Video Dimensions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/china-delivery-overview.html">Overview: China Delivery Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/release-notes/product-updates.html">Product Release Notes</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/related-content.html">Related Content</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/remote-asset-limitations.html">Remote Asset Limitations</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/resetting-your-studio-password.html">Resetting Your Studio Password</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/supported-video-and-audio-formats-codecs-and-containers.html">Supported Video and Audio Formats</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/video-source-file-specifications-and-recommendations.html">Video Source File Specs and Recommendations</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/using-multiple-languages.html">Using Multiple Languages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/beacon-studio-or-classic.html">When to Use Beacon Studio / Beacon Classic</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/working-360deg-videos.html">Working with 360° Videos</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/working-audio-content.html">Working with Audio-Only Content</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/general/architecture/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Architecture</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/content-delivery-options.html">Content Delivery Options</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/domains-and-ports-must-be-accessible-video-cloud.html">Domains and Ports for Video Cloud</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/overview-context-aware-encoding.html">Overview of Context Aware Encoding</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/overview-dynamic-delivery.html">Overview of Dynamic Delivery</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/general/authentication/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Authentication</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/authentication/authentication-using-oauth.html">Authentication Using OAuth</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/authentication/login-durations.html">Login Durations</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/authentication/oidc-authentication-for-beacon.html">OIDC Configuration and Testing</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/beacon-web-store/integration-details.html">OIDC Example: Integrating with the Beacon Web Store</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/general/content-protection/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Content Protection</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/content-protection/drm-output-protection-settings.html">DRM Output Protection Settings</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/content-protection/overview-digital-rights-management-drm-video-cloud.html">Overview: Digital Rights Management (DRM)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/content-protection/protecting-videos-hls-encryption.html">Protecting Videos with HLS Encryption</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/content-protection/tls-media-player-and-api-urls.html">TLS for Media, Player, and API URLs</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/general/cookie-consent/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Cookie Consent</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/cookie-consent/managing-cookie-consent.html">Managing Cookie Consent Using OneTrust</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/general/notifications/index.html">
+                  <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Notifications</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/notifications/sending-app-notifications.html">Sending App Notifications</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/ott-plugins/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Beacon Plugins</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/learning-guide-beacon-plugins.html">Learning Guide: Beacon Plugins</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/javascript-modules-beacon-plugins.html">Use JavaScript Modules for Plugins</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/dispatching-handling-events.html">Dispatch & Handle Events in Plugins</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/custom-page.html">Creating a Custom Page</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/buttons-and-events.html">Implement Buttons and Event Handlers</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/custom-divs.html">Implement Custom Sections</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/side-panel.html">Implement the Side Panel</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/user-events.html">Implement User Events</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/data-module.html">Storing Data in a Separate Module</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/ott-plugins/working-with-page-events.html">Working with Page Events</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/release-notes/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Release Notes</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/release-notes/product-updates.html">Product Release Notes</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/support/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Support</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/reset-support-portal-password.html">Reset Your Support Portal Password</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/contact-sales.html">Contact Sales</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+          </ul>
+          </nav>
+        </div>
+      </div>
+    </div><!--//docs-sidebar-->
+  </div>
+</div>
+
+<div style="margin-top: 20px;">
+  <div class="docs-content" style="padding-bottom: 0px;">
+    <div class="container">
+      <div class="docs-overview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/">Home</a></li>
+            
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/interactivity/">Interactivity</a></li>
+            
+            
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/interactivity/annotations/">Annotations</a></li>
+            
+            
+            
+            <li class="breadcrumb-item active" aria-current="page">Using Dynamic Annotations</li>
+            
+            
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="docs-content">
+  <div class="container">
+    <div class="docs-overview py-5">
+      
+      <div class="centered-inpage-nav" id="centered_inpage_nav">
+        <nav id="centered_toc">
+          <select id="centered_in_page_toc" class="form-select select-focus"></select>
+        </nav>
+      </div>
+      <br>
+      
+      
+<h1>Using Dynamic Annotations</h1>
+<article class="bcls-article">
+  <summary>In this topic you will learn how to create variables and add a display rule to a video.</summary>
+  <section class="bcls-section">
+    <p>Through the use of variables and display rules it is possible to create interactive videos that modify the viewing
+      experience based on a viewer’s input.
+      Annotations are made dynamic through the use of JavaScript variables.
+      Variables have two primary functions:</p>
+    <ol>
+      <li> To display dynamic content in a text commentary, for example, <code>Welcome Back, !</code></li>
+      <li> To be used in display rules to control whether an annotation is displayed or not, for example, &quot;Display Rule: <code>allowed_to_see==true</code>&quot;</li>
+    </ol>
+    <p>This topic will explain how to create and use variables for a dynamic, adaptive video
+      experience for viewers.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="variable-types">Variable types</h2>
+    <p>There are different types of variables available when using Brightcove Interactivity.</p>
+    <ul>
+      <li><strong>Standard variables</strong> - Variables explicitly set when an annotation is clicked</li>
+      <li><strong>Quiz variables</strong> - Variables automatically created by quiz annotations</li>
+      <!--<li><strong>Environment variables</strong> - Variables explicitly passed to the Embed API from an external system.</li>-->
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="standard-variables">Standard variables</h2>
+    <p>To define a standard variable on an annotation:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Click on an annotation's Edit menu.</li>
+      <li>Click <strong>Link</strong> and then click the <strong>Advanced</strong> tab.
+        <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/annotations/dynamic-annotations/advanced-tab.png"> </figure>
+      </li>
+      <li>In the <strong>JavaScript</strong> field, enter a new JavaScript variable name or variable assignment.</li>
+      <li>Click <span class="button-blue">SAVE</span>.</li>
+    </ol>
+    <p>When the annotation is clicked by a viewer, the variable assignment code will be executed. </p>
+    <h3>Variable name requirements</h3>
+    <ul>
+      <li>Variable names must begin with a letter, underscore ( _ ), or $</li>
+      <li>Use = for assignments and double quotes for quoted strings</li>
+      <li> Commas are reserved for delimiting multiple variables</li>
+    </ul>
+    <h3>Examples</h3>
+    <div style="overflow-x: scroll;">
+      <table class="bcls-table">
+        <thead class="bcls-table__head">
+          <tr>
+            <th width="252">Table Header</th>
+            <th width="518">Table Header</th>
+          </tr>
+        </thead>
+        <tbody class="bcls-table__body">
+          <tr>
+            <td><code>my_var=true</code></td>
+            <td>When clicked, <code>my_var</code> will be set to <code>TRUE</code></td>
+          </tr>
+          <tr>
+            <td><code>my_var=20</code></td>
+            <td>When clicked, <code>my_var</code> will be set to <code>20</code></td>
+          </tr>
+          <tr>
+            <td><code>my_var=&quot;Hello World&quot;</code></td>
+            <td>When clicked, <code>my_var</code> will be set to <code>Hello World</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="quiz-variables">Quiz variables</h2>
+    <p>Every question defined in a Quiz annotation will automatically create two variables:</p>
+    <ol>
+      <li>The value of the answer provided by the viewer.</li>
+      <li>Whether the answer provided by the viewer was correct.</li>
+    </ol>
+    <p>The automatically created variables are named <code>quiz_[annotation-id]_[question index]</code>, for example <code>quiz_123_1</code> would be the answer to the first question in the quiz with id 123. The variable defining if the correct answer was provided will be named <code>quiz_[annotation-id]_[question index]_correct</code>.</p>
+    <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/annotations/dynamic-annotations/variables-list.png"> </figure>
+  </section>
+  <!--<section class="bcls-section">
+    <h2 id="environment-variables">Environment variables</h2>
+    <p>Developers using the  <a href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html">Embed API</a> have the ability to directly provide a JSON object when the player is instantiated that defines variables to be used by annotations.</p>
+    <pre>hapyak.viewer({<br>player: ytPlayer,<br>playerType: &quot;youtube&quot;,<br>css: &quot;http://modernizr.com/i/css/modernizr-2.1.1.css?v=1&quot;,<br>width: 640,<br>height: 360,<br>trackId: 640,<br>autoplay: true,<br>variables: {“my_name”:&quot;Kyle&quot;,&quot;my_company&quot;:&quot;Brightcove&quot;}<br>});</pre>
+  </section>-->
+  <section class="bcls-section">
+    <h2 id="displaying-variables">Displaying  variables</h2>
+    <p>Once variables have been defined they can be used to display dynamic content or to <a href="#overview">create rules</a> which can be used to show or hide  annotations. When a variable is selected from the <strong>Variables</strong> dropdown, an expression will be added to the text overlay that will resolve to the variable when<br>
+      viewed. The resolved variable will equal the answer that the viewer provided to the question.</p>
+    <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/annotations/dynamic-annotations/selected-answer.png"></figure>
+    <p>Variables are identified in the text as anything occurring between &quot;&quot;. If you are using quiz variables, the variable expression will be automatically added via the Variables dropdown. Otherwise, you will need to enter the variable name that was defined. For example, &quot;My name is: <code></code>&quot;</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">Note: You do not need to remember the Quiz variable naming scheme. The Quiz variables are automatically available in the UI through the Variables drop down in the edit menu of a text overlay annotation.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="overview">Overview of display rules</h2>
+    <p>Display Rules are JavaScript expressions that test variables for the purpose of conditionally displaying annotations. If the expression evaluates to TRUE, the annotation will be rendered. If the expression evaluates to FALSE, the annotation will not be rendered. Display Rules can be added to any annotation type. Common use cases include:</p>
+    <ul>
+      <li>Display an annotation when a viewer clicks on a different annotation</li>
+      <li>Display an annotation when the viewer gets a quiz question right or wrong</li>
+      <li>Display an annotation based on a parameter passed in from an external API </li>
+    </ul>
+    <p>Display rules require that you are comfortable working with HTML, JavaScript and CSS. Codeacademy offers free <a href="https://www.codecademy.com/en/tracks/web" rel="nofollow noopener noreferrer" target="_blank">HTML/CSS</a> and <a href="https://www.codecademy.com/en/tracks/javascript" rel="nofollow noopener noreferrer" target="_blank">JavaScript</a> courses that may be helpful to beginners.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="add-rule">Adding a display rule</h2>
+    <p>To add a display rule to an annotation, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Login to Video Cloud Studio.</li>
+      <li>Open the <strong>Interactivity</strong> module.</li>
+      <li> Click on a project <strong>Title</strong> to open it.</li>
+      <li>In the list of annotations, locate the annotation and click the edit icon (<img src="/assets/images/s-brightcove-interactivity-img/platform/custom-annotations/display-rules/icon-edit.png">).</li>
+      <li>In the <strong>Edit</strong> menu, click <strong>More...</strong></li>
+      <li>Click <strong>Display Rule</strong>.
+        <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/annotations/dynamic-annotations/new-display-rule.png"> </figure>
+        <aside class="bcls-aside bcls-aside--information language-editable">Note: The <strong>Select Variable</strong> dropdown is only available if a quiz has been added to the project.</aside>
+      </li>
+      <li>Enter the display rule. The expression entered in this dialog will be evaluated prior to rendering the annotation.<br>
+      </li>
+      <li>Click <span class="button-blue">SAVE</span>.</li>
+      <li>Click <strong>Done</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="syntax">Display rule syntax</h2>
+    <h3>Testing for a set variable</h3>
+    <p>Rule: <code>[variable name]</code> eg. <code>my_var</code></p>
+    <p>This is the same as writing <code>my_var=true</code>. This will be true if the resolved variable is defined and it’s value is not false.</p>
+    <h3>Testing equality</h3>
+    <p>Rule: <code>[variable name]==&quot;value&quot;</code> eg. <code>my_var==&quot;Kyle&quot;</code></p>
+    <p>This will be true only if the resolved variable is exactly equal to the string value between the single quotes.</p>
+    <h3>Testing for correct quiz answers</h3>
+    <p>Rule: <code>[quiz variable name]_correct</code> eg. <code>quiz_123_1_correct</code></p>
+    <p>This will be true only if the resolved variable is equal to the correct answer of the quiz question.</p>
+    <h3>Testing for incorrect quiz answers</h3>
+    <p>Rule: <code>[quiz variable name] &amp;&amp; ![quiz variable name]_correct</code> eg. <code>quiz_123_1 &amp;&amp;<br>
+      !quiz_123_1_correct</code></p>
+    <p>This will be true only if the resolved variable is NOT equal to the correct answer of the quiz question.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="example">Example</h2>
+    <p>Here's a basic example. Clicking on one annotation will make another appear.</p>
+    <iframe src="https://players.brightcove.net/1752604059001/85HiqvJnMe_default/index.html?videoId=1739617402811689392&interactivityProjectId=64079144f079a10017a7470f" allowfullscreen="" allow="encrypted-media" width="960" height="540"></iframe>
+    <p>In this example, a triggered action is set at the beginning of the video to set a JavaScript variable <code>apple</code> to <code>true</code>.</p>
+    <p>The image and text annotations are configured with the same start and end times.</p>
+    <p>The apple and orange images are both image overlays. They both have display rules set so they only show if their respective JavaScript variable (<code>apple</code> or <code>orange</code>) is set to <code>true</code>. For example, here is the display rule for the orange.</p>
+    <p>
+      <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/annotations/dynamic-annotations/orange-display-rule.png"></figure>
+    </p>
+    <p>This will cause the orange image overlay to only display when the variable <code>orange = true</code>.</p>
+    <p>The text overlay <strong>Click here to change the image to display an orange</strong> is configured with a display rule to display when <code>apple = true</code>. The <strong>Link</strong> setting is configured to switch the variables when clicked.</p>
+    <p>
+      <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/annotations/dynamic-annotations/orange-text.png"></figure>
+    </p>
+    <p>So clicking the text will set <code>orange</code> to <code>true</code> which will make the alternate text overlay and orange image both appear.</p>
+  </section>
+</article>
+
+<!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
+  
+  <nav class="right-side-nav" id="right_side_nav">
+    <h6 class="toc">Page Contents</h6>
+    <ul id="in_page_nav" class="list-none"></ul>
+  </nav>
+  
+<!-- </div> -->
+</div>
+</div>
+</div>
+<div class="page-content" style="background-color: rgb(1, 5, 14);">
+  <div class="container" style="width: 50%;">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Brightcove Support</h5>
+          <ul class="list-unstyled text-small" style="color: white ;">
+            <li><a class="a-text" href="https://status.brightcove.com">System Status</a></li>
+            <li><a class="a-text" href="https://supportportal.brightcove.com">Contact Support</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/search.html">Search all documentation</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Training</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">Online courses</a></li>
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/register-training.html">Register for a course</a></li>
+            <li><a class="a-text" href="https://academy.brightcove.com/">Brightcove Academy</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Brightcove</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://www.brightcove.com">Brightcove.com</a></li>
+            <li><a class="a-text" href="https://community.brightcove.com/s/">Bright Spot Community</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/product-updates.html">Product release notes</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/doc-updates.html">Documentation updates</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© Brightcove Inc. All rights reserved.</p>
+      <a class="a-text" href="https://www.brightcove.com/en/legal/privacy">Privacy</a> 
+      <a class="a-text" href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a>
+
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a href="https://www.linkedin.com/company/16439"
+        title="LinkedIn" target="_blank" class="gf-social-linkedin"
+        style="margin-right: 1rem;"><i data-feather="linkedin"
+          style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a
+        href="https://twitter.com/brightcove" title="Twitter" target="_blank"
+        class="gf-social-twitter" style="margin-right: 1rem;"><i
+          data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a
+        href="https://www.facebook.com/Brightcove" title="Facebook"
+        target="_blank" class="gf-social-facebook"><i data-feather="facebook"
+          style="color:#8E9093;height: 1.25rem;"></i></a></li>
+      </ul>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<script translate="no">
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documentation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder,
+    styling: {
+      components: {
+        
+        input: {
+          container: {
+          backgroundColor: 'white',
+          }
+        
+        }
+      }
+    },
+    maxSuggestions: 5, // Maximum number of suggestions to show
+      attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+
+  
+
+
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+    window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+  </script>
+  
+  <!-- Javascript -->          
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/popper.min.js"></script>
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+  <!-- Page Specific JS -->
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/smoothscroll.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script> -->
+  <!-- <script src="/assets/s-site-assets-template-stylesheets/js/highlight-custom.js"></script>  -->
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+  <script src="/assets/s-site-assets-template-stylesheets/js/docs.js"></script> 
+
+  <!-- original footer components -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <script src="/assets/s-site-assets-scripts/https-fix.js"></script>
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  <script src="/assets/s-site-assets-scripts/selector.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  <script src="/assets/s-site-assets-scripts/prism-normalize.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/learning-paths/learning-paths.js"></script>
+  <!-- <script src="/assets/s-site-assets-scripts/site.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/tabs.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/toc-new-template.js"></script>
+  
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <script src="/assets/s-site-assets-scripts/local-link-fix.js"></script>
+  <script src="/assets/s-site-assets-scripts/sajari-reindex.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/sajari-search-foot.js"></script>
+  
+  <script translate="no">
+    feather.replace()
+  </script>
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/in-app.js"></script>
+  <style translate="no">
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+  </body>
+</html> 
