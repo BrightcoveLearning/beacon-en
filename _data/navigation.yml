@@ -71,13 +71,6 @@
               url: /get-started/basics/players/creating-playlist-player.html
             - name: Styling Players
               url: /get-started/basics/players/styling-player.html
-        - name: Publish
-          url: /get-started/basics/publish/index.html
-          docs:
-            - name: Publishing Playlists
-              url: /get-started/basics/publish/publishing-playlist-web.html
-            - name: Publishing Videos
-              url: /get-started/basics/publish/publishing-single-video-web.html
         - name: Analytics
           url: /get-started/basics/analytics/index.html
           docs:
@@ -187,13 +180,6 @@
       url: /media/captions/styling-captions.html
     - name: Using the Caption Editor
       url: /media/captions/using-the-caption-editor.html
-  - name: Publishing Videos
-    url: '/publish/index.html'
-    docs: 
-    - name: Choosing the Correct Embed Code
-      url: /publish/publishing/choosing-correct-embed-code.html
-    - name: Publishing Videos and Playlists
-      url: /publish/publishing-videos-and-playlists-media-module.html
   - name: General Information
     url: '/media/general/index.html'
     docs: 
