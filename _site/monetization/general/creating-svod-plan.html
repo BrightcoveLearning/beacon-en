@@ -4061,10 +4061,10 @@
       <li>Payment methods</li>
       <li>Maximum number of streams that can be played simultaneously by a user with the package</li>
       <li>Start and end dates when the package can be purchased</li>
-      <li>Permitted devices and geo-locations to view videos in the package</li>
+      <li>Permitted devices and geo-locations where the package can be bought</li>
     </ul>
     
-    <aside class="bcls-aside bcls-aside--warning language-editable">If prices are changed anywhere in Beacon, you must <a href="/layout/clearing-cache.html">clear the app cache</a> to be sure prices are consistent in all parts of the Beacon app.</aside>
+    <!-- <aside class="bcls-aside bcls-aside--warning language-editable">If prices are changed anywhere in Beacon, you must <a href="/layout/clearing-cache.html">clear the app cache</a> to be sure prices are consistent in all parts of the Beacon app.</aside> -->
     
   </section>
   <section class="bcls-section">
@@ -4078,7 +4078,7 @@
         </figure>
       </li>
       <!-- Begin Evergent SVOD -->
-      <!-- <li>
+      <li>
         <p>For the <strong>Package</strong> tab, enter details for your SVOD Plan.</p>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/creating-subscription-package/new-svod-plan.webp" alt="New SVOD plan" />
@@ -4100,17 +4100,18 @@
               <td>Name of the SVOD package</td>
             </tr>
             <tr>
-              <td><strong>Billing Frequency</strong></td>
+              <td><strong>Billing Frequency <sup><a href="#n1">[1]</a></sup></strong></td>
               <td>Yes</td>
               <td>
-                Choose the billing frequency for this package
+                <p>Choose the billing frequency for this package.</p>
+                <aside class="bcls-aside bcls-aside--information">This cannot be changed after viewers have subscribed to the package.</aside>
               </td>
             </tr>
             <tr>
-              <td><strong>Trial Period</strong></td>
+              <td><strong>Trial Period <sup><a href="#n1">[1]</a></sup></strong></td>
               <td>Yes</td>
               <td>
-                The trial period for this package.
+                Set the trial period for this package.
                 Enter <strong>0</strong> for no trial period.
               </td>
             </tr>
@@ -4118,14 +4119,14 @@
               <td><strong>Status</strong></td>
               <td>Yes</td>
               <td>
-                Chose if you wish to have the package published so it is available for use. Note that you cannot publish the package until at least one payment method is selected.
+                Choose if you wish to have the package published so it is available for use. Note that you cannot publish the package until at least one payment method is selected.
               </td>
             </tr>
             <tr>
               <td><strong>Allow Downloads</strong></td>
               <td>Yes</td>
               <td>
-                  Set to <strong>Yes</strong> to allow content associated with this plan to be downloaded by the user for offline playback. For details, see the <a href="https://beacon-help.support.brightcove.com/media/offline-playback-beacon.html">Offline Playback with Brightcove Beacon Apps</a> document.
+                Set to <strong>Yes</strong> to allow content associated with this plan to be downloaded by the user for offline playback. For details, see the <a href="https://beacon-help.support.brightcove.com/media/offline-playback-beacon.html">Offline Playback with Brightcove Beacon Apps</a> document.
               </td>
             </tr>
             <tr>
@@ -4143,7 +4144,7 @@
               </td>
             </tr>
             <tr>
-              <td><strong>Auto Renewal</strong></td>
+              <td><strong>Auto Renewal <sup><a href="#n1">[1]</a></sup></strong></td>
               <td>Yes</td>
               <td>
                 <p>Select <strong>Yes</strong> if you want the subscription to automatically renew.</p>
@@ -4151,32 +4152,38 @@
               </td>
             </tr>
             <tr>
-              <td><strong>Payment methods to use</strong></td>
+              <td><strong>Payment processors or paywalls</strong></td>
               <td>Yes</td>
               <td>
                 <p>Note that for each method selected a section opens below the list of payment methods, which you must complete for each selected method.</p>
                 Select one or more of the following types:
-                  <ul>
-                    <li>Amazon</li>
-                    <li>Apple Store</li>
-                    <li>Beacon Store</li>
-                    <li>Evergent</li>
-                    <li>Google Play Store</li>
-                    <li>Roku Store</li>
-                    <li>Stripe</li>
-                  </ul> 
-                <aside class="bcls-aside bcls-aside--information">Brightcove apps can be set up to use either Stripe or Evergent, but not both.</aside>
+                <ul>
+                  <li>Amazon</li>
+                  <li>Apple Store</li>
+                  <li>Beacon Store</li>
+                  <li>Evergent</li>
+                  <li>Google Play Store</li>
+                  <li>Roku Store</li>
+                  <li>Stripe</li>
+                </ul>
+                <aside class="bcls-aside bcls-aside--information">Brightcove web apps can be set up to use either Stripe or Evergent, but not both.</aside>
               </td>
             </tr>
           </tbody>
         </table>
+
+        <aside class="bcls-aside bcls-aside--information">
+          <p>Notes:</p>
+          <p id="n1"><strong><sup>[1]</sup></strong> This field is informational only. The store is the source of truth.</p>
+        </aside>
+
       </li>
       <li>
-        <p>If you are using Evergent, select <strong>Evergent</strong> to see <strong>Payment methods details</strong>.</p>
-        <aside class="bcls-aside bcls-aside--tip">Availability is for the SVOD package. For example, if the <strong>Permitted locations</strong> is set for the US, then all viewers will be able play a movie or asset associated with this package, but only viewers in the US can subscribe to the asset.</aside>
+        <p>If you are using Evergent, select <strong>Evergent</strong> to see paywall details.</p>
+        <aside class="bcls-aside bcls-aside--tip">Availability is for the SVOD package. For example, if the <strong>Permitted locations</strong> is set for the US, then all viewers will be able to play a movie or asset associated with this package, but only viewers in the US can subscribe to the asset.</aside>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-monetization-img/creating-subscription-package/evergent-payment-details.webp" alt="Evergent payment details">
-        </figure> 
+        </figure>
         <p>
           Most of the detail fields are the same across the payment methods, except for the ID (Amazon ID, Apple Store ID, Evergent ID, etc). This table contains the fields for Evergent payment details: </p>
         <table class="bcls-table">
@@ -4194,19 +4201,19 @@
               <td>Schedule a starting date this package will be available</td>
             </tr>
             <tr>
-                <td><strong>End Time</strong></td>
-                <td>Yes</td>
-                <td>
-                    Schedule an ending date when this package will no longer be available
-                </td>
+              <td><strong>End Time</strong></td>
+              <td>Yes</td>
+              <td>
+                Schedule an ending date when this package will no longer be available
+              </td>
             </tr>
             <tr>
               <td><strong>Devices to publish</strong></td>
               <td>Yes</td>
               <td>
-                  <p>Add the devices you wish to publish to. Select the <strong>Select / Unselect All Devices</strong> to see a list of available devices.</p>
-                  <aside class="bcls-aside bcls-aside--information">
-                    Currenty, the only device supported for TVOD is <strong>web</strong>.
+                <p>Add the devices you wish to publish to. Select the <strong>Select / Unselect All Devices</strong> to see a list of available devices.</p>
+                <aside class="bcls-aside bcls-aside--information">
+                  Currenty, the only device supported for SVOD is <strong>web</strong>.
                 </aside>
               </td>
             </tr>
@@ -4214,33 +4221,33 @@
               <td><strong>Permitted locations</strong></td>
               <td>Yes</td>
               <td>
-                <p>Select the locations where you want to stream your content, if no restrictions enter <strong>World</strong>.</p>
-                <aside class="bcls-aside bcls-aside--information">
+                <p>Select the geo locations where viewers can subscribe to your content. If no restrictions enter <strong>World</strong>.</p>
+                <!-- <aside class="bcls-aside bcls-aside--information">
                     <p>If you don't specify at least 1 permitted location, then you may see this message from your app:</p>
                     <figure class="bcls-figure">
                         <img class="bcls-image" src="/assets/images/s-general-img/series-seasons-episodes/no-content.jpg" alt="No content" /> </figure>
-                </aside>
+                </aside> -->
               </td>
             </tr>
             <tr>
               <td><strong>Denied locations</strong></td>
               <td>No</td>
               <td>
-                  Select the locations where you DO NOT want to stream your content.
+                Select the geo locations where you DO NOT want viewers to subscribe to your content.
               </td>
             </tr>
             <tr>
-              <td><strong>Price</strong></td>
+              <td><strong>Price <sup><a href="#n1">[1]</a></sup></strong></td>
               <td>Yes</td>
               <td>
-                  Specify the price that users must pay to view content associated with this package.
+                Specify the price that users must pay to view content associated with this package.
               </td>
             </tr>
             <tr>
-              <td><strong>Currency</strong></td>
+              <td><strong>Currency <sup><a href="#n1">[1]</a></sup></strong></td>
               <td>Yes</td>
               <td>
-                  Specify the currency type for the package price.
+                Specify the currency type for the package price.
               </td>
             </tr>
             <tr>
@@ -4252,9 +4259,13 @@
             </tr>
           </tbody>
         </table>
-      </li> -->
+        <aside class="bcls-aside bcls-aside--information">
+          <p>Notes:</p>
+          <p id="n1"><strong><sup>[1]</sup></strong> This field is informational only. The store is the source of truth.</p>
+        </aside>
+      </li>
       <!-- End Evergent SVOD -->
-      <li>
+      <!-- <li>
         On the <strong>Package</strong> tab (screenshot below), complete the following:
         <ul>
           <li>
@@ -4275,7 +4286,6 @@
           </li>
           <li>
             <strong>Ads Providers</strong> : If you have chosen to use ads in the previous step, choose the ad provider. This dropdown is populated with the advertisement configurations listed in the <strong>Advertisement</strong> section of Brightcove Beacon.
-            <!-- See the <a href="/using-brightcove-beacon/advertisement.html"> Advertisement </a> document for details on advertisement configurations. -->
           </li>
           <li>
             <strong>Payment methods to use</strong> : Select the payment methods you want to use with this package. Note that for each method selected a section opens below the list of payment methods, which you must complete for each selected method. The screenshot below shows <strong>Stripe (in yellow)</strong> and <strong>Apple Store (in red)</strong> are selected.
@@ -4283,9 +4293,8 @@
               <img class="bcls-image" src="/assets/images/s-monetization-img/creating-subscription-package/payment-method-details.png" alt="payment method details" />
             </figure>
           </li>
-        </ul>
-
-      </li>
+        </ul>     
+      </li> -->
       <li>
         Click the <strong>Create Package</strong> button to save your current package configuration.
       </li>
@@ -4301,8 +4310,8 @@
         Click the <strong>Create Package</strong> button to save your current package configuration.
       </li>
       <li>
-        On the <strong>Non-Textual Data</strong> tab, supply an image for use next to the package name.
-        <!-- The size of the image should be !!!!!!!!!!!!!!!!. -->
+        On the <strong>Non-Textual Data</strong> tab, images are NOT used by the apps.
+
       </li>
       <li>
         Click the <strong>Create Package</strong> button to save your current package configuration.
@@ -4343,8 +4352,16 @@
     <h2 id="Unpublishing">Unpublishing or deleting a package</h2>
     <p>If a package is no longer needed you have two options:</p>
     <ul>
-      <li><strong>Unpublish</strong>: You can unpublish a package that is needed again. For instance, you have a special package associated with a holiday that you use year after year. This is a good use case for unpublish.</li>
-      <li><strong>Delete</strong>: You can delete a package and it is not recoverable. For instance, you have an introductory package for a new set of content, but that content will not be new again, so you will not need the package again. This is a good use case for delete.</li>
+      <li>
+        <p><strong>Unpublish</strong>: You can unpublish a package that is needed again. For instance, you have a special package associated with a holiday that you use year after year. This is a good use case for unpublish.</p>
+        <aside class="bcls-aside bcls-aside--information">Unpublishing a package means viewers cannot subscribe to it anymore, but all the current subscriptions will continue.
+          Subscriptions will STILL renew on the store until the viewer cancels it.</aside>
+      </li>
+      <li>
+        <p><strong>Delete</strong>: Deleting a package is not recoverable. Deleting a package means that ALL viewers with subscriptions will lose entitlements, even if the store says they have a subscription or if it just renewed on the store. </p>
+        <!-- <p><strong>Delete</strong>: You can delete a package and it is not recoverable. For instance, you have an introductory package for a new set of content, but that content will not be new again, so you will not need the package again.</p> -->
+        <aside class="bcls-aside bcls-aside--information">Brightcove DOES NOT allow you to delete a package that contains viewers with active subscriptions. In most cases, Brightcove DOES NOT recommend deleting a package.</aside>
+      </li>
     </ul>
     <p>There are two places you can unpublish/delete a package:</p>
     <ul>
@@ -4424,7 +4441,7 @@
       <img class="bcls-image" src="/assets/images/s-monetization-img/creating-subscription-package/use-coupon.png" alt="use coupon form" />
     </figure>
     <p>
-      Alternatively, you can create coupons directly in your Stripe account, and then use them in Brightcove Beacon.
+      Alternatively, you can create coupons directly in your Stripe account, and then use them in Brightcove Beacon. For details, see Stripe's <a href="https://stripe.com/docs/billing/subscriptions/coupons#coupons">Discounts for subscriptions</a> document.
     </p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/s-monetization-img/creating-subscription-package/stripe-coupon-form.png" alt="use coupon form" />
