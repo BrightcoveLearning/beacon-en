@@ -4052,12 +4052,11 @@
   <section class="bcls-section">
     <p>The Interactivity plugin for the Brightcove Player allows the player to take advantage of the features provided by Brightcove Interactivity. Using the plugin has the following benefits:</p>
     <ul>
-      <li>Automatic  Interactivity project creation for each video viewed in the configured player</li>
+      <li>Automatic   project creation for each video viewed in the configured player (when the <code><a href="#options">create</a></code> plugin parameter is used)</li>
       <li>Programmatic access to video metadata from the Interactivity APIs</li>
       <li>Dynamic loading of Brightcove Interactivity templates</li>
-      <li>Automatic syncing of project titles with video titles</li>
     </ul>
-    <p>When interactions are added to an  Interactivity project, they will automatically appear on the corresponding video as long as the video is published using an Interactivity-enabled Brightcove Player.</p>
+    <p>When annotations are added to an  Interactivity project, they will automatically appear on the corresponding video as long as the video is published using an Interactivity-enabled Brightcove Player.</p>
     <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1760274335826652555">&nbsp;</div>
     <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script> 
   </section>
@@ -4085,53 +4084,54 @@
   <section class="bcls-section">
     <h2 id="options">Configuring the Options(JSON)</h2>
     <p>Parameters can be added to the <strong>Options(JSON)</strong> to customize the behavior of the Interactivity plugin.</p>
+    <figure class="bcls-figure"><img src="/assets/images/s-brightcove-interactivity-img/getting-started/json-options.png"> </figure>
     <h3>Auto project creation</h3>
     <p>If you wish to enable auto-creation of projects when a Brightcove video is played using an Interactivity-enabled Brightcove Player, add the following parameter to the <strong>Options(JSON)</strong>:</p>
     <pre><code>
 &quot;create&quot;: true
 </code></pre>
     <h3>Video position</h3>
-      <p>To ensure that the video appears in the middle of the device display in portrait mode (mimics default behavior of all mobile devices), add the following to the <strong>Options(JSON)</strong>.</p>
-        <pre><code>
+    <p>To ensure that the video appears in the middle of the device display in portrait mode (mimics default behavior of all mobile devices), add the following to the <strong>Options(JSON)</strong>.</p>
+    <pre><code>
 &quot;position&quot;: &quot;middle&quot;
 </code></pre>
     <h3>Custom tracking events</h3>
-      <p>A custom JavaScript method can be provided to capture tracking events as they occur. To do so simply add the location of your JavaScript file in the <strong>Options(JSON)</strong>.</p>
-        <pre><code>
+    <p>A custom JavaScript method can be provided to capture tracking events as they occur. To do so simply add the location of your JavaScript file in the <strong>Options(JSON)</strong>.</p>
+    <pre><code>
 {
   "customTracking": "https://dmhl2y7t4r72w.cloudfront.net/brightcove/bcovTrackingHandler.js"
 }
 </code></pre>
     <h3>Working with jQuery</h3>
-      <p>The Interactivity plugin loads its own copy of jQuery by default. If you embed the Brightcove Player with the Interactivity plugin enabled, the plugin will override an existing copy of jQuery already on the page when it loads. To prevent this behavior and preserve an existing copy of jQuery, you must pass the <code><strong>preserveJQuery</strong></code> option in the <strong>Options(JSON)</strong> when setting up the plugin. For example, specifying the following will prevent the Interactivity plugin from loading its own jQuery as long as there is already one on the page.</p>
-        <pre><code>
+    <p>The Interactivity plugin loads its own copy of jQuery by default. If you embed the Brightcove Player with the Interactivity plugin enabled, the plugin will override an existing copy of jQuery already on the page when it loads. To prevent this behavior and preserve an existing copy of jQuery, you must pass the <code><strong>preserveJQuery</strong></code> option in the <strong>Options(JSON)</strong> when setting up the plugin. For example, specifying the following will prevent the Interactivity plugin from loading its own jQuery as long as there is already one on the page.</p>
+    <pre><code>
 {
   "preserveJQuery": true
 }
 </code></pre>
-        <table class="bcls-table">
-          <caption class="bcls-caption--table">
-          Summary of jQuery Loading Behavior
-          </caption>
-          <tbody class="bcls-table__body">
-            <tr>
-              <td></td>
-              <td>preserveJQuery: true</td>
-              <td>preserveJQuery: false</td>
-            </tr>
-            <tr>
-              <td>jQuery present on page</td>
-              <td>Do not load jQuery</td>
-              <td>Load jQuery</td>
-            </tr>
-            <tr>
-              <td>jQuery absent from page</td>
-              <td>Load jQuery</td>
-              <td>Load jQuery</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">
+      Summary of jQuery Loading Behavior
+      </caption>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td></td>
+          <td>preserveJQuery: true</td>
+          <td>preserveJQuery: false</td>
+        </tr>
+        <tr>
+          <td>jQuery present on page</td>
+          <td>Do not load jQuery</td>
+          <td>Load jQuery</td>
+        </tr>
+        <tr>
+          <td>jQuery absent from page</td>
+          <td>Load jQuery</td>
+          <td>Load jQuery</td>
+        </tr>
+      </tbody>
+    </table>
+    </li>
     </ul>
   </section>
   <!--<section class="bcls-section">
