@@ -4056,6 +4056,7 @@
       <li><a href="/interactivity/analytics/question-report-reference.html">Question Report</a></li>
       <li><a href="/interactivity/analytics/gradebook-report-reference.html">Gradebook Report</a></li>
     </ul>
+    <aside class="bcls-aside bcls-aside--tip language-editable">Note: All analytics times are displayed in Coordinated Universal Time (UTC) time.</aside>
     <p>The Core reports can be viewed by opening the <strong>Analytics</strong> module and then by clicking the <strong>Interactivity &gt; Core Reports</strong> link in the left navigation.</p>
     <p>
       <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Performance Report" src="/assets/images/s-brightcove-interactivity-img/analytics/core-reports/core-reports.png" /></figure>
@@ -4074,9 +4075,9 @@
     <ul>
       <li><strong>Project</strong> - Project title</li>
       <li><strong>ID</strong> - Project ID</li>
-      <li><strong>Chapter Title</strong> - Chanter title</li>
-      <li><strong>Chapter Time</strong> - Chapter time stamp</li>
-      <li><strong>Views</strong> - Number of views of that part of the video (user passed the chapter marker)</li>
+      <li><strong>Chapter Title</strong> - Chapter title</li>
+      <li><strong>Chapter Time</strong> - Chapter start time</li>
+      <li><strong>Views</strong> - Number of views of that part of the video (passed by the chapter marker during normal playback)</li>
       <li><strong>Clicks</strong> - Number of times the chapter name was clicked in  the chapter menu</li>
     </ul>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Performance Report" src="/assets/images/s-brightcove-interactivity-img/analytics/core-reports/chapter-summary.png" /></figure>
@@ -4087,9 +4088,9 @@
     <ul>
       <li><strong>Experience name</strong> - Name of the experience</li>
       <li><strong>Play Rate</strong> - Number of plays divided by the number of times the experience was loaded and ready for playback</li>
-      <li><strong>Interaction Rate</strong> - </li>
-      <li><strong>Total View Time</strong> - </li>
-      <li><strong>Audience</strong> - </li>
+      <li><strong>Interaction Rate</strong> - Plays with interaction divided by total plays (which could not have any interaction). Interaction is usage of any of the interactive elements (play button, volume, etc do not count - but passive time triggered actions do). </li>
+      <li><strong>Total View Time</strong> - Total view duration across all users (e.g. how much time of the video was watched overall). Does not distinguish about which part of a video was watched.</li>
+      <li><strong>Audience</strong> - Unique viewers as determined by the user ID token (either the auto-generated anonymous one or one given explicitly).</li>
     </ul>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Performance Report" src="/assets/images/s-brightcove-interactivity-img/analytics/core-reports/experience-summary.png" /></figure>
   </section>
@@ -4109,7 +4110,7 @@
     <h2 id="poll-widget-detail">Poll Widget Detail</h2>
     <p>The Poll Widget Detail report will display one row per poll submit event. The report will display:</p>
     <ul>
-      <li><strong>Session Start Time</strong> - Session date and time</li>
+      <li><strong>Session Start Time</strong> - Session date and time  (UTC time)</li>
       <li><strong>Play Session</strong> - Play session</li>
       <li><strong>User</strong> - Anonymized user ID assigned by Brightcove Interactivity. The ID is assigned the first time user accesses interactive content. Token is valid for 1 year.
         <aside class="bcls-aside bcls-aside--information language-editable">Note: The <a href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html#viewer_api">Viewer API</a> can be used to optionally pass in user ID and/or username values to overwrite the anonymous ID value.</aside>
@@ -4143,7 +4144,7 @@
       <li><strong>Play Rate</strong> - Number of plays divided by the number of times it was loaded and ready for playback</li>
       <li><strong>Interaction Rate</strong> - Plays with interactions divide by number of plays</li>
       <li><strong>Total View Time</strong> - Total view time spread across all of the viewers</li>
-      <li><strong>Audience</strong> - Number of unique viewers who accessed the content along with the median % viewed</li>
+      <li><strong>Audience</strong> - Active audience is the number of viewers who click an interactive element, passive audience is the number who do not. % viewed of each is the media % viewed by each segment with the passive % viewed discounting any people who load the video but never play it. </li>
     </ul>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Performance Report" src="/assets/images/s-brightcove-interactivity-img/analytics/core-reports/project-summary.png" /></figure>
   </section>
@@ -4155,7 +4156,7 @@
         <aside class="bcls-aside bcls-aside--information language-editable">Note: The <a href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html#viewer_api">Viewer API</a> can be used to optionally pass in user ID and/or username values to overwrite the anonymous ID value.</aside>
       </li>
       <li><strong>Time Watched</strong> - Total time watched across all videos</li>
-      <li><strong>Last Session</strong> - Last session date and time</li>
+      <li><strong>Last Session</strong> - Last session date and time  (UTC time)</li>
       <li><strong>User Details</strong> - Number of times each kind of functionality was used
         <ul>
           <li><strong>Links</strong> - Text, image and transparent overlays</li>
@@ -4183,7 +4184,7 @@
       </li>
       <li><strong>When</strong> - Date and time the action took place (UTC time)</li>
       <li><strong>Rating</strong> - Icon rating from the  User Sentiment widget (thumbs up, down)</li>
-      <li><strong>Rating Value</strong> - Rating value from the User Sentiment widget (1, 3, 5)</li>
+      <li><strong>Rating Value</strong> - Rating value from the User Sentiment widget regardless of which icon type is used (1, 3, 5)</li>
       <li><strong>Project</strong> - Project title and ID that was acted upon</li>
       <li><strong>Action</strong> - Lists the specific action that was taken (i.e. play events for a video, clicks on links, quiz responses, chapter markers clicked) and the time in the video of the action. Video events:
         <ul>
