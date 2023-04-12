@@ -4055,8 +4055,10 @@
       Annotations are made dynamic through the use of JavaScript variables.
       Variables have two primary functions:</p>
     <ol>
-      <li> To display dynamic content in a text commentary, for example, <code>Welcome Back, !</code></li>
-      <li> To be used in display rules to control whether an annotation is displayed or not, for example, &quot;Display Rule: <code>allowed_to_see==true</code>&quot;</li>
+
+      <li>To display dynamic content in a text commentary, for example, <code>Welcome Back, {{userName}}!</code></li>
+
+      <li>To be used in display rules to control whether an annotation is displayed or not, for example, &quot;Display Rule: <code>allowed_to_see==true</code>&quot;</li>
     </ol>
     <p>This topic will explain how to create and use variables for a dynamic, adaptive video
       experience for viewers.</p>
@@ -4065,7 +4067,7 @@
     <h2 id="variable-types">Variable types</h2>
     <p>There are different types of variables available when using Brightcove Interactivity.</p>
     <ul>
-      <li><strong>Standard variables</strong> - Variables explicitly set when an annotation is clicked</li>
+      <li><strong>Standard variables</strong> - Variables explicitly set when an annotation is clicked, a quiz pass/fail or by time triggered actions (these variables are manually created)</li>
       <li><strong>Quiz variables</strong> - Variables automatically created by quiz annotations</li>
       <!--<li><strong>Environment variables</strong> - Variables explicitly passed to the Embed API from an external system.</li>-->
     </ul>
@@ -4087,14 +4089,15 @@
       <li>Variable names must begin with a letter, underscore ( _ ), or $</li>
       <li>Use = for assignments and double quotes for quoted strings</li>
       <li> Commas are reserved for delimiting multiple variables</li>
+      <li>Multiple variables have to close with a semicolon</li>
     </ul>
     <h3>Examples</h3>
     <div style="overflow-x: scroll;">
       <table class="bcls-table">
         <thead class="bcls-table__head">
           <tr>
-            <th width="252">Table Header</th>
-            <th width="518">Table Header</th>
+            <th width="449">Example</th>
+            <th width="328">Result</th>
           </tr>
         </thead>
         <tbody class="bcls-table__body">
@@ -4109,6 +4112,10 @@
           <tr>
             <td><code>my_var=&quot;Hello World&quot;</code></td>
             <td>When clicked, <code>my_var</code> will be set to <code>Hello World</code></td>
+          </tr>
+          <tr>
+            <td><code>my_var1=true, my_var2=false;</code></td>
+            <td>Multiple variable assignment</td>
           </tr>
         </tbody>
       </table>
@@ -4134,12 +4141,14 @@
     <p>Once variables have been defined they can be used to display dynamic content or to <a href="#overview">create rules</a> which can be used to show or hide  annotations. When a variable is selected from the <strong>Variables</strong> dropdown, an expression will be added to the text overlay that will resolve to the variable when<br>
       viewed. The resolved variable will equal the answer that the viewer provided to the question.</p>
     <figure class="bcls-figure"> <img src="/assets/images/s-brightcove-interactivity-img/annotations/dynamic-annotations/selected-answer.png"></figure>
-    <p>Variables are identified in the text as anything occurring between &quot;&quot;. If you are using quiz variables, the variable expression will be automatically added via the Variables dropdown. Otherwise, you will need to enter the variable name that was defined. For example, &quot;My name is: <code></code>&quot;</p>
-    <aside class="bcls-aside bcls-aside--tip language-editable">Note: You do not need to remember the Quiz variable naming scheme. The Quiz variables are automatically available in the UI through the Variables drop down in the edit menu of a text overlay annotation.</aside>
+
+    <p>Variables are identified in the text as anything occurring between &quot;{{&quot; and &quot;}}&quot;. If you are using quiz variables, the variable expression will be automatically added via the Variables dropdown. Otherwise, you will need to enter the variable name that was defined. For example, &quot;My name is: <code>{{my_name}}</code>&quot;</p>
+
+    <aside class="bcls-aside bcls-aside--information">Note: You do not need to remember the Quiz variable naming scheme. The Quiz variables are automatically available in the UI through the Variables drop down in the edit menu of a text overlay annotation.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="overview">Overview of display rules</h2>
-    <p>Display Rules are JavaScript expressions that test variables for the purpose of conditionally displaying annotations. If the expression evaluates to TRUE, the annotation will be rendered. If the expression evaluates to FALSE, the annotation will not be rendered. Display Rules can be added to any annotation type. Common use cases include:</p>
+    <p>Display Rules are JavaScript expressions that test variables for the purpose of conditionally displaying annotations. If the expression evaluates to TRUE, the annotation will be rendered. If the expression evaluates to FALSE or NULL, the annotation will not be rendered. Display Rules can be added to any annotation type. Common use cases include:</p>
     <ul>
       <li>Display an annotation when a viewer clicks on a different annotation</li>
       <li>Display an annotation when the viewer gets a quiz question right or wrong</li>
