@@ -4111,7 +4111,7 @@
       <li>Protocol: <code translate="No">rtmp</code>, <code translate="No">rtp</code>, <code translate="No">rtp-fec</code>, or <code translate="No">srt</code> (all except <code translate="No">rtmp</code> are for MPEG2-TS inputs)<sup><strong><a href="#note1-1">[1-1]</a></strong></sup></li>
       <li>Resolution: Maximum 1920x1080</li>
       <li>Maximum 30 fps, which is typical. Brightcove supports up to 60 fps, but you will need to <a href="https://supportportal.brightcove.com/">Contact Brightcove Support</a> to have the limit increased. When using 60fps, Brightcove recommends increasing the bitrate to achieve the desired visual quality for the content and a constant frame rate.</li>
-      <li>Less than 10 Mbps</li>
+      <li>Less than 20 Mbps</li>
       <li>Constant Bitrate (CBR) greatly reduces the chance of problems</li>
       <li>Video codec must be H.264</li>
       <li>Slices: If your encoder has this option, set it to <code translate="no">1</code></li>
@@ -4216,7 +4216,7 @@
           <td>Live Sport High FPS</td>
           <td><ul>
               <li>Resolution: 1080p (or source)</li>
-              <li>Bitrate: 10 MBPS</li>
+              <li>Bitrate: 20 MBPS</li>
               <li>Profile: High</li>
             </ul></td>
         </tr>
@@ -4247,7 +4247,7 @@
     <p>Providing a high-quality, stable input stream is the only way to ensure the best user experience for viewers. A good input stream provides the best video quality at the highest consistently available bandwidth from a location.</p>
     <ul>
       <li>Minimum input bandwidth: 2.5 mbps</li>
-      <li>Maximum input bandwidth: 10 mbps</li>
+      <li>Maximum input bandwidth: 20 mbps</li>
     </ul>
     <aside class="bcls-aside bcls-aside--information">Note: For the best user experience, match your output renditions to the quality of your encoder stream.</aside>
     <h3>Determining encoder capabilities</h3>
@@ -4287,7 +4287,7 @@
     <h2 id="bitrate">Bitrate</h2>
     <ul>
       <li>Minimum input bandwidth: 2.5 mbps</li>
-      <li>Maximum input bandwidth: 10 mbps</li>
+      <li>Maximum input bandwidth: 20 mbps</li>
     </ul>
     <ul>
       <li>Make the stream "almost CBR"" - with <code>max_bitrate</code> = 1.1 * target_bitrate.</li>
@@ -4418,7 +4418,7 @@
   </section>
   <section class="bcls-section">
     <h2 id="output_recommendations">Output recommendations</h2>
-    <p>Below are recommended output settings, but note that for many encoders, the RTMP input is limited to 10 MBPS (video + audio) and a framerate of 30fps.</p>
+    <p>Below are recommended output settings, but note that for many encoders, the RTMP input is limited to 20 MBPS (video + audio) and a framerate of 30fps.</p>
     <table class="bcls-table">
       <caption class="bcls-caption--table">
       Output Recommendations
