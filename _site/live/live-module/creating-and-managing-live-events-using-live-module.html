@@ -4160,11 +4160,11 @@
       </li>
       <li>Any required custom fields for the account will be displayed. Assign values to the custom fields.</li>
 
-      <!-- <li>Select <strong>Automated Captions</strong> to support automated captions on live stream playback. Captions provide additional or interpretive information to individuals who wish to access them. Captions are necessary so the deaf and hard of hearing can access the audio portion of video presentations.  
+      <li>Select <strong>Automated Captions</strong> to support automated captions on live stream playback. Captions provide additional or interpretive information to individuals who wish to access them. Captions are necessary so the deaf and hard of hearing can access the audio portion of video presentations.  
         There are two steps to using auto-captions:
         <ol>
           <li>Create an event that is enabled for automated captions</li>
-          <li>Navigate to the <a href="#controlroom">live event Control Room</a> and enable automated captions.</li>
+          <li>Navigate to the <a href="#controlroom">live event Control Room</a> and verify if automated captions are enable. </li>
         </ol>
         <aside class="bcls-aside bcls-aside--information">If you don't see an option for automated captions, contact <a href="https://supportportal.brightcove.com/s/login/">Brightcove customer support</a> to enable your account.</aside>
         <aside class="bcls-aside bcls-aside--information">Live Automated Captions will override and cannot be used with some features, including:
@@ -4175,7 +4175,7 @@
           </ul>
         </aside>
         <aside class="bcls-aside bcls-aside--information">For limitation details, see the <a href="https://apis.support.brightcove.com/live-api/guides/live-auto-captions.html#Limitations">Automated Captions using the Live API</a> document.</aside>
-      </li> -->
+      </li>
 
       <li>Setting <strong>Streaming to Social Media</strong> to <strong>Allowed</strong> will make the event available for streaming to social media platforms. This can be done <a href="#social">once the event has started streaming</a> or by using the 
              
@@ -4425,7 +4425,7 @@
       </ul>
     </div>
 
-    <!-- <div>
+    <div>
       <h3 id="accessibility">Accessibility</h3>
       <p>The Accessibility section allows you to enable or disable automated captions after the live event has been created.</p>
       <figure class="bcls-figure"><img class="bcls-image--no-border" alt="auto captions" src="/assets/images/s-live-img/live-module/auto-captions/enable-auto-captions-control.webp" /></figure>
@@ -4441,8 +4441,8 @@
           <li>For limitation details, see the <a href="https://apis.support.brightcove.com/live-api/guides/live-auto-captions.html#Limitations">Automated Captions using the Live API</a> document.</li>
         </ul>
       </aside>
-    </div> -->
-    
+    </div>
+
     <div>
       <h3 id="clips">Clips</h3>
       <p>The Clips section displays all of the clips that were created from the live stream. Clicking the clip name will open the clip in the Media module. For information on creating a clip, see <a href="creating-video-clip-using-live-module.html">Creating a Video Clip Using the Live Module</a>.</p>
@@ -4580,6 +4580,7 @@
         <li>
           <p>For Static Entry Point (recurring) streams: If during the 7 days after a stream, the stream is re-activated with a 2nd stream, the clipping will only be available for the content of the 2nd stream. The 1st stream will be cleared at that point, and there is no way to create create clips from it anymore, even if it is under 7 days after the stream was deactivated.</p>
         </li>
+        <li>Automated captions are not shown in the live clipping page, but once generated, clips can use VOD auto-captions for more control of captioned content.</li>
       </ul>
     </aside>
   </section>
