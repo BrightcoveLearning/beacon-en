@@ -4164,14 +4164,15 @@
         There are two steps to using auto-captions:
         <ol>
           <li>Create an event that is enabled for automated captions</li>
-          <li>Navigate to the <a href="#controlroom">live event Control Room</a> and verify if automated captions are enable. </li>
+          <li>Navigate to the <a href="#controlroom">live event Control Room</a> and verify that automated captions are enabled. </li>
         </ol>
         <aside class="bcls-aside bcls-aside--information">If you don't see an option for automated captions, contact <a href="https://supportportal.brightcove.com/s/login/">Brightcove customer support</a> to enable your account.</aside>
-        <aside class="bcls-aside bcls-aside--information">Live Automated Captions will override and cannot be used with some features, including:
+        <aside class="bcls-aside bcls-aside--information">Live Automated Captions will override and can <strong>NOT</strong> be used with some features, including:
           <ul>
             <li>SSAI</li>
             <li>Content Encryption (DRM and AES-128)</li>
             <li>Audio Tracks</li>
+            <li>RTP/SRT Input Formats - Only RTMP is supported with automated captions</li>
           </ul>
         </aside>
         <aside class="bcls-aside bcls-aside--information">For limitation details, see the <a href="https://apis.support.brightcove.com/live-api/guides/live-auto-captions.html#Limitations">Automated Captions using the Live API</a> document.</aside>
