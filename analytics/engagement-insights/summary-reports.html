@@ -1,0 +1,40 @@
+---
+title: "Summary Reports: Engagement Insights for Beacon"
+description: "In this topic, you will learn the reports included in the Summary tab for Beacon Engagement Insights."
+parent: "Reviewing Analytics"
+layout: "staging"
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <p>Engagement Insights is a stand-alone product focused on the frequency and intensity of viewer activity. This product helps you understand how subscribers use your Beacon app and provides a baseline success rate for encouraging customers to keep coming back. Engagement Insights reveals the audience's interaction with your app, including detailed video consumption trends, average days streamed, and activity over time.</p>
+    <p>If you are new to Beacon Engagement Insights, see the <a href="/analytics/engagement-insights/overview.html">Overview: Engagement Insights for Beacon</a> document.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Summary_tab">Summary tab</h2>
+    <p>The Summary tab provides an overview of reports you can deliver to your executive team. The report data displays weekly timeframes, where you select the week of interest. These summary reports save you time from building your own reports.</p>
+    <ol class="bcls-tasklist">
+      <li>Login to <a href="https://insights.wicketlabs.com/login">Brightcove Audience Insights</a>.</li>
+      <li>
+        <p>The <strong>Summary</strong> tab will be selected by default.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Summary" src="/assets/images/s-analytics-img/engagement-insights/summary.webp" />
+          <figcaption class="bcls-caption--image">Summary</figcaption> 
+        </figure>
+      </li>
+    </ol>
+    
+  </section>
+
+  {% include s-audience-insights/summary/customer-summary-engagement.html %}
+
+  {% include s-audience-insights/summary/customer-summary-top-titles.html %}
+
+  {% include s-audience-insights/summary/customer-summary-top-series-movies-genres.html %}
+
+  {% include s-audience-insights/summary/customer-summary-hours-viewed-by-device.html %}
+
+</article>
