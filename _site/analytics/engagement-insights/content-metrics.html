@@ -4048,13 +4048,13 @@
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>Engagement Insights is a stand-alone product focused on the frequency and intensity of viewer activity.</p>
-    <p>The Content section shows how viewers interact with your library, including:</p>
+    <p>Engagement Insights is a stand-alone product focused on the frequency and intensity of viewer activity. The Content section shows how viewers interact with your library, including:</p>
     <ul>
       <li>Attention index</li>
       <li>Content catalog</li>
       <li>Content explorer</li>
     </ul>
+    <p>This section shows user-level consumption information and compares top, popular content with total traffic. With this data, you can see if your business relies on a small number of titles or is more distributed.</p>
     <p>If you are new to Beacon Engagement Insights, see the <a href="/analytics/engagement-insights/overview.html">Overview: Engagement Insights for Beacon</a> document.</p>
   </section>
 
@@ -4171,283 +4171,106 @@
   <h2 id="Viewing_By_Day_Part">Viewing By Day Part</h2>
   <p>The Viewing by Day Part graph shows the local time viewers consumed content, grouped by the time of day when the view occurred. If a view stretches across multiple day parts, that view is counted in each of the day parts it spans.</p>
   
-  <p>Video view and audience size values are estimated based on random viewer sampling. For viewer populations of more than 30,000, statistics are projected from a random sample of viewer behavior. Using 30,000 viewers ensures a margin of error of less than 1%.</p>
-  
   <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Viewing By Day Part"
           src="/assets/images/s-analytics-img/engagement-insights/viewing-by-day-part.webp" />
       <figcaption class="bcls-caption--image">Viewing By Day Part</figcaption>
   </figure>
 
   <h3>Actions</h3>
+  <p>Select one of the following to display data in the graph:</p>
   <ul>
-      <li><strong>Video Views</strong> - </li>
-      <li><strong>Audience Size</strong> - </li>
+      <li><strong>Video Views</strong> - Estimated number of video views</li>
+      <li><strong>Audience Size</strong> - Estimated number of viewers</li>
+  </ul>
+  <aside class="bcls-aside bcls-aside--information">Video views and audience size values are estimated based on random viewer sampling. For viewer populations of more than 30,000, statistics are projected from a random sample of viewer behavior. Using 30,000 viewers ensures a margin of error of less than 1%.</aside>
+</section>
+
+  <section class="bcls-section">
+  <h2 id="Top_Series_Movies_Genres_Live">Top Series, Movies, Genres, Live channels</h2>
+  <p>These tables show the top series, movies, genres, and live channels based on video views.</p>
+  <aside class="bcls-aside bcls-aside--tip">If you have metadata set on your content, you will see data for Series and Seasons.</aside>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Top Series, Movies, Genres" src="/assets/images/s-audience-insights-img/guides/summary/top-series-movies-genres-live.webp" /> 
+  </figure>
+
+  <h4>Data</h4>
+  <p>Table data:</p>
+  <ul>
+    <li><strong>Audience Size</strong> - Total number of viewers</li>
+    <li><strong>Hours Viewed</strong> - Total number of hours viewed by all viewers</li>
   </ul>
 </section>
 
-
-
-
-
-
-
   <section class="bcls-section">
-    <h2 id="Engagement_status_over_time">Engagement status over time</h2>
-    <p>Engagement status over time metrics allow you to see the views, hours viewed, audience size, and sessions
-        over time broken down by <strong> Engagement Status</strong>. </p>
+  <h2 id="Content_catalog_by">Content catalog by</h2>
+  <p>The content catalog metric packs a ton of functionality into one powerful table to provide a sense of relative OTT content performance broken down by title, series, genre, channel, and sport.</p>
 
-    <h3>Overview</h3>
-    <p>Quickly view a summary of engagement status over time data.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Engagement status over time"
-            src="/assets/images/s-audience-insights-img/guides/engagement/engagement-status-over-time.png" />
-        <figcaption class="bcls-caption--image">Engagement status over time</figcaption>
+  <h3>Overview</h3>
+  <p>Quickly view a summary of content catalog data.</p>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Content catalog by"
+          src="/assets/images/s-audience-insights-img/guides/content/content-catalog-by.png" />
+      <figcaption class="bcls-caption--image">Content catalog by</figcaption>
 
-    </figure>
+  </figure>
 
-    <p>Review engagement status over time data:</p>
-    <ul>
-        <li><strong>Legend</strong> - Representation of entries on the plotted area of the engagement status over
-            time graph</li>
-        <li><strong>New</strong> - Users with a view in the last week but none in the last year</li>
-        <li><strong>Engaged</strong> - Users with multiple views last month; views may not have gaps longer
-            than 28 days from previous views</li>
-        <li><strong>Re-engaged</strong> - Users with a view in the last week but no views in the prior four weeks
-        </li>
-        <li><strong>Recent</strong> - Users with no views in the last week but at least one view in the prior three
-            weeks.</li>
-        <li><strong>Idle</strong> - Users with no views in the last four weeks but at least one view in the prior
-            eight weeks</li>
-        <li><strong>Inactive</strong> - Users with no views in the last 12 weeks but at least one view in the last
-            year</li>
-        <li><strong>Dormant</strong> - Users with no views in the last year</li>
-    </ul>
+  <p>Review content catalog data:</p>
+  <ul>
+      <li><strong>Title</strong> - Title of the content viewed</li>
+      <li><strong>Type</strong> - Type of content viewed</li>
+      <li><strong>First view date</strong> - Date of the first view</li>
+      <li><strong>Audience size</strong> - Number of unique viewers</li>
+      <li><strong>Video views</strong> - Number of times a video started playing</li>
+      <li><strong>Attention index</strong> - On a scale of -100 to 100 compares the number of dissatisfied viewers with the number who watch to at least 75% completion</li>
+      <li><strong>Service rating</strong> - Percentage of your total audience that watched this content</li>
+      <li><strong>Net service rating</strong> - Percentage of your total audience that have watched this content with an Attention Index greater that 75</li>
+      <li><strong>Service view share</strong> - Percentage video views relative to total service views</li>
+      <li><strong>Net service view share</strong> - Percentage video views relative to total service views. Only content with an Attention Index of 75 or greater are counted</li>
+ 
+  </ul>
 
 
-    <h3>Actions</h3>
-    <p>Here are the actions that are available for this graph.</p>
-    <ul>
-        <li>
-            <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
-                    src="/assets/images/s-audience-insights-img/guides/summary/overflow-menu.png" /> to download data as a CSV
-                file or a PNG image.</p>
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
-                    src="/assets/images/s-audience-insights-img/guides/summary/download-csv.png" />
-            </figure>
-        </li>
+  <h3>Actions</h3>
+  <p>Here are the actions that are available for this table.</p>
+  <ul>
+      <li>
+          <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
+                  src="/assets/images/s-audience-insights-img/guides/summary/overflow-menu.png" /> to download data as a CSV
+              file.</p>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                  src="/assets/images/s-audience-insights-img/guides/content/download-csv-content.png" />
+          </figure>
+      </li>
+      <li>
+          <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
+                  src="/assets/images/s-audience-insights-img/guides/content/title-button.png" /> to automatically change the table results and filter by <strong>Title</strong>, <strong>Series</strong>, <strong>Genre</strong>, <strong>Channel</strong> and <strong>Sport</strong>.</p>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                  src="/assets/images/s-audience-insights-img/guides/content/filter-options.png" />
+          </figure>
+      </li>
+      <li>
+          <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
+                  src="/assets/images/s-audience-insights-img/guides/content/smart-view.png" /> to select a <strong>Smart View</strong>.</p>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                  src="/assets/images/s-audience-insights-img/guides/content/smart-view-options.png" />
+          </figure>
+      </li>
+      <li>
+          <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
+                  src="/assets/images/s-audience-insights-img/guides/content/last-date.png" /> to select a date to retrieve data.</p>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
+                  src="/assets/images/s-audience-insights-img/guides/content/date-options.png" />
+          </figure>
+      </li>
+      <li>
+          <p>Select <img class="bcls-image--no-border" alt="Overflow menu"
+                  src="/assets/images/s-audience-insights-img/guides/content/vod-options.png" /> to automatically change the table data and filter by <strong>VOD</strong>, <strong>Live/Linear</strong>, <strong>VOD Release Performance</strong>.</p>
+      </li>
+      <li>
+          <p>If you select the <strong>VOD Release Performance</strong> you can click  <img class="bcls-image--no-border" alt="Overflow menu"
+              src="/assets/images/s-audience-insights-img/guides/content/view-trends.png" /> to see a graphic with the view trends.</p>
+      </li>
+  </ul>
+  
 
-        <li><p>Select a date range for your data.</p>
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Date range"
-                    src="/assets/images/s-audience-insights-img/guides/summary/date-range.png" />
-            </figure>
-        </li>
-        <li><p>Select the x-axis granularity to be <strong>Day</strong>, <strong>Week</strong> or
-            <strong>Month</strong>.</p>
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="X-axis granularity"
-                    src="/assets/images/s-audience-insights-img/guides/summary/granularity.png" />
-            </figure>
-        </li>
-        <li>Check <img class="bcls-image--no-border" alt="Auto adjust"
-                src="/assets/images/s-audience-insights-img/guides/summary/auto-adjust.png" /> to automatically change the x-axis dimension
-            to day.
-        </li>
-        <li> Hover over the legend section to see the specific data by <strong>New</strong>,
-            <strong>Engaged</strong>, <strong>Re-engaged</strong>, <strong>Recent</strong>, <strong>Idle</strong>,
-            <strong>Inactive</strong>, and <strong>Dormant.</strong>
-        </li>
-    </ul>
-    <h3>Examples</h3>
-    <ul>
-        <li>
-            Disinterested user
-            <figure class="bcls-figure"><img width="80%" class="bcls-image--no-border" alt="Example 1"
-                    src="/assets/images/s-audience-insights-img/guides/engagement/example-1.png" />
-                <figcaption class="bcls-caption--image">Disinterested User</figcaption>
-
-        </li>
-        <li>
-            Spotty viewing
-            <figure class="bcls-figure"><img width="80%" class="bcls-image--no-border" alt="Example 2"
-                    src="/assets/images/s-audience-insights-img/guides/engagement/example-2.png" />
-                <figcaption class="bcls-caption--image"> Spotty viewing</figcaption>
-
-        </li>
-        <li>
-            Seasonal viewing
-            <figure class="bcls-figure"><img width="80%" class="bcls-image--no-border" alt="Example 3"
-                    src="/assets/images/s-audience-insights-img/guides/engagement/example-3.png" />
-                <figcaption class="bcls-caption--image">Seasonal Viewing</figcaption>
-
-        </li>
-    </ul>
-
-</section>
-
-  <section class="bcls-section">
-    <h2 id="Key_metrics">Key metrics</h2>
-    <p>The key metrics provide a unified view of your video data.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Customer summary scorecard"
-            src="/assets/images/s-audience-insights-img/guides/engagement/key-metrics.png" />
-        <figcaption class="bcls-caption--image">Key metrics</figcaption>
-    </figure>
-    <p>Review key metrics data:</p>
-    <ul>
-        <li><strong>Percent active subs</strong> - Percentage of your paid subscriptions active</li>
-        <li><strong>Avg unique days streamed</strong> - Average unique days stramed for a user</li>
-        <li><strong>Avg hours streamed per week</strong> - Average number of hours streamed per week for a user</li>
-        <li><strong>WAU/MAU ratio</strong> - Weekly Active Users (WAU) as a percentage of Monthly Active Users (MAU); active users are defined as being signed in</li>
-    </ul>
-    <h3>Actions</h3>
-    <ul>
-        <li>Click <img class="bcls-image--no-border" alt="Expand Icon"
-                src="/assets/images/s-audience-insights-img/guides/lost-customers/benchmark-icon.png" /> to show benchmark data.
-
-        </li>
-        <li>Click <img class="bcls-image--no-border" alt="Overflow menu"
-                src="/assets/images/s-audience-insights-img/guides/summary/overflow-menu.png" /> to download data as a CSV
-            file or a PNG image.
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
-                    src="/assets/images/s-audience-insights-img/guides/summary/download-csv.png" />
-            </figure>
-        </li>
-    </ul>
-</section>
-
-  <section class="bcls-section">
-    <h2 id="Hours_viewed_by_category">Hours viewed by category</h2>
-    <p>Hours viewed metrics allow you to see the hours viewed by Plan, Channel, Device, and Viewing Location.
-    </p>
-    <p>In the <strong>Hours Viewed By</strong> section, click the <strong>plan</strong> button to select a category for your reporting data.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Select week time span"
-            src="/assets/images/s-audience-insights-img/guides/engagement/hours-viewed-by-dropdown.png" />
-    </figure>
-
-    <p>When you click the following options, different charts will be displayed.</p>
-    <ul>
-        <li>
-            <p><strong>Plan</strong></p>
-            <figure class="bcls-figure"><img class="bcls-image" width="60%" alt="Hours viewed by plan"
-                    src="/assets/images/s-audience-insights-img/guides/engagement/hours-viewed-by-plan.png" />
-            </figure>
-        </li>
-        <li>
-            <p><strong>Channel</strong></p>
-            <figure class="bcls-figure"><img class="bcls-image" width="60%" alt="Hours viewed by channel"
-                    src="/assets/images/s-audience-insights-img/guides/engagement/hours-viewed-by-channel.png" />
-            </figure>
-        </li>
-        <li>
-            <p><strong>Device</strong></p>
-            <figure class="bcls-figure"><img class="bcls-image" width="60%" alt="Hours viewed by device"
-                    src="/assets/images/s-audience-insights-img/guides/engagement/hours-viewed-by-device.png" />
-            </figure>
-        </li>
-        <li>
-            <p><strong>Viewing location</strong></p>
-            <figure class="bcls-figure"><img class="bcls-image" width="60%"
-                    alt="Hours viewed by location"
-                    src="/assets/images/s-audience-insights-img/guides/engagement/hours-viewed-by-viewing.png" />
-            </figure>
-        </li>
-    </ul>
-
-    <h3>Actions</h3>
-    <p>Here are the actions that are available for this graph.</p>
-    <ul>
-        <li>
-            <p>Click <img class="bcls-image--no-border" alt="Expand Icon"
-                    src="/assets/images/s-audience-insights-img/guides/lost-customers/download-button.png" /> to download data as PNG image
-                or
-                PDF.</p>
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
-                    src="/assets/images/s-audience-insights-img/guides/lost-customers/download-box2.png" />
-            </figure>
-            <li>
-                <p>Click <img class="bcls-image--no-border" alt="Expand Icon"
-                        src="/assets/images/s-audience-insights-img/guides/engagement/zoom.png" /> to zoom in or out the graphic.</p> 
-
-        </li>
-    </ul>
-</section>
-
-  <section class="bcls-section">
-    <h2 id="Average_hours_viewed_by_category">Average hours viewed by category</h2>
-    <p>The <strong>average hours viewed per week by</strong> metrics provide a unified view of the hours viewed per user by plan, device, channel, and location with country or region.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Customer summary scorecard"
-            src="/assets/images/s-audience-insights-img/guides/engagement/Average_hours_viewed_per_week_by.png" />
-        <figcaption class="bcls-caption--image">Average hours viewed per week by</figcaption>
-    </figure>
-    <p>Review usage trends data:</p>
-    <ul>
-        <li><strong>Unique viewers</strong> - Users with a view in the last copmplete week</li>
-        <li><strong>Overall average hours</strong> - Average of hours viewed per week and viewer</li>
-        <li><strong>Average hours viewed per week</strong> - Average of hours viewed per week in each category</li>
-    </ul>
-    <h3>Actions</h3>
-    <p>Here are the actions that are available for this section.</p>
-    <ul>
-        <li><p>Click <img class="bcls-image--no-border" alt="Expand Icon"
-            src="/assets/images/s-audience-insights-img/guides/engagement/avg-plan-button.png" /> to show the data by plan, device, channel, and location with country or region.</p>
-            <figure class="bcls-figure"><img class="bcls-image" alt="Download customer change data"
-                src="/assets/images/s-audience-insights-img/guides/engagement/options.png" />
-        </figure>
-        </li>
-        <li><p>Click <img class="bcls-image--no-border" alt="Overflow menu"
-            src="/assets/images/s-audience-insights-img/guides/engagement/show-more.png" /> to display the detailed chart.</p>
-        </li>
-    </ul>
-</section>
-
-  <section class="bcls-section">
-    <h2 id="Sessions_over_time">Sessions over time</h2>
-    <p>Engagement sessions over time metrics allows you to see the new, engaged, re-engaged, and the average duration in minutes data.</p>
-
-    <h3>Overview</h3>
-    <p>Quickly view a summary of sessions over time data.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Sessions over time"
-            src="/assets/images/s-audience-insights-img/guides/engagement/session-over-time.png" />
-        <figcaption class="bcls-caption--image">Sessions over time</figcaption>
-
-    </figure>
-
-    <p>Review usage trends data:</p>
-    <ul>
-        <li><strong>New</strong> - Users with a view in the last week but none in the last year</li>
-        <li><strong>Engaged</strong> - Users with multiple views in the last month. Views may not have gaps longer
-            than 28 days from previous views</li>
-        <li><strong>Re-engaged</strong> - Users with a view in the last week, but no views in the prior four weeks
-            <li><strong>Average duration</strong> - Average duration in minutes per session
-        </li>
-    </ul>
-
-
-    <h3>Actions</h3>
-    <p>Here are the actions that are available for this graph.</p>
-    <ul>
-        <li>
-            <p>Click <img class="bcls-image--no-border" alt="Overflow menu"
-                    src="/assets/images/s-audience-insights-img/guides/summary/overflow-menu.png" /> to download data as a CSV
-                file or a PNG image.</p>
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download customer change data"
-                    src="/assets/images/s-audience-insights-img/guides/summary/download-csv.png" />
-            </figure>
-        </li>
-
-        <li><p>Select a date range for your data.</p>
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Date range"
-                    src="/assets/images/s-audience-insights-img/guides/summary/date-range.png" />
-            </figure>
-        </li>
-        <li><p>Select the x-axis granularity to be <strong>Day</strong>, <strong>Week</strong> or
-            <strong>Month</strong>.</p>
-            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="X-axis granularity"
-                    src="/assets/images/s-audience-insights-img/guides/summary/granularity.png" />
-            </figure>
-        </li>
-        <li>Check <img class="bcls-image--no-border" alt="Auto adjust"
-                src="/assets/images/s-audience-insights-img/guides/summary/auto-adjust.png" /> to automatically change the x-axis dimension
-            to day.
-        </li>
-    </ul>
 </section>
 
 
