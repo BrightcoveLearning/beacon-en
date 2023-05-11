@@ -4053,6 +4053,9 @@
     <aside class="bcls-aside bcls-aside--warning">Google Universal Analytics (the "old version") will end of life on July 1, 2023.</aside>
   
   </section>
+  
+  <!-- This section will have some minor changes based on the new UI. 
+    It’ll allow users to select either a Universal Analytics Account, a GA4 account, or both.-->
   <section class="bcls-section">
     <h2 id="configure">Configuring Google Analytics</h2>
     <p>To configure Google Analytics integration, follow these steps:</p>
@@ -4102,7 +4105,7 @@
     </ul>
     <h3>Custom Dimensions</h3>
     <p>Custom dimensions allow you to combine Google Analytics data with non-Analytics data. Custom dimensions collect data that Google Analytics doesn't automatically track. The following custom dimensions are available.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For more information on custom dimensions, see the <a href="https://support.google.com/analytics/answer/2709828?hl=en">Google Analytics Help</a>.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: For more information on custom dimensions, see the <a href="https://support.google.com/analytics/answer/2709828?hl=en">Google Analytics Help</a>. Please note that this only applies to Universal Analytics.</aside>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/general/node18804-select-dimensions.png" /></figure>
     <ul>
       <li><strong>Video Seconds Viewed</strong> - Count of watched seconds (only available if the <strong>Video Engagement</strong> event was selected)</li>
@@ -4117,7 +4120,7 @@
 
   <section class="bcls-section">
     <h2 id="Universal_Analytics_events_and_custom_dimensions">Universal Analytics events and custom dimensions</h2>
-    <p>In the JSON configuration you will list the events you wish to track. Decide which of the following you will track:</p>
+    <p>These are the events that you can track:</p>
     <ul>
       <li>player_load</li>
       <li>video_engagement</li>
@@ -4126,9 +4129,9 @@
       <li>ad_start</li>
       <li>ad_end</li>
       <li>error</li>
-      <li>video_view</li>
-      <li>video_complete</li>
     </ul>
+    <aside class="bcls-aside bcls-aside--information">Note: For information on the events that can be added in the JSON editor, see <a href="https://player.support.brightcove.com/analytics/ga-self-configure.html">Google Analytics Self Configuration</a>.</aside>
+   
     <p>There are eight custom dimensions from which you can choose to use in your Google Analytics data. Decide which of the following to use:</p>
     <ul>
       <li>bcvideo_account</li>
@@ -4143,6 +4146,8 @@
 
 
     <h4>Create custom dimensions</h4>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note: The custom events are automatically created in Google Analytics, so no need to perform that task. You can see <a href="https://support.google.com/analytics/answer/2709829?hl=en#zippy=%2Cin-this-article">Set up custom dimensions</a> if you want to find your property’s custom dimensions.</aside>
+   
     <p>You must create each of the custom dimensions you are using. The steps in this document from Google lead you through the process: <a href="https://support.google.com/analytics/answer/2709829?hl=en">Create and edit custom dimensions and metrics</a>.</p>
     <p>During the creation of each custom dimension, you will be asked to select a <strong>Scope</strong>. For these custom dimensions use the value <samp>Hit</samp>. Also, when you create each custom dimension an index, or sequence, number will be associated with it, as shown in this screenshot:</p>
     <figure class="bcls-figure">
@@ -4176,7 +4181,7 @@
       <li>player_load</li>
       <li>video_engagement</li>
       <li>video_impression</li>
-      <li>video_view</li>
+      <!-- <li>video_view</li> -->
     </ul>
     <p>The following are custom dimensions available for use:</p>
     <ul>
@@ -4206,7 +4211,7 @@
 
 
     <h4>Create custom dimensions</h4>
-    <aside class="bcls-aside bcls-aside--information language-editable">Note: The custom events are automatically created in Google Analytics, so no need to perform that task.</aside>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note: The custom events are automatically created in Google Analytics, so no need to perform that task. You can see <a href="https://support.google.com/analytics/answer/2709829?hl=en#zippy=%2Cin-this-article">Set up custom dimensions</a> if you want to find your property’s custom dimensions.</aside>
     <p>You must create each of the custom dimensions you are using. Note the following:</p>
     <ul>
       <li>During the creation of each custom dimension, you are asked to select a <strong>Scope</strong>. For these custom dimensions use the value <samp>Event</samp>.</li>
@@ -4273,16 +4278,14 @@
     <h2 id="version">Google Analytics Versions</h2>
     <p>The Players Module supports Google's Universal Analytics and Google Analytics 4 (the "new version") data model. Brightcove recommends using GA4 when integrating with the Players module and  Brightcove Players.</p>
     <p>Following are high level steps to creating a Google Analytics 4 and a Universal Analytics property within Google Analytics.</p>
+    <h4>Google Analytics 4</h4>
     <ul>
       <li>Create property</li>
-      <li>Show advanced options</li>
-      <li>Toggle <strong>Create a Universal Analytics property</strong> on (toggle switch is on the right)</li>
-      <li>Enter a website URL</li>
-      <li>Make sure <strong>Create both a Google Analytics 4 and a Universal Analytics property</strong> is selected</li>
-      <aside class="bcls-aside bcls-aside--information">Note: It is optional to check the Enable enhanced measurement for Google Analytics 4 property.</aside>
-      <li> Fill out the rest of the form; you will be provided with a new property ID beginning with <strong>UA-</strong></li>
+      <li>On property home, under <strong>"Start collecting data for your website or app"</strong>, select <strong>Web</strong></li>
+      <li>Fill out the form and click <strong>Create Stream</strong></li>
+      <li>A Measurement ID <strong>(G-XXXXXXXX)</strong> will be presented. You will use that as your GA4 Tracker</li>
     </ul>
-    <p>Following are high level steps to creating a Universal Analytics property within Google Analytics.</p>
+    <h4>Universal Analytics</h4>
     <ul>
       <li>Create property</li>
       <li>Show advanced options</li>
