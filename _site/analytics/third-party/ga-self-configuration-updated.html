@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
-        <title>Device Apps Validation Guide</title>
+        <title>Google Analytics Self Configuration - Updated</title>
         
         <!-- Meta -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="In this topic, you will learn information to validate the behavior or your device application(s) so that you can submit them to corresponding stores.">
+        <meta name="description" content="In this topic, you will learn how to configure Google Analytics to work with Brightcove Beacon when you either can't, or choose not to, allow Brightcove to do this process for you.">
         
         <!-- Google Font -->
         <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
@@ -1776,7 +1776,7 @@
                   
                   
                   
-                  <li class="nav-item section-doc"><a class="nav-link" href="/publishing-apps/general/device-apps-validation-guide.html" aria-current="page">Device Apps Validation Guide</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/general/device-apps-validation-guide.html">Device Apps Validation Guide</a></li>
                   
                   
                   
@@ -4007,15 +4007,15 @@
             <li class="breadcrumb-item"><a class="theme-link" href="/">Home</a></li>
             
             
-            <li class="breadcrumb-item"><a class="theme-link" href="/publishing-apps/">Publishing apps</a></li>
+            <li class="breadcrumb-item"><a class="theme-link" href="/analytics/">Analytics</a></li>
             
             
             
-            <li class="breadcrumb-item"><a class="theme-link" href="/publishing-apps/general/">General</a></li>
+            <li class="breadcrumb-item"><a class="theme-link" href="/analytics/third-party/">Third party</a></li>
             
             
             
-            <li class="breadcrumb-item active" aria-current="page">Device Apps Validation Guide</li>
+            <li class="breadcrumb-item active" aria-current="page">Google Analytics Self Configuration - Updated</li>
             
             
           </ol>
@@ -4036,177 +4036,366 @@
       <br>
       
       
-<h1>Device Apps Validation Guide</h1>
+<h1>Google Analytics Self Configuration - Updated</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn information to validate the behavior or your device application(s) so that you can submit them to corresponding stores.</summary>
+  <summary>In this topic, you will learn how to configure Google Analytics to work with Brightcove Beacon when you either can't, or choose not to, allow Brightcove to do this process for you.</summary>
+
   <section class="bcls-section">
-    <h2 id="Overview">Overview</h2>
-    <p>
-      At some point in the development of your apps from the Brightcove Beacon Experience you will be given test builds to be sure the apps are behaving as you wish. This document will provide information on each of the following:
-    </p>
+    <h2 id="Introduction">Introduction</h2>
+    <p>The configuration process consists of the following tasks:</p>
     <ul>
-      <li><em>Testing categories</em>: Define broad areas for testing.</li>
-      <li>
-        <em>Tips</em>: Suggestions and insights to follow when performing the testing.
-      </li>
-      <li>
-        <em>Reporting</em>: The procedure to following if you encounter issues in your testing.
-      </li>
+      <li>Create four Google Analytics properties.</li>
+      <li>Create a set of custom dimensions and one custom metric for each property.</li>
+      <li>Create four Google Tag Manager containers.</li>
+      <li>Configure Google Tag Manger for each container.</li>
+      <li>Configure Firebase to assist in analytics collection with iOS and Android.</li>
+      <li>Install templates in Google Data Studio for viewing your analytics data.</li>
     </ul>
+
   </section>
 
   <section class="bcls-section">
-    <h2 id="Before_you_start">Before you start</h2>
-    <p>Be sure you are setup for proper testing. Ensure the following:</p>
+    <h2 id="Required_tools">Required tools</h2>
+    <p>Brightcove uses various tools to implement the collection, manipulation and display of analytics data using Google Analytics. These tools are:</p>
     <ul>
-      <li>Testers have all the needed testing devices at hand.</li>
-      <li>For compatibility's sake, the devices used for testing should be no more than three years old. Later in this document specific, required minimum versions will be specified for each platform.</li>
+      <li><strong>Google Analytics</strong> - A web analytics platform offered by Google as part of their Google Marketing Platform brand.</li>
+      <li><strong>Google Tag Manager</strong> - First, understand that tags are snippets of code which are added to a site to collect information and send it to third parties. Tags are use for numerous reasons, including scroll tracking, monitoring form submissions, conducting surveys, etc. With Google Tag Manager you can "manage and update tags quickly and make more informed decisions faster. Tag Manager integrates with all Google and third-party tags, and gives you complete control over when and how your tags fire."</li>
+      <li><strong>Firebase</strong> - Firebase is a platform developed by Google for creating mobile and web applications. Firebase includes the <strong>Firebase Realtime Database</strong>, which is a cloud-hosted database.</li>
+      <li><strong>Google Data Studio</strong> - Google Data Studio is a "free tool that turns your data into informative, easy to read, easy to share, and fully customizable dashboards and reports."</li>
     </ul>
+    <p>The following diagram details the interaction/flow of these tools when gathering analytics for Brightcove Beacon:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/tool-diagram.png" alt="">
+    </figure>
   </section>
 
   <section class="bcls-section">
-    <h2 id="Testing_categories">Testing categories</h2>
-    <p>
-      Brightcove recommends the following areas be tested and questions answered:
-    </p>
+    <h2 id="Obtain_the_templates_and_configuration_files">Obtain templates and configuration files</h2>
+    <p>There are a number of files/URLs you need to successfully complete your setup of analytics for Brightcove Beacon. The files/URLs are detailed in the following bullets. You need to contact your Brightcove onboarding manager to obtains these files/URLs. You will receive: </p>
     <ul>
-      <li>
-        Design and Features:
-        <ul>
-          <li>Does the experience match the agreed upon mock-ups?</li>
-          <li>Is all the requested functionality available?</li>
-        </ul>
+      <li>URLs to three pre-built Google Analytics Dashboard configurations, one each for mobile, web and smart tv.</li>
+      <li>Four JSON files which configure each of the four containers created in Google Tag Manager.</li>
+      <li>URLs to three pre-built Google Data Studio templates, one each for mobile, web and smart tv.</li>
+    </ul>
+    <p>Directions for installing/using each of the files/URLs appear in the appropriate sections later in this document.</p>
+    <aside class="bcls-aside bcls-aside--tip">You will need to obtain these files/URLs BEFORE starting the configuration process.</aside>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Create_Google_Analytics_properties">Configure Google Analytics</h2>
+    <p>In this section of the document you will configure Google Analytics, which includes the following tasks:</p>
+    <ul>
+      <li>Create four Google Analytics properties.</li>
+      <li>Create a mobile view for the iOS and Android properties</li>
+      <li>Create a set of custom dimensions for each property.</li>
+      <li>Create a single custom metric for each property.</li>
+      <li>Import three Brightcove created dashboard configurations, one each for mobile, web and smart tv.</li>
+    </ul>
+    <h3>Create four properties</h3>
+    <p>You need to create these four properties:</p>
+    <ul>
+      <li>Beacon Android</li>
+      <li>Beacon iOS</li>
+      <li>Beacon STV (Smart TV)</li>
+      <li>Beacon Web</li>
+    </ul>
+    <p>The following steps guide you through creating the <strong>Beacon Web</strong> property. You will need to create the others following the same process.</p>
+    <ol class="bcls-tasklist">
+      <li>Log in to your Google Analytics account.</li>
+      <li>Click the <strong>Admin (gear)</strong> icon on the bottom-left of the screen.</li>
+      <li>Click <strong>Create Property</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-property-button.webp" alt="create property">
+        </figure>
       </li>
-      <li>
-        Page Layout and Content:
-        <ul>
-          <li>Are the pages setup as expected?</li>
-          <li>Is the expected content showing up in each of the pages?</li>
-        </ul>
+      <li>In the <strong>Property details</strong>, supply the <strong>Property name</strong>. For the first property, use <samp>Beacon Android</samp>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-property-name.webp" alt="property name">
+        </figure>
       </li>
-      <li>
-        Monetization Setup:
+      <li>Supply the <strong>Reporting time zone</strong>.</li>
+      <li>Supply the <strong>Currency</strong>.</li>
+      <li>Click <strong>Next</strong>.</li>
+      <li>Fill in your <strong>Business details</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/buisness-details.webp" alt="business details">
+        </figure>
+      </li>
+      <li>Click <strong>Next</strong>.</li>
+      <li>Select<strong> Examine user behavior</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/select-business-objective.webp" alt="business objective">
+        </figure>
+      </li>
+      <li>Click <strong>Create</strong>.</li>
+
+      <li>Perform the proceeding steps to create the three other required properties:
+        <ol>
+          <li>Beacon iOS</li>
+          <li>Beacon STV</li>
+          <li>Beacon WEB</li>
+        </ol>
+      </li>
+    </ol>
+
+    <h3 id="Create_web_data_stream">Create web data stream</h3>
+    <p>In this section, you will create a web view for the Beacon WEB property created in the previous section.</p>
+    <ol class="bcls-tasklist">
+      <li>Return to Google Analytics and navigate to the <strong>Start collecting data</strong> screen.</li>
+      <li>Select <strong>Web</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/start-collecting-data.webp" alt="start collecting data">
+        </figure>
+      </li>
+      <li>Setup your web data stream. 
         <ul>
-          <li>Are ads appearing as expected?</li>
-          <li>
-            Are subscriptions showing for correspondent assets?
+          <li>In <strong>Website URL</strong>, enter your client's domain</li>
+          <li>In <strong>Stream name</strong>, enter the value "Web Stream"</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/setup-web-data.webp" alt="setup web data">
+        </figure>
+      </li>
+      <li>In the Enhanced measurement section, turn off <strong>Video engagement</strong> tracking. 
+        <ol>
+          <li>In the bottom right, click the gear icon
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/enhanced-measurement-section.webp" alt="enhanced measurement section">
+            </figure>
           </li>
-          <li>
-            Can the users purchase and get entitled to content as expected?
-          </li>
-        </ul>
+          <li>Deselect <strong>Video engagement</strong>
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/deselect-engagement.webp" alt="deselect engagement">
+            </figure>
+          </li>   
+        </ol>
       </li>
-    </ul>
+      <li>Click <strong>Create stream</strong>.</li>
+      <li>From the <strong>Stream details</strong>, copy the <strong>Measurement ID</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/copy-measurement-id.webp" alt="copy measurement id">
+        </figure>
+      </li>
+      <li>Save the Measurement ID for later, to deliver to the Brightcove OTT Delivery Team.</li>
+      <li>Exit out of <strong>Web stream details</strong>.</li>
+    </ol>
+
+    <h3 id="Register_custom_definitions">Register custom definitions</h3>
+    <p>In this section, you will your custom definitions.</p>
+    <ol class="bcls-tasklist">
+      <li>Return to Google Analytics and navigate to <strong>Property Settings</strong>.</li>
+      <li>In <strong>Property Settings</strong>, select <strong>Custom definitions</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/custom-definitions.webp" alt="custom definitions">
+        </figure>
+      </li>
+      <li>Click <strong>Create custom dimensions</strong>.</li>
+      <li>Use the table on the following page to create each custom dimension, using <strong>Dimension name</strong> and <strong>Event parameter</strong> values from the table to fill in those fields in the creation screen.
+        <ul>
+          <li>Leave the <strong>Scope</strong> as "Event"</li>
+          <li>Leave the <strong>Description</strong> field empty</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/new-custom-dimension.webp" alt="new custom dimension">
+        </figure>
+      </li>
+      <li>
+        <p>The following table shows custom dimension name and associated event parameter.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Custom dimension name</th>
+          <th>Event parameter</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Streaming platform</td>
+          <td>streaming_platform</td>
+        </tr>
+        <tr>
+          <td>Episode number</td>
+          <td>episode_number</td>
+        </tr>
+        <tr>
+          <td>Season number</td>
+          <td>season_number</td>
+        </tr>
+        <tr>
+          <td>Episode title</td>
+          <td>episode_title</td>
+        </tr>
+        <tr>
+          <td>Program title</td>
+          <td>program_title</td>
+        </tr>
+        <tr>
+          <td>Genre</td>
+          <td>genre</td>
+        </tr>
+        <tr>
+          <td>Production year</td>
+          <td>production_year</td>
+        </tr>
+        <tr>
+          <td>Country origin</td>
+          <td>country_origin</td>
+        </tr>
+        <tr>
+          <td>Plan name</td>
+          <td>plan_name</td>
+        </tr>
+        <tr>
+          <td>Content type</td>
+          <td>content_type</td>
+        </tr>
+        <tr>
+          <td>Stars</td>
+          <td>stars</td>
+        </tr>
+        <tr>
+          <td>Item title</td>
+          <td>item_title</td>
+        </tr>
+        <tr>
+          <td>Payment gateway</td>
+          <td>payment_gateway</td>
+        </tr>
+      </tbody>
+    </table>
+      </li>
+    </ol>
+
+    <h3 id="Create_user_scoped_custom_dimension">Create user-scoped custom dimension</h3>
+    <p>Follow the same steps as provided in the <a href="#Register_custom_definitions">Register custom definitions</a> section, but create one more dimension that is User scoped.</p>
+    <ol class="bcls-tasklist">
+      <li>Return to Google Analytics and navigate to <strong>Property Settings</strong>.</li>
+      <li>In <strong>Property Settings</strong>, select <strong>Custom definitions</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/custom-definitions.webp" alt="custom definitions">
+        </figure>
+      </li>
+      <li>Click <strong>Create custom dimensions</strong>.</li>
+      <li>Use the table on the following page to create each custom dimension.
+        <ul>
+          <li><strong>Dimension name</strong>: "User type"</li>
+          <li><strong>Scope</strong>: "User"</li>
+          <li><strong>Event parameter</strong>: "user_type"</li>
+          
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/user-custom-dimension.webp" alt="user custom dimension">
+        </figure>
+      </li>
+    </ol>
+
+    <h3 id="Increase_data_retention_window">Increase data retention window</h3>
+    <p>Next you will increase the data retention window. With Google Analytics 4, the default data retention is two months of historical data for standard properties. If you do not change the data retention, you will lose historical data earlier than two months back. </p>
+    <ol class="bcls-tasklist">
+      <li>Return to Google Analytics and navigate to <strong>Property Settings</strong>.</li>
+      <li>In <strong>Property Settings</strong>, under <strong>Data settings</strong>, select <strong>Data Retention</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/data-retention.webp" alt="data retention">
+        </figure>
+      </li>
+      <li>Change <strong>Event data retention</strong> from 2 months to 14 months.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/change-data-retention.webp" alt="change data retention">
+        </figure>
+      </li>
+      <li>Click <strong>Save</strong>.</li>
+      <li>IMPORTANT: Wait until your app has been updated with these new configurations.</li>
+    </ol>
   </section>
 
   <section class="bcls-section">
-    <h2 id="Supported_platforms_and_versions">Supported platforms and versions</h2>
-    <p>The following lists the supported platforms and versions that should be used to guide your testing.</p>
-    <ul>
-      <li>Web
-        <ul>
-          <li>Chrome – Current version and current-1 version</li>
-          <li>Safari - Current version and current-1 version</li>
-          <li>Edge - Current version and current-1 version</li>
-          <li>Firefox - Current version and current-1 version</li>
-        </ul>
+    <h2 id="Create_app_streams">Create app streams</h2>
+    <p>Next, you will work with the Brightcove OTT Delivery Team to create your app streams.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Ask the Brightcove OTT Delivery Team to link your Firebase project with your new GA4 property.</li>
+      <li>Brightcove may need access to your Google Analytics account. To grant access, do the following:</li>
+      <li>Return to Google Analytics and navigate to <strong>Admin</strong>.</li>
+      <li>
+        <p>Select <strong>Account Access Management</strong>.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/account-access-mgt.webp" alt="account access management">
+        </figure>
       </li>
-      <li>Apple iOS (mobile/tablet)
-        <ul>
-          <li>Apple iOS 13 and higher</li>
-          <li>For additional information see the <a href="/publishing-apps/ios-tvos/installing-ios-test-build.html">Installing an iOS/tvOS Test Build</a> document</li>
-        </ul>
+      <li>
+        <p>Add email as <strong>Administrator</strong>.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/email-administrator.webp" alt="email as administrator">
+        </figure>
       </li>
-      <li>Apple tvOS
-        <ul>
-          <li>tvOS 12 and higher</li>
-          <li>For additional information see the <a href="/publishing-apps/ios-tvos/installing-ios-test-build.html">Installing an iOS/tvOS Test Build</a> document</li>
-        </ul>
-      </li>
-      <li>Google Android
-        <ul>
-          <li>Android 6.0 and higher</li>
-          <li>For additional information see the <a href="/publishing-apps/android/installing-android-test-build.html">Installing an Android Test Build</a> document</li>
-        </ul>
-      </li>
-      <li>Google Android TV
-        <ul>
-          <li>Android 6.0 and higher</li>
-          <li>For additional information see the <a href="/publishing-apps/android/installing-android-test-build.html">Installing an Android Test Build</a> document</li>
-        </ul>
-      </li>
-      <li>Roku
-        <ul>
-          <li>Roku OS 11 and higher</li>
-          <li>For additional information see the <a href="/publishing-apps/roku/installing-roku-test-build.html">Installing a Roku Test Build</a> document</li>
-        </ul>
-      </li>
-      <li>Amazon Fire TV
-        <ul>
-          <li>Fire OS 6.3 and higher</li>
-          <li>For additional information see the <a href="/publishing-apps/fire-tv/installing-fire-tv-test-build.html">Installing a Fire TV Test Build</a> document</li>
-        </ul>
-      </li>
-      <li>Samsung Smart TV
-        <ul>
-          <li>Tizen 2022, 2021, 2020</li>
-        </ul>
-      </li>
-      <li>Sony Bravia Smart TV
-        <ul>
-          <li>Android TV 5.0+ and higher</li>
-        </ul>
-      </li>
-      <li>Toshiba Smart TV
-        <ul>
-          <li>Android TV 5.0+ and higher and/or Fire OS 5.0 and higher</li>
-          <li>For additional information see the <a href="/publishing-apps/android/installing-android-test-build.html">Installing an Android Test Build</a> document</li>
-        </ul>
-      </li>
-      <li>LG Web Os
-        <ul>
-          <li>5.0 and higher.</li>
-        </ul>
-      </li>
-    </ul>
-    <aside class="bcls-aside bcls-aside--information language-editable">Smart TVs support by age: Models at a maximum of three years old are supported. For example, if an app is submitted in 2021, the models supported are 2021, 2020 and 2019. If and app is submitted and next year's model are available, then that counts as a year. For example, if an app is submitted in 2021, but 2022 models are available, then the supported years are 2022, 2021 and 2020.</aside>
+    </ol>
   </section>
 
-  <section class="bcls-section">
-    <h2 id="Tips">Tips</h2>
-    <p>Please consider the following tips when performing your validation:</p>
-    <ul>
-      <li>
-        <strong>First pass</strong>: Choose ONE of the platforms and go through the different areas of testing on that platform. Start with <em>Design and Features</em>, then move on to <em>Page Layout and Content</em> and lastly to <em>Monetization Setup</em> testing.
+  <!-- <section class="bcls-section">
+    <h2 id="section-name">Configure Firebase</h2>
+    <aside class="bcls-aside bcls-aside--tip">The steps in this section are only necessary if you have Android and/or iOS apps. Also, if you are completely unfamiliar with Google Firebase, an introductory 2 1/2 minute marketing video is available form <a href="https://firebase.google.com/">Firebase's home page</a>.</aside>
+    <p></p>
+    <ol class="bcls-tasklist-restart">
+      <li>Browse to the <a href="https://console.firebase.google.com/?pli=1">Firebase Getting Started page</a>.</li>
+      <li>Click <strong>Create a project</strong>.</li>
+      <li>Enter a project name.</li>
+      <li>Accept the terms and click <strong>Continue</strong>.</li>
+      <li>Accept the default of enabling Google Analytics for the project, and click <strong>Continue</strong>.</li>
+      <li>Choose or supply a Google Analytics account.</li>
+      <li>Click <strong>Create project</strong>.</li>
+      <li>Be sure you are returned to the <strong>Project Overview</strong> page. Also note the iOS and Android create app buttons (the red arrows indicate their positions).
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/fb-project-overview.png" alt="project overview">
+        </figure>
       </li>
-      <li>
-        <strong>Additional rounds of testing</strong>: As you finish the first pass for each area, move on to other platforms that are available. If an issue is applicable to multiple platforms, please note that in any previously reported tickets.
-      </li>
-      <li>
-        <strong>Testing fixes</strong>: Fixes for reported issues will be in one of these three areas:
+      <li>If you are using an iOS app, click the iOS app button and complete the five steps to add Firebase to your iOS app. To complete the steps you will need an iOS developer to assist. The following Google document provides details on the steps:
         <ul>
-          <li>The Brightcove Beacon Experience (no app updates needed)</li>
-          <li>In the app(s)</li>
-          <li>The Brightcove Beacon backend</li>
+          <li><a href="https://firebase.google.com/docs/ios/setup">Add Firebase to your iOS project</a>.</li>
         </ul>
-        <p>
-          If the fix is in the app, a new build will be provided with details of what was fixed. For other areas, Brightcove would provide details in the ticket on what was fixed. To speed up fixing and retesting, it is very important that the tickets provide details on the issue, and steps to help with retesting.
-        </p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/fb-add-ios-app.png" alt="add iOS">
+        </figure>
       </li>
-    </ul>
-  </section>
+      <li>If you are using an Android app, click the Android app button and complete the four steps to add Firebase to your Android app. To complete the steps you will need an Android developer to assist. The following Google document provides details on the steps:
+        <ul>
+          <li><a href="https://firebase.google.com/docs/android/setup">Add Firebase to your Android project</a>.</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/fb-add-android-app.png" alt="add android">
+        </figure>
+      </li>
+    </ol>
+    <p>After adding the Goggle Tag Manager and Firebase files, as detailed in the last two sections of this document, you should be able to check for events in Firebase itself. In addition, hits will have been sent to Google Analytics. Note that Google Tag Manager is acting as a middle man here, sending that information to Google Analytics based on data that is pushed to Firebase.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/fb-test-install.png" alt="firebase results">
+    </figure>
+  </section> -->
+
   <section class="bcls-section">
-    <h2 id="Reporting">Reporting</h2>
-    <p>
-      Brightcove recommends that you report issues as you encounter them to keep the feedback flowing to Brightcove and have the issues fixed and turned around for validation as quickly as possible. Please report one issue/ticket per problem and provide the following information in each issue/ticket:
-    </p>
+    <h2 id="Install_templates_into_Google_Data_Studio">Install templates into Google Data Studio</h2>
+    <p>Brightcove supplies Google Data Studio prebuilt report templates, one each for web, mobile and smart tv. In the <a href="#Obtain_the_templates_and_configuration_files">Obtain templates and configuration files</a> section earlier in this document you requested files/URLs from your onboarding manager. Three of the URLs are as follows:</p>
     <ul>
-      <li>Platform tested</li>
-      <li>The app version in which the issue was found</li>
-      <li>Steps to reproduce</li>
-      <li>
-        Please include screenshots or screen movies to help speed up identifying the problem and providing a resolution </li>
+      <li>WEB: https://datastudio.google.com/reporting/43b8362b-785a-487d-b681-39dde640f029</li>
+      <li>Mobile: https://datastudio.google.com/reporting/2ca9572d-e50e-4931-858a-e67dc99f62f9</li>
+      <li>STV: https://datastudio.google.com/reporting/bfa8fad2-b4f6-4bfc-aee2-33742bf600a5</li>
     </ul>
+    <p>To use the templates, perform the following tasks:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Note the use for the report, mobile, web or smart tv, then click on the URL.</li>
+      <li>In a new browser tab, be sure you see the following:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga-dashboard-config-import.png" alt="import configuration">
+        </figure>
+      </li>
+      <li>From the <strong>Select a view</strong> drop down, choose the matching property, mobile (iOS and Android), web or smart tv.</li>
+      <li>Change the name of the configuration if you choose.</li>
+      <li>Click <strong>Create</strong>.</li>
+      <li>The imported configuration will open. Examine the data to be sure it seems valid. An example is shown here:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ds-sample-report.png" alt="example report">
+        </figure>
+      </li>
+    </ol>
+    <p>That's it! Congratulations you have configured Google Analytics for Brightcove Beacon.</p>
   </section>
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
