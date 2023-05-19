@@ -4056,10 +4056,9 @@
     <h2 id="Required_tools">Required tools</h2>
     <p>Brightcove uses various tools to implement the collection, manipulation and display of analytics data using Google Analytics. These tools are:</p>
     <ul>
-      <li><strong>Google Analytics</strong> - A web analytics platform offered by Google as part of their Google Marketing Platform brand.</li>
-      <li><strong>Google Tag Manager</strong> - First, understand that tags are snippets of code which are added to a site to collect information and send it to third parties. Tags are use for numerous reasons, including scroll tracking, monitoring form submissions, conducting surveys, etc. With Google Tag Manager you can "manage and update tags quickly and make more informed decisions faster. Tag Manager integrates with all Google and third-party tags, and gives you complete control over when and how your tags fire."</li>
-      <li><strong>Firebase</strong> - Firebase is a platform developed by Google for creating mobile and web applications. Firebase includes the <strong>Firebase Realtime Database</strong>, which is a cloud-hosted database.</li>
-      <li><strong>Google Data Studio</strong> - Google Data Studio is a "free tool that turns your data into informative, easy to read, easy to share, and fully customizable dashboards and reports."</li>
+      <li><strong>Google Analytics</strong> - A web analytics platform offered by Google as part of their <a href="https://marketingplatform.google.com/about/analytics/">Google Marketing Platform</a> brand.</li>
+      <li><strong>Firebase</strong> - <a href="https://firebase.google.com/">Firebase</a> is a platform developed by Google for creating mobile and web applications. Firebase includes the <a href="https://firebase.google.com/docs/database/">Firebase Realtime Database</a>, which is a cloud-hosted database.</li>
+      <li><strong>Google Looker Studio</strong> - <a href="https://developers.google.com/looker-studio">Google Looker Studio</a> is a "free tool that turns your data into informative and fully customizable dashboards and reports that are easy to read and share."</li>
     </ul>
     <p>The following diagram details the interaction/flow of these tools when gathering analytics for Brightcove Beacon:</p>
     <figure class="bcls-figure">
@@ -4073,7 +4072,7 @@
     <ul>
       <li>URLs to three pre-built Google Analytics Dashboard configurations, one each for mobile, web and smart tv.</li>
       <li>Four JSON files which configure each of the four containers created in Google Tag Manager.</li>
-      <li>URLs to three pre-built Google Data Studio templates, one each for mobile, web and smart tv.</li>
+      <li>URLs to three pre-built Google Looker Studio templates, one each for mobile, web and smart tv.</li>
     </ul>
     <p>Directions for installing/using each of the files/URLs appear in the appropriate sections later in this document.</p>
     <aside class="bcls-aside bcls-aside--tip">You will need to obtain these files/URLs BEFORE starting the configuration process.</aside>
@@ -4083,21 +4082,16 @@
     <h2 id="Create_Google_Analytics_properties">Configure Google Analytics</h2>
     <p>In this section of the document you will configure Google Analytics, which includes the following tasks:</p>
     <ul>
-      <li>Create four Google Analytics properties.</li>
+      <li>Create one Google Analytics property.</li>
       <li>Create a mobile view for the iOS and Android properties</li>
       <li>Create a set of custom dimensions for each property.</li>
       <li>Create a single custom metric for each property.</li>
       <li>Import three Brightcove created dashboard configurations, one each for mobile, web and smart tv.</li>
     </ul>
-    <h3>Create four properties</h3>
-    <p>You need to create these four properties:</p>
-    <ul>
-      <li>Beacon Android</li>
-      <li>Beacon iOS</li>
-      <li>Beacon STV (Smart TV)</li>
-      <li>Beacon Web</li>
-    </ul>
-    <p>The following steps guide you through creating the <strong>Beacon Web</strong> property. You will need to create the others following the same process.</p>
+    <h3>Create a GA4 property</h3>
+    <p>You need to create a GA4 property.</p>
+   
+    <p>The following steps guide you through creating the <strong>GA4</strong> property.</p>
     <ol class="bcls-tasklist">
       <li>Log in to your Google Analytics account.</li>
       <li>Click the <strong>Admin (gear)</strong> icon on the bottom-left of the screen.</li>
@@ -4106,7 +4100,7 @@
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-property-button.webp" alt="create property">
         </figure>
       </li>
-      <li>In the <strong>Property details</strong>, supply the <strong>Property name</strong>. For the first property, use <samp>Beacon Android</samp>.
+      <li>In the <strong>Property details</strong>, supply the <strong>Property name</strong>. For the first property, use <samp>Beacon - [[NAME OF YOUR PRODUCT]]</samp>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-property-name.webp" alt="property name">
         </figure>
@@ -4126,14 +4120,6 @@
         </figure>
       </li>
       <li>Click <strong>Create</strong>.</li>
-
-      <li>Perform the proceeding steps to create the three other required properties:
-        <ol>
-          <li>Beacon iOS</li>
-          <li>Beacon STV</li>
-          <li>Beacon WEB</li>
-        </ol>
-      </li>
     </ol>
 
     <h3 id="Create_web_data_stream">Create web data stream</h3>
@@ -4369,8 +4355,8 @@
   </section> -->
 
   <section class="bcls-section">
-    <h2 id="Install_templates_into_Google_Data_Studio">Install templates into Google Data Studio</h2>
-    <p>Brightcove supplies Google Data Studio prebuilt report templates, one each for web, mobile and smart tv. In the <a href="#Obtain_the_templates_and_configuration_files">Obtain templates and configuration files</a> section earlier in this document you requested files/URLs from your onboarding manager. Three of the URLs are as follows:</p>
+    <h2 id="Install_templates_into_Google_Looker_Studio">Install templates into Google Looker Studio</h2>
+    <p>Brightcove supplies Google Looker Studio prebuilt report templates, one each for web, mobile and smart tv. In the <a href="#Obtain_the_templates_and_configuration_files">Obtain templates and configuration files</a> section earlier in this document you requested files/URLs from your onboarding manager. Three of the URLs are as follows:</p>
     <ul>
       <li>WEB: https://datastudio.google.com/reporting/43b8362b-785a-487d-b681-39dde640f029</li>
       <li>Mobile: https://datastudio.google.com/reporting/2ca9572d-e50e-4931-858a-e67dc99f62f9</li>
