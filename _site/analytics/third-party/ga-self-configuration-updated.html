@@ -4121,7 +4121,7 @@
     </ol>
 
     <h3 id="Create_web_data_stream">Create web data stream</h3>
-    <p>In this section, you will create a web view for the Beacon WEB property created in the previous section.</p>
+    <p>In this section, you will create a web view for the Google Analytics 4 property created in the previous section.</p>
     <ol class="bcls-tasklist">
       <li>Return to Google Analytics and navigate to the <strong>Start collecting data</strong> screen.</li>
       <li>Select <strong>Web</strong>.
@@ -4163,7 +4163,7 @@
     </ol>
 
     <h3 id="Register_custom_definitions">Register custom definitions</h3>
-    <p>In this section, you will your custom definitions.</p>
+    <p>In this section, you will create custom definitions.</p>
     <ol class="bcls-tasklist">
       <li>Return to Google Analytics and navigate to <strong>Property Settings</strong>.</li>
       <li>In <strong>Property Settings</strong>, select <strong>Custom definitions</strong>.
@@ -4171,22 +4171,27 @@
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/custom-definitions.webp" alt="custom definitions">
         </figure>
       </li>
-      <li>Click <strong>Create custom dimensions</strong>.</li>
-      <li>Use the table on the following page to create each custom dimension, using <strong>Dimension name</strong> and <strong>Event parameter</strong> values from the table to fill in those fields in the creation screen.
+    </ol>
+    <h4>Create event-scoped custom dimensions</h4>
+    <ol class="bcls-tasklist">
+      <li>
+        Click <strong>Create custom dimensions</strong>.</li>
+      <li>Use the table below to create each custom dimension.
         <ul>
-          <li>Leave the <strong>Scope</strong> as "Event"</li>
-          <li>Leave the <strong>Description</strong> field empty</li>
+          <li><strong>Dimension name</strong> - Value from table below</li>
+          <li><strong>Scope</strong> - Leave value as <strong>Event</strong></li>
+          <li><strong>Description</strong> - Leave field empty</li>
+          <li><strong>Event parameter</strong> - Value from table below</li>
         </ul>
+        <p>Here's an example for "Streaming platform":</p>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/new-custom-dimension.webp" alt="new custom dimension">
         </figure>
-      </li>
-      <li>
         <p>The following table shows custom dimension name and associated event parameter.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Custom dimension name</th>
+          <th>Dimension name</th>
           <th>Event parameter</th>
         </tr>
       </thead>
@@ -4246,29 +4251,25 @@
       </tbody>
     </table>
       </li>
+      <li>Click <strong>Save</strong>.</li>
     </ol>
 
-    <h3 id="Create_user_scoped_custom_dimension">Create user-scoped custom dimension</h3>
-    <p>Follow the same steps as provided in the <a href="#Register_custom_definitions">Register custom definitions</a> section, but create one more dimension that is User scoped.</p>
+    <h4>Create user-scoped custom dimension</h4>
+    <p>Follow the same steps as above to create a custom definition, but create one more dimension that is User scoped.</p>
     <ol class="bcls-tasklist">
-      <li>Return to Google Analytics and navigate to <strong>Property Settings</strong>.</li>
-      <li>In <strong>Property Settings</strong>, select <strong>Custom definitions</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/custom-definitions.webp" alt="custom definitions">
-        </figure>
-      </li>
       <li>Click <strong>Create custom dimensions</strong>.</li>
       <li>Use the table on the following page to create each custom dimension.
         <ul>
-          <li><strong>Dimension name</strong>: "User type"</li>
-          <li><strong>Scope</strong>: "User"</li>
-          <li><strong>Event parameter</strong>: "user_type"</li>
-          
+          <li><strong>Dimension name</strong> - "User type"</li>
+          <li><strong>Scope</strong> - <strong>User</strong></li>
+          <li><strong>Description</strong> - Leave field empty</li>
+          <li><strong>User property</strong> - <strong>user_type</strong></li>  
         </ul>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/user-custom-dimension.webp" alt="user custom dimension">
         </figure>
       </li>
+      <li>Click <strong>Save</strong>.</li>
     </ol>
 
     <h3 id="Increase_data_retention_window">Increase data retention window</h3>
@@ -4352,7 +4353,7 @@
     </figure>
   </section> -->
 
-  <section class="bcls-section">
+  <!-- <section class="bcls-section">
     <h2 id="Install_templates_into_Google_Looker_Studio">Install templates into Google Looker Studio</h2>
     <p>Brightcove supplies Google Looker Studio prebuilt report templates, one each for web, mobile and smart tv. In the <a href="#Obtain_the_templates_and_configuration_files">Obtain templates and configuration files</a> section earlier in this document you requested files/URLs from your onboarding manager. Three of the URLs are as follows:</p>
     <ul>
@@ -4378,7 +4379,7 @@
       </li>
     </ol>
     <p>That's it! Congratulations you have configured Google Analytics for Brightcove Beacon.</p>
-  </section>
+  </section> -->
 </article> 
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
   
