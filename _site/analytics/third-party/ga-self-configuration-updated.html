@@ -4098,13 +4098,16 @@
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-property-button.webp" alt="create property">
         </figure>
       </li>
-      <li>In the <strong>Property details</strong>, supply the <strong>Property name</strong>. For the first property, use <samp>Beacon - [[NAME OF YOUR PRODUCT]]</samp>.
+      <li>Enter the <strong>Property details</strong>.
+        <ul>
+          <li><strong>Property name</strong> - Your property name (Example: <samp>Beacon - [[NAME OF YOUR PRODUCT]]</samp>)</li>
+          <li><strong>Reporting time zone</strong></li>
+          <li><strong>Currency</strong></li>
+        </ul>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-property-name.webp" alt="property name">
         </figure>
       </li>
-      <li>Supply the <strong>Reporting time zone</strong>.</li>
-      <li>Supply the <strong>Currency</strong>.</li>
       <li>Click <strong>Next</strong>.</li>
       <li>Fill in your <strong>Business details</strong>.
         <figure class="bcls-figure">
@@ -4120,7 +4123,7 @@
       <li>Click <strong>Create</strong>.</li>
     </ol>
 
-    <h3 id="Create_web_data_stream">Create web data stream</h3>
+    <h3 id="Set_up_web_data_stream">Set up web data stream</h3>
     <p>In this section, you will create a web view for the Google Analytics 4 property created in the previous section.</p>
     <ol class="bcls-tasklist">
       <li>Return to Google Analytics and navigate to the <strong>Start collecting data</strong> screen.</li>
@@ -4131,8 +4134,8 @@
       </li>
       <li>Setup your web data stream. 
         <ul>
-          <li>In <strong>Website URL</strong>, enter your client's domain</li>
-          <li>In <strong>Stream name</strong>, enter the value "Web Stream"</li>
+          <li><strong>Website URL</strong> - Enter your client's domain</li>
+          <li><strong>Stream name</strong> - Enter the value "Web Stream"</li>
         </ul>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/setup-web-data.webp" alt="setup web data">
@@ -4158,9 +4161,77 @@
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/copy-measurement-id.webp" alt="copy measurement id">
         </figure>
       </li>
-      <li>Save the Measurement ID for later, to deliver to the Brightcove OTT Delivery Team.</li>
+      <li>Save the Measurement ID for later, to deliver to your development team.</li>
       <li>Exit out of <strong>Web stream details</strong>.</li>
     </ol>
+
+    <h3 id="Set_up_Smart_TV_data_stream">Set up Smart TV data stream</h3>
+    <p>In this section, you will create a Smart TV data stream.</p>
+    <ol class="bcls-tasklist">
+      <li>Return to Google Analytics and navigate to <strong>Property Settings</strong>.</li>
+      <li>Select <strong>Data Streams</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/data-streams.webp" alt="data streams">
+        </figure>
+      </li>
+      <li>Expand the <strong>Add stream</strong> dropdown menu and select <strong>Web</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/add-stream.webp" alt="add stream">
+        </figure>
+      </li>
+      <li>In the <strong>Notice</strong> dialog window, click <strong>Yes</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/notice-dialog.webp" alt="notice dialog">
+        </figure>
+      </li>
+      <li>Setup your data stream. 
+        <ul>
+          <li><strong>Website URL</strong> - Enter your client's domain</li>
+          <li><strong>Stream name</strong> - Enter the value "Smart TV stream"</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-stream.webp" alt="smart tv stream">
+        </figure>
+      </li>
+      <li>Click <strong>Create stream</strong>.</li>
+      <li>From the <strong>Stream details</strong>, copy the <strong>Measurement ID</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-measurement-id.webp" alt="copy measurement id">
+        </figure>
+      </li>
+      <li>Save the Measurement ID for later, to deliver to your development team.</li>
+      <li>While still inside the Smart TV stream details view, at the bottom of the <strong>Events</strong> section, click <strong>Measurement Protocol API secrets</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-api-secrets.webp" alt="api secret">
+        </figure>
+      </li>
+      <li>
+        <p>Next, create the Measurement Protocol API secret.</p>
+        Click <strong>Review terms</strong> and click <strong>I acknowledge</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-review-terms.webp" alt="review terms">
+        </figure>
+      </li>
+      <li>Click <strong>Create</strong>, enter the nickname “Smart TV API key 1”, and click <strong>Create</strong> again.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-create-secret.webp" alt="create api secret">
+        </figure>
+      </li>
+      <li>Copy the <strong>Secret value</strong>, which you will give to your Smart TV, AppleTV and roku developers.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-secret-value.webp" alt="api secret value">
+        </figure>
+      </li>
+    </ol>
+
+
+
+
+
+
+
+
+
 
     <h3 id="Register_custom_definitions">Register custom definitions</h3>
     <p>In this section, you will create custom definitions.</p>
