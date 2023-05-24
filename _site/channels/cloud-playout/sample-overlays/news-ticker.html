@@ -1,0 +1,240 @@
+<style>
+    h1 {
+        font-family: impact,verdana;
+    }
+
+    ul {
+        color: #ffffff;
+        display: block;
+        clear: both;
+        text-align: center;
+    }
+
+    ul li {
+        list-style: none;
+        font-family: verdana;
+        font-size: 16px;
+        font-weight: 400;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    #slide {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        height: 25px;
+        padding: 10px 20px;
+        margin: 0 auto 0 auto;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        width: 100%;
+    }
+
+    #slide:after,
+    #slide:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: "";
+        z-index: -1;
+    }
+
+    #slide:after {
+        background-color: #cc0000;
+        background-size: 400%;
+    }
+
+    #slide:before {
+        background-color: #000;
+    }
+
+    @keyframes colorSpin {
+        25% {
+            background-position: 0 100%
+        }
+
+        50% {
+            background-position: 100% 100%
+        }
+
+        75% {
+            background-position: 100% 0
+        }
+
+        100% {
+            filter: hue-rotate(360deg)
+        }
+    }
+
+</style>
+</head>
+
+<body>
+    <ul id="slide">
+        <li>BREAKING NEWS - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum sem semper purus vehicula semper. Cras id justo pretium, mattis arcu vitae, hendrerit nunc.</li>
+        <li>Item Two - Sed dignissim, dui eget euismod mattis, erat elit molestie mauris, viverra convallis augue mi at lectus. Sed feugiat luctus arcu sed fringilla.</li>
+        <li>Item Three - Praesent volutpat metus leo, nec semper sem pretium ut. Quisque consequat sem non sem iaculis malesuada. Suspendisse nec sem dui. </li>
+        <li>Item Four - Quisque auctor risus mi, rutrum bibendum ipsum condimentum et. Phasellus quis magna augue. In congue tincidunt lorem tempor malesuada.</li>
+        <li>Item Five - Aliquam vel nunc nisi. Nunc vel turpis sed enim venenatis pulvinar eget sed metus. Nunc sed odio nec nisi tempus malesuada.</li>
+</ul>
+<!--
+    <h1>List Ticker</h1>
+    <h2>run_once:true</h2>
+    <ul id="once">
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+        <li>Fourth Item</li>
+        <li>Fifth Item</li>
+    </ul>
+    <h2>effect:'fade'</h2>
+    <ul id="fade">
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+        <li>Fourth Item</li>
+        <li>Fifth Item</li>
+    </ul>
+    <h2>effect:'slide'</h2>
+    <ul id="slide">
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+        <li>Fourth Item</li>
+        <li>Fifth Item</li>
+    </ul>
+    <h2>random:true</h2>
+    <ul id="random">
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+        <li>Fourth Item</li>
+        <li>Fifth Item</li>
+    </ul>
+    <h2>How to use</h2>
+    <h2>effect</h2>
+    <ul>
+        <li>fade</li>
+        <li>fade</li>
+    </ul>
+    <h2>run_once</h2>
+    <ul>
+        <li>boolean</li>
+    </ul>
+    <h2>random</h2>
+    <ul>
+        <li>boolean</li>
+    </ul>
+    <h2>speed</h2>
+    <ul>
+        <li>integer (milliseconds)</li>
+    </ul>
+    <h2>pauseOnHover</h2>
+    <ul>
+        <li>boolean</li>
+    </ul>
+-->
+
+<script type="text/javascript" src="/channels/cloud-playout/sample-overlays/scripts/jquery-1.6.4.min.js"></script>
+<script>
+    // pause on hover by Osama Orabi
+    // News Ticker By Alex Fish - https://codepen.io/orabipro/pen/rNzjRZR
+
+    (function($) {
+        $.fn.list_ticker = function(options) {
+            var defaults = {
+                speed: 8000,
+                effect: "slide",
+                run_once: false,
+                random: false,
+                pauseOnHover: true
+            };
+
+            var options = $.extend(defaults, options);
+
+            return this.each(function() {
+                var obj = $(this);
+                var list = obj.children();
+                var count = list.length - 1;
+
+                list.not(":first").hide();
+
+                function ticker() {
+                    list = obj.children();
+                    list.not(":first").hide();
+
+                    var first_li = list.eq(0);
+                    var second_li = options.random ?
+                        list.eq(Math.floor(Math.random() * list.length)) :
+                        list.eq(1);
+
+                    if (first_li.get(0) === second_li.get(0) && options.random) {
+                        second_li = list.eq(Math.floor(Math.random() * list.length));
+                    }
+
+                    if (options.effect == "slide") {
+                        first_li.slideUp();
+                        second_li.slideDown(function() {
+                            first_li.remove().appendTo(obj);
+                        });
+                    } else if (options.effect == "fade") {
+                        first_li.fadeOut(function() {
+                            obj.css("height", second_li.height());
+                            second_li.fadeIn();
+                            first_li.remove().appendTo(obj);
+                        });
+                    }
+                    count--;
+
+                    if (count == 0 && options.run_once) {
+                        clearInterval(interval);
+                    }
+                }
+
+                interval = setInterval(ticker, options.speed);
+
+                options.pauseOnHover &&
+                    $(obj).hover(
+                        function() {
+                            clearInterval(interval);
+                        },
+                        function() {
+                            interval = setInterval(ticker, options.speed, jQuery);
+                        }
+                    );
+            });
+        };
+    })(jQuery);
+
+    //API
+
+    $(document).ready(function() {
+        $('#fade').list_ticker({
+            speed: 8000,
+            effect: 'fade',
+            pauseOnHover: true
+
+        });
+        $('#slide').list_ticker({
+            speed: 8000,
+            effect: 'slide',
+            pauseOnHover: true
+        });
+        $('#once').list_ticker({
+            speed: 8000,
+            effect: 'fade',
+            run_once: true,
+            pauseOnHover: true
+        });
+        $('#random').list_ticker({
+            speed: 8000,
+            effect: 'fade',
+            random: true,
+            pauseOnHover: true
+        });
+    })
+
+</script>
+</body>

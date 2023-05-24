@@ -1,0 +1,174 @@
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,900,700italic,700,600italic,600,400italic);
+
+    body {
+        font-family: 'Titillium Web', cursive;
+        margin: 0;
+        padding: 0;
+    }
+/*
+    .videoWrapper {
+        position: relative;
+        padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+        height: 0;
+        width: 100%;
+    }
+
+    .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+*/
+
+    #timer {
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        width: 400px;
+        text-align: center;
+        color: white;
+        font-weight: 100;
+    }
+
+    #title {
+        font-size: 25px;
+        color: #505050;
+        font-weight: 400;
+        text-align: center;
+        width: 100%;
+        clear: both;
+    }
+
+    #timer div {
+        display: inline-block;
+        line-height: 1;
+        padding: 10px;
+    }
+
+    #timer span {
+        display: block;
+        font-size: 20px;
+        color: #505050;
+    }
+
+    #days {
+        font-size: 50px;
+        color: #db4844;
+    }
+
+    #hours {
+        font-size: 50px;
+        color: #f07c22;
+    }
+
+    #minutes {
+        font-size: 50px;
+        color: #f6da74;
+    }
+
+    #seconds {
+        font-size: 25px;
+        color: #abcd58;
+    }
+
+    .gradDynamic {
+        position: relative;
+    }
+
+    .gradDynamic:after,
+    .gradDynamic:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: "";
+        z-index: -1;
+    }
+
+    .gradDynamic:after {
+        background: radial-gradient(circle, red, transparent);
+        background-size: 400%;
+        animation: colorSpin 30s linear infinite;
+    }
+
+    .gradDynamic:before {
+        background-color: yellow;
+    }
+
+    @keyframes colorSpin {
+        25% {
+            background-position: 0 100%
+        }
+
+        50% {
+            background-position: 100% 100%
+        }
+
+        75% {
+            background-position: 100% 0
+        }
+
+        100% {
+            filter: hue-rotate(360deg)
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+<div id="timer">
+    <div id="title">Count down to Easter 2023</div>
+    <div id="days"></div>
+    <div id="hours"></div>
+    <div id="minutes"></div>
+    <div id="seconds"></div>
+</div>
+
+<!-- JS -->
+<script type="text/javascript" src="/channels/cloud-playout/sample-overlays/scripts/jquery-3.1.1.min.js"></script>
+<script>
+    function makeTimer() {
+
+        //      
+        var endTime = new Date("09 April 2023 00:00:00 GMT+01:00");
+        endTime = (Date.parse(endTime) / 1000);
+
+        var now = new Date();
+        now = (Date.parse(now) / 1000);
+
+        var timeLeft = endTime - now;
+
+        var days = Math.floor(timeLeft / 86400);
+        var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+        var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
+        var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+        if (hours < "10") {
+            hours = "0" + hours;
+        }
+        if (minutes < "10") {
+            minutes = "0" + minutes;
+        }
+        if (seconds < "10") {
+            seconds = "0" + seconds;
+        }
+
+        $("#days").html(days + "<span>Days</span>");
+        $("#hours").html(hours + "<span>Hours</span>");
+        $("#minutes").html(minutes + "<span>Minutes</span>");
+        $("#seconds").html(seconds + "<span>Seconds</span>");
+
+    }
+
+    setInterval(function() {
+        makeTimer();
+    }, 1000);
+
+</script>
+</body>
