@@ -466,6 +466,18 @@
           url: /analytics/reports/performance-report-reference.html
         - name: SSAI Performance Analytics
           url: /analytics/reports/ssai-performance-data.html
+    - name: Engagement Insights
+      url: /analytics/general/index.html
+      icon: fa-regular fa-chart-line-up
+      docs:
+        - name: 'Overview: Beacon Engagment Insights'
+          url: /analytics/engagement-insights/overview.html
+        - name: 'Summary: Beacon Engagment Insights'
+          url: /analytics/engagement-insights/summary-reports.html
+        - name: 'Engagment: Beacon Engagment Insights'
+          url: /analytics/engagement-insights/viewer-engagement.html
+        - name: 'Content: Beacon Engagment Insights'
+          url: /analytics/engagement-insights/content-metrics.html    
     - name: General Information
       url: /analytics/general/index.html
       icon: fa-regular fa-chart-line-up
