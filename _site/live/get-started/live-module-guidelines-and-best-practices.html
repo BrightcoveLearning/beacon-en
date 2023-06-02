@@ -4107,8 +4107,17 @@
         </tr>
         <tr>
           <td>Input bitrate to top profile ratio</td>
-          <td> The input bitrate should be higher than the rate of the top profile, but too much higher may result in dropped frames or other issues - e.g. if your top rate is 1080p 30fps, the input should ideally be around 4 MBPS. Note that this is affected by the profile. We generally recommend an input bitrate that is 2x (twice) the bitrate of your highest bitrate live rendition.
-            <p>If you require a high bitrate top output it is worth testing the <code>copy_video</code> setting which will simply copy your input encode to the output.</p></td>
+          <td> 
+            <p>To ensure optimal performance during live events, we recommend setting the input bitrate to match the bitrate of your highest bitrate live rendition. However, exceeding the maximum rendition bitrate significantly can potentially result in buffering, high input/output drift, and other related issues. Therefore, Brightcove recommends carefully considering the following factors when determining the input bitrate:</p>
+            <ul>
+              <li>Aim to match the bitrate of your highest bitrate live rendition to maintain quality and minimize potential issues.</li>
+              <li>In certain cases, a slightly higher input bitrate than the highest rendition may be acceptable but should be approached with caution to avoid performance degradation.</li>
+              <li>Conduct thorough testing to find the optimal input bitrate that balances quality, stability, and compatibility with your specific streaming setup and content.</li>
+            </ul>
+
+            <!-- The input bitrate should be higher than the rate of the top profile, but too much higher may result in dropped frames or other issues - e.g. if your top rate is 1080p 30fps, the input should ideally be around 4 MBPS. Note that this is affected by the profile. We generally recommend an input bitrate that is 2x (twice) the bitrate of your highest bitrate live rendition.
+            <p>If you require a high bitrate top output it is worth testing the <code>copy_video</code> setting which will simply copy your input encode to the output.</p> -->
+          </td>
         </tr>
         <tr>
           <td>Profiles</td>
