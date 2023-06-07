@@ -4201,7 +4201,7 @@
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/copy-measurement-id.webp" alt="copy measurement id">
         </figure>
       </li>
-      <li>Save the Measurement ID for later, to deliver to your development team.</li>
+      <li>Save the Measurement ID for later, to deliver to the Brightcove OTT Delivery Team.</li>
       <li>Exit out of <strong>Web stream details</strong>.</li>
     </ol>
 
@@ -4239,7 +4239,7 @@
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-measurement-id.webp" alt="copy measurement id">
         </figure>
       </li>
-      <li>Save the Measurement ID for later, to deliver to your development team.</li>
+      <li>Save the Measurement ID for later, to deliver to o the Brightcove OTT Delivery Team.</li>
       <li>While still inside the Smart TV stream details view, at the bottom of the <strong>Events</strong> section, click <strong>Measurement Protocol API secrets</strong>.
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-api-secrets.webp" alt="api secret">
@@ -4340,10 +4340,6 @@
           <td>content_type</td>
         </tr>
         <tr>
-          <td>Stars</td>
-          <td>stars</td>
-        </tr>
-        <tr>
           <td>Item title</td>
           <td>item_title</td>
         </tr>
@@ -4371,6 +4367,37 @@
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/user-custom-dimension.webp" alt="user custom dimension">
         </figure>
+      </li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+
+    <h4>Create event-scoped custom metric</h4>
+    <p>Next, you'll create a custom metric for the rating stars.</p>
+    <ol class="bcls-tasklist">
+      <li>
+        From the <strong>Custom definitions</strong> screen, do the following:
+        <ul>
+          <li>Click the <strong>Custom metrics</strong> header</li>
+          <li>Click <strong>Create custom metrics</strong></li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-custom-metrics.webp" alt="create custom metrics">
+        </figure>
+      </li>
+      <li>
+        Add the following values:
+        <ul>
+          <li><strong>Metric name</strong> - "Stars"</li>
+          <li><strong>Scope</strong> - <strong>Event</strong></li>
+          <li><strong>Description</strong> - Leave field empty</li>
+          <li><strong>Event parameter</strong> - <strong>stars</strong></li>
+          <li><strong>Unit of measurement</strong> - <strong>Standard</strong></li>
+        </ul>
+        <p>Here's an example for "Streaming platform":</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/new-custom-metric.webp" alt="new custom metric">
+        </figure>
+        
       </li>
       <li>Click <strong>Save</strong>.</li>
     </ol>
