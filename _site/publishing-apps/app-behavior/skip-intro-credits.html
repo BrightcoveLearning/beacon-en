@@ -3618,11 +3618,11 @@
     <ul>
       <li>If you set a <code>skip_intro_end</code>, but not a <code>skip_intro_start</code>, the beginning of the video is assumed to be the starting point.</li>
       <li>If you set a <code>skip_credit_start</code>, but not a <code>skip_credit_end</code>, the end of video is assumed to be the ending point.</li>
-      <li>If an end cue point comes before a corresponding start cue point, nothing happens.</li>
+      <li>If an end cue point comes before a corresponding start cue point, the associated skip button will not be shown.</li>
       <li>If there is a duplication of any cue points, the second one in the timeline is ignored.</li>
-      <li>Pre-roll and post-roll ads play irregardless of cue point placement.</li>
+      <li>Pre-roll and post-roll ads play regardless of cue point placement. Brightcove recommends NOT placing ads between skip button cue points, as this will not provide the best user experience.</li>
       <li>If the skip credits button is clicked, and there is an ad inserted before the end of the credits, all ads play.</li>
-      <li>By default, the skip buttons are displayed for 10 seconds before they disappear, or at the end of the intro/credits stop cue points, whichever is sooner. This default of 10 seconds can be changed by contacting Brightcove's OTT Delivery Team.</li>
+      <li>The skip button will appear on the trickplay while the video position is between the cue points. When the trickplay/controls are hidden, the skip buttons are displayed for 10 seconds before they disappear or at the end of the intro/credits stop cue point, whichever is sooner. You can change the 10-second default by contacting Brightcove's OTT Delivery Team.</li>
       <li>There is no validation of logical placement of cue points at this time.</li>
     </ul>
     <p>Once the cue points have been created, in the Beacon app when a movie or episode is playing a small <strong>Skip Intro</strong> or <strong>Skip Credits</strong> button is displayed at the desired times.</p>
