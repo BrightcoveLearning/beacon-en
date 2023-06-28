@@ -3601,10 +3601,20 @@
   <section class="bcls-section">
     <aside class="bcls-aside bcls-aside--information">Brightcove Beacon does NOT send full analytics back to Video Cloud. Only video starts are reported back to Video Cloud Analytics.</aside>
     <h2 id="Introduction">Introduction</h2>
-    <p>Undoubtedly you will want to know what viewers are watching in your Brightcove Beacon apps. To accomplish this you will use Google Analytics. Brightcove will load a customized Dashboard and a customized Google Data Studio report into your Google Analytics account. Both of these tools provide great insight into how your customers are using your Brightcove Beacon apps.</p>
-    <p>In addition to the customized dashboard and report, you can use the standard analytics tools in Google Analytics to view customer behavior. You can use the standard analytics data gathered by Google, and in addition Brightcove adds other entities to use, detailed later in this document. For instance, <strong>Movies</strong> events are dispatched when a movie is played, a default Google analytics measure, and time watched is calculated, a measure added by Brightcove. Therefore, in Google Analytics you can see the "most watched" movies by both how many times viewers played the movie and total time watched. These entities added by Brightcove are used extensively in the customized dashboard and report mentioned in the previous paragraph.</p>
+    <p>To learn about the audience for your Brightcove Beacon apps, you can use Google Analytics. To get you started, Brightcove will load a customized template for Looker Studio into your Google Analytics account.</p>
+    <p>Looker Studio, a part of the Google Marketing Platform, is an online tool for visualizing analytics data in customizable reports and dashboards. Looker Studio offers features including:</p>
+    <ul>
+      <li><strong>Data Visualization</strong> - Create interactive charts, diagrams, and tables</li>
+      <li><strong>Integration with Data Sources</strong> - Integrate from different data channels using partner connectors</li>
+      <li><strong>Teamwork</strong> - Collaborate by sharing dashboards among team members</li>
+    </ul>
+    <p>For more details, see Google's <a href="https://lookerstudio.google.com/navigation/reporting">Looker Studio</a> homepage.</p>
+    
+
+    <!-- <p>Undoubtedly you will want to know what viewers are watching in your Brightcove Beacon apps. To accomplish this you will use Google Analytics. Brightcove will load a customized Dashboard and a customized Google Data Studio report into your Google Analytics account. Both of these tools provide great insight into how your customers are using your Brightcove Beacon apps.</p>
+    <p>In addition to the customized dashboard and report, you can use the standard analytics tools in Google Analytics to view customer behavior. You can use the standard analytics data gathered by Google, and in addition Brightcove adds other entities to use, detailed later in this document. For instance, <strong>Movies</strong> events are dispatched when a movie is played, a default Google analytics measure, and time watched is calculated, a measure added by Brightcove. Therefore, in Google Analytics you can see the "most watched" movies by both how many times viewers played the movie and total time watched. These entities added by Brightcove are used extensively in the customized dashboard and report mentioned in the previous paragraph.</p> -->
   </section>
-  <section class="bcls-section">
+  <!-- <section class="bcls-section">
     <h2 id="Viewing_the_Dashboard">Viewing the Dashboard</h2>
     <p>To view the Google Analytics Dashboard installed by Brightcove, and more importantly the data the dashboard displays, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
@@ -3640,22 +3650,23 @@
         </figure>
       </li>
     </ol>
-  </section>
+  </section> -->
   <section class="bcls-section">
-    <h2 id="Viewing_the_Data_Studio_report">Viewing the Data Studio report</h2>
-    <p>According to Google: "Data Studio is a free tool that turns your data into informative, easy to read, easy to share, and fully customizable dashboards and reports."</p>
-    <p>To view the customized Google Data Studio report installed by Brightcove, follow these steps:</p>
+    <h2 id="Viewing_the_Looker_Studio_report">Viewing the Looker Studio report</h2>
+    <p>Use Looker Studio to turn your data into data visualization stories, which include interactive reports and dashboards.</p>
+    <p>To view the customized Google Looker Studio report installed by Brightcove, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Log in to <a href="https://datastudio.google.com/">Google Data Studio (datastudio.google.com)</a>.</li>
-      <li>You will see a list of report(s) listed on the landing page (highlighted in yellow):
+      <li>Log in to <a href="https://lookerstudio.google.com/u/0/navigation/reporting/">Google Looker Studio</a>.</li>
+      <li>You will see a list of reports on the landing page:
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/using-beacon-analytics/data-studio-landing-page.png" alt="data studio landing page">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/looker-studio/looker-reports-list.webp" alt="Looker Studio landing page">
         </figure>
       </li>
-      <li>Click on the report name to open it.</li>
-      <li>The first page of an example report is shown here. Note in the top left corner of the report is the navigation (highlighted in yellow) to see the other pages.
+      <li>Click on a report name to open it.</li>
+      <li>The first page of an example report is shown here.
+        <aside class="bcls-aside bcls-aside--tip">Navigation to see other report pages can be found in the top left corner.</aside>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/using-beacon-analytics/data-studio-report.png" alt="data studio report">
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/looker-studio/report-page1.webp" alt="Looker Studio report">
         </figure>
       </li>
     </ol>
@@ -3672,44 +3683,44 @@
     <p> Note that the dimensions and metric added by Brightcove are NOT the same for each type of Brightcove Beacon app. For instance, the iOS mobile data has 16 custom dimensions added, whereas the web site app has 20 custom dimensions added. To see a list of the dimensions and metric in the Google Analytics UI, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
       <li>Log in to <a href="https://analytics.google.com">Google Analytics</a>.</li>
-      <li>Click on the dropdown (highlighted in yellow in the screenshot) to see all your Google Analytics accounts.
+      <li>Click on the accounts dropdown menu to see all your Google Analytics accounts.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/using-beacon-analytics/click-accounts.png" alt="Beacon analytics accounts" />
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/looker-studio/all-accounts.webp" alt="Beacon analytics accounts" />
         </figure>
       </li>
       <li>From the three-paneled dropdown, select:
-        <ol type="a">
+        <ol>
           <li>Your Brightcove Beacon account</li>
           <li>Your app for which you want analytics</li>
-          <li>Your view (you will only have one view per app)</li>
+          <!-- <li>Your view (you will only have one view per app)</li> -->
         </ol>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/using-beacon-analytics/app-groups.png" alt="Beacon analytics app groups" />
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/looker-studio/select-beacon-app.webp" alt="Beacon analytics app groups" />
         </figure>
       </li>
       <li>In the left side navigation, click the <strong>Admin</strong> option.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/using-beacon-analytics/admin-click.png" alt="Click admin" />
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/looker-studio/admin-button.webp" alt="Click admin" />
         </figure>
       </li>
       <li>Click <strong>Custom Definitions</strong>.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/using-beacon-analytics/click-custom-definitions.png" alt="Click custom definitions" />
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/looker-studio/custom-dimensions.webp" alt="Click custom definitions" />
         </figure>
       </li>
       <li>When you click <strong>Custom Definitions</strong> you will see links for <strong>Custom Dimensions</strong> and <strong>Custom Metrics</strong>.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/using-beacon-analytics/list-custom-definitions.png" alt="list custom definitions" />
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/looker-studio/dimensions-list.webp" alt="list custom definitions" />
         </figure>
       </li>
       <li>Click the <strong>Custom Dimensions</strong> link to see the dimensions for this app. Dimensions change per app.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/using-beacon-analytics/dimensions-list.png" alt="list custom definitions" />
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/looker-studio/dimensions-table.webp" alt="list custom definitions" />
         </figure>
       </li>
       <li>Click the <strong>Custom Metrics</strong> link to see the single metic, <strong>Time Watched</strong>. This is the only custom metric for Brightcove Beacon apps.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/using-beacon-analytics/metrics-list.png" alt="list custom definitions" />
+          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/looker-studio/metrics-table.webp" alt="list custom definitions" />
         </figure>
       </li>
     </ol>
