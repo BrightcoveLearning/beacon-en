@@ -318,10 +318,8 @@
     url: /players/module/index.html
     icon: fa-regular fa-play
     docs:
-    - name: Configuring Player Plugins
-      url: /players/general/configuring-player-plugins.html
-    - name: Generating Player Embed Code
-      url: /players/general/generating-player-embed-code.html
+    - name: 'Brightcove Player Plugin Compatibility'
+      url: '/general/references/bcp-plugin-compatibility.html'
     - name: 'Support for Brightcove Player 5'
       url: /players/general/v5-players-support.html
     
@@ -331,8 +329,12 @@
     docs:
     - name: Getting Started with the Players Module
       url: /players/module/getting-started-players-module.html
-    - name: 'Step-by-Step:  Creating and Publishing a Player'
-      url: /publish/step-step-using-players-module-create-and-publish-player.html
+    - name: Configuring Player Plugins
+      url: /players/general/configuring-player-plugins.html
+    - name: Generating Player Embed Code
+      url: /players/general/generating-player-embed-code.html
+    # - name: 'Step-by-Step: Creating and Publishing a Player'
+    #   url: /publish/step-step-using-players-module-create-and-publish-player.html
   - name: Player Properties
     url: /players/properties/index.html
     icon: fa-regular fa-play
@@ -1124,8 +1126,6 @@
       docs:
         - name: 'Best Practices: Transcoding and Uploading'
           url: /general/references/best-practices-video-creating-transcoding-and-uploading-workflow.html
-        - name: 'Brightcove Player Plugin Compatibility'
-          url: '/general/references/bcp-plugin-compatibility.html'
         - name: 'Common Required Information for Submitting Apps'
           url: '/publishing-apps/general/common-required-info.html'
         - name: Glossary
