@@ -314,6 +314,17 @@
   icon: fa-regular fa-play
   description: Learn how to manage the players in your account.
   docs:
+  - name: Getting Started
+    url: /players/module/index.html
+    icon: fa-regular fa-play
+    docs:
+    - name: Configuring Player Plugins
+      url: /players/general/configuring-player-plugins.html
+    - name: Generating Player Embed Code
+      url: /players/general/generating-player-embed-code.html
+    - name: 'Support for Brightcove Player 5'
+      url: /players/general/v5-players-support.html
+    
   - name: Using the Players Module
     url: /players/module/index.html
     icon: fa-regular fa-play
@@ -366,12 +377,6 @@
       url: /players/general/configuring-google-analytics-event-tracking.html
     - name: Configuring Player Advertising
       url: /players/general/configuring-player-advertising-using-players-module.html
-    - name: Configuring Player Plugins
-      url: /players/general/configuring-player-plugins.html
-    - name: Generating Player Embed Code
-      url: /players/general/generating-player-embed-code.html
-    - name: 'Support for Brightcove Player 5'
-      url: /players/general/v5-players-support.html
 - section:
   name: 'Monetizing Content'
   url: '/monetization/index.html'
