@@ -3611,18 +3611,19 @@
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
+    <p>Beacon web apps use Brightcove Player in all instances of where a player is used. In the Beacon UI, Brightcove Player is referred to as Player E.</p>
     <p>Brightcove Beacon web apps now support the following:</p>
     <ul>
       <li>Brightcove Player v7</li>
       <li>Configurable web player - not limited to the default player</li>
+      <li>Skip forward/backward buttons</li>
       <li>Brightcove Player plugins - see table below</li>
-      <li>Fast forward and rewind buttons</li>
     </ul>
 
   </section>
 
   <section class="bcls-section">
-    <h2 id="Brightcove_Player_version">Brightcove Player version</h2>
+    <h2 id="Brightcove_Player_v7">Brightcove Player v7</h2>
     <p>While Beacon web apps will continue to support Brightcove Player v6.66.8, we recommend upgrading to Brightcove Player v7. Upgrading will allow you to take advantage of the latest player improvements and functionality.</p>
     <p>To check the player version for your Beacon web app, do the following:</p>
     <ol class="bcls-tasklist">
@@ -3643,7 +3644,10 @@
 
   <section class="bcls-section">
     <h2 id="Configurable_web_player">Configurable web player</h2>
-    <p>You are no longer limited to just using the default player in your account for Beacon web apps. You can create one or more configurable players in your account. Contact the OTT Delivery Team to associate a specific player ID with your app.</p>
+    <p>You are no longer limited to just using the default player in your account for Beacon web apps. You can create one or more configurable players in your account. This allows you to have different players configured with different plugins to handle multiple use cases.</p>
+    <p>You can also test new plugins with a specific player without affecting the entire application.</p>
+    <aside class="bcls-aside bcls-aside--information">You cannot use different player versions across your Beacon app. This means that all of the players for your app must be the same version.</aside>
+    <p>Contact the OTT Delivery Team to associate a specific player ID with your app.</p>
     <p>Here is an example of how you can create multiple players for use across one app:</p>
     <ul>
       <li>One player for live previews in beacon</li>
@@ -3652,10 +3656,23 @@
     </ul>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/s-players-img/basics/multiple-players.webp" alt="multiple players">
-    </figure>
-    
+    </figure>  
   </section>
 
+  <section class="bcls-section">
+    <h2 id="Skip_forward_backward_buttons">Skip forward/backward buttons</h2>
+    <p>Beacon web apps provide two new buttons to move 10 seconds ahead or behind the current player position.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-players-img/basics/skip-forward-back-buttons.webp" alt="skip forward back buttons">
+    </figure>  
+    <p>When you use these buttons, an icon is displayed in the player indicating the action you have just performed.</p>
+    <aside class="bcls-aside bcls-aside--information">You also use the following keys:
+      <ul>
+        <li>Use the <strong>J</strong> and <strong>L</strong> keys to move 10 seconds back or forward</li>
+        <li>Use the <strong>arrow left</strong> and <strong>arrow right</strong> keys to move 5 seconds back or forward</li>
+      </ul>
+    </aside>
+  </section>
   
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
