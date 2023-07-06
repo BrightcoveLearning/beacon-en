@@ -3614,9 +3614,9 @@
     <p>Brightcove Beacon web apps now support the following:</p>
     <ul>
       <li>Brightcove Player v7</li>
+      <li>Configurable web player - not limited to the default player</li>
       <li>Brightcove Player plugins - see table below</li>
       <li>Fast forward and rewind buttons</li>
-      <li>Configurable web player - not limited to the default player</li>
     </ul>
 
   </section>
@@ -3624,405 +3624,39 @@
   <section class="bcls-section">
     <h2 id="Brightcove_Player_version">Brightcove Player version</h2>
     <p>While Beacon web apps will continue to support Brightcove Player v6.66.8, we recommend upgrading to Brightcove Player v7. Upgrading will allow you to take advantage of the latest player improvements and functionality.</p>
-   
-    <!-- <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/tool-diagram.webp" alt="tool diagram">
-    </figure> -->
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="Create_Google_Analytics_properties">Configure Google Analytics</h2>
-    <p>In this section of the document you will configure Google Analytics.</p>
-    <!-- <p>In this section of the document you will configure Google Analytics, which includes the following tasks:</p>
-    <ul>
-      <li>Create one Google Analytics property</li>
-      <li>Create a set of custom dimensions</li>
-      <li>Import three Brightcove created dashboard configurations, one each for mobile, web and smart tv.</li>
-    </ul> -->
-    <h3>Create a Google Analytics 4 property</h3>
-    <p>The following steps guide you through creating the <strong>Google Analytics 4</strong> property.</p>
+    <p>To check the player version for your Beacon web app, do the following:</p>
     <ol class="bcls-tasklist">
-      <li>Log in to your Google Analytics account.</li>
-      <li>Click the <strong>Admin (gear)</strong> icon on the bottom-left of the screen.</li>
-      <li>Click <strong>Create Property</strong>.
+      <li>In a web browser, navigate to your Beacon app.</li>
+      <li>Start playback for an episode or movie.</li>
+      <li><p>Right click in the player and select <strong>Player Information</strong>.</p>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-property-button.webp" alt="create property">
+          <img class="bcls-image" src="/assets/images/s-players-img/basics/player-information.webp" alt="player information">
         </figure>
       </li>
-      <li>Enter the <strong>Property details</strong>.
-        <ul>
-          <li><strong>Property name</strong> - Your property name (Example: <samp>Beacon - [[NAME OF YOUR PRODUCT]]</samp>)</li>
-          <li><strong>Reporting time zone</strong> - Select your preferred time zone</li>
-          <li><strong>Currency</strong> - Select a currency value</li>
-        </ul>
+      <li><p>Here you will find the current version of Brightcove Player being used by your app.</p>
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-property-name.webp" alt="property name">
+          <img class="bcls-image" src="/assets/images/s-players-img/basics/player-version.webp" alt="player version">
         </figure>
-      </li>
-      <li>Click <strong>Next</strong>.</li>
-      <li>Fill in your <strong>Business details</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/buisness-details.webp" alt="business details">
-        </figure>
-      </li>
-      <li>Click <strong>Next</strong>.</li>
-      <li>Select<strong> Examine user behavior</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/select-business-objective.webp" alt="business objective">
-        </figure>
-      </li>
-      <li>Click <strong>Create</strong>.</li>
-    </ol>
-
-    <h3 id="Set_up_web_data_stream">Set up web data stream</h3>
-    <p>In this section, you will create a web view for the Google Analytics 4 property created in the previous section.</p>
-    <ol class="bcls-tasklist">
-      <li>Return to Google Analytics and navigate to the <strong>Start collecting data</strong> screen.</li>
-      <li>Select <strong>Web</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/start-collecting-data.webp" alt="start collecting data">
-        </figure>
-      </li>
-      <li>Setup your web data stream. 
-        <ul>
-          <li><strong>Website URL</strong> - Enter your client's domain</li>
-          <li><strong>Stream name</strong> - Enter the value "Web Stream"</li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/setup-web-data.webp" alt="setup web data">
-        </figure>
-      </li>
-      <li>In the Enhanced measurement section, turn off <strong>Video engagement</strong> tracking. 
-        <ol>
-          <li>In the bottom right, click the gear icon
-            <figure class="bcls-figure">
-              <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/enhanced-measurement-section.webp" alt="enhanced measurement section">
-            </figure>
-          </li>
-          <li>Deselect <strong>Video engagement</strong>
-            <figure class="bcls-figure">
-              <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/deselect-engagement.webp" alt="deselect engagement">
-            </figure>
-          </li>   
-        </ol>
-      </li>
-      <li>Click <strong>Create stream</strong>.</li>
-      <li>From the <strong>Stream details</strong>, copy the <strong>Measurement ID</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/copy-measurement-id.webp" alt="copy measurement id">
-        </figure>
-      </li>
-      <li>Save the Measurement ID for later, to deliver to the Brightcove OTT Delivery Team.</li>
-      <li>Exit out of <strong>Web stream details</strong>.</li>
-    </ol>
-
-    <h3 id="Set_up_Smart_TV_data_stream">Set up Smart TV data stream</h3>
-    <p>In this section, you will create a Smart TV data stream.</p>
-    <ol class="bcls-tasklist">
-      <li>Return to Google Analytics and navigate to <strong>Property Settings</strong>.</li>
-      <li>Select <strong>Data Streams</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/data-streams.webp" alt="data streams">
-        </figure>
-      </li>
-      <li>Expand the <strong>Add stream</strong> dropdown menu and select <strong>Web</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/add-stream.webp" alt="add stream">
-        </figure>
-      </li>
-      <li>In the <strong>Notice</strong> dialog window, click <strong>Yes</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/notice-dialog.webp" alt="notice dialog">
-        </figure>
-      </li>
-      <li>Setup your data stream. 
-        <ul>
-          <li><strong>Website URL</strong> - Enter your client's domain</li>
-          <li><strong>Stream name</strong> - Enter the value "Smart TV stream"</li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-stream.webp" alt="smart tv stream">
-        </figure>
-      </li>
-      <li>Click <strong>Create stream</strong>.</li>
-      <li>From the <strong>Stream details</strong>, copy the <strong>Measurement ID</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-measurement-id.webp" alt="copy measurement id">
-        </figure>
-      </li>
-      <li>Save the Measurement ID for later, to deliver to o the Brightcove OTT Delivery Team.</li>
-      <li>While still inside the Smart TV stream details view, at the bottom of the <strong>Events</strong> section, click <strong>Measurement Protocol API secrets</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-api-secrets.webp" alt="api secret">
-        </figure>
-      </li>
-      <li>
-        <p>Next, create the Measurement Protocol API secret.</p>
-        Click <strong>Review terms</strong> and click <strong>I acknowledge</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-review-terms.webp" alt="review terms">
-        </figure>
-      </li>
-      <li>Click <strong>Create</strong>, enter the nickname “Smart TV API key 1”, and click <strong>Create</strong> again.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-create-secret.webp" alt="create api secret">
-        </figure>
-      </li>
-      <li>Copy the <strong>Secret value</strong>, which you will give to the Brightcove OTT Delivery Team.
-        <!-- <p>Copy the <strong>Secret value</strong>, which you will give to either the Brightcove OTT Delivery Team or your Smart TV, AppleTV and roku developers.</p> -->
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/smart-tv-secret-value.webp" alt="api secret value">
-        </figure>
-      </li>
-    </ol>
-
-    <h3 id="Register_custom_definitions">Register custom definitions</h3>
-    <p>In this section, you will create custom definitions.</p>
-    <ol class="bcls-tasklist">
-      <li>Return to Google Analytics and navigate to <strong>Property Settings</strong>.</li>
-      <li>In <strong>Property Settings</strong>, select <strong>Custom definitions</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/custom-definitions.webp" alt="custom definitions">
-        </figure>
-      </li>
-    </ol>
-    <h4>Create event-scoped custom dimensions</h4>
-    <ol class="bcls-tasklist">
-      <li>
-        Click <strong>Create custom dimensions</strong>.</li>
-      <li>Use the table below to create each custom dimension:
-        <ul>
-          <li><strong>Dimension name</strong> - Enter a value from the table below</li>
-          <li><strong>Scope</strong> - Leave value as <strong>Event</strong></li>
-          <li><strong>Description</strong> - Leave field empty</li>
-          <li><strong>Event parameter</strong> - Select the value from the table below corresponding with the Dimension name</li>
-        </ul>
-        <p>Here's an example for "Streaming platform":</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/new-custom-dimension.webp" alt="new custom dimension">
-        </figure>
-        <p>The following table shows custom dimension name and associated event parameter.</p>
-    <table class="bcls-table">
-      <thead class="bcls-table__head">
-        <tr>
-          <th>Dimension name</th>
-          <th>Event parameter</th>
-        </tr>
-      </thead>
-      <tbody class="bcls-table__body">
-        <tr>
-          <td>Streaming platform</td>
-          <td>streaming_platform</td>
-        </tr>
-        <tr>
-          <td>Episode number</td>
-          <td>episode_number</td>
-        </tr>
-        <tr>
-          <td>Season number</td>
-          <td>season_number</td>
-        </tr>
-        <tr>
-          <td>Episode title</td>
-          <td>episode_title</td>
-        </tr>
-        <tr>
-          <td>Program title</td>
-          <td>program_title</td>
-        </tr>
-        <tr>
-          <td>Genre</td>
-          <td>genre</td>
-        </tr>
-        <tr>
-          <td>Production year</td>
-          <td>production_year</td>
-        </tr>
-        <tr>
-          <td>Country origin</td>
-          <td>country_origin</td>
-        </tr>
-        <tr>
-          <td>Plan name</td>
-          <td>plan_name</td>
-        </tr>
-        <tr>
-          <td>Content type</td>
-          <td>content_type</td>
-        </tr>
-        <tr>
-          <td>Item title</td>
-          <td>item_title</td>
-        </tr>
-        <tr>
-          <td>Payment gateway</td>
-          <td>payment_gateway</td>
-        </tr>
-      </tbody>
-    </table>
-      </li>
-      <li>Click <strong>Save</strong>.</li>
-    </ol>
-
-    <h4>Create user-scoped custom dimension</h4>
-    <p>Follow the same steps as above to create a custom definition, but create one more dimension that is User scoped.</p>
-    <ol class="bcls-tasklist">
-      <li>Click <strong>Create custom dimensions</strong>.</li>
-      <li>Create a user-scoped custom dimension:
-        <ul>
-          <li><strong>Dimension name</strong> - Enter "User type"</li>
-          <li><strong>Scope</strong> - Select <strong>User</strong></li>
-          <li><strong>Description</strong> - Leave field empty</li>
-          <li><strong>User property</strong> - Select <strong>user_type</strong></li>  
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/user-custom-dimension.webp" alt="user custom dimension">
-        </figure>
-      </li>
-      <li>Click <strong>Save</strong>.</li>
-    </ol>
-
-    <h4>Create event-scoped custom metric</h4>
-    <p>Next, you'll create a custom metric for the rating stars.</p>
-    <ol class="bcls-tasklist">
-      <li>
-        From the <strong>Custom definitions</strong> screen, do the following:
-        <ul>
-          <li>Click the <strong>Custom metrics</strong> header</li>
-          <li>Click <strong>Create custom metrics</strong></li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/create-custom-metrics.webp" alt="create custom metrics">
-        </figure>
-      </li>
-      <li>
-        Add the following values:
-        <ul>
-          <li><strong>Metric name</strong> - Enter "Stars"</li>
-          <li><strong>Scope</strong> - Select <strong>Event</strong></li>
-          <li><strong>Description</strong> - Leave field empty</li>
-          <li><strong>Event parameter</strong> - Select <strong>stars</strong></li>
-          <li><strong>Unit of measurement</strong> - Select <strong>Standard</strong></li>
-        </ul>
-        <p>Here's an example for "Streaming platform":</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/new-custom-metric.webp" alt="new custom metric">
-        </figure>
-        
-      </li>
-      <li>Click <strong>Save</strong>.</li>
-    </ol>
-
-    <h3 id="Increase_data_retention_window">Increase data retention window</h3>
-    <p>Next you will increase the data retention window. With Google Analytics 4, the default data retention is two months of historical data for standard properties. If you do not change the data retention, you will lose historical data earlier than two months back. </p>
-    <ol class="bcls-tasklist">
-      <li>Return to Google Analytics and navigate to <strong>Property Settings</strong>.</li>
-      <li>In <strong>Property Settings</strong>, under <strong>Data settings</strong>, select <strong>Data Retention</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/data-retention.webp" alt="data retention">
-        </figure>
-      </li>
-      <li>Change <strong>Event data retention</strong> from 2 months to 14 months.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/change-data-retention.webp" alt="change data retention">
-        </figure>
-      </li>
-      <li>Click <strong>Save</strong>.</li>
-      <li>
-        <aside class="bcls-aside bcls-aside--information">IMPORTANT: Wait until your app has been updated with these new configurations.</aside>
       </li>
     </ol>
   </section>
 
   <section class="bcls-section">
-    <h2 id="Create_app_streams">Create app streams</h2>
-    <p>Next, you will work with the Brightcove OTT Delivery Team to create your app streams.</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Ask the Brightcove OTT Delivery Team to link your Firebase project with your new GA4 property.</li>
-      <li>Brightcove may need access to your Google Analytics account. To grant access, do the following:</li>
-      <li>Return to Google Analytics and navigate to <strong>Admin</strong>.</li>
-      <li>
-        <p>Select <strong>Account Access Management</strong>.</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/account-access-mgt.webp" alt="account access management">
-        </figure>
-      </li>
-      <li>
-        <p>Add email as <strong>Administrator</strong>.</p>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga4/email-administrator.webp" alt="email as administrator">
-        </figure>
-      </li>
-    </ol>
-  </section>
-
-  <!-- <section class="bcls-section">
-    <h2 id="section-name">Configure Firebase</h2>
-    <aside class="bcls-aside bcls-aside--tip">The steps in this section are only necessary if you have Android and/or iOS apps. Also, if you are completely unfamiliar with Google Firebase, an introductory 2 1/2 minute marketing video is available form <a href="https://firebase.google.com/">Firebase's home page</a>.</aside>
-    <p></p>
-    <ol class="bcls-tasklist-restart">
-      <li>Browse to the <a href="https://console.firebase.google.com/?pli=1">Firebase Getting Started page</a>.</li>
-      <li>Click <strong>Create a project</strong>.</li>
-      <li>Enter a project name.</li>
-      <li>Accept the terms and click <strong>Continue</strong>.</li>
-      <li>Accept the default of enabling Google Analytics for the project, and click <strong>Continue</strong>.</li>
-      <li>Choose or supply a Google Analytics account.</li>
-      <li>Click <strong>Create project</strong>.</li>
-      <li>Be sure you are returned to the <strong>Project Overview</strong> page. Also note the iOS and Android create app buttons (the red arrows indicate their positions).
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/fb-project-overview.png" alt="project overview">
-        </figure>
-      </li>
-      <li>If you are using an iOS app, click the iOS app button and complete the five steps to add Firebase to your iOS app. To complete the steps you will need an iOS developer to assist. The following Google document provides details on the steps:
-        <ul>
-          <li><a href="https://firebase.google.com/docs/ios/setup">Add Firebase to your iOS project</a>.</li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/fb-add-ios-app.png" alt="add iOS">
-        </figure>
-      </li>
-      <li>If you are using an Android app, click the Android app button and complete the four steps to add Firebase to your Android app. To complete the steps you will need an Android developer to assist. The following Google document provides details on the steps:
-        <ul>
-          <li><a href="https://firebase.google.com/docs/android/setup">Add Firebase to your Android project</a>.</li>
-        </ul>
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/fb-add-android-app.png" alt="add android">
-        </figure>
-      </li>
-    </ol>
-    <p>After adding the Goggle Tag Manager and Firebase files, as detailed in the last two sections of this document, you should be able to check for events in Firebase itself. In addition, hits will have been sent to Google Analytics. Note that Google Tag Manager is acting as a middle man here, sending that information to Google Analytics based on data that is pushed to Firebase.</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/fb-test-install.png" alt="firebase results">
-    </figure>
-  </section> -->
-
-  <!-- <section class="bcls-section">
-    <h2 id="Install_templates_into_Google_Looker_Studio">Install templates into Google Looker Studio</h2>
-    <p>Brightcove supplies Google Looker Studio prebuilt report templates, one each for web, mobile and smart tv. In the <a href="#Obtain_the_templates_and_configuration_files">Obtain templates and configuration files</a> section earlier in this document you requested files/URLs from your onboarding manager. Three of the URLs are as follows:</p>
+    <h2 id="Configurable_web_player">Configurable web player</h2>
+    <p>You are no longer limited to just using the default player in your account for Beacon web apps. You can create one or more configurable players in your account. Contact the OTT Delivery Team to associate a specific player ID with your app.</p>
+    <p>Here is an example of how you can create multiple players for use across one app:</p>
     <ul>
-      <li>WEB: https://datastudio.google.com/reporting/43b8362b-785a-487d-b681-39dde640f029</li>
-      <li>Mobile: https://datastudio.google.com/reporting/2ca9572d-e50e-4931-858a-e67dc99f62f9</li>
-      <li>STV: https://datastudio.google.com/reporting/bfa8fad2-b4f6-4bfc-aee2-33742bf600a5</li>
+      <li>One player for live previews in beacon</li>
+      <li>One player for live players in beacon</li>
+      <li>One player for VOD players in beacon</li>
     </ul>
-    <p>To use the templates, perform the following tasks:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Note the use for the report, mobile, web or smart tv, then click on the URL.</li>
-      <li>In a new browser tab, be sure you see the following:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ga-dashboard-config-import.png" alt="import configuration">
-        </figure>
-      </li>
-      <li>From the <strong>Select a view</strong> drop down, choose the matching property, mobile (iOS and Android), web or smart tv.</li>
-      <li>Change the name of the configuration if you choose.</li>
-      <li>Click <strong>Create</strong>.</li>
-      <li>The imported configuration will open. Examine the data to be sure it seems valid. An example is shown here:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-analytics-img/third-party/self-config-ga/ds-sample-report.png" alt="example report">
-        </figure>
-      </li>
-    </ol>
-    <p>That's it! Congratulations you have configured Google Analytics for Brightcove Beacon.</p>
-  </section> -->
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-players-img/basics/multiple-players.webp" alt="multiple players">
+    </figure>
+    
+  </section>
+
+  
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
   
