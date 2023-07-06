@@ -3695,7 +3695,6 @@
       <li>The <strong>N/A</strong> signifies <em>Not Applicable</em>. For instance, it just does not make sense to have thumbnail scrubbing on a small preview player.</li>
       <li>The <strong>L/A</strong> signifies <em>Limited Availability</em>. This means the plugin is functional, with some reservations.</li>
     </ul>
-
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -3820,7 +3819,78 @@
       <li>SSAI supported, but does not report beacons.</li>
       <li>Currently, the IMA3 plugin is only supported for Brightcove Player v6. Support for Player v7 coming soon.</li>
     </ol>
+
+    <h3 id="Plugin_support_table">Plugin support table</h3>
+    <p>Here is additional information about the plugins supported by Brightcove Player and the Beacon web apps:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Plugin name</th>
+          <th>Supported</th>
+          <th>Notes</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><strong>Airplay</strong></td>
+          <td>Yes</td>
+          <td></td>
+          <td><a href="https://player.support.brightcove.com/plugins/airplay-plugin.html">Brightcove AirPlay Plugin</a></td>
+        </tr>
+        <tr>
+          <td><strong>DRM</strong></td>
+          <td>Yes</td>
+          <td>Airplay with DRM only works on Safari</td>
+          <td><a href="https://player.support.brightcove.com/plugins/configuring-brightcove-player-drm.html">Configuring the Brightcove Player for DRM</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Chromecast</strong></td>
+          <td>Yes</td>
+          <td>In Safari, the icon is not displayed</td>
+          <td><a href="https://player.support.brightcove.com/plugins/chromecast-plugin-brightcove-player.html">Chromecast Plugin for Brightcove Player</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Tag Manager</strong></td>
+          <td>Yes</td>
+          <td></td>
+          <td><a href="https://player.support.brightcove.com/plugins/google-tag-manager-plugin-brightcove-player.html">BGoogle Tag Manager Plugin for Brightcove Player</a></td>
+        </tr>
+        <tr>
+          <td><strong>IMA3</strong></td>
+          <td>Supported for Player v6 - Player v7 coming soon</td>
+          <td>When manually advancing to the next video in a playlist, the postroll from the previous video, if present, may play over the new video content</td>
+          <td><a href="https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html">Advertising with the IMA3 Plugin</a></td>
+        </tr>
+        <tr>
+          <td><strong>SSAI</strong></td>
+          <td>Yes</td>
+          <td>Safari 10/11 sometimes shows the last frame of the postroll at the end of the video</td>
+          <td><a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing Server-Side Ads with Brightcove Player</a></td>
+        </tr>
+        <tr>
+          <td><strong>Interactivity</strong></td>
+          <td>Yes</td>
+          <td>
+            <p>Features supported:</p>
+            <ul>
+              <li>Add chapter menu</li>
+              <li>Chapter markers</li>
+              <li>Add quiz</li>
+              <li>Add text overlay link</li>
+              <li>Add transparent overlay link</li>
+              <li>Add image overlay link</li>
+              <li>Add a draw</li>
+            </ul>
+          </td>
+          <td><a href="https://studio.support.brightcove.com/interactivity/index.html">Interactivity module</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+
     <h4>Automatically enabled plugins</h4>
+    <p>Some plugins are automatically enabled for Player E. Others you must manually enable.</p>
     <p>By default the following plugins are automatically enabled:</p>
     <ul>
       <li>Analytics</li>
@@ -3828,14 +3898,14 @@
       <li>SSAI</li>
       <li>Chromecast</li>
     </ul>
-    <h3 id="Enabling_plugins">Enabling plugins</h3>
+    <!-- <h3 id="Enabling_plugins">Enabling plugins</h3>
     <p>Some plugins are automatically enabled for Player E, as listed just above. Others you must manually enable. The following lists the plugin and the document that provides implementation instructions.</p>
     <aside class="bcls-aside bcls-aside--information language-editable">Note that all document links below take you to the <strong>Brightcove Player documentation</strong> website.</aside>
     <ul>
       <li>IMA3 - <a href="/players/general/configuring-player-advertising-using-players-module.html">Configuring Player Advertising using the Players Module</a></li>
       <li>Thumbnail Scrubbing - <a href="/players/appearance/configuring-player-controls.html">Configuring Player Controls</a></li>
       <li>Google Tag Manager - <a href="https://player.support.brightcove.com/plugins/google-tag-manager-plugin-brightcove-player.html">Google Tag Manager Plugin for Brightcove Player</a></li>
-    </ul>
+    </ul> -->
   </section>
   
 </article>
