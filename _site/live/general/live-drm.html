@@ -3637,6 +3637,7 @@
         <li id="note1-1"><sup><strong>[1-1]</strong></sup> Widevine can be applied to DASH outputs instead of HLS. To make Widevine with DASH the default requires an account-level override. Contact Support if you want this override applied to your account. Using the <a href="https://apis.support.brightcove.com/live-api/guides/live-drm-live-api.html#create_live_job_example">Live API</a> you can also specify <code translate="No">widevine:hls</code> or <code translate="No">widevine:dash</code> for particular jobs, regardless of the default for your account. <strong><em>Note that depending on how your account/job is configured, the API response (like the one shown below) will include either <code translate="No">widevine:hls</code> or <code translate="No">widevine:dash</code> outputs, but not both.</em></strong></li>
       </ul>
     </aside>
+    <aside class="bcls-aside bcls-aside--information">Token authentication is not supported with live streams when using BYO CDN with live redundancy, DRM, or SSAI.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="Playback_technologies_used">Playback technologies used</h2>
