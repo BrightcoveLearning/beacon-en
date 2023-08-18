@@ -3707,6 +3707,9 @@
     <p>The Analytics & Campaign modules are two separate systems and it should not be expected that the view events are 1:1, as each captures separate use cases.</p>
     <p>The Campaign lead form requires a <code>video_view</code> event to have triggered before it can display a lead form. These <code>video_view</code> events trigger when a user initiates playback, which is done by having the user manually click the Play button. As a result, even though it may not look like any content has played back, a <code>video_view</code> has been registered and will appear for your video in the Analytics module.</p>
     <p>If you are seeing a higher number of video views in the Analytics module compared to view events in the Campaign module, the most likely reason is that a user was presented your lead form, but did not fill it out to continue through with playback.</p>
+    <h5 id="27">27. Why does iframe tag only report "Direct" on Analytics Traffic reports?</h5>
+    <p>Traffic source is determined from the HTTP Referrer header. When using the iframe tag, HTTP referrer value is "players.brightcove.net/...", which is classified as 'Direct' on the Analytics module Traffic source data.</p>
+    <p>Please use the in-page video tag to get the correct traffic source type.</p>
   </section>
 </article>
 

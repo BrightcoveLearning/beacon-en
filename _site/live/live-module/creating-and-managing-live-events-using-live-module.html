@@ -4062,6 +4062,11 @@
       <li><strong>RTMP Output Disconnection</strong> - Disconnections encountered for the RTMP output. This is an indicator of connection problems between the RTMP server and the destination server.</li>
       <li><strong>RTMP Output Connection</strong> - Reconnections for the RTMP output stream. This occurs typically after being disconnected from the destination server.</li>
     </ul>
+      <h2 id="monitor">Monitoring the stream</h2>
+      <p>The <strong>Monitor</strong> section displays the Output and Input Drift graphs. Click the <strong>Retrieve updated data and graphs</strong> link to view the information. Output Drift measures the healthiness of the stream. Output Drift is defined as the difference between the wall clock vs. stream timestamps (TS). In live streaming, ideally, the wall clock should run at the same pace as stream TS, if the stream TS arrives slower than real time this means that there is a problem (bottleneck) in the system.</p>
+      <p>Input Drift measures the health of the input stream and is defined as the difference from the input timestamp and the real time clock.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-live-img/live-module/monitor.webp" /></figure>
+    </section>
   </section>
   <section class="bcls-section">
     <h2 id="duplicate">Duplicating an event</h2>
