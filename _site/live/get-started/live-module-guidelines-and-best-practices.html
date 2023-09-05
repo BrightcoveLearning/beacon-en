@@ -3679,7 +3679,7 @@
       <li>Protocol: <code translate="No">rtmp</code>, <code translate="No">rtp</code>, <code translate="No">rtp-fec</code>, or <code translate="No">srt</code> (all except <code translate="No">rtmp</code> are for MPEG2-TS inputs)<sup><strong><a href="#note1-1">[1-1]</a></strong></sup></li>
       <li>Resolution: Maximum 1920x1080</li>
       <li>Maximum 30 fps, which is typical. Brightcove supports up to 60 fps, but you will need to <a href="https://supportportal.brightcove.com/">Contact Brightcove Support</a> to have the limit increased. When using 60fps, Brightcove recommends increasing the bitrate to achieve the desired visual quality for the content and a constant frame rate.</li>
-      <li>Less than 20 Mbps</li>
+      <li>The max input bitrate that can ingest is set at 30Mbps. And the max output bitrate is 20Mbps.</li>
       <li>Constant Bitrate (CBR) greatly reduces the chance of problems</li>
       <li>Video codec must be H.264</li>
       <li>Slices: If your encoder has this option, set it to <code translate="no">1</code></li>
@@ -3821,6 +3821,11 @@
       <li>Minimum input bandwidth: 2.5 mbps</li>
       <li>Maximum input bandwidth: 20 mbps</li>
     </ul>
+    <p>Input limit spikes</p>
+    <ul>
+      <li>Maximum input bitrate: 30Mbps </li>
+      <li>Maximum output bitrate: 20Mbps</li>
+    </ul>
     <aside class="bcls-aside bcls-aside--information">Note: For the best user experience, match your output renditions to the quality of your encoder stream.</aside>
     <h3>Determining encoder capabilities</h3>
     <p>Understanding the capabilities of the software and hardware used to encode the live stream and send it to the Live module is also important. There may be plenty of bitrate to send a high-quality, 1080p input stream, but the hardware also needs to be able to encode in faster-than-realtime speeds. Some encoding tools display information about the total CPU usage and bandwidth being used. For example, Telestream Wirecast will display the output statistics at the bottom of the Wirecast window.</p>
@@ -3865,6 +3870,7 @@
     </ul>
     <ul>
       <li>Make the stream "almost CBR"" - with <code>max_bitrate</code> = 1.1 * target_bitrate.</li>
+      <aside class="bcls-aside bcls-aside--information language-editable">Note: This would work for most cases as content complexity increases. Increasing the factor from 1.1 to a higher value will help. For complex sports content, we recommend 2 * target_bitrate.</aside>
       <li>Use strict HRD-compliant rate control mode, if available.</li>
     </ul>
   </section>
@@ -4022,7 +4028,7 @@
         </tr>
         <tr>
           <td>Bitrate</td>
-          <td>Less than or equal to the input bitrate (for best results, highest output bitrate should be half of the input bitrate)</td>
+          <td>The current max output bitrate supported is 20Mbps</td>
         </tr>
         <tr>
           <td>Keyframe rate</td>
