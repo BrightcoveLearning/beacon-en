@@ -3613,6 +3613,10 @@
     <h2 id="Apple_Consent_Compliance">Apple Consent Compliance</h2>
     <p>Apple requires that iOS/tvOS apps must have a delete button to remove a viewer's account. See Apple's App Store Review Guidelines document, <a href="https://developer.apple.com/app-store/review/guidelines/#5.1.1">Legal - Data Collection and Storage</a> section for full details.</p>
   </section>
+  <!-- <section class="bcls-section">
+    <h2 id="Google_Play_Store_Account_Deletion_compliance">Google Play Store Account Deletion Compliance</h2>
+    <p>Android allows you to delete your user account if you no longer need it. See  <a href="https://support.google.com/googleplay/android-developer/answer/13327111?hl=en">Google Play’s App Account Deletion Requirements</a> section for full details.  You must make sure to cancel your current subscription on all platforms. To learn more about how to delete an account, see <a href="#Google_Play_Account_Deletion_Implementation">Google Play Account Deletion Implementation</a>. </p>
+  </section> -->
 
   <section class="bcls-section">
     <h2 id="Brightcove_Beacon_implementation">Brightcove Beacon implementation</h2>
@@ -3630,8 +3634,13 @@
       <li>Notifies the user the account is deleted, via a message in an app alert, when all conditions are met and deletion processes completed.</li>
     </ul>
     <p>Note that if a viewer uses an OIDC login and logs in after the account has been removed, an account with those credentials will be created, but it is a new, separate account and no previous data associated with that account is retrieved.</p>
+    <p>
+    <!-- <h3 id="Google_Play_Account_Deletion_Implementation">Google Play Account Deletion Implementation</h3></p>
+    <p>In the app's <strong>Settings -> My Account</strong> options a <strong>Delete Account</strong> option is present</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-publishing-apps-img/app-behavior/account-deletion/account-delete.webp" alt="account delete">
+    </figure> -->
   </section>
-
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
   
