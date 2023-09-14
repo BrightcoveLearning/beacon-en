@@ -3825,6 +3825,36 @@
     <h2 id="scheduled" class="BCL_conceptTitle">Viewing scheduled reports</h2>
     <p>To view all recurring reports, click <strong>Scheduled Reports</strong> in the left navigation. See <a href="/analytics/reports/managing-scheduled-reports.html">Managing Scheduled Reports</a> for more information on working with scheduled reports.</p>
   </section>
+  <section class="bcls-section">
+    <h2 id="limitations" class="BCL_conceptTitle">Limitations</h2>
+    <ul>
+      <li>Every user in the Enterprise Account is limited to 20 recurring reports.</li>
+      <li>Every user in a Professional Account is limited to 5 recurring reports.</li>
+      <li>Reports exceeding 1M rows tend to fail depending on the number of dimensions it has to be aggregated on. Especially when: 
+      <ul>
+        <li>Including Data Groups Fields: 
+        <ul>
+          <li>Video Name</li>
+          <li>Video Duration</li>
+          <li>Reference ID</li>
+          <li>Created Date</li>
+          <li>Published Date</li>
+          <li>Updated Date</li>
+          <li>Scheduled Start Date</li>
+          <li>Scheduled End Date</li>
+          <li>Video Tags</li>
+        </ul>
+      </li>
+      <li>And/Or Filtering by:
+        <ul>
+          <li>Video Tag</li>
+          <li>Custom Fields</li>
+        </ul>
+      </li>
+      </ul>
+    </li>
+    </ul>
+  </section>
 </article>
 
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
