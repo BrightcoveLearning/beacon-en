@@ -3667,7 +3667,33 @@
   </pre>
     </section>
     <section class="bcls-section">
+
       <h2 id="dnt">Do not track</h2>
+      <p><strong>Do Not Track</strong> is a privacy setting adopted by major browsers to prevent individual users from tracking information via signals or third-party cookies.</p>
+
+      <p>In the case of Campaign, this would prevent any cookies from being dropped, which your browser may not already have.</p>
+
+      <p>You can prevent the Campaign plugin from working in one of three ways:</p>
+
+      <ol>
+        <li><p>Through your browser settings. See each process for your specific browser <a href="https://allaboutdnt.com/#adjust-settings">here.</a></p></li>
+        <li><p>By using the <a href="#ddnt">data-do-not-track</a> embed code parameter.</p></li>
+        <li>Using the <code>data-bc-disable-map-plugin="1"</code> embed code parameter.</li>
+      </ol>
+      <br>
+        <aside class="bcls-aside bcls-aside--information"><strong>Note</strong> your browser may have already had a <code>_bc_uuid</code> cookie dropped from a previous visit to a Campaign Player. This is because these features <strong>will not delete an existing cookie.</strong></aside>
+        <br>
+
+        <h3>Delete an existing <em>_bc_uuid</em> cookie</h3>
+
+        <p>Enclose this endpoint <a href="https://map.brightcove.com/lead/clear">https://map.brightcove.com/lead/clear</a> in an &#60;img&#62; tag on a page where you would like to delete the cookie. as follows:</p>
+
+        <p><code>&#60;img src="https://map.brightcove.com/lead/clear" /&#62;</code></p>
+
+        <p>After loading a Campaign Player that has its tracking disabled, the <strong>_bc_uuid</strong> cookie should not be dropped.</p>
+        <br>
+
+      <h3 id="ddnt">data-do-not-track</h3>
       <p>Campaign-enabled players abide&nbsp;by a viewer’s browser setting regarding Do Not Track (DNT) and will not use or set its normal cookie should it see that Do Not Track is enabled. The player plugin can also be instructed to never track should a Video Cloud customer wish to turn it off for all their viewers or on a user by user basis. This is done by using the in-page embed code and setting the <code translate="No">data-do-not-track </code> to a value of 1.</p>
       <pre>
   &lt;video-js data-video-id="9240259371001"
