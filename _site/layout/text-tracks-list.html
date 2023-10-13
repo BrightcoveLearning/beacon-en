@@ -3576,11 +3576,7 @@
             <li class="breadcrumb-item"><a class="theme-link" href="/">Home</a></li>
             
             
-            <li class="breadcrumb-item"><a class="theme-link" href="/publishing-apps/">Publishing apps</a></li>
-            
-            
-            
-            <li class="breadcrumb-item"><a class="theme-link" href="/publishing-apps/app-behavior/">App behavior</a></li>
+            <li class="breadcrumb-item"><a class="theme-link" href="/layout/">Layout</a></li>
             
             
             
@@ -3619,41 +3615,73 @@
     <aside class="bcls-aside bcls-aside--information">Note: This labeling system is applicable to Player A and Player E.</aside>
   </section>
   
+  <section class="bcls-section">
+    <h2 id="apply-labels">Apply Labels for Beacon Apps</h2>
+    <p>Once the text tracks have been created, they can be uploaded and hosted by Brightcove or reside at an internet accessible URL. For more information see <a href="https://beacon-help.support.brightcove.com/media/captions/adding-captions-videos-using-media-module.html">here</a>.</p>
     
-    
+    <p>To configure the text track Labels on Video Cloud, follow these steps:</p>
+    <ol class="bcls-tasklist-restart">
+
+      <li>Open the <strong>Media</strong> module.</li>
  
- <section class="bcls-section">
-    <h2 id="handling-empty-labels">Handling Labels</h2>
-    <p><strong>Handling Empty Labels:</strong> If the label property is empty, the platform displays the locally available translation for the language code associated with the text track.</p>
-
-    <p><strong>Managing Multiple Tracks without Labels:</strong> In cases where multiple text tracks exist for the same language (e.g., en-US, en-GB) and none of them have labels, the following format is used for the text track title:</p>
-
-    <ol>
-        <li><strong>Language Variation:</strong> Include the language variation in the title (e.g., "English (United States)", "English (British)").</li>
-        <li><p><strong>Text Track Type:</strong> Also, include the type of text track in the title (e.g., "Captions (en)", "Subtitle (en-GB)").
-        </p>
-        <div class="row">
-          <div class="col-12 col-md-6">
-            <figure class="bcls-figure">
-              <img class="bcls-image" src="/assets/images/s-publishing-apps-img/text-track-list/text-track-list1.webp" alt="text track list1">
-            </figure>
-          </div>
-          <div class="col-12 col-md-6">
-            <figure class="bcls-figure">
-              <img class="bcls-image" src="/assets/images/s-publishing-apps-img/text-track-list/text-track-list2.webp" alt="text track list2">
-            </figure>
-          </div>
-        </div>
+      <li>Click the video tittle link.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img/text-track-list/step1-select-video.webp" alt="select video">
+        </figure>
       </li>
-    </ol>
-
+      <li>Click the <strong>Tracks</strong> section.
+        
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img/text-track-list/step2-tracks-section.webp" alt="Web">
+        </figure>
+      </li>
+      <li>In the tracks list click options and then click <strong>Edit track details</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img/text-track-list/step3-options-text-track.webp" alt="Web">
+        </figure>
+      </li>
+      <li>Enter the appropriate <strong>Label</strong> for the caption file. The label is displayed inside player and allows the viewer to select a language. If no label is supplied, the value specified for <strong>language</strong> is displayed.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-layout-img/text-track-list/step5-change-label.webp" alt="select the appropiate label">
+        </figure></li>
+      <li>Click <span class="button-blue">Save</span></li>
+  </section>  
+    
+ <section class="bcls-section">
+    <h2 id="platforms-examples">Platforms Examples</h2>
+    <h4>Studio</h4>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/text-track-list/studio-example.webp" alt="Studio">
+    </figure>
+    <br>
+    <h4>Andoid Phone</h4>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/text-track-list/android-example1.webp" alt="Android Phone settings">
+    </figure>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/text-track-list/android-example2.webp" alt="Android Phone Captions">
+    </figure>
+    <br>
+    <h4>Apple TV</h4>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/text-track-list/ios-example.webp" alt="Apple TV">
+    </figure>
+    <br>
+    <h4>Web</h4>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-layout-img/text-track-list/web-example.webp" alt="Web">
+    </figure>
+    
+</section>
+<section class="bcls-section">
+  <h2 id="related-topics">Related topics</h2>
     <details>
-      <summary>Related topics</summary>
+      <summary>More Info</summary>
       <p><a href="https://beacon-help.support.brightcove.com/media/captions/overview-adding-captions-video.html">Adding Captions to a Video</a>.</p>
       <p><a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Dynamic Ingest API: Ingesting WebVTT Files</a>.</p>
       <p><a href="https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-add-webvtt-captions-text-tracks.html">CMS API: Add WebVTT Captions</a>.</p>
-    </details>
 </section>
+</details>
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
   

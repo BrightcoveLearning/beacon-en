@@ -225,6 +225,8 @@
       url: /layout/e-live-features.html
     - name: Player E VOD Features
       url: /layout/e-vod-features.html
+      # name: 'Text Tracks List'
+      # url: '/layout/text-tracks-list.html'
     - name: Refreshing the App Cache
       url: /layout/clearing-cache.html
     - name: Using Content Layouts
@@ -548,8 +550,6 @@
           url: '/publishing-apps/app-behavior/account-deletion.html'
         - name: 'Parental Controls'
           url: '/publishing-apps/app-behavior/parental-controls.html'
-        # - name: 'Text Tracks List'
-        #   url: '/publishing-apps/app-behavior/text-tracks-list.html'
         - name: 'Skip Intros and Credits'
           url: '/publishing-apps/app-behavior/skip-intro-credits.html'
     - name: 'Android'
