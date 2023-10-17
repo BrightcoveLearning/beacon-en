@@ -3829,7 +3829,7 @@ dd { padding-bottom: 10px; }
   <dt id="play_rate">Play Rate</dt>
   <dd>Play rate is the number of times a video was played back (video_view) divided by the number of opportunities for playback (video_impression).</dd>
   <dt id="play_request">Play Request</dt>
-  <dd>Describes the action of requesting playback either manually from the viewer by clicking play or automatically by an autoplay mechanism. Player V7 only sends a <code translate="No">play_request</code> once per session per media stream.</dd>
+  <dd>Describes the action of requesting playback either manually from the viewer by clicking play or automatically by an autoplay mechanism. Player V7 only sends a <code translate="No">play_request</code> once per session per media stream. For player 6 or older, we could receive more than one <code translate="No">play_request</code> per stream when resuming playback from pause or replaying.</dd>
   <dt id="player">Player</dt>
   <dd>Video Cloud player ID.</dd>
   <dt id="player_load">Player Load</dt>
