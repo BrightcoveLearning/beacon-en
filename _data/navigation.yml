@@ -1203,8 +1203,8 @@
     - name: 'Notifications'
       url: '/general/notifications/index.html'
       docs:
-        - name: Deep Linking
-          url: /general/notifications/deep-linking.html
+        - name: Deep Linking For Mobile Apps
+          url: /general/notifications/app-deep-linking.html
         - name: Sending App Notifications
           url: /general/notifications/sending-app-notifications.html
 - section:
