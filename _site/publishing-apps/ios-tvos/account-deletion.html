@@ -3611,27 +3611,44 @@
 
   <section class="bcls-section">
     <h2 id="Apple_Consent_Compliance">Apple Consent Compliance</h2>
-    <p>Apple requires that iOS/tvOS apps must have a delete button to remove a viewer's account. See Apple's App Store Review Guidelines document, <a href="https://developer.apple.com/app-store/review/guidelines/#5.1.1">Legal - Data Collection and Storage</a> section for full details.</p>
+    <p>Apple requires that apps submitted to the App Store that support account creation must also let users initiate deletion of their account within the app. See Apple's App Store Review Guidelines document, <a href="https://developer.apple.com/app-store/review/guidelines/#5.1.1">Legal - Data Collection and Storage</a> section for full details.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Google_Play_Account_Deletion_compliance">Google Play Account Deletion Compliance</h2>
+    <p>Android allows you to delete your user account if you no longer need it. See  <a href="https://support.google.com/googleplay/android-developer/answer/13316080?sjid=9734224678171794271-EU">Preview: User Data</a> section for full details. To learn more about how to delete an account, see the section <a href="#Google_Play_Account_Deletion">Google Play Account Deletion</a>. </p>
   </section>
 
   <section class="bcls-section">
-    <h2 id="Brightcove_Beacon_implementation">Brightcove Beacon implementation</h2>
+    <h2 id="Beacon_Apps_implementation"> Beacon Apps implementation</h2>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note: the Beacon Apps implementation applies to all mobile/tablet and STV platforms with similar behavior.</aside>
     <p>In the app's <strong>Settings -> My Account</strong> options a <strong>Delete Account</strong> option is present</p>
     <figure class="bcls-figure">
       <img class="bcls-image" src="/assets/images/s-publishing-apps-img/app-behavior/account-deletion/apple-account-deletion.png" alt="account deletion option">
     </figure>
-    <p>When the viewer clicks the button, Beacon performs the following tasks:</p>
+    <p>When the viewer clicks the button, the beacon Apps performs the following tasks:</p>
     <ul>
       <li>Confirms the viewer wishes to delete the account.</li>
       <li>Alerts the viewer that they must cancel all active subscriptions with other platform's stores before Beacon account deletion can occur.</li>
-      <li>Beacon's backend verifies all of the viewer's active subscriptions with other platform's stores that there are no active subscriptions.</li>
-      <li>Removal of viewer information from Stripe and Evergent (name, contact info, payment data)</li>
-      <li>Beacon's user management service deletes the account and all associated data associated with that account, like preferences, favorites, recently watched, etc.</li>
+      <li>Beacon backend verifies all of the viewer's active subscriptions with other platform's stores that there are no active subscriptions.</li>
+      <li>Removal of viewer information from Stripe and other connected payment gateways, excluding native stores.</li>
+      <li>Beacon user management service deletes the account and all associated data associated with that account, like preferences, favorites, recently watched, etc.</li>
       <li>Notifies the user the account is deleted, via a message in an app alert, when all conditions are met and deletion processes completed.</li>
     </ul>
-    <p>Note that if a viewer uses an OIDC login and logs in after the account has been removed, an account with those credentials will be created, but it is a new, separate account and no previous data associated with that account is retrieved.</p>
-  </section>
+    <p>Note that if a viewer uses an OIDC login, an additional message appears that you must contact your provider to do the deletions. Also, when you delete your account, an account with those credentials will be created. You can keep signing in, but all the information (bookmarks, favorites, recently watched) will be deleted. </p>
 
+    <p>
+    <h3 id="Google_Play_Account_Deletion">Google Play Account Deletion </h3></p>
+    <p>In the app's <strong>Settings -> My Account</strong> options a <strong>Delete Account</strong> option is present</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-publishing-apps-img/app-behavior/account-deletion/account-delete.webp" alt="account delete">
+      <p>
+      <aside class="bcls-aside bcls-aside--information language-editable">Notes: 
+        <ul>
+            <li>Before you click Delete Account, you have to be sure no subscription is active. </li>
+        </ul> 
+       </aside></p>
+    </figure>
+  </section>
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
   
@@ -3660,7 +3677,7 @@
         <div class="col-6 col-md">
           <h5 class="h5-text">Training</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">Online courses</a></li>
+            <!-- <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">Online courses</a></li> -->
             <li><a class="a-text" href="https://academy.brightcove.com/">Brightcove Academy</a></li>
           </ul>
         </div>
