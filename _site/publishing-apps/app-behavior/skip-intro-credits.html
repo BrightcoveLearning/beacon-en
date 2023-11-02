@@ -3611,10 +3611,19 @@
 
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>In your Beacon apps' movies and episodic content you can set cue points that cause Beacon to display a button for the viewer to skip a video's introduction and/or credits.</p>
-
+    <p>In your Beacon apps' movies and episodic content you can set cue points that cause Beacon to display a button for the viewer to skip a video's introduction and/or credits. You have the option to set the following four cue points in a video that control when the appropriate button appears:</p>
+    <ul>
+      <li><code>skip_intro_start</code></li>
+      <li><code>skip_intro_end</code></li>
+      <li><code>skip_credits_start</code></li>
+      <li><code>skip_credits_end</code></li>
+    </ul>
     <p>The following lists the behavior of the cue points and buttons:</p>
     <ul>
+      <li>If you set a <code>skip_intro_end</code>, but not a <code>skip_intro_start</code>, the beginning of the video is assumed to be the starting point.</li>
+      <li>If you set a <code>skip_credit_start</code>, but not a <code>skip_credit_end</code>, the end of video is assumed to be the ending point.</li>
+      <li>If an end cue point comes before a corresponding start cue point, the associated skip button will not be shown.</li>
+      <li>If there is a duplication of any cue points, the second one in the timeline is ignored.</li>
       <li>Pre-roll and post-roll ads play regardless of cue point placement. Brightcove recommends NOT placing ads between skip button cue points, as this will not provide the best user experience.</li>
       <li>If the skip credits button is clicked, and there is an ad inserted before the end of the credits, all ads play.</li>
       <li>The skip button will appear on the trickplay while the video position is between the cue points. When the trickplay/controls are hidden, the skip buttons are displayed for 10 seconds before they disappear or at the end of the intro/credits stop cue point, whichever is sooner. You can change the 10-second default by contacting Brightcove's OTT Delivery Team.</li>
@@ -3630,10 +3639,10 @@
 
   <section class="bcls-section">
     <h2 id="Adding_cue_points">Adding cue points</h2>
-    <!-- <p>The following short video (1:23) demonstrates the process of adding cue points, and a demonstration of use the buttons implemented by the cue points.</p>
+    <p>The following short video (1:23) demonstrates the process of adding cue points, and a demonstration of use the buttons implemented by the cue points.</p>
     <p>Following the video are step-by-step instructions detailing the same process shown in the video.</p>
     <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="1758468705088376353">&nbsp;</div>
-    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script> -->
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
     <ol class="bcls-tasklist">
       <li>Log in to <strong>Beacon Studio</strong>.</li>
       <li>Go to the <strong>Media</strong> module.</li>
@@ -3646,13 +3655,14 @@
           <li>Use the scrubber to position the playhead to the desired point in the video.</li>
           <li>Click <strong>Add cue point</strong>.</li>
           <li>Be sure the <strong>Type</strong> is <strong>code</strong>.</li>
-          <li>You have two options for<strong> Event Names:</strong>
+          <li>Type or paste in the desired cue point name. Your options are:
             <ul>
-                <li>Skip Intro</li>
-                <li>Skip Credits</li>
+              <li><code>skip_intro_start</code></li>
+              <li><code>skip_intro_end</code></li>
+              <li><code>skip_credits_start</code></li>
+              <li><code>skip_credits_end</code></li>
             </ul>
-            
-            </li>
+            <aside class="bcls-aside bcls-aside--warning language-editable">Be careful here as there is no validation at this time checking for typos or illogically placed cue points.</aside>
           </li>
           <li>Click <strong>Save</strong>.</li>
         </ol>
@@ -3689,7 +3699,7 @@
         <div class="col-6 col-md">
           <h5 class="h5-text">Training</h5>
           <ul class="list-unstyled text-small">
-            <!-- <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">Online courses</a></li> -->
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">Online courses</a></li>
             <li><a class="a-text" href="https://academy.brightcove.com/">Brightcove Academy</a></li>
           </ul>
         </div>
