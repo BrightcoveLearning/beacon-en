@@ -3834,6 +3834,536 @@
         </code></pre>
         <h3>Fields</h3>
         <p>The bcPlayer node is configured through a set of fields.  Since it extends the native Video node, all native fields are also accessible; these can be checked out in <a href="https://developer.roku.com/en-gb/docs/references/scenegraph/media-playback-nodes/video.md">Roku documentation</a>.</p>
+        <p>The following tags are used in this section to make the identification of the different types of fields easier.</p>
+        <ul>
+            <li><code class="language-java" translate="No">&#60;VALUE_TYPE&#62;
+            </code> Specifies the expected type of a field value or AssociativeArray key value (e.g., string, float, integer…).</li>
+            <li><code class="language-java" translate="No">OPTIONAL
+            </code> Specifies an optional field or AssociativeArray key. If an optional field isn’t specifically set, the <code translate="no">DEFAULT</code> value is be used.</li>
+            <li><code translate="no">REQUIRED</code> Specifies that a field or AssociativeArray key is required (write-only properties) or is always present (read-only properties). If a required field is not set, an error message will be presented in the built-in logger.</li>
+            <li><code translate="no">DEFAULT</code> Specifies the default value of a field or AssociativeArray key.</li>
+            <li><code translate="no">NATIVE</code> Identifies a native field. These fields are aliases or references of a native Roku node fields. Roku documentation should be consulted for a more detailed description of these fields.</li>
+            <li><code translate="no">CONTROL</code> Identifies fields that can control the video playback in any way.</li>
+        </ul>
+        <hr>
+        <section>
+            <h3>Credentials</h3>
+            <p><code translate="no">ASSOCIATIVEARRAY</code>    <code translate="no">OPTIONAL</code></p>
+            <p>Configures Brightcove API credentials. It should contain the account ID as well as the policy key. These are used to retrieve video’s metadata from Brightcove’s Playback API. </p>
+            <p>If the credentials aren’t provided, the bcPlayer node will only be able to playback videos from external sources through <code translate="no">bcPlayer.setSources</code> and <code translate="no">bcPlayer.addSource</code> functions.</p>
+            <h4>Possible Values</h4>
+            <p>An AssociativeArray containing the following keys:</p>
+            <ul>
+                <li><code translate="no">account_id</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code>
+                <ul>
+                    <li>Specifies Brightcove API user account ID.</li>
+                </ul>
+                </li>
+                <li>
+                    <code translate="no">policy_key</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code>
+                <ul>
+                    <li>Specifies Brightcove API user policy key.</li>
+                </ul>
+                </li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.credentials = {
+                      account_id: "&#60;brightcove_user_account_id&#62;"
+                      policy_key: "&#60;brightcove_user_policy_key&#62;"
+                    }
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      credentials: {
+                        account_id: "&#60;brightcove_user_account_id&#62;"
+                        policy_key: "&#60;brightcove_user_policy_key&#62;"
+                      }
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>env</h3>
+            <p><code translate="no">STRING</code>    <code translate="no">OPTIONAL</code></p>
+            <p>Configures Brightcove Playback API environment. If not specified, the production base URL will be used.</p>
+            
+            <h4>Possible Values</h4>
+            <p>An AssociativeArray containing the following keys:</p>
+            <ul>
+                <li><p><code translate="no">production</code> <code translate="no">DEFAULT</code> Playback API requests are made to <code translate="no">https://edge.api.brightcove.com</code> </p>
+                </li>
+                <li><p><code translate="no">staging</code> Playback API requests are made to <code translate="no">https://edge.api.staging.brightcove.com</code> </p>
+                </li>
+                <li><p><code translate="no">qa</code> Playback API requests are made to <code translate="no">https://edge.api.qa.brightcove.com</code></p> 
+                </li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.env = "staging"
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      env: "staging"
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>watermarkToken</h3>
+            <p><code translate="no">STRING</code>    <code translate="no">OPTIONAL</code></p>
+            <p>Configures the Forensic Watermarking token, which is required when playing watermarked encoded Brightcove sources.</p>
+            <p>Playing a watermarked video without the <code translate="no">watermarkToken</code> field properly set will result in a playback error.</p>
+            <p>Please check <a href="https://apis.support.brightcove.com/general/overview-forensic-watermarking.html#Limitations">Videocloud documentation</a> for more information on Forensic Watermark.</p>
+            
+            <h4>Possible Values</h4>
+            <p>An AssociativeArray containing the following keys:</p>
+            <ul>
+                <li><p>A string containing the Forensic Watermarking token.
+                </p>
+                </li>
+                <li><p><code translate="no">""</code> <code translate="no">DEFAULT</code></p>
+                </li>
+                
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.watermarkToken = "&#60;forensic_watermarking_token&#62;"
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      watermarkToken: "&#60;forensic_watermarking_token&#62;"
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>streamPreferance</h3>
+            <p><code translate="no">ARRAY</code>    <code translate="no">OPTIONAL</code></p>
+            <p>Configures sources types/containers preferences ordered by the priority each type/container will have when filtering the available video sources.</p>
+            <p>This allows you to setup the bcPlayer so that only certain stream types/containers are used or ignored, and the order in those sources will be filtered.</p>
+            <p>Playing a video in which no sources are listed in the streamPreference field will result in an error.</p>
+            <p>Find more information on how the sources are parsed and filtered in the <a href="#">Sources Selection</a> section.</p>
+            
+            <h4>Possible Values</h4>
+            <p>An array containing any combination of the following values:</p>
+            <ul>
+                <li><p><code translate="no">hls</code>
+                </p>
+                </li>
+                <li><p><code translate="no">dash</code>
+                </p>
+                </li>
+                <li><p><code translate="no">mp4</code>
+                </p>
+                </li>
+                <li><p><code translate="no">DEFAULT</code> <code translate="no">["hls", "dash", "mp4"]</code>
+                </p>
+                </li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.streamPreference = ["dash"]  ' will only playback DASH sources
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      streamPreference: ["dash", "mp4"] ' will play DASH sources. If no DASH source is availble, will play MP4 sources
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>drmPreference</h3>
+            <p><code translate="no">ARRAY</code>    <code translate="no">OPTIONAL</code></p>
+            <p>Configures DRM encryption systems preferences ordered by the priority each DRM system will have when filtering the available video sources.</p>
+            <p>This allows developers to setup the bcPlayer so that only certain DRM encrypted sources are used or ignored and the order in which the sources will be filtered through.</p>
+            <p>Playing a video in which no DRM encrypted sources are listed in the <code translate="no">drmPreference</code> field will result in an error. The non value forces the selection of sources with no DRM encryption.</p>
+            <p><a href="https://developer.roku.com/en-gb/docs/specs/media/content-protection.md">Roku DRM reference</a></p>
+            <p><a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-content-drm.html">Videocloud DRM reference</a></p>
+            
+            <h4>Possible Values</h4>
+            <p>An array containing any combination of the following values:</p>
+            <ul>
+                <li><p><code translate="no">widevine</code> Supported on HLS and DASH sources only.
+                </p>
+                </li>
+                <li><p><code translate="no">playready</code> Supported on DASH sources only, ignored on HLS sources.
+                </p>
+                </li>
+                <li><p><code translate="no">none</code>
+                </p>
+                </li>
+                <li><p><code translate="no">DEFAULT</code> <code translate="no">["widevine", "playready", "none"]</code>
+                </p>
+                </li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.streamPreference = ["none"]  ' play sources with no DRM encryption only
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      streamPreference: ["playready", "widevine"] ' play a DASH source encrypted with Playready DRM and, if not available, play a Widevine encrypted source instead
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>logLevel</h3>
+            <p><code translate="no">INTEGER</code> <code translate="no">OPTIONAL</code></p>
+            <p>Configures the logging level on the bcPlayer node. Only the specified messages will be triggered.</p>
+            <p>If set to <code translate="no">-1</code> no logging messages will be triggered. In a production environment it's recommended to set it to <code>-1</code> to avoid the execution of the logging internal functions.</p>
+            <aside class="bcls-aside bcls-aside--information">When enabled, bcPlayer logs can be captured through the <code translate="no">bcPlayer.on.logOutput</code> event listener.
+            </aside>
+            
+            <h4>Possible Values</h4>
+            <p>An array containing any combination of the following values:</p>
+            <ul>
+                <li><p><code translate="no">-1</code> disable all the logging.
+                </p>
+                </li>
+                <li><p><code translate="no">0</code> log error messages only.
+                </p>
+                </li>
+                <li><p><code translate="no">1</code> log error and warning messages.
+                </p>
+                </li>
+                <li><p><code translate="no">2</code> log error, warning and info messages.
+                </p>
+                </li>
+                <li><p><code translate="no">3</code> log error, warning, info and verbose messages.
+                </p>
+                </li>
+                <li><p><code translate="no">4</code> <code translate="no">DEFAULT</code> log error, warning, info, verbose and debug messages.
+                </p>
+                </li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.logLevel = 3
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      logLevel: 3
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>spinnerConfig</h3>
+            <p><code translate="no">ASSOCIATIVEARRAY</code> <code translate="no">OPTIONAL</code></p>
+            <p>Configures the custom loading spinner appearance.</p>
+            <p>When using Roku’s native Video node UI/UX, this spinner is only visible during the execution of API requests, as the native Video node contains its non-customizable loading spinner, which is visible during buffering operations.</p>
+            
+            <h4>Possible Values</h4>
+            <p>An associativeArray with the following optional keys:</p>
+            <ul>
+                <li><p><code translate="no">URL</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code>
+                </p> <ul>
+                    <li><p>Specifies the spinner image path</p></li>
+                    <li><p><code translate="no">DEFAULT</code> Internal PNG image path which looks like so:</p>
+                    
+                    </li>
+                </ul>
+                </li>
+                <li><p><code translate="no">size</code> <code translate="no">INTEGER/FLOAT</code> <code translate="no">OPTIONAL</code>
+                </p> <ul>
+                    <li><p>Specifies the size (width and height values) of the spinner image.</p></li>
+                    <li><p><code translate="no">DEFAULT</code> 120</p>
+                    
+                    </li>
+                </ul>
+                </li>
+                <li><p><code translate="no">color</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code>
+                </p> <ul>
+                    <li><p>Specifies the color of the spinner image, which is set through the <code translate="no">blendColor</code> Poster field.</p></li>
+                    <li><p><code translate="no">DEFAULT</code> ""</p>
+                    
+                    </li>
+                </ul>
+                </li>
+                <li><p><code translate="no">clockwise</code> <code translate="no">BOOLEAN</code> <code translate="no">OPTIONAL</code>
+                </p> <ul>
+                    <li><p>Specifies the image spinning direction, <code translate="no">true</code> for clockwise rotation and <code translate="no">false</code> for counter-clockwise rotation.</p></li>
+                    <li><p><code translate="no">DEFAULT</code> <code translate="no">true</code></p>
+                    
+                    </li>
+                </ul>
+                </li>
+                <li><p><code translate="no">interval</code> <code translate="no">INTEGER/FLOAT</code> <code translate="no">OPTIONAL</code>
+                </p> <ul>
+                    <li><p>Specifies the number of seconds to complete a 360-degree rotation of the spinner image. A value of 0 will cause the spinner to remain stationary and not spin.</p></li>
+                    <li><p><code translate="no">DEFAULT</code> <code translate="no">1</code></p>
+                    
+                    </li>
+                </ul>
+                </li>
+                <li><p><code translate="no">opacity</code> <code translate="no">INTEGER/FLOAT</code> <code translate="no">OPTIONAL</code>
+                </p> <ul>
+                    <li><p>Specifies the spinner image opacity with a value between <code translate="no">0</code> and <code translate="no">1</code>.</p></li>
+                    <li><p><code translate="no">DEFAULT</code> <code translate="no">1</code></p>
+                    
+                    </li>
+                </ul>
+                </li>
+                
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.spinnerConfig = {
+                      url: "pkg:/my/spinner/image.png"
+                      size: 200
+                      color: "#d32228"
+                      clockwise: false  ' counterclockwise rotation
+                      interval: 0.8     ' completes a 360 rotation in 800 miliseconds
+                      opacity: 0.8      ' sets an opacity of 80%
+                    }
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      spinnerConfig: {
+                        url: "pkg:/my/spinner/image.png"
+                        size: 200
+                        color: "#d32228"
+                        clockwise: false  ' counterclockwise rotation
+                        interval: 0.8     ' completes a 360 rotation in 800 miliseconds
+                        opacity: 0.8      ' sets an opacity of 80%
+                      }
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>loading</h3>
+            <p><code translate="no">BOOLEAN</code> <code translate="no">OPTIONAL</code></p>
+            <p>Controls the custom loading spinner visibility. This field is used by internal functions but it also allows the custom spinner to be controller externally if needed.</p>
+            <p>Keep in mind that the OOTB UI has its loading spinner. This field is independent from the OOTB UI built in loading spinner.
+            </p>
+            <p>The appearance of the loading spinner can be customized through the spinnerConfig field.</p>
+            
+            <h4>Possible Values</h4>
+            <p>An array containing any combination of the following values:</p>
+            <ul>
+                <li><code translate="no">false</code> <code translate="no">DEFAULT</code> Hide the custom loading spinner.</li>
+                <li><code translate="no">true</code> Show the custom loading spinner.</li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.loading = true
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      loading: true
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>retryOnError</h3>
+            <p><code translate="no">BOOLEAN</code> <code translate="no">OPTIONAL</code></p>
+            <p>Configures the activation of the retry on error flow. This flow allows bcPlayer to automatically retry the video playback with another video source when a specific source results in a playback error during the initial buffering process.</p>
+            <p>If all the available video sources fail to play an error will be triggered.
+            </p>
+            <p>The retry on error flow follows the sources type and DRM encryption preferences/priorities set in the streamPreference and drmPreference fields.</p>
+
+            <p>This flow is only relevant at the initial source loading, ie, a playback error triggered mid-playback will not trigger the retry on error flow.</p>
+            
+            <h4>Possible Values</h4>
+            <ul>
+                <li><code translate="no">false</code> Disables the retry on error flow.</li>
+                <li><code translate="no">true</code> <code translate="no">DEFAULT</code> Enables the retry on error flow.</li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.retryOnError = false
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      retryOnError: false
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>closeOnBack</h3>
+            <p><code translate="no">BOOLEAN</code> <code translate="no">OPTIONAL</code></p>
+            <p>Configures the back remote control button action to terminate the bcPlayer node when pressed.</p>
+            <p>It’s enabled by default, when you press the back button, the bcPlayer node will be terminated (to bring it back, it needs to be reinitialized from scratch).
+            </p>
+            <p>This behavior can be disabled, in which case developers can capture the back button press through a <code translate="no">bcPlayer.on.keyEvent</code> event listener and handle it as they see fit without having to terminate the bcPlayer node.</p>
+            
+            <h4>Possible Values</h4>
+            <ul>
+                <li><code translate="no">false</code> Disables the close on error behavior.</li>
+                <li><code translate="no">true</code> <code translate="no">DEFAULT</code> Enables the close on error behavior.</li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.closeOnBack = false
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      closeOnBack: false
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>enableDialogs</h3>
+            <p><code translate="no">BOOLEAN</code> <code translate="no">OPTIONAL</code></p>
+            <p>Configures bcPlayer to show error dialogs when an error occurs.</p>
+            <p>It’s enabled by default; you can disable it and capture the errors through the <code translate="no">bcPlayer.on.error</code> event.
+            </p>
+            <p>These dialogs appearance can be customized through the dialogTheme field.
+            </p>
+            
+            <h4>Possible Values</h4>
+            <ul>
+                <li><code translate="no">false</code> Disables error dialogs.</li>
+                <li><code translate="no">true</code> <code translate="no">DEFAULT</code> Enables error dialogs.</li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.enableDialogs = false
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      enableDialogs: false
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>dialogTheme</h3>
+            <p><code translate="no">ASSOCIATIVEARRAY</code> <code translate="no">OPTIONAL</code></p>
+            <p>Configures error dialogs appearance when enableDialogs is enabled.</p>
+            <p>The expected properties are the same as the native StandardDialog <code translate="no">palette</code> field properties, except for <code translate="no">DialogItemColor</code>, <code translate="no">DialogInputFieldColor</code>, <code translate="no">DialogSecondaryTextColor</code>, and <code translate="no">DialogKeyboardColor</code> properties, which do not apply.
+            </p>
+
+            <h4>Possible Values</h4>
+            <p>An AssociativeArray with the following optional keys:</p>
+            <ul>
+                <li><code translate="no">DialogBackgroundColor</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code>
+                <ul>
+                    <li>Specifies the blend color for dialog's background bitmap.</li>
+                    <li><code translate="no">DEFAULT</code> <code translate="no">"#00000000"</code></li>
+                </ul>
+                </li>
+                <li><code translate="no">DialogTextColor</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code>
+                <ul>
+                    <li>Specifies the title and content text color.</li>
+                    <li><code translate="no">DEFAULT</code> Default Roku native color.</li>
+                </ul>
+                </li>
+                <li><code translate="no">DialogFocusColor</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code>
+                <ul>
+                    <li>Specifies the focused button and scrollbar thumb colors.</li>
+                    <li><code translate="no">DEFAULT</code> Default Roku native color.</li>
+                </ul>
+                </li>
+                <li><code translate="no">DialogFocusItemColor</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code>
+                <ul>
+                    <li>Specifies the focused button text color.</li>
+                    <li><code translate="no">DEFAULT</code> Default Roku native color.</li>
+                </ul>
+                </li>
+                <li><code translate="no">DialogSecondaryItemColor</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code>
+                <ul>
+                    <li>Specifies the title divider color.</li>
+                    <li><code translate="no">DEFAULT</code> <code translate="no">"#00000000"</code></li>
+                </ul>
+                </li>
+                <li><code translate="no">DialogFootprintColor</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code>
+                <ul>
+                    <li>Specifies the button focus footprint color as well as the unfocused scrollbar thumb and track color.</li>
+                    <li><code translate="no">DEFAULT</code> Default Roku native color</li>
+                </ul>
+                </li>
+                
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.dialogTheme = {
+                      DialogBackgroundColor: "#00000000"
+                      DialogTextColor: "#dbdbdb"
+                      DialogFocusColor: "#d32228"
+                      DialogFocusItemColor: "#ab2125"
+                      DialogSecondaryItemColor: "#dbdbdb"
+                      DialogFootprintColor: "#dbdbdb"
+                    }
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      dialogTheme: {
+                        DialogBackgroundColor: "#00000000"
+                        DialogTextColor: "#dbdbdb"
+                        DialogFocusColor: "#d32228"
+                        DialogFocusItemColor: "#ab2125"
+                        DialogSecondaryItemColor: "#dbdbdb"
+                        DialogFootprintColor: "#dbdbdb"
+                      }
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>bufferTimeout</h3>
+            <p><code translate="no">INTEGER</code> <code translate="no">OPTIONAL</code></p>
+            <p>Configures the buffering timeout error timer period in seconds. This configuration allows to setup a timer which is initiated once the initial video buffering begins and at the end of which a timeout error will trigger if the video playback hasn’t yet been initiated.
+            </p>
+            <p>Setting it to 0 disables the buffering timeout timer.
+            </p>
+            
+            <h4>Possible Values</h4>
+            <ul>
+                <li>A positive integer value (seconds).</li>
+                <li><code translate="no">DEFAULT</code> <code translate="no">0</code> buffering timeout disabled.</li>
+            </ul>
+            <pre class="line-numbers">
+                <code class="language-java" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                    m.bcPlayer.bufferTimeout = 20
+                    
+                    ' or
+                    
+                    m.bcPlayer.setFields({
+                      ' ...other fields here...
+                      bufferTimeout: 20
+                    })
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>on</h3>
+            <p><code translate="no">ROSGNODE</code> <code translate="no">READ-ONLY</code></p>
+            <p>Allows access to all the bcPlayer events. Developers should setup event listeners to capture the events data through the observeField() or observeFieldScoped() functions. Check the table below for all the available events and the data they provide. Check the code snippet to understand how to setup event listeners to capture these events.
+            </p>
+        </section>
+  
+
   </section>
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
