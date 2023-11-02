@@ -3789,6 +3789,141 @@
         </tr>
       </tbody>
     </table>
+    <h3 id="Metadata_variables">Metadata variables</h3>
+    <p>Metadata variables are those that describe the content video, derived from both Beacon and Dynamic Delivery data sources. The values are URL encoded before being inserted into the URL templates.</p>
+    <p>Metadata variables are identified as: <code translate="No">&#123;metadata.*&#125;</code></p>
+
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Field</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+          </td>
+        </tr>
+        <tr>
+          <td><code translate="No">custom_fields.&#123field_name&#125;</code></td>
+          <td>Beacon custom fields</td>
+        </tr>
+        <tr>
+          <td><code translate="No">long_description</code></td>
+          <td> Beacon long description</td>
+        </tr>
+        <tr>
+          <td><code translate="No">name</code></td>
+          <td>Beacon video name</td>
+        </tr>
+        <tr>
+          <td><code translate="No">reference_id</code></td>
+          <td>Beacon reference id</td>
+        </tr>
+        <tr>
+          <td><code translate="No">tags</code></td>
+          <td>Comma separated list of the Beacon tags for the video</td>
+        </tr>
+        <tr>
+          <td><code translate="No">title.duration</code></td>
+          <td>Duration of the content in seconds</td>
+        </tr>
+        <tr>
+          <td><code translate="No">title.id</code></td>
+          <td>Dynamic Delivery title id</td>
+        </tr>
+        <tr>
+          <td><code translate="No">title.name</code></td>
+          <td>Dynamic Delivery title name</td>
+        </tr>
+        <tr>
+          <td><code translate="No">video_id</code></td>
+          <td>Beacon video id</td>
+        </tr>
+      </tbody>
+    </table>    
+  </section>
+
+  <h3 id="System_variables">System variables</h3>
+
+  <p>System variables are provided by the SSAI system and can be information about the end user or helper variables to generate random values. The values must be URI-encoded before being inserted into the URL templates.</p>
+  
+  <p>System variables are identified as: <code translate="No">&#123&#123system.*&#125;&#125;</code></p>
+  
+  <table class="bcls-table">
+    <thead class="bcls-table__head">
+      <tr>
+        <th>Field</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+      <tr>
+        <td><code translate="No">ad.position_time</code></td>
+        <td>The time in seconds of the Cue Point that triggered the ad request; Only available for the VAST ad response type</td>
+      </tr>
+      <tr>
+        <td><code translate="No">ip_address</code></td>
+        <td>End User's IP Address</td>
+      </tr>
+      <tr>
+        <td><code translate="No">random_number_32</code></td>
+        <td>Random 32-bit integer</td>
+      </tr>
+      <tr>
+        <td><code translate="No"> random_number_&lt;min&gt;_&lt;max&gt;</code></td>
+        <td>Generates a random number between two numbers. The range accepted goes from 0 to the max value of <code translate="No">UInt32</code>. Only positive numbers are allowed, and the <code translate="no">min</code> has to be lower than the <code translate="no">max</code></td>
+      </tr>
+      <tr>
+        <td><code translate="No">random_guid</code></td>
+        <td>Random UUID</td>
+      </tr>
+      <tr>
+        <td><code translate="No">referer</code></td>
+        <td>End User's Referer header value</td>
+      </tr>
+      <tr>
+        <td><code translate="No">timestamp_utc</code></td>
+        <td>Current time as a unix timestamp</td>
+      </tr>
+      <tr>
+        <td><code translate="No">unique_user_id</code></td>
+        <td>MD5(ip_address + user_agent)</td>
+      </tr>
+      <tr>
+        <td><code translate="No">unix_timestamp</code></td>
+        <td>Current time as a unix timestamp (seconds)</td>
+      </tr>
+      <tr>
+        <td><code translate="No">user_agent</code></td>
+        <td>End User's User-Agent header value</td>
+      </tr>
+      <tr>
+        <td><code translate="No">uuid</code></td>
+        <td>Random uuid</td>
+      </tr>
+      <tr>
+        <td><code translate="No">x_forwarded_for</code></td>
+        <td>End User's X-Forwarded-For header value</td>
+      </tr>
+      <tr>
+        <td><code translate="No">xfp.correlator</code></td>
+        <td>Random 64-bit Integer</td>
+      </tr>
+      <tr>
+        <td><code translate="No">xfp.ip_address</code></td>
+        <td>End User's IP Address</td>
+      </tr>
+      <tr>
+        <td><code translate="No">xfp.unique_user_id</code></td>
+        <td>MD5(ip_address + user_agent)</td>
+      </tr>
+      <tr>
+        <td><code translate="No">xfp.scor</code></td>
+        <td>Random 64-bit Integer</td>
+      </tr>
+    </tbody>
+  </table>
+
     <h3>Notes</h3>
     <ul>
       <li>This feature works across all platforms/devices iOS, Apple TV, Android, Roku, Fire TV, Web, and Smart TVs.</li>
@@ -3810,7 +3945,7 @@
           <li>For information about how to implemen OneTrust Cookie Consent with Brightcove Beacon, see <a href="https://beacon.support.brightcove.com/references/managing-cookie-consent.html"> Managing Cookie Compliance Using OneTrust Cookie Consent</a>.</li>
         </ul>
     </ul>
-  </section>
+
   <!--   <section class="bcls-section">
     <h2 id="Implementation">Implementation</h2>
     <p>Below is a list of <strong>value macros</strong> that will be passed to the app, which will then substitute the real values before sending to the ad server. They are <strong>NOT</strong> configurable.</p>
