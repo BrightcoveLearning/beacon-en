@@ -4362,8 +4362,706 @@
             <p>Allows access to all the bcPlayer events. Developers should setup event listeners to capture the events data through the observeField() or observeFieldScoped() functions. Check the table below for all the available events and the data they provide. Check the code snippet to understand how to setup event listeners to capture these events.
             </p>
         </section>
-  
+        <section class="bcls-section">
+            <h2 id="event-list">Event List</h2>
+            <table class="bcls-table">
+                <caption class="bcls-caption--table"></caption>
+                <thead class="bcls-table__head">
+                    <tr>
+                        <th>Event</th>
+                        <th>Data</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody class="bcls-table__body">
+                    <tr>
+                        <td>load</td>
+                        <td><p><code translate="no">ASSOCOATIVEARRAY</code></p>
+                        <p>Provides an AssociativeArray object with the following keys:</p>
+                        <ul>
+                            <li><p><code translate="no">event</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                            <ul><p>Posible Values:</p>
+                                <li><p><code translate="no">event</code>: an error has occurred while loading Brightcove metadata.</p></li>
+                                <li><p><code translate="no">start</code>: Brightcove metadata loading has started.</p></li>
+                                <li><p><code translate="no">end</code>: Brightcove metadata loading has finished.</p></li>
+                            </ul>
+                            </li>
+                            <li><p><code translate="no">type</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code></p>
+                            <ul><p>Metadata type. Available in <code translate="no">start</code> and <code translate="no">end</code> events. Possible values:</p>
+                                <li><p><code translate="no">video</code>: specifies that a single video metadata is being  loaded.</p></li>
+                                <li><p><code translate="no">videos</code>: specifies that multiple videos metadata are being loaded.</p></li>
+                                <li><p><code translate="no">playlist</code>: specifies that a playlist metadata is being loaded.</p></li>
+                            </ul>
+                            </li>
+                            <li><p><code translate="no">id</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code></p>
+                            <p>Specifies the video or playlist Videocloud ID. Available in <code translate="no">start</code> and <code translate="no">end</code> events. It’s set to <code translate=""></code>invalid when loading multiple videos (video search and related metadata).</p>  
+                            </li>
+                            <li><p><code translate="no">videos</code> <code translate="no">INTEGER</code> <code translate="no">OPTIONAL</code></p>
+                            <p>Specifies the number of videos being loaded. Available in <code translate="no">start</code> and <code translate="no">end</code> events.</p>  
+                            </li>
+                            <li><p><code translate="no">name</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code></p>
+                            <p>Specifies the name of the video or playlist being loaded. Available in <code translate="no">start</code> and <code translate="no">end</code> events. It’s set to <code translate="no">invalid</code> when loading multiple videos (video search and related metadata).</p>  
+                            </li>
+                            <li><p><code translate="no">message</code> <code translate="no">STRING</code> <code translate="no">OPTIONAL</code></p>
+                            <p>Specifies an error message. Only present when <code translate="no">event</code>event is <code translate="no">error</code>.</p>  
+                            </li>
+                        </ul>
+                        </td>
+                        <td>The load event is triggered when metadata load process starts, when it ends and when an error occurs during the loading process.</td>
+                    </tr>
+                    <tr>
+                        <td>start</td>
+                        <td><p><code translate="no">ASSOCOATIVEARRAY</code></p>
+                            <p>Provides an AssociativeArray object with the following keys:</p>
+                            <ul>
+                                <li><p><code translate="no">contentIndex</code> <code translate="no">INTEGER</code> <code translate="no">NATIVE</code> <code translate="no">REQUIRED</code></p>
+                                <p>Reference to the native <code translate="no">Video.contentIndex</code> field. Specifies the index of the video that is currently playing in the playlist. It’s set to <code translate="no">0</code> if only a single video is playing.</p>
+                                </li>
+                                <li><p><code translate="no">timeToStartStreaming</code> <code translate="no">INTEGER/FLOAT</code> <code translate="no">NATIVE</code> <code translate="no">REQUIRED</code></p>
+                                <p>Reference to the native <code translate="no">Video.timeToStartStreaming</code> field. Specifies the time in seconds from playback being started until the video actually began playing.</p>
+                                </li>
+                                <li><p><code translate="no">playStartInfo</code> <code translate="no">ASSOCIATIVEARRAY</code> <code translate="no">NATIVE</code> <code translate="no">REQUIRED</code></p>
+                                <p>Reference to the native <code translate="no">Video.playStartInfo</code> field. Provides timing measurements related to the start of video playback. All measurements are in seconds. Provides the following keys:</p>
+                                <ul>
+                                    <li><p><code translate="no">total_dur</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                        <p>Total video start duration.</p>
+                                    </li>
+                                    <li><p><code translate="no">manifest_dur</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                        <p>Manifest download and parsing.</p>
+                                    </li>
+                                    <li><p><code translate="no">drm_load_dur</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                        <p>DRM system initialization.</p>
+                                    </li>
+                                    <li><p><code translate="no">drm_lic_acq_dur</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                        <p>License acquisition. This typically includes interactions with the license server.</p>
+                                    </li>
+                                    <li><p><code translate="no">prebuf_dur</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                        <p>Prebuffer content.</p>
+                                    </li>
+                                    <li><p><code translate="no">manifest_start</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                        <p>Point at which manifest download and parsing begins.</p>
+                                    </li>
+                                    <li><p><code translate="no">drm_load_start</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                        <p>Point at which DRM system initialization begins.</p>
+                                    </li>
+                                    <li><p><code translate="no">prebuf_start</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                        <p>Point at which content pre-buffering begins.</p>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><p><code translate="no">videoFormat</code> <code translate="no">STRING</code> <code translate="no">NATIVE</code> <code translate="no">REQUIRED</code></p>
+                                <p>Reference to the native <code translate="no">Reference</code> to the native <code translate="no">Video.videoFormat</code> field. Contains the format of the currently playing video stream. Possible values:</p>
+                                <ul>
+                                    <li><p><code translate="no">""</code> No stream playing.</p>
+                                    </li>
+                                    <li><p><code translate="no">none</code> Stream contains no playable video.</p>
+                                    </li>
+                                    <li><p><code translate="no">unknown</code> Stream contains unknown video.</p>
+                                    </li>
+                                    <li><p><code translate="no">hevc</code> ISO/IEC 23008-2, H.265, HEVC.</p>
+                                    </li>
+                                    </li>
+                                    <li><p><code translate="no">hevc_b</code> ISO/IEC 23008-2 Annex-B, H.265, HEVC.</p>
+                                    </li>
+                                    <li><p><code translate="no">mpeg1</code> ISO/IEC 11172-2, MPEG-1 part 2, H.261.</p>
+                                    </li>
+                                    <li><p><code translate="no">mpeg2</code> ISO/IEC 13818-2, MPEG-2 part 2, H.262.</p>
+                                    </li>
+                                    <li><p><code translate="no">mpeg4_2</code> ISO/IEC 14496-2, MPEG-4 part 2, H.263.</p>
+                                    </li>
+                                    <li><p><code translate="no">mpeg4_10b</code> ISO/IEC 14496-10, MPEG-4 part 10 Annex-B, H.264, vc-1.</p>
+                                    </li>
+                                    <li><p><code translate="no">mpeg4_15</code> ISO/IEC 14496-15, MPEG-4 part 15, H.264, vc-1.</p>
+                                    </li>
+                                    <li><p><code translate="no">AVC vc1</code> vc-1.</p>
+                                    </li>
+                                    <li><p><code translate="no">wmv</code> Microsoft Windows Media Video.</p>
+                                    </li>
+                                    <li><p><code translate="no">vp8</code> VP8 codec.</p>
+                                    </li>
+                                    <li><p><code translate="no">vp9</code> VP9 codec.</p>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><p><code translate="no">audioFormat</code> <code translate="no">STRING</code> <code translate="no">NATIVE</code> <code translate="no">REQUIRED</code></p>
+                                <p>Reference to the native <code translate="no">Video.audioFormat</code> field. Contains the format of the currently playing audio. Possible values:</p>
+                                <ul>
+                                    <li><p><code translate="no">""</code> No stream playing.</p>
+                                    </li>
+                                    <li><p><code translate="no">none</code> Stream contains no playable audio.</p>
+                                    </li>
+                                    <li><p><code translate="no">unknown</code> Stream contains unknown audio.</p>
+                                    </li>
+                                    <li><p><code translate="no">acc</code> ISO/IEC 14496-3, Advanced Audio Coding.</p>
+                                    </li>
+                                    </li>
+                                    <li><p><code translate="no">acc_adif</code> ISO/IEC 14496-3, Advanced Audio Coding, ADIF container.</p>
+                                    </li>
+                                    <li><p><code translate="no">acc_adts</code> ISO/IEC 14496-3, Advanced Audio Coding, ADTS container.</p>
+                                    </li>
+                                    <li><p><code translate="no">acc_latm</code> ISO/IEC 14496-3, Advanced Audio Coding, LATM container.</p>
+                                    </li>
+                                    <li><p><code translate="no">ac3</code> Dolby Digital.</p>
+                                    </li>
+                                    <li><p><code translate="no">ac4</code> Dolby Audio - AC-4.</p>
+                                    </li>
+                                    <li><p><code translate="no">eac3</code> Dolby Digital Plus.</p>
+                                    </li>
+                                    <li><p><code translate="no">alac</code> Apple Lossless.</p>
+                                    </li>
+                                    <li><p><code translate="no">dts</code> DTS Coherent Acoustics.</p>
+                                    </li>
+                                    <li><p><code translate="no">flac</code> Free Lossless Audio Codec.</p>
+                                    </li>
+                                    <li><p><code translate="no">mat</code> Dolby Audio - TrueHD.</p>
+                                    </li>
+                                    <li><p><code translate="no">mp3</code> ISO/IEC 11172-3, MPEG Audio Layer III.</p>
+                                    </li>
+                                    <li><p><code translate="no">pcm</code> linear PCM.</p>
+                                    </li>
+                                    <li><p><code translate="no">vorbis</code> Ogg Vorbis.</p>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li><p><code translate="no">currentAudioTrack</code> <code translate="no">STRING</code> <code translate="no">NATIVE</code> <code translate="no">REQUIRED</code></p>
+                                <p>Reference to the native <code translate="no">Video.currentAudioTrack</code> field. Specifies the track identifier of the audio being played. Reading this field returns the track that is being played, which may be different than the track being selected (for example, when the Roku media player cannot play a certain format). Roku automatically selects a track based on the preferred audio language setting if no audio track is specifically selected.</p>
+                                </li>
+                                <li><p><code translate="no">availableAudioTracks</code> <code translate="no">ARRAY</code> <code translate="no">NATIVE</code> <code translate="no">REQUIRED</code></p>
+                                    <p>Reference to the native <code translate="no">Video.availableAudioTracks</code> field. Lists all the available audio tracks on the currently playing stream. Every array element consists of an AssociativeArray containing the following keys:</p>
+                                    <ul>
+                                        <li><p><code translate="no">Language</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                                            <p>ISO 639-2 three-letter language code.</p>
+                                        </li>
+                                        <li><p><code translate="no">Name</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                                            <p>Descriptive name of the audio track.</p>
+                                        </li>
+                                        <li><p><code translate="no">Track</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                                            <p>The track identifier. The value of this field may be used to select the audio track through the <code translate="no">bcPlayer.video.audioTrack</code> field.</p>
+                                        </li>
+                                    </ul>
+                                    </li>
+                                    <li><p><code translate="no">currentSubtitleTrack</code> <code translate="no">STRING</code> <code translate="no">NATIVE</code> <code translate="no">REQUIRED</code></p>
+                                        <p>Reference to the native <code translate="no">Video.currentSubtitleTrack</code> field. Specifies the identifier of the selected subtitle track that is currently playing. Subtitles may or may not be visible on the screen, depending upon the user's caption mode setting. When the user has not selected a track, the Roku media player will select a track based on the preferred caption language system setting.</p>
+                                        </li>
+                                    <li><p><code translate="no">availableSubtitleTracks</code> <code translate="no">ARRAY</code> <code translate="no">NATIVE</code> <code translate="no">REQUIRED</code></p>
+                                            <p>Reference to the native <code translate="no">Video.availableSubtitleTracks</code> field. Specifies the list of subtitle tracks available in the video stream. Every array element consists on an AssociativeArray containing the following keys:</p>
+                                            <ul>
+                                                <li><p><code translate="no">Description</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                                                    <p>Descriptive name of the subtitle track.</p>
+                                                </li>
+                                                <li><p><code translate="no">Language</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                                                    <p>ISO 639-2 three-letter language code.</p>
+                                                </li>
+                                                <li><p><code translate="no">TrackName</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                                                    <p>The track identifier. The value of this field may be used to select the subtitle track through the <code translate="no">bcPlayer.video.subtitleTrack</code> field.</p>
+                                                </li>
+                                            </ul>
+                                    </li>
+                                    <li><p><code translate="no">retries</code> <code translate="no">INTEGER</code> <code translate="no">REQUIRED</code></p>
+                                        <p>Available when playing Brightcove sources only. Specifies the number of playback retries when retryOnError is enabled. If it’s disabled, this property is set to <code translate="no">1</code>.</p>
+                                    </li>
+                                
+                            </ul>
+                            </td>
+                        <td>The start event is triggered at the start of every video playback. It triggers only once per video asset, and it provides a set of useful information about the video that just started playing. Most of the information provided is retrieved from the native <a href="https://developer.roku.com/en-gb/docs/references/scenegraph/media-playback-nodes/video.md">Video</a> node.</td>
+                    </tr>
+                    <tr>
+                        <td>play</td>
+                        <td>WIP</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>pause</td>
+                        <td>WIP</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>resume</td>
+                        <td>WIP</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>play</td>
+                        <td>WIP</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>previous</td>
+                        <td><p><code translate="no">ASSOCIATIVEARRAY</code></p>
+                        <p>Provides an AssociativeArray object with the following keys:</p>
+                        <ul>
+                            <li><p><code translate="no">fromIndex</code> <code>INTEGER</code> <code translate="no">REQUIRED</code></p>
+                            <p>The index of the currently playing video in the playlist.</p>
+                            </li>
+                            <li><p><code translate="no">toIndex</code> <code>INTEGER</code> <code translate="no">REQUIRED</code></p>
+                            <p>The index of the previous video in the playlist that will start playing.</p>
+                            </li>
+                        </ul>
+                        </td>
+                        <td>The play previous video action has been triggered. This event is only available when playing a playlist structure.</td>
+                    </tr>
+                    <tr>
+                        <td>next</td>
+                        <td><p><code translate="no">ASSOCIATIVEARRAY</code></p>
+                        <p>Provides an AssociativeArray object with the following keys:</p>
+                        <ul>
+                            <li><p><code translate="no">fromIndex</code> <code>INTEGER</code> <code translate="no">REQUIRED</code></p>
+                            <p>The index of the currently playing video in the playlist.</p>
+                            </li>
+                            <li><p><code translate="no">toIndex</code> <code>INTEGER</code> <code translate="no">REQUIRED</code></p>
+                            <p>The index of the next video in the playlist that will start playing.</p>
+                            </li>
+                        </ul>
+                        </td>
+                        <td>The play next video action has been triggered. This event is only available when playing a playlist structure.</td>
+                    </tr>
+                    <tr>
+                        <td>finished</td>
+                        <td><p><code translate="no">ASSOCIATIVEARRAY</code></p>
+                        <p>Provides an AssociativeArray object with the following keys:</p>
+                        <ul>
+                            <li><p><code translate="no">completedStreamInfo</code> <code>ASSOCIATIVE</code> <code>NATIVE</code> <code translate="no">REQUIRED</code></p>
+                            <p>Reference to the native <code translate="no">Video.completedStreamInfo</code> field. Provides information about the video stream that most recently completed playing, due to an error, user action, or end of the stream. The following keys are available through this property:</p>
+                            <ul>
+                                <li>
+                                    <p>
+                                    <code>isUnderrun</code> <code translate="no">BOOLEAN</code> <code translate="no">REQUIRED</code>
+                                    </p>
+                                    <p>If true, the stream was downloaded due to an underrun.</p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <code>isResume</code> <code translate="no">BOOLEAN</code> <code translate="no">REQUIRED</code>
+                                    </p>
+                                    <p>If true, playback was resumed after a trickplay seek action.</p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <code>measureBitrate</code> <code translate="no">INTEGER</code> <code translate="no">REQUIRED</code>
+                                    </p>
+                                    <p>The measured bitrate (bps) of the network when the stream was selected.</p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <code>streamBitrate</code> <code translate="no">INTEGER</code> <code translate="no">REQUIRED</code>
+                                    </p>
+                                    <p>The bitrate of the stream.</p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <code>streamUrl</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code>
+                                    </p>
+                                    <p>The URL of the stream.</p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <code>isFullResult</code> <code translate="no">BOOLEAN</code> <code translate="no">REQUIRED</code>
+                                    </p>
+                                    <p>If true indicates the stream played to completion, if false, the stream was interrupted by an error or user action.</p>
+                                </li>
+                            </ul>
+                            </li>
+                            <li><p><code translate="no">contentIndex</code> <code>INTEGER</code> <code>NATIVE</code> <code translate="no">REQUIRED</code></p>
+                            <p>Reference to the native <code translate="no">Video.contentIndex</code> field. Specifies the index of the video that is currently playing in the playlist. It’s set to <code translate="no">0</code> if only a single video is playing.</p>
+                            </li>
+                            <li><p><code translate="no">errorCode</code> <code>INTEGER</code> <code>NATIVE</code> <code translate="no">REQUIRED</code></p>
+                            <p>Reference to the native <code translate="no">Video.errorCode</code> field. Specifies the error code if the stream has ended due to an error. Further details on the error can be retrieved through the <code translate="no">error</code>error event. Possible values:</p>
+                            <ul>
+                                <li><code translate="no">0</code> no error</li>
+                                <li><code translate="no">-1</code> network error (server down or unresponsive, server is unreachable, network setup problem on the client).</li>
+                                <li><code translate="no">-2</code> connection timed out.</li>
+                                <li><code translate="no">-3</code> unknown/unspecified or generic Error.</li>
+                                <li><code translate="no">-4</code> empty list; no streams were specified to play.</li>
+                                <li><code translate="no">-5</code> media error; the media format is unknown or unsupported.</li>
+                                <li><code translate="no">-6</code> DRM error.</li>
+                            </ul>
+                            </li>
+                            <li><p><code translate="no">toIndex</code> <code>INTEGER</code> <code translate="no">REQUIRED</code></p>
+                            <p>The index of the next video in the playlist that will start playing.</p>
+                            </li>
+                        </ul>
+                        </td>
+                        <td><p>Triggered at the end of a video playback. The following situations will trigger a finished event:</p>
+                        <ul>
+                            <li>The video has played until the end of the stream.</li>
+                            <li>A playback error occurs, either while loading the stream or mid-stream. Keep in mind that an <code translate="no">error</code>error event will trigger before the <code translate="no">finished</code> event in this case.</li>
+                            <li>A retrial error occurs, when it’s not possible to play any of the video available sources. Valid when retryOnError is enabled.</li>
+                            <li>The video playback is stopped by an external action.</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>playlistIndex</td>
+                        <td><code>INTEGER</code> <code translate="no">Native</code></td>
+                        <td><p>Triggered right before starting video playback. Provides the index of the video that will start playing in the playlist.</p>
+                        <p>This event reflects the native <code translate="no">Video.contentIndex</code> field and its generally useful when playing video playlists. </p>
+                        <p>When playing a single video this event sends <code translate="no">0</code>0.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>disconnect</td>
+                        <td><p><code translate="no">BOOLEAN</code></p>
+                        <ul>
+                            <li><p><code translate="no">true</code> Network connection was lost.</p></li>
+                            <li><p><code translate="no">false</code> Network connection resumed.</p></li>
+                        </ul>
+                        </td>
+                        <td><p>Triggered when loss of internet connection is detected.</p>
+                        <p>This specific situation is handled by the native Video node. A native message triggered by RokuOS is presented to the app user informing that the network connection was lost.</p>
+                        <p>An error is eventually triggered but it’s not immediate as the player waits for the conditions to resume video playback.</p>
+                        <p>We provide this event in case developers need to implement custom behaviors/workflows to handle this situation.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>error</td>
+                        <td><p><code translate="no">ASSOCIATIVEARRAY</code></p>
+                        <p>Provides an AssociativeArray object with the following keys:</p>
+                        <ul>
+                            <li>
+                                <p><code translate="no">source</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                                <p>Provides an indication of the source of the error. This allows errors to be filtered and individually handled depending on their source. Possible values:</p>
+                                <ul>
+                                    <li><p><code translate="no">playback</code> an error occurred during video playback. This error is triggered when the native <code translate="no">Video.state</code> field value is set to <code translate="no">error</code>. More info on the error can be found in the <code translate="no">data</code> key object.</p></li>
+                                    <li><p><code translate="no">playback-retrial</code>  triggered when retryOnError is enabled. Lets developers know that there are no more valid video sources to retry.</p></li>
+                                    <li><p><code translate="no">playback-buffering</code>  triggered when bufferTimeout is enabled (ie, set to a value higher than 0) and indicates that the buffering timeout has been reached. Keep in mind that if retryOnError is enabled, it’ll still try to playback another source, otherwise the playback will stop.</p></li>
+                                    <li><p><code translate="no">load</code> triggered when an error occurs within the load function.</p></li>
+                                    <li><p><code translate="no">playVideo</code> triggered when an error occurs within the playVideo function.</p></li>
+                                    <li><p><code translate="no">playVideos</code> triggered when an error occurs within the playVideos function.</p></li>
+                                    <li><p><code translate="no">playPlaylist</code> triggered when an error occurs within the playPlaylist function.</p></li>
+                                    <li><p><code translate="no">playRelated</code> triggered when an error occurs within the playRelated function.</p></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><code translate="no">path</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                                <p>Provides a more detailed indication on where exactly the error occurred. For example:</p>
+                                <ul>
+                                    <li><p><code translate="no">bcPlayer/bcPlayerTask</code> the error occurred in the bcPlayer internal task.</p></li>
+                                    <li><p><code translate="no">bcPlayer/bcPlayerTask/playPlaylist</code> the error occurred in the bcPlayer task playPlaylist function.</p></li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <p><code translate="no">message</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                                <p>Provides the error message. The exact value of this property depends on the error <code translate="no">source</code>:</p>
+                                <ul>
+                                    <li><p><code translate="no">playback</code>: contains the value of the native <code translate="no">Video.errorMsg</code> field.</p></li>
+                                    <li><p><code translate="no">playback-retrial/playback-buffering</code>: provides a description of the error.</p></li>
+                                    <li><p><code translate="no">playVideo/playVideos/playPlaylist/playRelated</code>:</p>
+                                    <ul>
+                                        <li>In case of a Playback API request failure this property contains either the error message provided in the response body or, if that’s not available, the associated roUrlEvent GetFailureReason value.</li>
+                                        <li>In all other cases (validation errors), provides a description of the error.</li>
+                                    </ul>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <p><code translate="no">data</code> <code translate="no">ASSOCIATIVEARRAY</code> <code translate="no">OPTIONAL</code></p>
+                                <p>Provides more details about the error. This property is available in the <code translate="no">playback</code>, <code translate="no">playback-retrial</code>, <code translate="no">playback-buffering</code> and some of the other errors that might contain data on a failed API request. Provides the following properties:</p>
+                                <ul>
+                                    <li><p><code translate="no">errorCode</code> <code translate="no">INTEGER</code> <code translate="no">NATIVE</code> <code>REQUIRED</code></p>
+                                    <p>The value of this property depends on the error <code translate="no">source</code>:</p>
+                                    <ul>
+                                        <li><p><code translate="no">playback</code>: contains the value of the native <code translate="no">Video.errorCode</code> field. Check the Roku documentation for all the possible values in this field.</p></li>
+                                        <li><p><code translate="no">playback-retrial</code>: contains the value of the native <code translate="no">Video.errorCode</code> field set by the latest source playback retry error.</p></li>
+                                        <li><p><code translate="no">playback-buffering</code>: contains the value of the native <code translate="no">Video.errorCode</code> field. It should be <code translate="no">0</code> in this case as the buffering timeout usually triggers before the Video playback error.</p></li>
+                                        <li><p><code translate="no">playVideo/playVideos/playPlaylist/playRelated</code>: contains the Playback API request response code.</p></li>
+                                    </ul>
+                                    </li>
+                                    <li><p><code translate="no">contentIndex</code> <code translate="no">INTEGER</code> <code translate="no">NATIVE</code> <code>OPTIONAL</code></p>
+                                    <p>Value of the native <code translate="no">Video.contentIndex</code> field. It’s set to <code translate="no">0</code> when playing a single video. Only present on <code translate="no">playback</code>, <code translate="no">playback-retrial</code> and <code translate="no">playback-buffering</code> error sources.</p>
+                                    </li>
+                                    <li>
+                                    <p><code translate="no">completedStreamInfo</code> <code translate="no">ASSOCIATIVEARRAY</code> <code translate="no">NATIVE</code> <code translate="no">OPTIONAL</code></p>
+                                    <p> Value of the native Video.completedStreamInfo field. Useful on playback errors. Only present on playback, playback-retrial and playback-buffering error sources.</p></li>
+                                    <li>
+                                    <p><code translate="no">errorMsg</code> <code translate="no">STRING</code> <code translate="no">NATIVE</code> <code translate="no">OPTIONAL</code></p>
+                                    <p>The value of this property depends on the error source:</p>
+                                    <ul>
+                                        <li><p><code translate="no">playback/playback-retrial/playback-buffering</code>: contains the value of the native <code translate="no">Video.errorMsg</code> field. Only present if errorCode is not <code translate="no">0</code>.</p></li>
+                                        <li><p><code translate="no">playVideo/playVideos/playPlaylist/playRelated</code>: contains the return value of the Playback API request associated <code translate="no">roUrlEvent</code> GetFailureReason function.</p></li>
+                                    </ul>
+                                </li>
+                                    <li>
+                                    <p><code translate="no">errorStr</code> <code translate="no">STRING</code> <code translate="no">NATIVE</code> <code translate="no">OPTIONAL</code></p>
+                                    <p>Value of the native <code translate="no">Video.errorStr</code> field. Only present if <code translate="no">errorCode</code> is not <code translate="no">0</code> on <code translate="no">playback</code>, <code translate="no">playback-retrial</code> and <code translate="no">playback-buffering</code> error sources.</p>
+                                </li>
+                                    <li>
+                                    <p><code translate="no">errorInfo</code> <code translate="no">ASSOCIATIVEARRAY</code> <code translate="no">NATIVE</code> <code translate="no">OPTIONAL</code></p>
+                                    <p>The value of this property depends on the error <code translate="no">source</code>:</p>
+                                    <ul>
+                                        <li><p><code translate="no">playback/playback-retrial/playback-buffering</code>: contains the value of the native Video.errorInfo field. Only present if errorCode is not 0.</p></li>
+                                        <li><p><code translate="no">playVideo/playVideos/playPlaylist/playRelated</code>: contains the Playback API request error response body. The expected value is an AssociativeArray object containing the following properties (for more detailed information on these please check the Playback API documentation page):</p>
+                                        <ul>
+                                            <li><p><code translate="no">error_code</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p></li>
+                                            <li><p><code translate="no">message</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p></li>
+                                        </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><p><code translate="no">retry</code> <code translate="no">BOOLEAN</code> <code translate="no">OPTIONAL</code></p>
+                                <p>If <code translate="no">true</code> specifies that it wasn't possible to playback a specific video source and the player will retry with a different source. If all the available video sources fail to play, a <code translate="no">playback-retrial</code> error will be triggered (and in that case, retry value is reset to <code translate="no">false</code>). Only present if retryOnError is enabled on <code translate="no">playback</code>, <code translate="no">playback-retrial</code> and <code translate="no">playback-buffering</code> error sources.</p>
+                                </li>
+                                <li><p><code translate="no">retries</code> <code translate="no">INTEGER</code> <code translate="no">OPTIONAL</code></p>
+                                <p>Specifies the number of source playback retries that were executed. Only present if retryOnError is enabled on <code translate="no">playback</code>, <code translate="no">playback-retrial</code> and <code translate="no">playback-buffering</code> error sources.</p>
+                                </li>
+                                <li><p><code translate="no">source</code> <code translate="no">ASSOCIATIVE</code> <code translate="no">OPTIONAL</code></p>
+                                <p>Specifies an invalid video source which bcPlayer wasn’t able to properly parse into the expected Video ContentNode fields. Only present in a specific <code translate="no">playback-retrial</code> error.</p>
+                                </li>
+                                        
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </td>
+                        <td><p>Triggered when an error occurs within bcPlayer. The possible errors include video playback errors as well as data parsing, API request errors and other validation related errors.</p></td>
+                    </tr>
+                    <tr>
+                        <td>buffering</td>
+                        <td><p><code translate="no">ASSOCIATIVEARRAY</code></p>
+                        <p>Provides an AssociativeArray object with the following keys:</p>
+                        <ul>
+                            <li><p><code translate="no">contentIndex</code> <code translate="no">INTEGER</code> <code translate="no">REQUIRED</code></p>
+                            <p>Reflects the value of the native <code translate="no">Video.contentIndex</code> field.</p></li>
+                            <li><p><code translate="no">position</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                            <p>Reflects the value of the native <code translate="no">Video.position</code> field.</p></li>
+                            <li><p><code translate="no">bufferingStatus</code> <code translate="no">ASSOCIATIVEARRAY</code> <code translate="no">REQUIRED</code></p>
+                            <p>Reflects the value of the native Video.bufferingStatus field.
+                                The following properties are available:</p>
+                            <ul>
+                                <li><p><code translate="no">percentage</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                <p>Percent buffering complete as an integer.</p>
+                                </li>
+                                <li><p><code translate="no">isUnderrun</code> <code translate="no">BOOLEAN</code> <code translate="no">REQUIRED</code></p>
+                                <p>Indicates if a stream underrun occurred.</p>
+                                </li>
+                                <li><p><code translate="no">isUnderrun</code> <code translate="no">BOOLEAN</code> <code translate="no">REQUIRED</code></p>
+                                <p>Indicates whether the player has buffered enough data to allow the player to begin playing immediately should "control" be set to "play."</p>
+                                </li>
+                                <li><p><code translate="no">actualStart</code> <code translate="no">FLOAT</code> <code translate="no">REQUIRED</code></p>
+                                <p>A time value that is automatically set when <code translate="no">prebufferDone</code> becomes <code translate="no">true</code>, specifying the actual time from which playback will resume. This may vary from the time requested in the content node's <code translate="no">playStart</code> field, depending on the capabilities of the player and the <code translate="no">seekMode</code> setting.</p>
+                                </li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </td>
+                        <td><p>Reflects the buffering value of the Video.state field and specifies that stream buffering is in progress. To capture the buffering progress in real-time, an event listener should be set into the Video.bufferingStatus like so:</p>
 
+                            <pre class="line-numbers">
+                                <code class="language-java" translate="No">sub init()
+
+                                    m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                                    m.bcPlayer.video.observeField("bufferingStatus", "onBufferingStatus")
+                                  
+                                  end sub
+                                  
+                                  ' ...
+                                  
+                                  sub onBufferingStatus(ev)
+                                    data = ev.getData()
+                                  
+                                    ' data is an AssociativeArray object containing the following properties:
+                                    ' percentage, isUnderrun, prebufferDone, actualStart
+                                    ' any change to any of those properties value will trigger the execution of this function, so the percentage property can be used to track the buffering progress
+                                  
+                                  end sub
+                                </code></pre>
+                
+                        
+                        </td>
+                    </tr>
+                    <tr>    
+                        <td>duration</td>
+                        <td>WIP</td>
+                        <td></td>
+                    </tr>
+                    <tr>    
+                        <td>timedMetaData</td>
+                        <td>WIP</td>
+                        <td></td>
+                    </tr>
+                    <tr>    
+                        <td>dialogClose</td>
+                        <td><p><code translate="no">BOOLEAN</code></p>
+                        <ul>
+                            <li><p><code translate="no">true</code> an error dialog has been closed by a user action.</p></li>
+                            <li><p><code translate="no">false</code> not used.</p></li>
+                        </ul>
+                        </td>
+                        <td><p>Triggered when an error dialog is closed by a user action, usually pressing the Dialog Close button.</p></td>
+                    </tr>
+                    <tr>    
+                        <td>mute</td>
+                        <td>WIP</td>
+                        <td></td>
+                    </tr>
+                    <tr>    
+                        <td>size</td>
+                        <td><p><code translate="no">ASSOCIATIVEARRAY</code></p>
+                        <ul>
+                            <li><p><code translate="no">width</code></p></li>
+                            <li><p><code translate="no">height</code></p></li>
+                        </ul>
+                        </td>
+                        <td><p>Triggered when the <code translate="no">width</code> or <code translate="no">height</code> bcPlayer native fields change, although it will only trigger if both values are higher than zero.</p></td>
+                    </tr>
+                    <tr>    
+                        <td>close</td>
+                        <td><p><code translate="no">BOOLEAN</code></p>
+                        <ul>
+                            <li><p><code translate="no">true</code> the bcPlayer node has been completely terminated.</p></li>
+                            <li><p><code translate="no">false</code> not used.</p></li>
+                        </ul>
+                        </td>
+                        <td><p>Triggered when the bcPlayer is completely terminated. Keep in mind that when the close function is called, the bcPlayer is not terminated immediately as it still waits for any task that might still be in progress. Once all tasks complete, the <code translate="no">close</code> event is triggered.</p>
+                        <p>This event can be used to clean up any remaining bcPlayer references and observers.</p>
+                        </td>
+                    </tr>
+                    <tr>    
+                        <td>logOutput</td>
+                        <td><p><code translate="no">ASSOCIATIVEARRAY</code></p>
+                        <p>Provides an AssociativeArray object with the following keys:</p>
+                        <ul>
+                            <li><p><code translate="no">level</code> <code translate="no">INTEGER</code> <code translate="no">REQUIRED</code></p>
+                            <p>Specifies the log level:</p>
+                            <ul>
+                                <li><p><code translate="no">0</code>: error.</p></li>
+                                <li><p><code translate="no">1</code>: warning.</p></li>
+                                <li><p><code translate="no">2</code>: info.</p></li>
+                                <li><p><code translate="no">3</code>: verbose.</p></li>
+                                <li><p><code translate="no">4</code>: debug.</p></li>
+                            </ul>
+                            </li>
+                            <li><p><code translate="no">time</code> <code translate="no">INTEGER</code> <code translate="no">REQUIRED</code></p>
+                            <p>Provides the date/time as the number of seconds from the Unix epoch (00:00:00 1/1/1970 GMT).</p>
+                            </li>
+                            <li><p><code translate="no">message</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                            <p>Provides the log message.</p>
+                            </li>
+                            <li><p><code translate="no">params</code> <code translate="no">ANY</code> <code translate="no">REQUIRED</code></p>
+                            <p>Provides other helpful data. This can be any value, including invalid when no data is set.</p>
+                            </li>
+                        </ul>
+                        </td>
+                        <td><p>Allows access to the internal bcPlayer logs, which are triggered by an internal Logger node.</p>
+                        <p>The log level can be configured through the logLevel field, allowing to control the amount of logs coming through the <code translate="no">logOutput</code> event.</p>
+                        </td>
+                    </tr>
+                    <tr>    
+                        <td>keyEvent</td>
+                        <td><p><code translate="no">ASSOCIATIVEARRAY</code></p>
+                        <p>Provides an AssociativeArray object with the following keys:</p>
+                        <ul>
+                            <li><p><code translate="no">key</code> <code translate="no">STRING</code> <code translate="no">REQUIRED</code></p>
+                            <p>Specifies the button that was pressed/released.</p>
+                            </li>
+                            <li><p><code translate="no">press</code> <code translate="no">BOOLEAN</code> <code translate="no">REQUIRED</code></p>
+                            <ul>
+                                <li><p><code translate="no">true</code>: the button was pressed.</p></li>
+                                <li><p><code translate="no">false</code>: the button was released.</p></li>
+                            </ul>
+                            </li>
+                            <li><p><code translate="no">handled</code> <code translate="no">BOOLEAN</code> <code translate="no">REQUIRED</code></p>
+                            <p>Indicates if the event was handled internally by bcPlayer.</p>
+                            </li>
+                        </ul>
+                        </td>
+                        <td><p>Triggered when the user presses and releases a remote control button and the button event is captured in the bcPlayer node.</p>
+                        <p>Keep in mind that some button events are captured by the native Video node, in which case bcPlayer won’t be able to capture it and make it available in this event.</p>
+                        </td>
+                    </tr>
+                    <tr>    
+                        <td>voiceComand</td>
+                        <td><p><code translate="no">ASSOCIATIVEARRAY</code></p>
+                        <p>Provides an AssociativeArray object with the following keys:</p>
+                        <ul>
+                            <li><p><code translate="no">handled</code> <code translate="no">BOOLEAN</code> <code translate="no">REQUIRED</code></p>
+                            <p>Indicates if the event was handled internally by bcPlayer.</p>
+                            </li>
+                            <li><p>event specific properties</p></li>
+                        </ul>
+                        </td>
+                        <td><p>Provides voice commands events data. The contents of the AssociativeArray will vary depend of the voice command event. It contains the native event properties plus the handled property which indicates if the event was handled internally by bcPlayer.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          
+        </section>
+        <section>
+            <pre class="line-numbers">
+                <code class="language-javascript" translate="No">sub init()
+
+                    m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                  
+                    ' setup an event listener specifically for the "finished" event
+                    m.bcPlayer.on.observeField("finished", "onFinished")
+                    
+                    ' its also possible to handle all the events in a single event listener function
+                    m.bcPlayer.on.observeField("finished", "onPlayerEvent")
+                    m.bcPlayer.on.observeField("error", "onPlayerEvent")
+                  
+                  end sub
+                  
+                  ' create the event listener function where the event data can be accessed
+                  sub onFinished(ev)
+                    
+                    data = ev.getData()   ' data contains the "finished" event data
+                    
+                    ' handle the "finished" event here...
+                    
+                  end sub
+                  
+                  ' create a universal event listener function where all the events can be handled
+                  sub onPlayerEvent(ev)
+                    
+                    data = ev.getData()   ' "data" contains the event data
+                    event = ev.getField() ' "event" contains the event name ("finished" or "error" in this example)
+                    
+                    ' handle the event here... 
+                    ' typically there should be an if or switch structure to filter the events
+                    
+                  end sub
+                </code></pre>
+
+        </section>
+        <section class="bcls-section">
+            <h2 id="functions">Functions</h2>
+            <p>The bcPlayer node also provides some functions to interact with the Video content and playback.</p>
+
+            <h3>Load</h3>
+            <p>Asynchronously loads Playback API contents (a video or a playlist) into the bcPlayer and starts the playback. Usually the data entered in the load function comes from the bcAPI component available in the Brightcove SDK which retrieves videos data from the Playback API.</p>
+            <p>The load function may trigger two bcPlayer.on.load events:</p>
+            <ul>
+                <li>A start event when the load process begins.</li>
+                <li>An end event when the load process is completed and the new Video content is set.</li>
+            </ul>
+
+            <h5>Parameters</h5>
+            <ul>
+                <li><p><code translate="no">data</code> <code translate="no">DYNAMIC</code> <code translate="no">REQUIRED</code> Brightcove videos data to load into the bcPlayer for playback. This data can represent a single video or multiple videos. The possible values are:</p>
+                <ul>
+                    <li><p>A single video object 
+                        <code translate="no">ASSOCIATIVEARRAY</code>
+                         <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Video_by_ID_or_Reference_ID">Video by ID/Reference</a></p></li>
+                    <li><p>A playlist 
+                        <code translate="no">ASSOCIATIVEARRAY</code>
+                         <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Playlists/operation/Get_Playlists_by_ID_or_Reference_ID">Playlist by ID/Reference</a></p></li>
+                    <li><p>An array of videos
+                        <code translate="no">ARRAY</code>
+                         <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Related_Videos_by_ID_or_Reference_ID">Related Videos</a> or <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Videos">Video Search</a></p></li>
+                </ul>
+                </li>
+                <li><p><code translate="no">options</code> <code translate="no">ASSOCIATIVEARRAY</code> <code translate="no">OPTIONAL</code></p>
+                <ul>
+                    <li><p> 
+                        <code translate="no">autoplay</code> <code translate="no">Integer</code> <code translate="no">OPTIONAL</code> [WIP] Specifies the index of the video that should start playing when the load process ends (in case of a playlist).</p></li>
+                </ul>
+                </li>
+            </ul>
+        </section>
   </section>
 </article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
