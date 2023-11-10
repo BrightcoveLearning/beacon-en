@@ -3863,10 +3863,22 @@
                 <li>
                     <p><code translate="no">policy_key</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                 <ul>
-                    <li><p>Specifies Brightcove API user policy key.</p></li>
+                    <li><p>Specifies the user policy key required to access the <a href="https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html">Playback API</a>.</p></li>
+                </ul>
+                </li>
+                <li>
+                    <p><code translate="no">auth_token</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                <ul>
+                    <li><p>Specifies the JSON Web Token required to:</p>
+                    <ul>
+                        <li>Provide Playback Restriction rules (Playback Rights) through Edge Playback Authorization (EPA).</li>
+                        <li>To specify License Keys Protection for HLSe content playback.</li>
+                    </ul>
+                    </li>
                 </ul>
                 </li>
             </ul>
+            <p>Code Snipped</p>
             <pre class="line-numbers">
                 <code class="language-basic" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
                     m.bcPlayer.credentials = {
@@ -3884,6 +3896,34 @@
                       }
                     })
                 </code></pre>
+                <aside class="bcls-aside bcls-aside--information">
+                    <p>The <strong>policy_key</strong> and <strong>auth_token</strong> properties will specify which Playback API service is used to retrieve Brightcove catalog metadata (through the <strong>bcPlayer.getVideo</strong>, <strong>bcPlayer.getVideos</strong>, <strong>bcPlayer.getPlaylist</strong> and <strong>bcPlayer.getRelated</strong> functions):</p>
+                    <ul>
+                        <li><p><strong>policy_key</strong> set / <strong>auth_token</strong> not set: </p>
+                        <ul>
+                            <li><p>The Edge Playback API service is used to retrieve Brightcove catalog metadata.</p></li>
+                            <li><p>Access to Playback Restrictions and Playback Rights is not available.</p></li>
+                            <li><p>HLSe content playback is not possible.</p></li>
+                        </ul>
+                        </li>
+                        <li><p><strong>policy_key</strong> not set / <strong>auth_token</strong> set: </p>
+                        <ul>
+                            <li><p>The Edge Playback Authorization service is used to retrieve Brightcove catalog metadata.</p></li>
+                            <li><p>Access to Playback Restrictions and Playback Rights is available.</p></li>
+                            <li><p>HLSe content playback is possible.</p></li>
+                        </ul>
+                        </li>
+                        <li><p>both <strong>policy_key</strong> set and <strong>auth_token</strong>  set: </p>
+                        <ul>
+                            <li><p>The Edge Playback API service is used to retrieve Brightcove catalog metadata.</p></li>
+                            <li><p>Access to Playback Restrictions and Playback Rights is not available.</p></li>
+                            <li><p>HLSe content playback is possible.</p></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <p>Brightcove JSON <a href="https://general.support.brightcove.com/developer/create-json-web-token.html">Web Token</a> reference.</p>
+                    <p>Brightcove <a href="https://apis.support.brightcove.com/playback-restrictions/getting-started/overview-playback-restrictions.html">Playback Restrictions</a> reference.</p>
+                </aside>
         </section>
         <hr>
         <section>
@@ -3893,14 +3933,26 @@
             <p>Configures Brightcove Playback API environment. If not specified, the production base URL will be used.</p>
             
             <h4>Possible Values</h4>
-            <p>An ASSOCIATIVE ARRAY containing the following keys:</p>
             <ul>
-                <li><p><code translate="no">production</code> <code class="text-warning" translate="no">DEFAULT</code> Playback API requests are made to <code translate="no">https://edge.api.brightcove.com</code> </p>
+                <li><p><code translate="no">production</code> <code class="text-warning" translate="no">DEFAULT</code> API requests are made to:</p>
+                    <ul>
+                        <li><p>Playback API: <code translate="no">https://edge.api.brightcove.com</code></p></li>
+                        <li><p>EPA:  <code translate="no">https://edge-auth.api.brightcove.com</code></p></li>
+                    </ul>
                 </li>
-                <li><p><code translate="no">staging</code> Playback API requests are made to <code translate="no">https://edge.api.staging.brightcove.com</code> </p>
+                <li><p><code translate="no">staging</code> API requests are made to:</p>
+                    <ul>
+                        <li><p>Playback API: <code translate="no">https://edge.api.staging.brightcove.com</code></p></li>
+                        <li><p>EPA:  <code translate="no">https://edge-auth.api.staging.brightcove.com</code></p></li>
+                    </ul>
                 </li>
-                <li><p><code translate="no">qa</code> Playback API requests are made to <code translate="no">https://edge.api.qa.brightcove.com</code></p> 
+                <li><p><code translate="no">qa</code> API requests are made to:</p>
+                    <ul>
+                        <li><p>Playback API: <code translate="no">https://edge.api.qa.brightcove.com</code></p></li>
+                        <li><p>EPA:  <code translate="no">https://edge-auth.api.qa.brightcove.com</code></p></li>
+                    </ul>
                 </li>
+                
             </ul>
             <pre class="line-numbers">
                 <code class="language-basic" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
@@ -3952,8 +4004,8 @@
             </code></p>
             <p>Configures sources types/containers preferences ordered by the priority each type/container will have when filtering the available video sources.</p>
             <p>This allows you to setup the bcPlayer so that only certain stream types/containers are used or ignored, and the order in those sources will be filtered.</p>
-            <p>Playing a video in which no sources are listed in the streamPreference field will result in an error.</p>
-            <p>Find more information on how the sources are parsed and filtered in the <a href="#">Sources Selection</a> section.</p>
+            <p>Playing a video in which no sources are listed in the <code translate="no">streamPreference</code> field will result in an error.</p>
+            <p>Find more information on how the sources are parsed and filtered in the <a href="#sources-selection">Sources Selection</a> section.</p>
             
             <h4>Possible Values</h4>
             <p>An array containing any combination of the following values:</p>
@@ -3971,6 +4023,7 @@
                 </p>
                 </li>
             </ul>
+            <p>Code Snippet</p>
             <pre class="line-numbers">
                 <code class="language-basic" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
                     m.bcPlayer.streamPreference = ["dash"]  ' will only playback DASH sources
@@ -3990,7 +4043,10 @@
             </code></p>
             <p>Configures DRM encryption systems preferences ordered by the priority each DRM system will have when filtering the available video sources.</p>
             <p>This allows developers to setup the bcPlayer so that only certain DRM encrypted sources are used or ignored and the order in which the sources will be filtered through.</p>
-            <p>Playing a video in which no DRM encrypted sources are listed in the <code translate="no">drmPreference</code> field will result in an error. The non value forces the selection of sources with no DRM encryption.</p>
+            <p>Playing a video in which no DRM encrypted sources are listed in the <code translate="no">drmPreference</code> field will result in an error. The <code>none</code> value forces the selection of sources with no DRM encryption.</p>
+            <p>Find more information on how the sources are parsed and filtered in the <a href="#sources-selection">Sources Selection</a> section.
+
+            </p>
             <p><a href="https://developer.roku.com/en-gb/docs/specs/media/content-protection.md">Roku DRM reference</a></p>
             <p><a href="https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-content-drm.html">Videocloud DRM reference</a></p>
             
@@ -4068,7 +4124,7 @@
         </section>
         <hr>
         <section>
-            <h3>spinnerConfig</h3>
+            <h3 id="spinner-config">spinnerConfig</h3>
             <p><code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-success" translate="No">OPTIONAL
             </code></p>
             <p>Configures the custom loading spinner appearance.</p>
@@ -4082,7 +4138,9 @@
                 </p> <ul>
                     <li><p>Specifies the spinner image path</p></li>
                     <li><p><code class="text-warning" translate="no">DEFAULT</code> Internal PNG image path which looks like so:</p>
-                    
+                        <figure class="bcls-figure">
+                            <img class="bcls-image" src="/assets/images/s-publishing-apps-img/roku/roku-library/loading-img.webp" alt="Loading the roku library locally">
+                          </figure>
                     </li>
                 </ul>
                 </li>
@@ -4099,7 +4157,7 @@
             </code>
                 </p> <ul>
                     <li><p>Specifies the color of the spinner image, which is set through the <code translate="no">blendColor</code> Poster field.</p></li>
-                    <li><p><code class="text-warning" translate="no">DEFAULT</code> ""</p>
+                    <li><p><code class="text-warning" translate="no">DEFAULT</code> <code translate="no">""</code></p>
                     
                     </li>
                 </ul>
@@ -4167,7 +4225,7 @@
             <p>Controls the custom loading spinner visibility. This field is used by internal functions but it also allows the custom spinner to be controller externally if needed.</p>
             <p>Keep in mind that the OOTB UI has its loading spinner. This field is independent from the OOTB UI built in loading spinner.
             </p>
-            <p>The appearance of the loading spinner can be customized through the spinnerConfig field.</p>
+            <p>The appearance of the loading spinner can be customized through the <a href="#spinner-config">spinnerConfig</a> field.</p>
             
             <h4>Possible Values</h4>
             <p>An array containing any combination of the following values:</p>
@@ -4189,7 +4247,7 @@
         </section>
         <hr>
         <section>
-            <h3>retryOnError</h3>
+            <h3 id="retry-error">retryOnError</h3>
             <p><code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-success" translate="No">OPTIONAL
             </code></p>
             <p>Configures the activation of the retry on error flow. This flow allows bcPlayer to automatically retry the video playback with another video source when a specific source results in a playback error during the initial buffering process.</p>
@@ -4251,7 +4309,7 @@
             <p>Configures bcPlayer to show error dialogs when an error occurs.</p>
             <p>It’s enabled by default; you can disable it and capture the errors through the <code translate="no">bcPlayer.on.error</code> event.
             </p>
-            <p>These dialogs appearance can be customized through the dialogTheme field.
+            <p>These dialogs appearance can be customized through the <a href="#dialog-theme">dialogTheme</a> field.
             </p>
             
             <h4>Possible Values</h4>
@@ -4273,12 +4331,16 @@
         </section>
         <hr>
         <section>
-            <h3>dialogTheme</h3>
+            <h3 id="dialog-theme">dialogTheme</h3>
             <p><code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-success" translate="No">OPTIONAL
             </code></p>
             <p>Configures error dialogs appearance when enableDialogs is enabled.</p>
             <p>The expected properties are the same as the native StandardDialog <code translate="no">palette</code> field properties, except for <code translate="no">DialogItemColor</code>, <code translate="no">DialogInputFieldColor</code>, <code translate="no">DialogSecondaryTextColor</code>, and <code translate="no">DialogKeyboardColor</code> properties, which do not apply.
             </p>
+            <p>Check below how the error dialogs look like in the default configuration.</p>
+            <figure class="bcls-figure">
+                <img class="bcls-image" src="/assets/images/s-publishing-apps-img/roku/roku-library/error-img.webp" alt="error image example">
+              </figure>
 
             <h4>Possible Values</h4>
             <p>An ASSOCIATIVE ARRAY with the following optional keys:</p>
@@ -4362,6 +4424,7 @@
             </p>
             <p>Setting it to 0 disables the buffering timeout timer.
             </p>
+            <p>If the <a href="#retry-error">retryOnError</a> config is enabled, if a buffering timeout error is trigger it’ll retry playing other available sources with no visual interruption to the user. Although an error will still be triggered through the <code translate="no">bcPlayer.on.error</code> event.</p>
             
             <h4>Possible Values</h4>
             <ul>
@@ -4383,7 +4446,7 @@
         <hr>
         <section>
             <h3>on</h3>
-            <p><code translate="no">ROSGNODE</code> <code translate="no">READ-ONLY</code></p>
+            <p><code translate="no" class="text-secondary">ROSGNODE</code> <code translate="no">READ-ONLY</code></p>
             <p>Allows access to all the bcPlayer events. Developers should setup event listeners to capture the events data through the observeField() or observeFieldScoped() functions. Check the table below for all the available events and the data they provide. Check the code snippet to understand how to setup event listeners to capture these events.
             </p>
         </section>
@@ -4394,30 +4457,39 @@
                 <caption class="bcls-caption--table">Events</caption>
                 <thead class="bcls-table__head">
                     <tr>
-                        <th>Event</th>
-                        <th>Data</th>
-                        <th >Description</th>
+                        <th class="sticky-top">Event</th>
+                        <th class="sticky-top">Data</th>
+                        <th class="sticky-top">Description</th>
                     </tr>
                 </thead>
                 <tbody class="bcls-table__body">
+                    <tr>    
+                        <td>sdkReady</td>
+                        <td><p><code translate="no" class="text-secondary">BOOLEAN</code></p>
+                        <ul>
+                            <li><p><code translate="no">true</code> bcPlayer features are "live" and ready to use.</p></li>
+                            <li><p><code translate="no">false</code> bcPlayer features are not available.</p></li>
+                        </ul></td>
+                        <td><p>Indicates if the bcPlayer internal components have been completely initiated. If the <code translate="no">sdkReady</code> value is <code translate="no">false</code>, the bcPlayer features won’t be available to use.</p></td>
+                    </tr>
                     <tr>
                         <td class="align-top">load</td>
-                        <td><p><code translate="no">ASSOCOATIVEARRAY</code></p>
+                        <td><p><code translate="no" class="text-secondary">ASSOCOATIVE ARRAY</code></p>
                         <p>Provides an ASSOCIATIVE ARRAY object with the following keys:</p>
                         <ul>
                             <li><p><code translate="no">event</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <ul><p>Posible Values:</p>
-                                <li><p><code translate="no">event</code>: an error has occurred while loading Brightcove metadata.</p></li>
+                                <li><p><code translate="no">error</code>: an error has occurred while loading Brightcove metadata.</p></li>
                                 <li><p><code translate="no">start</code>: Brightcove metadata loading has started.</p></li>
-                                <li><p><code translate="no">end</code>: Brightcove metadata loading has finished.</p></li>
+                                <li><p><code translate="no">end</code>: Brightcove metadata loading has completed successfully. This event indicates that the <code translate="no">bcPlayer.content</code> field has been successfully updated with the new catalog metadata.</p></li>
                             </ul>
                             </li>
                             <li><p><code translate="no">type</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
             </code></p>
-                            <ul><p>Metadata type. Available in <code translate="no">start</code> and <code translate="no">end</code> events. Possible values:</p>
+            <p>Metadata type. Available in <code translate="no">start</code> and <code translate="no">end</code> events. Possible values:</p>
+                            <ul>
                                 <li><p><code translate="no">video</code>: specifies that a single video metadata is being  loaded.</p></li>
-                                <li><p><code translate="no">videos</code>: specifies that multiple videos metadata are being loaded.</p></li>
-                                <li><p><code translate="no">playlist</code>: specifies that a playlist metadata is being loaded.</p></li>
+                                <li><p><code translate="no">playlist</code>: specifies that a playlist metadata is being loaded (applies to Brightcove playlists as well as search results and related videos metadata).</p></li>
                             </ul>
                             </li>
                             <li><p><code translate="no">id</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
@@ -4442,7 +4514,7 @@
                     </tr>
                     <tr>
                         <td class="align-top">start</td>
-                        <td><p><code translate="no">ASSOCOATIVEARRAY</code></p>
+                        <td><p><code translate="no" class="text-secondary">ASSOCOATIVE ARRAY</code></p>
                             <p>Provides an ASSOCIATIVE ARRAY object with the following keys:</p>
                             <ul>
                                 <li><p><code translate="no">contentIndex</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-dark" translate="no">NATIVE</code> <code class="text-danger" translate="no">REQUIRED</code></p>
@@ -4454,34 +4526,37 @@
                                 <li><p><code translate="no">playStartInfo</code> <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-dark" translate="no">NATIVE</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                 <p>Reference to the native <code translate="no">Video.playStartInfo</code> field. Provides timing measurements related to the start of video playback. All measurements are in seconds. Provides the following keys:</p>
                                 <ul>
-                                    <li><p><code translate="no">total_dur</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                    <li><p><code translate="no">total_dur</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                         <p>Total video start duration.</p>
                                     </li>
-                                    <li><p><code translate="no">manifest_dur</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                    <li><p><code translate="no">manifest_dur</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                         <p>Manifest download and parsing.</p>
                                     </li>
-                                    <li><p><code translate="no">drm_load_dur</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                    <li><p><code translate="no">drm_load_dur</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                         <p>DRM system initialization.</p>
                                     </li>
-                                    <li><p><code translate="no">drm_lic_acq_dur</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                    <li><p><code translate="no">drm_lic_acq_dur</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                         <p>License acquisition. This typically includes interactions with the license server.</p>
                                     </li>
-                                    <li><p><code translate="no">prebuf_dur</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                    <li><p><code translate="no">prebuf_dur</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                         <p>Prebuffer content.</p>
                                     </li>
-                                    <li><p><code translate="no">manifest_start</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                    <li><p><code translate="no">manifest_start</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                         <p>Point at which manifest download and parsing begins.</p>
                                     </li>
-                                    <li><p><code translate="no">drm_load_start</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                    <li><p><code translate="no">drm_load_start</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                         <p>Point at which DRM system initialization begins.</p>
                                     </li>
-                                    <li><p><code translate="no">prebuf_start</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                    <li><p><code translate="no">drm_lic_acq_start</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                        <p>Point at which license acquisition begins.</p>
+                                    </li>
+                                    <li><p><code translate="no">prebuf_start</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                         <p>Point at which content pre-buffering begins.</p>
                                     </li>
                                 </ul>
                                 </li>
                                 <li><p><code translate="no">videoFormat</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-dark" translate="no">NATIVE</code> <code class="text-danger" translate="no">REQUIRED</code></p>
-                                <p>Reference to the native <code translate="no">Reference</code> to the native <code translate="no">Video.videoFormat</code> field. Contains the format of the currently playing video stream. Possible values:</p>
+                                <p>Reference to the native <code translate="no">Video.videoFormat</code> field. Contains the format of the currently playing video stream. Possible values:</p>
                                 <ul>
                                     <li><p><code translate="no">""</code> No stream playing.</p>
                                     </li>
@@ -4589,7 +4664,7 @@
                                             </ul>
                                     </li>
                                     <li><p><code translate="no">retries</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
-                                        <p>Available when playing Brightcove sources only. Specifies the number of playback retries when retryOnError is enabled. If it’s disabled, this property is set to <code translate="no">1</code>.</p>
+                                        <p>Available when playing Brightcove sources only. Specifies the number of playback retries when <a href="#retry-error">retryOnError</a> is enabled. If it’s disabled, this property is set to <code translate="no">1</code>.</p>
                                     </li>
                                 
                             </ul>
@@ -4621,10 +4696,10 @@
                         <td><p><code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code></p>
                         <p>Provides an ASSOCIATIVE ARRAY object with the following keys:</p>
                         <ul>
-                            <li><p><code translate="no">fromIndex</code> <code>INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                            <li><p><code translate="no">fromIndex</code> <code translate="no" class="text-secondary">INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>The index of the currently playing video in the playlist.</p>
                             </li>
-                            <li><p><code translate="no">toIndex</code> <code>INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                            <li><p><code translate="no">toIndex</code> <code translate="no" class="text-secondary">INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>The index of the previous video in the playlist that will start playing.</p>
                             </li>
                         </ul>
@@ -4636,10 +4711,10 @@
                         <td><p><code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code></p>
                         <p>Provides an ASSOCIATIVE ARRAY object with the following keys:</p>
                         <ul>
-                            <li><p><code translate="no">fromIndex</code> <code>INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                            <li><p><code translate="no">fromIndex</code> <code translate="no" class="text-secondary">INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>The index of the currently playing video in the playlist.</p>
                             </li>
-                            <li><p><code translate="no">toIndex</code> <code>INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                            <li><p><code translate="no">toIndex</code> <code translate="no" class="text-secondary">INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>The index of the next video in the playlist that will start playing.</p>
                             </li>
                         </ul>
@@ -4692,10 +4767,10 @@
                                 </li>
                             </ul>
                             </li>
-                            <li><p><code translate="no">contentIndex</code> <code>INTEGER</code> <code>NATIVE</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                            <li><p><code translate="no">contentIndex</code> <code translate="no" class="text-secondary">INTEGER</code> <code>NATIVE</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>Reference to the native <code translate="no">Video.contentIndex</code> field. Specifies the index of the video that is currently playing in the playlist. It’s set to <code translate="no">0</code> if only a single video is playing.</p>
                             </li>
-                            <li><p><code translate="no">errorCode</code> <code>INTEGER</code> <code>NATIVE</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                            <li><p><code translate="no">errorCode</code> <code translate="no" class="text-secondary">INTEGER</code> <code>NATIVE</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>Reference to the native <code translate="no">Video.errorCode</code> field. Specifies the error code if the stream has ended due to an error. Further details on the error can be retrieved through the <code translate="no">error</code>error event. Possible values:</p>
                             <ul>
                                 <li><code translate="no">0</code> no error</li>
@@ -4707,23 +4782,24 @@
                                 <li><code translate="no">-6</code> DRM error.</li>
                             </ul>
                             </li>
-                            <li><p><code translate="no">toIndex</code> <code>INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
-                            <p>The index of the next video in the playlist that will start playing.</p>
-                            </li>
+                            
                         </ul>
                         </td>
-                        <td class="align-top"><p>Triggered at the end of a video playback. The following situations will trigger a finished event:</p>
+                        <td class="align-top"><p>Triggered at the end of a video playback. The following situations will trigger a <code translate="no">finished</code> event:</p>
                         <ul>
                             <li><p>The video has played until the end of the stream.</p></li>
                             <li><p>A playback error occurs, either while loading the stream or mid-stream. Keep in mind that an <code translate="no">error</code>error event will trigger before the <code translate="no">finished</code> event in this case.</p></li>
-                            <li><p>A retrial error occurs, when it’s not possible to play any of the video available sources. Valid when retryOnError is enabled.</p></li>
+                            <li><p>A retrial error occurs, when it’s not possible to play any of the video available sources. Valid when <a href="#retry-error">retryOnError</a> is enabled.</p></li>
                             <li><p>The video playback is stopped by an external action.</p></li>
                         </ul>
                         </td>
                     </tr>
                     <tr>
                         <td class="align-top">playlistIndex</td>
-                        <td><code>INTEGER</code> <code class="text-dark" translate="no">NATIVE</code></td>
+                        <td class="align-top"><p><code translate="no" class="text-secondary">INTEGER</code> <code class="text-dark" translate="no">NATIVE</code></p>
+                        <ul>
+                            <li>Integer number</li>
+                        </ul></td>
                         <td class="align-top"><p>Triggered right before starting video playback. Provides the index of the video that will start playing in the playlist.</p>
                         <p>This event reflects the native <code translate="no">Video.contentIndex</code> field and its generally useful when playing video playlists. </p>
                         <p>When playing a single video this event sends <code translate="no">0</code>0.</p>
@@ -4731,7 +4807,7 @@
                     </tr>
                     <tr>
                         <td class="align-top">disconnect</td>
-                        <td><p><code class="text-secondary" translate="no">BOOLEAN</code></p>
+                        <td class="align-top"><p><code class="text-secondary" translate="no">BOOLEAN</code></p>
                         <ul>
                             <li><p><code translate="no">true</code> Network connection was lost.</p></li>
                             <li><p><code translate="no">false</code> Network connection resumed.</p></li>
@@ -4864,13 +4940,13 @@
                         <ul>
                             <li><p><code translate="no">contentIndex</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>Reflects the value of the native <code translate="no">Video.contentIndex</code> field.</p></li>
-                            <li><p><code translate="no">position</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                            <li><p><code translate="no">position</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>Reflects the value of the native <code translate="no">Video.position</code> field.</p></li>
                             <li><p><code translate="no">bufferingStatus</code> <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>Reflects the value of the native Video.bufferingStatus field.
                                 The following properties are available:</p>
                             <ul>
-                                <li><p><code translate="no">percentage</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                <li><p><code translate="no">percentage</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                 <p>Percent buffering complete as an integer.</p>
                                 </li>
                                 <li><p><code translate="no">isUnderrun</code> <code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-danger" translate="no">REQUIRED</code></p>
@@ -4879,7 +4955,7 @@
                                 <li><p><code translate="no">isUnderrun</code> <code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                 <p>Indicates whether the player has buffered enough data to allow the player to begin playing immediately should "control" be set to "play."</p>
                                 </li>
-                                <li><p><code translate="no">actualStart</code> <code translate="no">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                <li><p><code translate="no">actualStart</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                 <p>A time value that is automatically set when <code translate="no">prebufferDone</code> becomes <code translate="no">true</code>, specifying the actual time from which playback will resume. This may vary from the time requested in the content node's <code translate="no">playStart</code> field, depending on the capabilities of the player and the <code translate="no">seekMode</code> setting.</p>
                                 </li>
                             </ul>
@@ -4888,25 +4964,28 @@
                         </td>
                         <td class="align-top"><p>Reflects the buffering value of the Video.state field and specifies that stream buffering is in progress. To capture the buffering progress in real-time, an event listener should be set into the Video.bufferingStatus like so:</p>
 
-                            <pre class="line-numbers">
-                                <code class="language-basic" translate="No">sub init()
-
-                                    m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
-                                    m.bcPlayer.video.observeField("bufferingStatus", "onBufferingStatus")
-                                  
-                                  end sub
-                                  
-                                  ' ...
-                                  
-                                  sub onBufferingStatus(ev)
-                                    data = ev.getData()
-                                  
-                                    ' data is an ASSOCIATIVE ARRAY object containing the following properties:
-                                    ' percentage, isUnderrun, prebufferDone, actualStart
-                                    ' any change to any of those properties value will trigger the execution of this function, so the percentage property can be used to track the buffering progress
-                                  
-                                  end sub
-                                </code></pre>
+                            <div class="row overflow-scroll">
+                                <div class="col overflow-scroll" style="max-width: 250px;">
+                                    <pre class="line-numbers">
+                                        <code class="language-basic" translate="No">sub init()
+        
+                                            m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
+                                            m.bcPlayer.video.observeField("bufferingStatus", "onBufferingStatus")
+                                          
+                                          end sub
+                                          
+                                          ' ...
+                                          
+                                          sub onBufferingStatus(ev)
+                                            data = ev.getData()
+                                          
+                                            ' data is an ASSOCIATIVE ARRAY object containing the following properties:
+                                            ' percentage, isUnderrun, prebufferDone, actualStart
+                                            ' any change to any of those properties value will trigger the execution of this function, so the percentage property can be used to track the buffering progress
+                                          
+                                          end sub
+                                        </code></pre>
+                               
                 
                         
                         </td>
@@ -5146,7 +5225,7 @@
                 <h3>close</h3>
         </section>
         <section class="bcls-section">
-            <h2 id="functions">Video Sources Selection</h2>
+            <h2 id="sources-selection">Video Sources Selection</h2>
             <p>When playing a Videocloud video or playlist in the bcPlayer node through the load, playVideo, playVideos, playPlaylist and playRelated functions, the video/videos metadata is parsed and the video sources are filtered through the following stages:</p>
 
             <table class="bcls-table">
