@@ -4080,7 +4080,7 @@
         </section>
         <hr>
         <section>
-            <h3>logLevel</h3>
+            <h3 id="log-level">logLevel</h3>
             <p><code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
             </code></p>
             <p>Configures the logging level on the bcPlayer node. Only the specified messages will be triggered.</p>
@@ -4417,7 +4417,7 @@
         </section>
         <hr>
         <section>
-            <h3>bufferTimeout</h3>
+            <h3 id="buffer-timeout">bufferTimeout</h3>
             <p><code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
             </code></p>
             <p>Configures the buffering timeout error timer period in seconds. This configuration allows to setup a timer which is initiated once the initial video buffering begins and at the end of which a timeout error will trigger if the video playback hasn’t yet been initiated.
@@ -4802,7 +4802,7 @@
                         </ul></td>
                         <td class="align-top"><p>Triggered right before starting video playback. Provides the index of the video that will start playing in the playlist.</p>
                         <p>This event reflects the native <code translate="no">Video.contentIndex</code> field and its generally useful when playing video playlists. </p>
-                        <p>When playing a single video this event sends <code translate="no">0</code>0.</p>
+                        <p>When playing a single video this event sends <code translate="no">0</code>.</p>
                         </td>
                     </tr>
                     <tr>
@@ -4829,13 +4829,16 @@
                                 <p>Provides an indication of the source of the error. This allows errors to be filtered and individually handled depending on their source. Possible values:</p>
                                 <ul>
                                     <li><p><code translate="no">playback</code> an error occurred during video playback. This error is triggered when the native <code translate="no">Video.state</code> field value is set to <code translate="no">error</code>. More info on the error can be found in the <code translate="no">data</code> key object.</p></li>
-                                    <li><p><code translate="no">playback-retrial</code>  triggered when retryOnError is enabled. Lets developers know that there are no more valid video sources to retry.</p></li>
-                                    <li><p><code translate="no">playback-buffering</code>  triggered when bufferTimeout is enabled (ie, set to a value higher than 0) and indicates that the buffering timeout has been reached. Keep in mind that if retryOnError is enabled, it’ll still try to playback another source, otherwise the playback will stop.</p></li>
-                                    <li><p><code translate="no">load</code> triggered when an error occurs within the load function.</p></li>
-                                    <li><p><code translate="no">playVideo</code> triggered when an error occurs within the playVideo function.</p></li>
-                                    <li><p><code translate="no">playVideos</code> triggered when an error occurs within the playVideos function.</p></li>
-                                    <li><p><code translate="no">playPlaylist</code> triggered when an error occurs within the playPlaylist function.</p></li>
-                                    <li><p><code translate="no">playRelated</code> triggered when an error occurs within the playRelated function.</p></li>
+                                    <li><p><code translate="no">playback-retrial</code>  triggered when <a href="#retry-error">retryOnError</a> is enabled. Lets developers know that there are no more valid video sources to retry.</p></li>
+                                    <li><p><code translate="no">playback-buffering</code>  triggered when <a href="#buffer-timeout">bufferTimeout</a> is enabled (ie, set to a value higher than 0) and indicates that the buffering timeout has been reached. Keep in mind that if <a href="#retry-error">retryOnError</a> is enabled, it’ll still try to playback another source, otherwise the playback will stop.</p></li>
+                                    <li><p><code translate="no">load</code> triggered when an error occurs within the <a href="#load">load</a> function.</p></li>
+                                    <li><p><code translate="no">getVideo</code> triggered when an error occurs within the getVideo function.</p></li>
+                                    <li><p><code translate="no">getVideos</code> triggered when an error occurs within the getVideos function.</p></li>
+                                    <li><p><code translate="no">getPlaylist</code> triggered when an error occurs within the getPlaylist function.</p></li>
+                                    <li><p><code translate="no">getRelated</code> triggered when an error occurs within the getRelated function.</p></li>
+                                    <li><p><code translate="no">setSources</code> triggered when an error occurs within the setSources function.</p></li>
+                                    <li><p><code translate="no">addSource</code> triggered when an error occurs within the addSource function.</p></li>
+                                    <li><p><code translate="no">refreshSources</code> triggered when an error occurs within the execution of the sources refresh feature.</p></li>
                                 </ul>
                             </li>
                             <li>
@@ -4855,7 +4858,7 @@
                                     <li><p><code translate="no">playback-retrial/playback-buffering</code>: provides a description of the error.</p></li>
                                     <li><p><code translate="no">playVideo/playVideos/playPlaylist/playRelated</code>:</p>
                                     <ul>
-                                        <li>In case of a Playback API request failure this property contains either the error message provided in the response body or, if that’s not available, the associated roUrlEvent GetFailureReason value.</li>
+                                        <li>In case of a Playback API request failure this property contains either the error message provided in the response body or, if that’s not available, the associated roUrlEvent <a href="https://developer.roku.com/en-gb/docs/references/brightscript/events/rourlevent.md#getfailurereason-as-string">GetFailureReason</a> value.</li>
                                         <li>In all other cases (validation errors), provides a description of the error.</li>
                                     </ul>
                                     </li>
@@ -4890,7 +4893,7 @@
                                     <p>The value of this property depends on the error source:</p>
                                     <ul>
                                         <li><p><code translate="no">playback/playback-retrial/playback-buffering</code>: contains the value of the native <code translate="no">Video.errorMsg</code> field. Only present if errorCode is not <code translate="no">0</code>.</p></li>
-                                        <li><p><code translate="no">playVideo/playVideos/playPlaylist/playRelated</code>: contains the return value of the Playback API request associated <code translate="no">roUrlEvent</code> GetFailureReason function.</p></li>
+                                        <li><p><code translate="no">getVideo/getVideos/getPlaylist/getRelated/refreshSources</code>: contains the return value of the Playback API request associated <code translate="no">roUrlEvent</code> <a href="https://developer.roku.com/en-gb/docs/references/brightscript/events/rourlevent.md#getfailurereason-as-string">GetFailureReason</a> function.</p></li>
                                     </ul>
                                 </li>
                                     <li>
@@ -4904,7 +4907,7 @@
                                     <p>The value of this property depends on the error <code translate="no">source</code>:</p>
                                     <ul>
                                         <li><p><code translate="no">playback/playback-retrial/playback-buffering</code>: contains the value of the native Video.errorInfo field. Only present if errorCode is not 0.</p></li>
-                                        <li><p><code translate="no">playVideo/playVideos/playPlaylist/playRelated</code>: contains the Playback API request error response body. The expected value is an ASSOCIATIVE ARRAY object containing the following properties (for more detailed information on these please check the Playback API documentation page):</p>
+                                        <li><p><code translate="no">getVideo/getVideos/getPlaylist/getRelated/refreshSources</code>: contains the Playback API request error response body. The expected value is an ASSOCIATIVE ARRAY object containing the following properties (for more detailed information on these please check the <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html">Playback API documentation</a> page):</p>
                                         <ul>
                                             <li><p><code translate="no">error_code</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-danger" translate="no">REQUIRED</code></p></li>
                                             <li><p><code translate="no">message</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-danger" translate="no">REQUIRED</code></p></li>
@@ -4952,7 +4955,7 @@
                                 <li><p><code translate="no">isUnderrun</code> <code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                 <p>Indicates if a stream underrun occurred.</p>
                                 </li>
-                                <li><p><code translate="no">isUnderrun</code> <code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                                <li><p><code translate="no">prebufferDone</code> <code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                                 <p>Indicates whether the player has buffered enough data to allow the player to begin playing immediately should "control" be set to "play."</p>
                                 </li>
                                 <li><p><code translate="no">actualStart</code> <code translate="no" class="text-secondary">FLOAT</code> <code class="text-danger" translate="no">REQUIRED</code></p>
@@ -5027,7 +5030,7 @@
                     </tr>
                     <tr>    
                         <td class="align-top">close</td>
-                        <td><p><code class="text-secondary" translate="no">BOOLEAN</code></p>
+                        <td class="align-top"><p><code class="text-secondary" translate="no">BOOLEAN</code></p>
                         <ul>
                             <li><p><code translate="no">true</code> the bcPlayer node has been completely terminated.</p></li>
                             <li><p><code translate="no">false</code> not used.</p></li>
@@ -5059,12 +5062,12 @@
                             <p>Provides the log message.</p>
                             </li>
                             <li><p><code translate="no">params</code> <code translate="no">ANY</code> <code class="text-danger" translate="no">REQUIRED</code></p>
-                            <p>Provides other helpful data. This can be any value, including invalid when no data is set.</p>
+                            <p>Provides other helpful data. This can be any value, including <code translate="no">invalid</code> when no data is set.</p>
                             </li>
                         </ul>
                         </td>
                         <td class="align-top"><p>Allows access to the internal bcPlayer logs, which are triggered by an internal Logger node.</p>
-                        <p>The log level can be configured through the logLevel field, allowing to control the amount of logs coming through the <code translate="no">logOutput</code> event.</p>
+                        <p>The log level can be configured through the <a href="#log-level">logLevel</a> field, allowing to control the amount of logs coming through the <code translate="no">logOutput</code> event.</p>
                         </td>
                     </tr>
                     <tr>    
@@ -5092,7 +5095,7 @@
                     </tr>
                     <tr>    
                         <td class="align-top">voiceComand</td>
-                        <td><p><code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code></p>
+                        <td class="align-top"><p><code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code></p>
                         <p>Provides an ASSOCIATIVE ARRAY object with the following keys:</p>
                         <ul>
                             <li><p><code translate="no">handled</code> <code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-danger" translate="no">REQUIRED</code></p>
@@ -5109,6 +5112,7 @@
         </div>
         </section>
         <section>
+            <p>Code Snippet</p>
             <pre class="line-numbers">
                 <code class="language-basic" translate="No">sub init()
 
@@ -5149,27 +5153,94 @@
             <h2 id="functions">Functions</h2>
             <p>The bcPlayer node also provides some functions to interact with the Video content and playback.</p>
 
-            <h3>Load</h3>
-            <p>Asynchronously loads Playback API contents (a video or a playlist) into the bcPlayer and starts the playback. Usually the data entered in the load function comes from the bcAPI component available in the Brightcove SDK which retrieves videos data from the Playback API.</p>
+            <h3 id="load">Load</h3>
+            <p>Asynchronously loads Playback API contents (a video or a playlist) into the bcPlayer and starts the playback. Usually the data entered in the load function comes from the bcAPI component available in the Brightcove SDK which retrieves videos data from the Playback API, but it’s also used internally by the getVideo, getVideos, getPlaylist and getRelated functions.</p>
             <p>The load function may trigger two bcPlayer.on.load events:</p>
             <ul>
                 <li>A start event when the load process begins.</li>
+                <li>an error event when an error occurs during the load process.</li>
                 <li>An end event when the load process is completed and the new Video content is set.</li>
             </ul>
 
             <h5>Parameters</h5>
             <ul>
-                <li><p><code translate="no">data</code> <code translate="no">DYNAMIC</code> <code class="text-danger" translate="no">REQUIRED</code> Brightcove videos data to load into the bcPlayer for playback. This data can represent a single video or multiple videos. The possible values are:</p>
+                <li><p><code translate="no">data</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code class="text-danger" translate="no">REQUIRED</code> Brightcove videos data to load into the bcPlayer for playback. This data can represent a single video or multiple videos. The possible values are:</p>
                 <ul>
                     <li><p>A single video object 
                         <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code>
-                         <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Video_by_ID_or_Reference_ID">Video by ID/Reference</a></p></li>
-                    <li><p>A playlist 
+                         <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Video_by_ID_or_Reference_ID">Video by ID/Reference</a></p>
+                        <ul>
+                            <li><p>Expected metadata object structure:</p>
+                                <pre class="line-numbers">
+                                    <code class="language-basic" translate="No">{
+                                        account_id: "&#60;papi-video-account_id&#62;"
+                                        sources: [&#60;papi-video-sources&#62;],
+                                        &#60;...&#62;
+                                      },
+                                    </code></pre>
+                    
+                            </li>
+                            <li><p>Any other properties in this object (besides <code translate="no">account_id</code> and <code translate="no">sources</code>) are automatically set as fields of the <code translate="no"></code>bcPlayer.content ContentNode, taking into account the following custom specifications:</p>
+                               <ul>
+                                <li><p>If the <code translate="no">title</code> property isn't provided and a <code translate="no">name</code> property is, <code translate="no">title</code> is set to <code translate="no">name</code>. <code translate="no">title</code> is a native field of a ContentNode and it defines the title text shown in the top left corner of the player when using Roku's OOTB UI/UX.</p></li>
+                               <li><p>If the <code translate="no">length</code> property isn’t provided and a <code translate="no">duration</code> property is, <code translate="no">length</code> is set to <code translate="no">duration / 1000</code>. <code translate="">length</code> is a native field of a ContentNode and it specifies the length of a video in seconds. The <code translate="no">duration</code> property should contain the length of the video in milliseconds, if provided.</p></li>
+                               <li><p>If the <code translate="no">SDPosterUrl</code>, <code translate="no">HDPosterUrl</code> and <code translate="no">FHDPosterUrl</code> properties aren’t provided and a poster property is, these three properties are set to the poster property value. Poster should provide  the video poster image URL. <code translate="no">SDPosterUrl</code>, <code translate="no">HDPosterUrl</code> and <code translate="no">FHDPosterUrl</code> are native fields of a ContentNode and, although not required in the bcPlayer node, they might be useful in a MarkupGrid, RowList or similar Roku components.
+                               </p></li>
+                               <li><p>If the <code translate="no">live</code> property isn't provided, <code translate="no">live</code> is set based on the value of the <code translate="no">duration</code> property. <code translate="no">live</code> is a native field of a ContentNode and it identifies a live video, which may impact the behavior of Roku’s OOTB UI/UX.
+                               </p>
+                            <ul>
+                                <li><p>If <code translate="no">duration</code> is not provided or its value is <code translate="no">0</code> or below: live is set to <code translate="no">true</code>.</p></li>
+                                <li><p>If <code translate="no">duration</code> value is above <code translate="no">0</code>: live is set to <code translate="no">false</code></p></li>
+                            </ul></li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </li>
+                    <li><p>A playlist object 
                         <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code>
-                         <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Playlists/operation/Get_Playlists_by_ID_or_Reference_ID">Playlist by ID/Reference</a></p></li>
-                    <li><p>An array of videos
+                         <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Playlists/operation/Get_Playlists_by_ID_or_Reference_ID">Playlist by ID/Reference</a></p>
+                        <ul>
+                            <li><p>Expected metadata object structure:</p>
+                                <pre class="line-numbers">
+                                    <code class="language-basic" translate="No">{
+                                        videos: [
+                                          {
+                                            account_id: "&#60;papi-video-account_id&#62;"
+                                            sources: [&#60;papi-video-sources&#62;],
+                                            &#60;...&#60; 
+                                          },
+                                          &#60;...&#60; 
+                                        ],
+                                        &#60;...&#60; 
+                                      }
+                                    </code></pre>
+                    
+                            </li>
+                            <li><p>This metadata is loaded into a Video playlist ContentNode structure.</p></li>
+                            <li><p>Any other properties in this object (besides <code translate="no">videos</code>) are automatically set as fields of the parent ContentNode in the <code translate="no">bcPlayer.content</code> field.</p></li>
+                        </ul>
+                        </li>
+                    <li><p>An array containing a set of videos
                         <code class="text-secondary" translate="no">ARRAY</code>
-                         <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Related_Videos_by_ID_or_Reference_ID">Related Videos</a> or <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Videos">Video Search</a></p></li>
+                         <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Related_Videos_by_ID_or_Reference_ID">Related Videos</a> or <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Videos">Video Search</a></p>
+                        <ul>
+                            <li><p>Expected metadata object structure:</p>
+                                <pre class="line-numbers">
+                                    <code class="language-basi" translate="No">
+                                        [
+                                          {
+                                            account_id: "&#60;papi-video-account_id&#62;"
+                                            sources: [&#60;papi-video-sources&#62;],
+                                            &#60;...&#60; 
+                                          },
+                                          &#60;...&#60; 
+                                        ]
+                                    </code></pre>
+                    
+                            </li>
+                            <li><p>This metadata is loaded into a Video playlist ContentNode structure.</p></li>
+                        </ul>
+                        </li>
                 </ul>
                 </li>
                 <li><p><code translate="no">options</code> <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-success" translate="No">OPTIONAL
@@ -5190,6 +5261,14 @@
                 </ul>
                 </li>
             </ul>
+            <aside class="bcls-aside bcls-aside--information"><ul>
+                <li><p>Developers can change/customize the Playback API video or videos objects structure to fit their specific use cases, but the videos sources property is required, so that bcPlayer can parse the <code translate="no">sources</code> and select the most appropriate ones. </p></li>
+                <li><p>The <code translate="no">sources</code> object can be manually customized, for example, to remove specific sources before loading it into the bcPlayer node through this function.</p></li>
+                <li><p>All the other properties in the video metadata object are automatically turned into.                </p></li>
+                <li><p>Keep in mind that it’s possible to specify and control (to some degree) sources prioritization through the <code translate="no">bcPlayer.streamPreference</code> and <code translate="no">bcPlayer.drmPreference</code> config fields.</p></li>
+                <li><p>Trying to load an object that doesn’t contains the Playback API <code translate="no">sources</code> object will result in an error.                </p></li>
+            </ul></aside>
+
 
             <h5>Return Value</h5>
             <p><code class="text-secondary" translate="no">BOOLEAN</code> Indicates if the load process was initiated successfully.</p>
@@ -5201,23 +5280,58 @@
                     m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
                   
                     ' load video data returned by the Playback API
-                    m.bcPlayer.callFunc("load", videoData)
+                    m.bcPlayer.callFunc("load", videoMetadata)
                     
                     ' OR
                   
                     ' [WIP] Set some options to customize the playlist loading behavior
-                    m.bcPlayer.callFunc("load", playlistData, {
+                    m.bcPlayer.callFunc("load", playlistMetadata, {
                       autoplay: 3 ' start playing the video in the index 3 of the playlist
                       position: "end" ' append the playlist to the current contents
                     })
+                    
+                    ' OR
+                    
+                    ' it's also possible to manually customize Playback API metadata before loading it into bcPlayer
+                    ' start by requesting a specific video metadata from the Playback API, specifying the "autoload" config property as false so it returns back a response node
+                    rNode = m.bcPlayer.callFunc("getVideo", videoID, { autoload: false })
+                    
+                    ' make sure the response Node is available so it can be used to retrieve the response metadata
+                    if rNode <> invalid then
+                    
+                      ' set up a listener function for the "response" field
+                      rNode.observeField("response", "onVideoResponse")
+                    
+                    end if
                   
+                  end sub
+                  
+                  sub onVideoResponse(ev)
+                    
+                    ' ev.getData() returns the Playback API response properties
+                    response = ev.getData()
+                    
+                    ' if the request failed for any reason, handle the error
+                    if response.code <> 200 then 
+                      ' handle the failed request here
+                      return
+                    end if
+                    
+                    ' the "body" property contains the Video metadata
+                    videoMetadata = response.body
+                      
+                    ' if needed, "videoMetadata" can be customized here before feeding it into the "load" function (keep in mind some properties shouldn't be changed)
+                    
+                    ' load the customized video metadata into bcPlayer for playback
+                    m.bcPlayer.callFunc("load", videoMetadata)
+                    
                   end sub
                 </code></pre>
 
-                <h3>playVideo</h3>
-                <h3>playVideos</h3>
-                <h3>playPlaylist</h3>
-                <h3>playRelated</h3>
+                <h3>getVideo</h3>
+                <h3>getVideos</h3>
+                <h3>getPlaylist</h3>
+                <h3>getRelated</h3>
                 <h3>setSources</h3>
                 <h3>addSource</h3>
                 <h3>playback</h3>
