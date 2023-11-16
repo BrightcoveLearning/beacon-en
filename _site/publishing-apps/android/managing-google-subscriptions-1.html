@@ -3625,28 +3625,8 @@
     <h2 id="Create_a_service_account">Create a service account</h2>
     <p>Perform the following steps to create a service account:</p>
     <ol class="bcls-tasklist">
-      <li>Browse to the <a href="https://play.google.com/console/about/">Google Play Console</a>.</li>
-      <li>In the top right corner, click <strong>Go to Play Console</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/go-to-play.webp" alt="Go to Play Console">
-        </figure>
-      </li>
-      <li>In the left navigation, select <strong>Setup → API access</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/gpc-first-nav-steps.webp" alt="Settings > Developer Account > API access">
-        </figure>
-      </li>
-      <li>Click <strong>Create new service account</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/create-service-account.png" alt="create service account">
-        </figure>
-      </li>
-      <li>In the dialog that appears, click <strong>Google Cloud Platform</strong>.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/create-new-service-account-dialog.png" alt="new service account dialog">
-        </figure>
-      </li>
-      <li>From the page to which you are redirected, click <strong>+ CREATE SERVICE ACCOUNT</strong>.
+      <li>Navigate to your  <a href="https://console.cloud.google.com/">Google Cloud Platform </a> account.</li>
+      <li> In the top,  use the search bar and go for Service Accounts. Click  <strong>+ CREATE SERVICE ACCOUNT</strong>.</li>
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/iam-admin-redirect.png" alt="service accounts">
         </figure>
@@ -3673,9 +3653,9 @@
     <h2 id="Configure_the_service_account">Configure the service account</h2>
     <p>Perform the following steps to configure your service account:</p>
     <ol class="bcls-tasklist">
-      <li>For the service account just created, under <strong>Actions</strong> click the three vertical dots. Then click <strong>Manage keys</strong>.
+      <li>Copy and keep the email that was generated.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/manage-keys.png" alt="manage keys">
+          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/google-android.webp" alt="manage keys">
         </figure>
       </li>
       <li>In the <strong>Keys</strong> information, select <strong>ADD KEY → Create new key</strong>
@@ -3688,25 +3668,22 @@
           <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/create-json-private-key.png" alt="json private key">
         </figure>
       </li>
-      <li>Be sure you see this message displayed:
+      <li>Be sure you see this message displayed: 
         <figure class="bcls-figure">
           <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/private-key-saved.png" alt="private key saved verification">
         </figure>
       </li>
       <li>You need to email the private key file to your onboarding manager.</li>
-      <li>You can close the tab that you opened in step 5, and click <strong>Done</strong> from the dialog that launched your service account creation process.
+      <li> Go to you play console account <a href="https://play.google.com/console/about/">Google Play Console</a>
+      </li>
+      <li> Selected User and Permission from the left menu. Click on <strong>Invite new user </strong>button.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/click-done.png" alt="click done">
+          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/user-permisions.webp" alt="grant access">
         </figure>
       </li>
-      <li>In the <strong>Service accounts</strong> section, click <strong>Grant access</strong> next to your newly created service account.
+      <li>Paste the email that you saved from step 6. Under the Permission section, go to App Permissions and select your app.
         <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/click-grant-access.png" alt="grant access">
-        </figure>
-      </li>
-      <li>From the <strong>Invite user</strong> page, in the <strong>Account permissions</strong> section, click the <strong>Admin (all permissions)</strong> checkbox.
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/admin-permissions.png" alt="grant admin permissions">
+          <img class="bcls-image" src="/assets/images/s-publishing-apps-img/android/gpc-server-server-subscriptions/under-permisions.webp" alt="grant admin permissions">
         </figure>
       </li>
       <li>In the bottom-right of the page, click <span class="button-blue">Invite user</span>.</li>

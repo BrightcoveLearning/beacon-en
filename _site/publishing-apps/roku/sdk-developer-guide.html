@@ -3651,6 +3651,7 @@
                 <li>Play or <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Playlists/operation/Get_Playlists_by_ID_or_Reference_ID">retrieve videos by playlist ID</a> or reference.</li>
             </ul>
         </li>
+        <li>Load custom Brightcove videos metadata.</li>
         <li>External video and playlist sources support.</li>
         <li>Utilities
             <ul>
@@ -3799,6 +3800,7 @@
 
             m.bcPlayer = parentNode.createChild("bcLib:bcPlayer")
         </code></pre>
+        <aside class="bcls-aside bcls-aside--information">To reference a component from an external library, the following nomenclature should be use: <code translate="no">“&#60;ComponentLibrary-id&#62;:&#60;component-name&#62;"</code>.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="bcPlayer">bcPlayer component</h2>
@@ -3815,10 +3817,7 @@
               streamPreference: ["hls", "dash", "mp4"],
               drmPreference: ["widevine", "playready", "none"],
               logLevel: 4,
-              credentials: {
-                account_id: "...",
-                policy_key: "..."
-              },
+              credentials: invalid,           
               env: "production",
               watermarkToken: "",
               spinnerConfig: {},
@@ -3829,7 +3828,8 @@
               dialogTheme: {
                 DialogBackgroundColor: "#00000000",
                 DialogSecondaryItemColor: "#00000000"
-              }
+              },
+              loading: false
             })
         </code></pre>
         <h3>Fields</h3>
@@ -3884,6 +3884,7 @@
                     m.bcPlayer.credentials = {
                       account_id: "&#60;brightcove_user_account_id&#62;"
                       policy_key: "&#60;brightcove_user_policy_key&#62;"
+                      auth_token: "&#60;brightcove_user_auth_token&#62;"
                     }
                     
                     ' or
@@ -3893,6 +3894,7 @@
                       credentials: {
                         account_id: "&#60;brightcove_user_account_id&#62;"
                         policy_key: "&#60;brightcove_user_policy_key&#62;"
+                        auth_token: "&#60;brightcove_user_auth_token&#62;"
                       }
                     })
                 </code></pre>
@@ -4494,7 +4496,7 @@
                             </li>
                             <li><p><code translate="no">id</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
             </code></p>
-                            <p>Specifies the video or playlist Videocloud ID. Available in <code translate="no">start</code> and <code translate="no">end</code> events. It’s set to <code translate=""></code>invalid when loading multiple videos (video search and related metadata).</p>  
+                            <p>Specifies the video or playlist Videocloud ID. Available in <code translate="no">start</code> and <code translate="no">end</code> events. It’s set to <code translate="no">invalid</code> when loading multiple videos (video search and related metadata).</p>  
                             </li>
                             <li><p><code translate="no">videos</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
             </code></p>
@@ -4673,22 +4675,22 @@
                     </tr>
                     <tr>
                         <td class="align-top">play</td>
-                        <td>WIP</td>
+                        <td>TBI</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="align-top">pause</td>
-                        <td>WIP</td>
+                        <td>TBI</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="align-top">resume</td>
-                        <td>WIP</td>
+                        <td>TBI</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="align-top">play</td>
-                        <td>WIP</td>
+                        <td class="align-top">replay</td>
+                        <td>TBI</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -4726,7 +4728,7 @@
                         <td><p><code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code></p>
                         <p>Provides an ASSOCIATIVE ARRAY object with the following keys:</p>
                         <ul>
-                            <li><p><code translate="no">completedStreamInfo</code> <code>ASSOCIATIVE</code> <code>NATIVE</code> <code class="text-danger" translate="no">REQUIRED</code></p>
+                            <li><p><code translate="no">completedStreamInfo</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code>NATIVE</code> <code class="text-danger" translate="no">REQUIRED</code></p>
                             <p>Reference to the native <code translate="no">Video.completedStreamInfo</code> field. Provides information about the video stream that most recently completed playing, due to an error, user action, or end of the stream. The following keys are available through this property:</p>
                             <ul>
                                 <li>
@@ -4995,12 +4997,12 @@
                     </tr>
                     <tr>    
                         <td class="align-top">duration</td>
-                        <td>WIP</td>
+                        <td>TBI</td>
                         <td></td>
                     </tr>
                     <tr >    
                         <td class="align-top">timedMetaData</td>
-                        <td>WIP</td>
+                        <td>TBI</td>
                         <td></td>
                     </tr>
                     <tr>    
@@ -5015,7 +5017,7 @@
                     </tr>
                     <tr>    
                         <td class="align-top">mute</td>
-                        <td>WIP</td>
+                        <td>TBI</td>
                         <td></td>
                     </tr>
                     <tr>    
@@ -5245,17 +5247,23 @@
                 </li>
                 <li><p><code translate="no">options</code> <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-success" translate="No">OPTIONAL
             </code></p>
+            <p>Additional options that allow some behavior to be customized. The following properties can be set in this object:</p>
                 <ul>
                     <li><p> 
                         <code translate="no">autoplay</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
-            </code> [WIP] Specifies the index of the video that should start playing when the load process ends (in case of a playlist).</p></li>
+            </code> [TBI] Specifies the index of the video that should start playing when the load process ends (in case of a playlist). A value of <code translate="no">-1</code> will prevent the video from auto playing when the load process ends. By default autoplay is set to <code translate="no">0</code>.</p></li>
                     <li><p> 
                         <code translate="no">position</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
-            </code> [WIP] Specifies where the new data should be loaded if bcPlayer already has content. Ie, should the data replace the old content, should it be added to the end or start of the current content. Possible values:</p>
+            </code> [TBI] Specifies where the new data should be loaded if bcPlayer already has content. Ie, should the data replace the old content, should it be added to the end or start of the current content. Possible values:</p>
                         <ul>
-                            <li><p><code translate="no">replace</code></p></li>
-                            <li><p><code translate="no">end</code></p></li>
-                            <li><p><code translate="no">start</code></p></li>
+                            <li><p><code translate="no">replace</code> <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Replace previous contents with the new content. If <code translate="no">position</code> isn't specified, <code translate="no">replace</code> is used by default.</p></li>
+                            <li><p><code translate="no">end</code></p>
+                            <p>Add the new content at the end of the current content.</p></li>
+                            <li><p><code translate="no">start</code></p>
+                            <p>Add the new content at the start of the current content
+
+                            </p></li>
                         </ul>
                     </li>
                 </ul>
@@ -5284,7 +5292,7 @@
                     
                     ' OR
                   
-                    ' [WIP] Set some options to customize the playlist loading behavior
+                    ' [TBI] Set some options to customize the playlist loading behavior
                     m.bcPlayer.callFunc("load", playlistMetadata, {
                       autoplay: 3 ' start playing the video in the index 3 of the playlist
                       position: "end" ' append the playlist to the current contents
@@ -5327,16 +5335,832 @@
                     
                   end sub
                 </code></pre>
-
+                <hr>
                 <h3>getVideo</h3>
+                <p>Retrieves a specific Brightcove video through Playback API, loads its metadata into bcPlayer, and starts playback.</p>
+                <p><a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Video_by_ID_or_Reference_ID">Playback API reference</a>.</p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li><p><code translate="no">id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                    <p>Brightcove video ID or video reference ID to be retrieved. To get a video using a video reference ID, <code translate="no">id</code> must be formatted like so: <code translate="no">ref: &#60;reference_id&#62;</code>.</p></li>
+                    <li><p><code translate="no">options</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                    <p>Additional options to allow for some behaviors to be customized. The following properties can be set in this object:</p>
+                    <ul>
+                        <li><p><code translate="no">params</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Playback API request parameters as specified in the <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Video_by_ID_or_Reference_ID">Playback API Reference</a>. The following properties are supported:</p>
+                        <ul>
+                            <li><code translate="no">ad_config_id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Include server-side ad insertion.</p>
+                            </li>
+                            <li><code translate="no">config_id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Include and set equal to the delivery rules id in order to have the delivery rules applied.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">autoload</code> <code translate="no" class="text-secondary">BOOLEAN</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Specifies if the video metadata should be loaded into bcPlayer once the request response is available.</p>
+                        <ul>
+                            <li><code translate="no">true</code>  <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Video metadata will automatically be loaded into bcPlayer. The load behavior can be customized through the autoplay and position options [TBI].</p>
+                            </li>
+                            <li><code translate="no">false</code></p>
+                            <p>When <code translate="no">autoload</code> is disabled, <code translate="no">getVideo</code> will only retrieve Brightcove video metadata. In this case, <code translate="no">getVideo</code> immediately returns a Node object which contains a <code translate="no"></code> field that can be used to setup an observer function to capture the request response details.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">autoplay</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>[TBI] Specifies the index of the video that should start playing when the load process ends (in case of a playlist). A value of <code translate="no">-1</code> will prevent auto playback when the load process ends. By default <code translate="no">autoplay</code> is set to <code translate="no">0</code>. this property is passed along to the load function, which is responsible for the metadata load process. Ignored if <code translate="no">autoload</code> is disabled.</p>
+                    </li>
+                    <li><p><code translate="no">position</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>[TBI] Specify the position the new metadata should be load into if bcPlayer already contains previous contents. Internally. this property is passed along to the load function, which is responsible for the metadata load process. Ignored if <code translate="no">autoload</code> is disabled. The possible string values are:</p>
+                        <ul>
+                            <li><code translate="no">replace</code>  <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Replace previous contents with the new content. If <code translate="no">position</code> isn't specified, <code translate="no">replace</code> is used by default.</p>
+                            </li>
+                            <li><code translate="no">append</code></p>
+                            <p>Add the new content at the end of the current content.</p>
+                            </li>
+                            <li><code translate="no">prepend</code></p>
+                            <p>Add the new content at the start of the current content.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    </ul>
+                </li>
+                </ul>
+                <p>Return Value</p>
+                <ul>
+                    <li><p><code translate="no">invalid</code></p>
+                    <p>Returns <code translate="no">invalid</code> if <code translate="no">autoload</code> is enabled.</p>
+                </li>
+                    <li><p><code translate="no">Node</code></p>
+                    <p>Returns a <code translate="no">Node</code> object if <code translate="no">autoload</code> is disabled. This <code translate="no">Node</code> contains a response field which can be used to setup an observer function where the request response can be captured.</p>
+                </li>
+                </ul>
+                
+                <p>Code Snipped</p>
+
+                <pre class="line-numbers">
+                    <code class="language-basic" translate="No">sub init()
+
+                        ' autoload enabled
+                        m.bcPlayer.callFunc("getVideo", videoID, { 
+                          params: {ad_config_id: adConfigID},
+                          autoplay: -1 ' TBI feature
+                        })
+                        
+                        ' OR
+                      
+                        ' autoload disabled
+                        responseNode = m.bcPlayer.callFunc("getVideo", videoID, { 
+                          params: {ad_config_id: adConfigID},
+                          autoload: false 
+                        })
+                        
+                        ' make sure the response Node is available so it can be used to retrieve the response metadata
+                        if responseNode &#60;&#62; invalid then
+                        
+                          ' set up an observer function for the "response" field
+                          responseNode.observeField("response", "onVideoResponse")
+                          
+                        end if
+                        
+                      end sub
+                      
+                      sub onVideoResponse(ev)
+                        
+                        ' ev.getData() returns the Playback API response properties
+                        response = ev.getData()
+                        
+                        ' if the request failed for any reason, handle the error
+                        if response.code &#60;&#62; 200 then 
+                          ' handle the failed request here
+                          return
+                        end if
+                        
+                        ' the "body" property contains the Video metadata
+                        videoMetadata = response.body
+                          
+                        ' if needed, "videoMetadata" can be customized here before feeding it into the "load" function (keep in mind some properties shouldn't be changed)
+                        
+                        ' load the customized video metadata into bcPlayer for playback
+                        m.bcPlayer.callFunc("load", videoMetadata, {
+                          autoplay: -1 ' TBI feature
+                        })
+                          
+                      end sub
+                    </code></pre>
+    
+                    <hr>
                 <h3>getVideos</h3>
+                <p>Retrieves a set of Brightcove videos through Playback API and, if configured to do so, loads its metadata into bcPlayer and starts playback. </p>
+                <p>This option is commonly used to programmatically search for Brightcove videos.</p>
+                <p><a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Videos">Playback API reference</a>.</p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li><p><code translate="no">query</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                    <p>Search query used to retrieved a set of Brightcove videos. More details about the search query format, <a href="https://apis.support.brightcove.com/cms/searching/cmsplayback-api-videos-search.html">CMS/Playback API</a>.</p></li>
+                    <li><p><code translate="no">options</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                    <p>Additional options to allow for some behaviors to be customized. The following properties can be set in this object:</p>
+                    <ul>
+                        <li><p><code translate="no">params</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Playback API request parameters as specified in the <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Videos">Playback API Reference</a>. The following properties are supported:</p>
+                        <ul>
+                            <li><code translate="no">limit</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>The number of videos to return.</p>
+                            </li>
+                            <li><code translate="no">offset</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>The number of videos to skip - used to page multiple sets of videos.</p>
+                            </li>
+                            <li><code translate="no">sort</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Field to sort results by. Check the <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Videos">Playback API</a> Reference for all the possible values.</p>
+                            </li>
+                            <li><code translate="no">ad_config_id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Include server-side ad insertion.</p>
+                            </li>
+                            <li><code translate="no">config_id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Include and set equal to the delivery rules id in order to have the delivery rules applied.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">autoload</code> <code translate="no" class="text-secondary">BOOLEAN</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Specifies if the videos metadata should be loaded into bcPlayer once the request response is available.</p>
+                        <ul>
+                            <li><code translate="no">true</code>  <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Videos metadata will automatically be loaded into bcPlayer. The load behavior can be customized through the <code translate="no">autoplay</code> and <code translate="no">position</code> options [TBI].</p>
+                            </li>
+                            <li><code translate="no">false</code></p>
+                            <p>When <code translate="no">autoload</code> is disabled, <code translate="no">getVideos</code> immediately returns a <code translate="no">Node</code> object which contains a <code translate="no">response</code> field that can be used to setup an observer function to capture the request response details.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">autoplay</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>[TBI] Specifies the index of the video that should start playing when the load process ends (in case of a playlist). A value of <code translate="no">-1</code> will prevent auto playback when the load process ends. By default <code translate="no">autoplay</code> is set to <code translate="no">0</code>. this property is passed along to the load function, which is responsible for the metadata load process. Ignored if <code translate="no">autoload</code> is disabled.</p>
+                    </li>
+                    <li><p><code translate="no">position</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>[TBI] Specify the position the new metadata should be load into if bcPlayer already contains previous contents. Internally. this property is passed along to the load function, which is responsible for the metadata load process. Ignored if <code translate="no">autoload</code> is disabled. The possible string values are:</p>
+                        <ul>
+                            <li><code translate="no">replace</code>  <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Replace previous contents with the new content. If <code translate="no">position</code> isn't specified, <code translate="no">replace</code> is used by default.</p>
+                            </li>
+                            <li><code translate="no">append</code></p>
+                            <p>Add the new content at the end of the current content.</p>
+                            </li>
+                            <li><code translate="no">prepend</code></p>
+                            <p>Add the new content at the start of the current content.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    </ul>
+                </li>
+                </ul>
+                <p>Return Value</p>
+                <ul>
+                    <li><p><code translate="no">invalid</code></p>
+                    <p>Returns <code translate="no">invalid</code> if <code translate="no">autoload</code> is enabled.</p>
+                </li>
+                    <li><p><code translate="no">Node</code></p>
+                    <p>Returns a <code translate="no">Node</code> object if <code translate="no">autoload</code> is disabled. This <code translate="no">Node</code> contains a response field which can be used to setup an observer function where the request response can be captured.</p>
+                </li>
+                </ul>
+                <p>Code Snipped</p>
+
+                <pre class="line-numbers">
+                    <code class="language-basic" translate="No">sub init()
+
+                        ' autoload enabled
+                        m.bcPlayer.callFunc("getVideos", "name:wildlife", { 
+                          params: {limit: 10, offset: 20},
+                          autoplay: -1 ' TBI feature
+                        })
+                        
+                        ' OR
+                      
+                        ' autoload disabled
+                        responseNode = m.bcPlayer.callFunc("getVideos", "name:wildlife", { 
+                          params: {limit: 10, offset: 20},
+                          autoload: false 
+                        })
+                        
+                        ' make sure the response Node is available so it can be used to retrieve the response metadata
+                        if responseNode &#60;&#62; invalid then
+                        
+                          ' set up an observer function for the "response" field
+                          responseNode.observeField("response", "onVideosResponse")
+                          
+                        end if
+                        
+                      end sub
+                      
+                      sub onVideosResponse(ev)
+                        
+                        ' ev.getData() returns the Playback API response properties
+                        response = ev.getData()
+                        
+                        ' if the request failed for any reason, handle the error
+                        if response.code &#60;&#62; 200 then 
+                          ' handle the failed request here
+                          return
+                        end if
+                        
+                        ' the "body" property contains videos metadata
+                        videosMetadata = response.body
+                          
+                        ' if needed, "videosMetadata" can be customized here before feeding it into the "load" function (keep in mind some properties shouldn't be changed)
+                        
+                        ' load the customized videos metadata into bcPlayer for playback
+                        m.bcPlayer.callFunc("load", videosMetadata, {
+                          autoplay: -1 ' TBI feature
+                        })
+                          
+                      end sub                      
+                    </code></pre>
+                    <hr>
                 <h3>getPlaylist</h3>
+                <p>Retrieves a Brightcove playlist through Playback API and, if configured to do so, loads its metadata into bcPlayer and starts playback.</p>
+
+                <p><a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Playlists/operation/Get_Playlists_by_ID_or_Reference_ID">Playback API reference</a>.</p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li><p><code translate="no">id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                    <p>Brightcove playlist ID or reference ID to be retrieved. To get a playlist using a playlist reference ID, id must be formatted like so: <code translate="no">ref:&#60;reference_id&#62;</code>.</p></li>
+                    <li><p><code translate="no">options</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                    <p>Additional options to allow for some behaviors to be customized. The following properties can be set in this object:</p>
+                    <ul>
+                        <li><p><code translate="no">params</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Playback API request parameters as specified in the <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Playlists/operation/Get_Playlists_by_ID_or_Reference_ID">Playback API Reference</a>. The following properties are supported:</p>
+                        <ul>
+                            <li><code translate="no">limit</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>The number of videos to return.</p>
+                            </li>
+                            <li><code translate="no">offset</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>The number of videos to skip - used to page multiple sets of videos.</p>
+                            </li>
+                            <!-- <li><code translate="no">sort</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Field to sort results by. Check the <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Videos">Playback API</a> Reference for all the possible values.</p>
+                            </li> -->
+                            <li><code translate="no">ad_config_id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Include server-side ad insertion.</p>
+                            </li>
+                            <li><code translate="no">config_id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Include and set equal to the delivery rules id in order to have the delivery rules applied.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">autoload</code> <code translate="no" class="text-secondary">BOOLEAN</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Specifies if the playlist metadata should be loaded into bcPlayer once the request response is available.</p>
+                        <ul>
+                            <li><code translate="no">true</code>  <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Videos metadata will automatically be loaded into bcPlayer. The load behavior can be customized through the <code translate="no">autoplay</code> and <code translate="no">position</code> options [TBI].</p>
+                            </li>
+                            <li><code translate="no">false</code></p>
+                            <p>When <code translate="no">autoload</code> is disabled, <code translate="no">getPlaylist</code> only retrieve Brightcove videos metadata. In this case, <code translate="no">getPlaylist</code> returns a <code translate="no">Node</code> object which contains a <code translate="no">response</code> field that can be used to setup an observer function to capture the request response details.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">autoplay</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>[TBI] Specifies the index of the video that should start playing when the load process ends. A value of <code translate="no">-1</code> will prevent auto playback when the load process ends. By default <code translate="no">autoplay</code> is set to <code translate="no">0</code>. this property is passed along to the load function, which is responsible for the metadata load process. Ignored if <code translate="no">autoload</code> is disabled.</p>
+                    </li>
+                    <li><p><code translate="no">position</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>[TBI] Specify the position the new metadata should be load into if bcPlayer already contains previous contents. Internally. this property is passed along to the load function, which is responsible for the metadata load process. Ignored if <code translate="no">autoload</code> is disabled. The possible string values are:</p>
+                        <ul>
+                            <li><code translate="no">replace</code>  <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Replace previous contents with the new content. If <code translate="no">position</code> isn't specified, <code translate="no">replace</code> is used by default.</p>
+                            </li>
+                            <li><code translate="no">append</code></p>
+                            <p>Add the new content at the end of the current content.</p>
+                            </li>
+                            <li><code translate="no">prepend</code></p>
+                            <p>Add the new content at the start of the current content.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    </ul>
+                </li>
+                </ul>
+                <p>Return Value</p>
+                <ul>
+                    <li><p><code translate="no">invalid</code></p>
+                    <p>Returns <code translate="no">invalid</code> if <code translate="no">autoload</code> is enabled.</p>
+                </li>
+                    <li><p><code translate="no">Node</code></p>
+                    <p>Returns a <code translate="no">Node</code> object if <code translate="no">autoload</code> is disabled. This <code translate="no">Node</code> contains a response field which can be used to setup an observer function where the request response can be captured.</p>
+                </li>
+                </ul>
+                <p>Code Snipped</p>
+
+                <pre class="line-numbers">
+                    <code class="language-basic" translate="No">sub init()
+
+                        ' autoload enabled
+                        m.bcPlayer.callFunc("getPlaylist", playlistID, { 
+                          params: {limit: 10, offset: 20},
+                          autoplay: 3 ' TBI feature
+                        })
+                        
+                        ' OR
+                      
+                        ' autoload disabled
+                        responseNode = m.bcPlayer.callFunc("getPlaylist", playlistID, { 
+                          params: {limit: 10, offset: 20},
+                          autoload: false 
+                        })
+                        
+                        ' make sure the response Node is available so it can be used to retrieve the response metadata
+                        if responseNode &#60;&#62; invalid then
+                        
+                          ' set up an observer function for the "response" field
+                          responseNode.observeField("response", "onPlaylistResponse")
+                          
+                        end if
+                        
+                      end sub
+                      
+                      sub onPlaylistResponse(ev)
+                        
+                        ' ev.getData() returns the Playback API response properties
+                        response = ev.getData()
+                        
+                        ' if the request failed for any reason, handle the error
+                        if response.code &#60;&#62; 200 then 
+                          ' handle the failed request here
+                          return
+                        end if
+                        
+                        ' the "body" property contains the playlist metadata
+                        playlistMetadata = response.body
+                          
+                        ' if needed, "playlistMetadata" can be customized here before feeding it into the "load" function (keep in mind some properties shouldn't be changed)
+                        
+                        ' load the customized playlist metadata into bcPlayer for playback
+                        m.bcPlayer.callFunc("load", playlistMetadata, {
+                          autoplay: 3 ' TBI feature
+                        })
+                          
+                      end sub
+                                           
+                    </code></pre>
+                    <hr>
                 <h3>getRelated</h3>
+                <p>Retrieves a set of Brightcove videos that are related to the specified video through Playback API and, if configured to do so, loads its metadata into bcPlayer and starts playback. </p>
+                <p>Using the name and short description of the specified video, the Playback API searches for videos with any partial matches in the following fields: <code translate="no">name</code>, <code translate="no">short description</code>, <code translate="no">long_description</code>, <code translate="no">tags</code>.</p>
+
+                <p><a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Related_Videos_by_ID_or_Reference_ID">Playback API reference</a>.</p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li><p><code translate="no">id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                    <p>Brightcove playlist ID or reference ID to be retrieved. To get a playlist using a playlist reference ID, <code translate="no">id</code> must be formatted like so: <code translate="no">ref:&#60;reference_id&#62;</code>.</p></li>
+                    <li><p><code translate="no">options</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                    <p>Additional options to allow for some behaviors to be customized. The following properties can be set in this object:</p>
+                    <ul>
+                        <li><p><code translate="no">params</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Playback API request parameters as specified in the <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Related_Videos_by_ID_or_Reference_ID">Playback API Reference</a>. The following properties are supported:</p>
+                        <ul>
+                            <li><code translate="no">limit</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>The number of videos to return.</p>
+                            </li>
+                            <li><code translate="no">offset</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>The number of videos to skip - used to page multiple sets of videos.</p>
+                            </li>
+                            <!-- <li><code translate="no">sort</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Field to sort results by. Check the <a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Videos">Playback API</a> Reference for all the possible values.</p>
+                            </li> -->
+                            <li><code translate="no">ad_config_id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Include server-side ad insertion.</p>
+                            </li>
+                            <li><code translate="no">config_id</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                            <p>Include and set equal to the delivery rules id in order to have the delivery rules applied.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">autoload</code> <code translate="no" class="text-secondary">BOOLEAN</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Specifies if the playlist metadata should be loaded into bcPlayer once the request response is available.</p>
+                        <ul>
+                            <li><code translate="no">true</code>  <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Videos metadata will automatically be loaded into bcPlayer. The load behavior can be customized through the <code translate="no">autoplay</code> and <code translate="no">position</code> options [TBI].</p>
+                            </li>
+                            <li><code translate="no">false</code></p>
+                            <p>When <code translate="no">autoload</code> is disabled, <code translate="no">getPlaylist</code> only retrieve Brightcove videos metadata. In this case, <code translate="no">getPlaylist</code> returns a <code translate="no">Node</code> object which contains a <code translate="no">response</code> field that can be used to setup an observer function to capture the request response details.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">autoplay</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>[TBI] Specifies the index of the video that should start playing when the load process ends. A value of <code translate="no">-1</code> will prevent auto playback when the load process ends. By default <code translate="no">autoplay</code> is set to <code translate="no">0</code>. this property is passed along to the load function, which is responsible for the metadata load process. Ignored if <code translate="no">autoload</code> is disabled.</p>
+                    </li>
+                    <li><p><code translate="no">position</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>[TBI] Specify the position the new metadata should be load into if bcPlayer already contains previous contents. Internally. this property is passed along to the load function, which is responsible for the metadata load process. Ignored if <code translate="no">autoload</code> is disabled. The possible string values are:</p>
+                        <ul>
+                            <li><code translate="no">replace</code>  <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Replace previous contents with the new content. If <code translate="no">position</code> isn't specified, <code translate="no">replace</code> is used by default.</p>
+                            </li>
+                            <li><code translate="no">append</code></p>
+                            <p>Add the new content at the end of the current content.</p>
+                            </li>
+                            <li><code translate="no">prepend</code></p>
+                            <p>Add the new content at the start of the current content.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    </ul>
+                </li>
+                </ul>
+                <p>Return Value</p>
+                <ul>
+                    <li><p><code translate="no">invalid</code></p>
+                    <p>Returns <code translate="no">invalid</code> if <code translate="no">autoload</code> is enabled.</p>
+                </li>
+                    <li><p><code translate="no">Node</code></p>
+                    <p>Returns a <code translate="no">Node</code> object if <code translate="no">autoload</code> is disabled. This <code translate="no">Node</code> contains a response field which can be used to setup an observer function where the request response can be captured.</p>
+                </li>
+                </ul>
+                <p>Code Snipped</p>
+
+                <pre class="line-numbers">
+                    <code class="language-basic" translate="No">sub init()
+
+                        ' autoload enabled
+                        m.bcPlayer.callFunc("getRelated", videoID, { 
+                          params: {limit: 10, offset: 20},
+                          autoplay: 3 ' TBI feature
+                        })
+                        
+                        ' OR
+                      
+                        ' autoload disabled
+                        responseNode = m.bcPlayer.callFunc("getRelated", videoID, { 
+                          params: {limit: 10, offset: 20},
+                          autoload: false 
+                        })
+                        
+                        ' make sure the response Node is available so it can be used to retrieve the response metadata
+                        if responseNode &#60;&#62; invalid then
+                        
+                          ' set up an observer function for the "response" field
+                          responseNode.observeField("response", "onRelatedResponse")
+                          
+                        end if
+                        
+                      end sub
+                      
+                      sub onRelatedResponse(ev)
+                        
+                        ' ev.getData() returns the Playback API response properties
+                        response = ev.getData()
+                        
+                        ' if the request failed for any reason, handle the error
+                        if response.code &#60;&#62; 200 then 
+                          ' handle the failed request here
+                          return
+                        end if
+                        
+                        ' the "body" property contains the related videos metadata
+                        relatedMetadata = response.body
+                          
+                        ' if needed, "relatedMetadata" can be customized here before feeding it into the "load" function (keep in mind some properties shouldn't be changed)
+                        
+                        ' load the customized related videos metadata into bcPlayer for playback
+                        m.bcPlayer.callFunc("load", relatedMetadata, {
+                          autoplay: 3 ' TBI feature
+                        })
+                          
+                      end sub            
+                    </code></pre>
+                    <hr>
                 <h3>setSources</h3>
+                <p>Allows custom video metadata (non-Brightcove videos) to be loaded into bcPlayer for playback.</p>
+                <p>If present, current content of bcPlayer will be replaced. <code translate="no">setSources</code> parses an array of associative arrays, each one representing the properties of a single video, into fields of a ContentNode and loads it into bcPlayer content.</p>
+
+                <aside class="bcls-aside bcls-aside--information">Developers must take into account the required <a href="https://developer.roku.com/en-gb/docs/developer-program/getting-started/architecture/content-metadata.md">Content Node fields</a> for proper video playback in a Roku Video component. setSources does not alter the provided metadata in any way, all the provided properties and its values are set into ContentNode fields as is.</aside>
+
+                <h5>Parameters</h5>
+                <ul>
+                    <li><p><code translate="no">sources</code> <code translate="no" class="text-secondary">ARRAY</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                    <p>An Array of Associative Array objects, each one containing the properties of a single video.</p></li>
+                    <li><p><code translate="no">options</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                    <p>Additional options to allow for some behaviors to be customized. The following properties can be set in this object:</p>
+                    <ul>
+                        <li><p><code translate="no">control</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Specifies the playback behavior once the new metadata content is set. The available options are:</p>
+                        <ul>
+                            <li><code translate="no">play</code> <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Starts playback once content is set. This is the default behavior if not specified.</p>
+                            </li>
+                            <li><code translate="no">prebuffer</code></p>
+                            <p>Starts prebuffering the video stream once content is set.</p>
+                            </li>
+                            <li><code translate="no">none</code></p>
+                            <p>Makes no changes to the current playback state. Playback needs to be triggered manually afterwards.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">index</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Specifies the index of the video that will start playing once the content is set. <code translate="no">index</code> takes precedence over <code translate="no">control</code>, so if <code translate="no">index</code> is set to a value higher than <code translate="no">0</code>, <code translate="no">control</code> property is ignored.</p>
+                    </li>
+                    </ul>
+                </li>
+                </ul>
+                <p>Return Value</p>
+                <p><code translate="no" class="text-secondary">BOOLEAN</code></p>
+                <ul>
+                    <li><p><code translate="no">true</code></p>
+                    <p>The provided metadata is being loaded into bcPlayer.                    </p>
+                </li>
+                    <li><p><code translate="no">false</code></p>
+                    <p>It is not possible to load the provided metadata. Check the <code translate="no">bcPlayer.on.error</code> event for details about what went wrong.</p>
+                </li>
+                </ul>
+                <p>Code Snipped</p>
+
+                <pre class="line-numbers">
+                    <code class="language-basic" translate="No">sub init()
+
+                        ' setup the expected videos metadata. 
+                        ' Although custom properties can be set to each video, Roku requires specific properties for proper video playback through the Video node
+                        metadata = [
+                          {Url: "<video-stream-url>", StreamType: "<video-stream-type>", Title: "<video-title>", ...}
+                          ...
+                        ]
+                        
+                        m.bcPlayer.callFunc("setSources", metadata, {
+                          control: "none" ' prevent bcPlayer from initiating video playback
+                        })
+                        
+                        ' later on the playback can be initiated with
+                        m.bcPlayer.callFunc("playback", "play")
+                        ' or simply
+                        m.bcPlayer.control = "play"
+                      
+                      end sub           
+                    </code></pre>
+                    <hr>
                 <h3>addSource</h3>
+                <p>Allows for a single custom video metadata (non-Brightcove videos) to be added into the existing bcPlayer content for playback.</p>
+                <p>Just like <code translate="no">setSources</code>, the metadata provided to <code role="alert">addSource</code> is parsed into fields of a ContentNode and added to the current bcPlayer content (if present) or set as the content.</p>
+                <p>The difference between <code role="alert">addSource</code> and <code translate="no">setSources</code> is that <code role="alert">addSource</code> won't make any changes to the current playback state (unless specified).</p>
+
+                <h5>Parameters</h5>
+                <ul>
+                    <li><p><code translate="no">fields</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                    <p>Custom video metadata to be added.</p></li>
+                    <li><p><code translate="no">options</code> <code translate="no" class="text-secondary">ASSOCIATIVE ARRAY</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                    <p>Additional options to allow for some behaviors to be customized. The following properties can be set in this object:</p>
+                    <ul>
+                        <li><p><code translate="no">control</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Specifies the playback behavior once the new metadata content is set. If not specified and content is already playing in bcPlayer, no change will happen to the current playback. The available options are:</p>
+                        <ul>
+                            <li><code translate="no">play</code> <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Starts playback once content is set. This is the default behavior if not specified. If playback is ongoing, no change happens to the current playback.</p>
+                            </li>
+                            <li><code translate="no">prebuffer</code></p>
+                            <p>Starts prebuffering the video stream once content is set. If playback is ongoing, no change happens to the current playback.</p>
+                            </li>
+                            <li><code translate="no">none</code></p>
+                            <p>Makes no changes to the current playback state.</p>
+                            </li>
+                        </ul>
+                    </li>
+                        <li><p><code translate="no">position</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                        <p>Specifies the position where the new content should be added. The following values are supported:</p>
+                        <ul>
+                            <li><code translate="no">replace</code>  <code translate="no" class="text-warning">DEFAULT</code></p>
+                            <p>Replaces the current content in bcPlayer. If ongoing, current playback is interrupted, in which case <code translate="no">control</code> can be used to specify the playback behavior once the content is set. If the current content is not a playlist, <code translate="no">replace</code> is the only behavior available.</p>
+                            </li>
+                            <li><code translate="no">end</code></p>
+                            <p>Appends the new video content at the end of the current content. If the current content is not a playlist, <code translate="no">end</code> behaves just like <code translate="no">replace</code>.</p>
+                            </li>
+                            <li>An integer value</p>
+                            <p>Adds the new video content in the specified index of the current playlist content. If the current content is not a playlist, this option behaves just like <code translate="no">replace</code>.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>
+                </li>
+                </ul>
+                <p>Return Value</p>
+                <p><code translate="no" class="text-secondary">BOOLEAN</code></p>
+                <ul>
+                    <li><p><code translate="no">true</code></p>
+                    <p>The provided metadata is being loaded into bcPlayer.</p>
+                </li>
+                    <li><p><code translate="no">false</code></p>
+                    <p>It is not possible to load the provided metadata. Check the <code translate="no">bcPlayer.on.error</code> event for details about what went wrong.</p>
+                </li>
+                </ul>
+                <p>Code Snipped</p>
+
+                <pre class="line-numbers">
+                    <code class="language-basic" translate="No">sub init()
+
+                        ' setup the expected video metadata. 
+                        ' Although custom properties can be set to each video, Roku requires specific properties for proper video playback through the Video node
+                        metadata = {
+                          Url: "<video-stream-url>", 
+                          StreamType: "<video-stream-type>", 
+                          Title: "<video-title>", 
+                          ...
+                        }
+                      
+                        m.bcPlayer.callFunc("addSource", metadata, {
+                          control: "none" ' prevent bcPlayer from initiating video playback since the current content will be replaced
+                          position: "replace" ' not actually needed as "replace" already is the default value
+                        })
+                        
+                        ' later on the playback can be initiated with
+                        m.bcPlayer.callFunc("playback", "play")
+                        ' or simply
+                        m.bcPlayer.control = "play"
+                      
+                      end sub             
+                    </code></pre>
+                    <hr>
                 <h3>playback</h3>
+                <p>Allows control of bcPlayer playback. It provides the same playback actions as the native Video <code translate="no">control</code> field plus some other custom actions introduced by bcPlayer.</p>
+
+                <h5>Parameters</h5>
+                <ul>
+                    <li><p><code translate="no">action</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                    <p>Specifies the playback action. The supported values are:</p>
+                        
+                    <ul>
+                        <li><p>All values supported by the native control field:</p>
+                        <ul>
+                            <li><p><code translate="no">play</code></p></li>
+                            <li><p><code translate="no">pause</code></p></li>
+                            <li><p><code translate="no">resume</code></p></li>
+                            <li><p><code translate="no">stop</code></p></li>
+                            <li><p><code translate="no">replay</code></p></li>
+                            <li><p><code translate="no">prebuffer</code></p></li>
+                            <li><p><code translate="no">skipcontent</code></p></li>
+                        </ul>
+                        </li>
+                        <li><p><code translate="no">next</code></p>
+                        <p>If current content is a playlist, skips to the next video, if available. Otherwise does nothing. Before skipping, the next video source TTL is validated and if expired the sources will first be refreshed and only then the skip action gets triggered.</p>
+                        </li>
+                        <li><p><code translate="no">previous</code></p>
+                        <p>If current content is a playlist, skips to the previous video, if available. Otherwise does nothing. Before skipping, the previous video source TTL is validated and if expired the sources will first be refreshed and only then the skip action gets triggered.</p>
+                        </li>
+                    </ul>
+                </li>
+                </ul>
+                <p>Return Value</p>
+                <ul>
+                    <li><p><code translate="no">void</code></p></li>
+                </ul>
+                
+            
+                <p>Code Snipped</p>
+
+                <pre class="line-numbers">
+                    <code class="language-basic" translate="No">sub init()
+
+                        ' skip to the next video, if available and if content is a playlist
+                        m.bcPlayer.callFunc("playback", "next")
+                        
+                        ' the same can be accomplish with:
+                        m.bcPlayer.callFunc("playlist", "next")
+                        
+                      end sub            
+                    </code></pre>
+
+                    <hr>
                 <h3>playlist</h3>
+                
+                <p>Provides playlist specific features. Allows for a better control over items in a playlist.
+
+                    If bcPlayer content is not a playlist, this function will do nothing.</p>
+
+                <h5>Parameters</h5>
+                <ul>
+                    <li><p><code translate="no">action</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                    <p>Specifies the action to be executed. The following values are supported:</p>
+                        
+                    <ul>
+                        <li><p><code translate="no">contains</code></p>
+                            <p>[TBI] Checks if a video exists in the playlist through the video URL provided.</p>
+                        </li>
+                        <li><p><code translate="no">currentIndex</code></p>
+                            <p>Get the index of the video that is currently playing in the playlist.</p>
+                        </li>
+                        <li><p><code translate="no">currentItem</code></p>
+                            <p>Get the ContentNode of the currently playing video in the playlist.</p>
+                        </li>
+                        <li><p><code translate="no">first</code></p>
+                            <p>Get the ContentNode of the first video in the playlist.</p>
+                        </li>
+                        <li><p><code translate="no">indexOf</code></p>
+                            <p>[TBI] Get the index of a video through the video URL provided.
+                            </p>
+                        </li>
+                        <li><p><code translate="no">last</code></p>
+                            <p>Get the ContentNode of the last video in the playlist.</p>
+                        </li>
+                        <li><p><code translate="no">lastIndex</code></p>
+                            <p>Get the index of the last video in the playlist.</p>
+                        </li>
+                        <li><p><code translate="no">next</code></p>
+                            <p>Skips to the next video, if available. Otherwise does nothing. Before skipping, the next video source TTL is validated and if expired the sources will first be refreshed and only then the skip action gets triggered.</p>
+                        </li>
+                        <li><p><code translate="no">nextIndex</code></p>
+                            <p>Get the index of the next video in the playlist.</p>
+                        </li>
+                        <li><p><code translate="no">previous</code></p>
+                            <p>Skips to the previous video, if available. Otherwise does nothing. Before skipping, the previous video source TTL is validated and if expired the sources will first be refreshed and only then the skip action gets triggered.</p>
+                        </li>
+                        <li><p><code translate="no">previousIndex</code></p>
+                            <p>Get the index of the previous video in the playlist.</p>
+                        </li>
+                        <li><p><code translate="no">sort</code></p>
+                            <p>[TBI] Sorts the videos in the playlist</p>
+                        </li>
+                        <li><p><code translate="no">shuffle</code></p>
+                            <p>[TBI] Shuffles the videos in the playlist.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li><p><code translate="no">data</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code translate="no" class="text-success">OPTIONAL</code></p></li>
+                </ul>
+                <p>Return Value</p>
+                <ul>
+                    <li><p><code translate="no">void</code></p>
+                    <p>Parameters for some of the supported actions. Required for the following actions:</p>
+                    <ul>
+                        <li><p><code translate="no">contains</code></p>
+                        <p><code translate="no" class="text-secondary">STRING</code> [TBI] Specifies the searched video URL.</p></li>
+                        <li><p><code translate="no">indexOf</code></p>
+                        <p><code translate="no" class="text-secondary">STRING</code> [TBI] Specifies the searched video URL.</p></li>
+                        <li><p><code translate="no">sort</code></p>
+                        <p>[TBI] Specifies the sort options</p></li>
+                    </ul>
+                    </li>
+                </ul>
+                
+                <p>Return Value</p>
+                <p><code translate="no" class="text-secondary">DYNAMIC</code> The return value depends on the action executed. If content is not a playlist the return value is invalid for all actions.</p>
+                <ul>
+                    <li><p><code translate="no">contains</code> <code translate="no" class="text-secondary">BOOLEAN</code></p></li>
+                    <li><p><code translate="no">currentIndex</code> <code translate="no" class="text-secondary">INTEGER</code></p></li>
+                    <li><p><code translate="no">currentItem</code> <code translate="no" class="text-secondary">NODE</code></p></li>
+                    <li><p><code translate="no">first</code> <code translate="no" class="text-secondary">NODE</code></p></li>
+                    <li><p><code translate="no">indexOf</code> <code translate="no" class="text-secondary">INTEGER</code></p></li>
+                    <li><p><code translate="no">last</code> <code translate="no" class="text-secondary">NODE</code></p></li>
+                    <li><p><code translate="no">lastIndex</code> <code translate="no" class="text-secondary">INTEGER</code></p></li>
+                    <li><p><code translate="no">next</code> <code translate="no" class="text-secondary">INVALID</code></p></li>
+                    <li><p><code translate="no">nextIndex</code> <code translate="no" class="text-secondary">INTEGER</code></p></li>
+                    <li><p><code translate="no">previous</code> <code translate="no" class="text-secondary">INVALID</code></p></li>
+                    <li><p><code translate="no">previousIndex</code> <code translate="no" class="text-secondary">INTEGER</code></p></li>
+                    <li><p><code translate="no">sort</code> <code translate="no" class="text-secondary">INVALID</code></p></li>
+                    <li><p><code translate="no">shuffle</code> <code translate="no" class="text-secondary">INVALID</code></p></li>
+                </ul>
+
+                <p>Code Snipped</p>
+
+                <pre class="line-numbers">
+                    <code class="language-basic" translate="No">sub init()
+
+                        ' get the index of the next video in the playlist, if content is a playlist
+                        nextVideoIndex = m.bcPlayer.callFunc("playlist", "nextIndex")
+                        if nextVideoIndex = invalid then
+                        
+                          ' current content is not a playlist. Handle that situation here if required.
+                        
+                        end if
+                      
+                      end sub          
+                    </code></pre>
+
+                    <hr>
                 <h3>close</h3>
+                <p>Closes bcPlayer and terminates all ongoing tasks and playback in the bcPlayer. The closing procedure is asynchronous so that any pending task doesn’t get abruptly interrupted. The closed confirmation can be obtained from the <code translate="no">bcPlayer.on.close</code> event.</p>
+                <p>Parameters</p>
+                <ul>
+                    <li>This function has no parameters</li>
+                </ul>
+                <p>Return Value</p>
+                <ul>
+                    <li><p><code translate="no" class="text-secondary">VOID</code>e</p></li>
+                </ul>
+                <p>Code Snippet</p>
+                <pre class="line-numbers">
+                    <code class="language-basic" translate="No">sub init()
+
+                        ' listen for the "close" event, in case some action needs to be taken only after the complete termination of the bcPlayer
+                        m.bcPlayer.on.observeField("close", "onClose")
+                      
+                        ' trigger the close action
+                        m.bcPlayer.callFunc("close")
+                      
+                      end sub
+                      
+                      sub onClose(ev)
+                      
+                        ' m.bcPlayer is now completely terminated
+                      
+                      end sub         
+                    </code></pre>
         </section>
         <section class="bcls-section">
             <h2 id="sources-selection">Video Sources Selection</h2>
