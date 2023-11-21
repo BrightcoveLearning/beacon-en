@@ -6667,7 +6667,7 @@
             <h3>getVideo</h3>
             <p>Retrieves a specific Brightcove video metadata through the Playback API. The response object is handled as described in the request field.</p>
 
-            <p>In this case, the response id property is always “getVideo“.</p>
+            <p>In this case, the response <code translate="no">id</code> property is always “getVideo“.</p>
 
             <p><a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Video_by_ID_or_Reference_ID">Playback API reference</a>.</p>
             
@@ -6855,233 +6855,873 @@
         <section>
             <h3>getRelated</h3>
             
-            <p>Controls the custom loading spinner visibility. This field is used by internal functions but it also allows the custom spinner to be controller externally if needed.</p>
-            <p>Keep in mind that the OOTB UI has its loading spinner. This field is independent from the OOTB UI built in loading spinner.
-            </p>
-            <p>The appearance of the loading spinner can be customized through the <a href="#spinner-config">spinnerConfig</a> field.</p>
-            
-            <h4>Possible Values</h4>
-            <p>An array containing any combination of the following values:</p>
-            <ul>
-                <li><p><code translate="no">false</code> <code class="text-warning" translate="no">DEFAULT</code> Hide the custom loading spinner.</p></li>
-                <li><p><code translate="no">true</code> Show the custom loading spinner.</p></li>
-            </ul>
-            <pre class="line-numbers">
-                <code class="language-basic" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
-                    m.bcPlayer.loading = true
-                    
-                    ' or
-                    
-                    m.bcPlayer.setFields({
-                      ' ...other fields here...
-                      loading: true
-                    })
-                </code></pre>
-        </section>
-        <hr>
-        <section>
-            <h3 id="retry-error">retryOnError</h3>
-            <p><code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-            <p>Configures the activation of the retry on error flow. This flow allows bcPlayer to automatically retry the video playback with another video source when a specific source results in a playback error during the initial buffering process.</p>
-            <p>If all the available video sources fail to play an error will be triggered.
-            </p>
-            <p>The retry on error flow follows the sources type and DRM encryption preferences/priorities set in the streamPreference and drmPreference fields.</p>
+            <p>Retrieves a set of Brightcove videos that are related to the specified video <code translate="no">id</code> through Playback API.</p>
 
-            <p>This flow is only relevant at the initial source loading, ie, a playback error triggered mid-playback will not trigger the retry on error flow.</p>
-            
-            <h4>Possible Values</h4>
-            <ul>
-                <li><p><code translate="no">false</code> Disables the retry on error flow.</p></li>
-                <li><p><code translate="no">true</code> <code class="text-warning" translate="no">DEFAULT</code> Enables the retry on error flow.</p></li>
-            </ul>
-            <pre class="line-numbers">
-                <code class="language-basic" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
-                    m.bcPlayer.retryOnError = false
-                    
-                    ' or
-                    
-                    m.bcPlayer.setFields({
-                      ' ...other fields here...
-                      retryOnError: false
-                    })
-                </code></pre>
-        </section>
-        <hr>
-        <section>
-            <h3>closeOnBack</h3>
-            <p><code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-            <p>Configures the back remote control button action to terminate the bcPlayer node when pressed.</p>
-            <p>It’s enabled by default, when you press the back button, the bcPlayer node will be terminated (to bring it back, it needs to be reinitialized from scratch).
-            </p>
-            <p>This behavior can be disabled, in which case developers can capture the back button press through a <code translate="no">bcPlayer.on.keyEvent</code> event listener and handle it as they see fit without having to terminate the bcPlayer node.</p>
-            
-            <h4>Possible Values</h4>
-            <ul>
-                <li><p><code translate="no">false</code> Disables the close on error behavior.</p></li>
-                <li><p><code translate="no">true</code> <code class="text-warning" translate="no">DEFAULT</code> Enables the close on error behavior.</p></li>
-            </ul>
-            <pre class="line-numbers">
-                <code class="language-basic" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
-                    m.bcPlayer.closeOnBack = false
-                    
-                    ' or
-                    
-                    m.bcPlayer.setFields({
-                      ' ...other fields here...
-                      closeOnBack: false
-                    })
-                </code></pre>
-        </section>
-        <hr>
-        <section>
-            <h3>enableDialogs</h3>
-            <p><code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-            <p>Configures bcPlayer to show error dialogs when an error occurs.</p>
-            <p>It’s enabled by default; you can disable it and capture the errors through the <code translate="no">bcPlayer.on.error</code> event.
-            </p>
-            <p>These dialogs appearance can be customized through the <a href="#dialog-theme">dialogTheme</a> field.
-            </p>
-            
-            <h4>Possible Values</h4>
-            <ul>
-                <li><p><code translate="no">false</code> Disables error dialogs.</p></li>
-                <li><p><code translate="no">true</code> <code class="text-warning" translate="no">DEFAULT</code> Enables error dialogs.</p></li>
-            </ul>
-            <pre class="line-numbers">
-                <code class="language-basic" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
-                    m.bcPlayer.enableDialogs = false
-                    
-                    ' or
-                    
-                    m.bcPlayer.setFields({
-                      ' ...other fields here...
-                      enableDialogs: false
-                    })
-                </code></pre>
-        </section>
-        <hr>
-        <section>
-            <h3 id="dialog-theme">dialogTheme</h3>
-            <p><code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-            <p>Configures error dialogs appearance when <a href="https://developer.roku.com/en-gb/docs/references/scenegraph/standard-dialog-framework-nodes/standard-dialog.md">enableDialogs</a> is enabled.</p>
-            <p>The expected properties are the same as the native StandardDialog <code translate="no">palette</code> field properties, except for <code translate="no">DialogItemColor</code>, <code translate="no">DialogInputFieldColor</code>, <code translate="no">DialogSecondaryTextColor</code>, and <code translate="no">DialogKeyboardColor</code> properties, which do not apply.
-            </p>
-            <p>Check below how the error dialogs look like in the default configuration.</p>
-            <figure class="bcls-figure">
-                <img class="bcls-image" src="/assets/images/s-publishing-apps-img/roku/roku-library/error-img.webp" alt="error image example">
-              </figure>
+            <p>Using the name and short description of the specified video <code translate="no">id</code>, the Playback API searches for videos with any partial matches in the following fields: <code translate="no">name</code>, <code translate="no">short_description</code> , <code translate="no">long_description</code>, <code translate="no">tags</code>.</p>
 
+            <p>The response object is handled as described in the request field. In this case, the response <code translate="no">id</code> property is always “getRelated“.</p>
+            <p><a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Related_Videos_by_ID_or_Reference_ID"></a>Playback API reference</p>
+            
             <h4>Possible Values</h4>
-            <p>An ASSOCIATIVE ARRAY with the following optional keys:</p>
+            <p>An AssociativeArray object containing the following properties:</p>
             <ul>
-                <li><p><code translate="no">DialogBackgroundColor</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
+                <li><p><code translate="no">id</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-danger" translate="no">REQUIRED</code> Hide the custom loading spinner.</p>
+                <p>Brightcove video ID or reference ID to retrieve the related videos from. To get the related videos of a video using the video reference ID, <code translate="no">id</code> must be formatted like so: <code translate="no">ref:&#60;reference_id&#62;</code>.</p>
+                </li>
+                <li><p><code translate="no">params</code> <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-success" translate="no">OPTIONAL</code></p>
+
+                <p>Playback API request parameters as specified in the Playback API Reference. The following properties are supported:</p>
                 <ul>
-                    <li><p>Specifies the blend color for dialog's background bitmap.</p></li>
-                    <li><p><code class="text-warning" translate="no">DEFAULT</code> <code translate="no">"#00000000"</code></p></li>
+                    <li><p><code translate="no">limit</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>The number of videos to return.</p>
+                    </li>
+                    <li><p><code translate="no">offset</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>The number of videos to skip - used to page multiple sets of videos.</p>
+                    </li>
+                    <li><p><code translate="no">ad_config_id</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Include server-side ad insertion.</p>
+                    </li>
+                    <li><p><code translate="no">config_id</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Include and set equal to the delivery rules id in order to have the delivery rules applied.</p>
+                    </li>
                 </ul>
                 </li>
-                <li><p><code translate="no">DialogTextColor</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-                <ul>
-                    <li><p>Specifies the title and content text color.</p></li>
-                    <li><p><code class="text-warning" translate="no">DEFAULT</code> Default Roku native color.</p></li>
-                </ul>
-                </li>
-                <li><p><code translate="no">DialogFocusColor</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-                <ul>
-                    <li><p>Specifies the focused button and scrollbar thumb colors.</p></li>
-                    <li><p><code class="text-warning" translate="no">DEFAULT</code> Default Roku native color.</p></li>
-                </ul>
-                </li>
-                <li><p><code translate="no">DialogFocusItemColor</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-                <ul>
-                    <li><p>Specifies the focused button text color.</p></li>
-                    <li><p><code class="text-warning" translate="no">DEFAULT</code> Default Roku native color.</p></li>
-                </ul>
-                </li>
-                <li><p><code translate="no">DialogSecondaryItemColor</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-                <ul>
-                    <li><p>Specifies the title divider color.</p></li>
-                    <li><p><code class="text-warning" translate="no">DEFAULT</code> <code translate="no">"#00000000"</code></p></li>
-                </ul>
-                </li>
-                <li><p><code translate="no">DialogFootprintColor</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-                <ul>
-                    <li><p>Specifies the button focus footprint color as well as the unfocused scrollbar thumb and track color.</p></li>
-                    <li><p><code class="text-warning" translate="no">DEFAULT</code> Default Roku native color.</p></li>
-                </ul>
+                <li><p><code translate="no">node</code> <code class="text-secondary" translate="no">NODE</code> <code class="text-success" translate="no">OPTIONAL</code></p>
+                <p>Response Node with a <code translate="no">response</code> field where the request response will be set into. If not provided (default), the response data can be accessed through bcAPI response output field.</p>
                 </li>
                 
             </ul>
+            <p>Code Snippet</p>
             <pre class="line-numbers">
-                <code class="language-basic" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
-                    m.bcPlayer.dialogTheme = {
-                      DialogBackgroundColor: "#00000000"
-                      DialogTextColor: "#dbdbdb"
-                      DialogFocusColor: "#d32228"
-                      DialogFocusItemColor: "#ab2125"
-                      DialogSecondaryItemColor: "#dbdbdb"
-                      DialogFootprintColor: "#dbdbdb"
-                    }
+                <code class="language-basic" translate="No">' just like the request action, once the bcAPI is ready, the flow should be exactly the same
+                    sub onReady(ev)
                     
-                    ' or
-                    
-                    m.bcPlayer.setFields({
-                      ' ...other fields here...
-                      dialogTheme: {
-                        DialogBackgroundColor: "#00000000"
-                        DialogTextColor: "#dbdbdb"
-                        DialogFocusColor: "#d32228"
-                        DialogFocusItemColor: "#ab2125"
-                        DialogSecondaryItemColor: "#dbdbdb"
-                        DialogFootprintColor: "#dbdbdb"
+                      ' observe bcAPI "response" field to retrieve the response data
+                      ' keep in mind that if a response Node isn't provided, all request responses are set into the bcAPI response field
+                      m.bcAPI.observeField("response", "onResponse")
+                      
+                      ' setup the getVideos configuration and initiate it
+                      m.bcAPI.getRelated = {
+                        id: "&#60;video-id&#62;",
+                        params: {
+                          limit: 10,
+                          offset: 20,
+                          ad_config_id: "my-ad-config-id"
+                        }
                       }
-                    })
+                      
+                      ' OR
+                      
+                      ' create a response Node that will be used to "catch" the getRelated response data
+                      responseNode = createObject("roSGNode", "Node")
+                      
+                      ' create an Associative Array "response" field in this Node
+                      responseNode.addFields({ response: {} })
+                      
+                      ' observe the just added "response" field to capture the response data
+                      responseNode.observeField("response", "onResponse")
+                      
+                      ' setup the getRelated configuration, provide the response Node and initiate the API request
+                      m.bcAPI.getRelated = {
+                        node: responseNode,
+                        id: "&#60;video-id&#62;",
+                        params: {
+                          limit: 10,
+                          offset: 20,
+                          ad_config_id: "my-ad-config-id"
+                        }
+                      }
+                      
+                    end sub
+                    
+                    sub onResponse(ev)
+                      
+                      response = ev.getData()
+                      
+                      ' handle the "getRelated" request response here
+                      ' response.id is "getRelated"
+                      
+                    end sub
                 </code></pre>
         </section>
         <hr>
         <section>
-            <h3 id="buffer-timeout">bufferTimeout</h3>
-            <p><code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
-            </code></p>
-            <p>Configures the buffering timeout error timer period in seconds. This configuration allows to setup a timer which is initiated once the initial video buffering begins and at the end of which a timeout error will trigger if the video playback hasn’t yet been initiated.
-            </p>
-            <p>Setting it to 0 disables the buffering timeout timer.
-            </p>
-            <p>If the <a href="#retry-error">retryOnError</a> config is enabled, if a buffering timeout error is trigger it’ll retry playing other available sources with no visual interruption to the user. Although an error will still be triggered through the <code translate="no">bcPlayer.on.error</code> event.</p>
-            
-            <h4>Possible Values</h4>
+            <h3>getPlaylist</h3>
+            <p>Retrieves a Brightcove playlist metadata through Playback API.</p>
+
+            <p>The response object is handled as described in the request field. In this case, the response id property is always “getPlaylist“.</p>
+
+            <p><a href="https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Playlists/operation/Get_Playlists_by_ID_or_Reference_ID">Playback API reference</a></p>
+
+            <p>Possible Values</p>
+            <p>An AssociativeArray object containing the following properties:</p>
             <ul>
-                <li>A positive integer value (seconds).</li>
-                <li><code class="text-warning" translate="no">DEFAULT</code> <code translate="no">0</code> buffering timeout disabled.</li>
+                <li><p><code translate="no">id</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-danger" translate="no">REQUIRED</code> Hide the custom loading spinner.</p>
+                    <p>Brightcove playlist ID or reference ID to be retrieved. To get a playlist using a playlist reference ID, <code translate="no">id</code> must be formatted like so: <code translate="no">ref:&#60;reference_id&#62;</code>.</p>
+                    </li>
+                    <li><p><code translate="no">params</code> <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-success" translate="no">OPTIONAL</code></p>
+    
+                    <p>Playback API request parameters as specified in the Playback API Reference. The following properties are supported:</p>
+                    <ul>
+                        <li><p><code translate="no">limit</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
+                        </code></p>
+                        <p>The number of videos to return.</p>
+                        </li>
+                        <li><p><code translate="no">offset</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
+                        </code></p>
+                        <p>The number of videos to skip - used to page multiple sets of videos.</p>
+                        </li>
+                        <li><p><code translate="no">ad_config_id</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
+                        </code></p>
+                        <p>Include server-side ad insertion.</p>
+                        </li>
+                        <li><p><code translate="no">config_id</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
+                        </code></p>
+                        <p>Include and set equal to the delivery rules id in order to have the delivery rules applied.</p>
+                        </li>
+                    </ul>
+                    </li>
             </ul>
+            <p>Code Snippet</p>
             <pre class="line-numbers">
-                <code class="language-basic" translate="No">m.bcPlayer = createObject("roSGNode", "bcLib:bcPlayer")
-                    m.bcPlayer.bufferTimeout = 20
+                <code class="language-basic" translate="No">' just like the request action, once the bcAPI is ready, the flow should be exactly the same
+                    sub onReady(ev)
                     
-                    ' or
+                      ' observe bcAPI "response" field to retrieve the response data
+                      ' keep in mind that if a response Node isn't provided, all request responses are set into the bcAPI response field
+                      m.bcAPI.observeField("response", "onResponse")
+                      
+                      ' setup the getPlaylist configuration and initiate it
+                      m.bcAPI.getPlaylist = {
+                        id: "&#60;playlist-id&#62;",
+                        params: {
+                          limit: 10,
+                          offset: 20,
+                          ad_config_id: "my-ad-config-id"
+                        }
+                      }
+                      
+                      ' OR
+                      
+                      ' create a response Node that will be used to "catch" the getPlaylist response data
+                      responseNode = createObject("roSGNode", "Node")
+                      
+                      ' create an Associative Array "response" field in this Node
+                      responseNode.addFields({ response: {} })
+                      
+                      ' observe the just added "response" field to capture the response data
+                      responseNode.observeField("response", "onResponse")
+                      
+                      ' setup the getPlaylist configuration, provide the response Node and initiate the API request
+                      m.bcAPI.getPlaylist = {
+                        node: responseNode,
+                        id: "&#60;playlist-id&#62;",
+                        params: {
+                          limit: 10,
+                          offset: 20,
+                          ad_config_id: "my-ad-config-id"
+                        }
+                      }
+                      
+                    end sub
                     
-                    m.bcPlayer.setFields({
-                      ' ...other fields here...
-                      bufferTimeout: 20
-                    })
+                    sub onResponse(ev)
+                      
+                      response = ev.getData()
+                      
+                      ' handle the "getPlaylist" request response here
+                      ' response.id is "getPlaylist"
+                      
+                    end sub
                 </code></pre>
         </section>
         <hr>
         <section>
-            <h3>on</h3>
-            <p><code translate="no" class="text-secondary">ROSGNODE</code> <code translate="no">READ-ONLY</code></p>
-            <p>Allows access to all the bcPlayer events. Developers should setup event listeners to capture the events data through the <code translate="no">observeField()</code> or <code translate="no">observeFieldScoped()</code> functions. Check the table below for all the available events and the data they provide. Check the code snippet to understand how to setup event listeners to capture these events.
-            </p>
+            <h3>abort</h3>
+            <p>Aborts currently ongoing requests.</p>
+            <p>If a response Node was provided in the request configuration, its response field is set to the following value: {aborted: true}. This allows the response handler to be notified that the request was aborted.</p>
+
+            <p>Possible Values</p>
+            <ul>
+                <li><p><code translate="no">false</code> no action.</p></li>
+                <li><p><code translate="no">true</code> aborts currently ongoing requests.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">' ...
+
+                    m.bcAPI.abort = true ' all requests that had a response Node provided will get notified once the request is aborted
+                    
+                ' ...
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>kill</h3>
+            <p>Aborts all ongoing requests and completely terminates the bcAPI Task. Once <code translate="no">kill</code> is requested there is no way to bring bcAPI functionality back on, so a new bcAPI node instance would need to be created.</p>
+
+            <p>Since this process is asynchronous, once the bcAPI is completely terminated the <code translate="no">ready</code> field is set back to <code translate="no">false</code> to notify eventual observing functions about the Task termination.</p>
+            
+            <p>Possible Values</p>
+            <ul>
+                <li><p><code translate="no">false</code> no action.</p></li>
+                <li><p><code translate="no">true</code> aborts ongoing requests and terminates the bcAPI Task.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">' ...
+
+                    m.bcAPI.kill = true ' just like the "bcAPI.abort", all requests that had a response Node provided will get notified once the request is aborted prior to the Task termination
+                    
+                ' ...
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>Output Fields</h3>
+            <p>Requests responses can be accessed through the response field unless a response Node was provided in the request options to capture the response metadata.</p>
+
+            <p>Possible Values</p>
+            <p>The response is an Associative Array object whose properties can vary depending on the type of response it refers to:</p>
+            <ul>
+                <li><p>HTTP request response</p>
+                <ul>
+                    <li><p><code translate="no">id</code> <code class="text-secondary" translate="no">STRING</code></p>
+                    <p>The request ID. If not provided in a request, contains the timestamp the request was initiated at. In a Brightcove Playback API it’s set to the specific request name.</p>
+                    </li>
+                    <li><p><code translate="no">code</code> <code class="text-secondary" translate="no">INTEGER</code></p>
+                    <p>The response HTTP status code.</p>
+                    </li>
+                    <li><p><code translate="no">headers</code> <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code></p>
+                    <p>The response HTTP headers.</p>
+                    </li>
+                    <li><p><code translate="no">failure</code> <code class="text-secondary" translate="no">STRING</code></p>
+                    <p>An error message is applicable, <code translate="no">OK</code> in a successful request. <code translate="no">failure</code> contains the GetFailureReason value.</p>
+                    </li>
+                    <li><p><code translate="no">duration</code> <code class="text-secondary" translate="no">FLOAT</code></p>
+                    <p>Request duration since its initialization until a response is received.</p>
+                    </li>
+                    <li><p><code translate="no">body</code> <code class="text-secondary" translate="no">STRING / ASSOCIATIVE ARRAY</code></p>
+                    <p>In a request the <code translate="no">body</code> format may depend on the <code translate="no">forceFormat</code> option.</p>
+                    <p>In a Brightcove Playback API request the response metadata is provided in an Associative Array object.</p>
+                    </li>
+                </ul>
+                </li>
+                <li><p>Internal error (configuration issues)</p>
+                <ul>
+                    <li><p><code translate="no">id</code> <code class="text-secondary" translate="no">STRING</code></p>
+                    <p>ID of the request that originated the error (<code translate="no">request</code>, <code translate="no">getVideo</code>, <code translate="no">getVideos</code>, <code translate="no">getRelated</code>, <code translate="no">getPlaylist</code> or the custom request ID).</p>
+                    </li>
+                    <li><p><code translate="no">code</code> <code class="text-secondary" translate="no">INTEGER</code></p>
+                    <p><code translate="no">1</code>, <code translate="no">2</code> or <code translate="no">3</code>. The higher the number the deeper the origin of the error is.</p>
+                    </li>
+                    <li><p><code translate="no">duration</code> <code class="text-secondary" translate="no">STRING</code></p>
+                    <p>Hardcoded to <code translate="no">-1</code> as it’s not relevant in this case.</p>
+                    </li>
+                    <li><p><code translate="no">failure</code> <code class="text-secondary" translate="no">STRING</code></p>
+                    <p>The error message.</p>
+                    </li>
+                </ul>
+                </li>
+                <li><p>Aborted request (in a response Node only)</p>
+                <ul>
+                    <li><p><code translate="no">aborted</code> <code class="text-secondary" translate="no">BOOLEAN</code></p>
+                    <p>Hardcoded to <code translate="no">true</code>.</p>
+                    </li>
+                </ul>
+                </li>                
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">sub init()
+  
+                    ' initialize bcAPI node reference
+                    m.bcAPI = createObject("roSGNode", "bcLib:bcAPI")
+                    
+                    ' observe the "ready" field
+                    m.bcAPI.observeField("ready", "onReady")  
+                    
+                    ' setup bcAPI config fields and initiate the bcAPI Task
+                    m.bcAPI.setFields({
+                      ' ...
+                      control: "run"
+                    })
+                    
+                  end sub
+                  
+                  sub onReady(ev)
+                    
+                    isReady = ev.getData()
+                    if isReady then
+                    
+                      ' observe bcAPI "response" field to retrieve the response data
+                      ' keep in mind that if a response Node isn't provided, all request responses are set into the bcAPI response field
+                      m.bcAPI.observeField("response", "onResponse")
+                      
+                      ' setup the request configuration and initiate it
+                      m.bcAPI.request = {
+                        data: {...}
+                      }  
+                      
+                      ' OR
+                    
+                      ' create a response Node that will be used to "catch" the request response data
+                      responseNode = createObject("roSGNode", "Node")
+                  
+                      ' create an Associative Array "response" field in this Node
+                      responseNode.addFields({ response: {} })
+                      
+                      ' observe the just added "response" field to capture the response data
+                      responseNode.observeField("response", "onResponse")
+                    
+                      ' setup the request configuration, provide the response Node and initiate the request
+                      ' bcAPI.response will not get this request response
+                      m.bcAPI.request = {
+                        node: responseNode,
+                        data: {...}
+                      }
+                    
+                    end if
+                    
+                  end sub
+                  
+                  sub onResponse(ev)
+                    
+                    response = ev.getData()
+                    
+                    ' handle request response
+                    
+                  end sub
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3 id="buffer-timeout">ready</h3>
+            <p>Indicates if the bcAPI Task is ready to receive request commands, Because of the asynchronous nature of Roku Task nodes, it’s recommended to observe for the <code translate="no">ready</code> field and only make use of it once <code translate="no">ready</code> is <code translate="no">true</code>. It can then be observed for the <code translate="no">false</code> value to confirm that the Task was completely terminated, if needed.</p>
+
+            <p>Possible Values</p>
+            <ul>
+                <li><p><code translate="no">false</code> <code translate="no">bcAPI</code> has not been complete initiated or has been completely terminated. No requests can be executed in this state.</p></li>
+                <li><p><code translate="no">true</code> <code translate="no">bcAPI</code> Task is ready to trigger requests</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">sub init()
+  
+                    ' initialize bcAPI node reference
+                    m.bcAPI = createObject("roSGNode", "bcLib:bcAPI")
+                    
+                    ' observe the "ready" field
+                    m.bcAPI.observeField("ready", "onReady")  
+                    
+                    ' setup bcAPI config fields and initiate the bcAPI Task
+                    m.bcAPI.setFields({
+                      ' ...
+                      control: "run"
+                    })
+                    
+                  end sub
+                  
+                  sub onReady(ev)
+                    
+                    isReady = ev.getData()
+                    if isReady then
+                      
+                      ' bcAPI is ready to trigger HTTP/API requests
+                      
+                    else
+                    
+                      ' bcAPI hasn't been initiated yet OR hasn't been completely terminated yet
+                    
+                    end if
+                    
+                  end sub
+                </code></pre>
+        </section>
+        <hr>
+        <section>
+            <h3>Utils</h3>
+            <p>The Utils node provides a set of Brightscript helping utilities that may be useful for validations or common operations.</p>
+
+            <p>An instance of this node can be created like so:</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">
+                    m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+                </code></pre>
+
+            <p>Once a Utils instance is available, its functions can be accessed as follows:</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">
+                    ' checks if the passed data is an Associative Array, in this case isAA is true
+                    isAA = m.bcUtils.callFunc("isAA", {b: "c"})
+                </code></pre>
+
+        </section>
+        <hr>
+        <section>
+            <h3>Functions</h3>
+            <p>Validates passed values according to the rules provided.</p>
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">value</code> <code class="text-secondary" translate="no">DYNAMIC</code> <code class="text-danger" translate="No">REQUIRED
+                </code></p>
+                <p>The value meant to be validated.</p>
+                </li>
+                <li><p><code translate="no">map</code> <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-danger" translate="No">REQUIRED
+                </code></p>
+                <p>A map of rules used to validate the provided value against. This Associative Array object contains the following properties:</p>
+                <ul>
+                    <li><p><code translate="no">type</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-danger" translate="No">REQUIRED
+                    </code></p>
+                    <p>Specifies the expected value type. The following types are supported:</p>
+                    <ul>
+                        <li><p><code translate="no">string</code> Value must be a String.</p></li>
+                        <li><p><code translate="no">number</code> Value must be a number (Integer, Float, Double or LongInteger).</p></li>
+                        <li><p><code translate="no">boolean</code> Value must be a Boolean.</p></li>
+                        <li><p><code translate="no">array</code> Value must be an Array.</p></li>
+                        <li><p><code translate="no">node</code> Value must be a roSGNode.</p></li>
+                        <li><p><code translate="no">aa</code> Value must be an Associative Array.</p></li>
+                    </ul>
+                    </li>
+                    <li><p><code translate="no">required</code> <code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies that the value cannot be invalid if true. Default to true if not provided. Applicable to all types.</p>
+                    </li>
+                    <li><p><code translate="no">empty</code> <code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies that the value can be an empty String (““), Associative Array ({}) or Array ([]) if <code translate="no">true</code>.</p>
+                    <p>Defaults to true if not provided. Only applicable to <code translate="no">string</code>, <code translate="no">aa</code> and <code translate="no">array</code> types.</p>
+                    </li>
+                    <li><p><code translate="no">minLength</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies the minimum length of a String (number of chars), Associative Array (number of keys) or Array (number of entries). Only applicable to <code translate="no">string</code>, <code translate="no">aa</code> and <code translate="no">array</code> types.</p>
+                    </li>
+                    <li><p><code translate="no">maxLength</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies the maximum length of a String (number of chars), Associative Array (number of keys) or Array (number of entries). Only applicable to <code translate="no">string</code>, <code translate="no">aa</code> and <code translate="no">array</code> types.</p>
+                    </li>
+                    <li><p><code translate="no">enum</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-secondary" translate="no">ARRAY</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies a list of possible values value can take. The contains function is used to verify if the value is present in enum.  Only applicable to <code translate="no">string</code> and <code translate="no">number</code> types.</p>
+                    </li>
+                    <li><p><code translate="no">min</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies the minimum value of <code translate="no">value</code>. Only applicable to the <code translate="no">number</code> type.</p>
+                    </li>
+                    <li><p><code translate="no">max</code> <code class="text-secondary" translate="no">INTEGER</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies the maximum value of <code translate="no">value</code>. Only applicable to the <code translate="no">number</code> type.</p>
+                    </li>
+                    <li><p><code translate="no">null</code> <code class="text-secondary" translate="no">BOOLEAN</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies if <code translate="no">value</code> can be <code translate="no">0</code>. Only applicable to the <code translate="no">number</code> type.</p>
+                    </li>
+                    <li><p><code translate="no">properties</code> <code class="text-secondary" translate="no">ASSOCIATIVE ARRAY</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies a map of rules to be applied to a specific Associative Array property. This allows for a recursion execution of <code translate="no">validate</code>. All the properties listed in the <code translate="no">map</code> section are supported. Only applicable to the <code translate="no">aa</code> type.</p>
+                    </li>
+                    <li><p><code translate="no">subtype</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies the subtype (as indicated by <code translate="no">value.subtype()</code>) that <code translate="no">value</code> should reflect. Only applicable to the <code translate="no">node</code> type.</p>
+                    </li>
+                    <li><p><code translate="no">fields</code> <code class="text-secondary" translate="no">ARRAY</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies a list of fields that the <code translate="no">value</code> node must have (as indicated by <code translate="no">value.hasField("field")</code>). An Array of Strings must be provided where each entry represents the name of a field. Only applicable to the <code translate="no">node</code> type.</p>
+                    </li>
+                    <li><p><code translate="no">interface</code> <code class="text-secondary" translate="no">STRING</code> <code class="text-success" translate="No">OPTIONAL
+                    </code></p>
+                    <p>Specifies the interface (as indicated by <code translate="no">getInterface()</code>) that <code translate="no">value</code> should reflect. Only applicable to the <code translate="no">node</code> type.
+                    </p>
+                    </li>
+                </ul>
+                </li>
+            </ul>
+           <p>Return Value</p>
+           <p>Returns a Boolean value that indicates if <code translate="no">value</code> respects all the rules provided in the <code translate="no">map</code> parameter. A failed  validation of a single rule will invalidate the whole validation and return <code translate="no">false</code>.</p>
+
+           <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test1 = "A random string"
+                    validTest1 = m.bcUtils.callFunc("validate", test1, {type: "string", maxLength: 4})
+                    ? validTest1 ' false because test1 fails the maxLength validation rule
+                    
+                    test2 = "hello-world"
+                    ' keep in mind that when specifying "enum" as a string, the inStr() function 
+                    ' is used to search for the value
+                    validTest2 = m.bcUtils.callFunc("validate", test2, {
+                      type: "string", 
+                      enum: "hello-world/hello-planet/hello-pluto"
+                    }) 
+                    ' OR
+                    validTest2 = m.bcUtils.callFunc("validate", test2, {
+                      type: "string", 
+                      enum: ["hello-world","hello-planet","hello-pluto"]
+                    })
+                    ? validTest2 ' true because "hello-world" is a string and 
+                    ' it's specified in the enum validation rule
+                    
+                    test4 = invalid
+                    validTest3 = m.bcUtils.callFunc("validate", test3, {type: "string", empty: false})
+                    ? validTest3 ' false because, by default, the "required" validation rule is true
+                    
+                    test4 = createObject("roSGNode", "Node")
+                    test4.addFields({hello: "world"})
+                    validTest4 = m.bcUtils.callFunc("validate", test4, {
+                        type: "node", 
+                        interface: "ifSGNodeChildren", 
+                        subtype: "Node", 
+                        fields: ["hello"]
+                    })
+                    ? validTest4 ' true because all validation rules are valid
+                    
+                    test5 = {hello: {world: []}}
+                    validTest5 = m.bcUtils.callFunc("validate", test5, {
+                        type: "aa", 
+                        properties: {
+                            hello: {
+                                type: "aa", 
+                                properties: {
+                                    world: {
+                                        type: "array",
+                                        empty: false
+                                    }
+                                }
+                            }
+                        }
+                    })
+                    ? validTest5 ' false because, as specified by the validation rules, 
+                    ' "test5.hello.world" cannot be an empty array
+                    
+                    test6 = [1, 2, 4, 8, "testing"]
+                    validTest6 = m.bcUtils.callFunc("validate", test6, {type: "array", maxLength: 5})
+                    ? validTest6 ' true because test6 respects the array and maxLength validation rule
+                </code></pre>
+
+        </section>
+        <section>
+            <h3>contains</h3>
+            <p>Allows to search for a needle in a haystack. Internally the indexOf function is used to run the search.</p>
+
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">haystack</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-secondary">ARRAY</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                <p>A String or Array where to search for the needle. Have in mind the following details:</p>
+                <ul>
+                    <li><p>If <code translate="no">haystack</code> is a string, the needle should also be a string.</p></li>
+                    <li><p>If <code translate="no">haystack</code> is an array:</p>
+                    <ul>
+                        <li><p>If <code translate="no">needle</code> is a string, it'll be lower-cased before the search process. Haystack string items are also lower-cased for a proper comparison with <code translate="no">needle</code>.</p></li>
+                        <li><p>If <code translate="no">needle</code>  is not a string, the comparison is made with <code translate="no">needle = haystack[i]</code>.</code>.</p></li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                <li><p><code translate="no">needle</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-secondary">NUMBER</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                <p>The value to find in the haystack. When comparing strings, both <code translate="no">needle</code> and <code translate="no">haystack</code> are lower-cased.</p>
+                </li>
+                
+            </ul>
+            <p>Return Value</p>
+            <p>Returns <code translate="no">true</code> if <code translate="no">needle</code> is found in <code translate="no">haystack</code> or <code translate="no">false</code> otherwise.</p>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("contains", "This is A tEst string", "a test")
+                    ' test = true
+                    
+                    test = m.bcUtils.callFunc("contains", [2, "a", 5], "5")
+                    ' test = false
+                </code></pre>
+        </section>
+        <section>
+            <h3>indexOf</h3>
+            <p>Just like contains, searches for a needle in a haystack, but returns the index of the needle in the haystack if found instead.</p>
+
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">haystack</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-secondary">ARRAY</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                <p>A String or Array where to search for the needle. Have in mind the following details:</p>
+                <ul>
+                    <li><p>If <code translate="no">haystack</code> is a string, the <code translate="no">needle</code> should also be a string.</p></li>
+                    <li><p>If <code translate="no">haystack</code> is an array:</p>
+                    <ul>
+                        <li><p>If <code translate="no">needle</code> is a string, it'll be lower-cased before the search process. Haystack string items are also lower-cased for a proper comparison with <code translate="no">needle</code>.</p></li>
+                        <li><p>If <code translate="no">needle</code>  is not a string, the comparison is made with <code translate="no">needle = haystack[i]</code>.</code>.</p></li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                <li><p><code translate="no">needle</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-secondary">NUMBER</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                <p>The value to find in the haystack. When comparing strings, both <code translate="no">needle</code> and <code translate="no">haystack</code> are lower-cased.</p>
+                </li>
+                
+            </ul>
+            <p>Return Value</p>
+            <ul>
+                <li><p><code translate="no">-1</code> if needle isn't found.</p></li>
+                <li><p><code translate="no">-1</code> Index of needle in <code translate="no">haystack</code>. Either the haystack array index where needle was found or the <code translate="no">inStr()</code> result if <code translate="no">needle</code> and <code translate="no">haystack</code> are strings.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("indexOf", "This is A tEst string", "a test")
+                    ' test = 8
+                    
+                    test = m.bcUtils.callFunc("indexOf", [2, "a", 5], "5")
+                    ' test = -1
+                </code></pre>
+        </section>
+        <section>
+            <h3>isBool</h3>
+            <ul>
+                <li><p><code translate="no">value</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code translate="no" class="text-secondary">ARRAY</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                </li>
+            </ul>
+            <p>Return Value</p>
+            <ul>
+                <li><p><code translate="no">true</code> if <code translate="no">value</code> is Boolean, <code translate="no">false</code> otherwise.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("isBool", "Def not a boolean")
+                    ' test = false
+                </code></pre>
+        </section>
+        <section>
+            <h3>isAA</h3>
+            <p>Checks if value is an Associative Array object.</p>
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">value</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                </li>
+            </ul>
+            <p>Return Value</p>
+            <ul>
+                <li><p><code translate="no">true</code> if <code translate="no">value</code> is an Associative Array object, <code translate="no">false</code> otherwise.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("isAA", {})
+                    ' test = true
+                </code></pre>
+        </section>
+        <section>
+            <h3>isArray</h3>
+            <p>Checks if value is an Array object.</p>
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">value</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                </li>
+            </ul>
+            <p>Return Value</p>
+            <ul>
+                <li><p><code translate="no">true</code> if <code translate="no">value</code> is an Array object, <code translate="no">false</code> otherwise.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("isArray", ["this", "is", "an", "array"])
+                    ' test = true
+                </code></pre>
+        </section>
+        <section>
+            <h3>isInt</h3>
+            <p>Checks if value is an Integer number.</p>
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">value</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                </li>
+            </ul>
+            <p>Return Value</p>
+            <ul>
+                <li><p><code translate="no">true</code> if <code translate="no">value</code> is an Integer number, <code translate="no">false</code> otherwise.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("isInt", "123")
+                    ' test = false
+                </code></pre>
+        </section>
+        <section>
+            <h3>isFloat</h3>
+            <p>Checks if value is an Float number.</p>
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">value</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                </li>
+            </ul>
+            <p>Return Value</p>
+            <ul>
+                <li><p><code translate="no">true</code> if <code translate="no">value</code> is an Float number, <code translate="no">false</code> otherwise.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("isFloat", 1.23)
+                    ' test = true
+                </code></pre>
+        </section>
+        <section>
+            <h3>isNumber</h3>
+            <p>Checks if value is an Integer, Float, Double or LongInteger number.</p>
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">value</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                </li>
+            </ul>
+            <p>Return Value</p>
+            <ul>
+                <li><p><code translate="no">true</code> if <code translate="no">value</code> is an Integer, Float, Double or LongInteger number, <code translate="no">false</code> otherwise.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("isNumber", 323)
+                    ' test = true
+                </code></pre>
+        </section>
+        <section>
+            <h3>isString</h3>
+            <p>Checks if value is a String.</p>
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">value</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                </li>
+            </ul>
+            <p>Return Value</p>
+            <ul>
+                <li><p><code translate="no">true</code> if <code translate="no">value</code> is a String, <code translate="no">false</code> otherwise.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("isString", "323")
+                    ' test = true
+                </code></pre>
+        </section>
+        <section>
+            <h3>charAt</h3>
+            <p>Get the character positioned at a specific index of a string.</p>
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">value</code> <code translate="no" class="text-secondary">STRING</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                <p>The string to get the character from.</p>
+                </li>
+                <li><p><code translate="no">index</code> <code translate="no" class="text-secondary">INTEGER</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                <p>The index of the character.</p>
+                </li>
+            </ul>
+            <p>Return Value</p>
+            <ul>
+                <li><p>The character at the position specified by <code translate="no">index</code>.</p></li>
+            </ul>
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("charAt", "My String", 3)
+                    ' test = "S"
+                </code></pre>
+        </section>
+        <section>
+            <h3>toString</h3>
+            <p>Converts any type to a string.</p>
+            <aside class="bcls-aside bcls-aside--tip">
+                <p>Be aware of the following details when using this function:</p>
+                <ul>
+                    <li>This function can have a big impact in the app performance.</li>
+                    <li>The returned String data may not completely reflect the input data. Check the Return value section for more specific details on each value type.</li>
+                    <li>This function is usually helpful for debugging purposes.</li>
+                </ul>
+            </aside>
+
+            <p>Parameters</p>
+            <ul>
+                <li><p><code translate="no">value</code> <code translate="no" class="text-secondary">DYNAMIC</code> <code translate="no" class="text-danger">REQUIRED</code></p>
+                <p>The value to be converted into a string.</p>
+                </li>
+                <li><p><code translate="no">maxDepth</code> <code translate="no" class="text-secondary">INDEX</code> <code translate="no" class="text-success">OPTIONAL</code></p>
+                <p>Specifies the max depth of a roSGNode, Array or Associative Array that should be converted to string. If not specified, the default value is <code translate="no">3</code>. The minimum <code translate="no">maxDepth</code> value is <code translate="no">1</code>. Keep in mind that increasing the maxDepth will exponentially increase the performance hit as well.
+                </p>
+                </li>
+            </ul>
+            <p>Return Value</p>
+            <p>Returns a string representation of value. The supported types include:</p>
+            <ul>
+                <li><p><code>&#60;uninitialized&#62;</code></p>
+                <p>Returns “UNINITIALIZED“.</p>
+                </li>
+                <li><p><code>invalid</code></p>
+                <p>Returns “INVALID“.</p>
+                </li>
+                <li><p><code>string</code></p>
+                <p>Returns <code translate="no">value</code>.</p>
+                </li>
+                <li><p><code>integer</code></p>
+                <p>Returns the number string representation.</p>
+                </li>
+                <li><p><code>float</code></p>
+                <p>Returns the number string representation.</p>
+                </li>
+                <li><p><code>double</code></p>
+                <p>Returns the number string representation</p>
+                </li>
+                <li><p><code>roSGNode</code></p>
+                <p>Converts the Node fields to an AssociativeArray object, converts it to string and returns it in the following format: “&#60;Component: NodeType {NodeFields}&#62;". If maxDepth has been reached, the following format is returned: “&#60;Component: NodeType&#62;"</p>
+                </li>
+                <li><p><code>Array</code></p>
+                <p>Converts the Array to a string by converting each individual Array entry to a String in a recursive execution of this function. If <code translate="no">maxDepth</code> is reached, the following format is returned: <code translate="no">“[ArrayLength]"</code>.</p>
+                </li>
+                <li><p><code>List</code></p>
+                <p>Just like Array, converts the List to a string by converting each individual List entry to a String in a recursive execution of this function. If <code translate="no">maxDepth</code> is reached, the following format is returned: <code translate="no">“[ListLength]"</code>.</p>
+                </li>
+                <li><p><code>Associative Array</code></p>
+                <p>Converts the Associative Array to a string by converting each individual key value to a String in a recursive execution of this function. If <code translate="no">maxDepth</code> is reached, the following format is returned: <code translate="no">“{[ListOfKeys]}"</code>.</p>
+                </li>
+                <li><p><code>Boolean</code></p>
+                <p>Returns the Boolean string representation.</p>
+                </li>
+                <li><p><code>roDateTime</code></p>
+                <p>Returns the DateTime ISO string.</p>
+                </li>
+                <li><p>Any other “ro<node-name>“ nodes</p>
+                <p>Returns the following format: <code translate="no">“&#60;Component: NodeType&#62;"</code>.</p>
+                </li>
+                <li>
+                <p>Any other value not mention will return an empty String.
+                </p>
+                </li>
+            </ul>
+
+            <p>Code Snippet</p>
+            <pre class="line-numbers">
+                <code class="language-basic" translate="No">m.bcUtils = createObject("roSGNode", "bcLib:Utils")
+
+                    test = m.bcUtils.callFunc("toString", 567)
+                    ' test = "567"
+                    
+                    test2 = { one: { two: { three: { four: { five: "Hello World" } } } } }
+                    test2 = m.bcUtils.callFunc("toString", test2, 2)
+                    ' test2 = "{\"one\":{\"two\":{[\"three\"]}}}"                    
+                </code></pre>
         </section>
         <section class="bcls-section">
             <h2 id="event-list">Event List</h2>
