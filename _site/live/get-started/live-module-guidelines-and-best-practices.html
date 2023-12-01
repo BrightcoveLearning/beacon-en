@@ -3697,10 +3697,12 @@
           </li>
         </ol>
       <li>If there is an option for <strong>Keyframe Aligned</strong>, <strong>Sync GOP</strong>, <strong>Align Keyframes</strong>, or something along those lines, make sure Keyframes are aligned. When Keyframes are not aligned, it causes synchronization issues with HLS segmentation.</li>
+      <li>Brightcove Live supports 608 captions in-band (inside h.264 headers). For more information on this topic, please reference <a href="https://live.support.brightcove.com/general/captions-with-live-streams.html">Captions with Live Streams.</a><sup><strong><a href="#note1-1">[1-2]</a></strong></sup></li>
     </ul>
     <h4>Notes</h4>
     <ul>
-      <li id="note1-1"><sup><strong>[1-1]</strong></sup> If you have multiple video/audio tracks in your TS input, we will pick the first for each. We also strongly recommend using FEC, as plain TS over UDP over the internet is very unreliable. For FEC, we could note that the <em>smaller</em> the values you use for rows/columns, the more reliable the error correction will be (at the cost of increased bandwidth.</li>
+      <li id="note1-1"><sup><strong>[1-1]</strong></sup> If you have multiple video/audio tracks in your TS input, we will pick the first for each. We also strongly recommend using FEC, as plain TS over UDP over the internet is very unreliable. For FEC, we could note that the <em>smaller</em> the values you use for rows/columns, the more reliable the error correction will be (at the cost of increased bandwidth).</li>
+      <li id="note1-2"><sup><strong>[1-2]</strong></sup> You must set caption positioning in the 608 data when implementing 608 captions.</li>
     </ul>
   </section>
   <section class="bcls-section">
