@@ -225,7 +225,7 @@
       url: /layout/e-live-features.html
     - name: Player E VOD Features
       url: /layout/e-vod-features.html
-      name: 'Text Tracks List'
+    - name: 'Text Tracks List'
       url: '/layout/text-tracks-list.html'
     - name: Refreshing the App Cache
       url: /layout/clearing-cache.html
@@ -1071,8 +1071,8 @@
     url: /admin/general/index.html
     icon: fa-regular fa-circle-info
     docs:
-    - name: Authenticating Studio Users using SSO
-      url: /admin/general/authenticating-studio-users-using-single-sign.html
+    # - name: Authenticating Studio Users using SSO
+    #   url: /admin/general/authenticating-studio-users-using-single-sign.html
     - name: Configuring Language Settings
       url: /admin/general/configuring-language-settings.html
     - name: Configuring Server-Side Ad Settings
