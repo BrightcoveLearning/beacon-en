@@ -1089,16 +1089,16 @@
       url: /admin/general/managing-media-sharing-settings.html
     - name: Managing Live Settings
       url: /admin/general/managing-live-settings.html
-    - name: Managing Playback Rights
-      url: /admin/general/managing-playback-rights.html
+    # - name: Managing Playback Rights
+    #   url: /admin/general/managing-playback-rights.html
     - name: Managing Profile Information
       url: /admin/general/managing-profile-information.html
     - name: Managing Users
       url: /admin/general/managing-users.html
-    - name: Using the Directed Migration Tool
-      url: /admin/general/using-directed-migration-tool-migrate-brightcove-smart-players.html
-    - name: Viewing Billing Information
-      url: /admin/general/viewing-billing-information.html
+    # - name: Using the Directed Migration Tool
+    #   url: /admin/general/using-directed-migration-tool-migrate-brightcove-smart-players.html
+    # - name: Viewing Billing Information
+    #   url: /admin/general/viewing-billing-information.html
   - name: Managing Ingest Profiles
     url: /admin/ingest-profiles/index.html
     icon: fa-regular fa-sliders
