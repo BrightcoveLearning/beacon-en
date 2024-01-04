@@ -3974,99 +3974,70 @@
   </section>
   <section class="bcls-section">
     <h2 id="sprinklr">Creating a Sprinklr destination</h2>
-    <p>Create a Sprinklr destination when you want to publish videos to your Sprinklr account. Before creating a Sprinklr destination, you may want to <a href="https://app.sprinklr.com/ui/login?returnTo=%2Fui%2Fservice%2Flogin%3Fservice%3Dspr%26returnTo%3Dhttps%253A%252F%252Fspace.sprinklr.com%252F&service=spr">verify your Sprinklr account</a>.</p>
-    <p>To create a Sprinklr destination, follow these steps.</p>
+    <p>Create a Sprinklr destination when you want to publish videos to Sprinklr. To create a Sprinklr destination, you first need to <a href="https://studio.support.brightcove.com/social/module/creating-sprinklr-app.html">create a Sprinklr app</a>.</p>
     <ol class="bcls-tasklist-restart">
       <li>Open the<strong> Social </strong>Module.</li>
       <li>Click <strong>Destinations</strong> in the left navigation.</li>
       <li>Click <span class="button-blue">Add Destination</span>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/module/node16345-add-destination.png" /></figure>
       </li>
-      <li>Click <strong>Sign in with Sprinklr</strong>.</li>
-      <li>Fill the fields with the information you obtained when you created your Sprinklr app. <a href="https://www.sprinklr.com/help/articles/platform-modules/the-sprinklr-apis/633c5c2359534970b26f96ae#4cbeaac9-5b62-4120-9f59-2d6cd336fcab"></a>Learn more.</li>
-      <li>A dialog will open requesting permission to manage your Sprinklr account. Check the upper right of the dialog to confirm you are using the correct Google account. If not, use the drop down to select the Google account you want to distribute videos to. Click <strong>Allow</strong>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/module/node16345-auth-yt-dest.png" /></figure>
+      <li>Click <strong>Sign in with Sprinklr</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add sprinklr destination" src="/assets/images/s-social-img/module/add-sprinklr-destination.webp" /></figure>
       </li>
-      <li>Give the destination a unique, descriptive name. Click <span class="button-blue">Add</span>.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/module/node16345-name-yt-dest.png" /></figure>
+      <li>Fill the fields with the information you obtained when you created your Sprinklr app.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="sign in sprinklr" src="/assets/images/s-social-img/module/create-sprinklr-destination.webp" /></figure>
+        <aside class="bcls-aside bcls-aside--tip"><p>Note: The key is tied to a particular instance (prod/prod0/prod2/prod3/prod4). You can only fetch data from the workspaces to which the token has been given access to.</p>
+        </aside>
       </li>
-      <li>Basic information and the destination defaults will be displayed. Click the <span class="button-blue">Edit</span> button in the <strong>Basic info</strong> section to edit the destination name. See the <a href="#youtube_defaults">Setting Sprinklr defaults</a> section for information on configuring default values.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/module/node16345-yt-dest-created.png" /></figure>
+      <li>A dialog will open requesting permission to manage your Sprinklr account. Click <strong>Submit</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="submit sprinklr" src="/assets/images/s-social-img/module/welcome-sprinklr.webp" /></figure>
       </li>
+      <li><strong>LOGIN</strong> to your Sprinklr account.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="login sprinklr" src="/assets/images/s-social-img/module/login-sprinklr.webp" /></figure>
+      </li>
+      <li>Basic information and the destination defaults will be displayed.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add sprinklr destination" src="/assets/images/s-social-img/module/add-destination.webp" /></figure>
+      </li>
+      <li><strong>Add</strong>.</li>
       <li>Click <strong>Destinations</strong> in the left margin and confirm that the destination appears in the list of destinations. The value below the destination name is the destination ID.</li>
     </ol>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/module/node16345-yt-dest-added.png" /></figure>
-    <p>Click the <strong>Destination Name</strong> to edit the destination. Click the link in the <strong>Channel/Page</strong> column to open the Sprinklr channel in another browser tab.</p>
+    <p>Click the <strong>Destination Name</strong> to edit the destination. Click the link in the <strong>Channel/Page</strong> column to open the Sprinklr details page in another browser tab.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="youtube_defaults">Setting Sprinklr defaults</h2>
+    <h2 id="sprinklr_defaults">Setting Sprinklr defaults</h2>
     <p>The destination default values will be used as the default video properties when <a href="/social/general/publishing-videos-social-media-platforms.html">publishing videos to social platforms</a>. To configure publishing defaults for Sprinklr destination, click on the destination name and then click <span class="button-blue">Edit</span> in the <strong>Defaults for this destination</strong> section. The following video properties can be configured:</p>
     <ul>
-      <li><a href="#ytpostinfo">Post Info</a></li>
-      <li><a href="#ytschedule">Schedule</a></li>
-      <li><a href="#ytcaptions">Captions</a></li>
-      <li><a href="#ytvisibility">Visibility</a></li>
-      <li><a href="#ytlicense">License</a></li>
-      <li><a href="#ytlive">Live</a></li>
+      <li><a href="#sprinklrpostinfo">Post Info</a></li>
+      <li><a href="#sprinklrschedule">Schedule</a></li>
+      <li><a href="#sprinklrditribution">Distribution</a></li>
+      
     </ul>
-    <div id="ytpostinfo" class="BCL-subsection">
+    <div id="sprinklrpostinfo" class="BCL-subsection">
       <h3>Configuring the Post Info properties</h3>
       <p>Click on the <strong>Post Info</strong> link. The following Sprinklr video properties can be set:</p>
       <ul>
-        <li><strong>Description</strong> - Options to use the Beacon short or long description or to enter a default description to use</li>
-        <li><strong>Original Language Code</strong> - Used to add translated video titles and descriptions to videos; Enter a 2 letter language code and select from the list</li>
-        <li><strong>Sprinklr Category</strong> - Content category for the video</li>
-        <li><strong>Tags</strong> - Option to include, or exclude, Beacon tags</li>
+        <li><strong>Name</strong> - Options to use the Beacon name or to enter a default name to use.</li>
+        <li><strong>Description</strong> - Options to use the Beacon short or long description or to enter a default description to use.</li>
+        <li><strong>Tags</strong> - Option to include, or exclude, Beacon tags.</li>
         <li><strong>Include Beacon metadata as Sprinklr tags</strong> - Option to include the video ID and reference ID as Sprinklr tags</li>
         <li><strong>Additional Tags</strong> - Option to enter additional tags for videos</li>
-        <li><strong>Thumbnail Source</strong> - Options to use the Sprinklr thumbnail, the Beacon thumbnail or to upload your own thumbnail image</li>
       </ul>
     </div>
-    <div id="ytschedule" class="BCL-subsection">
+    <div id="sprinklrschedule" class="BCL-subsection">
       <h3>Configuring the Schedule properties</h3>
       <p>Click on the <strong>Schedule</strong> link and select a schedule setting:</p>
       <ul>
         <li><strong>Publish immediately</strong> - To publish the video immediately</li>
         <li><strong>Use Video Cloud start date</strong> - To use the Video Cloud start date set for the video. In this case, we tell Sprinklr to make the video public as of the 'Scheduled Start Date' specified in Video Cloud. If that date is in the past, Sprinklr makes the video public immediately.</li>
+        <li><strong>Never expire posts</strong> - Published videos on Sprinklr don't expire if they are expired on Beacon.</li>
+        <li><strong>Posts expire on Beacon end date</strong> - We tell Sprinklr to expire the videos when 'Scheduled End Date' specified in Video Cloud. If that date is in the past, Sprinklr expires the video immediately.</li>
       </ul>
-      <aside class="bcls-aside bcls-aside--information">Note: To have the <a href="#ytvisibility">video visibility</a> set to <strong>Unlisted</strong> or <strong>Private</strong>, set the <strong>Schedule</strong> option to <strong>Publish immediately</strong> and set the <strong>Visibility</strong> option to <strong>Unlisted</strong> or <strong>Private</strong>.</aside>
     </div>
-    <div id="ytcaptions" class="BCL-subsection">
-      <h3>Configuring the Captions properties</h3>
-      <p>Click on the <strong>Captions</strong> link and select an option:</p>
+    <div id="sprinklrditribution" class="BCL-subsection">
+      <h3>Configuring the Distribution properties</h3>
+      <p>Click on the <strong>Distribution</strong> link and select an option:</p>
       <ul>
-        <li><strong>Use Video Cloud captions</strong> - The Social module will attempt to distribute the captions associated with the video to Sprinklr. The Social module will attempt to access captions files no matter where they are. If a remote URL is used to specify the location of the caption files and the files are accessible (e.g., not geo-restricted in such a way that we can't get to them) then Social will distribute them to Sprinklr.</li>
-        <li><strong>No captions</strong> - No captions are used</li>
-      </ul>
-      <aside class="bcls-aside bcls-aside--information">Note: For information on working with captions in Video Cloud, see <a href="/media/captions/overview-adding-captions-video.html">Overview: Adding Captions to a Video</a>.</aside>
-    </div>
-    <div id="ytvisibility" class="BCL-subsection">
-      <h3>Configuring the Visibility properties</h3>
-      <p>Click on the <strong>Visibility</strong> link and select a Privacy setting for the video. The following Privacy settings are available:</p>
-      <ul>
-        <li><strong>Public</strong> - Anyone can view the video</li>
-        <li><strong>Unlisted</strong> - Anyone who has the link to the video can view it</li>
-        <li><strong>Private</strong> - Video can only be seen by you and the users you select</li>
-        <li><strong>Use YT_Privacy_Status Custom Field</strong> - Dynamically assigns the privacy setting using a custom field associated with the video. For information, see <a href="/social/general/setting-privacy-status-video.html">Setting the Privacy Status for a Video</a>.</li>
-      </ul>
-      <p>There is also a setting to <strong>Notify subscribers when video is posted to Sprinklr</strong>. If checked, your subscribers will see your videos in their Subscriptions feed and may receive a notification that the video was uploaded.</p>
-      <aside class="bcls-aside bcls-aside--information">Note: For more information on the Sprinklr Privacy settings, see the <a href="https://support.google.com/youtube/answer/157177">Sprinklr documentation</a>.</aside>
-    </div>
-    <div id="ytlicense" class="BCL-subsection">
-      <h3>Configuring the License properties</h3>
-      <p>Click on the <strong>License</strong> link and select a License and Rights Ownership setting for the video. The following settings are available:</p>
-      <ul>
-        <li>Standard Sprinklr License</li>
-        <li>Creative Commons - Attribution</li>
-      </ul>
-      <aside class="bcls-aside bcls-aside--information">Note: For more information on Sprinklr License and Rights Ownership, see the <a href="https://support.google.com/youtube/answer/2797468">Sprinklr documentation</a>.</aside>
-    </div>
-    <div id="ytlive" class="BCL-subsection">
-      <h3>Configuring the Live properties</h3>
-      <p>Click on the <strong>Live</strong> link and select the <strong>DVR</strong> setting for the video. The following settings are available:</p>
-      <ul>
-        <li>Enable</li>
-        <li>Disable</li>
+        <li><strong>Status</strong> - Select the default status available on Sprinklr for the videos (Draft, Approved, expired).</li>
+        <li><strong>Restricted</strong> - Select if the videos are restricted or not by default.</li>
       </ul>
     </div>
   </section>
