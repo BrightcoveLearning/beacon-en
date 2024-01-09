@@ -3974,7 +3974,8 @@
   </section>
   <section class="bcls-section">
     <h2 id="sprinklr">Creating a Sprinklr destination</h2>
-    <p>Create a Sprinklr destination when you want to publish videos to Sprinklr. To create a Sprinklr destination, you first need to <a href="https://studio.support.brightcove.com/social/module/creating-sprinklr-app.html">create a Sprinklr app</a>.</p>
+    <p>Creating a Sprinklr destination when you want to send videos to Sprinklr so that you can find them in your assets library inside Sprinklr and publish them to their final destinations from Sprinklr directly. To create a Sprinklr destination, you first need to <a target="_blank" href="https://studio.support.brightcove.com/social/module/creating-sprinklr-app.html">create a Sprinklr app</a>.</p>
+    <aside class="bcls-aside bcls-aside--tip">Note: Once you have <a target="_blank" href="https://studio.support.brightcove.com/social/module/creating-sprinklr-app.html">created a Sprinklr app</a> , please continue with the steps below.</aside>
     <ol class="bcls-tasklist-restart">
       <li>Open the<strong> Social </strong>Module.</li>
       <li>Click <strong>Destinations</strong> in the left navigation.</li>
@@ -3994,17 +3995,21 @@
       <li><strong>LOGIN</strong> to your Sprinklr account.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="login sprinklr" src="/assets/images/s-social-img/module/login-sprinklr.webp" /></figure>
       </li>
-      <li>Basic information and the destination defaults will be displayed.
+      <li>Accept the terms of use and the privacy policy.
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add sprinklr destination" src="/assets/images/s-social-img/module/add-destination.webp" /></figure>
       </li>
       <li><strong>Add</strong>.</li>
+      <li>Basic information and the destination defaults will be displayed.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add sprinklr destination" src="/assets/images/s-social-img/module/sprinklr-defaults.webp" /></figure>
+      </li>
+      
       <li>Click <strong>Destinations</strong> in the left margin and confirm that the destination appears in the list of destinations. The value below the destination name is the destination ID.</li>
     </ol>
     <p>Click the <strong>Destination Name</strong> to edit the destination. Click the link in the <strong>Channel/Page</strong> column to open the Sprinklr details page in another browser tab.</p>
   </section>
   <section class="bcls-section">
     <h2 id="sprinklr_defaults">Setting Sprinklr defaults</h2>
-    <p>The destination default values will be used as the default video properties when <a href="/social/general/publishing-videos-social-media-platforms.html">publishing videos to social platforms</a>. To configure publishing defaults for Sprinklr destination, click on the destination name and then click <span class="button-blue">Edit</span> in the <strong>Defaults for this destination</strong> section. The following video properties can be configured:</p>
+    <p>The destination default values will be used as the default video properties when <a href="/social/general/publishing-videos-social-media-platforms.html">sending videos to Sprinklr</a>. To configure publishing defaults for Sprinklr destination, click on the destination name and then click <span class="button-blue">Edit</span> in the <strong>Defaults for this destination</strong> section. The following video properties can be configured:</p>
     <ul>
       <li><a href="#sprinklrpostinfo">Post Info</a></li>
       <li><a href="#sprinklrschedule">Schedule</a></li>
@@ -4019,7 +4024,7 @@
         <li><strong>Description</strong> - Options to use the Beacon short or long description or to enter a default description to use.</li>
         <li><strong>Tags</strong> - Option to include, or exclude, Beacon tags.</li>
         <li><strong>Include Beacon metadata as Sprinklr tags</strong> - Option to include the video ID and reference ID as Sprinklr tags</li>
-        <li><strong>Additional Tags</strong> - Option to enter additional tags for videos</li>
+        <li><strong>Additional Tags</strong> - Option to enter additional tags for the videos sent to Sprinklr.</li>
       </ul>
     </div>
     <div id="sprinklrschedule" class="BCL-subsection">
@@ -4036,10 +4041,11 @@
       <h3>Configuring the Distribution properties</h3>
       <p>Click on the <strong>Distribution</strong> link and select an option:</p>
       <ul>
-        <li><strong>Status</strong> - Select the default status available on Sprinklr for the videos (Draft, Approved, expired).</li>
+        <li><strong>Status</strong> - Status for when the videos land on Sprinklr (Draft, Approved, Expired).</li>
         <li><strong>Restricted</strong> - Select if the videos are restricted or not by default.</li>
       </ul>
     </div>
+    <aside class="bcls-aside bcls-aside--tip">Note: One of the use cases for <strong>Expired</strong> is to enable automatic deletion of published posts from Sprinklr. For that, you first need a rule in Brightcove that expires videos in Sprinklr upon untagging or deleting them in Brightcove. If that video in Sprinklr has the <strong>Delete all posts associated to this asset upon the expiry of asset</strong> option enabled in the Sprinklr UI, then setting a video as <strong>Expired</strong> from Brightcove will delete those posts. However, Sprinklr only supports this deletion feature with Facebook, Twitter, and YouTube.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="delete">Deleting a destination</h2>
@@ -4063,6 +4069,13 @@
       <li>You may be prompted to re-authenticate with the social media account.</li>
     </ol>
   </section>
+  <section class="bcls-section">
+    <h2 id="related-documentation">Related Documentation</h2>
+    <ul>
+      <li><a target="_blank" href="https://studio.support.brightcove.com/social/general/using-auto-sync-synchronize-videos-social-media-accounts.html">Auto Sync</a>.</li>
+    </ul>
+  </section>
+  
 </article>
 
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
