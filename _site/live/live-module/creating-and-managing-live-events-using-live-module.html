@@ -3618,6 +3618,7 @@
       <li>Live streams with SSAI must be published via the Live module, not the Media Module.</li>
       <li>Live broadcasts will experience a 20-30 second delay.</li>
       <li>Streaming must begin within 30 minutes of the event start (default-level account setting).</li>
+      <li>Live streams with DVR are not supported on Chromecast.</li>
       <li>Live streams with DVR are not supported when using the Brightcove Player SDKs. In this case, you should add the DVR playback URL to a remote asset and then use the remote asset URL with the SDK.</li>
       <li>Output settings <strong>cannot</strong> be modified after the event has been created.</li>
       <li>Brightcove scales live streaming capacity up or down to match demand, and generally this is transparent. When an account attempts to create several live jobs in a region in a short time, however, there may be a short delay while additional capacity is prepared. If you try the request again in a few minutes, it should succeed.</li>
@@ -3822,6 +3823,7 @@
       <li><strong>Create this as a recurring event using a Static Entry Point (SEP)</strong> - Allows a single live stream to be created and then activated/deactivated when needed. For information, see the <a href="#intro_recurring">Introduction to recurring events</a> section of this document.</li>
     </ul>
     <p>Click <strong>Edit Configuration </strong> to view/edit the API request that will be made to create the live stream. Caution should be used when editing the API call directly.</p>
+    <aside class="bcls-aside bcls-aside--warning language-editable">Live streams with DVR are not supported on Chromecast.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="low-latency">Using low latency streaming</h2>
