@@ -3588,7 +3588,506 @@
       <br>
       
       
+<h1>Managing Cookie Compliance Using OneTrust Cookie Consent</h1>
+<article class="bcls-article">
+  <summary>In this topic, you will learn how to implement OneTrust Cookie Consent with Brightcove Beacon.</summary>
 
+
+  <section class="bcls-section">
+    <h2 id="Introduction">Introduction</h2>
+    <aside class="bcls-aside bcls-aside--warning language-editable">The first step in an implementation of cookie compliance is checking with your legal team and determine rules and regulations for all geographies you are targeting with your content.</aside>
+    <p>Cookies are used to store data on a visitor's computer or mobile device. Cookies are commonly used and sometimes critical to a website's functionality. Cookies can be used to store large amounts of data, store personal data and track online activity so advertisers can target ads. Because of the negatives that are associated with cookies, regulations have evolved around them. The three most common are:</p>
+    <ul>
+      <li>California Consumer Privacy Act (CCPA) used in California, Colorado, Utah, Connecticut and Virginia.</li>
+      <li>General Data Protection Regulation (GDPR) used in the EU and United Kingdom.</li>
+      <li>Quebec Law 25 used in Quebec.</li>
+    </ul>
+    <p>This document is an introduction to get you started using OneTrust's Cookie Consent tool with Brightcove Beacon. Brightcove recommends using OneTrust for your Beacon cookie compliance needs.</p>
+    <aside class="bcls-aside bcls-aside--tip language-editable">
+      <p>For further general information on cookies, regulation, rules and cookie compliance see OneTrust's <a href="https://www.cookiepro.com/knowledgebase/">CookiePro Knowledge Base</a> document. For complete details on OneTrust's tools see the <a href="https://my.onetrust.com/s/topic/0TO1Q000000ItRyWAK/cookie-compliance">Cookie Compliance</a> section and <a href="https://my.onetrust.com/s/contentdocument/0691Q00000G4bpDQAR">Cookie Consent</a> of the documentation at OneTrust.</p>
+    </aside>
+    <p>The main sections in this document are:</p>
+    <ul>
+      <li>How OneTrust Cookie Consent works</li>
+      <li>Implementation steps (comprised of four sections)</li>
+      <li>What data is collected?</li>
+      <li>Implementation architecture</li>
+    </ul>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="How_it_works">How OneTrust Cookie Consent works</h2>
+    <p>The end result of setting up OneTrust Cookie Consent is that a banner will appear in the Beacon App for geographic locations you choose. Here is an example of what the banner could look like (taken from OneTrust's site):</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/one-trust-banner.png" alt="one trust banner">
+    </figure>
+    <p>When a viewer clicks on the <strong>Customize Settings</strong> link in the banner, a <strong>Preference Center</strong> dialog appears. This allows your viewers to customize how cookies behave in their app:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/one-trust-preference-center.png" alt="one trust preference center">
+    </figure>
+    <p>OneTrust welcomes Beacon customers to contact them about the <a href="https://www.onetrust.com/products/cookie-consent/">Cookie Consent</a> product.</p>
+    <h3>Overview of implementation process</h3>
+    <p>There are a number of steps to implement OneTrust's cookie compliance with your Beacon app. Here is an overview of that process:</p>
+    <ol>
+      <li>Define the domain from where your apps will be served.</li>
+      <li><a href="#create-templates">Create templates</a> that define your banner and preference center functionality and upload your logo for each template created.</li>
+      <li>Create a geolocation rule group, which will act as a container for geolocation rules.</li>
+      <li>Create geolocation rules that:
+        <ul>
+          <li>Define the regions in which the cookie compliance will be used.</li>
+          <li>Define the template to be used with the geolocation rule.</li>
+          <li>Define other specifications, like how often re-consent will need to be done.</li>
+        </ul>
+      </li>
+      <li>Assign geolocation rules to the domains from which your Beacon app is served.</li>
+      <li>Generate the scripts that provide the actual cookie compliance in your Beacon app.</li>
+      <li>Supply the scripts to Brightcove's OTT Delivery Team for implementation.</li>
+    </ol>
+    <p>The major sections following in this document lead you step by step through the implementation process.</p>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="Define_app_domain">Define app domain</h2>
+    <p>Later in the implementation process, you need to use the domain(s) from which your apps are served. The steps in this section define that.</p>
+    <ol class="bcls-tasklist">
+      <li>Log in to your OneTrust account.</li>
+      <li>From the <em>Welcome</em> page, click the <strong>Cookie Consent</strong> option.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/cookie-compliance.webp" alt="cookie compliance">
+        </figure>
+      </li>
+      <li>To start the process:
+        <ol type="a">
+          <li>In the left navigation, click <strong>Websites</strong></li>
+          <li>Click <strong>Add Website</strong></li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/add-website.webp" alt="add website">
+        </figure>
+      </li>
+      <li>Enter the <em>Website URL</em> from where your app will be served, which is supplied by your DNS provider. Enter the <em>Organization</em>, then click <strong>Scan Only</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/scan-only.webp" alt="scan website">
+        </figure>
+      </li>
+      <li>You will be returned to the <em>COOKIE COMPLIANCE</em> configuration page.</li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="manage-languages">Manage Languages</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>Open the <strong>Template Details</strong> screen.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/manage-languages.webp" alt="manage languages">
+        </figure>
+      </li>
+      <li>Click <strong>Manage Languages</strong>. The <strong>Manage Languages</strong> modal appears.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/select-banner-languages.webp" alt="select languages">
+        </figure>
+      </li>
+      <li><p>Select the checkboxes for the languages you want to enable.</p>
+      <p>You can select a new default language by selecting the check box in the Default column.</p>
+      </li>
+      <li><strong>Save</strong></li>
+    </ol>
+
+    <p>The multi-language capabilities of Brightcove provide you with the ability to present your content and apps in the native language of your viewers.</p>
+    <p>Languages supported by Brightcove</p>
+    <ul>
+      <li>English (en)</li>
+      <li>Spanish (es)</li>
+      <li>Italian (it)</li>
+      <li>French (fr)</li>
+      <li>German (de)</li>
+      <li>Mongolian (mn)</li>
+      <li>Japanese (ja)</li>
+      <li>Korean (ko)</li>
+      <li>Chinese (zh)</li>
+      <li>Russian (ru)</li> 
+    </ul>
+    <p>For more details see: <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/using-multiple-languages.html#Choose_the_languages_for_your_apps">Using Multiple Languages</a></p>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="Create_geolocation_rules">Create geolocation rules</h2>
+    <p>Creating geolocation rules first requires that you create a geolocation rule group. The group will act as a container for the rules you create. The actual geolocation rules define cookie compliance behaviors you wish for different geographic regions.</p>
+    <ol class="bcls-tasklist">
+      <li>To start the process, create a new rule group by:
+        <ol type="a">
+          <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
+          <li>Click <strong>Create New</strong>.
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/create-geolocation.webp" alt="geo rules index">
+            </figure>
+          </li>
+        </ol>
+      </li>
+      <li>In the <strong>Create New Rule Group</strong> dialog, supply a group name, organization and description.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/create-geolocations-form.webp" alt="create rule group">
+        </figure>
+      </li>
+      <li>Click <strong>Create</strong>.</li>
+      <li>To set the <em>Global</em> rule, start by clicking the edit button.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/set-global-rule.webp" alt="edit global rule">
+        </figure>
+      </li>
+      <li>Clear the <em>Template</em> input box and begin typing the name of your global template, created earlier, then select it.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/add-template-geo.webp" alt="select generic template">
+        </figure>
+      </li>
+      <li>For the <em>Cookie Categories</em>, select <strong>Opt-out</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/opt-out-geo.webp" alt="opt out">
+        </figure>
+      </li>
+      <li>For <em>Capture Records of Consent</em> change the following:
+        <ul>
+          <li>Enable <em>Capture Records of Consent</em></li>
+          <li>Set <em>Advanced Analytics</em> to <strong>Strictly Necessary Cookies</strong></li>
+          <li>Consider checking the <em>Use this consent model if site visitor's IP address is unknown</em> checkbox if this rule acting in a global capacity.</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/record-consent.webp" alt="capture consent">
+        </figure>
+      </li>
+      <li>Click <strong>Save</strong>.</li>
+      <li>To create your first actual geolocation rule, from the rule group details page, click <strong>Add Rule</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/add-rule.webp" alt="geo add rule">
+        </figure>
+      </li>
+      <li>You will now create the CCPA rule. The following table provides settings you need to make to be compatible with Beacon. Other changes can be made based on regulations for your targeted geographies.
+        <aside class="bcls-aside bcls-aside--tip language-editable">As with templates, you may not need all the rules based on locations your Beacon app is targeting.</aside>
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Form element</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Rule Name</td>
+              <td>Provide a name</td>
+            </tr>
+            <tr>
+              <td>Regions</td>
+              <td>
+                <p>Select the geo-locations in which the rule should be applied. This can be regions, countries, or states.</p>
+                <p>For CCPA, you would most likely want to include <em>California</em>, then any other desired regions like <em>Colorado</em>, <em>Utah</em>, <em>Connecticut</em> and <em>Virginia</em>.</p></td>
+            </tr>
+            <tr>
+              <td>Template</td>
+              <td>Choose the template created that was based on the CCPA framework.</td>
+            </tr>
+            <tr>
+              <td>Cookie Categories</td>
+              <td>Opt-out</td>
+            </tr>
+            <tr>
+              <td>Capture Records of Consent</td>
+              <td>Enabled</td>
+            </tr>
+            <tr>
+              <td>Advanced Analytics</td>
+              <td>Strictly Necessary Cookies</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Create the GDPR rule. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Form element</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Rule Name</td>
+              <td>Provide a name</td>
+            </tr>
+            <tr>
+              <td>Regions</td>
+              <td>
+                <p>Select the geo-locations in which the rule should be applied. This can be regions, countries, or states.</p>
+                <p>For GDPR, you would most likely want to include <em>Eu</em> and <em>United Kingdom</em>, then any other desired regions.</p></td>
+            </tr>
+            <tr>
+              <td>Template</td>
+              <td>Choose the template created that was based on the IAB framework.</td>
+            </tr>
+            <tr>
+              <td>Cookie Categories</td>
+              <td>Opt-in</td>
+            </tr>
+            <tr>
+              <td>Capture Records of Consent</td>
+              <td>Enabled</td>
+            </tr>
+            <tr>
+              <td>Advanced Analytics</td>
+              <td>Strictly Necessary Cookies</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Create the Quebec Law 25 rule. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Form element</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Rule Name</td>
+              <td>Provide a name</td>
+            </tr>
+            <tr>
+              <td>Regions</td>
+              <td>
+                <p>Select the geo-locations in which the rule should be applied. This can be regions, countries, or states.</p>
+                <p>For Quebec Law 25 include <em>Quebec</em>, then any other desired regions.</p></td>
+            </tr>
+            <tr>
+              <td>Template</td>
+              <td>Choose the template created that was based on the Quebec Law 25 framework.</td>
+            </tr>
+            <tr>
+              <td>Cookie Categories</td>
+              <td>Opt-in</td>
+            </tr>
+            <tr>
+              <td>Capture Records of Consent</td>
+              <td>Enabled</td>
+            </tr>
+            <tr>
+              <td>Advanced Analytics</td>
+              <td>Strictly Necessary Cookies</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Check to be sure your rules appear as follows, except of course, using your rule names.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/geo-rules.webp" alt="geo rules">
+        </figure>
+      </li>
+      <!-- <li>You may wish to create a rule that can be applied to regions NOT selected for the CCPA or GDPR rules. It might be applied to all other regions, and because of this you might want to name this rule <strong>Global</strong>. Be sure to supply the following values to insure compatibility with Beacon. Other values can be set as needed to meet other regulations.
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Form element</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Rule Name</td>
+              <td>Provide a name</td>
+            </tr>
+            <tr>
+              <td>Regions</td>
+              <td>If this rule create for all regions not previously selected, do not enter any regions</td>
+            </tr>
+            <tr>
+              <td>Template</td>
+              <td>A template must be selected, but which template is based on regulations in targeted regions.</td>
+            </tr>
+            <tr>
+              <td>Capture Records of Consent</td>
+              <td>Enabled</td>
+            </tr>
+            <tr>
+              <td>Advanced Analytics</td>
+              <td>Strictly Necessary Cookies</td>
+            </tr>
+            <tr>
+              <td>Checkbox: Use this consent model if site visitor's IP address is unknown</td>
+              <td>Consider this option if this rule acting in a global capacity.</td>
+            </tr>
+          </tbody>
+        </table>
+      </li> -->
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Assign_geolocation_rules_to_domains">Assign geolocation rules to domains</h2>
+    <p></p>
+    <ol class="bcls-tasklist-restart">
+      <li>In the left navigation, click <strong>Geolocation Rules</strong>.</li>
+      <li>For the <em>Geolocation Rule Group</em> you created, click the ellipses icon and select <strong>Assign to Domains</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/assign-to-domains.webp" alt="rule group assign to domains">
+        </figure>
+      </li>
+      <li>Select the appropriate domains, then click <strong>Assign</strong>. These domains should match the URLs supplied by your DNS provider.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/assign-domains-geo.webp" alt="rule group assign to domains confirm">
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Create-and-copy-scripts">Create and copy scripts</h2>
+    <p>You will go through the process of generating the scripts twice. Once for test scripts, which are used in the non-production test CDN. Then once for the production CDN.</p>
+    <ol class="bcls-tasklist">
+      <li>From the Cookie Compliance index page:
+        <ol type="a">
+          <li>In the left navigation, click <strong>Scripts</strong>.</li>
+          <li>Click the domain where your cookie compliance will be implemented.</li>
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/scripts-domain.webp" alt="scripts index">
+          </figure>
+        </ol>
+      </li>
+      <li>In the details screen for your domain, click <strong>Publish Test</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/script-publish-test.webp" alt="publish test">
+        </figure>
+      </li>
+      <li>In the <em>Test Website</em> dialog:
+        <ol type="a">
+          <li>Set the script version to <strong>6.32.0</strong> (or the latest version).</li>
+          <li>Click <strong>Confirm</strong>.</li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/test-dialog.webp" alt="test website confirm">
+        </figure>
+      </li>
+      <li>Ensure the settings are those in the following screenshot, then click <strong>Publish Test Scripts</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/settings-test.webp" alt="publish test scripts dialog">
+        </figure>
+      </li>
+      <li>If a <em>Live Preview</em> dialog displays, click <strong>Cancel</strong>.</li>
+      <li>Now in the top-right of the screen, click <strong>Publish Production</strong>.</li>
+      <li>Update the script version to the latest, and click <strong>Confirm</strong>.</li>
+      <li>Confirm settings as show in step 56, then click <strong>Publish.</strong></li>
+      <li>Click the <strong>Test Scripts</strong> tab, if not already selected.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/test-scripts.webp" alt="test scripts">
+        </figure>
+      </li>
+      <li>Click <strong>Copy Scripts</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/s-general-img/managing-cookie-consent/copy-scripts.webp" alt="copy scripts">
+        </figure>
+      </li>
+      <li>Provide the scripts to Brightcove's OTT Delivery Team for proper deployment.</li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="What_data_is_collected">What data is collected?</h2>
+    <p>Data is collected for the these main purposes:</p>
+    <ul>
+      <li>App behavior</li>
+      <li>Analytics</li>
+      <li>Ad targeting</li>
+    </ul>
+    <p>The steps above configured your system to address these general purposes:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Data</th>
+          <th>Use(s)</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Geo-filtering</td>
+          <td>Location services</td>
+        </tr>
+        <tr>
+          <td>Device information (model, type, OS version)</td>
+          <td>Login, trace actions, analytics, record favorites, etc.</td>
+        </tr>
+        <tr>
+          <td>Ad targeting</td>
+          <td>Specified ads</td>
+        </tr>
+        <tr>
+          <td>Locale</td>
+          <td>Number and date formatting, currencies</td>
+        </tr>
+        <tr>
+          <td>App information (name, version, errors)</td>
+          <td>Reports on versions used, aggregated errors for proactive corrections, etc.</td>
+        </tr>
+        <tr>
+          <td>User navigation and use patterns</td>
+          <td>Google analytics (navigation patterns), sign ups, count search, page opens, etc.</td>
+        </tr>
+        <tr>
+          <td>Local storage</td>
+          <td>Persist credentials and login info, user application state, user settings, etc.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Standards body purpose definitions</h3>
+    <p>The purposes for cookie data collection are very thoroughly defined in the <em>IAB Europe Transparency & Consent Framework v2.0</em>. The definitions can be found in <a href="https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/#Appendix_A_Purposes_and_Features_Definitions">Appendix A: Purposes and Features Definitions</a> of the <em>IAB Europe Transparency & Consent Framework Policies</em> document.</p>
+    <p>The <a href="https://my.onetrust.com/s/article/UUID-d8cd9272-4dcd-eab9-2d39-41ddd85b3589">IAB Europe Transparency & Consent Framework v2.2</a> defines 11 purposes. The following table displays those used by Beacon.</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Purpose</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>1</td>
+          <td>Store and/or access information on a device.</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Create profiles for personalized advertising.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Use profiles to select personalized advertising.</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Measure advertising performance.</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Measure content performance</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="related-documentation">Related Documentation</h2>
+    <ul>
+      <li><a href="https://beacon.support.brightcove.com/references/consent-management-using-onetrust/consent-management-in-ctv-mobile-beacon-apps.html">Consent management in CTV/Mobile beacon apps</a>.</li>
+      <li id="create-templates">Create templates
+        <ul>
+          <li><a href="/references/consent-management-using-onetrust/template-creation/gdpr-template.html">GDPR</a></li>
+          <li><a href="/references/consent-management-using-onetrust/template-creation/law-25-template.html">Law 25</a></li>
+          <li><a href="/references/consent-management-using-onetrust/template-creation/ccpa-template.html">CCPA</a></li>
+          <li><a href="/references/consent-management-using-onetrust/template-creation/global-template.html">Global</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+</article>
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
   
   <nav class="right-side-nav" id="right_side_nav">
