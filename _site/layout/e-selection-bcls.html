@@ -3718,38 +3718,49 @@
                 <tr>
                     <td><strong>Android</strong></td>
                     <td>If you haven't selected any audio track, the default audio track is provided by the Brightcove SDK.</td>
-                    <td>Dash stream doesn't support the default audio tracks even if they are defined in studio.</td>
+                    <td>
+                      <ul>
+                        <li>Dash stream doesn't support the default audio tracks even if they are defined in studio.</li>
+                      </ul>
+                      </td>
                 </tr>
                 <tr>
-                    <td><strong>iOS</strong></td>
-                    <td>When there is no preselected language, the player would natively try to find the preferred language of the device.</td>
+                    <td><strong>iOS</strong>
+                      <br>
+                      <strong>AppleTV</strong>
+                    </td>
+                    <td>When there is no preselected language, the SDK natively looks into the device OS preferred languages and use it to predefine the preferred language.</td>
                     <td><ul>
+                      <li>Dash stream doesn't support the default audio tracks even if they are defined in studio.</li>
                       <li>VOD: It selects the audio that reflects the preferred device language, or else it will use the stream default.</li>
                       <li>Live: It doesn’t auto-select the preferred language; natively it uses the stream default.</li>
                     </ul></td>
                 </tr>
                 <tr>
                   <td><strong>Roku</strong></td>
-                  <td>If you haven't selected any audio track, the default audio track is provided by the Brightcove SDK.</td>
+                  <td>Roku OS has a pre-selected preferred audio track out of the box.</td>
                   <td><ul>
                     <li>Dash stream doesn't support the default audio tracks even if they are defined in studio; the language selected would be the first to appear on the audio selection list.</li>
-                    <li>Changing the default audio language on the system settings will affect the app's preferred audio language and vice versa..</li>
+                    <li>Changing the preferred audio language on the system settings will affect the app's default audio language and vice versa..</li>
                   </ul></td>
                 </tr>
                 <tr>
                   <td><strong>STV</strong></td>
-                  <td>If you haven't selected any audio track, the default audio track is provided by the Brightcove SDK.</td>
+                  <td>You have to provide a preselected audio track.</td>
                   <td>
                     <ul>
-                      <li>If the default audio is different from the predefined one, the default audio is played for 1 or 2 seconds before switching to the predefined one.</li>
-                      <li>Dash: The audio track can only be known after it starts to play.</li>
+                      <li>If the default audio is different from the predefined one, the default audio is played for 1 or 2 seconds before switching to the predefined one (The audio track can only be known after the playback starts).</li>
                     </ul>
                     </td>
                 </tr>
                 <tr>
                   <td><strong>Web</strong></td>
                   <td>If you haven't selected any audio track, the default audio track is provided by the Brightcove SDK.</td>
-                  <td><strong>Only on Firefox</strong>: When the selected language is different from the default, it has a small delay around 5 to 10 seconds to perform the switch, this seems to be related in the way Firefox handles the video load along with our autoplay behavior in the platform.
+                  <td>
+                    <ul>
+                      <li><strong>Only on Firefox</strong>: When the selected language is different from the default, it has a small delay around 5 to 10 seconds to perform the switch, this seems to be related in the way Firefox handles the video load along with our autoplay behavior in the platform.</li>
+                      <li>Dash stream doesn't support the default audio tracks even if they are defined in studio.</li>
+                    </ul>
                     </td>
                 </tr>
             </tbody>
