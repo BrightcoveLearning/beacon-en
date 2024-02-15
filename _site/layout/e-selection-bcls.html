@@ -3703,9 +3703,10 @@
   <section class="bcls-section">
     <h2 id="limitations">Limitations</h2>
     <h3>Default Audio Track Selection</h3>
-    <p>Default Audio Selection allows you to listen to content in your preferred language based on your location, browser/device settings, etc., without continuously selecting the desired audio track on the player.</p>
+    <p>Default Audio Selection allows you to listen to content in your preferred language based on your previous explicitly audio track selection and removing the need to select it again, after switching videos.</p>
 
-    <p><em>General behavior</em>: If you explicitly select a preferred audio track on the Beacon app, that preferred audio track will be used as a reference to auto-select the same audio track language on the following video (if that audio track language is available). This option is saved locally on each device (even on the same user on the same platform on two or more devices; this will be specific on each device).</p>
+    <p><em>General behavior</em>: If you explicitly select a audio track on the Beacon app, that audio track language will be used as a reference to auto-select the same audio track on the following video, (if that audio track language is available). This option is saved locally on each device.</p>
+    <aside class="bcls-aside bcls-aside--tip"><strong>Note</strong>: There are no fallbacks for language variations; for instance, if a user has selected <code translate="no">"es"</code>, and <code translate="no">"es-ES"</code> is available on the following video, that audio track won't be selected based on previous audio track selection.</aside>
     <div class="table-responsive">
       <table class="bcls-table">
             <caption class="bcls-caption--table">platforms audio track known limitations</caption>
@@ -3713,36 +3714,28 @@
                 <tr>
                     <th>Platform</th>
                     <th>Behavior</th>
-                    <th>Limitation</th>
+                    <th>Dash Stream</th>
+                    <th>Other Limitations</th>
                 </tr>
             </thead>
             <tbody class="bcls-table__body">
                 <tr>
                     <td><strong>Android</strong></td>
                     <td>If you haven't selected any audio track, the default audio track is provided by the Brightcove SDK.</td>
-                    <td>
+                    <td rowspan="4">
                       <ul>
                         <li>Dash stream doesn't support the default audio tracks even if they are defined in studio.</li>
                       </ul>
-                      </td>
-                </tr>
-                <tr>
-                    <td><strong>iOS</strong>
-                      <br>
-                      <strong>AppleTV</strong>
                     </td>
-                    <td>When there is no preselected language, the SDK natively looks into the device OS preferred languages and use it to predefine the preferred language.</td>
-                    <td><ul>
-                      <li>Dash stream doesn't support the default audio tracks even if they are defined in studio.</li>
-                      <li>VOD: It selects the audio that reflects the preferred device language, or else it will use the stream default.</li>
-                      <li>Live: It doesn’t auto-select the preferred language; natively it uses the stream default.</li>
-                    </ul></td>
+                    <td>
+                      
+                    </td>
                 </tr>
                 <tr>
                   <td><strong>Roku</strong></td>
                   <td>Roku OS has a pre-selected preferred audio track out-of-the-box.</td>
                   <td><ul>
-                    <li>Dash stream doesn't support the default audio tracks even if they are defined in studio; the language selected would be the first to appear on the audio selection list.</li>
+                    
                     <li>Changing the preferred audio language on the system settings will affect the app's default audio language and vice versa.</li>
                   </ul></td>
                 </tr>
@@ -3753,7 +3746,7 @@
                   <td>
                     <ul>
                       <li>If the default audio is different from the predefined one, the default audio is played for 1 or 2 seconds before switching to the predefined one (The audio track can only be known after the playback starts).</li>
-                      <li>Dash stream doesn't support the default audio tracks even if they are defined in studio.</li>
+                     
                     </ul>
                     </td>
                 </tr>
@@ -3763,10 +3756,22 @@
                   <td>
                     <ul>
                       <li><strong>Only on Firefox</strong>: When the selected language is different from the default, it has a small delay around 2 to 3 seconds to perform the switch, this seems to be related in the way Firefox handles the video load along with our autoplay behavior in the platform.</li>
-                      <li>Dash stream doesn't support the default audio tracks even if they are defined in studio.</li>
+
                     </ul>
                     </td>
                 </tr>
+                <tr>
+                  <td><strong>iOS</strong>
+                    <br>
+                    <strong>AppleTV</strong>
+                  </td>
+                  <td>When there is no preselected language, the SDK natively looks into the device OS preferred languages and use it to predefine the preferred language.</td>
+                  <td>Apple devices don't play Dash.</td>
+                  <td><ul>
+                    <li>VOD: It selects the audio that reflects the preferred device language, or else it will use the stream default.</li>
+                    <li>Live: It doesn’t auto-select the preferred language; natively it uses the stream default.</li>
+                  </ul></td>
+              </tr>
             </tbody>
         </table>
       </div>
