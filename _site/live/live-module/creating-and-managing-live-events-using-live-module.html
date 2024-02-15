@@ -3732,11 +3732,14 @@
         <li><strong>Low Latency</strong> - Live delay reduced to approximately 5-10 seconds (see the <a href="#low-latency">Using Low Latency streaming</a> section below)</li>
       </ul></li>
       <li>Select a <strong>Live Ingest Profile</strong>. The dropdown list will list all Live ingest profiles. The ingest profile will control the quality and number of live renditions that are created. Clicking the <strong>Manage Profiles</strong> link will open the ingest profile editor in another browser tab. Note that you must be an account administrator to access the ingest profile editor. Click the <strong>Renditions</strong> link to view the renditions that will be created using the selected ingest profile.
-        <aside class="bcls-aside bcls-aside--information">The bitrate and billing details of the three tiers are as follows:
+        <aside class="bcls-aside bcls-aside--information"> <strong>Live Tiers</strong>:
           <ul>
-            <li>Tier 1 allows up to 5,500 Kbps and is charged at 1.0x hours</li>
+            <li>For a Live ingest profile to be considered <strong>Tier 1</strong>, the sum of the bitrates of all its renditions, cannot be greater than 5,500 Kbps and is charged at 1.0x hours.</li>
+            <li>If the sum of the bitrates of all its renditions is greater than 5,500 but less than 10,000, the Live ingest profile will be considered <strong>Tier 2</strong> and it will be charged at 1.5x hours.</li>
+            <li>If the sum of the bitrates of all its renditions is greater than 10,000, the profile will be considered <strong>Tier 3</strong> and is charged at 2.0x hours.</li>
+            <!-- <li>Tier 1 allows up to 5,500 Kbps and is charged at 1.0x hours</li>
             <li>Tier 2 allows up to 10,000 Kbps and is charged at 1.5x hours</li>
-            <li>Tier 3 allows up to 20,000 Kbps and is charged at 2.0x hours</li>
+            <li>Tier 3 allows up to 20,000 Kbps and is charged at 2.0x hours</li> -->
           </ul>
         </aside>
         <aside class="bcls-aside bcls-aside--information">Note: For information on creating Live ingest profiles, see <a href="/admin/ingest-profiles/creating-custom-live-ingest-profiles.html">Creating Custom Live Ingest Profiles</a>.</aside>
