@@ -3701,21 +3701,21 @@
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="limitations">Limitations</h2>
-    <h3>Default Audio Track Selection</h3>
+    <h2 id="default-audio-track-selection">Default Audio Track Selection</h2>
+  
     <p>Default Audio Selection allows you to listen to content in your preferred language based on your previous explicitly audio track selection and removing the need to select it again, after switching videos.</p>
 
-    <p><em>General behavior</em>: If you explicitly select a audio track on the Beacon app, that audio track language will be used as a reference to auto-select the same audio track on the following video, (if that audio track language is available). This option is saved locally on each device.</p>
+    <p><em>General behavior</em>: If you explicitly select a audio track on the Beacon app, that audio track language will be used as a reference to auto-select the same audio track on the following video (if that audio track language is available). This option is saved locally on each device.</p>
     <aside class="bcls-aside bcls-aside--tip"><strong>Note</strong>: There are no fallbacks for language variations; for instance, if a user has selected <code translate="no">"es"</code>, and <code translate="no">"es-ES"</code> is available on the following video, that audio track won't be selected based on previous audio track selection.</aside>
     <div class="table-responsive">
       <table class="bcls-table">
-            <caption class="bcls-caption--table">platforms audio track known limitations</caption>
+            <caption class="bcls-caption--table">Platforms default Audio Track Selection</caption>
             <thead class="bcls-table__head">
                 <tr>
                     <th>Platform</th>
                     <th>Behavior</th>
                     <th>Dash Stream</th>
-                    <th>Other Limitations</th>
+                    <th>Limitations</th>
                 </tr>
             </thead>
             <tbody class="bcls-table__body">
@@ -3765,11 +3765,11 @@
                     <br>
                     <strong>AppleTV</strong>
                   </td>
-                  <td>When there is no preselected language, the SDK natively looks into the device OS preferred languages and use it to predefine the preferred language.</td>
+                  <td>When there is no pre-selected language, the SDK natively looks into the device OS preferred languages and use it to predefine the preferred language.</td>
                   <td>Apple devices don't play Dash.</td>
                   <td><ul>
-                    <li>VOD: It selects the audio that reflects the preferred device language, or else it will use the stream default.</li>
-                    <li>Live: It doesn’t auto-select the preferred language; natively it uses the stream default.</li>
+                    <li><strong>VOD</strong>: It selects the audio that reflects the preferred device language, or else it will use the stream default.</li>
+                    <li><strong>Live</strong>: It doesn’t auto-select the preferred language; natively it uses the stream default.</li>
                   </ul></td>
               </tr>
             </tbody>

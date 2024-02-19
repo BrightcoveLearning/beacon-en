@@ -3608,7 +3608,7 @@
       <ul>
         <li>Before you can use SSAI, your Beacon account needs to be configured for Dynamic Delivery and enabled for SSAI. Contact your Customer Success Manager for details.</li>
         <li>VMAP for Brightcove Live SSAI is not currently supported.</li>
-        <li>Although there is no prefetch functionality for SSAI ads, we delegate the ad position logic to the ad provider. Dynamic Delivery makes all the add calls up front. If we get an ad from the ad provider and it is transcoded in our system we will insert it into the stream.</li>
+        <li>Although there is no prefetch functionality for SSAI ads since we don’t know what the ads are going to be in advance, we delegate the ad position logic to the ad provider, which tells us which ads are supposed to be in which ad break (preroll, midroll, postroll, etc). Dynamic Delivery makes all the add calls up front. If we get an ad from the ad provider and it is transcoded in our system we will insert it into the stream.</li>
       </ul>
     </aside>
     <p>The Server-Side Ad Settings page is used to manage the Live and VOD ad configurations. Note that to access the Server-Side Ad Settings page, you must be a user with the Administrator role.</p>
