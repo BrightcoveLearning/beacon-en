@@ -1885,6 +1885,12 @@
                   
                   
                   
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publishing-apps/app-behavior/watch-from-start.html">Watch from Start</a></li>
+                  
+                  
+                  
                 </ul>
               </li>
               
@@ -3646,7 +3652,7 @@
   </section>
   <section class="bcls-section">
     <h2 id="review_parameters">Reviewing the available parameters to capture</h2>
-    <p>Parameters carry additional data and are passed with events. Every Brightcove parameter that will be recorded must be created as a Traffic Variable (eVarXX, where XX is a number like 88) in Adobe Analytics. The parameter named will then be used inside the Players module. This allows Brightcove parameters to be passed to Adobe Traffic Variables. Review the list of parameters below to determine which ones you want to capture.</p>
+    <p>Parameters carry additional data and are passed with events. Every Brightcove parameter that will be recorded must be created as a Traffic Variable in Adobe Analytics. The parameter named will then be used inside the Players module. This allows Brightcove parameters to be passed to Adobe Traffic Variables. Review the list of parameters below to determine which ones you want to capture.</p>
     <ul>
       <li><strong>Account ID&nbsp;(bcvideo_account) </strong>- Brightcove account name</li>
       <li><strong>Player ID&nbsp;(bcvideo_player)</strong><strong> </strong>- Player ID</li>
@@ -3661,11 +3667,11 @@
       <li><strong>Video Percent Viewed&nbsp;(bcvideo_video_percent_viewed)</strong> - Percentage of video watched</li>
       <li><strong>Error Code&nbsp;(bcvideo_error_code)</strong><strong> </strong>- Platform specific error code associated with the event</li>
     </ul>
-    <h3>Example</h3>
+    <!-- <h3>Example</h3>
     <ol>
       <li>In the Player plugin values in Beacon set <code translate="No">bcvideo_player_name</code> = <code translate="No">eVar88</code></li>
       <li>And in the Adobe Console, you should set <code translate="No">eVar88</code> to <code translate="No">bcvideo_player_name</code></li>
-    </ol>
+    </ol> -->
   </section>
   <section class="bcls-section">
     <h2 id="add_parameters">Creating Traffic Variables in Adobe Analytics</h2>
