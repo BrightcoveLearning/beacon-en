@@ -3618,6 +3618,8 @@
         <li>You cannot create a clip from another clip. If you selected a clipped video, the <strong> Clip</strong> button will be disabled.</li>
         <li>You cannot create a clip from a video that has DRM enabled (lock appears in the video thumbnail) and was transcoded using a legacy ingest profile. DRM enabled videos transcoded using a Dynamic Delivery ingest profile can be clipped. If a clip can't be created, the <strong> Clip</strong> button will be disabled.</li>
         <li>Videos with closed captions can be clipped via Social, but the resulting clipped video will not have captions. You will need to upload new captions to the clipped video, and Social will use those when publishing.</li>
+        <li>Ensure the video successfully streams on Facebook and the live video ends from the social module (as opposed to just stopping the encoder and ending it from the live module).  Otherwise, it is not possible to trim. 
+        </li>
       </ul>
       </aside>
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16672-create-clip.png" /></figure>
