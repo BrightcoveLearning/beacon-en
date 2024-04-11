@@ -3606,6 +3606,7 @@
     <p>Apple HTTP Live Streaming (HLS), independent of encryption, is a video serving protocol that uses different bit rates. Beacon supports creating multiple renditions that switch intelligently between renditions as network bandwidth changes and as service fluctuates. HLS essentially breaks a video into a sequence of small file downloads, each loading one short chunk, or segment, of the video at a time over HTTP.</p>
     <aside class="bcls-aside bcls-aside--information">Note: Apple requires HLS for long-form videos, that is, videos greater than 5 Mb, or longer than 10 minutes. In order to play videos longer than approximately 10 minutes on iOS devices, regardless of encryption, you must create HLS renditions.</aside>
     <p>Beacon supports encryption of video renditions for Apple HLS so that publishers can protect long form video content delivered to devices via HLS. HLS encryption protects content by adding AES to our standard HLS solution. When implementing encryption for Apple HLS, Beacon both encrypts each of the small file segments of the video and securely delivers the files that handle rendition selection.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Brightcove offers the option to force the delivery of HLSe content only. The videos will only deliver the HLSe content over the DASH renditions when enabled.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="features">Supported Features</h2>
