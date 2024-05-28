@@ -3616,7 +3616,7 @@
       <li>Clips can only be created within 7 days of the event end. Afterwards, the <strong>Create Clip</strong> button will be disabled. If the event is longer than 24 hours, only the last 24 hours are clippable.</li>
       <li>For recurring events: If during the 7 days after an event the event is reactivated, the clipping will only be available for the content of the most recent event. There will be no way to create clips from the prior event, even if it's under 7 days after the last event was deactivated.</li>
       <li>If you stop and restart a channel for a new live stream, the previous live stream information for clipping may be overwritten.</li>
-      <li>Clips will be frame-accurate <strong>provided that the encoder is sending SMPTE timecodes for the stream</strong> - otherwise, they will be accurate within a couple of frames. Note that to provide clips as quickly as possible, a segment-accurate clip is first created, and replaced by a frame-accurate clip as soon as it is available.</li>
+      <!-- <li>Clips will be frame-accurate <strong>provided that the encoder is sending SMPTE timecodes for the stream</strong> - otherwise, they will be accurate within a couple of frames. Note that to provide clips as quickly as possible, a segment-accurate clip is first created, and replaced by a frame-accurate clip as soon as it is available.</li> -->
       <li>Clips with a start time less than 10 seconds into the stream cannot be created.</li>
       <li>Clipping is not supported when using the Safari browser.</li>
     </ul>
@@ -3662,7 +3662,9 @@
       </li>
       <li>Enter any required custom field values.</li>
       <li>Check <strong>Remove Source Ad Break Content</strong> to remove ad breaks triggered within the clip, keeping only program content.  This option will only appear when the stream is SSAI enabled.</li>
-      <li>Check <strong>Create clip using fast VOD pipeline</strong> to generate the clip more quickly. This option speeds up the turn around time by creating a single <strong>segment-accurate</strong> rendition..  The system will then replace this clip with a <strong>frame-accurate</strong> clip  with the full rendition set when it is available.
+      <li>Check <strong>Create clip using fast VOD pipeline</strong> to generate the clip more quickly. 
+        <!-- This option speeds up the turn around time by creating a single <strong>segment-accurate</strong> rendition..  -->
+         The system will then replace this clip with a <strong>frame-accurate</strong> clip  with the full rendition set when it is available.
         <figure><img class="bcls-image--no-border" alt="" src="/assets/images/s-live-img/live-module/clipping/node18551-create-clip-dialog.png" /></figure>
         <aside class="bcls-aside bcls-aside--information">The Advanced Options section has been removed because the <strong>Fast VOD Pipeline</strong> is now the default process in VOD generation.</aside>
       </li>
