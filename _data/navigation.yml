@@ -755,8 +755,8 @@
   - name: General Information
     url: /live/general/index.html
     docs:
-    - name: Captions with Live Streams
-      url: /live/general/captions-with-live-streams.html
+    # - name: Captions with Live Streams
+    #   url: /live/general/captions-with-live-streams.html
     - name: Forensic Watermarking with Live Streams
       url: /live/general/forensic-watermarking-live.html
     - name: Live DRM

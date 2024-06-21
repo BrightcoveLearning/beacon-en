@@ -2506,12 +2506,6 @@
                   
                   
                   
-                  <li class="nav-item"><a class="nav-link" href="/live/general/captions-with-live-streams.html">Captions with Live Streams</a></li>
-                  
-                  
-                  
-                  
-                  
                   <li class="nav-item"><a class="nav-link" href="/live/general/forensic-watermarking-live.html">Forensic Watermarking with Live Streams</a></li>
                   
                   
@@ -3614,12 +3608,10 @@
   <section class="bcls-section">
     <h2 id="limitations">Limitations</h2>
     <ul>
-      <li>To create a Live stream with DVR on the Media module, you will need first to create a new remote asset from there and then fill a Live module playlist with a "playlist_dvr.m3u8" extension at the end of your URL stream.</li>
       <li>Live streams with SSAI must be published via the Live module, not the Media Module.</li>
       <li>Live broadcasts will experience a 20-30 second delay.</li>
       <li>Streaming must begin within 30 minutes of the event start (default-level account setting).</li>
       <li>Live DVR is not supported on Chromecast. Non-DVR streams will play on these devices instead.</li>
-      <li>Live streams with DVR are not supported when using the Brightcove Player SDKs. In this case, you should add the DVR playback URL to a remote asset and then use the remote asset URL with the SDK.</li>
       <li>Output settings <strong>cannot</strong> be modified after the event has been created.</li>
       <li>Brightcove scales live streaming capacity up or down to match demand, and generally this is transparent. When an account attempts to create several live jobs in a region in a short time, however, there may be a short delay while additional capacity is prepared. If you try the request again in a few minutes, it should succeed.</li>
     </ul>
@@ -3833,6 +3825,8 @@
     <p>Latency refers to the delay between when a video is captured and when it&rsquo;s displayed on a viewer&rsquo;s device. When creating a new live event, there is an option to use <strong>Low Latency</strong>.</p>
     <figure class="bcls-figure"> <img src="/assets/images/s-live-img/live-module/node18470-streaming-latency.png"> </figure>
     <aside class="bcls-aside bcls-aside--information">Note: If low latency is not enabled for your account, contact your Brightcove Customer Success Manager.</aside>
+    <aside class="bcls-aside bcls-aside--information language-editable">Note: The <strong>Low Latency Playback URL</strong>uses a unique delivery format known as LL-HLS: <a href="https://developer.apple.com/documentation/http-live-streaming/enabling-low-latency-http-live-streaming-hls">Enabling Low-Latency HTTP Live Streaming (HLS) | Apple Developer Documentation</a>. There are unique limitations for low-latency enabled jobs in Brightcove Live, you can learn more about this in this section. The regular, not low latency,<strong>Playback URL</strong> can still be used on a Low Latency job. To enable the LL-HLS delivery functionality through the Live origin, you must use the <strong>Low Latency Playback URL</strong>. It is important to note that the complete end-to-end latency will depend on several factors, including the contribution encoder, input protocol, player/device compatibility, and end-user location. Some may use the regular “Playback URL” for improved playback stability and cacheability. 
+    </aside>
     <p>Low latency provides  near real-time streaming with streaming delays reduced to approximately 5-10 seconds. Low latency is recommended when faster interactions are needed but may provide an inferior quality of experience. There are factors outside of Brightcove's control that may determine whether a low latency feed can be delivered (encoder, viewer bandwidth, etc.).</p>
     <p data-renderer-start-pos="32">For low latency source encoder setup, the following is required.</p>
     <ul>
