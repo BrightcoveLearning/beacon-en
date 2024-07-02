@@ -3586,38 +3586,38 @@
   <h1>Sharing Videos to Twitter Player Cards</h1>
   <summary>This topic explains how to embed a video in a tweet using Twitter Player Cards.</summary>
   <section class="bcls-section">
-    <p>By default, when a viewer uses the social sharing feature in the Brightcove Player to Tweet a video, the URL to the page containing the video will appear in the viewer's Twitter feed.</p>
+    <p>By default, when a viewer uses the social sharing feature in the Brightcove Player to Tweet a video, the URL to the page containing the video will appear in the viewer's X feed.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node15772-tweet-link.png" /></figure>
     <aside class="bcls-aside bcls-aside--information">Note: For more information on configuring the social sharing settings in the Brightcove Player, see <a href="/players/appearance/configuring-social-properties-player.html">Configuring the Social&nbsp;Properties for a Player</a>.</aside>
-    <p>Twitter provides the option of displaying content in Twitter Cards allowing you to attach photos and videos to Tweets that drive traffic to your website. When using Twitter cards, the Twitter feed will display an embedded player view.</p>
+    <p>X provides the option of displaying content in X Cards allowing you to attach photos and videos to Tweets that drive traffic to your website. When using X cards, the X feed will display an embedded player view.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node15772-tweet-link-media.png" /></figure>
-    <p>Clicking on the video thumbnail will play the video using the Brightcove Player inside of the Twitter feed.</p>
+    <p>Clicking on the video thumbnail will play the video using the Brightcove Player inside of the X feed.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node15772-twitter-card.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h2 id="addvideo">Configuring Twitter Player Cards</h2>
-    <p>To implement Twitter Player cards, the following steps must be completed:</p>
+    <h2 id="addvideo">Configuring X Player Cards</h2>
+    <p>To implement X Player cards, the following steps must be completed:</p>
     <ol class="bcls-tasklist">
       <li><a href="#create">(Optional) Create a page to host your video</a></li>
-      <li><a href="#metatags">Add the required Twitter meta tags to your page</a></li>
-      <li><a href="#validate">Validate your URL using the Twitter validator tool</a></li>
+      <li><a href="#metatags">Add the required X meta tags to your page</a></li>
+      <li><a href="#validate">Validate your URL using the X validator tool</a></li>
       <li><a href="#approve">Request approval for whitelisting</a></li>
     </ol>
-    <p>After these steps are completed, you can Tweet the URL to your player and see the Twitter Card appear below your tweet in the details view.</p>
-    <aside class="bcls-aside bcls-aside--information">Note: For additional details on Twitter Cards, see the <a href="https://dev.twitter.com/cards/overview">Twitter documentation</a>.</aside>
+    <p>After these steps are completed, you can tweet the URL to your player and see the X Card appear below your tweet in the details view.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: For additional details on X Cards, see the <a href="https://dev.twitter.com/cards/overview">X documentation</a>.</aside>
   </section>
   <section class="bcls-section">
     <h2 id="create">(Optional) Creating a page to host your video</h2>
     <p>If your video isn't published to a page, you should create an HTML page to host your video. When creating the page, follow these guidelines:</p>
     <ul>
-      <li>Make sure to enable social sharing for the player and enable the Twitter option</li>
-      <li>Set the player sizing to be responsive or make sure the player size will fit inside of a Twitter feed (approx. 480 pixels wide)</li>
+      <li>Make sure to enable social sharing for the player and enable the X option</li>
+      <li>Set the player sizing to be responsive or make sure the player size will fit inside of a X feed (approx. 480 pixels wide)</li>
       <li>Use the <strong>Standard (iframe)</strong> embed code when publishing the video</li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="metatags">Adding the required Twitter meta tags to your page</h2>
-    <p>You need to add some Twitter specific meta tags to your page to enable Twitter Player Cards.</p>
+    <h2 id="metatags">Adding the required X meta tags to your page</h2>
+    <p>You need to add some X specific meta tags to your page to enable X Player Cards.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -3628,7 +3628,7 @@
       <tbody class="bcls-table__body">
         <tr>
           <td>twitter:card</td>
-          <td>Type of Twitter card; Must be set to a value of “player”</td>
+          <td>Type of X card; Must be set to a value of “player”</td>
         </tr>
         <tr>
           <td>twitter:title</td>
@@ -3636,7 +3636,7 @@
         </tr>
         <tr>
           <td>twitter:site</td>
-          <td>The Twitter @username the card should be attributed to</td>
+          <td>The X @username the card should be attributed to</td>
         </tr>
         <tr>
           <td>twitter:description</td>
@@ -3661,7 +3661,7 @@
       </tbody>
     </table>
     &nbsp;
-    <p>Here are some sample twitter meta tags:</p>
+    <p>Here are some sample X meta tags:</p>
     <pre>
 &lt;meta name="twitter:card" content="player" /&gt;
 &lt;meta name="twitter:title" content="Bison in Yellowstone" /&gt;
@@ -3673,18 +3673,18 @@
 &lt;meta name="twitter:image" content="https://solutions.brightcove.com/bcls/twittercards/bison.jpg" /&gt;
 </pre>
     <aside class="bcls-aside bcls-aside--information">Note: Ensure all paths are specified as secure (https://).</aside>
-    <p>Twitter will cache tweets so if you are making changes to the Twitter meta tags, those changes may not be reflected in new tweets. It may be helpful to change the title tag so you can confirm that you are seeing your latest changes. See the <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/troubleshooting-cards#refreshing">Twitter documentation</a> for ways to work around the caching issue when testing.</p>
+    <p>X will cache tweets so if you are making changes to the X meta tags, those changes may not be reflected in new tweets. It may be helpful to change the title tag so you can confirm that you are seeing your latest changes. See the <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/troubleshooting-cards#refreshing">X documentation</a> for ways to work around the caching issue when testing.</p>
     &nbsp;
-    <aside class="bcls-aside bcls-aside--information">Note: For an overview of all Twitter Card tags, see the <a href="https://dev.twitter.com/cards/markup">Twitter documentation</a>.</aside>
+    <aside class="bcls-aside bcls-aside--information">Note: For an overview of all X Card tags, see the <a href="https://dev.twitter.com/cards/markup">X documentation</a>.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="validate">Validating your URL using the Twitter validator tool</h2>
-    <p>Once you have added the meta tags and published your page, copy and paste the page URL into the <a href="https://cards-dev.twitter.com/validator">Twitter Card Validator</a> and then click <strong>Preview Card</strong>.</p>
+    <h2 id="validate">Validating your URL using the X validator tool</h2>
+    <p>Once you have added the meta tags and published your page, copy and paste the page URL into the <a href="https://cards-dev.twitter.com/validator">X Card Validator</a> and then click <strong>Preview Card</strong>.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node15772-twitter-validator.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="approve">Request approval for whitelisting</h2>
-    <p>If your domain has not been whitelisted by Twitter, the Player Cards will not appear. When validating the URL, a message will appear stating that the URL has not been whitelisted. For more information on the approval process, see the <a href="https://dev.twitter.com/cards/types/player/approval">Twitter documentation</a>.</p>
+    <p>If your domain has not been whitelisted by X, the Player Cards will not appear. When validating the URL, a message will appear stating that the URL has not been whitelisted. For more information on the approval process, see the <a href="https://dev.twitter.com/cards/types/player/approval">X documentation</a>.</p>
   </section>
 </article>
 
