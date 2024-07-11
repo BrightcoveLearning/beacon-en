@@ -3590,30 +3590,20 @@
     <h1>Integrating Video Cloud with HubSpot Using the Client-Side APIs</h1>
     <summary>This topic explains how to configure the Campaign module for use with HubSpot using the Client-Side APIs.</summary>
     <section class="bcls-section">
-      <p>The Campaign module allows Video Cloud to synchronize viewing data from Brightcove Players to HubSpot. Once in HubSpot, this data can be used for segmentation, campaign logic, reports, lead scoring, and personalizing communications.</p>
-      <p>There are two options for integrating Video Cloud with HubSpot:</p>
-      <ul>
-        <li><strong>Using the Standard (REST API) method</strong> - With this method, Campaign will only track viewing data for known viewers. By default, lead forms will only be shown to unknown viewers. For information on this type of integration, see <a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">Integrating Video Cloud with HubSpot Using the REST APIs</a>.</li>
-        <li><strong>Using the High Volume (Client-Side</strong><strong> API) method</strong> - With this method, Campaign will track viewing data for all viewers. This method is covered in this topic.</li>
-      </ul>
-      <p>The Campaign module integration with HubSpot consists of two main components:</p>
-      <ul>
-        <li>A Brightcove Player plug-in to enable tracking of video views data</li>
-        <li>A Synchronization process to send tracking data from Video Cloud to HubSpot</li>
-      </ul>
+      <p>The Hubspot integration allows Video Cloud to synchronize viewing data from Brightcove Players to HubSpot. Once in HubSpot, this data can be used for segmentation, reports, lead scoring, and personalizing communications.</p>
+      <p>For information on how to configure the Player module for use with HubSpot, see <a href="/marketing-automation/general/data-to-external-systems/client-side/maps.html">Client-side: MAPs connection</a>.</p>
     </section>
     <section class="bcls-section">
       <h2 id="requirements">Requirements</h2>
-      <p>To use the Campaign module with HubSpot, you must:</p>
+      <p>To use the MAPs section with HubSpot, you must:</p>
       <ul>
         <li>Have a HubSpot account</li>
-        <li>Have a Professional or Enterprise Video Cloud account</li>
-        <li>Have the Campaign module enabled for your account by submitting the required information in the initial splash screen that appears when you open the Campaign module</li>
-        <li>Click through the service agreement the first time you use the module</li>
+        <li>Have a Marketing Studio Essential, Premium, or Communications Studio Premium account</li>
+        <li>Have your account enabled for the MAPs feature. Contact <a href="https://supportportal.brightcove.com/s/login/?language=en_US&ec=302&startURL=%2Fs%2F">customer support</a> for enablement</li>
         <li>Use the Advanced Embed (in-page) publishing code when publishing your player; Standard Embed (iframe) publishing code will not work as the plugin will be running inside of an iframe and therefore will be unable to access any parent page URL parameters and may not get the correct cookies</li>
       </ul>
     </section>
-    <section class="bcls-section">
+    <!-- <section class="bcls-section">
       <h2 id="features">Features</h2>
       <p>Some of the key features of the Video Cloud - HubSpot integration are:</p>
       <ul>
@@ -3631,8 +3621,40 @@
         <li><strong>Data transfer</strong> - Viewing data is sent to HubSpot using an automated process; however, some reports in the HubSpot platform may take some time to refresh</li>
         <li><strong>Data retention</strong> - Data collected can optionally be retained in Video Cloud for up to 1 month</li>
       </ul>
+    </section> -->
+    <section class="bcls-section">
+      <h2 id="marketo">Accessing the HubSpot ID</h2>
+      <p>When configuring the integration with Video Cloud, you will be prompted to use your <strong>Hubspot Account ID</strong>. Follow the steps below to access this value.</p>
+      <ol class="bcls-tasklist-restart">
+        <li>Login to your HubSpot account.</li>
+        <li>Open the dropdown menu under your <strong>Account Name</strong> in the top navigation.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="hubspot account settings" src="/assets/images/s-campaign-img/integrations/hubspot/hubspot-id.webp" /></figure>
+          <aside class="bcls-aside bcls-aside--information">Note: The HubSpot Account ID can also be found in the account's URL.</aside>
+        </li>
+        <li>Copy the <strong>HubSpot Account ID</strong> and save it in a safe place. It will be needed when configuring the MAPs module.
+        </li>
+      </ol>
+    </section>
+
+    <section class="bcls-section">
+      <h2 id="configure">Configuring the integration</h2>
+      <p>To continue with the configuration process, see <a href="https://studio.support.brightcove.com/marketing-automation/general/data-to-external-systems/client-side/maps.html#configuring">Configuring the MAPs connections</a>.</p>
+      <!-- <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/s-campaign-img/integrations/marketo/node15636-connected-options.png" /></figure>
+      <ol class="bcls-tasklist-restart">
+        <li>By default, the <strong>Connection Status</strong> will be <strong>Enabled</strong>. The <strong>Connection Status</strong> determines if Video Cloud video engagement data is sent to Marketo.
+          <ul>
+            <li><strong>Enabled</strong> - Data is collected and will be sent to Marketo</li>
+            <li><strong>Disabled</strong> - No data is collected (integration is disabled)</li>
+          </ul>
+        </li>
+      </ol>
+      <p>To remove the integration with Marketo, click <span class="button-red-text-border">Disconnect</span>. The Campaign module supports multiple connections to marketing platforms. Click <span class="button-blue">Add New Connection</span> to configure additional integrations.</p>
     </section>
     <section class="bcls-section">
+      <h2 id="player">Creating a Campaign-enabled player</h2>
+      <p>Video engagement data will only be sent to Marketo when you are using a Campaign-enabled video player. For information on creating a Campaign-enabled Brightcove Player, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p> -->
+    </section>
+    <!-- <section class="bcls-section">
       <h2 id="setupConnection">Setting up the connection</h2>
       <p>Follow these steps to setup the connection between Video Cloud and HubSpot.</p>
       <h3 id="establishConnection">Establishing the connection between Video Cloud and HubSpot</h3>
@@ -3671,11 +3693,8 @@
       </ol>
       <p>To remove the integration with HubSpot, click <span class="button-red-text-border">Disconnect</span>. The Campaign module supports multiple connections to marketing platforms. Click <span class="button-blue">Add New Connection</span> to configure additional integrations.</p>
     </section>
-    <section class="bcls-section">
-      <h2 id="player">Creating a Campaign-enabled player</h2>
-      <p>Video engagement data will only be sent to HubSpot when you are using a Campaign-enabled video player. For information on creating a Campaign-enabled Brightcove Player, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p>
-    </section>
-    <section class="bcls-section">
+    -->
+    <!-- <section class="bcls-section">
       <h2 id="trackingid">Passing a tracking ID</h2>
       <p>The Campaign module supports the ability to pass a tracking ID value to HubSpot. The tracking ID might be used to track a campaign ID for example. The tracking ID can be appended to the URL that displays the Campaign-enabled player or added to the player embed code.</p>
       <ul>
@@ -3697,7 +3716,7 @@
            controls&gt;&lt;/video&gt;
     &lt;script src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt;/script&gt;</pre>
       <p>Campaign will then pass the value along to HubSpot as another field that is synced.</p>
-    </section>
+    </section> -->
     <section class="bcls-section">
       <h2 id="identify">Identifying viewers</h2>
       <p>For HubSpot integrations, the plugin injects HubSpot’s JavaScript tracking code which drops a <strong>hubspotutk</strong> cookie on the user’s browser. This cookie is used to keep track of a visitor's identity within HubSpot and associate Brightcove viewing data with a contact. If the user already has a <strong>hubspotutk</strong> cookie when the player loads, Campaign will make an API request to HubSpot and ask if the cookie value corresponds to a known contact, and if so, Campaign will associate viewing data with that user.  </p>
