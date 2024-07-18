@@ -3590,13 +3590,12 @@
     <h1>Integrating Video Cloud with Marketo using Munchkin</h1>
     <summary>This topic explains how to configure the Campaign module for use with Marketo Munchkin.</summary>
     <section class="bcls-section">
-      <p>The integration with Marketo using Munchkin allows Video Cloud to synchronize viewing data from Brightcove Players to Marketo. Once in Marketo, this data can be used for segmentation, reports, lead scoring, and personalizing communications.</p>
-      <p>For information on how to configure the Player module for use with Marketo, see <a href="/marketing-automation/general/data-to-external-systems/client-side/maps.html">Client-side: MAPs connection</a>.</p>
-      <!-- <p>The Campaign module integration with Marketo consists of two main components:</p>
+  
+      <p>The Campaign module integration with Marketo consists of two main components:</p>
       <ul>
         <li>A Brightcove Player plug-in to enable tracking of video views data</li>
         <li>A synchronization process to send tracking data from Video Cloud to Marketo</li>
-      </ul> -->
+      </ul>
     </section>
     <section class="bcls-section">
       <h2 id="requirements">Requirements</h2>
@@ -3608,7 +3607,7 @@
         <li>Use the Advanced Embed (in-page) publishing code when publishing your player; Standard Embed (iframe) publishing code will not work as the plugin will be running inside of an iframe and therefore will be unable to access any parent page URL parameters and may not get the correct cookies</li>
       </ul>
     </section>
-    <!-- <section class="bcls-section">
+    <section class="bcls-section">
       <h2 id="features">Features</h2>
       <p>Some of the key features of the Video Cloud - Marketo integration are:</p>
       <ul>
@@ -3626,7 +3625,7 @@
         <li><strong>Data transfer</strong> - Viewing data is sent immediately to Marketo when the Campaign-enabled Brightcove player generates it, however, some reports in the Marketo platform may take some time to refresh. The Marketo Munchkin integration does not send viewing data to Campaign. The viewing data is sent directly to Marketo client-side in the browser.</li>
         <li><strong>Data retention</strong> - Data collected can optionally be retained in Video Cloud for up to 1 month</li>
       </ul>
-    </section> -->
+    </section>
     <section class="bcls-section">
       <h2 id="marketo">Accessing the Marketo munchkin</h2>
       <p>When configuring the integration with Video Cloud, you will be prompted to use your <strong>Marketo Munchkin Account ID</strong>. Follow the steps below to access this value.</p>
@@ -3642,7 +3641,7 @@
       </ol>
     </section>
 
-    <!-- <section class="bcls-section">
+    <section class="bcls-section">
       <h2 id="setupConnection">Setting up the connection</h2>
       <p>Follow these steps to setup the connection between Video Cloud and Marketo.</p>
       <aside class="bcls-aside bcls-aside--information">Note: It is possible to connect multiple Video Cloud accounts to the same Marketo account.</aside>
@@ -3667,12 +3666,11 @@
         </li>
       </ol>
       <p>The Video Cloud connection to Marketo is now set up and ready to use.</p>
-    </section> -->
+    </section>
 
     <section class="bcls-section">
       <h2 id="configure">Configuring the integration</h2>
-      <p>To continue with the configuration process, see <a href="https://studio.support.brightcove.com/marketing-automation/general/data-to-external-systems/client-side/maps.html#configuring">Configuring the MAPs connections</a>.</p>
-      <!-- <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/s-campaign-img/integrations/marketo/node15636-connected-options.png" /></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/s-campaign-img/integrations/marketo/node15636-connected-options.png" /></figure>
       <ol class="bcls-tasklist-restart">
         <li>By default, the <strong>Connection Status</strong> will be <strong>Enabled</strong>. The <strong>Connection Status</strong> determines if Video Cloud video engagement data is sent to Marketo.
           <ul>
@@ -3685,11 +3683,11 @@
     </section>
     <section class="bcls-section">
       <h2 id="player">Creating a Campaign-enabled player</h2>
-      <p>Video engagement data will only be sent to Marketo when you are using a Campaign-enabled video player. For information on creating a Campaign-enabled Brightcove Player, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p> -->
+      <p>Video engagement data will only be sent to Marketo when you are using a Campaign-enabled video player. For information on creating a Campaign-enabled Brightcove Player, see <a href="/campaign/general/creating-campaign-enabled-player.html">Creating a Campaign-enabled Player</a>.</p>
     </section>
 
 
-    <!-- <section class="bcls-section">
+    <section class="bcls-section">
       <h2 id="trackingid">Passing a tracking ID</h2>
       <p>The Campaign module supports the ability to pass a tracking ID value to Marketo. The tracking ID might be used to track a campaign ID for example. The tracking ID can be appended to the URL that displays the Campaign-enabled player or added to the player embed code.</p>
       <ul>
@@ -3711,12 +3709,12 @@
            controls&gt;&lt;/video&gt;
     &lt;script src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt;/script&gt;</pre>
       <p>Campaign will then pass the value along to Marketo as another field that is synced.</p>
-    </section> -->
+    </section>
     
     <section class="bcls-section">
       <h2 id="identify">Identifying viewers</h2>
-      <p>Campaign-enabled players with a Marketo integration will refer to the Munchkin cookie (_mkto_trk) which is created in the user's browser. This value is captured in the Campaign module’s viewing data and is used to synchronize viewing data to Marketo. </p>
-    </section>
+      <p>Campaign-enabled players with a Marketo integration will refer to the Munchkin cookie (_mkto_trk) which is created in the user's browser. This value is captured in the Campaign module’s viewing data and is used to synchronize viewing data to Marketo.</p>
+       </section>
   
   </article>
   

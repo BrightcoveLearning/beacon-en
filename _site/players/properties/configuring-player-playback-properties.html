@@ -3622,14 +3622,16 @@
     <p>The following options are available:</p>
     <ul>
       <li><strong>Preload Video (fastest)</strong> - Indicates that the whole video file could be downloaded, even if the user does not eventually watch the video. On the positive side, if the viewer plays the video, it can start playing immediately. On the negative side, this option will increase bandwidth consumption as the preload/load happens even if the viewer does not play the video.</li>
-      <li><strong>Preload Metadata</strong> - Only the video metadata is preloaded. <em>This is the default.</em></li>
+      <li><strong>Preload Metadata</strong> - Only the video metadata is preloaded.</li>
       <li><strong>Do not preload</strong> - None of the video is preloaded</li>
+      <li><strong>Not set [Default]</strong> - There is no defined preload setting. The browser will use its standard video preload behavior, which varies per browser.</li>
     </ul>
     <aside class="bcls-aside bcls-aside--information">
       <p>Notes:</p>
       <ul>
         <li>When using Server-Side Ad Insertion (SSAI), Brightcove recommends setting <code translate="No">preload=none</code>. If <code translate="No">preload</code> is set to <code translate="No">auto</code> or <code translate="No">metadata</code>, the first frames of the video stream will be requested, which counts the ad as delivered even if the user does not start playback.</li>
         <li>The value for the preload setting in Studio will override the value of the <code translate="No">preload</code> attribute value in the <a href="https://player.support.brightcove.com/publish/available-options-advanced-page-embed-code.html">Advanced (In-Page) Embed Code</a>.</li>
+        <li>The <code translate="No">preload</code> JSON property is not required, and a JSON configuration without this option is completely valid.</li>
       </ul>
     </aside>
   </section>
