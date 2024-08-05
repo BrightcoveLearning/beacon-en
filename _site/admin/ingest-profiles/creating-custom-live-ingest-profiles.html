@@ -3589,15 +3589,17 @@
     <p>The Ingest Profiles Administration page is used to manage custom Live ingest profiles. Live ingest profiles determine the number and quality of the renditions created by Brightcove Live. The Live ingest profiles are not used when uploading videos to a Video Cloud account. Ingest profiles are defined using JSON. Before creating a new ingest profile, review the <a href="/admin/ingest-profiles/standard-live-ingest-profiles.html">Standard Live Ingest Profiles</a> document to see if there is an existing profile available that will meet your needs.</p>
     <aside class="bcls-aside bcls-aside--information">Notes:
       <ul>
-        <li>Trial accounts are restricted from creating profiles</li>
-        <li>Each profile can create a maximum of 25 renditions</li>
-        <li>You <strong>can</strong> create renditions for vertical video - just include <code translate="No">height</code> and <code translate="No">width</code> values in the rendition specifications that match the aspect ration of the video (1280 pixels is the maximum allowed value for the <code translate="No">height</code>)</li>
-        <li>When live profiles are hidden in Studio under <strong>Admin</strong> > <strong>Ingest Profiles</strong>, those won't be selectable in the <strong>Create Live Event</strong> UI but they can still be used with the Live API</li>
+        <li>Trial accounts are restricted from creating profiles.</li>
+        <li>Each profile can create a maximum of 25 renditions.</li>
+        <li>You <strong>can</strong> create renditions for vertical video - just include <code translate="No">height</code> and <code translate="No">width</code> values in the rendition specifications that match the aspect ration of the video (1280 pixels is the maximum allowed value for the <code translate="No">height</code>).</li>
+        <li>When live profiles are hidden in Studio under <strong>Admin</strong> > <strong>Ingest Profiles</strong>, those won't be selectable in the <strong>Create Live Event</strong> UI but they can still be used with the Live API.</li>
+        <li>Live outputs are VBR.</li>
+        <li>The average video bitrate should be around the target value, but there can be brief periods when the measured video bitrate exceeds that target.</li>
         <li>Live Tiers:
           <ul>
-            <li>For a Live ingest profile to be considered Tier 1, the sum of the bitrates of all its renditions, cannot be greater than 5450</li>
-            <li>If the sum of the bitrates of all its renditions is greater than 5450 but less than 10000, the Live ingest profile will be considered Tier 2</li>
-            <li>If the sum of the bitrates of all its renditions is greater than 10000, the profile will be considered Tier 3</li>
+            <li>For a Live ingest profile to be considered Tier 1, the sum of the bitrates of all its renditions, cannot be greater than 5450.</li>
+            <li>If the sum of the bitrates of all its renditions is greater than 5450 but less than 10000, the Live ingest profile will be considered Tier 2.</li>
+            <li>If the sum of the bitrates of all its renditions is greater than 10000, the profile will be considered Tier 3.</li>
           </ul>
         </li>
       </ul>
