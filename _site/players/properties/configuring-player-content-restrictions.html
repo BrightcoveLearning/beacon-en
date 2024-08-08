@@ -3615,6 +3615,7 @@
         <li>Domain restricted players are not compatible with AMP integrations. This is because the AMP integration creates an iframe which in turn isn't supported by domain restricted players.</li>
         <li>When using the domain restriction feature, domain restrictions should be configured for all players in your account. If all players are not configured with domain restrictions, someone could take the policy key from an unprotected player and use it to play any video.</li>
         <li>While there is no limit on the number of domains that can be added in Studio, there is a limit on the URL length (which is defined by multiple limiting factors like the device/browser used) for the API request to the Playback API - included in that URL will be the comma-delimited list of domains. Please note that this limitation is also valid if you are only using Studio. Therefore there is a limit on the number of domains that can be specified, but the number will depend on how long the domain names are.</li>
+        <li>If the current policy key is removed, the player-level restrictions will stop working. Please note that if the player-level restrictions do not work, you must check if your policy key has the correct setting by using the policy API. For details, see the <a href="https://apis.support.brightcove.com/policy/getting-started/overview-policy-api.html">Policy API Overview</a> document.</li>
       </ul>
     </aside>
     <p>To configure a domain restriction for a player, follow these steps:</p>
