@@ -619,6 +619,12 @@
                   
                   
                   
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/quality-selector.html">Quality Selector</a></li>
+                  
+                  
+                  
+                  
+                  
                   <li class="nav-item"><a class="nav-link" href="/media/properties/uploading-poster-and-thumbnail-images.html">Uploading Video Images</a></li>
                   
                   
@@ -3737,6 +3743,7 @@
         <aside class="bcls-aside bcls-aside--information">Note: For information on creating Live ingest profiles, see <a href="/admin/ingest-profiles/creating-custom-live-ingest-profiles.html">Creating Custom Live Ingest Profiles</a>.</aside>
       </li>
       <li>Select <strong>Convert event to video asset when complete</strong> to save a VOD version of the live video to your Brightcove account. When this option is selected, the highest quality rendition from the selected <strong>Live Ingest Profile</strong> is used as the source for the VOD video. The default ingest profile for the account is used when creating renditions. <strong>Note that the VOD version is not available as soon as the live event ends, the video will be available once the ingestion process is complete.</strong>
+        <aside class="bcls-aside bcls-aside--information">Note: When selecting this option, the VOD will inherit the metadata, required Custom Fields, and Video ID.</aside>
         <aside class="bcls-aside bcls-aside--information">Note: This option is not supported when using a recurring event.</aside>
       </li>
       <li>Click <strong>Integrations</strong> to add an integration with a Zoom meeting. For information, please refer to the <a href="/live-module/zoom-live-integration.html" target="_blank">Integrating a Zoom meeting documentation</a>.</li>
@@ -4166,6 +4173,13 @@
       <li>The video ID of your live asset</li>
       <li>The results of a trace-route from your encoder to the publishing point host</li>
     </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Limitations">Limitations</h2>
+    <ul>
+      <li>Currently, Brightcove only supports a limit of 20,000 VODs per job.</li>
+    </ul>
+
   </section>
 </article>
 
