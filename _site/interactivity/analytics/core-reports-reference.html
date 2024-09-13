@@ -3632,7 +3632,7 @@
       <li><strong>Play Rate</strong> - Number of plays divided by the number of times the experience was loaded and ready for playback</li>
       <li><strong>Interaction Rate</strong> - Plays with interaction divided by total plays (which could not have any interaction). Interaction is usage of any of the interactive elements (play button, volume, etc do not count - but passive time triggered actions do). </li>
       <li><strong>Total View Time</strong> - Total view duration across all users (e.g. how much time of the video was watched overall). Does not distinguish about which part of a video was watched.</li>
-      <li><strong>Audience</strong> - Unique viewers as determined by the user ID token (either the auto-generated anonymous one or one given explicitly).</li>
+      <li><strong>Audience</strong> - Unique viewers as determined by the user ID token (either the auto-generated randomized one or one given explicitly).</li>
     </ul>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Performance Report" src="/assets/images/s-brightcove-interactivity-img/analytics/core-reports/experience-summary.png" /></figure>
   </section>
@@ -3654,8 +3654,8 @@
     <ul>
       <li><strong>Session Start Time</strong> - Session date and time  (UTC time)</li>
       <li><strong>Play Session</strong> - Play session</li>
-      <li><strong>User</strong> - Anonymized user ID assigned by Brightcove Interactivity. The ID is assigned the first time user accesses interactive content. Token is valid for 1 year.
-        <aside class="bcls-aside bcls-aside--information">Note: The <a href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html#viewer_api">Viewer API</a> can be used to optionally pass in user ID and/or username values to overwrite the anonymous ID value.</aside>
+      <li><strong>User</strong> - Randomized user ID assigned by Brightcove Interactivity. The ID is assigned the first time user accesses interactive content. Token is valid for 1 year.
+        <aside class="bcls-aside bcls-aside--information">Note: The <a href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html#viewer_api">Viewer API</a> can be used to optionally pass in user ID and/or username values to overwrite the anonymous ID value to create a pseudonominized ID.</aside>
       </li>
       <li><strong>Annotation ID</strong> - Annotation ID</li>
       <li><strong>Project ID</strong> - Project ID</li>
@@ -3694,8 +3694,8 @@
     <h2 id="user-summary">User Summary</h2>
     <p>The User Summary report is an aggregate summary of the overall behavior of each user across each project that they viewed. The report will display:</p>
     <ul>
-      <li><strong>User</strong> - Anonymized user ID assigned by Brightcove Interactivity. The ID is assigned the first time user accesses interactive content. Token is valid for 1 year.
-        <aside class="bcls-aside bcls-aside--information">Note: The <a href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html#viewer_api">Viewer API</a> can be used to optionally pass in user ID and/or username values to overwrite the anonymous ID value.</aside>
+      <li><strong>User</strong> - Randomized user ID assigned by Brightcove Interactivity. The ID is assigned the first time user accesses interactive content. Token is valid for 1 year.
+        <aside class="bcls-aside bcls-aside--information">Note: The <a href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html#viewer_api">Viewer API</a> can be used to optionally pass in user ID and/or username values to overwrite the anonymous ID value to create a pseudonominized ID.</aside>
       </li>
       <li><strong>Time Watched</strong> - Total time watched across all videos</li>
       <li><strong>Last Session</strong> - Last session date and time  (UTC time)</li>
@@ -3721,8 +3721,8 @@
     <h2 id="user-activity-stream">User Activity Stream</h2>
     <p>The User Activity Stream report shows an event-by-event rundown of each action a viewer has taken in a project.  For example, each time a bookmark is clicked, link is clicked, quiz responded to, video ended, all these events are tracked in this report. Progress events are excluded. The report will display:</p>
     <ul>
-      <li><strong>User</strong> - Anonymized user ID assigned by Brightcove Interactivity. The ID is assigned the first time user accesses interactive content. Token is valid for 1 year.
-        <aside class="bcls-aside bcls-aside--information">Note: The <a href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html#viewer_api">Viewer API</a> can be used to optionally pass in user ID and/or username values to overwrite the anonymous ID value.</aside>
+      <li><strong>User</strong> -  Randomized user ID assigned by Brightcove Interactivity. The ID is assigned the first time user accesses interactive content. Token is valid for 1 year.
+        <aside class="bcls-aside bcls-aside--information">Note: The <a href="https://apis.support.brightcove.com/interactivity/embed-api/reference.html#viewer_api">Viewer API</a> can be used to optionally pass in user ID and/or username values to overwrite the anonymous ID value to create a pseudonominized ID.</aside>
       </li>
       <li><strong>When</strong> - Date and time the action took place (UTC time)</li>
       <li><strong>Rating</strong> - Icon rating from the  User Sentiment widget (thumbs up, down)</li>
