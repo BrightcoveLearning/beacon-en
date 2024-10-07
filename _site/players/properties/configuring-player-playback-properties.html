@@ -3633,9 +3633,15 @@
     <aside class="bcls-aside bcls-aside--warning">Note: For more details, see the <a href="https://player.support.brightcove.com/publish/available-options-advanced-page-embed-code.html#preload_details">preload details section</a> of the Available Options for the Advanced (in-page) Embed Code document.</aside>
     <p>The following options are available:</p>
     <ul>
-      <li><strong>Preload Video (fastest)</strong> - Indicates that the whole video file could be downloaded, even if the user does not eventually watch the video. On the positive side, if the viewer plays the video, it can start playing immediately. On the negative side, this option will increase bandwidth consumption as the preload/load happens even if the viewer does not play the video.</li>
-      <li><strong>Preload Metadata</strong> - Only the video metadata is preloaded.</li>
-      <li><strong>Do not preload</strong> - None of the video is preloaded</li>
+      <li><strong>Preload Video (fastest)</strong> -For MP4 videos, this option makes the player load the video immediately (if the browser agrees), even if the user does not eventually watch the video. On the positive side, if the viewer plays the video, it can start playing immediately. On the negative side, this option will increase bandwidth consumption as the preload/load happens even if the viewer does not play the video.
+      <p>For HLS and DASH,  the player loads the metadata of the video and the initial media segments.</p>
+    </li>
+      <li><strong>Preload Metadata</strong> - For MP4 videos, only the video metadata is preloaded.
+      <p>For HLS and DASH, same behavior as Preload Video (fastest) option.</p>
+      </li>
+      <li><strong>Do not preload</strong> - For MP4 videos, none is preloaded.
+      <p>For HLS and DASH, the player only loads the metadata so that the video duration can be calculated.</p>
+      </li>
       <li><strong>Not set [Default]</strong> - There is no defined preload setting. The browser will use its standard video preload behavior, which varies per browser.</li>
     </ul>
     <aside class="bcls-aside bcls-aside--information">

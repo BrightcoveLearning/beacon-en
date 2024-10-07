@@ -3709,7 +3709,7 @@
       <li>Creating clips from multi-audio live events is not supported at this time</li>
       <!-- <li>Multi-Audio + DRM is not supported at this time. </li> -->
       <li>It is not possible to create DRM live jobs with multi-language audio tracks from Live Module UI. This is only available via the<a href="https://apis.support.brightcove.com/live-api/guides/live-multi-language-audio.html"> Live API</a></li>
-      <li>RTMP outputs created from SEPs will contain only video and no audio when selecting a transcoded output profile. A turnaround would be to use a transmuxed output rather than a transcoded output by selecting the <strong>Source</strong> rendition in the Live Module in Studio or omitting the <code translate="no">output_label</code> in the <a href="https://apis.support.brightcove.com/live-api/references/reference.html#tag/RTMP-Outputs/operation/CreateRTMPOutput">API call</a> when creating an RTMP output. This provides both video and audio.</li>
+      <li>RTMP outputs created from SEPs will contain only video and no audio when selecting a transcoded output profile. A workaround would be to use a transmuxed output rather than a transcoded output by selecting the <strong>Source</strong> rendition in the Live Module in Studio or omitting the <code translate="no">output_label</code> in the <a href="https://apis.support.brightcove.com/live-api/references/reference.html#tag/RTMP-Outputs/operation/CreateRTMPOutput">API call</a> when creating an RTMP output. This provides both video and audio.</li>
       <li>Audio tracks can only be defined for a new live job. Currently, it is not possible to update the audio tracks for existing live events.</li>
     </ul>
   </section>
