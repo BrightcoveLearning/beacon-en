@@ -3824,7 +3824,7 @@
         </ul>
       </li>
       <li><strong>RTMP credentials to use</strong> - Select the RTMP credential used to secure the Streaming Endpoint. Note this option will only appear if the Input Format is RTMP and at least one RTMP credential was created as part of the Live settings.</li>
-      <li><strong>RTMP IP whitelist</strong> - Enter a set of IP addresses that are allowed to connect to the RTMP endpoint. This controls who can connect to the RTMP endpoint. Note this option will only appear if the Input Format is RTMP.</li>
+      <li><strong>RTMP IP whitelist</strong> - Enter a set of IP addresses allowed to connect to the RTMP endpoint. This controls who can connect to the RTMP endpoint. Please leave the option empty if you want to keep it open to all IPs. Note that this option will only appear if the Input Format is RTMP.</li>
       <li><strong>Enable stream status notifications</strong> - When checked, enter a <strong>Notification URL</strong>. An http request will be made to the <strong>Notification URL</strong> when there is a change in the job status. This can be used to update a server in response to changes in the job status. For more information on using API notifications, see the <a href="https://apis.support.brightcove.com/live-api/guides/live-api-notifications.html">Live API Notifications</a> topic.</li>
       <li id="cidr"><strong>CIDR Whitelist</strong> - Enter a set of IP addresses that are allowed to connect to the RTP or SRT endpoint. This controls who can connect to the RTP or SRT endpoints. Note this option will only appear if the Input Format is RTP or SRT.
         <p>You can specify <code translate="No">0.0.0.0/0</code> to allow all networks.</p>
@@ -4105,7 +4105,7 @@
         </aside>
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-live-img/live-module/node18470-allow-dvr.png" /></figure>
       </li>
-      <li>Select <strong>Content Delivery Ntework (CDN)</strong>. This option is used to select a specific CDN in case the Live Job was configured for Multi-CDN. It should look similar to this:
+      <li>Select <strong>Content Delivery Network (CDN)</strong>. This option is used to select a specific CDN in case the Live Job was configured for Multi-CDN. It should look similar to this:
         
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-live-img/live-module/CDN.png" /></figure>
       </li>

@@ -3602,20 +3602,19 @@
     <aside class="bcls-aside bcls-aside--information">Notes:
       <ul>
         <li>Trial accounts are restricted from creating profiles.</li>
-        <li>Each profile can create a maximum of 25 renditions.</li>
-        <li>You <strong>can</strong> create renditions for vertical video - just include <code translate="No">height</code> and <code translate="No">width</code> values in the rendition specifications that match the aspect ration of the video (1280 pixels is the maximum allowed value for the <code translate="No">height</code>).</li>
+        <li>You <strong>can</strong> create renditions for vertical video - just include <code translate="No">height</code> and <code translate="No">width</code> values in the rendition specifications that match the aspect ratio of the video (1280 pixels is the maximum allowed value for the <code translate="No">height</code>).</li>
         <li>When live profiles are hidden in Studio under <strong>Admin</strong> > <strong>Ingest Profiles</strong>, those won't be selectable in the <strong>Create Live Event</strong> UI but they can still be used with the Live API.</li>
         <li>Live outputs are VBR.</li>
         <li>The average video bitrate should be around the target value, but there can be brief periods when the measured video bitrate exceeds that target.</li>
         <li>Live Tiers:
           <ul>
-            <li>For a Live ingest profile to be considered Tier 1, the sum of the bitrates of all its renditions, cannot be greater than 5450.</li>
-            <li>If the sum of the bitrates of all its renditions is greater than 5450 but less than 10000, the Live ingest profile will be considered Tier 2.</li>
-            <li>If the sum of the bitrates of all its renditions is greater than 10000, the profile will be considered Tier 3.</li>
+            <li>SD Live streaming: Can have up to 3 renditions, max total bitrate of 2.5 mbps and max resolution of 720p.</li>
+            <li>HD Live streaming: Can have up to 6 renditions, max total bitrate of 8 mbps and max resolution of 1080p.</li>
+            <li>4K Live streaming: Can have up to 8 renditions, max total bitrate of 15 mbps and max resolution of 2160p.</li>
           </ul>
         </li>
       </ul>
-      Each profile can create a maximum of 25 renditions.</aside>
+    </aside>
   </section>
   <section class="bcls-section">
     <h2 id="new">Creating a new profile</h2>
