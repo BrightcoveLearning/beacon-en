@@ -3601,7 +3601,7 @@
     <h2 id="required-information">Overview</h2>
 
     <p> <a href="https://developer.apple.com/streaming/fps/" target="_blank">FairPlay Streaming</a> is a DRM solution from Apple to securely deliver streaming media using the HLS (HTTP Live Streaming) protocol. </p>
-    <p>To be able to use Apple’s <strong>FairPlay Streaming (FPS)</strong> DRM, users should acquire the <strong>FPS Deployment Package</strong> from Apple and provide your Brightcove representative with the following information:
+    <p>To be able to use Apple's <strong>FairPlay Streaming (FPS)</strong> DRM, users should acquire the <strong>FPS Deployment Package</strong> from Apple and provide your Brightcove representative with the following information:
     <ul>
       <li>The FPS Certificate file <strong>.der or .cer</strong></li>
       <li>Private key file <strong>.pem</strong></li>
@@ -3614,16 +3614,16 @@
     <h2 id="required-information">Step 1: Sign up Apple Developer Account and Request Deployment Package</h2>
 
     <ol class="bcls-tasklist">
-      <li>Enter your Apple developer account to get the FPS Deployment Package. If you don’t have one. <a href="https://developer.apple.com/support/enrollment/" target="_blank">Sign up</a>.
+      <li>Enter your Apple developer account to get the FPS Deployment Package. If you don't have one. <a href="https://developer.apple.com/support/enrollment/" target="_blank">Sign up</a>.
       </li>
       <li>Click the Request Deployment Package link at the bottom of the FairPlay Streaming website and log in with your Apple developer account.</li>
     </ol>
-    <p>Once you apply for the Deployment Package according to the input-form, you will be issued a package containing the FPS Credential Creation Guide document after Apple’s confirmation. </p>
+    <p>Once you apply for the Deployment Package according to the input-form, you will be issued a package containing the FPS Credential Creation Guide document after Apple's confirmation. </p>
     <p>The image below shows an example of the information that must be entered in Apple's form.</p>
     <figure class="bcls-figure">
       <img class="bcls-image" alt="" src="/assets/images/s-publishing-apps-img/fairplay-reg/image.png" />
     </figure>
-    <aside class="bcls-aside bcls-aside--information">During the application process, if asked if you have completed implementing and testing the Key Server Module (KSM). Please answer: ‘I am using a 3rd party DRM service, and the company has already built and tested the Key Server Module’.</aside>
+    <aside class="bcls-aside bcls-aside--information">During the application process, if asked if you have completed implementing and testing the Key Server Module (KSM). Please answer: 'I am using a 3rd party DRM service, and the company has already built and tested the Key Server Module'.</aside>
     <aside class="bcls-aside bcls-aside--information">
       Please note that it is necessary to give thorough information about the content, company, and rights to stream it when filling out the form. If Apple does not have enough information, the application process can be slow and might result in rejection.</aside>
   </section>
@@ -3645,7 +3645,7 @@
         <aside class="bcls-aside bcls-aside--information">The password should be shorter than 32 characters, and special characters are not allowed.</aside>
       </li>
       <li>Generate the <strong>Certificate Signing Request</strong> file by typing and running the following command.
-        <aside class="bcls-aside bcls-aside--information">The contents of the <strong>-subj</strong> parameter can be modified to suit your organization’s information.</aside>
+        <aside class="bcls-aside bcls-aside--information">The contents of the <strong>-subj</strong> parameter can be modified to suit your organization's information.</aside>
         <pre class="line-numbers">
 <code class="command-line" translate="No">openssl req -new -sha1 -key privatekey.pem -out certreq.csr -subj "/CN=SubjectName/OU=OrganizationalUnit/O=Organization/C=US"</code></pre>
       </li>
@@ -3696,7 +3696,7 @@
       <li>Click <strong>Certificates</strong> in the left menu to see your FairPlay Streaming Certificate in the list. </li>
       <li>Click on your Certificate.</li>
       <li>Click the <strong>Download</strong> button to save the FPS certificate file: <strong>fairplay.cer</strong>.</li>
-      <li>After download the <strong>FPS certificate</strong> file, please contact your Brightcove account manager to finish the process.</li>
+      <li>After downloading the <strong>FPS certificate</strong> file, please contact your Brightcove account manager to finish the process.</li>
 
     </ol>
 
