@@ -5,9 +5,10 @@
         
         <!-- Meta -->
         <meta charset="utf-8">
+        <meta name="robots" content="noindex,nofollow"> 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="In this topic, you will learn">
+        <meta name="description" content="In this topic, you will learn how to facilitate payments in Brightcove Beacon.">
         
         <!-- Google Font -->
         <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
@@ -15,10 +16,8 @@
         <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
         
         <!-- FontAwesome JS-->
-        
         <!-- <script src="https://kit.fontawesome.com/d67c74a882.js" crossorigin="anonymous"></script>   -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
         <!-- Plugins CSS -->
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
         <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.css">
@@ -45,7 +44,7 @@
     </head> 
 
     <body class="docs-page">
-        
+
 
 <header class="header fixed-top">
   <div class="branding docs-branding">
@@ -3593,17 +3592,17 @@
       </div>
       <br>
       
-      
+      <h3 style="color:#990000;border:#990000 solid 1px; padding:10px;width: fit-content;">Limited Availability - Do not share this document</h3>
 <h1>Stripe Purchase</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn</summary>
+  <summary>In this topic, you will learn how to facilitate payments in Brightcove Beacon.</summary>
   <section class="bcls-section">
     <h2 id="Overview">Overview</h2>
     <p>Stripe Connect is a service Stripe offers to facilitate payments in Brightcove Beacon. To learn more about Stripe's accounts, see <a href="/creating-stripe-account.html">Creating a Stripe Account</a> document.</p>
   </section>
   <section class="bcls-section">
     <h2 id="Workflow">Workflow</h2>
-    <h3>In Beacon Web App</h3>
+    <h3>For Beacon Web App</h3>
     <ol class="bcls-tasklist">
     <li>Login to your Beacon Web App.</li>
     <li>Click <strong>Settings</strong>, then, <strong> My Account</strong>.
@@ -3624,7 +3623,61 @@
           </figure>
     </li>
     </ol>
-
+    <p></p>
+    <h3>For Smart Tv (Lg and Samsung)</h3>
+   <p>Login to Beacon.</p>
+   <p>There are three ways to pay in Smart TV's: 
+    <ol class="bcls-tasklist-restart">
+    <li><strong>First way:</strong> When you sign in to the login, you will receive a pop-up message asking if you want to subscribe immediately. </li>
+    <li><strong> Second way:</strong> You can go to <strong>My Account</strong>, then <strong>Manage Subscriptions</strong>.
+        <p>Select the subscription, and accept the terms and conditions: </p>
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/s-monetization-img/ manage-sub-smarttv.webp" alt="manage subscriptions">
+            <figcaption class="bcls-caption--image">manage subscriptions</figcaption>
+          </figure>
+          <p>
+          <p>  Notice how it sends you to a QR code. Click it with your cellphone and fill in the data. 
+            <figure class="bcls-figure">
+                <img class="bcls-image" src="/assets/images/s-monetization-img/qr-code.webp" alt="qr code ">
+                <figcaption class="bcls-caption--image">qr code </figcaption>
+              </figure>
+            <figure class="bcls-figure">
+                <img class="bcls-image" src="/assets/images/s-monetization-img/web-payment.webp" alt="web payment">
+                <figcaption class="bcls-caption--image">web payment</figcaption>
+              </figure>
+          </p>
+    </li>
+   </p>
+   <li><strong>Third way:</strong> It is through the details page. You choose an asset. Then, click <strong>Subscribe</strong>
+    <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/s-monetization-img/subscription-smarttv.webp" alt="click subscribe">
+        <figcaption class="bcls-caption--image">click subscribe</figcaption>
+      </figure>
+      <p></p>
+      <p> It sends you select your subscription
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/s-monetization-img/select.webp" alt="select">
+            <figcaption class="bcls-caption--image">select</figcaption>
+          </figure>
+      </p>
+</li>
+<p> Notice how it sends you to a QR code when you select your subscription. Click it with your cellphone and fill in the data. 
+    <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/s-monetization-img/qr-code.webp" alt="qr code ">
+        <figcaption class="bcls-caption--image">qr code </figcaption>
+      </figure>
+    <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/s-monetization-img/web-payment.webp" alt="web payment">
+        <figcaption class="bcls-caption--image">web payment</figcaption>
+      </figure>
+  </p>
+    <li>Your Payment if confirmed.
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/s-monetization-img/confirmation.webp" alt="confirmation">
+            <figcaption class="bcls-caption--image">confirmation</figcaption>
+          </figure>
+    </li>
+</ol>
   </section>
 </article>'
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
