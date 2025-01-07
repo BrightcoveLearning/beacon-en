@@ -3610,7 +3610,9 @@
   <section class="bcls-section">
     <aside class="bcls-aside bcls-aside--information">Note: The ability to create custom reports in the Analytics module is only available to Enterprise and Professional publishers.</aside>
     <aside class="bcls-aside bcls-aside--information">Note: The scheduled custom reports in the Analytics Module can only be seen by the user who created them in the Scheduled Reports UI.</aside>
-   
+    <aside class="bcls-aside bcls-aside--information"><p>If you delete a video, the deleted video's name will not be displayed in the Analytics report.</p>
+      <p>Technical Background: Once a video is deleted, it is permanently removed from the CMS. As a result, the API returns no associated metadata, and the Analytics report cannot display the video's name or related information.</p></aside>
+    <p>To create a custom report, you will perform the following steps:</p>
     
     <p>The Analytics module can be used to generate custom, ad-hoc analytics reports that can be downloaded in comma separated values (.csv) or Microsoft Excel (.xlsx) formats. Reports can also be scheduled to run on a daily, weekly or monthly basis.</p>
     <p>The <span translate="No">Analytics API</span> is used to retrieve data from the analytics system. The <span translate="No">Analytics API</span> can also be used to create your own custom reports. For more information on the Analytics API, see the <a href="https://apis.support.brightcove.com/analytics/">Analytics API</a> documentation.</p>
@@ -3620,7 +3622,6 @@
     <aside class="bcls-aside bcls-aside--information">Note: Simultaneous custom report requests within the same account will execute in series. If the reports have large date ranges and many fields are selected, there may be a delay before all the results are returned. A good alternative is to schedule large reports.</aside>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="custom reports UI" src="/assets/images/s-analytics-img/reports/node14608-report-builder-ui.png" /></figure>
     <aside class="bcls-aside bcls-aside--information">Note: the <strong>video duration</strong> is displayed in <strong>seconds</strong></aside>
-    <p>To create a custom report, you will perform the following steps:</p>
     <ol class="bcls-tasklist">
       <li><a href="#account">Select accounts</a></li>
       <li><a href="#reporttype">Select a report type</a></li>

@@ -3874,7 +3874,6 @@ dd { padding-bottom: 10px; }
 
 <section class="bcls-section">
 <h2 id="T">T</h2>
-
 <dl>
   <dt id="traffic_sources">Traffic Sources</dt>
   <dd>An indication of how the viewer reached the player page. Possible values are:
@@ -3885,6 +3884,12 @@ dd { padding-bottom: 10px; }
     <li>Paid Search - User performed a search and clicked on a paid result to get to the video</li>
     <li>Secure Search - User logged in with a Google account, performed a search and clicked on a result (either paid or organic; search information is not included in this case)</li>
   </ul>
+  </dd>
+</dl>
+<dl>
+  <dt id="traffic_sources">Today's Views</dt>
+  <dd>This represents the total video views from the current day. It shows the views from 00:00 to the latest available time when the user loads the page. It resets daily and considers the account timezone. As a difference, while Unique Viewers considers a combination of the Source IP address + the User-Agent String as one user, Today's Views only considers how many times the video_view event is triggered.
+  <p></p><p>Example: If the same user watches the same asset three times across three different devices and at three different times of the day, Unique Viewers will consider this +1, while Today's Views will consider it +3.</p>
   </dd>
 </dl>
 </section>
