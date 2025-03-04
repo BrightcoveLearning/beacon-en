@@ -3610,7 +3610,7 @@
   <section class="bcls-section">
     
     <p>The player <strong>Content Restriction</strong> properties can be used to restrict a player to particular countries, or block a player from particular countries. Domain restrictions can be added to a player to limit the domains where the player can be used.</p>
-    <aside class="bcls-aside bcls-aside--warning language-editable">If you are using Playback Rights, you <strong>should NOT </strong>use the Content Restriction page in the player's module. </aside>
+    <aside class="bcls-aside bcls-aside--warning language-editable">If you are using <a href="#playback-rights">Playback Rights</a>, you <strong>should NOT </strong>use the Content Restriction page in the player's module. </aside>
     <aside class="bcls-aside bcls-aside--information">
       <h4>Notes:</h4>
       <ul>
@@ -3679,6 +3679,23 @@
         </li>
       <li>Click <span class="button-blue">Save</span>.</li>
     </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="playback-rights">Enabling Playback Rights</h2>
+    <p>The <strong>Enable Playback Rights</strong> checkbox in the <strong>Content Restriction</strong> settings automates the authorization process and overrides manual content restriction configurations.</p>
+    <h3>Enable Playback Rights</h3>
+    <ol class="bcls-tasklist-restart">
+      <li><p>In Video Cloud Studio, access the <strong>Players</strong> Module</p></li>
+      <li><p>Select the player you want to configure.</p></li>
+      <li><p>In the left menu, click <strong>Content Restriction</strong>.</p></li>
+      <li><p>Check the <strong>Enable Playback Rights</strong> option.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-players-img/properties/playback-rights.png" /></figure>
+      </li>
+      <li><p><span class="button-blue">Save</span></p></li>
+      <li><p><span class="button-blue">Publish</span></p></li>
+      <aside class="bcls-aside bcls-aside--tip">Note: The <strong>policy key</strong> will be automatically set to <code translate="no">none</code>, the <strong>availability</strong> object is removed from the <strong>JSON Editor</strong>, and domain or geo-based content restrictions will not apply.</aside>
+    </ol>
+
   </section>
 </article>
 
